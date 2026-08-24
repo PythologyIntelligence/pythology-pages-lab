@@ -4,7 +4,6 @@ set -euo pipefail
 ROOT="$PWD"
 OUT="$ROOT/_site"
 MIRROR="$ROOT/.mirror"
-BASE_PATH="/pythology-pages-lab"
 PYTHOLOGY_SOURCE="https://pythology.co.nz"
 VE_SOURCE="https://verry-elleegant-ai.vercel.app"
 
@@ -25,7 +24,18 @@ wget \
   --directory-prefix="$MIRROR/main" \
   "$PYTHOLOGY_SOURCE/"
 
-MAIN_INDEX="$(find "$MIRROR/main" -type f -name index.html -print | head -n 1 || true)"
+MAIN_INDEX=""
+for candidate in \
+  "$MIRROR/main/pythology.co.nz/index.html" \
+  "$MIRROR/main/www.pythology.co.nz/index.html"; do
+  if [[ -f "$candidate" ]]; then
+    MAIN_INDEX="$candidate"
+    break
+  fi
+done
+if [[ -z "$MAIN_INDEX" ]]; then
+  MAIN_INDEX="$(find "$MIRROR/main" -maxdepth 3 -type f -name index.html -print | head -n 1 || true)"
+fi
 if [[ -z "$MAIN_INDEX" ]]; then
   echo "Could not locate mirrored Pythology index.html" >&2
   exit 1
@@ -92,7 +102,13 @@ for file in "${AGRI_FILES[@]}"; do
   curl -fsSL "$PYTHOLOGY_SOURCE/$file" -o "$OUT/$file" || echo "Agri frontend asset unavailable: $file"
 done
 
-# Public lab safety shim: block production Agri API writes/reads and explain why.
+# Build an independent safe Agri snapshot from Open-Meteo at a generic public
+# test point. This is the same Pages pattern we want to test, without exposing a
+# real farm or relying on Netlify's Agri functions.
+python3 scripts/build-agri-lab.py
+
+# Public lab shim: serve the safe local Agri snapshot for reads, and block all
+# production feedback/application writes.
 cat > "$OUT/agri-pages-lab-guard.js" <<'EOF'
 (() => {
   const originalFetch = window.fetch.bind(window);
@@ -100,23 +116,38 @@ cat > "$OUT/agri-pages-lab-guard.js" <<'EOF'
     const raw = typeof input === 'string' ? input : input?.url || '';
     let pathname = raw;
     try { pathname = new URL(raw, location.href).pathname; } catch {}
-    if (pathname.includes('/api/agri-')) {
+
+    if (pathname.includes('/api/agri-data')) {
+      return originalFetch('data/agri_lab.json', { cache: 'no-store' });
+    }
+
+    if (pathname.includes('/api/agri-feedback') || pathname.includes('/api/agri-application')) {
       return Promise.resolve(new Response(JSON.stringify({
-        error: 'GitHub Pages lab: private Agri API is intentionally disabled. Production remains untouched.'
+        error: 'GitHub Pages lab: production Agri writes are intentionally disabled.'
       }), { status: 503, headers: { 'Content-Type': 'application/json' } }));
     }
+
     return originalFetch(input, init);
   };
 
-  const banner = document.createElement('div');
-  banner.textContent = 'GITHUB PAGES LAB · AGri frontend only · private farm data and write APIs disabled';
-  Object.assign(banner.style, {
-    position: 'fixed', left: '12px', right: '12px', bottom: '12px', zIndex: '99999',
-    padding: '10px 14px', borderRadius: '10px', background: '#07171cee',
-    border: '1px solid #38bfa455', color: '#b9fff1', font: '600 12px/1.3 system-ui,sans-serif',
-    textAlign: 'center', letterSpacing: '.04em'
+  document.addEventListener('DOMContentLoaded', () => {
+    const client = document.getElementById('client-id');
+    const code = document.getElementById('access-code');
+    const button = document.querySelector('#access-form button[type="submit"]');
+    if (client && !client.value) client.value = 'pages-lab-demo';
+    if (code && !code.value) code.value = 'demo';
+    if (button) button.textContent = 'Open GitHub Pages lab';
+
+    const banner = document.createElement('div');
+    banner.textContent = 'GITHUB PAGES LAB · generic Open-Meteo farm · no private client data · write APIs disabled';
+    Object.assign(banner.style, {
+      position: 'fixed', left: '12px', right: '12px', bottom: '12px', zIndex: '99999',
+      padding: '10px 14px', borderRadius: '10px', background: '#07171cee',
+      border: '1px solid #38bfa455', color: '#b9fff1', font: '600 12px/1.3 system-ui,sans-serif',
+      textAlign: 'center', letterSpacing: '.04em'
+    });
+    document.body.appendChild(banner);
   });
-  document.addEventListener('DOMContentLoaded', () => document.body.appendChild(banner));
 })();
 EOF
 
@@ -143,7 +174,18 @@ wget \
   --directory-prefix="$MIRROR/ve" \
   "$VE_SOURCE/"
 
-VE_INDEX="$(find "$MIRROR/ve" -type f -name index.html -print | head -n 1 || true)"
+VE_INDEX=""
+for candidate in \
+  "$MIRROR/ve/verry-elleegant-ai.vercel.app/index.html" \
+  "$MIRROR/ve/www.verry-elleegant-ai.vercel.app/index.html"; do
+  if [[ -f "$candidate" ]]; then
+    VE_INDEX="$candidate"
+    break
+  fi
+done
+if [[ -z "$VE_INDEX" ]]; then
+  VE_INDEX="$(find "$MIRROR/ve" -maxdepth 3 -type f -name index.html -print | head -n 1 || true)"
+fi
 if [[ -n "$VE_INDEX" ]]; then
   VE_DIR="$(dirname "$VE_INDEX")"
   mkdir -p "$OUT/verry-elleegant"
@@ -186,7 +228,7 @@ PY
 
 # Add a tiny lab marker without changing the production source.
 cat > "$OUT/pages-lab-status.json" <<EOF
-{"mode":"github-pages-lab","cerberus":"excluded-vps-later","earthnet":"static-snapshot","agri":"frontend-only-private-api-disabled","verryElleegant":"static-frontend-readonly-snapshots","builtAt":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
+{"mode":"github-pages-lab","cerberus":"excluded-vps-later","earthnet":"static-snapshot","agri":"open-meteo-public-lab","verryElleegant":"static-frontend-readonly-snapshots","builtAt":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
 EOF
 
 # Keep GitHub Pages from invoking Jekyll processing.
