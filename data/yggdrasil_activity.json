@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T13:52:48.665419+00:00",
+  "generatedAt": "2026-08-25T13:53:03.669114+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,13 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-25T13:52:56.167042+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
     {
       "ts": "2026-08-25T13:52:46.149169+00:00",
       "type": "bifrost",
@@ -247,14 +254,7 @@
       "event": "entry_skipped",
       "title": "Entry skipped for XAUUSD",
       "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
-    },
-    {
-      "ts": "2026-08-25T13:48:55.951957+00:00",
-      "type": "bifrost",
-      "event": "entry_skipped",
-      "title": "Entry skipped for XAUUSD",
-      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
     }
   ],
-  "publishedAt": "2026-08-25T13:52:55.760043+00:00"
+  "publishedAt": "2026-08-25T13:53:15.405170+00:00"
 }
