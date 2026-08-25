@@ -64,6 +64,13 @@ jobs:
                   path.write_text(new)
           PY
 
+      - name: Stage Yggdrasil safe activity snapshot
+        run: |
+          mkdir -p _site/data
+          if [[ -f data/yggdrasil_activity.json ]]; then
+            cp data/yggdrasil_activity.json _site/data/yggdrasil_activity.json
+          fi
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
