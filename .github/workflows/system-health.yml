@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "scripts/check-system-health.mjs"
+      - "scripts/merge-yggdrasil-health.mjs"
       - "monitor/**"
       - ".github/workflows/system-health.yml"
   schedule:
@@ -32,6 +33,9 @@ jobs:
 
       - name: Run synthetic health checks
         run: node scripts/check-system-health.mjs
+
+      - name: Merge live Yggdrasil VPS heartbeat
+        run: node scripts/merge-yggdrasil-health.mjs
 
       - name: Publish safe health snapshot
         shell: bash
