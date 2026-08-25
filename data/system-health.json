@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-25T08:41:14.469Z",
+  "generatedAt": "2026-08-25T08:57:19.467Z",
   "fleet": {
     "status": "down",
     "operational": 3,
@@ -15,54 +15,58 @@
       "name": "Cerberus",
       "status": "degraded",
       "summary": "Cerberus remains reachable, but one synthetic check or provider path needs attention.",
-      "checkedAt": "2026-08-25T08:41:14.469Z",
-      "averageLatencyMs": 416,
+      "checkedAt": "2026-08-25T08:57:19.467Z",
+      "averageLatencyMs": 811,
       "providersOperational": 2,
       "providersAvailable": 3,
       "providersTotal": 3,
-      "snapshotAgeMinutes": null,
-      "snapshotUpdatedAt": null,
-      "instrumentCount": null,
+      "snapshotAgeMinutes": 941,
+      "snapshotUpdatedAt": "2026-08-24T17:16:09.883Z",
+      "instrumentCount": 24,
       "checks": [
         {
           "id": "app",
           "label": "Cerberus interface",
-          "status": "operational",
-          "latencyMs": 484,
-          "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:04.352Z"
+          "status": "degraded",
+          "checkedAt": "2026-08-25T08:57:19.467Z",
+          "note": "Synthetic runner timed out after 12 seconds."
         },
         {
           "id": "snapshot",
           "label": "Forecast snapshot",
-          "status": "down",
-          "checkedAt": "2026-08-25T08:41:14.469Z",
-          "note": "fetch failed"
+          "status": "operational",
+          "latencyMs": 577,
+          "httpStatus": 200,
+          "checkedAt": "2026-08-25T08:57:08.144Z",
+          "dataUpdatedAt": "2026-08-24T17:16:09.883Z",
+          "ageMinutes": 941,
+          "instrumentCount": 24,
+          "freshnessLimitMinutes": 1080
         },
         {
           "id": "binance",
           "label": "Binance crypto feed",
           "status": "degraded",
-          "latencyMs": 281,
+          "latencyMs": 310,
           "httpStatus": 451,
-          "checkedAt": "2026-08-25T08:41:04.256Z",
+          "checkedAt": "2026-08-25T08:57:07.877Z",
           "note": "Synthetic runner is restricted by this provider."
         },
         {
           "id": "yahoo",
           "label": "Yahoo market feed",
           "status": "operational",
-          "latencyMs": 367,
+          "latencyMs": 364,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:04.353Z"
+          "checkedAt": "2026-08-25T08:57:07.936Z"
         },
         {
           "id": "xaus",
           "label": "XAUS metals feed",
           "status": "operational",
-          "latencyMs": 532,
+          "latencyMs": 1991,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:04.510Z"
+          "checkedAt": "2026-08-25T08:57:09.562Z"
         }
       ]
     },
@@ -71,9 +75,9 @@
       "name": "EarthNet",
       "status": "degraded",
       "summary": "EarthNet's GitHub Pages interface is reachable, but its published intelligence snapshot is stale or reporting a degraded assertion.",
-      "checkedAt": "2026-08-25T08:41:14.469Z",
-      "averageLatencyMs": 351,
-      "snapshotAgeMinutes": 904,
+      "checkedAt": "2026-08-25T08:57:19.467Z",
+      "averageLatencyMs": 433,
+      "snapshotAgeMinutes": 920,
       "snapshotUpdatedAt": "2026-08-24T17:36:51.000Z",
       "engineCount": 10,
       "eventCount": 133,
@@ -83,19 +87,19 @@
           "id": "earthnet-app",
           "label": "EarthNet interface",
           "status": "operational",
-          "latencyMs": 349,
+          "latencyMs": 378,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:04.327Z"
+          "checkedAt": "2026-08-25T08:57:07.949Z"
         },
         {
           "id": "earthnet-snapshot",
           "label": "EarthNet intelligence cycle",
           "status": "degraded",
-          "latencyMs": 352,
+          "latencyMs": 487,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:04.334Z",
+          "checkedAt": "2026-08-25T08:57:08.060Z",
           "dataUpdatedAt": "2026-08-24T17:36:51.000Z",
-          "ageMinutes": 904,
+          "ageMinutes": 920,
           "freshnessLimitMinutes": 480,
           "engineCount": 10,
           "eventCount": 133,
@@ -110,24 +114,24 @@
       "name": "Agri",
       "status": "operational",
       "summary": "Interface and agricultural data service are responding.",
-      "checkedAt": "2026-08-25T08:41:14.469Z",
-      "averageLatencyMs": 1086,
+      "checkedAt": "2026-08-25T08:57:19.467Z",
+      "averageLatencyMs": 1226,
       "checks": [
         {
           "id": "agri-app",
           "label": "Agri interface",
           "status": "operational",
-          "latencyMs": 435,
+          "latencyMs": 559,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:04.415Z"
+          "checkedAt": "2026-08-25T08:57:08.132Z"
         },
         {
           "id": "agri-data",
           "label": "Agri data service",
           "status": "operational",
-          "latencyMs": 1737,
+          "latencyMs": 1892,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:05.718Z"
+          "checkedAt": "2026-08-25T08:57:09.465Z"
         }
       ]
     },
@@ -136,16 +140,16 @@
       "name": "Poseidon",
       "status": "operational",
       "summary": "Marine operational surface is responding; deeper provider telemetry is the next adapter layer.",
-      "checkedAt": "2026-08-25T08:41:14.469Z",
-      "averageLatencyMs": 1002,
+      "checkedAt": "2026-08-25T08:57:19.467Z",
+      "averageLatencyMs": 888,
       "checks": [
         {
           "id": "poseidon-app",
           "label": "Poseidon marine map",
           "status": "operational",
-          "latencyMs": 1002,
+          "latencyMs": 888,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:04.985Z"
+          "checkedAt": "2026-08-25T08:57:08.463Z"
         }
       ]
     },
@@ -154,25 +158,25 @@
       "name": "Verry Elleegant",
       "status": "down",
       "summary": "Verry Elleegant could not be reached by the synthetic monitor.",
-      "checkedAt": "2026-08-25T08:41:14.469Z",
-      "averageLatencyMs": 388,
+      "checkedAt": "2026-08-25T08:57:19.467Z",
+      "averageLatencyMs": 535,
       "checks": [
         {
           "id": "ve-app",
           "label": "Verry Elleegant interface",
           "status": "down",
-          "latencyMs": 387,
+          "latencyMs": 524,
           "httpStatus": 404,
-          "checkedAt": "2026-08-25T08:41:04.370Z",
+          "checkedAt": "2026-08-25T08:57:08.100Z",
           "note": "The synthetic reachability check returned an HTTP error."
         },
         {
           "id": "ve-health",
           "label": "Verry Elleegant health",
           "status": "down",
-          "latencyMs": 388,
+          "latencyMs": 546,
           "httpStatus": 404,
-          "checkedAt": "2026-08-25T08:41:04.372Z",
+          "checkedAt": "2026-08-25T08:57:08.122Z",
           "note": "Endpoint returned an HTTP error."
         }
       ]
@@ -182,24 +186,24 @@
       "name": "Sentinel",
       "status": "operational",
       "summary": "Command interface and browser intelligence runtime are responding.",
-      "checkedAt": "2026-08-25T08:41:14.469Z",
-      "averageLatencyMs": 1201,
+      "checkedAt": "2026-08-25T08:57:19.467Z",
+      "averageLatencyMs": 951,
       "checks": [
         {
           "id": "sentinel-app",
           "label": "Sentinel command interface",
           "status": "operational",
-          "latencyMs": 990,
+          "latencyMs": 846,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:04.974Z"
+          "checkedAt": "2026-08-25T08:57:08.423Z"
         },
         {
           "id": "sentinel-runtime",
           "label": "Sentinel runtime",
           "status": "operational",
-          "latencyMs": 1412,
+          "latencyMs": 1056,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:41:05.398Z"
+          "checkedAt": "2026-08-25T08:57:08.634Z"
         }
       ]
     },
