@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T13:33:03.121005+00:00",
+  "generatedAt": "2026-08-25T13:33:18.127053+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,20 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-25T13:33:15.215233+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
+    {
+      "ts": "2026-08-25T13:33:05.197758+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
     {
       "ts": "2026-08-25T13:32:55.196069+00:00",
       "type": "bifrost",
@@ -240,21 +254,7 @@
       "event": "engine_started",
       "title": "Yggdrasil engine started",
       "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
-    },
-    {
-      "ts": "2026-08-25T09:35:28.631578+00:00",
-      "type": "engine",
-      "event": "engine_stopped",
-      "title": "Yggdrasil engine stopped",
-      "detail": "Execution loop stopped cleanly."
-    },
-    {
-      "ts": "2026-08-25T09:23:40.693649+00:00",
-      "type": "guardrail",
-      "event": "legacy_champion_rejected",
-      "title": "Legacy champion rejected for GBPUSD",
-      "detail": "The stored strategy no longer passes the current training gate."
     }
   ],
-  "publishedAt": "2026-08-25T13:33:08.292455+00:00"
+  "publishedAt": "2026-08-25T13:33:28.389535+00:00"
 }
