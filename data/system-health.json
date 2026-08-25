@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-25T06:43:38.771Z",
+  "generatedAt": "2026-08-25T06:45:46.622Z",
   "fleet": {
-    "status": "down",
-    "operational": 0,
+    "status": "operational",
+    "operational": 1,
     "degraded": 0,
-    "down": 1,
+    "down": 0,
     "unmonitored": 5,
     "initialising": 0
   },
@@ -13,58 +13,61 @@
     {
       "id": "cerberus",
       "name": "Cerberus",
-      "status": "down",
-      "summary": "A core Cerberus availability check has failed.",
-      "checkedAt": "2026-08-25T06:43:38.771Z",
-      "averageLatencyMs": 612,
+      "status": "operational",
+      "summary": "Interface, snapshot and core market providers are responding.",
+      "checkedAt": "2026-08-25T06:45:46.622Z",
+      "averageLatencyMs": 604,
       "providersOperational": 2,
+      "providersAvailable": 3,
       "providersTotal": 3,
-      "snapshotAgeMinutes": 807,
+      "snapshotAgeMinutes": 810,
       "snapshotUpdatedAt": "2026-08-24T17:16:09.883Z",
       "instrumentCount": 24,
       "checks": [
         {
           "id": "app",
           "label": "Cerberus interface",
-          "status": "down",
-          "checkedAt": "2026-08-25T06:43:38.771Z",
-          "note": "This operation was aborted"
+          "status": "operational",
+          "latencyMs": 584,
+          "httpStatus": 200,
+          "checkedAt": "2026-08-25T06:45:46.366Z"
         },
         {
           "id": "snapshot",
           "label": "Forecast snapshot",
           "status": "operational",
-          "latencyMs": 663,
+          "latencyMs": 541,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T06:43:27.549Z",
+          "checkedAt": "2026-08-25T06:45:46.381Z",
           "dataUpdatedAt": "2026-08-24T17:16:09.883Z",
-          "ageMinutes": 807,
+          "ageMinutes": 810,
           "instrumentCount": 24,
           "freshnessLimitMinutes": 1080
         },
         {
           "id": "binance",
           "label": "Binance crypto feed",
-          "status": "down",
-          "latencyMs": 594,
+          "status": "degraded",
+          "latencyMs": 603,
           "httpStatus": 451,
-          "checkedAt": "2026-08-25T06:43:27.431Z"
+          "checkedAt": "2026-08-25T06:45:46.436Z",
+          "note": "Synthetic runner is restricted by this provider; Cerberus fallback coverage is checked separately."
         },
         {
           "id": "yahoo",
           "label": "Yahoo market feed",
           "status": "operational",
-          "latencyMs": 500,
+          "latencyMs": 508,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T06:43:27.342Z"
+          "checkedAt": "2026-08-25T06:45:46.348Z"
         },
         {
           "id": "xaus",
           "label": "XAUS metals feed",
           "status": "operational",
-          "latencyMs": 689,
+          "latencyMs": 785,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T06:43:27.548Z"
+          "checkedAt": "2026-08-25T06:45:46.622Z"
         }
       ]
     },
