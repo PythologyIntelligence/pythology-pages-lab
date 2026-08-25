@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - "scripts/check-system-health.mjs"
+      - "scripts/repair-pages-health.mjs"
       - "scripts/merge-yggdrasil-health.mjs"
       - "monitor/**"
       - ".github/workflows/system-health.yml"
@@ -34,6 +35,9 @@ jobs:
       - name: Run synthetic health checks
         run: node scripts/check-system-health.mjs
 
+      - name: Prefer resilient GitHub Pages health surfaces
+        run: node scripts/repair-pages-health.mjs
+
       - name: Merge live Yggdrasil VPS heartbeat
         run: node scripts/merge-yggdrasil-health.mjs
 
@@ -47,8 +51,5 @@ jobs:
             echo "No health snapshot changes."
             exit 0
           fi
-          # This data-only commit cannot recurse into another health run because
-          # the push trigger is path-scoped. The Pages workflow separately uses
-          # workflow_run to deploy the latest main branch after this job finishes.
           git commit -m "data: refresh Pythology system health"
           git push
