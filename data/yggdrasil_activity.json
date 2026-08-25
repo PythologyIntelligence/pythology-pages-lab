@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T13:31:48.096194+00:00",
+  "generatedAt": "2026-08-25T13:32:03.101778+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,13 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-25T13:31:55.143698+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
     {
       "ts": "2026-08-25T13:31:45.153121+00:00",
       "type": "bifrost",
@@ -247,14 +254,7 @@
       "event": "engine_started",
       "title": "Yggdrasil engine started",
       "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
-    },
-    {
-      "ts": "2026-08-25T09:12:02.660611+00:00",
-      "type": "engine",
-      "event": "engine_stopped",
-      "title": "Yggdrasil engine stopped",
-      "detail": "Execution loop stopped cleanly."
     }
   ],
-  "publishedAt": "2026-08-25T13:31:52.700660+00:00"
+  "publishedAt": "2026-08-25T13:32:11.515838+00:00"
 }
