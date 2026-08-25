@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="referrer" content="no-referrer">
+  <title>Yggdrasil // Pythology System Control</title>
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#020809;--panel:#071416;--panel2:#0a1c1c;--line:#173b39;--line2:#285b54;
+      --text:#edf7f1;--muted:#91a9a0;--faint:#5f7970;--gold:#d9b869;--green:#58d8a5;
+      --amber:#f2ba63;--red:#ef7777;--blue:#6eb5cf;--moss:#8ca66a;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;min-height:100vh;color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:
+      radial-gradient(circle at 78% 0%,rgba(70,128,88,.18),transparent 31%),
+      radial-gradient(circle at 4% 22%,rgba(217,184,105,.08),transparent 25%),
+      linear-gradient(180deg,#061212 0%,var(--bg) 58%,#010505 100%)}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.10;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.022) 1px,transparent 1px);background-size:52px 52px}
+    a{color:inherit}
+    .shell{width:min(1320px,94vw);margin:0 auto;padding:26px 0 64px;position:relative}
+    .back{display:inline-flex;align-items:center;gap:8px;text-decoration:none;color:#b9cbc4;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;margin:0 0 16px}
+    .back:hover{color:var(--gold)}
+    .hero{position:relative;min-height:330px;border:1px solid #21453f;border-radius:26px;overflow:hidden;background:linear-gradient(110deg,rgba(3,12,11,.96) 0%,rgba(3,12,11,.78) 47%,rgba(5,18,16,.30) 100%);box-shadow:0 30px 80px rgba(0,0,0,.28)}
+    .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 38%;opacity:.58;filter:saturate(.85) contrast(1.08)}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(2,9,9,.97) 0%,rgba(2,9,9,.87) 38%,rgba(2,9,9,.42) 66%,rgba(2,9,9,.10) 100%),linear-gradient(0deg,rgba(2,8,8,.72),transparent 48%)}
+    .hero-copy{position:relative;z-index:2;padding:34px 38px;max-width:720px}
+    .eyebrow{font-size:10px;letter-spacing:.24em;color:var(--gold);font-weight:900;text-transform:uppercase}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(46px,7vw,82px);line-height:.95;letter-spacing:-.045em;margin:12px 0 12px}
+    .hero-sub{font-family:Georgia,"Times New Roman",serif;font-size:22px;color:#c6d7d0;margin-bottom:10px}
+    .hero-p{color:var(--muted);font-size:14px;line-height:1.65;max-width:630px}
+    .hero-badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+    .badge{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:rgba(5,20,18,.76);border-radius:999px;padding:7px 10px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.12em;color:#b6cac2}
+    .badge.green{color:var(--green);border-color:rgba(88,216,165,.27);background:rgba(88,216,165,.08)}
+    .badge.amber{color:var(--amber);border-color:rgba(242,186,99,.26);background:rgba(242,186,99,.08)}
+    .dot{width:8px;height:8px;border-radius:50%;background:var(--faint)}.dot.green{background:var(--green);box-shadow:0 0 15px rgba(88,216,165,.38)}.dot.amber{background:var(--amber);box-shadow:0 0 15px rgba(242,186,99,.32)}.dot.red{background:var(--red);box-shadow:0 0 15px rgba(239,119,119,.32)}
+    .notice{display:none;margin:14px 0 0;border:1px solid rgba(239,119,119,.25);background:rgba(239,119,119,.06);color:#efaaa5;padding:12px 14px;border-radius:12px;font-size:12px}
+    .metrics{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:11px;margin:16px 0}
+    .metric,.panel{background:linear-gradient(160deg,rgba(9,26,25,.97),rgba(4,14,14,.98));border:1px solid var(--line);box-shadow:0 16px 50px rgba(0,0,0,.13)}
+    .metric{border-radius:16px;padding:16px}.label{font-size:9px;color:var(--faint);text-transform:uppercase;letter-spacing:.16em;font-weight:900}.value{font-size:26px;font-weight:850;margin-top:7px;font-variant-numeric:tabular-nums}.value.small{font-size:18px}.metric-note{font-size:10px;color:var(--muted);margin-top:5px;line-height:1.4}
+    .layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(300px,.75fr);gap:14px}
+    .panel{border-radius:20px;padding:20px;min-width:0}.panel.full{grid-column:1/-1}.panel-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:16px}.panel-title{font-family:Georgia,"Times New Roman",serif;font-size:27px;line-height:1.05}.panel-sub{font-size:11px;color:var(--muted);line-height:1.5;margin-top:5px}.chip{border:1px solid var(--line);border-radius:999px;padding:6px 8px;font-size:8px;text-transform:uppercase;letter-spacing:.11em;font-weight:900;color:var(--muted);white-space:nowrap}.chip.good{color:var(--green);border-color:rgba(88,216,165,.24);background:rgba(88,216,165,.07)}.chip.warn{color:var(--amber);border-color:rgba(242,186,99,.24);background:rgba(242,186,99,.07)}.chip.bad{color:var(--red);border-color:rgba(239,119,119,.24);background:rgba(239,119,119,.07)}
+    .symbols{display:flex;flex-wrap:wrap;gap:8px}.symbol{padding:8px 10px;border-radius:10px;border:1px solid #173a37;background:#061614;color:#c7d9d2;font-size:11px;font-weight:800;letter-spacing:.04em}
+    .champions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+    .champ{border:1px solid #173b38;background:linear-gradient(150deg,#081b19,#05100f);border-radius:17px;padding:16px}.champ.rejected{border-color:rgba(239,119,119,.24);background:linear-gradient(150deg,rgba(43,18,18,.55),#07100f)}
+    .champ-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.champ-symbol{font-family:Georgia,"Times New Roman",serif;font-size:27px}.strategy{color:var(--gold);font-size:11px;font-weight:800;margin-top:4px;overflow-wrap:anywhere}.params{font-size:10px;color:var(--faint);margin-top:5px}.score{font-size:22px;font-weight:900;text-align:right;font-variant-numeric:tabular-nums}.score small{display:block;font-size:8px;color:var(--faint);text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
+    .stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-top:14px}.stat{border:1px solid #12302e;background:#051311;border-radius:10px;padding:9px}.stat span{display:block;font-size:8px;text-transform:uppercase;letter-spacing:.10em;color:var(--faint)}.stat b{display:block;margin-top:4px;font-size:13px;font-variant-numeric:tabular-nums}
+    .section-label{font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:#69847a;font-weight:900;margin:13px 0 6px}
+    .champ-note{font-size:11px;color:var(--muted);line-height:1.5;margin-top:12px;padding-top:10px;border-top:1px solid #122b29}.champ-note.bad{color:#dfa09a}
+    .risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:9px}.risk{padding:12px;border:1px solid #153532;background:#061613;border-radius:12px}.risk b{font-size:19px;font-variant-numeric:tabular-nums}.risk span{display:block;font-size:9px;color:var(--muted);line-height:1.4;margin-top:4px}
+    .guard-list{display:grid;gap:8px;margin-top:12px}.guard{display:flex;gap:9px;align-items:flex-start;color:#aec2ba;font-size:11px;line-height:1.45}.guard i{display:block;width:7px;height:7px;border-radius:50%;background:var(--green);margin-top:5px;flex:0 0 auto}
+    .timeline{display:grid;gap:2px}.event{display:grid;grid-template-columns:104px 14px 1fr;gap:10px;min-height:72px}.event-time{font-size:10px;color:var(--faint);padding-top:3px;text-align:right;font-variant-numeric:tabular-nums}.rail{display:flex;flex-direction:column;align-items:center}.rail .event-dot{width:9px;height:9px;border-radius:50%;background:var(--moss);box-shadow:0 0 0 4px rgba(140,166,106,.08)}.rail:after{content:"";width:1px;flex:1;background:#163330;margin-top:4px}.event:last-child .rail:after{display:none}.event-copy{padding-bottom:15px}.event-type{font-size:8px;color:var(--gold);text-transform:uppercase;letter-spacing:.13em;font-weight:900}.event-title{font-size:13px;font-weight:800;margin-top:4px}.event-detail{font-size:11px;line-height:1.5;color:var(--muted);margin-top:3px}
+    .rules{display:grid;gap:9px}.rule{padding:12px 13px;border-left:3px solid var(--gold);background:#061513;border-radius:0 10px 10px 0}.rule b{font-size:11px}.rule p{margin:4px 0 0;font-size:10px;color:var(--muted);line-height:1.45}
+    .family-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.family{border:1px solid #163633;border-radius:11px;padding:11px;font-size:11px;color:#c2d2cc;background:#061512}
+    .footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #102b28;margin-top:22px;padding-top:16px;color:var(--faint);font-size:10px;line-height:1.55}.refresh{border:1px solid #23504a;background:#0a201c;color:#d7e6df;padding:9px 12px;border-radius:10px;font-weight:800;cursor:pointer}.refresh:hover{border-color:#3d766d}
+    @media(max-width:1000px){.metrics{grid-template-columns:repeat(2,1fr)}.layout{grid-template-columns:1fr}.panel.full{grid-column:auto}.champions{grid-template-columns:1fr}}
+    @media(max-width:650px){.shell{width:min(94vw,620px)}.hero{min-height:410px}.hero-copy{padding:28px 22px}.hero-img{object-position:65% center}.metrics{grid-template-columns:1fr 1fr}.stat-grid,.risk-grid,.family-grid{grid-template-columns:1fr 1fr}.event{grid-template-columns:74px 12px 1fr}.footer{display:block}.footer div+div{margin-top:8px}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <a class="back" href="./">← Fleet health</a>
+
+    <section class="hero">
+      <img class="hero-img" id="heroImage" src="https://pythology.co.nz/png_files/Yggdrasil.png" alt="" aria-hidden="true">
+      <div class="hero-copy">
+        <div class="eyebrow">Pythology // Autonomous Research Organism</div>
+        <h1>Yggdrasil</h1>
+        <div class="hero-sub">Norns research. Týr discipline. Bifröst execution.</div>
+        <div class="hero-p">A read-only view of what Yggdrasil has been researching, promoting, rejecting and — once the authorised session opens — deciding in his MT5 demo environment. This surface intentionally exposes no credentials, account identifiers or raw private logs.</div>
+        <div class="hero-badges">
+          <span class="badge green"><span class="dot green"></span><span id="modeBadge">DEMO ONLY</span></span>
+          <span class="badge"><span id="symbolBadge">5 MARKETS</span></span>
+          <span class="badge amber"><span class="dot amber"></span><span id="bridgeBadge">VPS BRIDGE PENDING</span></span>
+        </div>
+        <div class="notice" id="loadError">Yggdrasil activity telemetry could not be loaded.</div>
+      </div>
+    </section>
+
+    <section class="metrics">
+      <div class="metric"><div class="label">Strategy candidates</div><div class="value" id="candidateCount">—</div><div class="metric-note">latest Norns tournament</div></div>
+      <div class="metric"><div class="label">Eligible champions</div><div class="value" id="eligibleCount">—</div><div class="metric-note" id="championNote">current training gate</div></div>
+      <div class="metric"><div class="label">Markets watched</div><div class="value" id="symbolCount">—</div><div class="metric-note">closed M5 research bars</div></div>
+      <div class="metric"><div class="label">Open positions</div><div class="value" id="positionCount">—</div><div class="metric-note">live bridge required</div></div>
+      <div class="metric"><div class="label">Open stop risk</div><div class="value small" id="openRisk">AWAITING</div><div class="metric-note">Týr live telemetry</div></div>
+    </section>
+
+    <section class="layout">
+      <section class="panel full">
+        <div class="panel-head"><div><div class="eyebrow">Norns // Valhalla</div><div class="panel-title">Latest observed champions</div><div class="panel-sub">The latest VPS snapshot, evaluated against Yggdrasil's tightened training gate.</div></div><span class="chip warn" id="snapshotChip">OBSERVED SNAPSHOT</span></div>
+        <div class="champions" id="championGrid"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div><div class="eyebrow">Operating picture</div><div class="panel-title">What he is watching</div></div><span class="chip good">M5</span></div>
+        <div class="symbols" id="symbols"></div>
+        <div class="section-label">Research families</div>
+        <div class="family-grid" id="families"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div><div class="eyebrow">Týr // Risk kernel</div><div class="panel-title">Non-negotiable limits</div><div class="panel-sub">Strategies can propose. Týr decides whether an entry is permitted.</div></div><span class="chip good">DETERMINISTIC</span></div>
+        <div class="risk-grid" id="riskGrid"></div>
+        <div class="guard-list" id="guardList"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div><div class="eyebrow">Activity journal</div><div class="panel-title">What he's been up to</div><div class="panel-sub" id="activitySub">Latest safe events available to this view.</div></div><button class="refresh" id="refreshButton" type="button">Refresh</button></div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head"><div><div class="eyebrow">Execution doctrine</div><div class="panel-title">How the organism behaves</div></div><span class="chip">BIFRÖST + TÝR</span></div>
+        <div class="rules" id="rules"></div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <div>Snapshot age: <span id="snapshotAge">unknown</span><br><span id="snapshotSource">Initial observed VPS snapshot.</span></div>
+      <div>Read-only research surface · no account numbers · no credentials · no raw journals<br>Live sanitised VPS bridge is the next adapter.</div>
+    </footer>
+  </main>
+
+  <script>
+    const DATA_URL = "../data/yggdrasil_activity.json";
+    const $ = id => document.getElementById(id);
+    const esc = value => String(value ?? "").replace(/[&<>'"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
+    const pct = value => Number.isFinite(Number(value)) ? `${Number(value).toFixed(3)}%` : "—";
+    const num = (value,d=2) => Number.isFinite(Number(value)) ? Number(value).toFixed(d) : "—";
+
+    function ageText(iso){
+      const t=Date.parse(iso); if(!Number.isFinite(t)) return "unknown";
+      const m=Math.max(0,Math.round((Date.now()-t)/60000));
+      if(m<1) return "just now"; if(m<60) return `${m}m ago`;
+      const h=Math.floor(m/60); if(h<24) return `${h}h ${m%60}m ago`; return `${Math.floor(h/24)}d ${h%24}h ago`;
+    }
+    function nzTime(iso){
+      const d=new Date(iso); if(Number.isNaN(d.getTime())) return "time unknown";
+      return d.toLocaleString("en-NZ",{timeZone:"Pacific/Auckland",day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit",hour12:false});
+    }
+    function renderChampion(c){
+      const rejected=c.trainingGate!=="eligible";
+      const label=rejected?"REJECTED BY NEW GATE":"ELIGIBLE";
+      const chipClass=rejected?"bad":"good";
+      const p=Object.entries(c.params||{}).map(([k,v])=>`${k} ${v}`).join(" · ");
+      return `<article class="champ ${rejected?"rejected":""}">
+        <div class="champ-top"><div><div class="champ-symbol">${esc(c.symbol)}</div><div class="strategy">${esc(c.strategyId)}</div><div class="params">${esc(p)}</div></div><div><span class="chip ${chipClass}">${label}</span><div class="score">${num(c.score,3)}<small>score</small></div></div></div>
+        <div class="section-label">Training</div><div class="stat-grid">
+          <div class="stat"><span>Return</span><b>${pct(c.train?.returnPct)}</b></div><div class="stat"><span>Sharpe</span><b>${num(c.train?.sharpe,3)}</b></div><div class="stat"><span>Trades</span><b>${esc(c.train?.trades ?? "—")}</b></div><div class="stat"><span>Drawdown</span><b>${pct(c.train?.maxDrawdownPct)}</b></div>
+        </div>
+        <div class="section-label">Out of sample</div><div class="stat-grid">
+          <div class="stat"><span>Return</span><b>${pct(c.test?.returnPct)}</b></div><div class="stat"><span>Sharpe</span><b>${num(c.test?.sharpe,3)}</b></div><div class="stat"><span>Trades</span><b>${esc(c.test?.trades ?? "—")}</b></div><div class="stat"><span>MC p05</span><b>${pct(c.mcP05ReturnPct)}</b></div>
+        </div>
+        <div class="champ-note ${rejected?"bad":""}">${esc(c.note || (rejected?"Does not pass the current research promotion rules.":"Passed the observed training and out-of-sample evidence gates. This is still demo research evidence, not proof of future profitability."))}</div>
+      </article>`;
+    }
+    function render(data){
+      const research=data.research||{}, live=data.live||{}, risk=data.tyr||{}, execution=data.execution||{};
+      $("modeBadge").textContent=(data.mode||"UNKNOWN").replaceAll("_"," ");
+      $("symbolBadge").textContent=`${(data.symbols||[]).length} MARKETS`;
+      $("bridgeBadge").textContent=data.bridge?.status==="live"?"VPS BRIDGE LIVE":"VPS BRIDGE PENDING";
+      $("candidateCount").textContent=research.candidateCount ?? "—";
+      $("eligibleCount").textContent=research.currentTrainingGateEligible ?? "—";
+      $("symbolCount").textContent=(data.symbols||[]).length;
+      $("positionCount").textContent=Number.isFinite(live.positions)?live.positions:"—";
+      $("openRisk").textContent=Number.isFinite(live.openRiskPct)?`${live.openRiskPct.toFixed(3)}%`:"AWAITING";
+      $("championNote").textContent=`${research.latestTournamentSelected ?? 0} selected in observed tournament`;
+      $("symbols").innerHTML=(data.symbols||[]).map(s=>`<span class="symbol">${esc(s)}</span>`).join("");
+      $("families").innerHTML=(research.families||[]).map(f=>`<div class="family">${esc(f)}</div>`).join("");
+      $("championGrid").innerHTML=(data.champions||[]).map(renderChampion).join("") || `<div class="panel-sub">No champion snapshot has been published.</div>`;
+      $("riskGrid").innerHTML=[
+        [risk.riskPerTradePct!=null?`${risk.riskPerTradePct}%`:"—","Risk per trade"],
+        [risk.maxOpenRiskPct!=null?`${risk.maxOpenRiskPct}%`:"—","Maximum aggregate open stop risk"],
+        [risk.maxSessionLossPct!=null?`${risk.maxSessionLossPct}%`:"—","Session equity-loss breaker"],
+        [risk.maxPositions ?? "—","Maximum simultaneous positions"],
+        [risk.maxTradesPerSession ?? "—","Maximum entries per session"],
+        [`${execution.entryCutoffMinutesBeforeClose ?? "—"}m`,`New entries stop before UK close`]
+      ].map(([v,l])=>`<div class="risk"><b>${esc(v)}</b><span>${esc(l)}</span></div>`).join("");
+      const guards=[]; if(risk.staleTickGate)guards.push("Stale tick gate"); if(risk.spreadGate)guards.push("Spread gate"); if(risk.symbolCooldownGate)guards.push("Per-symbol cooldown"); if(risk.brokerSideStopsRequired)guards.push("Broker-side SL/TP required");
+      $("guardList").innerHTML=guards.map(g=>`<div class="guard"><i></i><span>${esc(g)}</span></div>`).join("");
+      $("timeline").innerHTML=(data.recentActivity||[]).map(e=>`<div class="event"><div class="event-time">${esc(nzTime(e.ts))}</div><div class="rail"><span class="event-dot"></span></div><div class="event-copy"><div class="event-type">${esc(e.type||e.event)}</div><div class="event-title">${esc(e.title||e.event)}</div><div class="event-detail">${esc(e.detail||"")}</div></div></div>`).join("") || `<div class="panel-sub">No safe activity events published yet.</div>`;
+      $("rules").innerHTML=[
+        ["No champion means no trade","Norns must produce a strategy that survives the research gates before the execution loop can act."],
+        ["Research and execution stay separated",`Champions are not mutated during the active trading session. Research rebuilds outside the authorised window.`],
+        ["The clock matters",`${execution.openRule||"New York open"} → ${execution.closeRule||"London close"}; DST is resolved by timezone databases, not fixed UTC offsets.`],
+        ["Týr can always say no","A strategy signal does not override risk, stale-data, spread, position-count, cooldown or session-loss rules."],
+        ["The day ends flat",`New entries stop ${execution.entryCutoffMinutesBeforeClose ?? 15} minutes before UK close and Yggdrasil-owned positions are flattened ${execution.flattenMinutesBeforeClose ?? 2} minutes before close.`],
+        ["Demo means demo","Bifröst hard-refuses a non-demo MT5 account in V0."]
+      ].map(([h,p])=>`<div class="rule"><b>${esc(h)}</b><p>${esc(p)}</p></div>`).join("");
+      $("snapshotAge").textContent=`${ageText(data.generatedAt)} · ${new Date(data.generatedAt).toLocaleString("en-NZ",{timeZone:"Pacific/Auckland"})}`;
+      $("snapshotSource").textContent=data.bridge?.note || "Safe Yggdrasil snapshot.";
+      $("snapshotChip").textContent=data.bridge?.status==="live"?"LIVE SAFE FEED":"OBSERVED SNAPSHOT";
+      $("snapshotChip").className=`chip ${data.bridge?.status==="live"?"good":"warn"}`;
+      $("activitySub").textContent=data.bridge?.status==="live"?"Latest sanitised VPS events.":"Latest observed events; automatic VPS activity import is next.";
+    }
+    async function load(){
+      try{
+        const r=await fetch(`${DATA_URL}?t=${Date.now()}`,{cache:"no-store"}); if(!r.ok)throw new Error(`HTTP ${r.status}`);
+        render(await r.json()); $("loadError").style.display="none";
+      }catch(e){$("loadError").style.display="block";$("loadError").textContent="Yggdrasil activity telemetry could not be loaded. The page shell is still available, but the data view may be stale.";}
+    }
+    $("refreshButton").addEventListener("click",load);
+    $("heroImage").addEventListener("error",()=>{$("heroImage").style.display="none";});
+    load(); setInterval(load,60000);
+  </script>
+</body>
+</html>
