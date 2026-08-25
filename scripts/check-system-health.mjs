@@ -46,14 +46,19 @@ async function probePage(id, label, url) {
       latencyMs,
       httpStatus: response.status,
       checkedAt: nowIso(),
+      note: response.ok ? undefined : "The synthetic interface check returned an HTTP error.",
     };
   } catch (error) {
     return {
       id,
       label,
-      status: "down",
+      // A monitor runner timeout is not proof that the application is down. The
+      // data/feed probes below determine whether Cerberus itself is functioning.
+      status: "degraded",
       checkedAt: nowIso(),
-      note: safeMessage(error),
+      note: error?.name === "AbortError"
+        ? "Synthetic runner could not reach the interface within 12 seconds."
+        : safeMessage(error),
     };
   }
 }
@@ -126,13 +131,17 @@ async function probeJsonProvider(id, label, url, validator) {
       },
     });
     if (!response.ok) {
+      const runnerRestricted = response.status === 451 || response.status === 403;
       return {
         id,
         label,
-        status: "down",
+        status: runnerRestricted ? "degraded" : "down",
         latencyMs,
         httpStatus: response.status,
         checkedAt: nowIso(),
+        note: runnerRestricted
+          ? "Synthetic runner is restricted by this provider; Cerberus fallback coverage is checked separately."
+          : "Provider returned an HTTP error to the synthetic monitor.",
       };
     }
     const payload = await response.json();
@@ -191,10 +200,19 @@ async function main() {
 
   const providers = [binance, yahoo, xaus];
   const providerOperational = providers.filter((item) => item.status === "operational").length;
+  const providerAvailable = providers.filter((item) => item.status !== "down").length;
 
   let cerberusStatus = "operational";
-  if (app.status === "down" || snapshot.status === "down") cerberusStatus = "down";
-  else if (snapshot.status === "degraded" || providerOperational < 2) cerberusStatus = "degraded";
+  // The forecast snapshot is the core proof that Cerberus has current usable
+  // state. Interface/provider monitor limitations degrade the score rather than
+  // falsely declaring the system down.
+  if (snapshot.status === "down") cerberusStatus = "down";
+  else if (
+    snapshot.status === "degraded" ||
+    app.status !== "operational" ||
+    providerOperational < 2 ||
+    providerAvailable < 2
+  ) cerberusStatus = "degraded";
 
   const latencyValues = [app, snapshot, ...providers]
     .map((item) => item.latencyMs)
@@ -208,13 +226,14 @@ async function main() {
       cerberusStatus === "operational"
         ? "Interface, snapshot and core market providers are responding."
         : cerberusStatus === "degraded"
-          ? "Cerberus is reachable but one or more freshness/provider checks need attention."
-          : "A core Cerberus availability check has failed.",
+          ? "Cerberus data is available, but one or more synthetic checks are limited or need attention."
+          : "The Cerberus forecast snapshot is unavailable.",
     checkedAt: nowIso(),
     averageLatencyMs: latencyValues.length
       ? Math.round(latencyValues.reduce((sum, value) => sum + value, 0) / latencyValues.length)
       : null,
     providersOperational: providerOperational,
+    providersAvailable: providerAvailable,
     providersTotal: providers.length,
     snapshotAgeMinutes: snapshot.ageMinutes ?? null,
     snapshotUpdatedAt: snapshot.dataUpdatedAt ?? null,
