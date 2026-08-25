@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="referrer" content="no-referrer">
+  <title>Pythology // System Control</title>
+  <style>
+    :root{
+      color-scheme:dark;
+      --bg:#03090b;
+      --panel:#071216;
+      --panel2:#0a191e;
+      --line:#15343a;
+      --line2:#224b51;
+      --text:#eaf6f4;
+      --muted:#89a39f;
+      --faint:#59736f;
+      --gold:#d9b869;
+      --green:#56d6aa;
+      --amber:#f2ba63;
+      --red:#ef7777;
+      --blue:#70b8d8;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:
+      radial-gradient(circle at 75% -10%,rgba(39,114,105,.18),transparent 34%),
+      linear-gradient(180deg,#041014 0%,var(--bg) 46%,#020608 100%);
+      color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.11;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px}
+    .shell{width:min(1280px,94vw);margin:0 auto;padding:38px 0 64px;position:relative}
+    .topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;margin-bottom:28px}
+    .eyebrow{font-size:11px;letter-spacing:.24em;color:var(--gold);font-weight:800;text-transform:uppercase}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(32px,5vw,58px);line-height:1;margin:8px 0 10px;letter-spacing:-.03em}
+    .subtitle{color:var(--muted);font-size:14px;max-width:720px;line-height:1.6}
+    .clock{text-align:right;min-width:180px}.clock .time{font-size:20px;font-weight:800;font-variant-numeric:tabular-nums}.clock .date{color:var(--faint);font-size:12px;margin-top:4px}
+    .fleet{display:grid;grid-template-columns:minmax(260px,1.3fr) repeat(4,minmax(120px,.55fr));gap:12px;margin-bottom:18px}
+    .metric{background:linear-gradient(180deg,rgba(10,27,32,.96),rgba(6,17,21,.95));border:1px solid var(--line);border-radius:16px;padding:16px 18px;box-shadow:0 16px 50px rgba(0,0,0,.16)}
+    .metric .label{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);font-weight:800}.metric .value{margin-top:7px;font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}.metric.primary .value{display:flex;align-items:center;gap:10px;font-size:20px}.dot{width:9px;height:9px;border-radius:50%;background:var(--faint);box-shadow:0 0 0 4px rgba(89,115,111,.08)}
+    .dot.operational{background:var(--green);box-shadow:0 0 0 4px rgba(86,214,170,.1),0 0 18px rgba(86,214,170,.34)}
+    .dot.degraded{background:var(--amber);box-shadow:0 0 0 4px rgba(242,186,99,.1),0 0 18px rgba(242,186,99,.28)}
+    .dot.down{background:var(--red);box-shadow:0 0 0 4px rgba(239,119,119,.1),0 0 18px rgba(239,119,119,.3)}
+    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .system{background:linear-gradient(160deg,rgba(10,26,31,.98),rgba(5,14,18,.98));border:1px solid var(--line);border-radius:20px;padding:18px;min-height:172px;transition:border-color .2s ease,transform .2s ease;position:relative;overflow:hidden}
+    .system:hover{border-color:var(--line2);transform:translateY(-1px)}
+    .system:after{content:"";position:absolute;right:-45px;top:-45px;width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(86,214,170,.06),transparent 65%)}
+    .system-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px}.system-name{font-family:Georgia,"Times New Roman",serif;font-size:24px;font-weight:700}.badge{display:inline-flex;align-items:center;gap:7px;padding:6px 9px;border:1px solid var(--line);border-radius:999px;font-size:9px;letter-spacing:.12em;text-transform:uppercase;font-weight:800;color:var(--muted);white-space:nowrap}
+    .badge.operational{color:var(--green);border-color:rgba(86,214,170,.24);background:rgba(86,214,170,.07)}.badge.degraded{color:var(--amber);border-color:rgba(242,186,99,.24);background:rgba(242,186,99,.07)}.badge.down{color:var(--red);border-color:rgba(239,119,119,.24);background:rgba(239,119,119,.07)}
+    .summary{font-size:13px;color:var(--muted);line-height:1.55;margin:14px 0 16px;min-height:40px}.mini{display:flex;flex-wrap:wrap;gap:8px}.pill{font-size:10px;color:#acc0bc;border:1px solid #15353b;background:#061519;border-radius:9px;padding:7px 8px;font-variant-numeric:tabular-nums}
+    .detail{grid-column:1/-1;background:linear-gradient(160deg,rgba(8,24,28,.98),rgba(4,12,15,.99));border:1px solid #1b4248;border-radius:22px;padding:22px;margin-top:2px}.detail-top{display:flex;justify-content:space-between;gap:20px;align-items:flex-start}.detail-title{font-family:Georgia,"Times New Roman",serif;font-size:30px}.detail-note{color:var(--muted);font-size:13px;margin-top:5px}.checks{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:18px}.check{border:1px solid #14343a;background:#061419;border-radius:14px;padding:13px;min-height:112px}.check-label{font-size:11px;color:#c4d5d1;font-weight:700;line-height:1.3}.check-state{display:flex;align-items:center;gap:7px;margin-top:11px;font-size:10px;text-transform:uppercase;letter-spacing:.1em;font-weight:800;color:var(--muted)}.check-metric{font-size:19px;font-weight:800;margin-top:8px;font-variant-numeric:tabular-nums}.check-foot{font-size:10px;color:var(--faint);margin-top:5px;line-height:1.35}
+    .footer{display:flex;justify-content:space-between;gap:20px;border-top:1px solid #102b30;margin-top:22px;padding-top:16px;color:var(--faint);font-size:11px;line-height:1.5}.refresh{border:1px solid #21474c;background:#0a1b20;color:#d4e4e1;padding:9px 12px;border-radius:10px;font-weight:700;cursor:pointer}.refresh:hover{border-color:#39636a}.error{display:none;border:1px solid rgba(239,119,119,.28);background:rgba(239,119,119,.07);color:#f3a4a4;padding:12px 14px;border-radius:12px;margin-bottom:16px;font-size:12px}
+    @media(max-width:980px){.fleet{grid-template-columns:repeat(2,1fr)}.metric.primary{grid-column:1/-1}.grid{grid-template-columns:repeat(2,1fr)}.checks{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:640px){.shell{width:min(94vw,620px);padding-top:24px}.topbar{display:block}.clock{text-align:left;margin-top:18px}.fleet,.grid,.checks{grid-template-columns:1fr}.metric.primary{grid-column:auto}.detail-top,.footer{display:block}.refresh{margin-top:14px;width:100%}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">Pythology // System Control</div>
+        <h1>Fleet health</h1>
+        <div class="subtitle">Redacted operational telemetry. Availability, freshness and response timing only — no credentials, raw logs or private client data are exposed here.</div>
+      </div>
+      <div class="clock">
+        <div class="time" id="clockTime">--:--:--</div>
+        <div class="date" id="clockDate">Loading local time</div>
+      </div>
+    </header>
+
+    <div class="error" id="loadError">Health telemetry could not be loaded.</div>
+
+    <section class="fleet">
+      <div class="metric primary">
+        <div class="label">Fleet state</div>
+        <div class="value"><span class="dot" id="fleetDot"></span><span id="fleetState">INITIALISING</span></div>
+      </div>
+      <div class="metric"><div class="label">Operational</div><div class="value" id="countOperational">0</div></div>
+      <div class="metric"><div class="label">Degraded</div><div class="value" id="countDegraded">0</div></div>
+      <div class="metric"><div class="label">Down</div><div class="value" id="countDown">0</div></div>
+      <div class="metric"><div class="label">Not wired</div><div class="value" id="countUnmonitored">0</div></div>
+    </section>
+
+    <section class="grid" id="systemsGrid"></section>
+
+    <section class="detail" id="cerberusDetail" hidden>
+      <div class="detail-top">
+        <div>
+          <div class="eyebrow">Primary monitor</div>
+          <div class="detail-title">Cerberus</div>
+          <div class="detail-note" id="cerberusNote">Waiting for telemetry.</div>
+        </div>
+        <button class="refresh" id="refreshButton" type="button">Refresh telemetry</button>
+      </div>
+      <div class="checks" id="cerberusChecks"></div>
+    </section>
+
+    <footer class="footer">
+      <div>Last synthetic check: <span id="lastGenerated">not yet</span><br>Dashboard refreshes automatically every 60 seconds.</div>
+      <div>GitHub Pages transport · Safe telemetry only<br>Authentication layer to be added separately.</div>
+    </footer>
+  </main>
+
+  <script>
+    const DATA_URL = "../data/system-health.json";
+    const STATUS_LABELS = {
+      operational: "Operational",
+      degraded: "Degraded",
+      down: "Down",
+      unmonitored: "Not wired",
+      initialising: "Initialising"
+    };
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>'"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"}[c]));
+    }
+
+    function statusClass(status) {
+      return ["operational","degraded","down"].includes(status) ? status : "";
+    }
+
+    function prettyAge(iso) {
+      if (!iso) return "not yet";
+      const ms = Date.now() - Date.parse(iso);
+      if (!Number.isFinite(ms)) return "unknown";
+      const minutes = Math.max(0, Math.round(ms / 60000));
+      if (minutes < 1) return "just now";
+      if (minutes < 60) return `${minutes}m ago`;
+      const hours = Math.floor(minutes / 60);
+      if (hours < 24) return `${hours}h ${minutes % 60}m ago`;
+      return `${Math.floor(hours / 24)}d ago`;
+    }
+
+    function renderSystem(system) {
+      const mini = [];
+      if (Number.isFinite(system.averageLatencyMs)) mini.push(`${system.averageLatencyMs} ms avg`);
+      if (Number.isFinite(system.providersOperational) && Number.isFinite(system.providersTotal)) mini.push(`${system.providersOperational}/${system.providersTotal} providers`);
+      if (Number.isFinite(system.snapshotAgeMinutes)) mini.push(`data ${system.snapshotAgeMinutes}m old`);
+      if (Number.isFinite(system.instrumentCount)) mini.push(`${system.instrumentCount} instruments`);
+      if (!mini.length && system.status === "unmonitored") mini.push("Awaiting health adapter");
+
+      return `
+        <article class="system" data-system="${escapeHtml(system.id)}">
+          <div class="system-head">
+            <div class="system-name">${escapeHtml(system.name)}</div>
+            <div class="badge ${statusClass(system.status)}"><span class="dot ${statusClass(system.status)}"></span>${escapeHtml(STATUS_LABELS[system.status] || system.status)}</div>
+          </div>
+          <div class="summary">${escapeHtml(system.summary || "No summary available.")}</div>
+          <div class="mini">${mini.map(item => `<span class="pill">${escapeHtml(item)}</span>`).join("")}</div>
+        </article>`;
+    }
+
+    function renderChecks(cerberus) {
+      const container = document.getElementById("cerberusChecks");
+      const checks = Array.isArray(cerberus.checks) ? cerberus.checks : [];
+      container.innerHTML = checks.map(check => {
+        let metric = "Checked";
+        if (Number.isFinite(check.latencyMs)) metric = `${check.latencyMs} ms`;
+        if (check.id === "snapshot" && Number.isFinite(check.ageMinutes)) metric = `${check.ageMinutes} min old`;
+        const foot = check.id === "snapshot" && check.dataUpdatedAt
+          ? `Updated ${prettyAge(check.dataUpdatedAt)}`
+          : Number.isFinite(check.httpStatus)
+            ? `HTTP ${check.httpStatus}`
+            : check.note || "Synthetic check";
+        return `
+          <div class="check">
+            <div class="check-label">${escapeHtml(check.label || check.id)}</div>
+            <div class="check-state"><span class="dot ${statusClass(check.status)}"></span>${escapeHtml(STATUS_LABELS[check.status] || check.status)}</div>
+            <div class="check-metric">${escapeHtml(metric)}</div>
+            <div class="check-foot">${escapeHtml(foot)}</div>
+          </div>`;
+      }).join("") || `<div class="check"><div class="check-label">Telemetry</div><div class="check-foot">No Cerberus checks have been published yet.</div></div>`;
+    }
+
+    function render(data) {
+      const fleet = data.fleet || {};
+      const systems = Array.isArray(data.systems) ? data.systems : [];
+      const fleetStatus = fleet.status || "initialising";
+      document.getElementById("fleetState").textContent = (STATUS_LABELS[fleetStatus] || fleetStatus).toUpperCase();
+      document.getElementById("fleetDot").className = `dot ${statusClass(fleetStatus)}`;
+      document.getElementById("countOperational").textContent = fleet.operational ?? 0;
+      document.getElementById("countDegraded").textContent = fleet.degraded ?? 0;
+      document.getElementById("countDown").textContent = fleet.down ?? 0;
+      document.getElementById("countUnmonitored").textContent = fleet.unmonitored ?? 0;
+      document.getElementById("lastGenerated").textContent = data.generatedAt ? `${prettyAge(data.generatedAt)} · ${new Date(data.generatedAt).toLocaleString()}` : "not yet";
+      document.getElementById("systemsGrid").innerHTML = systems.map(renderSystem).join("");
+
+      const cerberus = systems.find(system => system.id === "cerberus");
+      if (cerberus) {
+        document.getElementById("cerberusDetail").hidden = false;
+        const bits = [cerberus.summary || ""];
+        if (Number.isFinite(cerberus.providersOperational)) bits.push(`${cerberus.providersOperational}/${cerberus.providersTotal} market providers responding`);
+        if (Number.isFinite(cerberus.snapshotAgeMinutes)) bits.push(`forecast snapshot ${cerberus.snapshotAgeMinutes} minutes old`);
+        document.getElementById("cerberusNote").textContent = bits.filter(Boolean).join(" · ");
+        renderChecks(cerberus);
+      }
+    }
+
+    async function loadHealth() {
+      const error = document.getElementById("loadError");
+      try {
+        const response = await fetch(`${DATA_URL}?t=${Date.now()}`, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+        render(data);
+        error.style.display = "none";
+      } catch (e) {
+        error.style.display = "block";
+        error.textContent = "Health telemetry could not be loaded. The last rendered state may be stale.";
+      }
+    }
+
+    function tickClock() {
+      const now = new Date();
+      document.getElementById("clockTime").textContent = now.toLocaleTimeString([], {hour12:false});
+      document.getElementById("clockDate").textContent = now.toLocaleDateString([], {weekday:"long",day:"numeric",month:"long",year:"numeric"});
+    }
+
+    document.getElementById("refreshButton").addEventListener("click", loadHealth);
+    tickClock();
+    setInterval(tickClock, 1000);
+    loadHealth();
+    setInterval(loadHealth, 60000);
+  </script>
+</body>
+</html>
