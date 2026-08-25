@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T20:00:58.271741+00:00",
+  "generatedAt": "2026-08-25T20:31:14.009414+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -256,5 +256,5 @@
       "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
     }
   ],
-  "publishedAt": "2026-08-25T20:01:12.739181+00:00"
+  "publishedAt": "2026-08-25T20:31:17.818009+00:00"
 }
