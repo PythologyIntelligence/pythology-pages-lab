@@ -231,6 +231,17 @@ cat > "$OUT/pages-lab-status.json" <<EOF
 {"mode":"github-pages-lab","cerberus":"excluded-vps-later","earthnet":"static-snapshot","agri":"open-meteo-public-lab","verryElleegant":"static-frontend-readonly-snapshots","builtAt":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
 EOF
 
+# Publish the safe System Control front end and its sanitised telemetry snapshot.
+# These files contain no credentials, private client data, raw logs or provider secrets.
+if [[ -d "$ROOT/monitor" ]]; then
+  mkdir -p "$OUT/monitor"
+  cp -a "$ROOT/monitor"/. "$OUT/monitor"/
+fi
+if [[ -f "$ROOT/data/system-health.json" ]]; then
+  mkdir -p "$OUT/data"
+  cp "$ROOT/data/system-health.json" "$OUT/data/system-health.json"
+fi
+
 # Keep GitHub Pages from invoking Jekyll processing.
 touch "$OUT/.nojekyll"
 
@@ -245,4 +256,4 @@ if grep -RIlE '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|GEMINI_API_KEY=|STRIPE_SECRET
 fi
 
 echo "Prepared GitHub Pages lab at $OUT"
-find "$OUT" -maxdepth 2 -type f | sort | head -n 80
+find "$OUT" -maxdepth 2 -type f | sort | head -n 100
