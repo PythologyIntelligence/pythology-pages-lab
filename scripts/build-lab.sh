@@ -22,7 +22,7 @@ wget \
   --domains=pythology.co.nz,www.pythology.co.nz \
   --reject-regex='/(api|cerberus-app)(/|$)|/forex\.html($|\?)' \
   --directory-prefix="$MIRROR/main" \
-  "$PYTHOLOGY_SOURCE/"
+  "$PYTHOLOGY_SOURCE/" || true
 
 MAIN_INDEX=""
 for candidate in \
@@ -172,7 +172,7 @@ wget \
   --no-parent \
   --domains=verry-elleegant-ai.vercel.app \
   --directory-prefix="$MIRROR/ve" \
-  "$VE_SOURCE/"
+  "$VE_SOURCE/" || true
 
 VE_INDEX=""
 for candidate in \
