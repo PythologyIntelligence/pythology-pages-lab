@@ -1,0 +1,2 @@
+GitHub Pages enabled via GitHub Actions on 2026-08-25.
+Cerberus intentionally excluded from this lab pending VPS gateway work.
