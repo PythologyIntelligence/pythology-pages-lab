@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-25T06:42:23.141Z",
+  "generatedAt": "2026-08-25T06:43:38.771Z",
   "fleet": {
     "status": "down",
     "operational": 0,
@@ -15,11 +15,11 @@
       "name": "Cerberus",
       "status": "down",
       "summary": "A core Cerberus availability check has failed.",
-      "checkedAt": "2026-08-25T06:42:23.141Z",
-      "averageLatencyMs": 737,
+      "checkedAt": "2026-08-25T06:43:38.771Z",
+      "averageLatencyMs": 612,
       "providersOperational": 2,
       "providersTotal": 3,
-      "snapshotAgeMinutes": 806,
+      "snapshotAgeMinutes": 807,
       "snapshotUpdatedAt": "2026-08-24T17:16:09.883Z",
       "instrumentCount": 24,
       "checks": [
@@ -27,18 +27,18 @@
           "id": "app",
           "label": "Cerberus interface",
           "status": "down",
-          "checkedAt": "2026-08-25T06:42:23.141Z",
+          "checkedAt": "2026-08-25T06:43:38.771Z",
           "note": "This operation was aborted"
         },
         {
           "id": "snapshot",
           "label": "Forecast snapshot",
           "status": "operational",
-          "latencyMs": 762,
+          "latencyMs": 663,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T06:42:12.141Z",
+          "checkedAt": "2026-08-25T06:43:27.549Z",
           "dataUpdatedAt": "2026-08-24T17:16:09.883Z",
-          "ageMinutes": 806,
+          "ageMinutes": 807,
           "instrumentCount": 24,
           "freshnessLimitMinutes": 1080
         },
@@ -46,25 +46,25 @@
           "id": "binance",
           "label": "Binance crypto feed",
           "status": "down",
-          "latencyMs": 581,
+          "latencyMs": 594,
           "httpStatus": 451,
-          "checkedAt": "2026-08-25T06:42:11.946Z"
+          "checkedAt": "2026-08-25T06:43:27.431Z"
         },
         {
           "id": "yahoo",
           "label": "Yahoo market feed",
           "status": "operational",
-          "latencyMs": 695,
+          "latencyMs": 500,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T06:42:12.068Z"
+          "checkedAt": "2026-08-25T06:43:27.342Z"
         },
         {
           "id": "xaus",
           "label": "XAUS metals feed",
           "status": "operational",
-          "latencyMs": 908,
+          "latencyMs": 689,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T06:42:12.276Z"
+          "checkedAt": "2026-08-25T06:43:27.548Z"
         }
       ]
     },
