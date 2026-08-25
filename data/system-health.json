@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-08-25T08:28:35.070Z",
+  "generatedAt": "2026-08-25T08:30:48.247Z",
   "fleet": {
     "status": "down",
-    "operational": 0,
-    "degraded": 1,
+    "operational": 1,
+    "degraded": 0,
     "down": 1,
     "unmonitored": 4,
     "initialising": 0
@@ -13,96 +13,93 @@
     {
       "id": "cerberus",
       "name": "Cerberus",
-      "status": "down",
-      "summary": "The Cerberus forecast snapshot is unavailable.",
-      "checkedAt": "2026-08-25T08:28:35.069Z",
-      "averageLatencyMs": 395,
+      "status": "operational",
+      "summary": "Interface, snapshot and core market providers are responding.",
+      "checkedAt": "2026-08-25T08:30:48.247Z",
+      "averageLatencyMs": 776,
       "providersOperational": 2,
       "providersAvailable": 3,
       "providersTotal": 3,
-      "snapshotAgeMinutes": null,
-      "snapshotUpdatedAt": null,
-      "instrumentCount": null,
+      "snapshotAgeMinutes": 915,
+      "snapshotUpdatedAt": "2026-08-24T17:16:09.883Z",
+      "instrumentCount": 24,
       "checks": [
         {
           "id": "app",
           "label": "Cerberus interface",
           "status": "operational",
-          "latencyMs": 695,
+          "latencyMs": 759,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:28:25.073Z"
+          "checkedAt": "2026-08-25T08:30:48.012Z"
         },
         {
           "id": "snapshot",
           "label": "Forecast snapshot",
-          "status": "down",
-          "checkedAt": "2026-08-25T08:28:35.069Z",
-          "note": "fetch failed"
+          "status": "operational",
+          "latencyMs": 700,
+          "httpStatus": 200,
+          "checkedAt": "2026-08-25T08:30:48.020Z",
+          "dataUpdatedAt": "2026-08-24T17:16:09.883Z",
+          "ageMinutes": 915,
+          "instrumentCount": 24,
+          "freshnessLimitMinutes": 1080
         },
         {
           "id": "binance",
           "label": "Binance crypto feed",
           "status": "degraded",
-          "latencyMs": 347,
+          "latencyMs": 687,
           "httpStatus": 451,
-          "checkedAt": "2026-08-25T08:28:24.923Z",
+          "checkedAt": "2026-08-25T08:30:47.998Z",
           "note": "Synthetic runner is restricted by this provider; Cerberus fallback coverage is checked separately."
         },
         {
           "id": "yahoo",
           "label": "Yahoo market feed",
           "status": "operational",
-          "latencyMs": 216,
+          "latencyMs": 801,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:28:24.802Z"
+          "checkedAt": "2026-08-25T08:30:48.115Z"
         },
         {
           "id": "xaus",
           "label": "XAUS metals feed",
           "status": "operational",
-          "latencyMs": 322,
+          "latencyMs": 932,
           "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:28:24.913Z"
+          "checkedAt": "2026-08-25T08:30:48.247Z"
         }
       ]
     },
     {
       "id": "earthnet",
       "name": "EarthNet",
-      "status": "degraded",
-      "summary": "EarthNet is reachable, but cycle freshness or one of its health assertions needs attention.",
-      "checkedAt": "2026-08-25T08:28:35.069Z",
-      "averageLatencyMs": 516,
-      "snapshotAgeMinutes": 892,
-      "snapshotUpdatedAt": "2026-08-24T17:36:51.000Z",
-      "engineCount": 10,
-      "eventCount": 133,
-      "failedEngineCount": 0,
+      "status": "down",
+      "summary": "The EarthNet intelligence snapshot is unavailable.",
+      "checkedAt": "2026-08-25T08:30:48.247Z",
+      "averageLatencyMs": 729,
+      "snapshotAgeMinutes": null,
+      "snapshotUpdatedAt": null,
+      "engineCount": null,
+      "eventCount": null,
+      "failedEngineCount": null,
       "checks": [
         {
           "id": "earthnet-app",
           "label": "EarthNet interface",
-          "status": "operational",
-          "latencyMs": 560,
-          "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:28:25.140Z"
+          "status": "down",
+          "latencyMs": 710,
+          "httpStatus": 404,
+          "checkedAt": "2026-08-25T08:30:48.024Z",
+          "note": "The synthetic interface check returned an HTTP error."
         },
         {
           "id": "earthnet-snapshot",
           "label": "EarthNet intelligence cycle",
-          "status": "degraded",
-          "latencyMs": 471,
-          "httpStatus": 200,
-          "checkedAt": "2026-08-25T08:28:25.053Z",
-          "dataUpdatedAt": "2026-08-24T17:36:51.000Z",
-          "ageMinutes": 892,
-          "freshnessLimitMinutes": 480,
-          "engineCount": 10,
-          "eventCount": 133,
-          "failedEngineCount": 0,
-          "published": true,
-          "eventIntelligenceOperational": true,
-          "note": "EarthNet snapshot is outside the scheduled-cycle freshness guard."
+          "status": "down",
+          "latencyMs": 747,
+          "httpStatus": 404,
+          "checkedAt": "2026-08-25T08:30:48.063Z"
         }
       ]
     },
