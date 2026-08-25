@@ -30,16 +30,34 @@ jobs:
         with:
           ref: main
 
-      - name: Build public lab mirror
-        run: bash scripts/build-lab.sh
+      - name: Build public lab mirror with resilient fallback
+        shell: bash
+        run: |
+          if bash scripts/build-lab.sh; then
+            echo "Primary Pythology source mirror succeeded."
+          else
+            echo "Primary Pythology source unavailable; preserving the last-good Pages deployment."
+            bash scripts/build-pages-fallback.sh
+          fi
 
-      - name: Patch EarthNet for project Pages
+      - name: Patch EarthNet for project Pages without making old host a hard dependency
+        shell: bash
         run: |
           mkdir -p _site/earthnet-global _site/data
           for file in earth_atmos_2048.jpg earth_normal_2048.jpg earth_specular_2048.jpg earth_clouds_1024.png; do
-            curl -fsSL "https://pythology.co.nz/earthnet-global/$file" -o "_site/earthnet-global/$file"
+            tmp="/tmp/$file"
+            if curl -fsSL "https://pythology.co.nz/earthnet-global/$file" -o "$tmp"; then
+              cp "$tmp" "_site/earthnet-global/$file"
+            else
+              echo "Keeping last-good EarthNet asset: $file"
+            fi
           done
-          curl -fsSL "https://pythology.co.nz/data/earthnet_blob_config.json" -o "_site/data/earthnet_blob_config.json" || true
+          if curl -fsSL "https://pythology.co.nz/data/earthnet_blob_config.json" -o /tmp/earthnet_blob_config.json; then
+            cp /tmp/earthnet_blob_config.json _site/data/earthnet_blob_config.json
+          fi
+          if [[ -f data/earthnet_status.json ]]; then
+            cp data/earthnet_status.json _site/data/earthnet_status.json
+          fi
           python3 - <<'PY'
           from pathlib import Path
 
@@ -64,12 +82,18 @@ jobs:
                   path.write_text(new)
           PY
 
-      - name: Stage Yggdrasil safe activity snapshot
+      - name: Stage current safe System Control snapshots
+        shell: bash
         run: |
-          mkdir -p _site/data
-          if [[ -f data/yggdrasil_activity.json ]]; then
-            cp data/yggdrasil_activity.json _site/data/yggdrasil_activity.json
+          mkdir -p _site/data _site/monitor
+          if [[ -d monitor ]]; then
+            cp -a monitor/. _site/monitor/
           fi
+          for file in system-health.json yggdrasil_activity.json earthnet_status.json; do
+            if [[ -f "data/$file" ]]; then
+              cp "data/$file" "_site/data/$file"
+            fi
+          done
           python3 - <<'PY'
           from pathlib import Path
 
