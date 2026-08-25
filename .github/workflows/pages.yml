@@ -70,6 +70,17 @@ jobs:
           if [[ -f data/yggdrasil_activity.json ]]; then
             cp data/yggdrasil_activity.json _site/data/yggdrasil_activity.json
           fi
+          python3 - <<'PY'
+          from pathlib import Path
+
+          page = Path('_site/monitor/yggdrasil.html')
+          if page.exists():
+              text = page.read_text(encoding='utf-8')
+              tag = '<script defer src="yggdrasil-enhance.js"></script>'
+              if tag not in text:
+                  text = text.replace('</body>', f'  {tag}\n</body>')
+              page.write_text(text, encoding='utf-8')
+          PY
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
