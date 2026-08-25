@@ -43,9 +43,8 @@ jobs:
             echo "No health snapshot changes."
             exit 0
           fi
-          # Do not use [skip ci] here. The health workflow itself only listens
-          # to monitor/script/workflow paths, so this data-only commit cannot
-          # recurse into another health run. It *does* allow the Pages workflow
-          # to deploy the fresh telemetry snapshot immediately.
+          # This data-only commit cannot recurse into another health run because
+          # the push trigger is path-scoped. The Pages workflow separately uses
+          # workflow_run to deploy the latest main branch after this job finishes.
           git commit -m "data: refresh Pythology system health"
           git push
