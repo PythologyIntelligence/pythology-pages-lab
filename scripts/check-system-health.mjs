@@ -5,6 +5,7 @@ const OUTPUT = path.resolve("data/system-health.json");
 const TIMEOUT_MS = 12_000;
 const CERBERUS_STALE_MS = 18 * 60 * 60 * 1000;
 const EARTHNET_STALE_MS = 8 * 60 * 60 * 1000;
+const PAGES_BASE = "https://pythologyintelligence.github.io/pythology-pages-lab";
 
 function nowIso() {
   return new Date().toISOString();
@@ -125,7 +126,7 @@ async function probeCerberusSnapshot() {
 }
 
 async function probeEarthNetSnapshot() {
-  const url = "https://pythologyintelligence.github.io/data/earthnet_status.json";
+  const url = `${PAGES_BASE}/data/earthnet_status.json`;
   try {
     const { response, latencyMs } = await timedFetch(url, {
       headers: { "User-Agent": "Pythology-System-Monitor/1.0", Accept: "application/json" },
@@ -258,7 +259,7 @@ async function main() {
       "https://xaus.com/api/v1/spot?compact=1",
       (payload) => Number(payload?.spot_usd_oz) > 0,
     ),
-    probePage("earthnet-app", "EarthNet interface", "https://pythologyintelligence.github.io/earthnet.html"),
+    probePage("earthnet-app", "EarthNet interface", `${PAGES_BASE}/earthnet-v3.html`),
     probeEarthNetSnapshot(),
   ]);
 
