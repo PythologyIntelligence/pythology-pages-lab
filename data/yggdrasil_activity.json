@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T13:32:18.105959+00:00",
+  "generatedAt": "2026-08-25T13:32:48.115616+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,27 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-25T13:32:45.176061+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
+    {
+      "ts": "2026-08-25T13:32:35.174639+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
+    {
+      "ts": "2026-08-25T13:32:25.158511+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
     {
       "ts": "2026-08-25T13:32:15.157399+00:00",
       "type": "bifrost",
@@ -233,28 +254,7 @@
       "event": "legacy_champion_rejected",
       "title": "Legacy champion rejected for GBPUSD",
       "detail": "The stored strategy no longer passes the current training gate."
-    },
-    {
-      "ts": "2026-08-25T09:23:40.693649+00:00",
-      "type": "engine",
-      "event": "engine_started",
-      "title": "Yggdrasil engine started",
-      "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
-    },
-    {
-      "ts": "2026-08-25T09:23:27.412257+00:00",
-      "type": "engine",
-      "event": "engine_stopped",
-      "title": "Yggdrasil engine stopped",
-      "detail": "Execution loop stopped cleanly."
-    },
-    {
-      "ts": "2026-08-25T09:12:18.405426+00:00",
-      "type": "guardrail",
-      "event": "legacy_champion_rejected",
-      "title": "Legacy champion rejected for GBPUSD",
-      "detail": "The stored strategy no longer passes the current training gate."
     }
   ],
-  "publishedAt": "2026-08-25T13:32:30.565858+00:00"
+  "publishedAt": "2026-08-25T13:32:49.395835+00:00"
 }
