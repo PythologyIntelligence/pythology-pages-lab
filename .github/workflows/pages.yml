@@ -27,6 +27,37 @@ jobs:
       - name: Build public lab mirror
         run: bash scripts/build-lab.sh
 
+      - name: Patch EarthNet for project Pages
+        run: |
+          mkdir -p _site/earthnet-global _site/data
+          for file in earth_atmos_2048.jpg earth_normal_2048.jpg earth_specular_2048.jpg earth_clouds_1024.png; do
+            curl -fsSL "https://pythology.co.nz/earthnet-global/$file" -o "_site/earthnet-global/$file"
+          done
+          curl -fsSL "https://pythology.co.nz/data/earthnet_blob_config.json" -o "_site/data/earthnet_blob_config.json" || true
+          python3 - <<'PY'
+          from pathlib import Path
+
+          root = Path('_site/earthnet-global')
+          prefix = '/pythology-pages-lab'
+          replacements = {
+              '/earthnet-global/': f'{prefix}/earthnet-global/',
+              '/data/': f'{prefix}/data/',
+          }
+
+          for path in root.rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in {'.html', '.js', '.mjs', '.css'}:
+                  continue
+              try:
+                  text = path.read_text()
+              except UnicodeDecodeError:
+                  continue
+              new = text
+              for old, replacement in replacements.items():
+                  new = new.replace(old, replacement)
+              if new != text:
+                  path.write_text(new)
+          PY
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
