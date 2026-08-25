@@ -1,0 +1,32 @@
+name: Import Yggdrasil banner
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/import-yggdrasil-banner.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download exported banner artifact
+        shell: bash
+        run: |
+          curl -fL 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-54b4-820b-b7ff-d996a0e2009a/raw?se=2026-08-25T09%3A36%3A02Z&sp=r&sv=2026-02-06&sr=b&scid=b42a3afc-ea49-593d-ae2f-670a98a1c067&skoid=27fbae2c-124f-4566-a0d8-1b07a5a41c53&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-08-24T23%3A01%3A49Z&ske=2026-08-25T23%3A01%3A49Z&sks=b&skv=2026-02-06&sig=MU1t8RWg5zeWuc4QtsibMT2JJEd2TLxay8DqXG%2FCUlc%3D' -o /tmp/yggdrasil-banner.zip
+          mkdir -p /tmp/yggdrasil-banner monitor
+          unzip -o /tmp/yggdrasil-banner.zip -d /tmp/yggdrasil-banner
+          cp /tmp/yggdrasil-banner/Yggdrasil.png monitor/Yggdrasil.png
+          test -s monitor/Yggdrasil.png
+      - name: Commit public banner asset
+        shell: bash
+        run: |
+          git config user.name "pythology-assets[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add monitor/Yggdrasil.png
+          git commit -m "assets: add Yggdrasil hero banner"
+          git push
