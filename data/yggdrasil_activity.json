@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T10:36:14.870901+00:00",
+  "generatedAt": "2026-08-25T11:06:15.390892+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -179,5 +179,5 @@
       "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
     }
   ],
-  "publishedAt": "2026-08-25T10:36:23.073145+00:00"
+  "publishedAt": "2026-08-25T11:06:26.612575+00:00"
 }
