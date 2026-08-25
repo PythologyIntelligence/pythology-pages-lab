@@ -4,6 +4,7 @@ import path from "node:path";
 const OUTPUT = path.resolve("data/system-health.json");
 const TIMEOUT_MS = 12_000;
 const CERBERUS_STALE_MS = 18 * 60 * 60 * 1000;
+const EARTHNET_STALE_MS = 8 * 60 * 60 * 1000;
 
 function nowIso() {
   return new Date().toISOString();
@@ -52,8 +53,6 @@ async function probePage(id, label, url) {
     return {
       id,
       label,
-      // A monitor runner timeout is not proof that the application is down. The
-      // data/feed probes below determine whether Cerberus itself is functioning.
       status: "degraded",
       checkedAt: nowIso(),
       note: error?.name === "AbortError"
@@ -63,8 +62,7 @@ async function probePage(id, label, url) {
   }
 }
 
-function parseCerberusTimestamp(payload) {
-  const raw = payload?.generated_at_utc || payload?.generated_at || payload?.last_updated;
+function parseTimestamp(raw) {
   if (!raw || typeof raw !== "string") return null;
   const normalized = raw.includes("T") ? raw : raw.replace(" ", "T");
   const parsed = Date.parse(
@@ -73,6 +71,10 @@ function parseCerberusTimestamp(payload) {
       : `${normalized}Z`,
   );
   return Number.isFinite(parsed) ? parsed : null;
+}
+
+function parseCerberusTimestamp(payload) {
+  return parseTimestamp(payload?.generated_at_utc || payload?.generated_at || payload?.last_updated);
 }
 
 async function probeCerberusSnapshot() {
@@ -115,6 +117,66 @@ async function probeCerberusSnapshot() {
     return {
       id: "snapshot",
       label: "Forecast snapshot",
+      status: "down",
+      checkedAt: nowIso(),
+      note: safeMessage(error),
+    };
+  }
+}
+
+async function probeEarthNetSnapshot() {
+  const url = "https://pythology.co.nz/data/earthnet_status.json";
+  try {
+    const { response, latencyMs } = await timedFetch(url, {
+      headers: { "User-Agent": "Pythology-System-Monitor/1.0", Accept: "application/json" },
+    });
+    if (!response.ok) {
+      return {
+        id: "earthnet-snapshot",
+        label: "EarthNet intelligence cycle",
+        status: "down",
+        latencyMs,
+        httpStatus: response.status,
+        checkedAt: nowIso(),
+      };
+    }
+
+    const payload = await response.json();
+    const timestamp = parseTimestamp(
+      payload?.live_data_plane?.published_at || payload?.cycle_completed_at || payload?.generated,
+    );
+    const ageMs = timestamp === null ? null : Math.max(0, Date.now() - timestamp);
+    const failedEngines = Object.keys(payload?.failed_engines || {});
+    const published = payload?.live_data_plane?.published !== false;
+    const healthyPayload = payload?.success === true && payload?.degraded !== true && failedEngines.length === 0 && published;
+    const stale = ageMs === null || ageMs > EARTHNET_STALE_MS;
+    const status = healthyPayload && !stale ? "operational" : "degraded";
+
+    return {
+      id: "earthnet-snapshot",
+      label: "EarthNet intelligence cycle",
+      status,
+      latencyMs,
+      httpStatus: response.status,
+      checkedAt: nowIso(),
+      dataUpdatedAt: timestamp === null ? null : new Date(timestamp).toISOString(),
+      ageMinutes: ageMs === null ? null : Math.round(ageMs / 60_000),
+      freshnessLimitMinutes: Math.round(EARTHNET_STALE_MS / 60_000),
+      engineCount: Number(payload?.engine_count) || 0,
+      eventCount: Number(payload?.event_count) || 0,
+      failedEngineCount: failedEngines.length,
+      published,
+      eventIntelligenceOperational: payload?.event_intelligence?.degraded !== true,
+      note: !healthyPayload
+        ? "EarthNet reported a degraded cycle, failed engine, or unpublished snapshot."
+        : stale
+          ? "EarthNet snapshot is outside the scheduled-cycle freshness guard."
+          : undefined,
+    };
+  } catch (error) {
+    return {
+      id: "earthnet-snapshot",
+      label: "EarthNet intelligence cycle",
       status: "down",
       checkedAt: nowIso(),
       note: safeMessage(error),
@@ -175,7 +237,7 @@ function fleetCounts(systems) {
 }
 
 async function main() {
-  const [app, snapshot, binance, yahoo, xaus] = await Promise.all([
+  const [app, snapshot, binance, yahoo, xaus, earthnetApp, earthnetSnapshot] = await Promise.all([
     probePage("app", "Cerberus interface", "https://pythology.co.nz/cerberus-app/"),
     probeCerberusSnapshot(),
     probeJsonProvider(
@@ -196,6 +258,8 @@ async function main() {
       "https://xaus.com/api/v1/spot?compact=1",
       (payload) => Number(payload?.spot_usd_oz) > 0,
     ),
+    probePage("earthnet-app", "EarthNet interface", "https://pythology.co.nz/earthnet.html"),
+    probeEarthNetSnapshot(),
   ]);
 
   const providers = [binance, yahoo, xaus];
@@ -203,9 +267,6 @@ async function main() {
   const providerAvailable = providers.filter((item) => item.status !== "down").length;
 
   let cerberusStatus = "operational";
-  // The forecast snapshot is the core proof that Cerberus has current usable
-  // state. Interface/provider monitor limitations degrade the score rather than
-  // falsely declaring the system down.
   if (snapshot.status === "down") cerberusStatus = "down";
   else if (
     snapshot.status === "degraded" ||
@@ -241,9 +302,39 @@ async function main() {
     checks: [app, snapshot, ...providers],
   };
 
+  let earthnetStatus = "operational";
+  if (earthnetSnapshot.status === "down") earthnetStatus = "down";
+  else if (earthnetSnapshot.status !== "operational" || earthnetApp.status !== "operational") earthnetStatus = "degraded";
+
+  const earthnetLatencies = [earthnetApp, earthnetSnapshot]
+    .map((item) => item.latencyMs)
+    .filter((value) => Number.isFinite(value));
+
+  const earthnet = {
+    id: "earthnet",
+    name: "EarthNet",
+    status: earthnetStatus,
+    summary:
+      earthnetStatus === "operational"
+        ? `${earthnetSnapshot.engineCount ?? 0} engines completed the latest published intelligence cycle with ${earthnetSnapshot.eventCount ?? 0} events and no engine failures.`
+        : earthnetStatus === "degraded"
+          ? "EarthNet is reachable, but cycle freshness or one of its health assertions needs attention."
+          : "The EarthNet intelligence snapshot is unavailable.",
+    checkedAt: nowIso(),
+    averageLatencyMs: earthnetLatencies.length
+      ? Math.round(earthnetLatencies.reduce((sum, value) => sum + value, 0) / earthnetLatencies.length)
+      : null,
+    snapshotAgeMinutes: earthnetSnapshot.ageMinutes ?? null,
+    snapshotUpdatedAt: earthnetSnapshot.dataUpdatedAt ?? null,
+    engineCount: earthnetSnapshot.engineCount ?? null,
+    eventCount: earthnetSnapshot.eventCount ?? null,
+    failedEngineCount: earthnetSnapshot.failedEngineCount ?? null,
+    checks: [earthnetApp, earthnetSnapshot],
+  };
+
   const systems = [
     cerberus,
-    { id: "earthnet", name: "EarthNet", status: "unmonitored", summary: "Monitor wiring pending." },
+    earthnet,
     { id: "agri", name: "Agri", status: "unmonitored", summary: "Monitor wiring pending." },
     { id: "poseidon", name: "Poseidon", status: "unmonitored", summary: "Monitor wiring pending." },
     { id: "verry-elleegant", name: "Verry Elleegant", status: "unmonitored", summary: "Monitor wiring pending." },
@@ -265,7 +356,7 @@ async function main() {
 
   fs.mkdirSync(path.dirname(OUTPUT), { recursive: true });
   fs.writeFileSync(OUTPUT, `${JSON.stringify(output, null, 2)}\n`, "utf8");
-  console.log(`Pythology health snapshot written: Cerberus=${cerberusStatus}, providers=${providerOperational}/${providers.length}`);
+  console.log(`Pythology health snapshot written: Cerberus=${cerberusStatus}, EarthNet=${earthnetStatus}, providers=${providerOperational}/${providers.length}`);
 }
 
 main().catch((error) => {
