@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": null,
+  "fleet": {
+    "status": "initialising",
+    "operational": 0,
+    "degraded": 0,
+    "down": 0,
+    "unmonitored": 6
+  },
+  "systems": [
+    {
+      "id": "cerberus",
+      "name": "Cerberus",
+      "status": "initialising",
+      "summary": "Health checks have not run yet.",
+      "checks": []
+    },
+    { "id": "earthnet", "name": "EarthNet", "status": "unmonitored", "summary": "Monitor wiring pending." },
+    { "id": "agri", "name": "Agri", "status": "unmonitored", "summary": "Monitor wiring pending." },
+    { "id": "poseidon", "name": "Poseidon", "status": "unmonitored", "summary": "Monitor wiring pending." },
+    { "id": "verry-elleegant", "name": "Verry Elleegant", "status": "unmonitored", "summary": "Monitor wiring pending." },
+    { "id": "sentinel", "name": "Sentinel", "status": "unmonitored", "summary": "Monitor wiring pending." }
+  ]
+}
