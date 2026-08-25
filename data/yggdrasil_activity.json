@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T13:33:18.127053+00:00",
+  "generatedAt": "2026-08-25T13:33:48.133914+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,27 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-25T13:33:45.219594+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
+    {
+      "ts": "2026-08-25T13:33:35.218757+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
+    {
+      "ts": "2026-08-25T13:33:25.216731+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
     {
       "ts": "2026-08-25T13:33:15.215233+00:00",
       "type": "bifrost",
@@ -233,28 +254,7 @@
       "event": "session_started",
       "title": "T\u00fdr armed a new session",
       "detail": "Session limits and counters were reset for the authorised trading window."
-    },
-    {
-      "ts": "2026-08-25T09:35:59.673799+00:00",
-      "type": "guardrail",
-      "event": "legacy_champion_rejected",
-      "title": "Legacy champion rejected for GBPUSD",
-      "detail": "The stored strategy no longer passes the current training gate."
-    },
-    {
-      "ts": "2026-08-25T09:35:59.673799+00:00",
-      "type": "guardrail",
-      "event": "legacy_champion_rejected",
-      "title": "Legacy champion rejected for GBPUSD",
-      "detail": "The stored strategy no longer passes the current training gate."
-    },
-    {
-      "ts": "2026-08-25T09:35:59.673799+00:00",
-      "type": "engine",
-      "event": "engine_started",
-      "title": "Yggdrasil engine started",
-      "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
     }
   ],
-  "publishedAt": "2026-08-25T13:33:28.389535+00:00"
+  "publishedAt": "2026-08-25T13:33:49.111172+00:00"
 }
