@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T13:06:32.609266+00:00",
+  "generatedAt": "2026-08-25T13:30:18.064249+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,27 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-25T13:30:15.105099+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
+    {
+      "ts": "2026-08-25T13:30:05.088169+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "broker minimum volume would exceed risk budget or sizing unavailable"
+    },
+    {
+      "ts": "2026-08-25T13:30:05.058992+00:00",
+      "type": "tyr",
+      "event": "session_started",
+      "title": "T\u00fdr armed a new session",
+      "detail": "Session limits and counters were reset for the authorised trading window."
+    },
     {
       "ts": "2026-08-25T09:35:59.673799+00:00",
       "type": "guardrail",
@@ -179,5 +200,5 @@
       "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
     }
   ],
-  "publishedAt": "2026-08-25T13:06:42.841595+00:00"
+  "publishedAt": "2026-08-25T13:30:32.685572+00:00"
 }
