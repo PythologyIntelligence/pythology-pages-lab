@@ -21,6 +21,11 @@
   function addStyles() {
     const style = document.createElement("style");
     style.textContent = `
+      .hero{min-height:410px!important;background:#04100f!important}
+      .hero-img{display:block!important;left:auto!important;right:0!important;width:62%!important;height:100%!important;opacity:1!important;filter:none!important;object-fit:cover!important;object-position:center center!important}
+      .hero:after{background:linear-gradient(90deg,rgba(2,9,9,1) 0%,rgba(2,9,9,.97) 31%,rgba(2,9,9,.78) 47%,rgba(2,9,9,.18) 72%,rgba(2,9,9,.03) 100%),linear-gradient(0deg,rgba(2,8,8,.35),transparent 48%)!important}
+      .hero-copy{max-width:650px!important;padding:44px 42px!important}
+      .hero h1{text-shadow:0 5px 24px rgba(0,0,0,.55)}
       .trade-ledger{grid-column:1/-1}
       .trade-table{width:100%;border-collapse:separate;border-spacing:0 7px}
       .trade-table th{text-align:left;padding:0 10px 5px;color:#5f7970;font-size:8px;letter-spacing:.13em;text-transform:uppercase;font-weight:900}
@@ -37,6 +42,7 @@
       .trade-outcome.opened{color:#6eb5cf;border-color:rgba(110,181,207,.30);background:rgba(110,181,207,.07)}
       .trade-outcome.flat,.trade-outcome.rule-flatten{color:#f2ba63;border-color:rgba(242,186,99,.30);background:rgba(242,186,99,.07)}
       .trade-empty{border:1px dashed #173b39;border-radius:13px;padding:18px;color:#91a9a0;font-size:11px;line-height:1.55}
+      @media(max-width:900px){.hero-img{width:100%!important;opacity:.58!important}.hero:after{background:linear-gradient(90deg,rgba(2,9,9,.97),rgba(2,9,9,.72) 58%,rgba(2,9,9,.32))!important}.hero-copy{max-width:720px!important}}
       @media(max-width:760px){.trade-table thead{display:none}.trade-table,.trade-table tbody,.trade-table tr,.trade-table td{display:block;width:100%}.trade-table tr{margin-bottom:10px}.trade-table td{border-left:1px solid #153633!important;border-right:1px solid #153633!important;border-radius:0!important;padding:7px 10px}.trade-table td:first-child{border-radius:10px 10px 0 0!important;padding-top:11px}.trade-table td:last-child{border-radius:0 0 10px 10px!important;padding-bottom:11px}.trade-table td:before{content:attr(data-label);display:inline-block;min-width:86px;color:#5f7970;font-size:8px;letter-spacing:.1em;text-transform:uppercase;font-weight:900}}
     `;
     document.head.appendChild(style);
@@ -110,7 +116,7 @@
     const image = document.getElementById("heroImage");
     if (!image) return;
     image.style.display = "block";
-    image.src = "https://pythology.co.nz/png_images/Yggdrasil.png";
+    image.src = "Yggdrasil.png";
   }
 
   document.addEventListener("DOMContentLoaded", () => {
