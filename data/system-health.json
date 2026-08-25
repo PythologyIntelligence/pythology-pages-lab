@@ -1,25 +1,102 @@
 {
   "schemaVersion": 1,
-  "generatedAt": null,
+  "generatedAt": "2026-08-25T06:42:23.141Z",
   "fleet": {
-    "status": "initialising",
+    "status": "down",
     "operational": 0,
     "degraded": 0,
-    "down": 0,
-    "unmonitored": 6
+    "down": 1,
+    "unmonitored": 5,
+    "initialising": 0
   },
   "systems": [
     {
       "id": "cerberus",
       "name": "Cerberus",
-      "status": "initialising",
-      "summary": "Health checks have not run yet.",
-      "checks": []
+      "status": "down",
+      "summary": "A core Cerberus availability check has failed.",
+      "checkedAt": "2026-08-25T06:42:23.141Z",
+      "averageLatencyMs": 737,
+      "providersOperational": 2,
+      "providersTotal": 3,
+      "snapshotAgeMinutes": 806,
+      "snapshotUpdatedAt": "2026-08-24T17:16:09.883Z",
+      "instrumentCount": 24,
+      "checks": [
+        {
+          "id": "app",
+          "label": "Cerberus interface",
+          "status": "down",
+          "checkedAt": "2026-08-25T06:42:23.141Z",
+          "note": "This operation was aborted"
+        },
+        {
+          "id": "snapshot",
+          "label": "Forecast snapshot",
+          "status": "operational",
+          "latencyMs": 762,
+          "httpStatus": 200,
+          "checkedAt": "2026-08-25T06:42:12.141Z",
+          "dataUpdatedAt": "2026-08-24T17:16:09.883Z",
+          "ageMinutes": 806,
+          "instrumentCount": 24,
+          "freshnessLimitMinutes": 1080
+        },
+        {
+          "id": "binance",
+          "label": "Binance crypto feed",
+          "status": "down",
+          "latencyMs": 581,
+          "httpStatus": 451,
+          "checkedAt": "2026-08-25T06:42:11.946Z"
+        },
+        {
+          "id": "yahoo",
+          "label": "Yahoo market feed",
+          "status": "operational",
+          "latencyMs": 695,
+          "httpStatus": 200,
+          "checkedAt": "2026-08-25T06:42:12.068Z"
+        },
+        {
+          "id": "xaus",
+          "label": "XAUS metals feed",
+          "status": "operational",
+          "latencyMs": 908,
+          "httpStatus": 200,
+          "checkedAt": "2026-08-25T06:42:12.276Z"
+        }
+      ]
     },
-    { "id": "earthnet", "name": "EarthNet", "status": "unmonitored", "summary": "Monitor wiring pending." },
-    { "id": "agri", "name": "Agri", "status": "unmonitored", "summary": "Monitor wiring pending." },
-    { "id": "poseidon", "name": "Poseidon", "status": "unmonitored", "summary": "Monitor wiring pending." },
-    { "id": "verry-elleegant", "name": "Verry Elleegant", "status": "unmonitored", "summary": "Monitor wiring pending." },
-    { "id": "sentinel", "name": "Sentinel", "status": "unmonitored", "summary": "Monitor wiring pending." }
+    {
+      "id": "earthnet",
+      "name": "EarthNet",
+      "status": "unmonitored",
+      "summary": "Monitor wiring pending."
+    },
+    {
+      "id": "agri",
+      "name": "Agri",
+      "status": "unmonitored",
+      "summary": "Monitor wiring pending."
+    },
+    {
+      "id": "poseidon",
+      "name": "Poseidon",
+      "status": "unmonitored",
+      "summary": "Monitor wiring pending."
+    },
+    {
+      "id": "verry-elleegant",
+      "name": "Verry Elleegant",
+      "status": "unmonitored",
+      "summary": "Monitor wiring pending."
+    },
+    {
+      "id": "sentinel",
+      "name": "Sentinel",
+      "status": "unmonitored",
+      "summary": "Monitor wiring pending."
+    }
   ]
 }
