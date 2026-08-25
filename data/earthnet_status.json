@@ -1,0 +1,51 @@
+{
+  "causal_assessment_count": 39,
+  "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
+  "cycle_completed_at": "2026-08-25T17:38:19+00:00",
+  "cycle_scoped_source": true,
+  "cycle_started_at": "2026-08-25T17:35:00+00:00",
+  "degraded": false,
+  "engine_count": 10,
+  "engine_counts": {
+    "atmosphere": 13,
+    "cryosphere": 6,
+    "geopolitical_conflict": 18,
+    "infrastructure_risk": 8,
+    "neo": 11,
+    "ocean": 10,
+    "seismic": 15,
+    "space_weather": 1,
+    "volcanic": 12,
+    "wildfire_flood_landslide": 38
+  },
+  "engine_errors_hidden": 0,
+  "engines": [
+    "atmosphere",
+    "cryosphere",
+    "geopolitical_conflict",
+    "infrastructure",
+    "neo",
+    "ocean",
+    "seismic",
+    "space_weather",
+    "volcanic",
+    "wildfire_flood_landslide"
+  ],
+  "event_count": 132,
+  "expired_quakes_hidden": 0,
+  "failed_engines": {},
+  "generated": "2026-08-25T17:38:19+00:00",
+  "live_data_plane": {
+    "branch": "main",
+    "provider": "website-repository-cloudflare",
+    "publication_mode": "canonical_static_snapshot",
+    "published": true,
+    "published_at": "2026-08-25T17:38:19+00:00",
+    "repository": "PythologyIntelligence/pythologyintelligence.github.io"
+  },
+  "quake_live_window_hours": 24,
+  "schema": "earthnet.snapshot.v3",
+  "source_file": "current_cycle_events.jsonl",
+  "source_record_count": 132,
+  "success": true
+}
