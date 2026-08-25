@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-25T09:35:43.069180+00:00",
+  "generatedAt": "2026-08-25T09:36:13.864409+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -88,6 +88,27 @@
   "recentTrades": [],
   "recentActivity": [
     {
+      "ts": "2026-08-25T09:35:59.673799+00:00",
+      "type": "guardrail",
+      "event": "legacy_champion_rejected",
+      "title": "Legacy champion rejected for GBPUSD",
+      "detail": "The stored strategy no longer passes the current training gate."
+    },
+    {
+      "ts": "2026-08-25T09:35:59.673799+00:00",
+      "type": "guardrail",
+      "event": "legacy_champion_rejected",
+      "title": "Legacy champion rejected for GBPUSD",
+      "detail": "The stored strategy no longer passes the current training gate."
+    },
+    {
+      "ts": "2026-08-25T09:35:59.673799+00:00",
+      "type": "engine",
+      "event": "engine_started",
+      "title": "Yggdrasil engine started",
+      "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
+    },
+    {
       "ts": "2026-08-25T09:35:28.631578+00:00",
       "type": "engine",
       "event": "engine_stopped",
@@ -158,5 +179,5 @@
       "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
     }
   ],
-  "publishedAt": "2026-08-25T09:35:44.800628+00:00"
+  "publishedAt": "2026-08-25T09:36:13.974389+00:00"
 }
