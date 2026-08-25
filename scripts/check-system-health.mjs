@@ -125,7 +125,7 @@ async function probeCerberusSnapshot() {
 }
 
 async function probeEarthNetSnapshot() {
-  const url = "https://pythology.co.nz/data/earthnet_status.json";
+  const url = "https://pythologyintelligence.github.io/data/earthnet_status.json";
   try {
     const { response, latencyMs } = await timedFetch(url, {
       headers: { "User-Agent": "Pythology-System-Monitor/1.0", Accept: "application/json" },
@@ -258,7 +258,7 @@ async function main() {
       "https://xaus.com/api/v1/spot?compact=1",
       (payload) => Number(payload?.spot_usd_oz) > 0,
     ),
-    probePage("earthnet-app", "EarthNet interface", "https://pythology.co.nz/earthnet.html"),
+    probePage("earthnet-app", "EarthNet interface", "https://pythologyintelligence.github.io/earthnet.html"),
     probeEarthNetSnapshot(),
   ]);
 
