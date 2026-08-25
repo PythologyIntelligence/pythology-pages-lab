@@ -1,0 +1,47 @@
+name: Pythology system health
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "scripts/check-system-health.mjs"
+      - "monitor/**"
+      - ".github/workflows/system-health.yml"
+  schedule:
+    # Synthetic provider checks hourly, offset from the top of the hour to avoid congestion.
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pythology-system-health
+  cancel-in-progress: true
+
+jobs:
+  health:
+    name: Refresh safe system health snapshot
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: Check out Pages lab
+        uses: actions/checkout@v4
+
+      - name: Run synthetic health checks
+        run: node scripts/check-system-health.mjs
+
+      - name: Publish safe health snapshot
+        shell: bash
+        run: |
+          git config user.name "pythology-health[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/system-health.json
+          if git diff --cached --quiet; then
+            echo "No health snapshot changes."
+            exit 0
+          fi
+          git commit -m "data: refresh Pythology system health [skip ci]"
+          git push
