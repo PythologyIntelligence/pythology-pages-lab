@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 1,
+  "system": "Yggdrasil",
+  "snapshotKind": "observed-seed",
+  "generatedAt": "2026-08-25T08:14:25.324603+00:00",
+  "mode": "DEMO_ONLY",
+  "status": "operational",
+  "bridge": {
+    "status": "awaiting-vps-adapter",
+    "note": "This initial view is seeded from the latest observed VPS output. Live safe telemetry will replace it when the VPS bridge is attached."
+  },
+  "symbols": ["EURUSD", "GBPUSD", "USDJPY", "XAUUSD", "NAS100"],
+  "research": {
+    "candidateCount": 61,
+    "lastResearchAt": "2026-08-25T08:03:12.318035+00:00",
+    "latestTournamentSelected": 2,
+    "currentTrainingGateEligible": 1,
+    "families": ["EMA trend", "RSI mean reversion", "rolling breakout", "trend pullback"]
+  },
+  "champions": [
+    {
+      "symbol": "XAUUSD",
+      "family": "breakout",
+      "strategyId": "breakout-hold12-window60",
+      "params": {"hold": 12, "window": 60},
+      "trainingGate": "eligible",
+      "train": {
+        "returnPct": 0.3843753194556765,
+        "sharpe": 0.62759108144508,
+        "maxDrawdownPct": 1.2535237483147776,
+        "trades": 66,
+        "winRatePct": 48.91640866873065
+      },
+      "test": {
+        "returnPct": 0.2965413133425576,
+        "sharpe": 1.4424779840594162,
+        "maxDrawdownPct": 0.5578355311393834,
+        "trades": 34,
+        "winRatePct": 47.368421052631575
+      },
+      "mcP05ReturnPct": -1.096241430456381,
+      "score": 1.3766312548700526,
+      "selectedAt": "2026-08-25T08:03:11.432388+00:00"
+    },
+    {
+      "symbol": "GBPUSD",
+      "family": "rsi_revert",
+      "strategyId": "rsi_revert-lower30-period21-upper70",
+      "params": {"lower": 30, "period": 21, "upper": 70},
+      "trainingGate": "legacy-rejected",
+      "train": {
+        "returnPct": -0.4482933623189078,
+        "sharpe": -3.299190309619986,
+        "maxDrawdownPct": 0.5232890915729649,
+        "trades": 56,
+        "winRatePct": 44.71830985915493
+      },
+      "test": {
+        "returnPct": 0.047422449029244085,
+        "sharpe": 0.7485759048677615,
+        "maxDrawdownPct": 0.17115476582768574,
+        "trades": 20,
+        "winRatePct": 49.46236559139785
+      },
+      "mcP05ReturnPct": -0.38265280578966054,
+      "score": 0.7257042701303694,
+      "selectedAt": "2026-08-25T08:03:09.815050+00:00",
+      "note": "Fails the current positive training-return and positive training-Sharpe gate and is rejected when the tightened Norns loader evaluates it."
+    }
+  ],
+  "tyr": {
+    "riskPerTradePct": 0.25,
+    "maxOpenRiskPct": 0.75,
+    "maxSessionLossPct": 1.0,
+    "maxPositions": 3,
+    "maxTradesPerSession": 8,
+    "staleTickGate": true,
+    "spreadGate": true,
+    "symbolCooldownGate": true,
+    "brokerSideStopsRequired": true
+  },
+  "execution": {
+    "openRule": "09:30 America/New_York",
+    "closeRule": "16:30 Europe/London",
+    "entryCutoffMinutesBeforeClose": 15,
+    "flattenMinutesBeforeClose": 2,
+    "researchMutatesChampionsDuringSession": false
+  },
+  "live": {
+    "mt5Connected": true,
+    "positions": null,
+    "tradesThisSession": null,
+    "openRiskPct": null,
+    "killSwitch": null,
+    "lastError": null
+  },
+  "recentActivity": [
+    {
+      "ts": "2026-08-25T08:14:25.324603+00:00",
+      "type": "engine",
+      "event": "engine_started",
+      "title": "Yggdrasil engine started",
+      "detail": "DEMO_ONLY · EURUSD, GBPUSD, USDJPY, XAUUSD and NAS100 attached."
+    },
+    {
+      "ts": "2026-08-25T08:14:25.324603+00:00",
+      "type": "bifrost",
+      "event": "mt5_connected",
+      "title": "Bifröst linked to MT5 demo",
+      "detail": "Five configured symbols resolved successfully."
+    },
+    {
+      "ts": "2026-08-25T08:03:12.318035+00:00",
+      "type": "norns",
+      "event": "tournament_completed",
+      "title": "Norns tournament completed",
+      "detail": "61 strategy candidates evaluated; the observed snapshot contained XAUUSD and GBPUSD selections."
+    },
+    {
+      "ts": "2026-08-25T08:03:11.432388+00:00",
+      "type": "norns",
+      "event": "champion_selected",
+      "title": "XAUUSD breakout reached Valhalla",
+      "detail": "breakout-hold12-window60 · test Sharpe 1.442 · test return 0.297%."
+    },
+    {
+      "ts": "2026-08-25T08:03:09.815050+00:00",
+      "type": "guardrail",
+      "event": "legacy_gate_warning",
+      "title": "GBPUSD legacy champion fails tightened training gate",
+      "detail": "Negative training return and Sharpe mean the current loader rejects it before execution."
+    }
+  ]
+}
