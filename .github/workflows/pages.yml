@@ -116,6 +116,28 @@ jobs:
           print(f'Normalised EarthNet runtime paths in {changed} file(s).')
           PY
 
+          # Path normalisation changes the built JS after Vite has already
+          # assigned its content-hashed filename. Without a new browser URL,
+          # Chrome/CDN caches can keep serving the pre-patch bundle. Stamp the
+          # entrypoint references with this deployment SHA so every patched
+          # deployment fetches the exact JS/CSS artifact that was validated.
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          import re
+
+          index = Path('_site/earthnet-global/index.html')
+          version = os.environ.get('GITHUB_SHA', 'earthnet')[:12]
+          text = index.read_text(encoding='utf-8')
+          text = re.sub(
+              r'(\.?\.?/assets/[^"\']+\.(?:js|css))(?:\?v=[^"\']*)?',
+              lambda m: f'{m.group(1)}?v={version}',
+              text,
+          )
+          index.write_text(text, encoding='utf-8')
+          print(f'Cache-busted EarthNet entrypoint for deploy {version}.')
+          PY
+
           # Repository snapshots are the stable public fallback. Once EarthNet's
           # publisher credential is authorised for this repo, these same paths
           # can be refreshed automatically by EarthNet's GitHub workflows.
