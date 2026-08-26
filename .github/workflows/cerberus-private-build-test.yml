@@ -1,0 +1,119 @@
+name: Cerberus private build bridge test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cerberus-private-build-bridge-test
+  cancel-in-progress: true
+
+jobs:
+  package:
+    name: Build private Cerberus source on free public runner
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout public Pages repository
+        uses: actions/checkout@v4
+
+      - name: Require private source token
+        env:
+          CERBERUS_SOURCE_TOKEN: ${{ secrets.CERBERUS_SOURCE_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ -z "${CERBERUS_SOURCE_TOKEN:-}" ]]; then
+            echo "CERBERUS_SOURCE_TOKEN is not configured."
+            exit 1
+          fi
+
+      - name: Checkout private Cerberus source
+        uses: actions/checkout@v4
+        with:
+          repository: PythologyIntelligence/pythologyintelligence.github.io
+          ref: cerberus-github-runtime
+          token: ${{ secrets.CERBERUS_SOURCE_TOKEN }}
+          path: private-source
+          persist-credentials: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+          cache-dependency-path: private-source/cerberus/package-lock.json
+
+      - name: Generate public-safe Cerberus market runtime
+        env:
+          CERBERUS_OUT_DIR: cerberus-runtime-out
+        run: |
+          node scripts/cerberus-public-runtime.mjs
+          node scripts/cerberus-crypto-recovery.mjs
+
+      - name: Install private Cerberus dependencies
+        run: npm ci --prefix private-source/cerberus
+
+      - name: TypeScript safety check
+        run: npm --prefix private-source/cerberus run lint
+
+      - name: Build static Cerberus UI
+        env:
+          VITE_BASE_PATH: /cerberus-app/
+        run: npm --prefix private-source/cerberus run build
+
+      - name: Assemble public package
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf cerberus-package
+          mkdir -p cerberus-package/cerberus-app cerberus-package/data
+          cp -a private-source/cerberus/dist/. cerberus-package/cerberus-app/
+          rm -f cerberus-package/cerberus-app/server.cjs cerberus-package/cerberus-app/server.cjs.map
+          cp cerberus-runtime-out/*.json cerberus-package/data/
+
+      - name: Validate no-server package and secret boundary
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('cerberus-package')
+          index = root / 'cerberus-app' / 'index.html'
+          if not index.is_file():
+              raise SystemExit('Cerberus index.html missing')
+          html = index.read_text(encoding='utf-8')
+          if '/cerberus-app/assets/' not in html:
+              raise SystemExit('Cerberus Vite base path is not Pages-safe')
+
+          status = json.loads((root / 'data' / 'cerberus_runtime_status.json').read_text())
+          if not status.get('healthy'):
+              raise SystemExit('Cerberus public runtime failed health gate')
+          if status.get('coverage', {}).get('live_prices', 0) < 31:
+              raise SystemExit('Cerberus price coverage below safe floor')
+
+          latest = json.loads((root / 'data' / 'cerberus_latest.json').read_text())
+          if len(latest.get('instruments', [])) < 31:
+              raise SystemExit('Cerberus technical coverage below safe floor')
+          PY
+
+          if grep -R -E "GEMINI_API_KEY|STRIPE_SECRET_KEY|CERBERUS_SOURCE_TOKEN" cerberus-package >/dev/null 2>&1; then
+            echo "A server-side secret identifier leaked into the public package."
+            exit 1
+          fi
+
+          test ! -e cerberus-package/cerberus-app/server.cjs
+          echo "Cerberus private-source/public-runner package validated."
+
+      - name: Upload compiled Cerberus package only
+        uses: actions/upload-artifact@v4
+        with:
+          name: cerberus-pages-package
+          path: cerberus-package
+          retention-days: 2
+          if-no-files-found: error
