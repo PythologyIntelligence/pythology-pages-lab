@@ -73,6 +73,49 @@ jobs:
             fi
           done
 
+          # Earlier custom-domain rescue builds rewrote absolute EarthNet URLs
+          # to relative ones. Because Pages now mirrors its own public site,
+          # the old literal replacement could be applied repeatedly, producing
+          # paths such as ......../data/... and ......../earthnet-global/....
+          # Collapse any accumulated prefix and also convert a clean absolute
+          # path once. Relative paths work at both the custom domain and the
+          # github.io project URL.
+          python3 - <<'PY'
+          from pathlib import Path
+          import re
+
+          root = Path('_site/earthnet-global')
+          changed = 0
+          for path in root.rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in {'.html', '.js', '.mjs', '.css'}:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              new = re.sub(r'\.{4,}/earthnet-global/', '../earthnet-global/', text)
+              new = re.sub(r'\.{4,}/data/', '../data/', new)
+              new = re.sub(r'(?<!\.)/earthnet-global/', '../earthnet-global/', new)
+              new = re.sub(r'(?<!\.)/data/', '../data/', new)
+              if new != text:
+                  path.write_text(new, encoding='utf-8')
+                  changed += 1
+
+          leftovers = []
+          for path in root.rglob('*'):
+              if not path.is_file() or path.suffix.lower() not in {'.html', '.js', '.mjs', '.css'}:
+                  continue
+              try:
+                  text = path.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              if re.search(r'\.{4,}/(?:earthnet-global|data)/', text):
+                  leftovers.append(str(path))
+          if leftovers:
+              raise SystemExit('Malformed EarthNet runtime paths remain: ' + ', '.join(leftovers))
+          print(f'Normalised EarthNet runtime paths in {changed} file(s).')
+          PY
+
           # Repository snapshots are the stable public fallback. Once EarthNet's
           # publisher credential is authorised for this repo, these same paths
           # can be refreshed automatically by EarthNet's GitHub workflows.
