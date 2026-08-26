@@ -61,13 +61,16 @@ jobs:
           done
 
           LIVE_PAIR=1
-          for file in earthnet_latest.json earthnet_status.json; do
-            if ! curl --fail --silent --show-error --location --retry 2 --connect-timeout 8 --max-time 30 \
-              "$EARTHNET_EDGE/data/$file" -o "/tmp/earthnet-live/$file"; then
-              echo "::warning::EarthNet edge snapshot unavailable: $file; retaining safe repository fallback."
-              LIVE_PAIR=0
-            fi
-          done
+          if ! curl --fail --silent --show-error --location --retry 2 --connect-timeout 8 --max-time 30 \
+            "$EARTHNET_EDGE/api/earthnet/live" -o /tmp/earthnet-live/earthnet_latest.json; then
+            echo "::warning::EarthNet dynamic live endpoint unavailable; retaining safe repository fallback."
+            LIVE_PAIR=0
+          fi
+          if ! curl --fail --silent --show-error --location --retry 2 --connect-timeout 8 --max-time 30 \
+            "$EARTHNET_EDGE/api/earthnet/status" -o /tmp/earthnet-live/earthnet_status.json; then
+            echo "::warning::EarthNet dynamic status endpoint unavailable; retaining safe repository fallback."
+            LIVE_PAIR=0
+          fi
 
           if [[ "$LIVE_PAIR" == "1" ]]; then
             python3 - <<'PY'
@@ -119,7 +122,7 @@ jobs:
                   (out / 'earthnet_status.json').write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding='utf-8')
                   bridge = {
                       'schema': 'earthnet.pages-bridge.v1',
-                      'source': 'cloudflare-staging-safe-static-assets',
+                      'source': 'cloudflare-private-github-read-plane',
                       'synced_at': datetime.now(timezone.utc).isoformat(),
                       'source_generated_at': status.get('generated') or status.get('cycle_completed_at'),
                       'event_count': len(latest),
