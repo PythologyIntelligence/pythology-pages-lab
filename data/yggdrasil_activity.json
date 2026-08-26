@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-26T06:49:04.229083+00:00",
+  "generatedAt": "2026-08-26T07:19:05.002333+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -256,5 +256,5 @@
       "detail": "breakout-hold3-window60 \u00b7 test Sharpe 0.385 \u00b7 test return 0.060%"
     }
   ],
-  "publishedAt": "2026-08-26T06:49:10.170325+00:00"
+  "publishedAt": "2026-08-26T07:19:16.697581+00:00"
 }
