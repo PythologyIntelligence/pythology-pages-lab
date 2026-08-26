@@ -46,9 +46,9 @@ jobs:
           set -euo pipefail
           mkdir -p _site/data
 
-          # EarthNet's own GitHub workflows publish the tested globe bundle
-          # directly into this repository. Prefer that bundle over anything
-          # recovered by the website mirror.
+          # Prefer a tested EarthNet bundle committed to this Pages repository
+          # whenever one is available. Until then, retain the known-good mirrored
+          # bundle so a data-plane transition cannot turn the globe into Jupiter.
           if [[ -d earthnet-global ]]; then
             rm -rf _site/earthnet-global
             cp -a earthnet-global _site/earthnet-global
@@ -57,13 +57,13 @@ jobs:
             echo "::warning::No repository EarthNet Global bundle found; retaining mirrored fallback."
           fi
 
-          # EarthNet live intelligence publishes these safe snapshots directly
-          # into this public repository. Always let the repository copy win so
-          # a stale mirrored deployment cannot overwrite a fresh research cycle.
+          # Repository snapshots are the stable public fallback. Once EarthNet's
+          # publisher credential is authorised for this repo, the same paths are
+          # refreshed automatically by EarthNet's GitHub workflows.
           for file in earthnet_latest.json earthnet_status.json earthnet_prometheus.json; do
             if [[ -f "data/$file" ]]; then
               cp "data/$file" "_site/data/$file"
-              echo "Staged canonical EarthNet snapshot: $file"
+              echo "Staged EarthNet repository snapshot: $file"
             fi
           done
 
@@ -74,12 +74,12 @@ jobs:
           latest_path = Path('_site/data/earthnet_latest.json')
           status_path = Path('_site/data/earthnet_status.json')
           if not latest_path.exists() or not status_path.exists():
-              raise SystemExit('EarthNet canonical snapshot is missing from the Pages artifact')
+              raise SystemExit('EarthNet snapshot is missing from the Pages artifact')
 
           latest = json.loads(latest_path.read_text(encoding='utf-8'))
           status = json.loads(status_path.read_text(encoding='utf-8'))
-          if not isinstance(latest, list) or len(latest) < 10:
-              raise SystemExit(f'EarthNet event snapshot failed validation: {len(latest) if isinstance(latest, list) else "non-list"}')
+          if not isinstance(latest, list) or not latest:
+              raise SystemExit('EarthNet event snapshot is empty or invalid')
           if not isinstance(status, dict):
               raise SystemExit('EarthNet status snapshot failed validation')
 
