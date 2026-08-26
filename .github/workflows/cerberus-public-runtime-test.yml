@@ -1,0 +1,94 @@
+name: Cerberus public runtime test
+
+on:
+  push:
+    branches: [cerberus-public-runtime]
+    paths:
+      - "scripts/cerberus-public-runtime.mjs"
+      - ".github/workflows/cerberus-public-runtime-test.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cerberus-public-runtime-test
+  cancel-in-progress: true
+
+jobs:
+  runtime:
+    name: Generate and validate Cerberus public runtime
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Generate public-safe Cerberus runtime
+        env:
+          CERBERUS_OUT_DIR: cerberus-runtime-out
+        run: node scripts/cerberus-public-runtime.mjs
+
+      - name: Validate runtime package
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          root = Path('cerberus-runtime-out')
+          required = [
+              'cerberus_latest.json',
+              'cerberus_prices.json',
+              'cerberus_klines_15M.json',
+              'cerberus_klines_1H.json',
+              'cerberus_klines_4H.json',
+              'cerberus_klines_1D.json',
+              'cerberus_catalysts.json',
+              'cerberus_runtime_status.json',
+          ]
+          missing = [name for name in required if not (root / name).is_file() or (root / name).stat().st_size == 0]
+          if missing:
+              raise SystemExit('Missing Cerberus runtime files: ' + ', '.join(missing))
+
+          status = json.loads((root / 'cerberus_runtime_status.json').read_text())
+          if not status.get('healthy'):
+              raise SystemExit('Cerberus runtime health gate failed')
+
+          latest = json.loads((root / 'cerberus_latest.json').read_text())
+          instruments = latest.get('instruments', [])
+          prices = json.loads((root / 'cerberus_prices.json').read_text()).get('prices', {})
+          catalysts = json.loads((root / 'cerberus_catalysts.json').read_text()).get('catalysts', {})
+
+          if len(instruments) < 23:
+              raise SystemExit(f'Forecast coverage too low: {len(instruments)}')
+          if len(prices) < 23:
+              raise SystemExit(f'Price coverage too low: {len(prices)}')
+          if len(catalysts) < 23:
+              raise SystemExit(f'Catalyst coverage too low: {len(catalysts)}')
+
+          print('Cerberus public runtime validated.')
+          print(json.dumps({
+              'forecast_instruments': len(instruments),
+              'prices': len(prices),
+              'catalysts': len(catalysts),
+              'coverage': status.get('coverage'),
+              'market_errors': len(status.get('errors', {}).get('market', [])),
+              'catalyst_errors': len(status.get('errors', {}).get('catalysts', [])),
+          }, indent=2))
+          PY
+
+      - name: Upload test runtime
+        uses: actions/upload-artifact@v4
+        with:
+          name: cerberus-public-runtime-test
+          path: cerberus-runtime-out
+          retention-days: 2
+          if-no-files-found: error
