@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-26T19:02:08.696978+00:00",
+  "generatedAt": "2026-08-26T19:32:24.366674+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -256,5 +256,5 @@
       "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
     }
   ],
-  "publishedAt": "2026-08-26T19:02:16.477161+00:00"
+  "publishedAt": "2026-08-26T19:32:24.875917+00:00"
 }
