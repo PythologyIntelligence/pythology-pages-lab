@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-26T15:12:02.741290+00:00",
+  "generatedAt": "2026-08-26T15:12:17.746052+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,20 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-26T15:12:16.661480+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
+    {
+      "ts": "2026-08-26T15:12:06.657174+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
     {
       "ts": "2026-08-26T15:11:56.653605+00:00",
       "type": "guardrail",
@@ -240,21 +254,7 @@
       "event": "loss_breaker",
       "title": "Session loss breaker fired",
       "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:08:16.567330+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:08:06.562604+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
     }
   ],
-  "publishedAt": "2026-08-26T15:12:03.903657+00:00"
+  "publishedAt": "2026-08-26T15:12:25.431676+00:00"
 }
