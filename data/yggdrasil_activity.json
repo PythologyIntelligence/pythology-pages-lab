@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-26T14:08:30.469772+00:00",
+  "generatedAt": "2026-08-26T14:09:00.497140+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,27 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-26T14:08:54.601988+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
+    {
+      "ts": "2026-08-26T14:08:44.590205+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
+    {
+      "ts": "2026-08-26T14:08:34.595844+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
     {
       "ts": "2026-08-26T14:08:24.590681+00:00",
       "type": "guardrail",
@@ -233,28 +254,7 @@
       "event": "tournament_started",
       "title": "Norns tournament started",
       "detail": "61 candidates entered research validation."
-    },
-    {
-      "ts": "2026-08-26T06:48:34.728793+00:00",
-      "type": "engine",
-      "event": "engine_started",
-      "title": "Yggdrasil engine started",
-      "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
-    },
-    {
-      "ts": "2026-08-26T06:48:23.875363+00:00",
-      "type": "engine",
-      "event": "engine_stopped",
-      "title": "Yggdrasil engine stopped",
-      "detail": "Execution loop stopped cleanly."
-    },
-    {
-      "ts": "2026-08-26T03:30:29.883035+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for NAS100",
-      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-08-26T14:08:42.386237+00:00"
+  "publishedAt": "2026-08-26T14:09:04.716826+00:00"
 }
