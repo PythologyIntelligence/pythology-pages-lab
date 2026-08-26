@@ -5,6 +5,7 @@ on:
     branches: [cerberus-public-runtime]
     paths:
       - "scripts/cerberus-public-runtime.mjs"
+      - "scripts/cerberus-crypto-recovery.mjs"
       - ".github/workflows/cerberus-public-runtime-test.yml"
   workflow_dispatch:
 
@@ -34,6 +35,11 @@ jobs:
         env:
           CERBERUS_OUT_DIR: cerberus-runtime-out
         run: node scripts/cerberus-public-runtime.mjs
+
+      - name: Recover crypto if Binance is region-blocked
+        env:
+          CERBERUS_OUT_DIR: cerberus-runtime-out
+        run: node scripts/cerberus-crypto-recovery.mjs
 
       - name: Validate runtime package
         shell: bash
@@ -67,12 +73,16 @@ jobs:
           prices = json.loads((root / 'cerberus_prices.json').read_text()).get('prices', {})
           catalysts = json.loads((root / 'cerberus_catalysts.json').read_text()).get('catalysts', {})
 
-          if len(instruments) < 23:
+          if len(instruments) < 31:
               raise SystemExit(f'Forecast coverage too low: {len(instruments)}')
-          if len(prices) < 23:
+          if len(prices) < 31:
               raise SystemExit(f'Price coverage too low: {len(prices)}')
-          if len(catalysts) < 23:
+          if len(catalysts) < 31:
               raise SystemExit(f'Catalyst coverage too low: {len(catalysts)}')
+
+          for symbol in ('BTC/USD', 'ETH/USD'):
+              if symbol not in prices:
+                  raise SystemExit(f'Crypto recovery missing {symbol}')
 
           print('Cerberus public runtime validated.')
           print(json.dumps({
@@ -82,6 +92,7 @@ jobs:
               'coverage': status.get('coverage'),
               'market_errors': len(status.get('errors', {}).get('market', [])),
               'catalyst_errors': len(status.get('errors', {}).get('catalysts', [])),
+              'crypto_recovery': status.get('crypto_recovery'),
           }, indent=2))
           PY
 
