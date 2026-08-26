@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-26T15:30:48.374262+00:00",
+  "generatedAt": "2026-08-26T15:31:18.399187+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -19,7 +19,7 @@
   ],
   "research": {
     "candidateCount": 61,
-    "lastResearchAt": "2026-08-26T09:30:42.621144+00:00",
+    "lastResearchAt": "2026-08-26T15:30:53.903215+00:00",
     "latestTournamentSelected": 1,
     "currentTrainingGateEligible": 1,
     "families": [
@@ -33,29 +33,29 @@
     {
       "symbol": "XAUUSD",
       "family": "breakout",
-      "strategyId": "breakout-hold3-window60",
+      "strategyId": "breakout-hold12-window60",
       "params": {
-        "hold": 3.0,
+        "hold": 12.0,
         "window": 60.0
       },
       "trainingGate": "eligible",
       "train": {
-        "returnPct": 0.9092509965749729,
-        "sharpe": 1.9591323625143746,
-        "maxDrawdownPct": 0.9069830702579829,
-        "trades": 58,
-        "winRatePct": 48.554913294797686
+        "returnPct": 0.5488127926376984,
+        "sharpe": 0.8894460501968053,
+        "maxDrawdownPct": 1.3340559190422763,
+        "trades": 64,
+        "winRatePct": 49.09090909090909
       },
       "test": {
-        "returnPct": 0.06002498103281351,
-        "sharpe": 0.3948818068290372,
-        "maxDrawdownPct": 0.44704645893172135,
-        "trades": 26,
-        "winRatePct": 44.15584415584416
+        "returnPct": 0.14039758088570942,
+        "sharpe": 0.6647169036713779,
+        "maxDrawdownPct": 0.5578355311394168,
+        "trades": 34,
+        "winRatePct": 46.3855421686747
       },
-      "mcP05ReturnPct": -1.0708234116397608,
-      "score": 0.3311616919443824,
-      "selectedAt": "2026-08-26T09:30:41.777381+00:00"
+      "mcP05ReturnPct": -1.3262224342738183,
+      "score": 0.5880248051073883,
+      "selectedAt": "2026-08-26T15:30:52.280615+00:00"
     }
   ],
   "tyr": {
@@ -87,6 +87,111 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-26T15:30:53.903215+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for NAS100",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-26T15:30:53.903215+00:00",
+      "type": "norns",
+      "event": "tournament_completed",
+      "title": "Norns tournament completed",
+      "detail": "1 champion(s) survived all gates."
+    },
+    {
+      "ts": "2026-08-26T15:30:53.887801+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-26T15:30:53.856185+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-26T15:30:53.841453+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-26T15:30:53.809313+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for NAS100",
+      "detail": "3 candidates passed the training gate; 58 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-26T15:30:52.280615+00:00",
+      "type": "norns",
+      "event": "champion_selected",
+      "title": "XAUUSD champion reached Valhalla",
+      "detail": "breakout-hold12-window60 \u00b7 test Sharpe 0.665 \u00b7 test return 0.140%"
+    },
+    {
+      "ts": "2026-08-26T15:30:52.249600+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-26T15:30:52.233862+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for XAUUSD",
+      "detail": "8 candidates passed the training gate; 53 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-26T15:30:50.828602+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for USDJPY",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-26T15:30:50.828602+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for USDJPY",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-26T15:30:49.389914+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for GBPUSD",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-26T15:30:49.389914+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for GBPUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-26T15:30:48.452428+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for EURUSD",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-26T15:30:48.452428+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for EURUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
     {
       "ts": "2026-08-26T15:30:47.321071+00:00",
       "type": "norns",
@@ -149,112 +254,7 @@
       "event": "loss_breaker",
       "title": "Session loss breaker fired",
       "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:28:37.233729+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:28:27.226788+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:28:17.229052+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:28:07.225593+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:27:57.233962+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:27:47.229680+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:27:37.224918+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:27:27.217902+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:27:17.208648+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:27:07.194442+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:26:57.189197+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:26:47.180842+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:26:37.177258+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:26:27.182446+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
-    },
-    {
-      "ts": "2026-08-26T15:26:17.176536+00:00",
-      "type": "guardrail",
-      "event": "loss_breaker",
-      "title": "Session loss breaker fired",
-      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
     }
   ],
-  "publishedAt": "2026-08-26T15:30:59.404028+00:00"
+  "publishedAt": "2026-08-26T15:31:21.111007+00:00"
 }
