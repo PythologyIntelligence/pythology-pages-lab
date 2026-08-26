@@ -46,8 +46,6 @@ jobs:
           set -euo pipefail
           mkdir -p _site/data _site/earthnet-global
 
-          # Prefer a tested EarthNet bundle committed to this Pages repository
-          # whenever one is available. Until then, retain the mirrored bundle.
           if [[ -d earthnet-global ]]; then
             rm -rf _site/earthnet-global
             cp -a earthnet-global _site/earthnet-global
@@ -56,9 +54,6 @@ jobs:
             echo "::warning::No repository EarthNet Global bundle found; retaining mirrored fallback."
           fi
 
-          # The globe loads its planet textures dynamically, so a web mirror
-          # will not discover them. Rehydrate only missing textures from the
-          # same canonical Three.js source used by EarthNet's own GitHub build.
           declare -A EARTH_TEXTURES=(
             [earth_atmos_2048.jpg]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg"
             [earth_normal_2048.jpg]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_normal_2048.jpg"
@@ -73,13 +68,8 @@ jobs:
             fi
           done
 
-          # Earlier custom-domain rescue builds rewrote absolute EarthNet URLs
-          # to relative ones. Because Pages now mirrors its own public site,
-          # the old literal replacement could be applied repeatedly, producing
-          # paths such as ......../data/... and ......../earthnet-global/....
-          # Collapse any accumulated prefix and also convert a clean absolute
-          # path once. Relative paths work at both the custom domain and the
-          # github.io project URL.
+          # Normalise EarthNet runtime paths. Repeated self-mirroring had
+          # accumulated prefixes such as ......../data/ and ......../earthnet-global/.
           python3 - <<'PY'
           from pathlib import Path
           import re
@@ -116,11 +106,9 @@ jobs:
           print(f'Normalised EarthNet runtime paths in {changed} file(s).')
           PY
 
-          # Path normalisation changes the built JS after Vite has already
-          # assigned its content-hashed filename. Without a new browser URL,
-          # Chrome/CDN caches can keep serving the pre-patch bundle. Stamp the
-          # entrypoint references with this deployment SHA so every patched
-          # deployment fetches the exact JS/CSS artifact that was validated.
+          # The runtime JS is patched after Vite assigned its hashed filename,
+          # so force a unique browser/CDN URL for each Pages deployment. Also
+          # strip the stale Netlify HUD injected by the former host.
           python3 - <<'PY'
           from pathlib import Path
           import os
@@ -130,17 +118,24 @@ jobs:
           version = os.environ.get('GITHUB_SHA', 'earthnet')[:12]
           text = index.read_text(encoding='utf-8')
           text = re.sub(
-              r'(\.?\.?/assets/[^"\']+\.(?:js|css))(?:\?v=[^"\']*)?',
+              r'((?:\.\./|\./)?assets/[^"\']+\.(?:js|css))(?:\?v=[^"\']*)?',
               lambda m: f'{m.group(1)}?v={version}',
               text,
           )
+          text = re.sub(
+              r'\s*<script[^>]+\.netlify/scripts/hud[^>]*></script>\s*',
+              '\n',
+              text,
+              flags=re.IGNORECASE,
+          )
+          if f'?v={version}' not in text:
+              raise SystemExit('EarthNet cache-buster was not applied to index.html')
+          if '.netlify/scripts/hud' in text:
+              raise SystemExit('Stale Netlify HUD remains in EarthNet index.html')
           index.write_text(text, encoding='utf-8')
-          print(f'Cache-busted EarthNet entrypoint for deploy {version}.')
+          print(f'Cache-busted EarthNet entrypoint for deploy {version}; removed stale Netlify HUD.')
           PY
 
-          # Repository snapshots are the stable public fallback. Once EarthNet's
-          # publisher credential is authorised for this repo, these same paths
-          # can be refreshed automatically by EarthNet's GitHub workflows.
           for file in earthnet_latest.json earthnet_status.json earthnet_prometheus.json; do
             if [[ -f "data/$file" ]]; then
               cp "data/$file" "_site/data/$file"
