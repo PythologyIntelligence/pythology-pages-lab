@@ -10,6 +10,8 @@ rm -rf "$OUT" "$MIRROR"
 mkdir -p "$OUT" "$MIRROR"
 
 echo "Primary source unavailable; rebuilding from the last-good GitHub Pages deployment."
+# wget can return a non-zero status when an optional linked page/assets is missing.
+# Treat that as non-fatal here, then verify the recovered homepage explicitly below.
 wget \
   --recursive \
   --level=4 \
@@ -19,7 +21,7 @@ wget \
   --no-parent \
   --domains=pythologyintelligence.github.io \
   --directory-prefix="$MIRROR" \
-  "$BASE/"
+  "$BASE/" || true
 
 SITE="$MIRROR/pythologyintelligence.github.io/pythology-pages-lab"
 if [[ ! -f "$SITE/index.html" ]]; then
