@@ -40,145 +40,63 @@ jobs:
             bash scripts/build-pages-fallback.sh
           fi
 
-      - name: Refresh EarthNet safe live snapshot from Cloudflare
+      - name: Overlay canonical EarthNet from GitHub repository
         shell: bash
         run: |
-          set -u
-          EARTHNET_EDGE="https://pythology-staging.brent-d55.workers.dev"
-          mkdir -p _site/earthnet-global _site/data /tmp/earthnet-live
+          set -euo pipefail
+          mkdir -p _site/data
 
-          # Prefer the exact EarthNet globe textures already staged by the
-          # Cloudflare build. Missing textures are handled by a browser-side
-          # canonical Three.js fallback below rather than failing deployment.
-          for file in earth_atmos_2048.jpg earth_normal_2048.jpg earth_specular_2048.jpg earth_clouds_1024.png; do
-            if curl --fail --silent --show-error --location --retry 2 --connect-timeout 8 --max-time 25 \
-              "$EARTHNET_EDGE/earthnet-global/$file" -o "/tmp/earthnet-live/$file"; then
-              cp "/tmp/earthnet-live/$file" "_site/earthnet-global/$file"
-              echo "EarthNet texture refreshed from Cloudflare: $file"
-            else
-              echo "::warning::EarthNet edge texture unavailable: $file; browser fallback remains available."
+          # EarthNet's own GitHub workflows publish the tested globe bundle
+          # directly into this repository. Prefer that bundle over anything
+          # recovered by the website mirror.
+          if [[ -d earthnet-global ]]; then
+            rm -rf _site/earthnet-global
+            cp -a earthnet-global _site/earthnet-global
+            echo "Staged canonical EarthNet Global bundle from GitHub."
+          else
+            echo "::warning::No repository EarthNet Global bundle found; retaining mirrored fallback."
+          fi
+
+          # EarthNet live intelligence publishes these safe snapshots directly
+          # into this public repository. Always let the repository copy win so
+          # a stale mirrored deployment cannot overwrite a fresh research cycle.
+          for file in earthnet_latest.json earthnet_status.json earthnet_prometheus.json; do
+            if [[ -f "data/$file" ]]; then
+              cp "data/$file" "_site/data/$file"
+              echo "Staged canonical EarthNet snapshot: $file"
             fi
           done
 
-          LIVE_PAIR=1
-          if ! curl --fail --silent --show-error --location --retry 2 --connect-timeout 8 --max-time 30 \
-            "$EARTHNET_EDGE/api/earthnet/live" -o /tmp/earthnet-live/earthnet_latest.json; then
-            echo "::warning::EarthNet dynamic live endpoint unavailable; retaining safe repository fallback."
-            LIVE_PAIR=0
-          fi
-          if ! curl --fail --silent --show-error --location --retry 2 --connect-timeout 8 --max-time 30 \
-            "$EARTHNET_EDGE/api/earthnet/status" -o /tmp/earthnet-live/earthnet_status.json; then
-            echo "::warning::EarthNet dynamic status endpoint unavailable; retaining safe repository fallback."
-            LIVE_PAIR=0
-          fi
-
-          if [[ "$LIVE_PAIR" == "1" ]]; then
-            python3 - <<'PY'
-          import json
-          from datetime import datetime, timezone
-          from pathlib import Path
-
-          tmp = Path('/tmp/earthnet-live')
-          out = Path('_site/data')
-          latest_path = tmp / 'earthnet_latest.json'
-          status_path = tmp / 'earthnet_status.json'
-
-          try:
-              latest = json.loads(latest_path.read_text(encoding='utf-8'))
-              status = json.loads(status_path.read_text(encoding='utf-8'))
-              if not isinstance(latest, list) or len(latest) < 10:
-                  raise ValueError(f'event payload contained only {len(latest) if isinstance(latest, list) else "non-list"} events')
-              if not isinstance(status, dict):
-                  raise ValueError('status payload was not an object')
-              status_count = int(status.get('event_count') or 0)
-              if status_count < 10:
-                  raise ValueError(f'status event_count was {status_count}')
-
-              # Guard against accidentally downgrading the deployment to an
-              # older edge snapshot when the repository fallback is newer.
-              def parse_time(value):
-                  if not value:
-                      return None
-                  try:
-                      return datetime.fromisoformat(str(value).replace('Z', '+00:00')).astimezone(timezone.utc)
-                  except Exception:
-                      return None
-
-              candidate_time = parse_time(status.get('generated') or status.get('cycle_completed_at'))
-              existing_time = None
-              existing_status = Path('data/earthnet_status.json')
-              if existing_status.exists():
-                  try:
-                      current = json.loads(existing_status.read_text(encoding='utf-8'))
-                      existing_time = parse_time(current.get('generated') or current.get('cycle_completed_at'))
-                  except Exception:
-                      existing_time = None
-
-              if candidate_time and existing_time and candidate_time < existing_time:
-                  print(f'Cloudflare EarthNet snapshot is older ({candidate_time.isoformat()}) than repository fallback ({existing_time.isoformat()}); keeping fallback.')
-              else:
-                  out.mkdir(parents=True, exist_ok=True)
-                  (out / 'earthnet_latest.json').write_text(json.dumps(latest, ensure_ascii=False), encoding='utf-8')
-                  (out / 'earthnet_status.json').write_text(json.dumps(status, ensure_ascii=False, indent=2), encoding='utf-8')
-                  bridge = {
-                      'schema': 'earthnet.pages-bridge.v1',
-                      'source': 'cloudflare-private-github-read-plane',
-                      'synced_at': datetime.now(timezone.utc).isoformat(),
-                      'source_generated_at': status.get('generated') or status.get('cycle_completed_at'),
-                      'event_count': len(latest),
-                      'status_event_count': status_count,
-                      'fallback': False,
-                  }
-                  (out / 'earthnet_bridge.json').write_text(json.dumps(bridge, indent=2), encoding='utf-8')
-                  print(f"EarthNet live bridge accepted: {len(latest)} events; source generated {bridge['source_generated_at']}")
-          except Exception as exc:
-              print(f'::warning::EarthNet edge snapshot failed validation: {exc}; retaining repository fallback.')
-          PY
-          fi
-
-          # Safe last-resort snapshots. These are intentionally committed in
-          # the public Pages repository so an upstream outage never leaves an
-          # empty EarthNet globe.
-          if [[ ! -f _site/data/earthnet_latest.json && -f data/earthnet_latest.json ]]; then
-            cp data/earthnet_latest.json _site/data/earthnet_latest.json
-            echo "Staged EarthNet emergency event snapshot from Pages repository."
-          fi
-          if [[ ! -f _site/data/earthnet_status.json && -f data/earthnet_status.json ]]; then
-            cp data/earthnet_status.json _site/data/earthnet_status.json
-            echo "Staged EarthNet emergency status snapshot from Pages repository."
-          fi
-
           python3 - <<'PY'
+          import json
           from pathlib import Path
+
+          latest_path = Path('_site/data/earthnet_latest.json')
+          status_path = Path('_site/data/earthnet_status.json')
+          if not latest_path.exists() or not status_path.exists():
+              raise SystemExit('EarthNet canonical snapshot is missing from the Pages artifact')
+
+          latest = json.loads(latest_path.read_text(encoding='utf-8'))
+          status = json.loads(status_path.read_text(encoding='utf-8'))
+          if not isinstance(latest, list) or len(latest) < 10:
+              raise SystemExit(f'EarthNet event snapshot failed validation: {len(latest) if isinstance(latest, list) else "non-list"}')
+          if not isinstance(status, dict):
+              raise SystemExit('EarthNet status snapshot failed validation')
 
           root = Path('_site/earthnet-global')
-          replacements = {
-              '/pythology-pages-lab/earthnet-global/': './earthnet-global/',
-              '/pythology-pages-lab/data/': './data/',
-              '/earthnet-global/': './earthnet-global/',
-              '/data/': './data/',
-          }
+          required = [
+              root / 'index.html',
+              root / 'earth_atmos_2048.jpg',
+              root / 'earth_normal_2048.jpg',
+              root / 'earth_specular_2048.jpg',
+              root / 'earth_clouds_1024.png',
+          ]
+          missing = [str(path) for path in required if not path.exists() or path.stat().st_size == 0]
+          if missing:
+              raise SystemExit('EarthNet Global bundle incomplete: ' + ', '.join(missing))
 
-          local_texture_template = '`./earthnet-global/${o}`'
-          canonical_texture_template = '`https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/${o}`'
-          local_texture_ready = (root / 'earth_atmos_2048.jpg').exists()
-
-          for path in root.rglob('*'):
-              if not path.is_file() or path.suffix.lower() not in {'.html', '.js', '.mjs', '.css'}:
-                  continue
-              try:
-                  text = path.read_text(encoding='utf-8')
-              except UnicodeDecodeError:
-                  continue
-              new = text
-              for old, replacement in replacements.items():
-                  new = new.replace(old, replacement)
-              if not local_texture_ready:
-                  new = new.replace(local_texture_template, canonical_texture_template)
-              if new != text:
-                  path.write_text(new, encoding='utf-8')
-
-          print('EarthNet texture mode:', 'local Cloudflare copy' if local_texture_ready else 'canonical browser fallback')
+          generated = status.get('generated') or status.get('cycle_completed_at')
+          print(f'EarthNet Pages overlay validated: {len(latest)} events; generated {generated}')
           PY
 
       - name: Stage current safe System Control snapshots
@@ -188,8 +106,6 @@ jobs:
           if [[ -d monitor ]]; then
             cp -a monitor/. _site/monitor/
           fi
-          # Do not overwrite EarthNet's freshly validated deployment snapshot
-          # with the repository fallback here.
           for file in system-health.json yggdrasil_activity.json; do
             if [[ -f "data/$file" ]]; then
               cp "data/$file" "_site/data/$file"
