@@ -1,9 +1,9 @@
 {
-  "causal_assessment_count": 39,
+  "causal_assessment_count": 40,
   "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-  "cycle_completed_at": "2026-08-25T17:38:19+00:00",
+  "cycle_completed_at": "2026-08-26T17:03:40+00:00",
   "cycle_scoped_source": true,
-  "cycle_started_at": "2026-08-25T17:35:00+00:00",
+  "cycle_started_at": "2026-08-26T16:58:45+00:00",
   "degraded": false,
   "engine_count": 10,
   "engine_counts": {
@@ -11,9 +11,9 @@
     "cryosphere": 6,
     "geopolitical_conflict": 18,
     "infrastructure_risk": 8,
-    "neo": 11,
+    "neo": 13,
     "ocean": 10,
-    "seismic": 15,
+    "seismic": 14,
     "space_weather": 1,
     "volcanic": 12,
     "wildfire_flood_landslide": 38
@@ -31,21 +31,69 @@
     "volcanic",
     "wildfire_flood_landslide"
   ],
-  "event_count": 132,
+  "event_count": 133,
+  "event_intelligence": {
+    "assessment_count": 76,
+    "autonomous": true,
+    "degraded": false,
+    "deterministic": true,
+    "errors": [],
+    "event_type_counts": {
+      "active_eruption": 10,
+      "active_severe_storm": 5,
+      "active_wildfire": 25,
+      "armed_conflict": 1,
+      "ceasefire_update": 1,
+      "earthquake": 14,
+      "gdacs_cyclone": 1,
+      "gdacs_wildfire": 1,
+      "humanitarian_crisis": 14,
+      "infrastructure_disruption": 2,
+      "volcanic_alert": 2
+    },
+    "generated": "2026-08-26T17:03:45+00:00",
+    "model_generated": false,
+    "schema": "earthnet.event-intelligence-status.v0.1",
+    "trend_counts": {
+      "escalating": 2,
+      "improving": 3,
+      "new": 12,
+      "stable": 53,
+      "updated": 6
+    }
+  },
   "expired_quakes_hidden": 0,
   "failed_engines": {},
-  "generated": "2026-08-25T17:38:19+00:00",
+  "generated": "2026-08-26T17:03:40+00:00",
   "live_data_plane": {
     "branch": "main",
-    "provider": "website-repository-cloudflare",
+    "provider": "github-pages-emergency-promoter",
     "publication_mode": "canonical_static_snapshot",
     "published": true,
-    "published_at": "2026-08-25T17:38:19+00:00",
-    "repository": "PythologyIntelligence/pythologyintelligence.github.io"
+    "published_at": "2026-08-26T17:04:08+00:00",
+    "repository": "PythologyIntelligence/pythology-pages-lab"
+  },
+  "prometheus": {
+    "all_engine_observation_memory": true,
+    "calibration": {
+      "automatic_weight_updates": false,
+      "brier_score": 0.198673,
+      "calibrated_forecast_count": 12,
+      "confirmed_count": 8,
+      "hit_rate": 0.286,
+      "not_observed_count": 20,
+      "resolved_count": 28
+    },
+    "generated": "2026-08-26T17:03:41+00:00",
+    "mode": "live_validation",
+    "model_version": "prometheus-core.v0.1",
+    "new_forecast_count": 2,
+    "open_forecast_count": 6,
+    "resolved_forecast_count": 0
   },
   "quake_live_window_hours": 24,
   "schema": "earthnet.snapshot.v3",
   "source_file": "current_cycle_events.jsonl",
-  "source_record_count": 132,
+  "source_record_count": 133,
   "success": true
 }
