@@ -40,6 +40,47 @@ jobs:
             bash scripts/build-pages-fallback.sh
           fi
 
+      - name: Surface live EarthNet on homepage
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+
+          page = Path('_site/index.html')
+          if not page.exists():
+              print('::warning::Homepage was not present; skipping live EarthNet promotion.')
+              raise SystemExit(0)
+
+          version = os.environ.get('GITHUB_SHA', 'earthnet')[:12]
+          live = f'earthnet-global/?v={version}'
+          text = page.read_text(encoding='utf-8')
+
+          replacements = [
+              ('<a class="btn btn-primary" href="research.html">Explore research</a>',
+               f'<a class="btn btn-primary" href="{live}">LIVE EARTHNET</a>'),
+              ('<a class="btn" href="earthnet-platform.html">Explore EarthNet</a>',
+               f'<a class="btn" href="{live}">Open Live EarthNet</a>'),
+              ('<a class="domain-card" href="earthnet-platform.html" style="--domain-image:url(\'png_images/earthnet.png\')">',
+               f'<a class="domain-card" href="{live}" style="--domain-image:url(\'png_images/earthnet.png\')">'),
+              ('<span class="card-arrow">Explore EarthNet →</span>',
+               '<span class="card-arrow">Open Live EarthNet →</span>'),
+          ]
+          for old, new in replacements:
+              text = text.replace(old, new)
+
+          # If the self-mirrored homepage already contains a previous live link,
+          # refresh its version rather than stacking another patch.
+          import re
+          text = re.sub(r'earthnet-global/\?v=[A-Za-z0-9._-]+', live, text)
+
+          page.write_text(text, encoding='utf-8')
+          if 'LIVE EARTHNET' not in text or 'Open Live EarthNet' not in text:
+              print('::warning::Homepage live EarthNet promotion did not match all expected controls.')
+          else:
+              print(f'Homepage now promotes live EarthNet at {live}.')
+          PY
+
       - name: Overlay canonical EarthNet from GitHub repository
         shell: bash
         run: |
