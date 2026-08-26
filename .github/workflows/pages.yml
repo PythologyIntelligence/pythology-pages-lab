@@ -9,6 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -30,6 +31,33 @@ jobs:
         with:
           ref: main
 
+      # Emergency seed from a known-good Pages package that contains the complete
+      # EarthNet Vite runtime. This is only used when a self-mirror cannot recover
+      # the JS asset. Once the public deployment is clean, subsequent mirrors can
+      # recover the runtime from the live Pages site itself.
+      - name: Download known-good EarthNet seed
+        id: earthnet_seed
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: .earthnet-seed
+          github-token: ${{ github.token }}
+          repository: PythologyIntelligence/pythology-pages-lab
+          run-id: 32951531815
+
+      - name: Extract EarthNet seed
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p .earthnet-seed/site
+          if [[ -f .earthnet-seed/artifact.tar ]]; then
+            tar -xf .earthnet-seed/artifact.tar -C .earthnet-seed/site
+            echo "Known-good EarthNet seed extracted."
+          else
+            echo "::warning::Known-good EarthNet seed unavailable; live mirror must supply the runtime."
+          fi
+
       - name: Build public lab mirror with resilient fallback
         shell: bash
         run: |
@@ -40,60 +68,120 @@ jobs:
             bash scripts/build-pages-fallback.sh
           fi
 
-      - name: Surface live EarthNet on homepage
-        shell: bash
-        run: |
-          python3 - <<'PY'
-          from pathlib import Path
-          import os
-
-          page = Path('_site/index.html')
-          if not page.exists():
-              print('::warning::Homepage was not present; skipping live EarthNet promotion.')
-              raise SystemExit(0)
-
-          version = os.environ.get('GITHUB_SHA', 'earthnet')[:12]
-          live = f'earthnet-global/?v={version}'
-          text = page.read_text(encoding='utf-8')
-
-          replacements = [
-              ('<a class="btn btn-primary" href="research.html">Explore research</a>',
-               f'<a class="btn btn-primary" href="{live}">LIVE EARTHNET</a>'),
-              ('<a class="btn" href="earthnet-platform.html">Explore EarthNet</a>',
-               f'<a class="btn" href="{live}">Open Live EarthNet</a>'),
-              ('<a class="domain-card" href="earthnet-platform.html" style="--domain-image:url(\'png_images/earthnet.png\')">',
-               f'<a class="domain-card" href="{live}" style="--domain-image:url(\'png_images/earthnet.png\')">'),
-              ('<span class="card-arrow">Explore EarthNet →</span>',
-               '<span class="card-arrow">Open Live EarthNet →</span>'),
-          ]
-          for old, new in replacements:
-              text = text.replace(old, new)
-
-          # If the self-mirrored homepage already contains a previous live link,
-          # refresh its version rather than stacking another patch.
-          import re
-          text = re.sub(r'earthnet-global/\?v=[A-Za-z0-9._-]+', live, text)
-
-          page.write_text(text, encoding='utf-8')
-          if 'LIVE EARTHNET' not in text or 'Open Live EarthNet' not in text:
-              print('::warning::Homepage live EarthNet promotion did not match all expected controls.')
-          else:
-              print(f'Homepage now promotes live EarthNet at {live}.')
-          PY
-
-      - name: Overlay canonical EarthNet from GitHub repository
+      - name: Remove former-host HUD and surface live EarthNet
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p _site/data _site/earthnet-global
+          python3 - <<'PY'
+          from pathlib import Path
+          import os
+          import re
 
+          version = os.environ.get('GITHUB_SHA', 'earthnet')[:12]
+          live = f'earthnet-global/?v={version}'
+
+          # The rescued site was mirrored from Netlify and still carried its
+          # injected HUD script. GitHub Pages must not advertise the old host.
+          for page in Path('_site').rglob('*.html'):
+              try:
+                  text = page.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              text = re.sub(
+                  r'\s*<script[^>]+(?:\.netlify/scripts/hud|netlify-site-id)[^>]*></script>\s*',
+                  '\n', text, flags=re.IGNORECASE,
+              )
+              page.write_text(text, encoding='utf-8')
+
+          home = Path('_site/index.html')
+          if not home.exists():
+              raise SystemExit('Homepage missing from Pages build')
+          text = home.read_text(encoding='utf-8')
+
+          # Handle both quote styles because wget can rewrite the mirrored HTML.
+          text = text.replace(
+              "<a class='btn btn-primary' href='research.html'>Explore research</a>",
+              f"<a class='btn btn-primary' href='{live}'>LIVE EARTHNET</a>",
+          ).replace(
+              '<a class="btn btn-primary" href="research.html">Explore research</a>',
+              f'<a class="btn btn-primary" href="{live}">LIVE EARTHNET</a>',
+          )
+          text = text.replace(
+              "<a class='btn' href='earthnet-platform.html'>Explore EarthNet</a>",
+              f"<a class='btn' href='{live}'>Open Live EarthNet</a>",
+          ).replace(
+              '<a class="btn" href="earthnet-platform.html">Explore EarthNet</a>',
+              f'<a class="btn" href="{live}">Open Live EarthNet</a>',
+          )
+          text = text.replace(
+              "class='domain-card' href='/earthnet-platform'",
+              f"class='domain-card' href='{live}'",
+          ).replace(
+              'class="domain-card" href="/earthnet-platform"',
+              f'class="domain-card" href="{live}"',
+          )
+          text = text.replace('Explore EarthNet →', 'Open Live EarthNet →')
+          text = re.sub(r'earthnet-global/\?v=[A-Za-z0-9._-]+', live, text)
+          home.write_text(text, encoding='utf-8')
+
+          if 'LIVE EARTHNET' not in text or 'Open Live EarthNet' not in text:
+              raise SystemExit('Homepage live EarthNet promotion was not applied')
+          if text.count(live) < 2:
+              raise SystemExit('Homepage does not contain enough direct live EarthNet links')
+          print(f'Homepage promotes live EarthNet at {live}.')
+          PY
+          rm -rf _site/.netlify
+
+      - name: Build deterministic EarthNet Pages bundle
+        shell: bash
+        run: |
+          set -euo pipefail
+          ROOT="_site/earthnet-global"
+          ASSETS="$ROOT/assets"
+          SEED=".earthnet-seed/site/earthnet-global"
+          mkdir -p "$ASSETS" _site/data
+
+          # If a canonical bundle is later committed to the Pages repo, it wins.
           if [[ -d earthnet-global ]]; then
-            rm -rf _site/earthnet-global
-            cp -a earthnet-global _site/earthnet-global
-            echo "Staged canonical EarthNet Global bundle from GitHub."
-          else
-            echo "::warning::No repository EarthNet Global bundle found; retaining mirrored fallback."
+            rm -rf "$ROOT"
+            cp -a earthnet-global "$ROOT"
+            ASSETS="$ROOT/assets"
+            mkdir -p "$ASSETS"
+            echo "Staged canonical EarthNet bundle from repository."
           fi
+
+          # wget may save cache-busted assets under filenames containing query
+          # strings. Collapse any recovered Vite runtime back to clean names.
+          JS_CANDIDATE="$(find "$ASSETS" -maxdepth 1 -type f -name 'index-*.js*' -print | sort | head -n 1 || true)"
+          CSS_CANDIDATE="$(find "$ASSETS" -maxdepth 1 -type f -name 'index-*.css*' -print | sort | head -n 1 || true)"
+
+          if [[ -z "$JS_CANDIDATE" && -d "$SEED/assets" ]]; then
+            JS_CANDIDATE="$(find "$SEED/assets" -maxdepth 1 -type f -name 'index-*.js' -print | head -n 1 || true)"
+            echo "Recovered EarthNet JS from known-good Pages seed."
+          fi
+          if [[ -z "$CSS_CANDIDATE" && -d "$SEED/assets" ]]; then
+            CSS_CANDIDATE="$(find "$SEED/assets" -maxdepth 1 -type f -name 'index-*.css' -print | head -n 1 || true)"
+            echo "Recovered EarthNet CSS from known-good Pages seed."
+          fi
+          if [[ -z "$JS_CANDIDATE" || -z "$CSS_CANDIDATE" ]]; then
+            echo "EarthNet runtime assets could not be recovered." >&2
+            exit 1
+          fi
+
+          JS_BASE="$(basename "$JS_CANDIDATE" | sed -E 's/^(index-[A-Za-z0-9_-]+\.js).*/\1/')"
+          CSS_BASE="$(basename "$CSS_CANDIDATE" | sed -E 's/^(index-[A-Za-z0-9_-]+\.css).*/\1/')"
+          [[ "$JS_BASE" == *.js ]] || { echo "Invalid EarthNet JS filename: $JS_BASE" >&2; exit 1; }
+          [[ "$CSS_BASE" == *.css ]] || { echo "Invalid EarthNet CSS filename: $CSS_BASE" >&2; exit 1; }
+
+          if [[ "$JS_CANDIDATE" != "$ASSETS/$JS_BASE" ]]; then
+            cp "$JS_CANDIDATE" "$ASSETS/$JS_BASE"
+          fi
+          if [[ "$CSS_CANDIDATE" != "$ASSETS/$CSS_BASE" ]]; then
+            cp "$CSS_CANDIDATE" "$ASSETS/$CSS_BASE"
+          fi
+
+          # Throw away query-string filenames created by recursive self-mirroring.
+          find "$ASSETS" -maxdepth 1 -type f \( -name '*?*' -o -name '*%3F*' \) -delete || true
 
           declare -A EARTH_TEXTURES=(
             [earth_atmos_2048.jpg]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg"
@@ -102,118 +190,90 @@ jobs:
             [earth_clouds_1024.png]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png"
           )
           for file in "${!EARTH_TEXTURES[@]}"; do
-            if [[ ! -s "_site/earthnet-global/$file" ]]; then
+            if [[ ! -s "$ROOT/$file" ]]; then
               curl --fail --silent --show-error --location --retry 3 --connect-timeout 10 --max-time 30 \
-                "${EARTH_TEXTURES[$file]}" -o "_site/earthnet-global/$file"
-              echo "Restored EarthNet texture in Pages build: $file"
+                "${EARTH_TEXTURES[$file]}" -o "$ROOT/$file"
+              echo "Restored EarthNet texture: $file"
             fi
           done
 
-          # Normalise EarthNet runtime paths. Repeated self-mirroring had
-          # accumulated prefixes such as ......../data/ and ......../earthnet-global/.
-          python3 - <<'PY'
-          from pathlib import Path
-          import re
-
-          root = Path('_site/earthnet-global')
-          changed = 0
-          for path in root.rglob('*'):
-              if not path.is_file() or path.suffix.lower() not in {'.html', '.js', '.mjs', '.css'}:
-                  continue
-              try:
-                  text = path.read_text(encoding='utf-8')
-              except UnicodeDecodeError:
-                  continue
-              new = re.sub(r'\.{4,}/earthnet-global/', '../earthnet-global/', text)
-              new = re.sub(r'\.{4,}/data/', '../data/', new)
-              new = re.sub(r'(?<!\.)/earthnet-global/', '../earthnet-global/', new)
-              new = re.sub(r'(?<!\.)/data/', '../data/', new)
-              if new != text:
-                  path.write_text(new, encoding='utf-8')
-                  changed += 1
-
-          leftovers = []
-          for path in root.rglob('*'):
-              if not path.is_file() or path.suffix.lower() not in {'.html', '.js', '.mjs', '.css'}:
-                  continue
-              try:
-                  text = path.read_text(encoding='utf-8')
-              except UnicodeDecodeError:
-                  continue
-              if re.search(r'\.{4,}/(?:earthnet-global|data)/', text):
-                  leftovers.append(str(path))
-          if leftovers:
-              raise SystemExit('Malformed EarthNet runtime paths remain: ' + ', '.join(leftovers))
-          print(f'Normalised EarthNet runtime paths in {changed} file(s).')
-          PY
-
-          # The runtime JS is patched after Vite assigned its hashed filename,
-          # so force a unique browser/CDN URL for each Pages deployment. Also
-          # strip the stale Netlify HUD injected by the former host.
-          python3 - <<'PY'
+          # Normalise only runtime string literals. Never rewrite full https URLs
+          # in index.html again; the index is regenerated deterministically below.
+          JS_PATH="$ASSETS/$JS_BASE" python3 - <<'PY'
           from pathlib import Path
           import os
           import re
 
-          index = Path('_site/earthnet-global/index.html')
-          version = os.environ.get('GITHUB_SHA', 'earthnet')[:12]
-          text = index.read_text(encoding='utf-8')
-          text = re.sub(
-              r'((?:\.\./|\./)?assets/[^"\']+\.(?:js|css))(?:\?v=[^"\']*)?',
-              lambda m: f'{m.group(1)}?v={version}',
-              text,
-          )
-          text = re.sub(
-              r'\s*<script[^>]+\.netlify/scripts/hud[^>]*></script>\s*',
-              '\n',
-              text,
-              flags=re.IGNORECASE,
-          )
-          if f'?v={version}' not in text:
-              raise SystemExit('EarthNet cache-buster was not applied to index.html')
-          if '.netlify/scripts/hud' in text:
-              raise SystemExit('Stale Netlify HUD remains in EarthNet index.html')
-          index.write_text(text, encoding='utf-8')
-          print(f'Cache-busted EarthNet entrypoint for deploy {version}; removed stale Netlify HUD.')
+          path = Path(os.environ['JS_PATH'])
+          text = path.read_text(encoding='utf-8')
+          quote = r'([\"\'`])'
+          text = re.sub(quote + r'\.{4,}/earthnet-global/', r'\1../earthnet-global/', text)
+          text = re.sub(quote + r'\.{4,}/data/', r'\1../data/', text)
+          text = re.sub(quote + r'/earthnet-global/', r'\1../earthnet-global/', text)
+          text = re.sub(quote + r'/data/', r'\1../data/', text)
+          path.write_text(text, encoding='utf-8')
+
+          if '../data/earthnet_latest.json' not in text:
+              raise SystemExit('EarthNet JS is not wired to the Pages event snapshot')
+          if '../earthnet-global/' not in text:
+              raise SystemExit('EarthNet JS is not wired to local globe textures')
           PY
+
+          VERSION="${GITHUB_SHA:0:12}"
+          cat > "$ROOT/index.html" <<EOF
+          <!doctype html>
+          <html lang="en">
+            <head>
+              <meta charset="UTF-8" />
+              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>EarthNet Global Operations</title>
+              <script type="module" crossorigin src="assets/$JS_BASE?v=$VERSION"></script>
+              <link rel="stylesheet" crossorigin href="assets/$CSS_BASE?v=$VERSION">
+            </head>
+            <body>
+              <div id="root"></div>
+            </body>
+          </html>
+          EOF
 
           for file in earthnet_latest.json earthnet_status.json earthnet_prometheus.json; do
             if [[ -f "data/$file" ]]; then
               cp "data/$file" "_site/data/$file"
-              echo "Staged EarthNet repository snapshot: $file"
             fi
           done
 
-          python3 - <<'PY'
+          JS_BASE="$JS_BASE" CSS_BASE="$CSS_BASE" VERSION="$VERSION" python3 - <<'PY'
           import json
+          import os
           from pathlib import Path
 
-          latest_path = Path('_site/data/earthnet_latest.json')
-          status_path = Path('_site/data/earthnet_status.json')
-          if not latest_path.exists() or not status_path.exists():
-              raise SystemExit('EarthNet snapshot is missing from the Pages artifact')
-
-          latest = json.loads(latest_path.read_text(encoding='utf-8'))
-          status = json.loads(status_path.read_text(encoding='utf-8'))
-          if not isinstance(latest, list) or not latest:
-              raise SystemExit('EarthNet event snapshot is empty or invalid')
-          if not isinstance(status, dict):
-              raise SystemExit('EarthNet status snapshot failed validation')
-
           root = Path('_site/earthnet-global')
+          js = root / 'assets' / os.environ['JS_BASE']
+          css = root / 'assets' / os.environ['CSS_BASE']
+          index = (root / 'index.html').read_text(encoding='utf-8')
+          latest = json.loads(Path('_site/data/earthnet_latest.json').read_text(encoding='utf-8'))
+          status = json.loads(Path('_site/data/earthnet_status.json').read_text(encoding='utf-8'))
+
           required = [
-              root / 'index.html',
+              js, css,
               root / 'earth_atmos_2048.jpg',
               root / 'earth_normal_2048.jpg',
               root / 'earth_specular_2048.jpg',
               root / 'earth_clouds_1024.png',
           ]
-          missing = [str(path) for path in required if not path.exists() or path.stat().st_size == 0]
+          missing = [str(p) for p in required if not p.exists() or p.stat().st_size == 0]
           if missing:
-              raise SystemExit('EarthNet Global bundle incomplete: ' + ', '.join(missing))
-
-          generated = status.get('generated') or status.get('cycle_completed_at')
-          print(f'EarthNet Pages overlay validated: {len(latest)} events; generated {generated}')
+              raise SystemExit('EarthNet first-visit bundle incomplete: ' + ', '.join(missing))
+          if not isinstance(latest, list) or not latest:
+              raise SystemExit('EarthNet event snapshot is empty')
+          if not isinstance(status, dict):
+              raise SystemExit('EarthNet status snapshot invalid')
+          if 'https://pythology.co.nz../' in index or '.netlify/' in index:
+              raise SystemExit('EarthNet index contains a malformed/legacy host reference')
+          expected_js = f'assets/{os.environ["JS_BASE"]}?v={os.environ["VERSION"]}'
+          if expected_js not in index:
+              raise SystemExit('EarthNet deterministic JS entrypoint missing')
+          print(f'EarthNet first-visit bundle validated: {len(latest)} events; JS={os.environ["JS_BASE"]}; CSS={os.environ["CSS_BASE"]}.')
           PY
 
       - name: Stage current safe System Control snapshots
@@ -230,7 +290,6 @@ jobs:
           done
           python3 - <<'PY'
           from pathlib import Path
-
           page = Path('_site/monitor/yggdrasil.html')
           if page.exists():
               text = page.read_text(encoding='utf-8')
