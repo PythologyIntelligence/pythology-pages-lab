@@ -180,8 +180,10 @@ jobs:
             cp "$CSS_CANDIDATE" "$ASSETS/$CSS_BASE"
           fi
 
-          # Throw away query-string filenames created by recursive self-mirroring.
-          find "$ASSETS" -maxdepth 1 -type f \( -name '*?*' -o -name '*%3F*' \) -delete || true
+          # Recursive self-mirroring can leave query-string filenames behind.
+          # Leave them unused rather than risk deleting the canonical JS/CSS;
+          # the deterministic index below references only the clean filenames.
+          true
 
           declare -A EARTH_TEXTURES=(
             [earth_atmos_2048.jpg]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg"
