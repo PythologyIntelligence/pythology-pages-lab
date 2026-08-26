@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-26T14:09:00.497140+00:00",
+  "generatedAt": "2026-08-26T14:09:15.501930+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,13 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-26T14:09:14.615744+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
     {
       "ts": "2026-08-26T14:08:54.601988+00:00",
       "type": "guardrail",
@@ -247,14 +254,7 @@
       "event": "no_champion",
       "title": "No champion for EURUSD",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-26T09:30:38.720942+00:00",
-      "type": "norns",
-      "event": "tournament_started",
-      "title": "Norns tournament started",
-      "detail": "61 candidates entered research validation."
     }
   ],
-  "publishedAt": "2026-08-26T14:09:04.716826+00:00"
+  "publishedAt": "2026-08-26T14:09:26.113418+00:00"
 }
