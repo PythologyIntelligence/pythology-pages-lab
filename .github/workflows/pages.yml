@@ -49,7 +49,7 @@ jobs:
             if curl -fsSL "https://pythology.co.nz/earthnet-global/$file" -o "$tmp"; then
               cp "$tmp" "_site/earthnet-global/$file"
             else
-              echo "Keeping last-good EarthNet asset: $file"
+              echo "EarthNet local texture unavailable: $file; browser bundle will use canonical Three.js texture fallback."
             fi
           done
           if curl -fsSL "https://pythology.co.nz/data/earthnet_blob_config.json" -o /tmp/earthnet_blob_config.json; then
@@ -57,6 +57,10 @@ jobs:
           fi
           if [[ -f data/earthnet_status.json ]]; then
             cp data/earthnet_status.json _site/data/earthnet_status.json
+          fi
+          if [[ ! -f _site/data/earthnet_latest.json && -f data/earthnet_latest.json ]]; then
+            cp data/earthnet_latest.json _site/data/earthnet_latest.json
+            echo "Staged EarthNet emergency event snapshot from Pages repository."
           fi
           python3 - <<'PY'
           from pathlib import Path
@@ -68,6 +72,12 @@ jobs:
               '/earthnet-global/': './earthnet-global/',
               '/data/': './data/',
           }
+          # The EarthNet Vite bundle constructs the four globe texture URLs from
+          # one base template. If the mirrored binary textures are absent, point
+          # that template at the canonical Three.js planet textures so EarthNet
+          # still renders Earth rather than the untextured blue fallback sphere.
+          local_texture_template = '`./earthnet-global/${o}`'
+          canonical_texture_template = '`https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/${o}`'
 
           for path in root.rglob('*'):
               if not path.is_file() or path.suffix.lower() not in {'.html', '.js', '.mjs', '.css'}:
@@ -79,6 +89,7 @@ jobs:
               new = text
               for old, replacement in replacements.items():
                   new = new.replace(old, replacement)
+              new = new.replace(local_texture_template, canonical_texture_template)
               if new != text:
                   path.write_text(new)
           PY
