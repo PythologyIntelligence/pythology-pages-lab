@@ -44,11 +44,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p _site/data
+          mkdir -p _site/data _site/earthnet-global
 
           # Prefer a tested EarthNet bundle committed to this Pages repository
-          # whenever one is available. Until then, retain the known-good mirrored
-          # bundle so a data-plane transition cannot turn the globe into Jupiter.
+          # whenever one is available. Until then, retain the mirrored bundle.
           if [[ -d earthnet-global ]]; then
             rm -rf _site/earthnet-global
             cp -a earthnet-global _site/earthnet-global
@@ -57,9 +56,26 @@ jobs:
             echo "::warning::No repository EarthNet Global bundle found; retaining mirrored fallback."
           fi
 
+          # The globe loads its planet textures dynamically, so a web mirror
+          # will not discover them. Rehydrate only missing textures from the
+          # same canonical Three.js source used by EarthNet's own GitHub build.
+          declare -A EARTH_TEXTURES=(
+            [earth_atmos_2048.jpg]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg"
+            [earth_normal_2048.jpg]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_normal_2048.jpg"
+            [earth_specular_2048.jpg]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_specular_2048.jpg"
+            [earth_clouds_1024.png]="https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png"
+          )
+          for file in "${!EARTH_TEXTURES[@]}"; do
+            if [[ ! -s "_site/earthnet-global/$file" ]]; then
+              curl --fail --silent --show-error --location --retry 3 --connect-timeout 10 --max-time 30 \
+                "${EARTH_TEXTURES[$file]}" -o "_site/earthnet-global/$file"
+              echo "Restored EarthNet texture in Pages build: $file"
+            fi
+          done
+
           # Repository snapshots are the stable public fallback. Once EarthNet's
-          # publisher credential is authorised for this repo, the same paths are
-          # refreshed automatically by EarthNet's GitHub workflows.
+          # publisher credential is authorised for this repo, these same paths
+          # can be refreshed automatically by EarthNet's GitHub workflows.
           for file in earthnet_latest.json earthnet_status.json earthnet_prometheus.json; do
             if [[ -f "data/$file" ]]; then
               cp "data/$file" "_site/data/$file"
