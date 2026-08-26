@@ -40,7 +40,7 @@ jobs:
             bash scripts/build-pages-fallback.sh
           fi
 
-      - name: Patch EarthNet for project Pages without making old host a hard dependency
+      - name: Patch EarthNet for Pages and custom domain without making old host a hard dependency
         shell: bash
         run: |
           mkdir -p _site/earthnet-global _site/data
@@ -62,10 +62,11 @@ jobs:
           from pathlib import Path
 
           root = Path('_site/earthnet-global')
-          prefix = '/pythology-pages-lab'
           replacements = {
-              '/earthnet-global/': f'{prefix}/earthnet-global/',
-              '/data/': f'{prefix}/data/',
+              '/pythology-pages-lab/earthnet-global/': './earthnet-global/',
+              '/pythology-pages-lab/data/': './data/',
+              '/earthnet-global/': './earthnet-global/',
+              '/data/': './data/',
           }
 
           for path in root.rglob('*'):
