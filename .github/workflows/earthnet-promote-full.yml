@@ -1,0 +1,111 @@
+name: Promote EarthNet Full Snapshot
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/earthnet-promote-full.yml'
+      - 'data/earthnet_latest_public.json.gz.b64'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: earthnet-promote-full
+  cancel-in-progress: true
+
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout latest main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Decode and validate full EarthNet snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          base64 --decode data/earthnet_latest_public.json.gz.b64 | gzip -dc > /tmp/earthnet_latest.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('/tmp/earthnet_latest.json')
+          events = json.loads(path.read_text(encoding='utf-8'))
+          if not isinstance(events, list):
+              raise SystemExit('EarthNet promoted snapshot is not an event list')
+          causal = sum(1 for event in events if isinstance(event, dict) and event.get('causal'))
+          if len(events) != 133:
+              raise SystemExit(f'Expected 133 EarthNet events, found {len(events)}')
+          if causal != 40:
+              raise SystemExit(f'Expected 40 EarthNet causal assessments, found {causal}')
+          print(f'EarthNet full snapshot validated: {len(events)} events / {causal} causal assessments.')
+          PY
+
+      - name: Promote snapshot atomically
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp /tmp/earthnet_latest.json data/earthnet_latest.json
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path('data/earthnet_status.json')
+          status = json.loads(path.read_text(encoding='utf-8'))
+          status.update({
+              'causal_assessment_count': 40,
+              'cycle_completed_at': '2026-08-26T17:03:40+00:00',
+              'cycle_started_at': '2026-08-26T16:58:45+00:00',
+              'degraded': False,
+              'engine_count': 10,
+              'event_count': 133,
+              'generated': '2026-08-26T17:03:40+00:00',
+              'source_record_count': 133,
+              'success': True,
+          })
+          status['engine_counts'] = {
+              'atmosphere': 13,
+              'cryosphere': 6,
+              'geopolitical_conflict': 18,
+              'infrastructure_risk': 8,
+              'neo': 13,
+              'ocean': 10,
+              'seismic': 14,
+              'space_weather': 1,
+              'volcanic': 12,
+              'wildfire_flood_landslide': 38,
+          }
+          status['live_data_plane'] = {
+              'branch': 'main',
+              'provider': 'github-pages-emergency-promoter',
+              'publication_mode': 'canonical_static_snapshot',
+              'published': True,
+              'published_at': '2026-08-26T17:04:08+00:00',
+              'repository': 'PythologyIntelligence/pythology-pages-lab',
+          }
+          path.write_text(json.dumps(status, indent=2, sort_keys=True) + '\n', encoding='utf-8')
+          PY
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/earthnet_latest.json data/earthnet_status.json
+          if git diff --cached --quiet; then
+            echo 'EarthNet canonical snapshot already current.'
+          else
+            git commit -m 'data(earthnet): promote full 133-event snapshot'
+            git push origin HEAD:main
+          fi
+
+      - name: Deploy promoted snapshot to GitHub Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh workflow run pages.yml --repo PythologyIntelligence/pythology-pages-lab --ref main
+          echo 'Triggered Pages deployment for promoted EarthNet snapshot.'
