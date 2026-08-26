@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-26T14:00:15.155140+00:00",
+  "generatedAt": "2026-08-26T14:02:15.245199+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,12 +81,19 @@
     "positions": 0,
     "tradesThisSession": 0,
     "openRiskPct": 0.0,
-    "killSwitch": false,
+    "killSwitch": true,
     "flattenRequested": false,
     "lastError": false
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-26T14:02:14.305250+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
     {
       "ts": "2026-08-26T13:30:02.712052+00:00",
       "type": "tyr",
@@ -247,14 +254,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for NAS100",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-26T03:30:29.851366+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for NAS100",
-      "detail": "3 candidates passed the training gate; 58 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-08-26T14:00:28.496504+00:00"
+  "publishedAt": "2026-08-26T14:02:22.441877+00:00"
 }
