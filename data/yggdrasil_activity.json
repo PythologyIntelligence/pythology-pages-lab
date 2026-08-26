@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-26T14:13:00.623235+00:00",
+  "generatedAt": "2026-08-26T14:13:15.630651+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -87,6 +87,20 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-26T14:13:14.760011+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
+    {
+      "ts": "2026-08-26T14:13:04.751763+00:00",
+      "type": "guardrail",
+      "event": "loss_breaker",
+      "title": "Session loss breaker fired",
+      "detail": "T\u00fdr armed the local kill switch and requested Yggdrasil-owned positions be flattened."
+    },
     {
       "ts": "2026-08-26T14:12:54.745801+00:00",
       "type": "guardrail",
@@ -240,21 +254,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for NAS100",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-26T09:30:42.621144+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for NAS100",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-26T09:30:42.621144+00:00",
-      "type": "norns",
-      "event": "tournament_completed",
-      "title": "Norns tournament completed",
-      "detail": "1 champion(s) survived all gates."
     }
   ],
-  "publishedAt": "2026-08-26T14:13:08.531766+00:00"
+  "publishedAt": "2026-08-26T14:13:30.786500+00:00"
 }
