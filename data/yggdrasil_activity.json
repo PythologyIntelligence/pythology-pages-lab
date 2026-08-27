@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-27T13:28:53.262448+00:00",
+  "generatedAt": "2026-08-27T13:30:08.306204+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -53,12 +53,19 @@
     "positions": 0,
     "tradesThisSession": 0,
     "openRiskPct": 0.0,
-    "killSwitch": true,
+    "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-08-27T13:30:02.867840+00:00",
+      "type": "tyr",
+      "event": "session_started",
+      "title": "T\u00fdr armed a new session",
+      "detail": "Session limits and counters were reset for the authorised trading window."
+    },
     {
       "ts": "2026-08-27T07:57:34.290894+00:00",
       "type": "norns",
@@ -219,14 +226,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for NAS100",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-27T03:31:07.107667+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for NAS100",
-      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-08-27T13:28:55.497829+00:00"
+  "publishedAt": "2026-08-27T13:30:19.249224+00:00"
 }
