@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-27T07:57:43.561499+00:00",
+  "generatedAt": "2026-08-27T08:27:44.491924+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -228,5 +228,5 @@
       "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-08-27T07:57:49.760998+00:00"
+  "publishedAt": "2026-08-27T08:27:54.750378+00:00"
 }
