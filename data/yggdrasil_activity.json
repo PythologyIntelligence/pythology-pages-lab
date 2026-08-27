@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-27T07:22:11.808750+00:00",
+  "generatedAt": "2026-08-27T07:57:43.561499+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -19,7 +19,7 @@
   ],
   "research": {
     "candidateCount": 61,
-    "lastResearchAt": "2026-08-27T03:31:07.154552+00:00",
+    "lastResearchAt": "2026-08-27T07:57:34.290894+00:00",
     "latestTournamentSelected": 0,
     "currentTrainingGateEligible": 0,
     "families": [
@@ -60,6 +60,139 @@
   "recentTrades": [],
   "recentActivity": [
     {
+      "ts": "2026-08-27T07:57:34.290894+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for NAS100",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-27T07:57:34.290894+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for NAS100",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-27T07:57:34.290894+00:00",
+      "type": "norns",
+      "event": "tournament_completed",
+      "title": "Norns tournament completed",
+      "detail": "0 champion(s) survived all gates."
+    },
+    {
+      "ts": "2026-08-27T07:57:33.743928+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-27T07:57:33.743928+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-27T07:57:33.743928+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for XAUUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-27T07:57:33.728299+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-27T07:57:33.712650+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-27T07:57:33.712650+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-27T07:57:33.697137+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for XAUUSD",
+      "detail": "5 candidates passed the training gate; 56 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-27T07:57:32.838109+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for USDJPY",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-27T07:57:32.832094+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for USDJPY",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-27T07:57:31.414504+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for GBPUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-27T07:57:31.402821+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for GBPUSD",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-27T07:57:29.853357+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for EURUSD",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-27T07:57:29.853357+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for EURUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-27T07:57:29.098282+00:00",
+      "type": "norns",
+      "event": "tournament_started",
+      "title": "Norns tournament started",
+      "detail": "61 candidates entered research validation."
+    },
+    {
+      "ts": "2026-08-27T07:57:29.098282+00:00",
+      "type": "engine",
+      "event": "engine_started",
+      "title": "Yggdrasil engine started",
+      "detail": "DEMO_ONLY \u00b7 5 configured markets attached."
+    },
+    {
+      "ts": "2026-08-27T07:22:24.389951+00:00",
+      "type": "engine",
+      "event": "engine_stopped",
+      "title": "Yggdrasil engine stopped",
+      "detail": "Execution loop stopped cleanly."
+    },
+    {
       "ts": "2026-08-27T03:31:07.154552+00:00",
       "type": "norns",
       "event": "candidate_rejected",
@@ -93,140 +226,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for NAS100",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-27T03:31:07.092053+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for NAS100",
-      "detail": "3 candidates passed the training gate; 58 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-27T03:31:06.263494+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-27T03:31:06.263494+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-27T03:31:06.263494+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for XAUUSD",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-27T03:31:06.247870+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-27T03:31:06.247870+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-27T03:31:06.247870+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-27T03:31:06.232252+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for XAUUSD",
-      "detail": "5 candidates passed the training gate; 56 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-27T03:31:05.716629+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for USDJPY",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-27T03:31:05.716629+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for USDJPY",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-27T03:31:05.154116+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for GBPUSD",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-27T03:31:05.154116+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for GBPUSD",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-27T03:31:04.622873+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for EURUSD",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-27T03:31:04.622873+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for EURUSD",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-27T03:31:04.051331+00:00",
-      "type": "norns",
-      "event": "tournament_started",
-      "title": "Norns tournament started",
-      "detail": "61 candidates entered research validation."
-    },
-    {
-      "ts": "2026-08-26T21:30:58.833509+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for NAS100",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-26T21:30:58.833509+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for NAS100",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-26T21:30:58.833509+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for NAS100",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-26T21:30:58.833509+00:00",
-      "type": "norns",
-      "event": "tournament_completed",
-      "title": "Norns tournament completed",
-      "detail": "1 champion(s) survived all gates."
     }
   ],
-  "publishedAt": "2026-08-27T07:57:28.622427+00:00"
+  "publishedAt": "2026-08-27T07:57:49.760998+00:00"
 }
