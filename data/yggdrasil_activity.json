@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-27T07:02:11.297932+00:00",
+  "generatedAt": "2026-08-27T07:22:11.808750+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -228,5 +228,5 @@
       "detail": "1 champion(s) survived all gates."
     }
   ],
-  "publishedAt": "2026-08-27T07:02:12.860840+00:00"
+  "publishedAt": "2026-08-27T07:57:28.622427+00:00"
 }
