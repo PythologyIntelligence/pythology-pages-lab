@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-28T18:28:27.871641+00:00",
+  "generatedAt": "2026-08-28T18:58:43.818479+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -288,5 +288,5 @@
       "detail": "rsi_revert-lower25-period21-upper75 \u00b7 broker-side stop and target attached \u00b7 1.193% risk budget"
     }
   ],
-  "publishedAt": "2026-08-28T18:28:41.777963+00:00"
+  "publishedAt": "2026-08-28T18:58:47.834623+00:00"
 }
