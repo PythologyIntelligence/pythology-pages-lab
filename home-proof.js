@@ -67,7 +67,7 @@
     text('[data-home-forecast-confidence]', pct(forecast.forecast_confidence));
     text('[data-home-forecast-valid]', `Valid to ${shortDate(forecast.valid_until)}`);
     text('[data-home-forecast-sources]', `${Number(forecast.source_independence_count || 0)} source ${Number(forecast.source_independence_count || 0) === 1 ? 'family' : 'families'}`);
-    text('[data-home-forecast-mode]', featured.native ? 'Chosen by Prometheus' : 'Prototype featured ranking');
+    text('[data-home-forecast-mode]', featured.native ? 'Chosen by Prometheus' : 'Validation forecast');
   }
 
   function renderNz(data) {
