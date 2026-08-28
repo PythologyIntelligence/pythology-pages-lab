@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-28T14:40:49.125448+00:00",
+  "generatedAt": "2026-08-28T14:41:19.158294+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 1,
-    "openRiskPct": 1.17,
+    "openRiskPct": 1.172,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -268,5 +268,5 @@
       "detail": "1 champion(s) survived all gates."
     }
   ],
-  "publishedAt": "2026-08-28T14:40:57.804721+00:00"
+  "publishedAt": "2026-08-28T14:41:20.714146+00:00"
 }
