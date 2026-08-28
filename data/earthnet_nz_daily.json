@@ -1,0 +1,96 @@
+{
+  "generated_at": "2026-08-25T19:10:20+00:00",
+  "generated_at_nz": "2026-08-26T07:10:20+12:00",
+  "local_date": "2026-08-26",
+  "research_only": true,
+  "schema": "prometheus.aotearoa.daily-state.v0.1",
+  "prometheus_interpretation": [
+    "GeoNet recorded 38 usable NZ earthquake catalogue events in the last 24 hours; the largest was M4.8.",
+    "The largest spatial concentration contains 5 events around Wellington; this is logged as a concentration, not a precursor claim.",
+    "No daily GeoNet volcanic status change was detected from the previous stored state.",
+    "Forecast rainfall deserves attention around Queenstown (63 mm across the next 48 hours in the point forecast); river sensors are not yet part of this judgement."
+  ],
+  "seismic": {
+    "source": "GeoNet WFS quake catalogue",
+    "event_count": 38,
+    "reviewed_count": 38,
+    "automatic_or_unreviewed_count": 0,
+    "largest_magnitude": 4.8,
+    "magnitude_bins": {
+      "lt_0": 0,
+      "0_0_to_0_9": 2,
+      "1_0_to_1_9": 18,
+      "2_0_to_2_9": 15,
+      "3_0_to_3_9": 2,
+      "4_0_plus": 1
+    },
+    "activity_concentrations": [
+      {
+        "centroid": {"latitude": -41.542, "longitude": 174.3929},
+        "count": 5,
+        "interpretation": "Activity concentration only; no predictive meaning assigned.",
+        "largest_magnitude": 2.42,
+        "mean_depth_km": 7.9,
+        "mean_magnitude": 2.18,
+        "nearest_locality": "Wellington"
+      }
+    ],
+    "events": [
+      {"magnitude":1.922270740170791},{"magnitude":1.737322627032055},{"magnitude":1.9546482047243425},{"magnitude":2.055023086529985},{"magnitude":0.8068202149939299},{"magnitude":1.9319847847695526},{"magnitude":1.8142611016367176},{"magnitude":1.7243947318344277},{"magnitude":0.7724470446796046},{"magnitude":1.5928137162139633},{"magnitude":1.5150523045300437},{"magnitude":2.387276388091767},{"magnitude":4.797042541726797},{"magnitude":1.9916732977078333},{"magnitude":1.2877735772023609},{"magnitude":1.501211168050902},{"magnitude":1.6820014288830125},{"magnitude":1.2424121306877345},{"magnitude":2.239362906119466},{"magnitude":2.015281839776978},{"magnitude":2.2670861257583743},{"magnitude":2.037556016724689},{"magnitude":2.263069688278397},{"magnitude":1.7907448814961027},{"magnitude":1.8890029912063446},{"magnitude":3.1902897099580807},{"magnitude":2.779392121596993},{"magnitude":2.007289791853341},{"magnitude":2.423686775060582},{"magnitude":2.399834333376283},{"magnitude":2.3276658196143387},{"magnitude":3.4936416708622535},{"magnitude":1.9070398394993713},{"magnitude":2.0341639770401696},{"magnitude":2.234276534504758},{"magnitude":1.611147407690156},{"magnitude":2.7241932228351087},{"magnitude":1.547878583285758}
+    ]
+  },
+  "volcanic": {
+    "source": "GeoNet volcanic alert level feed",
+    "changes": [],
+    "volcanoes": [
+      {"name":"White Island","alert_level":2,"aviation_colour_code":"Yellow","activity":"Moderate to heightened volcanic unrest.","latitude":-37.521,"longitude":177.183},
+      {"name":"Ruapehu","alert_level":1,"aviation_colour_code":"Green","activity":"Minor volcanic unrest.","latitude":-39.281,"longitude":175.563},
+      {"name":"Tongariro","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-39.133318,"longitude":175.641727},
+      {"name":"Taupo","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-38.784,"longitude":175.896},
+      {"name":"Taranaki Maunga","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-39.298,"longitude":174.061},
+      {"name":"Rotorua","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-38.093,"longitude":176.281},
+      {"name":"Okataina","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-38.119,"longitude":176.501},
+      {"name":"Northland","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-35.395,"longitude":173.63},
+      {"name":"Ngauruhoe","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-39.156,"longitude":175.632},
+      {"name":"Mayor Island","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-37.286,"longitude":176.251},
+      {"name":"Kermadec Islands","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-29.254,"longitude":-177.914},
+      {"name":"Auckland Volcanic Field","alert_level":0,"aviation_colour_code":"Green","activity":"No volcanic unrest.","latitude":-36.985,"longitude":174.77}
+    ]
+  },
+  "weather": {
+    "flooding_guard": "Rainfall watch is forecast-only context, not a flood warning. River/catchment sensor data is not yet included; check MetService, NEMA and council warnings before acting.",
+    "points": [
+      {"name":"Queenstown","region":"Otago","latitude":-45.031,"longitude":168.662,"forecast_48h_precip_mm":62.8,"max_wind_gust_kmh":43.2,"rainfall_watch":"rainfall watch"},
+      {"name":"Westport","region":"West Coast","latitude":-41.752,"longitude":171.603,"forecast_48h_precip_mm":44.4,"max_wind_gust_kmh":68.4,"rainfall_watch":"rainfall watch"},
+      {"name":"Palmerston North","region":"Manawatū-Whanganui","latitude":-40.356,"longitude":175.611,"forecast_48h_precip_mm":24.9,"max_wind_gust_kmh":65.2,"rainfall_watch":"none"},
+      {"name":"Christchurch","region":"Canterbury","latitude":-43.532,"longitude":172.636,"forecast_48h_precip_mm":21.1,"max_wind_gust_kmh":68.8,"rainfall_watch":"none"},
+      {"name":"Invercargill","region":"Southland","latitude":-46.413,"longitude":168.353,"forecast_48h_precip_mm":18,"max_wind_gust_kmh":71.6,"rainfall_watch":"none"},
+      {"name":"Dunedin","region":"Otago","latitude":-45.878,"longitude":170.502,"forecast_48h_precip_mm":15.8,"max_wind_gust_kmh":86,"rainfall_watch":"none"},
+      {"name":"Nelson","region":"Nelson-Tasman","latitude":-41.271,"longitude":173.284,"forecast_48h_precip_mm":6.5,"max_wind_gust_kmh":73.8,"rainfall_watch":"none"},
+      {"name":"New Plymouth","region":"Taranaki","latitude":-39.058,"longitude":174.08,"forecast_48h_precip_mm":5.2,"max_wind_gust_kmh":45.7,"rainfall_watch":"none"},
+      {"name":"Whanganui","region":"Manawatū-Whanganui","latitude":-39.931,"longitude":175.047,"forecast_48h_precip_mm":3,"max_wind_gust_kmh":60.8,"rainfall_watch":"none"},
+      {"name":"Wellington","region":"Wellington","latitude":-41.286,"longitude":174.776,"forecast_48h_precip_mm":1.9,"max_wind_gust_kmh":85.3,"rainfall_watch":"none"},
+      {"name":"Tauranga","region":"Bay of Plenty","latitude":-37.687,"longitude":176.165,"forecast_48h_precip_mm":0.7,"max_wind_gust_kmh":49.7,"rainfall_watch":"none"},
+      {"name":"Napier","region":"Hawke's Bay","latitude":-39.493,"longitude":176.912,"forecast_48h_precip_mm":0.6,"max_wind_gust_kmh":52.6,"rainfall_watch":"none"},
+      {"name":"Gisborne","region":"Tairāwhiti","latitude":-38.662,"longitude":178.018,"forecast_48h_precip_mm":0.5,"max_wind_gust_kmh":45.7,"rainfall_watch":"none"},
+      {"name":"Taupō","region":"Waikato","latitude":-38.685,"longitude":176.07,"forecast_48h_precip_mm":0.4,"max_wind_gust_kmh":42.5,"rainfall_watch":"none"},
+      {"name":"Rotorua","region":"Bay of Plenty","latitude":-38.136,"longitude":176.249,"forecast_48h_precip_mm":0.3,"max_wind_gust_kmh":53.3,"rainfall_watch":"none"},
+      {"name":"Hamilton","region":"Waikato","latitude":-37.787,"longitude":175.279,"forecast_48h_precip_mm":0.2,"max_wind_gust_kmh":41.8,"rainfall_watch":"none"},
+      {"name":"Auckland","region":"Auckland","latitude":-36.85,"longitude":174.764,"forecast_48h_precip_mm":0,"max_wind_gust_kmh":41.4,"rainfall_watch":"none"},
+      {"name":"Whangārei","region":"Northland","latitude":-35.725,"longitude":174.323,"forecast_48h_precip_mm":0,"max_wind_gust_kmh":33.5,"rainfall_watch":"none"}
+    ],
+    "rainfall_watch_areas": [
+      {"name":"Queenstown","forecast_48h_precip_mm":62.8},
+      {"name":"Westport","forecast_48h_precip_mm":44.4}
+    ]
+  },
+  "ocean": {
+    "baseline_guard": "SST anomaly values use EarthNet's current heuristic reference baselines and are context signals, not a formal climatological anomaly product.",
+    "regions": [
+      {"name":"Equatorial Pacific (Niño 3.4)","latitude":0,"longitude":-140,"avg_sst_c":29.55,"sst_anomaly_c":3.55,"max_wave_m":1.86,"avg_current_ms":0.86},
+      {"name":"Western Pacific Warm Pool","latitude":10,"longitude":140,"avg_sst_c":29.16,"sst_anomaly_c":0.16,"max_wave_m":1.66,"avg_current_ms":0.75},
+      {"name":"Tasman Sea / NZ","latitude":-40,"longitude":165,"avg_sst_c":15.34,"sst_anomaly_c":1.34,"max_wave_m":3.48,"avg_current_ms":1.01},
+      {"name":"Southern Ocean (Drake Passage)","latitude":-58,"longitude":-65,"avg_sst_c":2.14,"sst_anomaly_c":-1.86,"max_wave_m":2.64,"avg_current_ms":0.59}
+    ]
+  }
+}

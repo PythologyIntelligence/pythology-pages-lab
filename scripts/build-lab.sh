@@ -265,6 +265,7 @@ PUBLIC_OVERRIDES=(
   earthnet-human.css
   earthnet-page.js
   earthnet-platform.html
+  earthnet-nz-intelligence.html
   prometheus-page.js
   prometheus.html
   research-ui.js
@@ -287,7 +288,7 @@ done
 
 # These public evidence projections are deliberately staged with the humanised
 # pages because wget does not discover browser-fetched JSON.
-for file in earthnet_prometheus.json earthnet_volcano_pulse.json; do
+for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_daily.json; do
   if [[ ! -f "$ROOT/data/$file" ]]; then
     echo "Required public evidence projection missing: data/$file" >&2
     exit 1
@@ -295,9 +296,17 @@ for file in earthnet_prometheus.json earthnet_volcano_pulse.json; do
   cp "$ROOT/data/$file" "$OUT/data/$file"
 done
 
-# Fail closed if the homepage overlay did not land.
+# Fail closed if the homepage overlay or NZ daily-state surface did not land.
 grep -Fq 'We build intelligence' "$OUT/index.html" || {
   echo 'Humanised homepage overlay validation failed.' >&2
+  exit 1
+}
+[[ -s "$OUT/earthnet-nz-intelligence.html" ]] || {
+  echo 'NZ intelligence page overlay validation failed.' >&2
+  exit 1
+}
+[[ -s "$OUT/data/earthnet_nz_daily.json" ]] || {
+  echo 'NZ daily-state projection validation failed.' >&2
   exit 1
 }
 
