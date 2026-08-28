@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-28T18:15:42.527718+00:00",
+  "generatedAt": "2026-08-28T18:28:27.871641+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -88,6 +88,16 @@
   },
   "recentTrades": [
     {
+      "ts": "2026-08-28T18:28:27.051018+00:00",
+      "kind": "EXIT",
+      "symbol": "XAUUSD",
+      "side": "SELL",
+      "strategyId": null,
+      "riskPct": null,
+      "state": "CLOSED",
+      "outcome": "WIN"
+    },
+    {
       "ts": "2026-08-28T15:28:02.754242+00:00",
       "kind": "FLATTEN",
       "symbol": "XAUUSD",
@@ -109,6 +119,13 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-28T18:28:27.051018+00:00",
+      "type": "bifrost",
+      "event": "mt5_deal",
+      "title": "MT5 confirmed OUT deal XAUUSD",
+      "detail": "Yggdrasil-owned broker deal reconciled into the local journal."
+    },
     {
       "ts": "2026-08-28T17:15:25.222715+00:00",
       "type": "bifrost",
@@ -269,14 +286,7 @@
       "event": "entry_executed",
       "title": "Bifr\u00f6st executed BUY XAUUSD",
       "detail": "rsi_revert-lower25-period21-upper75 \u00b7 broker-side stop and target attached \u00b7 1.193% risk budget"
-    },
-    {
-      "ts": "2026-08-28T13:30:06.216598+00:00",
-      "type": "tyr",
-      "event": "session_started",
-      "title": "T\u00fdr armed a new session",
-      "detail": "Session limits and counters were reset for the authorised trading window."
     }
   ],
-  "publishedAt": "2026-08-28T18:15:46.705280+00:00"
+  "publishedAt": "2026-08-28T18:28:41.777963+00:00"
 }
