@@ -1,0 +1,19 @@
+/* Humanised Causal Intelligence page */
+.causal-hero::before{opacity:.36;filter:saturate(.7) contrast(.95)}
+.causal-thesis{margin-top:34px;max-width:760px;font:500 clamp(24px,3vw,40px)/1.18 'Newsreader',Georgia,serif;color:#e4edef}
+.causal-thesis span{color:#8fd9e7}
+.causal-question-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.causal-question{padding:28px;border:1px solid rgba(161,213,222,.12);border-radius:18px;background:rgba(10,21,27,.5)}
+.causal-question span{font-size:10px;font-weight:700;color:#7ecedc;letter-spacing:.06em}
+.causal-question h3{margin:18px 0 10px;font:500 30px/1.08 'Newsreader',Georgia,serif}
+.causal-question p{margin:0;color:#92a5aa;line-height:1.72;font-size:13px}
+.causal-chain{display:grid;gap:0;border-top:1px solid rgba(161,213,222,.13)}
+.causal-chain-row{display:grid;grid-template-columns:150px minmax(220px,.7fr) minmax(0,1.3fr);gap:28px;padding:27px 0;border-bottom:1px solid rgba(161,213,222,.09);align-items:start}
+.causal-chain-row>span{color:#7ed2df;font-size:10px;font-weight:700;letter-spacing:.05em}
+.causal-chain-row h3{margin:0;font:500 25px/1.1 'Newsreader',Georgia,serif}
+.causal-chain-row p{margin:0;color:#8fa3a8;line-height:1.72;font-size:13px}
+.causal-boundary{margin-top:34px;padding:24px;border-left:2px solid rgba(143,217,231,.5);background:rgba(11,22,28,.36);color:#a8b8bc;line-height:1.75}
+.causal-domain-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.causal-domain{padding:30px;border-radius:18px;border:1px solid rgba(161,213,222,.11);background:rgba(9,19,24,.52)}
+.causal-domain span{font-size:10px;font-weight:700;color:#7dcbd8}.causal-domain h3{margin:18px 0 10px;font:500 30px/1.08 'Newsreader',Georgia,serif}.causal-domain p{margin:0;color:#94a7ac;line-height:1.72;font-size:13px}.causal-domain a{display:inline-block;margin-top:18px;color:#b9e9f0;text-decoration:none;font-size:12px}
+@media(max-width:900px){.causal-question-grid,.causal-domain-grid{grid-template-columns:1fr}.causal-chain-row{grid-template-columns:1fr;gap:10px}.causal-chain-row>span{margin-top:4px}}
