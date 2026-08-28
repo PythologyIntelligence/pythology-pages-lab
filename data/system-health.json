@@ -1,6 +1,6 @@
 {
   "schemaVersion": 4,
-  "generatedAt": "2026-08-28T05:25:45.234Z",
+  "generatedAt": "2026-08-28T18:44:50.989Z",
   "fleet": {
     "status": "down",
     "operational": 1,
@@ -15,8 +15,8 @@
       "name": "Cerberus",
       "status": "down",
       "summary": "Multiple Cerberus health surfaces are unavailable.",
-      "checkedAt": "2026-08-28T05:25:45.233Z",
-      "averageLatencyMs": 737,
+      "checkedAt": "2026-08-28T18:44:50.988Z",
+      "averageLatencyMs": 648,
       "providersOperational": 2,
       "providersAvailable": 3,
       "providersTotal": 3,
@@ -28,43 +28,43 @@
           "id": "app",
           "label": "Cerberus interface",
           "status": "down",
-          "latencyMs": 788,
+          "latencyMs": 664,
           "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:44.437Z",
+          "checkedAt": "2026-08-28T18:44:50.158Z",
           "note": "The synthetic reachability check returned an HTTP error."
         },
         {
           "id": "snapshot",
           "label": "Forecast snapshot",
           "status": "down",
-          "latencyMs": 668,
+          "latencyMs": 602,
           "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:44.449Z"
+          "checkedAt": "2026-08-28T18:44:50.150Z"
         },
         {
           "id": "binance",
           "label": "Binance crypto feed",
           "status": "degraded",
-          "latencyMs": 629,
+          "latencyMs": 593,
           "httpStatus": 451,
-          "checkedAt": "2026-08-28T05:25:44.412Z",
+          "checkedAt": "2026-08-28T18:44:50.143Z",
           "note": "Synthetic runner is restricted by this provider."
         },
         {
           "id": "yahoo",
           "label": "Yahoo market feed",
           "status": "operational",
-          "latencyMs": 639,
+          "latencyMs": 612,
           "httpStatus": 200,
-          "checkedAt": "2026-08-28T05:25:44.426Z"
+          "checkedAt": "2026-08-28T18:44:50.166Z"
         },
         {
           "id": "xaus",
           "label": "XAUS metals feed",
           "status": "operational",
-          "latencyMs": 962,
+          "latencyMs": 771,
           "httpStatus": 200,
-          "checkedAt": "2026-08-28T05:25:44.759Z"
+          "checkedAt": "2026-08-28T18:44:50.325Z"
         }
       ]
     },
@@ -73,9 +73,9 @@
       "name": "EarthNet",
       "status": "degraded",
       "summary": "EarthNet's latest relayed cycle is stale or reporting a degraded assertion.",
-      "checkedAt": "2026-08-28T05:25:46.062Z",
-      "averageLatencyMs": 1445,
-      "snapshotAgeMinutes": 2182,
+      "checkedAt": "2026-08-28T18:44:51.833Z",
+      "averageLatencyMs": 1401,
+      "snapshotAgeMinutes": 2981,
       "snapshotUpdatedAt": "2026-08-26T17:04:08.000Z",
       "engineCount": 10,
       "eventCount": 133,
@@ -85,20 +85,20 @@
           "id": "earthnet-app",
           "label": "EarthNet interface",
           "status": "down",
-          "latencyMs": 1448,
+          "latencyMs": 1369,
           "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:45.233Z",
+          "checkedAt": "2026-08-28T18:44:50.922Z",
           "note": "The synthetic reachability check returned an HTTP error."
         },
         {
           "id": "earthnet-snapshot",
           "label": "EarthNet intelligence cycle",
           "status": "degraded",
-          "latencyMs": 1442,
+          "latencyMs": 1433,
           "httpStatus": 200,
-          "checkedAt": "2026-08-28T05:25:45.230Z",
+          "checkedAt": "2026-08-28T18:44:50.988Z",
           "dataUpdatedAt": "2026-08-26T17:04:08.000Z",
-          "ageMinutes": 2182,
+          "ageMinutes": 2981,
           "freshnessLimitMinutes": 480,
           "engineCount": 10,
           "eventCount": 133,
@@ -113,24 +113,24 @@
       "name": "Agri",
       "status": "degraded",
       "summary": "Agri's Pages copy is only partially reachable.",
-      "checkedAt": "2026-08-28T05:25:46.061Z",
-      "averageLatencyMs": 754,
+      "checkedAt": "2026-08-28T18:44:51.833Z",
+      "averageLatencyMs": 373,
       "checks": [
         {
           "id": "agri-app",
           "label": "Agri Pages interface",
           "status": "down",
-          "latencyMs": 765,
+          "latencyMs": 569,
           "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:46.049Z"
+          "checkedAt": "2026-08-28T18:44:51.605Z"
         },
         {
           "id": "agri-data",
           "label": "Agri safe Pages data",
           "status": "operational",
-          "latencyMs": 742,
+          "latencyMs": 176,
           "httpStatus": 200,
-          "checkedAt": "2026-08-28T05:25:46.061Z"
+          "checkedAt": "2026-08-28T18:44:51.247Z"
         }
       ]
     },
@@ -139,16 +139,16 @@
       "name": "Poseidon",
       "status": "down",
       "summary": "Poseidon's Pages copy is not fully reachable.",
-      "checkedAt": "2026-08-28T05:25:46.061Z",
-      "averageLatencyMs": 727,
+      "checkedAt": "2026-08-28T18:44:51.833Z",
+      "averageLatencyMs": 762,
       "checks": [
         {
           "id": "poseidon-app",
           "label": "Poseidon Pages marine map",
           "status": "down",
-          "latencyMs": 727,
+          "latencyMs": 762,
           "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:46.046Z"
+          "checkedAt": "2026-08-28T18:44:51.833Z"
         }
       ]
     },
@@ -157,25 +157,25 @@
       "name": "Verry Elleegant",
       "status": "down",
       "summary": "Verry Elleegant could not be reached by the synthetic monitor.",
-      "checkedAt": "2026-08-28T05:25:45.233Z",
-      "averageLatencyMs": 810,
+      "checkedAt": "2026-08-28T18:44:50.988Z",
+      "averageLatencyMs": 1142,
       "checks": [
         {
           "id": "ve-app",
           "label": "Verry Elleegant interface",
           "status": "down",
-          "latencyMs": 807,
+          "latencyMs": 1140,
           "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:44.597Z",
+          "checkedAt": "2026-08-28T18:44:50.699Z",
           "note": "The synthetic reachability check returned an HTTP error."
         },
         {
           "id": "ve-health",
           "label": "Verry Elleegant health",
           "status": "down",
-          "latencyMs": 813,
+          "latencyMs": 1143,
           "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:44.605Z",
+          "checkedAt": "2026-08-28T18:44:50.702Z",
           "note": "Endpoint returned an HTTP error."
         }
       ]
@@ -185,24 +185,24 @@
       "name": "Sentinel",
       "status": "down",
       "summary": "Sentinel's Pages copy is only partially reachable.",
-      "checkedAt": "2026-08-28T05:25:46.061Z",
-      "averageLatencyMs": 728,
+      "checkedAt": "2026-08-28T18:44:51.833Z",
+      "averageLatencyMs": 623,
       "checks": [
         {
           "id": "sentinel-app",
           "label": "Sentinel Pages command interface",
           "status": "down",
-          "latencyMs": 730,
+          "latencyMs": 760,
           "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:46.050Z"
+          "checkedAt": "2026-08-28T18:44:51.831Z"
         },
         {
           "id": "sentinel-runtime",
           "label": "Sentinel Pages runtime",
           "status": "down",
-          "latencyMs": 726,
-          "httpStatus": 404,
-          "checkedAt": "2026-08-28T05:25:46.047Z"
+          "latencyMs": 486,
+          "httpStatus": 503,
+          "checkedAt": "2026-08-28T18:44:51.559Z"
         }
       ]
     },
@@ -210,13 +210,13 @@
       "id": "yggdrasil",
       "name": "Yggdrasil",
       "status": "operational",
-      "summary": "MT5 DEMO connected; live VPS heartbeat is fresh, 0 open position(s), 0 trade(s) this session.",
-      "checkedAt": "2026-08-28T05:00:58.160871+00:00",
-      "snapshotAgeMinutes": 25,
+      "summary": "MT5 DEMO connected; live VPS heartbeat is fresh, 0 open position(s), 1 trade(s) this session.",
+      "checkedAt": "2026-08-28T18:28:41.777963+00:00",
+      "snapshotAgeMinutes": 16,
       "mode": "DEMO_ONLY",
       "championCount": 1,
       "positions": 0,
-      "tradesThisSession": 0,
+      "tradesThisSession": 1,
       "openRiskPct": 0,
       "killSwitch": false,
       "activityUrl": "monitor/yggdrasil.html"
