@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-28T17:15:25.644541+00:00",
+  "generatedAt": "2026-08-28T17:45:26.617505+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -278,5 +278,5 @@
       "detail": "Session limits and counters were reset for the authorised trading window."
     }
   ],
-  "publishedAt": "2026-08-28T17:15:32.263134+00:00"
+  "publishedAt": "2026-08-28T17:45:41.270627+00:00"
 }
