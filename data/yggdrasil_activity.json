@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-28T14:35:18.885072+00:00",
+  "generatedAt": "2026-08-28T14:35:33.895943+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 1,
-    "openRiskPct": 1.166,
+    "openRiskPct": 1.167,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -99,6 +99,13 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-28T14:35:19.329931+00:00",
+      "type": "tyr",
+      "event": "entry_blocked",
+      "title": "T\u00fdr blocked BUY XAUUSD",
+      "detail": "symbol already has a Yggdrasil position"
+    },
     {
       "ts": "2026-08-28T14:30:19.098312+00:00",
       "type": "tyr",
@@ -259,14 +266,7 @@
       "event": "champion_selected",
       "title": "XAUUSD champion reached Valhalla",
       "detail": "rsi_revert-lower25-period21-upper75 \u00b7 test Sharpe 0.579 \u00b7 test return 0.077%"
-    },
-    {
-      "ts": "2026-08-28T03:30:25.517332+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-08-28T14:35:24.441427+00:00"
+  "publishedAt": "2026-08-28T14:35:47.540358+00:00"
 }
