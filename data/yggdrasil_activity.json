@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-28T14:20:18.046890+00:00",
+  "generatedAt": "2026-08-28T14:20:48.073468+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 1,
-    "openRiskPct": 1.177,
+    "openRiskPct": 1.175,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -99,6 +99,13 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-28T14:20:18.641200+00:00",
+      "type": "tyr",
+      "event": "entry_blocked",
+      "title": "T\u00fdr blocked BUY XAUUSD",
+      "detail": "symbol already has a Yggdrasil position"
+    },
     {
       "ts": "2026-08-28T14:15:18.411218+00:00",
       "type": "tyr",
@@ -259,14 +266,7 @@
       "event": "training_ranked",
       "title": "Training ranked for USDJPY",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-28T03:30:24.907954+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for USDJPY",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-08-28T14:20:22.393776+00:00"
+  "publishedAt": "2026-08-28T14:20:48.553135+00:00"
 }
