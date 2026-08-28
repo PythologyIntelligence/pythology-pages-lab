@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-28T14:38:04.008582+00:00",
+  "generatedAt": "2026-08-28T14:38:34.022297+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 1,
-    "openRiskPct": 1.166,
+    "openRiskPct": 1.165,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -268,5 +268,5 @@
       "detail": "rsi_revert-lower25-period21-upper75 \u00b7 test Sharpe 0.579 \u00b7 test return 0.077%"
     }
   ],
-  "publishedAt": "2026-08-28T14:38:04.618482+00:00"
+  "publishedAt": "2026-08-28T14:38:41.358442+00:00"
 }
