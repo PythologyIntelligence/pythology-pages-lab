@@ -1,0 +1,43 @@
+{
+  "active": true,
+  "alert_count": 1,
+  "alerts": [
+    {
+      "candidate": false,
+      "families": [
+        "ground deformation"
+      ],
+      "id": "df1a0834ef74a69f",
+      "kinds": [
+        "volcanic"
+      ],
+      "latitude": -39.13,
+      "longitude": 175.64,
+      "measurements": [
+        {
+          "direction": "higher",
+          "family": "ground deformation",
+          "score_sigma": 3.292682926829268,
+          "summary": "3.29σ higher vs its 30-day baseline"
+        }
+      ],
+      "name": "Tongariro",
+      "observed_at": "2026-08-26T13:36:31+00:00",
+      "official_status": {
+        "aviation_colour_code": "Green",
+        "level": 0
+      },
+      "research_only": true,
+      "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
+      "summary": "ground deformation: 3.29σ higher vs its 30-day baseline",
+      "suppressed_families": [],
+      "suppression_candidate": false,
+      "title": "Volcanic activity change — Tongariro",
+      "volcano_id": "tongariro"
+    }
+  ],
+  "generated": "2026-08-26T13:37:03+00:00",
+  "research_only": true,
+  "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
+  "schema": "earthnet.volcano-pulse-web.v0.1"
+}

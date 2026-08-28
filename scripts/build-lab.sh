@@ -255,5 +255,51 @@ if grep -RIlE '(BEGIN (RSA|OPENSSH|EC) PRIVATE KEY|GEMINI_API_KEY=|STRIPE_SECRET
   exit 1
 fi
 
+# Overlay the approved human-facing site from this repository after the resilient
+# live mirror is built. This keeps the existing EarthNet/Agri/VE safety machinery
+# intact while allowing the public presentation to move forward deliberately.
+PUBLIC_OVERRIDES=(
+  index.html
+  pythology-human.css
+  home-proof.js
+  earthnet-human.css
+  earthnet-page.js
+  earthnet-platform.html
+  prometheus-page.js
+  prometheus.html
+  research-ui.js
+  stack-human.css
+  research.html
+  where-it-fits.css
+  where-it-fits.html
+  about-human.css
+  about.html
+  causal-human.css
+  causal-intelligence.html
+)
+for file in "${PUBLIC_OVERRIDES[@]}"; do
+  if [[ ! -f "$ROOT/$file" ]]; then
+    echo "Required public override missing: $file" >&2
+    exit 1
+  fi
+  cp "$ROOT/$file" "$OUT/$file"
+done
+
+# These public evidence projections are deliberately staged with the humanised
+# pages because wget does not discover browser-fetched JSON.
+for file in earthnet_prometheus.json earthnet_volcano_pulse.json; do
+  if [[ ! -f "$ROOT/data/$file" ]]; then
+    echo "Required public evidence projection missing: data/$file" >&2
+    exit 1
+  fi
+  cp "$ROOT/data/$file" "$OUT/data/$file"
+done
+
+# Fail closed if the homepage overlay did not land.
+grep -Fq 'We build intelligence' "$OUT/index.html" || {
+  echo 'Humanised homepage overlay validation failed.' >&2
+  exit 1
+}
+
 echo "Prepared GitHub Pages lab at $OUT"
 find "$OUT" -maxdepth 2 -type f | sort | head -n 100

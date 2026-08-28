@@ -3,23 +3,189 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="robots" content="noindex,nofollow,noarchive">
-  <title>Pythology Pages Lab</title>
-  <style>
-    :root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;font-family:Inter,system-ui,sans-serif;background:#061216;color:#e8f5f2;min-height:100vh;display:grid;place-items:center}.wrap{width:min(900px,92vw);padding:48px 0}.eyebrow{font-size:12px;letter-spacing:.18em;color:#86d9cb}.title{font-size:clamp(32px,6vw,64px);margin:8px 0 12px}.sub{color:#9fb7b2;max-width:720px;line-height:1.6}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-top:30px}.card{border:1px solid #1e4943;background:#0a1e22;border-radius:16px;padding:18px}.card b{display:block;margin-bottom:6px}.state{font-size:12px;color:#86d9cb}.note{margin-top:28px;color:#78948f;font-size:13px}</style>
+  <meta name="description" content="Pythology builds evidence-grounded intelligence that watches complex systems, explains what may connect the evidence, forecasts what should happen next and keeps the record when reality answers.">
+  <title>Pythology — Intelligence that shows its working</title>
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="pythology-human.css">
+  <script defer src="site.js"></script>
+  <script defer src="home-proof.js"></script>
 </head>
-<body>
-  <main class="wrap">
-    <div class="eyebrow">PYTHOLOGY · GITHUB PAGES LAB</div>
-    <h1 class="title">Static intelligence test bed</h1>
-    <p class="sub">This public lab is isolated from production. It will be used to test GitHub Pages delivery while scheduled data ingestion runs independently.</p>
-    <section class="grid">
-      <div class="card"><b>Cerberus</b><span class="state">PORTING</span></div>
-      <div class="card"><b>Agri</b><span class="state">PORTING</span></div>
-      <div class="card"><b>EarthNet</b><span class="state">PORTING</span></div>
-      <div class="card"><b>Verry Elleegant</b><span class="state">PORTING</span></div>
-    </section>
-    <div class="note">No private farm data, credentials, secrets or production write endpoints belong in this repository.</div>
-  </main>
+<body class="pitch-body">
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html"><img src="Logo (2).jpeg" alt="Pythology"><span class="brand-word">PYTHOLOGY</span></a>
+    <nav class="nav-links" data-nav-links aria-label="Primary navigation">
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="earthnet-platform.html">EarthNet</a>
+      <a class="nav-link" href="prometheus.html">Prometheus</a>
+      <a class="nav-link" href="research.html">The stack</a>
+      <a class="nav-link" href="about.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="about.html#contact">Start a conversation</a>
+      <button class="menu-button" data-menu-button aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="pitch-hero home-pitch-hero" style="--pitch-art:url('png_images/home_page_banner.png')">
+    <div class="container">
+      <div class="pitch-hero-copy">
+        <p class="human-kicker">Pythology · Manawatū, New Zealand</p>
+        <h1 class="h1">We build intelligence<br>that has to show its working.</h1>
+        <p class="lede">Pythology is building systems that watch complicated parts of the world, keep evidence and inference separate, explain what might connect the signals, say what should happen next — and keep the record when reality answers.</p>
+        <div class="home-thesis">Earlier awareness is useful. <span>Knowing why you should trust it is better.</span></div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#proof">Show me something real</a>
+          <a class="btn" href="earthnet-global/">Open EarthNet</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch-section" id="proof">
+    <div class="container">
+      <div class="pitch-section-head">
+        <div>
+          <p class="human-kicker">Proof before jargon</p>
+          <h2 class="h2">Here is what the system<br>is actually doing.</h2>
+        </div>
+        <p>The research matters, but nobody should have to understand the architecture before they can see the product. These are live public-safe outputs from the same systems running underneath EarthNet and Prometheus.</p>
+      </div>
+
+      <div class="home-proof-grid">
+        <div class="home-proof-copy">
+          <p class="human-kicker">Prometheus · a forecast on the record</p>
+          <h2 class="h2" style="font-size:clamp(36px,4.4vw,60px)">Say what should happen.<br>Then leave it alone.</h2>
+          <p>Prometheus commits forecasts before the answer is known. He records confidence, evidence and a competing outcome, then comes back later and attaches what actually happened. Wins and misses stay in the same ledger.</p>
+          <div class="pitch-proof-line">
+            <div class="pitch-proof"><strong data-home-prom-resolved>—</strong><span>resolved forecasts</span></div>
+            <div class="pitch-proof"><strong data-home-prom-brier>—</strong><span>Brier score so far</span></div>
+          </div>
+          <div class="btn-row"><a class="btn" href="prometheus.html">Open the Prometheus record</a></div>
+        </div>
+
+        <article class="forecast-card featured-forecast home-forecast-card" aria-live="polite">
+          <div class="forecast-meta"><span class="forecast-status" data-home-forecast-mode>Loading featured forecast…</span><span data-home-forecast-valid>—</span></div>
+          <h3 data-home-forecast-title>Loading Prometheus…</h3>
+          <div class="forecast-statement" data-home-forecast-statement>The latest public forecast is being loaded.</div>
+          <div class="forecast-confidence"><strong data-home-forecast-confidence>—</strong><span>confidence recorded at commitment</span></div>
+          <div class="home-live-meta"><span data-home-forecast-sources>— source families</span><span data-home-prom-updated>Public ledger</span></div>
+          <div class="forecast-alt"><strong>Why it is here:</strong> the featured gate favours confidence, calibration and independent evidence rather than confidence alone.</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch-section">
+    <div class="container home-proof-grid">
+      <div class="home-proof-copy">
+        <p class="human-kicker">New Zealand · daily intelligence</p>
+        <h2 class="h2" style="font-size:clamp(36px,4.4vw,60px)">A country-level morning brief.</h2>
+        <p>New Zealand is EarthNet's current country-level proving ground. The daily state combines seismic activity, volcanic status, incoming weather and ocean context, then adds a short interpretation without pretending every unusual signal is a prediction.</p>
+        <p data-home-nz-line>Loading the latest New Zealand interpretation…</p>
+        <div class="btn-row"><a class="btn" href="earthnet-nz-intelligence.html">Open New Zealand intelligence</a></div>
+      </div>
+
+      <article class="paper-brief" aria-live="polite">
+        <div class="paper-meta"><span>Prometheus // New Zealand</span><span data-home-nz-date>Latest daily state</span></div>
+        <h3>24-hour state</h3>
+        <p class="paper-subtitle">A compact national view from the latest public evidence available to EarthNet.</p>
+        <div class="home-nz-strip">
+          <div><strong data-home-nz-count>—</strong><span>catalogue earthquakes</span></div>
+          <div><strong data-home-nz-largest>—</strong><span>largest event</span></div>
+          <div><strong data-home-nz-cluster>—</strong><span>largest concentration</span></div>
+        </div>
+        <div style="margin-top:28px">
+          <div class="paper-meta" style="border:0;padding:0"><span>Latest guarded volcanic change</span><span data-home-volcano-value>—</span></div>
+          <p style="margin:12px 0 0;color:#394e55;font:500 24px/1.16 'Newsreader',Georgia,serif" data-home-volcano-title>Loading volcanic pulse…</p>
+        </div>
+        <div class="paper-footnote">Research and operational context only. Official agencies and responsible authorities remain the source of public safety advice.</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="pitch-section home-domain-band">
+    <div class="container">
+      <p class="human-kicker">EarthNet · planetary intelligence</p>
+      <h2 class="h2">New Zealand proves the country model.<br>EarthNet proves the global model.</h2>
+      <p class="lede">EarthNet watches meaningful change across environmental hazards, seismic activity, severe weather, infrastructure pressure, humanitarian context and other connected systems. It can keep a planetary view or narrow attention around a country, region or operating area as suitable evidence sources are available.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="earthnet-global/">Explore the global view</a><a class="btn" href="earthnet-platform.html">What EarthNet does</a></div>
+    </div>
+  </section>
+
+  <section class="pitch-section" id="stack">
+    <div class="container">
+      <div class="pitch-section-head">
+        <div>
+          <p class="human-kicker">Underneath the useful bit</p>
+          <h2 class="h2">One chain.<br>Different jobs.</h2>
+        </div>
+        <p>The architecture is easier to understand when each piece gets one question. The machinery can be sophisticated underneath without forcing the person using it to speak machine.</p>
+      </div>
+      <div class="stack-river">
+        <div class="stack-item"><div class="stack-name">EarthNet</div><div><h3>What is happening?</h3><p>Bring the outside world into a current evidence state and track meaningful change.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Evidence</div><div><h3>What do we actually know?</h3><p>Keep source, age, missing information, contradictions and modelled estimates visible.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Causal layer</div><div><h3>What might connect it?</h3><p>Compare mechanisms and competing explanations instead of turning correlation into a story.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Prometheus</div><div><h3>What should happen next?</h3><p>Commit a forecast before the outcome, preserve uncertainty and return later to score it.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Decision Futures</div><div><h3>What changes if the choice changes?</h3><p>Compare conditional branches from the same evidence without pretending a scenario is prophecy.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Sentinel</div><div><h3>Can a human challenge the whole thing?</h3><p>Interrogate evidence, reasoning, degraded sources, uncertainty and weak assumptions.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Outcome</div><div><h3>Were we right?</h3><p>Let later evidence decide whether confidence should rise, fall or stay exactly where it is.</p></div></div>
+      </div>
+      <div class="btn-row" style="justify-content:center"><a class="btn" href="research.html">Explore the wider stack</a></div>
+    </div>
+  </section>
+
+  <section class="pitch-section">
+    <div class="container">
+      <div class="pitch-section-head">
+        <div>
+          <p class="human-kicker">Where this could matter</p>
+          <h2 class="h2">The product is not the dashboard.<br>It is better time to understand and choose.</h2>
+        </div>
+        <p>Different organisations care about different evidence, but many share the same problem: too much information arrives separately, important changes are easy to miss, and the reasoning behind a decision is difficult to audit afterward.</p>
+      </div>
+      <div class="market-grid">
+        <div class="market-item"><span>INSURANCE &amp; REINSURANCE</span><h3>See developing exposure before it becomes a neat historical dataset.</h3><p>Country or portfolio-focused intelligence can connect hazards, evolving evidence and likely downstream pressure while keeping the assumptions inspectable.</p></div>
+        <div class="market-item"><span>GOVERNMENT &amp; EMERGENCY MANAGEMENT</span><h3>Bring different evidence families into one challengeable operating picture.</h3><p>Useful when the question is not simply “is there an alert?” but “what changed, what could it affect, and what are we still unsure about?”</p></div>
+        <div class="market-item"><span>CRITICAL INFRASTRUCTURE</span><h3>Watch the environmental conditions around systems people depend on.</h3><p>Energy, transport, communications and other operators can focus the architecture around assets, regions and dependencies relevant to their decisions.</p></div>
+        <div class="market-item"><span>RESEARCH &amp; STRATEGIC INTELLIGENCE</span><h3>Turn hypotheses into prospective records rather than persuasive hindsight.</h3><p>Prometheus and the causal layer provide a disciplined way to preserve evidence, alternatives, forecasts and later outcomes for review.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch-section">
+    <div class="container">
+      <div class="founder-note">
+        <p class="human-kicker">Why Pythology exists</p>
+        <blockquote>It started with one stubborn question: <span style="color:#8fd9e7">what is actually causing this?</span></blockquote>
+        <p>I did not start Pythology because I had a grand plan to build an intelligence company. I kept building things, asking harder questions, and running into the same problem: plenty of systems could show me an answer, but very few could show me why they believed it — or admit later that they were wrong.</p>
+        <p>Pythology grew from trying to build that discipline into the software itself.</p>
+        <div class="btn-row"><a class="btn" href="about.html">Read the story</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch-section">
+    <div class="container pitch-split">
+      <div><p class="human-kicker">Research, investment or deployment</p><h2 class="h2">If this overlaps with a problem you care about, talk to us.</h2></div>
+      <div><p class="lede" style="margin-top:0">We are interested in organisations that need to understand complex evidence sooner, test forecasts prospectively, or build a country, region or system-specific intelligence view around real decisions.</p><div class="btn-row"><a class="btn btn-primary" href="about.html#contact">Start a conversation</a><a class="btn" href="prometheus.html">See the public track record</a></div></div>
+    </div>
+  </section>
+
+  <div class="pitch-disclaimer"><div class="container">Pythology's public systems are research and decision-support products in live validation. They do not replace official warning services, responsible authorities or domain experts.</div></div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a class="brand" href="index.html"><img src="Logo (2).jpeg" alt=""><span class="brand-word">PYTHOLOGY</span></a><p class="small" style="max-width:440px;margin-top:18px">Evidence-grounded intelligence built in the Manawatū, New Zealand.</p></div>
+      <div><div class="footer-title">Explore</div><div class="footer-links"><a href="earthnet-platform.html">EarthNet</a><a href="prometheus.html">Prometheus</a><a href="research.html">The stack</a></div></div>
+      <div><div class="footer-title">Pythology</div><div class="footer-links"><a href="about.html">About</a><a href="mailto:enquiries@pythology.co.nz">Contact</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Pythology · Manawatū, New Zealand</span><span>Structure hidden in chaos.</span></div>
+  </div>
+</footer>
 </body>
 </html>
