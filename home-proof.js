@@ -70,7 +70,7 @@
     textAny(['[data-home-prom-brier]', '#proof-ledger-brier'], Number.isFinite(brier) ? brier.toFixed(3) : '—');
     textAny(['[data-home-prom-updated]'], `Public ledger · ${shortDate(data.generated_at)}`);
     text('#proof-date', shortDate(data.generated_at));
-    text('#proof-brier-note', 'Lower is better · 0 = perfect · a 50% yes/no forecast scores 0.25.');
+    text('#proof-brier-note', 'Lower is better · 0 = perfect. Measures how closely forecast probabilities matched real outcomes.');
 
     const featured = featuredForecast(data);
     if (!featured.item) {
