@@ -30,7 +30,8 @@
     const style = document.createElement('style');
     style.id = 'pythology-visual-polish';
     style.textContent = `
-      .home-pitch-hero::before { opacity:.52 !important; filter:saturate(.84) contrast(.97) !important; }
+      .home-pitch-hero::before { opacity:.60 !important; filter:saturate(.88) contrast(.98) !important; }
+      .home-pitch-hero::after { background:linear-gradient(90deg,#060a0d 0%,rgba(6,10,13,.96) 37%,rgba(6,10,13,.56) 64%,rgba(6,10,13,.16)) !important; }
       .stack-hero::before { opacity:.49 !important; filter:saturate(.78) contrast(.97) !important; }
       .fit-hero::before { opacity:.50 !important; filter:saturate(.80) contrast(.97) !important; }
       .about-hero::before { opacity:.58 !important; filter:saturate(.78) contrast(.97) !important; }
@@ -58,10 +59,11 @@
       .df-home-status { margin-top:22px; padding-top:16px; border-top:1px solid rgba(161,213,222,.10); color:#78cbd9; font:600 10px/1.55 'JetBrains Mono',monospace; }
       .df-home-note { margin-top:28px; max-width:980px; color:#899da3; font-size:12px; line-height:1.72; }
 
+      #cross-domain-home .pitch-section-head .h2 { font-size:clamp(40px,4.15vw,58px); line-height:1.01; max-width:720px; }
       .cross-domain-card { min-height:380px; isolation:isolate; display:flex; flex-direction:column; justify-content:flex-end; }
       .cross-domain-card::before { content:''; position:absolute; inset:0; z-index:-2; background:var(--domain-art,none) center/cover no-repeat; opacity:.43; filter:saturate(.86) contrast(.98); }
       .cross-domain-card::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(180deg,rgba(5,11,14,.18),rgba(5,11,14,.90) 78%); }
-      .cross-domain-card--physical::before { opacity:0; }
+      .cross-domain-card--physical::before { opacity:.43; }
       .cross-domain-card--physical { background:radial-gradient(circle at 76% 18%,rgba(75,182,202,.14),transparent 20rem),linear-gradient(155deg,rgba(15,31,38,.78),rgba(8,17,22,.58)); }
       .cross-domain-card a { display:inline-block; margin-top:18px; color:#90ddeb; font-size:12px; font-weight:700; text-decoration:none; }
       .brier-explainer { margin:16px 0 0; color:#7f9399; font-size:11px; line-height:1.6; }
@@ -114,7 +116,7 @@
                 <div class="btn-row"><a class="btn" href="earthnet-global/">Open the global platform</a></div>
               </div>
             </article>
-            <article class="home-view-card" style="--view-art:url('https://raw.githubusercontent.com/PythologyIntelligence/pythology-pages-lab/main/png_images/nz_report.webp')">
+            <article class="home-view-card" style="--view-art:url('png_images/nz_report.webp')">
               <div class="home-view-copy">
                 <p class="human-kicker">Country-level view · New Zealand</p>
                 <h3>Then go much deeper where the decisions live.</h3>
@@ -180,7 +182,7 @@
             <article class="cross-domain-card" style="--domain-art:url('png_images/bio_symbology.png')">
               <div><p class="human-kicker">Biological intelligence</p><h3>Detect the transition, not only the tumour.</h3><p>Model biological transitions that may precede invasive disease while keeping pathway reasoning and evidence provenance explicit.</p><a href="biosymbology.html">Explore biological work →</a></div>
             </article>
-            <article class="cross-domain-card cross-domain-card--physical">
+            <article class="cross-domain-card cross-domain-card--physical" style="--domain-art:url('png_images/digital_infrastructure_twin.png')">
               <div><p class="human-kicker">Physical intelligence</p><h3>Understand the machine. Then test the decision.</h3><p>Physics-constrained world models for high-value engineered systems — freeze the evidence and decision before the machine reveals the answer.</p><a href="physical-intelligence.html">Explore physical work →</a></div>
             </article>
           </div>
