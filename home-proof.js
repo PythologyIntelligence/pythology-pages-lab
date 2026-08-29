@@ -136,5 +136,27 @@
     if (results[2].status === 'fulfilled') renderVolcano(results[2].value);
   }
 
+  if (!document.getElementById('home-visual-presence')) {
+    const style = document.createElement('style');
+    style.id = 'home-visual-presence';
+    style.textContent = `
+      .pitch-body .home-pitch-hero::before {
+        opacity: .72 !important;
+        filter: saturate(.94) contrast(1) !important;
+      }
+      .pitch-body .home-pitch-hero::after {
+        background: linear-gradient(90deg,#060a0d 0%,rgba(6,10,13,.94) 34%,rgba(6,10,13,.42) 60%,rgba(6,10,13,.05) 100%) !important;
+      }
+      .home-dual-view .home-view-card:nth-child(2)::before {
+        background-image: url('https://raw.githubusercontent.com/PythologyIntelligence/pythology-pages-lab/main/png_images/nz_report.webp') !important;
+        opacity: .72 !important;
+      }
+      @media (max-width: 720px) {
+        .pitch-body .home-pitch-hero::before { opacity: .52 !important; }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
   boot();
 })();
