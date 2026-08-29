@@ -139,6 +139,7 @@
     var(--proof-art) center / cover no-repeat;
   text-decoration: none;
 }
+.domain-proof-card:nth-child(3) { --proof-art:url('png_images/digital_infrastructure_twin.png') !important; }
 .domain-proof-card::before {
   content:'';
   position:absolute;
