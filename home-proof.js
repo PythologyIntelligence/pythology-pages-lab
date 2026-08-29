@@ -1,11 +1,14 @@
 (() => {
-  const $ = (selector) => document.querySelector(selector);
   const safe = (value, fallback = '—') => value === undefined || value === null || value === '' ? fallback : value;
   const pct = (value) => Number.isFinite(Number(value)) ? `${Math.round(Number(value) * 100)}%` : '—';
+  const all = (selector) => Array.from(document.querySelectorAll(selector));
 
   function text(selector, value) {
-    const node = $(selector);
-    if (node) node.textContent = safe(value);
+    all(selector).forEach((node) => { node.textContent = safe(value); });
+  }
+
+  function textAny(selectors, value) {
+    selectors.forEach((selector) => text(selector, value));
   }
 
   function shortDate(value) {
@@ -48,26 +51,53 @@
     return { item: fallbackFeatured(data), native: false };
   }
 
+  function latestResolved(data) {
+    const history = Array.isArray(data.history) ? data.history : [];
+    return history
+      .filter((item) => item?.status === 'resolved' || item?.resolved_at || item?.outcome?.state)
+      .slice()
+      .sort((a, b) => new Date(b.resolved_at || b.valid_until || 0) - new Date(a.resolved_at || a.valid_until || 0))[0] || null;
+  }
+
   function renderPrometheus(data) {
     const calibration = data.calibration || {};
-    text('[data-home-prom-resolved]', calibration.resolved_count);
-    text('[data-home-prom-brier]', Number.isFinite(Number(calibration.brier_score)) ? Number(calibration.brier_score).toFixed(3) : '—');
-    text('[data-home-prom-updated]', `Public ledger · ${shortDate(data.generated_at)}`);
+    const resolved = Number(calibration.resolved_count);
+    const hitRate = Number(calibration.hit_rate);
+    const brier = Number(calibration.brier_score);
+
+    textAny(['[data-home-prom-resolved]', '#proof-ledger-resolved'], Number.isFinite(resolved) ? resolved : '—');
+    textAny(['#proof-ledger-hitrate'], Number.isFinite(hitRate) ? pct(hitRate) : '—');
+    textAny(['[data-home-prom-brier]', '#proof-ledger-brier'], Number.isFinite(brier) ? brier.toFixed(3) : '—');
+    textAny(['[data-home-prom-updated]'], `Public ledger · ${shortDate(data.generated_at)}`);
+    text('#proof-date', shortDate(data.generated_at));
+    text('#proof-brier-note', 'Lower is better · 0 = perfect · a 50% yes/no forecast scores 0.25.');
 
     const featured = featuredForecast(data);
     if (!featured.item) {
-      text('[data-home-forecast-title]', 'No public forecast currently passes the featured gate');
-      text('[data-home-forecast-statement]', 'The wider Prometheus ledger remains available.');
-      return;
+      textAny(['[data-home-forecast-title]', '#proof-forecast-label'], 'No public forecast currently passes the featured gate');
+      textAny(['[data-home-forecast-statement]', '#proof-forecast-text'], 'The wider Prometheus ledger remains available.');
+      textAny(['#proof-forecast-confidence', '#proof-forecast-confindence'], '—');
+      text('#proof-forecast-horizon', '—');
+    } else {
+      const forecast = featured.item;
+      textAny(['[data-home-forecast-title]', '#proof-forecast-label'], forecast.target_title || forecast.region || 'Validation forecast');
+      textAny(['[data-home-forecast-statement]', '#proof-forecast-text'], forecast.statement);
+      const confidence = pct(forecast.forecast_confidence);
+      textAny(['[data-home-forecast-confidence]', '#proof-forecast-confidence', '#proof-forecast-confindence'], confidence === '—' ? confidence : `${confidence} confidence`);
+      textAny(['[data-home-forecast-valid]', '#proof-forecast-horizon'], forecast.valid_until ? `Valid to ${shortDate(forecast.valid_until)}` : 'Open forecast');
+      text('[data-home-forecast-sources]', `${Number(forecast.source_independence_count || 0)} source ${Number(forecast.source_independence_count || 0) === 1 ? 'family' : 'families'}`);
+      text('[data-home-forecast-mode]', featured.native ? 'Chosen by Prometheus' : 'Validation forecast');
     }
 
-    const forecast = featured.item;
-    text('[data-home-forecast-title]', forecast.target_title || forecast.region);
-    text('[data-home-forecast-statement]', forecast.statement);
-    text('[data-home-forecast-confidence]', pct(forecast.forecast_confidence));
-    text('[data-home-forecast-valid]', `Valid to ${shortDate(forecast.valid_until)}`);
-    text('[data-home-forecast-sources]', `${Number(forecast.source_independence_count || 0)} source ${Number(forecast.source_independence_count || 0) === 1 ? 'family' : 'families'}`);
-    text('[data-home-forecast-mode]', featured.native ? 'Chosen by Prometheus' : 'Validation forecast');
+    const resolvedItem = latestResolved(data);
+    if (resolvedItem) {
+      const state = safe(resolvedItem?.outcome?.state, 'resolved').replaceAll('_', ' ');
+      text('#proof-outcome-text', resolvedItem.target_title || resolvedItem.region || resolvedItem.statement || 'Latest resolved forecast');
+      text('#proof-outcome-result', `${state} · ${shortDate(resolvedItem.resolved_at || resolvedItem.valid_until)}`);
+    } else {
+      text('#proof-outcome-text', 'No resolved public forecast is available in this snapshot.');
+      text('#proof-outcome-result', '—');
+    }
   }
 
   function renderNz(data) {
