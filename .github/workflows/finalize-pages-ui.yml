@@ -1,0 +1,132 @@
+name: Finalize Pythology Pages UI
+
+on:
+  workflow_run:
+    workflows: ["Deploy Pythology Pages Lab"]
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-ui-finalize
+  cancel-in-progress: true
+
+jobs:
+  finalize:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout UI overlay
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Download completed Pages artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: .pages-source
+          github-token: ${{ github.token }}
+          repository: PythologyIntelligence/pythology-pages-lab
+          run-id: ${{ github.event.workflow_run.id }}
+
+      - name: Extract Pages artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf _site
+          mkdir -p _site
+          [[ -s .pages-source/artifact.tar ]] || { echo 'Pages artifact.tar missing' >&2; exit 1; }
+          tar -xf .pages-source/artifact.tar -C _site
+
+      - name: Apply deterministic UI overlay
+        shell: bash
+        env:
+          SOURCE_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          set -euo pipefail
+          VERSION="${SOURCE_SHA:0:12}"
+          [[ -n "$VERSION" ]] || VERSION="earthnet-ui"
+
+          [[ -s earthnet-map-controls.js ]] || { echo 'earthnet-map-controls.js missing' >&2; exit 1; }
+          [[ -s _site/earthnet-global/index.html ]] || { echo 'EarthNet index missing from Pages artifact' >&2; exit 1; }
+          cp earthnet-map-controls.js _site/earthnet-global/earthnet-map-controls.js
+
+          VERSION="$VERSION" python3 - <<'PY'
+          from pathlib import Path
+          import os
+          import re
+
+          version = os.environ['VERSION']
+
+          home = Path('_site/index.html')
+          if not home.exists():
+              raise SystemExit('Homepage missing from Pages artifact')
+          text = home.read_text(encoding='utf-8')
+
+          def version_asset(source, asset):
+              pattern = rf'(["\']){re.escape(asset)}(?:\?v=[^"\']*)?(["\'])'
+              return re.sub(pattern, rf'\1{asset}?v={version}\2', source)
+
+          for asset in ('site.css', 'pythology-human.css', 'site.js', 'home-proof.js'):
+              text = version_asset(text, asset)
+
+          research_tag = f'<script defer src="research-ui.js?v={version}"></script>'
+          if 'research-ui.js' not in text:
+              anchor = re.search(r'<script defer src="home-proof\.js\?v=[^"]+"></script>', text)
+              if not anchor:
+                  raise SystemExit('Could not locate versioned home-proof.js tag')
+              text = text[:anchor.start()] + research_tag + '\n  ' + text[anchor.start():]
+          else:
+              text = version_asset(text, 'research-ui.js')
+
+          home.write_text(text, encoding='utf-8')
+
+          earth = Path('_site/earthnet-global/index.html')
+          earth_text = earth.read_text(encoding='utf-8')
+          earth_text = re.sub(
+              r'\s*<script defer src="earthnet-map-controls\.js(?:\?v=[^"]*)?"></script>\s*',
+              '\n',
+              earth_text,
+          )
+          control_tag = f'  <script defer src="earthnet-map-controls.js?v={version}"></script>\n'
+          if '</body>' not in earth_text:
+              raise SystemExit('EarthNet index has no closing body tag')
+          earth_text = earth_text.replace('</body>', control_tag + '</body>')
+          earth.write_text(earth_text, encoding='utf-8')
+
+          if f'home-proof.js?v={version}' not in text or f'research-ui.js?v={version}' not in text:
+              raise SystemExit('Homepage cache-busting overlay did not land')
+          if f'earthnet-map-controls.js?v={version}' not in earth_text:
+              raise SystemExit('EarthNet control overlay did not land')
+
+          controls = Path('_site/earthnet-global/earthnet-map-controls.js').read_text(encoding='utf-8')
+          for required in ('Clouds on', 'Cloud 55%', 'earthnet-home-button'):
+              if required not in controls:
+                  raise SystemExit(f'EarthNet UI overlay validation failed: {required}')
+
+          proof = Path('_site/home-proof.js').read_text(encoding='utf-8')
+          if 'data:image/webp;base64' not in proof:
+              raise SystemExit('Homepage NZ artwork payload is missing from home-proof.js')
+
+          print(f'UI overlay validated for Pages source {version}.')
+          PY
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload finalized site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy finalized site
+        id: deployment
+        uses: actions/deploy-pages@v4
