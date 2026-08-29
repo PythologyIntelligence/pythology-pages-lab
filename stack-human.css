@@ -1,8 +1,11 @@
 /* Human-facing stack page */
-.stack-hero::before {
-  inset: 0 0 0 34%;
-  opacity: .38;
-  filter: saturate(.7) contrast(.94);
+.pitch-body .stack-hero::before {
+  inset: 0 0 0 30%;
+  opacity: .62 !important;
+  filter: saturate(.86) contrast(.99) !important;
+}
+.stack-hero::after {
+  background: linear-gradient(90deg,#060a0d 0%,rgba(6,10,13,.94) 35%,rgba(6,10,13,.44) 61%,rgba(6,10,13,.08) 100%);
 }
 
 .stack-intro-note {
@@ -212,6 +215,7 @@
   .domain-proof-grid { grid-template-columns:1fr 1fr; }
 }
 @media(max-width:720px){
+  .pitch-body .stack-hero::before { inset:0; opacity:.42 !important; }
   .stack-flow-item { grid-template-columns:1fr; gap:18px; min-height:0; }
   .stack-question { grid-column:auto; }
   .stack-index strong { display:inline; margin-left:10px; font-size:32px; }

@@ -1,5 +1,6 @@
 /* Where It Fits */
-.fit-hero::before{inset:0 0 0 38%;opacity:.4;filter:saturate(.74) contrast(.95)}
+.pitch-body .fit-hero::before{inset:0 0 0 30%;opacity:.62!important;filter:saturate(.88) contrast(.99)!important}
+.fit-hero::after{background:linear-gradient(90deg,#060a0d 0%,rgba(6,10,13,.94) 35%,rgba(6,10,13,.44) 61%,rgba(6,10,13,.08) 100%)}
 .fit-hero .pitch-hero-copy{max-width:940px}
 .fit-hero-note{margin-top:38px;max-width:780px;font:500 clamp(24px,3vw,40px)/1.17 'Newsreader',Georgia,serif;color:#e4edef}.fit-hero-note span{color:#8fd9e7}
 .fit-anchor-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:1px;margin-top:46px;border:1px solid rgba(161,213,222,.1);background:rgba(161,213,222,.1)}
@@ -15,4 +16,4 @@
 .fit-global{display:grid;grid-template-columns:minmax(0,1fr) minmax(340px,.8fr);gap:66px;align-items:center}.fit-global-copy p{color:#9dafb4;line-height:1.76}.fit-scope-card{padding:30px;border:1px solid rgba(161,213,222,.12);border-radius:22px;background:linear-gradient(155deg,rgba(10,22,28,.8),rgba(7,15,20,.58));box-shadow:0 30px 80px rgba(0,0,0,.2)}.fit-scope-card span{display:block;color:#7dd4e3;font-size:10px;font-weight:700}.fit-scope-card h3{margin:22px 0 12px;font:500 31px/1.08 'Newsreader',Georgia,serif}.fit-scope-card p{margin:0;color:#92a5aa;line-height:1.68;font-size:13px}
 .fit-disclaimer{margin-top:30px;color:#6f848a;font-size:11px;line-height:1.65}
 @media(max-width:1000px){.fit-anchor-grid{grid-template-columns:repeat(2,1fr)}.fit-market-grid,.fit-start-grid,.fit-global{grid-template-columns:1fr}.fit-market-intro{position:static}.fit-three{grid-template-columns:1fr 1fr}}
-@media(max-width:720px){.fit-hero::before{inset:0;opacity:.25}.fit-anchor-grid,.fit-three{grid-template-columns:1fr}.fit-market{padding:56px 0}.fit-market-grid{gap:34px}.fit-problem{padding:24px}.fit-start-grid{gap:34px}}
+@media(max-width:720px){.pitch-body .fit-hero::before{inset:0;opacity:.42!important}.fit-anchor-grid,.fit-three{grid-template-columns:1fr}.fit-market{padding:56px 0}.fit-market-grid{gap:34px}.fit-problem{padding:24px}.fit-start-grid{gap:34px}}
