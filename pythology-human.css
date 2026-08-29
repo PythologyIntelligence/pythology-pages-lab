@@ -220,3 +220,22 @@
   .founder-note { background-image: linear-gradient(100deg, rgba(7,15,20,.98), rgba(7,15,20,.86)); }
 }
 .decision-futures-section{max-width:720px;margin:4rem auto;padding:2rem}.decision-futures-section h2{font-family:Manrope,sans-serif;font-weight:600;font-size:1.75rem;margin-bottom:1rem}.decision-futures-section p{font-family:Newsreader,serif;font-size:1.1rem;line-height:1.7;margin-bottom:1rem;color:var(--ink)}.df-status{background:rgba(0,201,167,.08);border-left:3px solid var(--accent,#00C9A7);padding:1rem 1.5rem;margin-top:1.5rem;font-family:JetBrains Mono,monospace;font-size:.9rem}.df-status strong{color:var(--accent,#00C9A7)}.brier-note{display:block;font-family:JetBrains Mono,monospace;font-size:.75rem;color:var(--ink);opacity:.6;margin-top:.25rem}.section-artwork img,.hero-artwork img{opacity:.34;filter:brightness(1.08) contrast(1.02);transform:scale(1.03)}.section-artwork--dim img{opacity:.40;filter:brightness(1.12) contrast(1.03)}
+/* Decision Futures proof section */
+.proof-df{max-width:900px;margin:5rem auto;padding:0 2rem}
+.proof-df__inner h2{font-family:'Manrope',sans-serif;font-weight:600;font-size:1.75rem;margin-bottom:.75rem;color:var(--ink)}
+.proof-df__lead{font-family:'Newsreader',serif;font-size:1.15rem;line-height:1.7;margin-bottom:2.5rem;color:var(--ink);opacity:.85}
+.proof-df__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem;margin-bottom:2rem}
+.proof-df__card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;padding:1.25rem;display:flex;flex-direction:column;gap:.75rem}
+.proof-df__card-head{display:flex;align-items:center;gap:.5rem}
+.proof-df__badge{font-family:'JetBrains Mono',monospace;font-size:.65rem;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:4px;font-weight:600}
+.proof-df__badge--live{background:rgba(0,201,167,.15);color:#00C9A7}
+.proof-df__badge--pending{background:rgba(255,255,255,.06);color:rgba(255,255,255,.5)}
+.proof-df__label{font-family:'Manrope',sans-serif;font-weight:500;font-size:.9rem;color:var(--ink)}
+.proof-df__card-body p{font-family:'Newsreader',serif;font-size:.95rem;line-height:1.6;color:var(--ink);opacity:.8;margin:0}
+.proof-df__branches{display:flex;flex-direction:column;gap:4px;margin-top:.5rem}
+.proof-df__branch{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:rgba(255,255,255,.4);padding:4px 8px;border-left:2px solid rgba(255,255,255,.08)}
+.proof-df__branch--active{color:#00C9A7;border-left-color:#00C9A7;background:rgba(0,201,167,.05)}
+.proof-df__card-foot{display:flex;justify-content:space-between;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:rgba(255,255,255,.35);margin-top:auto;padding-top:.5rem;border-top:1px solid rgba(255,255,255,.04)}
+.proof-df__card-foot strong{color:rgba(255,255,255,.6)}
+.proof-df__note{font-family:'Newsreader',serif;font-size:1rem;line-height:1.7;color:var(--ink);opacity:.75;max-width:650px;margin-bottom:1rem}
+.proof-df__status{font-family:'JetBrains Mono',monospace;font-size:.85rem;color:#00C9A7;background:rgba(0,201,167,.06);border-left:3px solid #00C9A7;padding:.75rem 1rem;display:inline-block}
