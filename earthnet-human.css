@@ -1,13 +1,16 @@
 /* EarthNet-specific presentation layer. Loads after pythology-human.css. */
 
 .earthnet-hero::before {
-  inset: 0 0 0 30%;
-  opacity: .5;
+  inset: 0 0 0 27%;
+  opacity: .66;
   background:
-    linear-gradient(90deg, #060a0d 0%, rgba(6,10,13,.72) 20%, rgba(6,10,13,.33) 62%, rgba(6,10,13,.72) 100%),
-    linear-gradient(180deg, rgba(6,10,13,.08), #060a0d 96%),
+    linear-gradient(90deg, #060a0d 0%, rgba(6,10,13,.58) 20%, rgba(6,10,13,.18) 62%, rgba(6,10,13,.45) 100%),
+    linear-gradient(180deg, rgba(6,10,13,.04), #060a0d 98%),
     url('png_images/earthnet.png') center / cover no-repeat;
-  filter: saturate(.78) contrast(.96);
+  filter: saturate(.9) contrast(.99);
+}
+.earthnet-hero::after {
+  background: linear-gradient(90deg,#060a0d 0%,rgba(6,10,13,.94) 34%,rgba(6,10,13,.42) 60%,rgba(6,10,13,.05) 100%);
 }
 
 .earthnet-hero .pitch-hero-copy { max-width: 940px; }
@@ -119,8 +122,8 @@
 }
 .scope-card.nz {
   background:
-    linear-gradient(140deg,rgba(5,12,16,.97),rgba(5,12,16,.72)),
-    url('png_images/nz_report.webp') center / cover no-repeat;
+    linear-gradient(140deg,rgba(5,12,16,.92),rgba(5,12,16,.48)),
+    url('https://raw.githubusercontent.com/PythologyIntelligence/pythology-pages-lab/main/png_images/nz_report.webp') center / cover no-repeat;
 }
 .scope-card > * { position: relative; z-index: 1; }
 .scope-label { color: #84d8e6; font-size: 11px; font-weight: 700; }
@@ -225,7 +228,7 @@
   .earthnet-stack-row p { grid-column: 2; }
 }
 @media (max-width: 720px) {
-  .earthnet-hero::before { inset: 0; opacity: .28; background-position: 68% center; }
+  .earthnet-hero::before { inset: 0; opacity: .42; background-position: 68% center; }
   .change-grid,
   .watch-grid,
   .earthnet-snapshot-bar { grid-template-columns: 1fr; }
