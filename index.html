@@ -5,83 +5,187 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="description" content="Pythology builds evidence-grounded intelligence that watches complex systems, explains what may connect the evidence, forecasts what should happen next and keeps the record when reality answers.">
   <title>Pythology — Intelligence that shows its working</title>
+  <link rel="stylesheet" href="site.css">
   <link rel="stylesheet" href="pythology-human.css">
-  <style>.pitch-body{margin:0;color:#edf4f5;background:radial-gradient(circle at 82% 5%,rgba(71,183,202,.08),transparent 30rem),radial-gradient(circle at 12% 22%,rgba(210,173,84,.045),transparent 25rem),#060a0d;}.pitch-body *,.pitch-body *::before,.pitch-body *::after{box-sizing:border-box;}.pitch-body a{color:inherit;text-decoration:none;}.pitch-body main{overflow:hidden;}.site-head{position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(180,218,225,.10);background:rgba(6,10,13,.84);backdrop-filter:blur(18px);}.site-head__inner,.hero__inner,.proof__inner,.proof-df__inner,.stack__inner,.research__inner,.who__inner,.founder__inner,.site-foot__inner{width:min(1180px,calc(100% - 48px));margin-inline:auto;}.site-head__inner{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:28px;}.site-head__brand{font:500 26px/1 'Newsreader',Georgia,serif;letter-spacing:-.02em;color:#f2f7f8;}.site-head__nav{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}.site-head__nav a{color:#aebcc0;font-size:13px;font-weight:600;transition:color .18s ease;}.site-head__nav a:hover{color:#e8f4f6;}.hero{position:relative;isolation:isolate;min-height:min(780px,calc(100vh - 72px));display:grid;align-items:center;padding:110px 0 96px;border-bottom:1px solid rgba(161,213,222,.08);}.hero::before{content:'';position:absolute;z-index:-2;inset:0;background:linear-gradient(90deg,#060a0d 0%,rgba(6,10,13,.93) 34%,rgba(6,10,13,.64) 60%,rgba(6,10,13,.22) 100%),linear-gradient(180deg,rgba(6,10,13,.16),#060a0d 97%),url('png_images/home_page_banner.png') 66% center / cover no-repeat;opacity:.82;filter:saturate(.88) contrast(.98);}.hero::after{content:'';position:absolute;z-index:-1;inset:0;background:radial-gradient(circle at 72% 48%,rgba(61,183,205,.09),transparent 32rem);}.hero__inner{position:relative;}.hero h1,.proof h2,.proof-df h2,.stack h2,.research h2,.who h2,.founder h2{margin:0;font-family:'Newsreader',Georgia,serif;font-weight:500;letter-spacing:-.038em;color:#f2f5f4;}.hero h1{max-width:900px;font-size:clamp(58px,7.1vw,102px);line-height:.96;}.hero__lead{max-width:760px;margin:30px 0 0;color:#c1cdd0;font-size:clamp(18px,1.7vw,22px);line-height:1.72;}.hero__sub{margin:18px 0 0;color:#87999f;font-size:14px;}.hero__actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px;}.pitch-body .btn{min-height:48px;display:inline-flex;align-items:center;justify-content:center;padding:0 22px;border-radius:999px;border:1px solid rgba(160,213,222,.22);font-size:13px;font-weight:700;transition:transform .18s ease,border-color .18s ease,background .18s ease;}.pitch-body .btn:hover{transform:translateY(-1px);border-color:rgba(160,213,222,.48);}.pitch-body .btn--primary{background:#d6f4f8;border-color:#d6f4f8;color:#071216;}.pitch-body .btn--ghost{background:rgba(255,255,255,.025);color:#d5e4e7;}.proof,.proof-df,.stack,.research,.who,.founder{padding:106px 0;}.proof-df,.research,.founder{background:linear-gradient(180deg,rgba(13,27,34,.28),rgba(6,10,13,.04));}.proof,.proof-df,.stack,.research,.who,.founder{border-bottom:1px solid rgba(161,213,222,.08);}.proof h2,.proof-df h2,.stack h2,.research h2,.who h2,.founder h2{font-size:clamp(40px,5vw,68px);line-height:1.02;}.proof__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:44px;}.proof__card,.proof-df__card,.research__card,.who__card{border:1px solid rgba(161,213,222,.14);background:linear-gradient(155deg,rgba(15,31,38,.76),rgba(8,17,22,.54));border-radius:18px;box-shadow:0 28px 74px rgba(0,0,0,.18);}.proof__card{min-height:290px;padding:27px;display:flex;flex-direction:column;}.proof__card--ledger{background:linear-gradient(155deg,rgba(16,33,40,.88),rgba(8,18,23,.68));}.proof__card-head,.proof-df__card-head{display:flex;justify-content:space-between;align-items:center;gap:16px;}.proof__badge,.proof-df__badge{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border-radius:999px;border:1px solid rgba(143,217,231,.22);color:#91dce8;font:600 10px/1 'JetBrains Mono',monospace;letter-spacing:.04em;}.proof__badge--resolved{color:#86dbac;border-color:rgba(120,227,173,.24);}.proof__badge--calibration{color:#dbc37e;border-color:rgba(210,173,84,.25);}.proof__card-label,.proof-df__label{color:#8fa2a8;font-size:11px;text-align:right;}.proof__card-body{flex:1;display:flex;flex-direction:column;justify-content:space-between;}.proof__card-body>p{margin:34px 0 28px;color:#dce7e9;font:500 clamp(22px,2.4vw,31px)/1.24 'Newsreader',Georgia,serif;}.proof__card-stats{display:flex;flex-wrap:wrap;gap:10px 18px;color:#7f949a;font-size:11px;}.proof__ledger-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin-top:34px;background:rgba(161,213,222,.11);border:1px solid rgba(161,213,222,.11);}.proof__ledger-grid>div{padding:20px 15px;background:#0a151b;}.proof__ledger-value{display:block;color:#edf4f5;font:500 34px/1 'Newsreader',Georgia,serif;}.proof__ledger-label{display:block;margin-top:8px;color:#788d93;font-size:10px;}.proof__brier-note{margin:18px 0 0;color:#7d9298;font-size:11px;line-height:1.6;}.proof__footer{margin:22px 0 0;color:#61767c;font:500 10px/1.5 'JetBrains Mono',monospace;}.proof-df__lead,.research__lead{max-width:760px;margin:20px 0 0;color:#9cafb4;font-size:17px;line-height:1.72;}.proof-df__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:42px;}.proof-df__card{padding:26px;}.proof-df__badge--pending{color:#dbc37e;border-color:rgba(210,173,84,.25);}.proof-df__card-body p{margin:30px 0 20px;color:#aebdc1;line-height:1.7;}.proof-df__card-body strong{color:#edf4f5;}.proof-df__branches{display:flex;flex-wrap:wrap;gap:8px;}.proof-df__branch{padding:8px 10px;border:1px solid rgba(161,213,222,.13);border-radius:999px;color:#8fa3a8;font-size:10px;}.proof-df__branch--active{color:#071216;background:#b9edf3;border-color:#b9edf3;}.proof-df__card-foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-top:26px;padding-top:18px;border-top:1px solid rgba(161,213,222,.10);color:#6f858b;font:500 9px/1.5 'JetBrains Mono',monospace;}.proof-df__note{max-width:930px;margin:30px 0 0;color:#8fa2a8;font-size:13px;line-height:1.72;}.proof-df__status{margin:14px 0 0;color:#7acbd8;font:600 10px/1.5 'JetBrains Mono',monospace;}.stack__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 44px;margin-top:46px;}.stack__layer{display:grid;grid-template-columns:minmax(180px,.55fr) minmax(0,1.45fr);gap:26px;padding:27px 0;border-top:1px solid rgba(161,213,222,.12);}.stack__layer h3{margin:0;font:500 25px/1.1 'Newsreader',Georgia,serif;color:#dfe9eb;}.stack__layer h3 span{display:inline-block;width:34px;margin-right:4px;color:#69c8d9;font:600 10px 'JetBrains Mono',monospace;}.stack__layer p{margin:0;color:#8ea2a8;font-size:13px;line-height:1.72;}.stack__layer--outcome{grid-column:1 / -1;border-bottom:1px solid rgba(161,213,222,.12);}.research__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:42px;}.research__card{position:relative;overflow:hidden;min-height:330px;padding:34px;isolation:isolate;}.research__card::before{content:'';position:absolute;z-index:-2;inset:0;opacity:.23;filter:saturate(.78);background:var(--research-art,none) center / cover no-repeat;}.research__card::after{content:'';position:absolute;z-index:-1;inset:0;background:linear-gradient(180deg,rgba(7,15,19,.54),rgba(7,15,19,.92));}.research__card:first-child{--research-art:url('png_images/bio_symbology.png');}.research__card:last-child{--research-art:url('png_images/physical_intelligence.png');}.research__card h3{margin:0 0 18px;font:500 34px/1.06 'Newsreader',Georgia,serif;}.research__card p{max-width:520px;color:#a6b6ba;line-height:1.72;}.research__card a{display:inline-block;margin-top:26px;color:#90ddeb;font-size:12px;font-weight:700;}.who__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:42px;}.who__card{padding:28px;background:rgba(10,21,27,.50);box-shadow:none;}.who__card h3{margin:0 0 13px;font:500 28px/1.08 'Newsreader',Georgia,serif;}.who__card p{margin:0;color:#91a4a9;font-size:13px;line-height:1.74;}.founder__inner{max-width:900px;margin-inline:auto;}.founder__inner>p:not(.founder__signoff){margin:28px 0 0;color:#aab9bd;font-size:clamp(17px,1.8vw,21px);line-height:1.8;}.founder__signoff{margin:30px 0 0;color:#76cbd9;font:600 11px/1.5 'JetBrains Mono',monospace;}.site-foot{padding:34px 0 42px;background:#05090b;}.site-foot__inner{display:flex;justify-content:space-between;gap:34px;align-items:flex-end;color:#687d83;font-size:10px;line-height:1.62;}.site-foot__inner p{margin:0;}.site-foot__inner p:first-child{max-width:780px;}@media (max-width:980px){.site-head__inner{align-items:flex-start;padding:20px 0;}.site-head__nav{justify-content:flex-end;gap:14px 18px;}.hero{min-height:auto;padding:100px 0 86px;}.hero::before{background-position:72% center;opacity:.66;}.proof__grid{grid-template-columns:1fr;}.proof-df__grid,.research__grid,.who__grid{grid-template-columns:1fr;}.stack__grid{grid-template-columns:1fr;}.stack__layer--outcome{grid-column:auto;}}@media (max-width:700px){.site-head__inner,.hero__inner,.proof__inner,.proof-df__inner,.stack__inner,.research__inner,.who__inner,.founder__inner,.site-foot__inner{width:min(100% - 30px,1180px);}.site-head__inner{display:block;}.site-head__nav{margin-top:14px;justify-content:flex-start;}.site-head__nav a{font-size:11px;}.hero{padding:76px 0 68px;}.hero::before{background-position:72% center;opacity:.52;}.hero h1{font-size:clamp(49px,15vw,72px);}.hero__lead{font-size:17px;}.proof,.proof-df,.stack,.research,.who,.founder{padding:78px 0;}.stack__layer{grid-template-columns:1fr;gap:12px;}.proof__ledger-grid{grid-template-columns:1fr;}.site-foot__inner{display:block;}.site-foot__inner p+p{margin-top:14px;}}</style>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <script defer src="site.js"></script>
   <script defer src="home-proof.js"></script>
 </head>
 <body class="pitch-body">
-
-<header class="site-head">
-  <div class="site-head__inner">
-    <a href="/" class="site-head__brand">Pythology</a>
-    <nav class="site-head__nav">
-      <a href="/">Home</a>
-      <a href="earthnet-platform.html">EarthNet</a>
-      <a href="biosymbology.html">Bio-Symbology</a>
-      <a href="physical-intelligence.html">Physical Intelligence</a>
-      <a href="about-human.html">About</a>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html"><img src="Logo (2).jpeg" alt="Pythology"><span class="brand-word">PYTHOLOGY</span></a>
+    <nav class="nav-links" data-nav-links aria-label="Primary navigation">
+      <a class="nav-link active" href="index.html">Home</a>
+      <a class="nav-link" href="earthnet-platform.html">EarthNet</a>
+      <a class="nav-link" href="prometheus.html">Prometheus</a>
+      <a class="nav-link" href="research.html">The stack</a>
+      <a class="nav-link" href="about.html">About</a>
     </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="about.html#contact">Start a conversation</a>
+      <button class="menu-button" data-menu-button aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
   </div>
 </header>
 
 <main>
-
-<section class="hero">
-  <div class="hero__inner">
-    <h1>We build intelligence<br>that has to show its working.</h1>
-    <p class="hero__lead">Pythology builds systems that watch complicated parts of the world, explain what might connect the signals, forecast what happens next — and keep the record when reality answers.</p>
-    <p class="hero__sub">Earlier awareness is useful. Knowing why you should trust it is better.</p>
-    <div class="hero__actions">
-      <a href="#proof" class="btn btn--primary">Show me something real</a>
-      <a href="#stack" class="btn btn--ghost">How it works</a>
-    </div>
-  </div>
-</section>
-
-<section class="proof" id="proof">
-  <div class="proof__inner">
-    <h2>Not a slide deck.</h2>
-    <div class="proof__grid">
-      <div class="proof__card">
-        <div class="proof__card-head"><span class="proof__badge proof__badge--live">LIVE</span><span class="proof__card-label" id="proof-forecast-label">Latest forecast</span></div>
-        <div class="proof__card-body"><p id="proof-forecast-text">Loading…</p><div class="proof__card-stats"><span id="proof-forecast-confindence">—</span><span id="proof-forecast-horizon">—</span></div></div>
-      </div>
-      <div class="proof__card">
-        <div class="proof__card-head"><span class="proof__badge proof__badge--resolved">RESOLVED</span><span class="proof__card-label">Latest outcome</span></div>
-        <div class="proof__card-body"><p id="proof-outcome-text">Loading…</p><div class="proof__card-stats"><span id="proof-outcome-result">—</span></div></div>
-      </div>
-      <div class="proof__card proof__card--ledger">
-        <div class="proof__card-head"><span class="proof__badge proof__badge--calibration">CALIBRATION</span><span class="proof__card-label">Prometheus ledger</span></div>
-        <div class="proof__card-body"><div class="proof__ledger-grid"><div><span class="proof__ledger-value" id="proof-ledger-resolved">—</span><span class="proof__ledger-label">Resolved</span></div><div><span class="proof__ledger-value" id="proof-ledger-hitrate">—</span><span class="proof__ledger-label">Hit rate</span></div><div><span class="proof__ledger-value" id="proof-ledger-brier">—</span><span class="proof__ledger-label">Brier score</span></div></div><p class="proof__brier-note" id="proof-brier-note"></p></div>
+  <section class="pitch-hero home-pitch-hero" style="--pitch-art:url('png_images/home_page_banner.png')">
+    <div class="container">
+      <div class="pitch-hero-copy">
+        <p class="human-kicker">Pythology · Manawatū, New Zealand</p>
+        <h1 class="h1">We build intelligence<br>that has to show its working.</h1>
+        <p class="lede">Pythology is building systems that watch complicated parts of the world, keep evidence and inference separate, explain what might connect the signals, say what should happen next — and keep the record when reality answers.</p>
+        <div class="home-thesis">Earlier awareness is useful. <span>Knowing why you should trust it is better.</span></div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#proof">Show me something real</a>
+          <a class="btn" href="earthnet-global/">Open EarthNet</a>
+        </div>
       </div>
     </div>
-    <p class="proof__footer">Validation forecast &middot; Prometheus live-validation system &middot; <span id="proof-date">—</span></p>
-  </div>
-</section>
+  </section>
 
-<section class="proof-df">
-  <div class="proof-df__inner">
-    <h2>A forecast is not a decision.</h2>
-    <p class="proof-df__lead">Prometheus tells you what might happen. Decision Futures asks what changes if an authorised human chooses differently — while keeping the baseline, assumptions and uncertainty visible.</p>
-    <div class="proof-df__grid">
-      <div class="proof-df__card"><div class="proof-df__card-head"><span class="proof-df__badge proof-df__badge--pending">PENDING</span><span class="proof-df__label">Heat risk — Athens, Greece</span></div><div class="proof-df__card-body"><p>Review priority <strong>80.3/100</strong>. A Prometheus forecast is open and human consequence is plausible. No decision branch has been confirmed.</p><div class="proof-df__branches"><span class="proof-df__branch">Maintain current posture</span><span class="proof-df__branch">Escalate heat-health readiness</span><span class="proof-df__branch">Stage resources earlier</span></div></div><div class="proof-df__card-foot"><span>Human review required</span><span>Trial opened: <strong>NO</strong></span></div></div>
-      <div class="proof-df__card"><div class="proof-df__card-head"><span class="proof-df__badge">SCENARIO CLASS</span><span class="proof-df__label">Wildfire + wind shift</span></div><div class="proof-df__card-body"><p>If the wind shifts, does the plausible fire-spread or exposure corridor move? Are <strong>homes, roads or power assets</strong> newly in harm's way — and which assumption creates that change?</p><div class="proof-df__branches"><span class="proof-df__branch">Current-wind baseline</span><span class="proof-df__branch">Wind-shift branch</span><span class="proof-df__branch">Earlier resource staging</span></div></div><div class="proof-df__card-foot"><span>Conditional scenario</span><span>Not a warning or operational instruction</span></div></div>
+  <section class="pitch-section" id="proof">
+    <div class="container">
+      <div class="pitch-section-head">
+        <div>
+          <p class="human-kicker">Proof before jargon</p>
+          <h2 class="h2">Here is what the system<br>is actually doing.</h2>
+        </div>
+        <p>The research matters, but nobody should have to understand the architecture before they can see the product. These are live public-safe outputs from the same systems running underneath EarthNet and Prometheus.</p>
+      </div>
+
+      <div class="home-proof-grid">
+        <div class="home-proof-copy">
+          <p class="human-kicker">Prometheus · a forecast on the record</p>
+          <h2 class="h2" style="font-size:clamp(36px,4.4vw,60px)">Say what should happen.<br>Then leave it alone.</h2>
+          <p>Prometheus commits forecasts before the answer is known. He records confidence, evidence and a competing outcome, then comes back later and attaches what actually happened. Wins and misses stay in the same ledger.</p>
+          <div class="pitch-proof-line">
+            <div class="pitch-proof"><strong data-home-prom-resolved>—</strong><span>resolved forecasts</span></div>
+            <div class="pitch-proof"><strong data-home-prom-brier>—</strong><span>Brier score so far</span></div>
+          </div>
+          <div class="btn-row"><a class="btn" href="prometheus.html">Open the Prometheus record</a></div>
+        </div>
+
+        <article class="forecast-card featured-forecast home-forecast-card" aria-live="polite">
+          <div class="forecast-meta"><span class="forecast-status" data-home-forecast-mode>Loading featured forecast…</span><span data-home-forecast-valid>—</span></div>
+          <h3 data-home-forecast-title>Loading Prometheus…</h3>
+          <div class="forecast-statement" data-home-forecast-statement>The latest public forecast is being loaded.</div>
+          <div class="forecast-confidence"><strong data-home-forecast-confidence>—</strong><span>confidence recorded at commitment</span></div>
+          <div class="home-live-meta"><span data-home-forecast-sources>— source families</span><span data-home-prom-updated>Public ledger</span></div>
+          <div class="forecast-alt"><strong>Why it is here:</strong> the featured gate favours confidence, calibration and independent evidence rather than confidence alone.</div>
+        </article>
+      </div>
     </div>
-    <p class="proof-df__note">A branch remains a conditional scenario until the evidence state is frozen, the human choice is explicitly confirmed and the later outcome can be independently observed. The original package is never rewritten after reality answers.</p>
-    <p class="proof-df__status">Decision intake under live validation &middot; Human authority remains final.</p>
-  </div>
-</section>
+  </section>
 
-<section class="stack" id="stack"><div class="stack__inner"><h2>One chain. Different jobs.</h2><div class="stack__grid"><div class="stack__layer"><h3><span>00</span> EarthNet</h3><p>What is happening? Multi-source ingestion — atmosphere, ocean, seismic, volcanic, humanitarian, infrastructure, space weather, near-earth objects.</p></div><div class="stack__layer"><h3><span>01</span> Evidence &amp; State</h3><p>What do we actually know? Observation stays separate from inference. Claims stay separate from facts. The evidence record is clean before anything reasons about it.</p></div><div class="stack__layer"><h3><span>02</span> Causal layer</h3><p>What might connect it? Link signals only through explicit mechanisms. Preserve competing explanations. “These two things moved together” is not enough.</p></div><div class="stack__layer"><h3><span>03</span> Prometheus</h3><p>What should happen next? Timestamped, uncertainty-weighted forecasts. Immutable forecast IDs. Public resolution when the horizon closes. Every miss stays in the ledger.</p></div><div class="stack__layer"><h3><span>04</span> Decision Futures</h3><p>What changes if the choice changes? Compare baseline vs. intervention vs. alternative. Track what happened on the path you chose — and the path you didn't.</p></div><div class="stack__layer"><h3><span>05</span> Sentinel</h3><p>Can a human challenge the whole thing? “Why do you believe this?” “What would change your mind?” The system answers, or it doesn't earn trust.</p></div><div class="stack__layer stack__layer--outcome"><h3><span></span> Outcome</h3><p>Were we right? The forecast resolves. The score updates. The calibration improves — or it doesn't. Either way, the evidence is public.</p></div></div></div></section>
+  <section class="pitch-section">
+    <div class="container home-proof-grid">
+      <div class="home-proof-copy">
+        <p class="human-kicker">New Zealand · daily intelligence</p>
+        <h2 class="h2" style="font-size:clamp(36px,4.4vw,60px)">A country-level morning brief.</h2>
+        <p>New Zealand is EarthNet's current country-level proving ground. The daily state combines seismic activity, volcanic status, incoming weather and ocean context, then adds a short interpretation without pretending every unusual signal is a prediction.</p>
+        <p data-home-nz-line>Loading the latest New Zealand interpretation…</p>
+        <div class="btn-row"><a class="btn" href="earthnet-nz-intelligence.html">Open New Zealand intelligence</a></div>
+      </div>
 
-<section class="research"><div class="research__inner"><h2>Cross-domain research</h2><p class="research__lead">The stack is domain-agnostic. What changes is the evidence. The architecture doesn't.</p><div class="research__grid"><div class="research__card"><h3>Bio-Symbology</h3><p>Detect the transition, not only the tumour. Modelling the biological transitions that may precede invasive cancer — precursor-state intelligence with explicit pathway reasoning.</p><a href="biosymbology.html">Explore &rarr;</a></div><div class="research__card"><h3>Physical Intelligence</h3><p>Understand the machine. Then test the decision. Physically constrained world models for high-value engineered systems — freeze the decision before the machine reveals the answer.</p><a href="physical-intelligence.html">Explore &rarr;</a></div></div></div></section>
+      <article class="paper-brief" aria-live="polite">
+        <div class="paper-meta"><span>Prometheus // New Zealand</span><span data-home-nz-date>Latest daily state</span></div>
+        <h3>24-hour state</h3>
+        <p class="paper-subtitle">A compact national view from the latest public evidence available to EarthNet.</p>
+        <div class="home-nz-strip">
+          <div><strong data-home-nz-count>—</strong><span>catalogue earthquakes</span></div>
+          <div><strong data-home-nz-largest>—</strong><span>largest event</span></div>
+          <div><strong data-home-nz-cluster>—</strong><span>largest concentration</span></div>
+        </div>
+        <div style="margin-top:28px">
+          <div class="paper-meta" style="border:0;padding:0"><span>Latest guarded volcanic change</span><span data-home-volcano-value>—</span></div>
+          <p style="margin:12px 0 0;color:#394e55;font:500 24px/1.16 'Newsreader',Georgia,serif" data-home-volcano-title>Loading volcanic pulse…</p>
+        </div>
+        <div class="paper-footnote">Research and operational context only. Official agencies and responsible authorities remain the source of public safety advice.</div>
+      </article>
+    </div>
+  </section>
 
-<section class="who"><div class="who__inner"><h2>Who this is for</h2><div class="who__grid"><div class="who__card"><h3>Insurance &amp; reinsurance</h3><p>When a severe-weather system is forming, the question is not only what happened, but which exposures are changing before the claims data exists.</p></div><div class="who__card"><h3>Government &amp; emergency management</h3><p>Important signals often appear as fragments across different systems. The need is for one challengeable operating picture early enough to support better decisions.</p></div><div class="who__card"><h3>Critical infrastructure &amp; utilities</h3><p>Weather, seismicity and downstream dependencies can all shift around an asset at once. The question becomes what deserves attention first, and why.</p></div><div class="who__card"><h3>Research &amp; strategic intelligence</h3><p>If a hypothesis is worth taking seriously, it should be able to say what should happen next and be judged later against reality.</p></div></div></div></section>
+  <section class="pitch-section home-domain-band">
+    <div class="container">
+      <p class="human-kicker">EarthNet · planetary intelligence</p>
+      <h2 class="h2">New Zealand proves the country model.<br>EarthNet proves the global model.</h2>
+      <p class="lede">EarthNet watches meaningful change across environmental hazards, seismic activity, severe weather, infrastructure pressure, humanitarian context and other connected systems. It can keep a planetary view or narrow attention around a country, region or operating area as suitable evidence sources are available.</p>
+      <div class="btn-row"><a class="btn btn-primary" href="earthnet-global/">Explore the global view</a><a class="btn" href="earthnet-platform.html">What EarthNet does</a></div>
+    </div>
+  </section>
 
-<section class="founder"><div class="founder__inner"><h2>Why this exists</h2><p>It started with one stubborn question: what is actually causing this? Not what correlates. Not what the model predicts. What is the mechanism — and how would we know if we were wrong?</p><p>Pythology was built on weekends over six months by one person with a day job. No team. No funding. Just the conviction that intelligence systems should be able to explain themselves, forecast honestly, and keep the record when they're wrong.</p><p class="founder__signoff">Brent Robertson &middot; Manawatū, New Zealand</p></div></section>
+  <section class="pitch-section" id="stack">
+    <div class="container">
+      <div class="pitch-section-head">
+        <div>
+          <p class="human-kicker">Underneath the useful bit</p>
+          <h2 class="h2">One chain.<br>Different jobs.</h2>
+        </div>
+        <p>The architecture is easier to understand when each piece gets one question. The machinery can be sophisticated underneath without forcing the person using it to speak machine.</p>
+      </div>
+      <div class="stack-river">
+        <div class="stack-item"><div class="stack-name">EarthNet</div><div><h3>What is happening?</h3><p>Bring the outside world into a current evidence state and track meaningful change.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Evidence</div><div><h3>What do we actually know?</h3><p>Keep source, age, missing information, contradictions and modelled estimates visible.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Causal layer</div><div><h3>What might connect it?</h3><p>Compare mechanisms and competing explanations instead of turning correlation into a story.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Prometheus</div><div><h3>What should happen next?</h3><p>Commit a forecast before the outcome, preserve uncertainty and return later to score it.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Decision Futures</div><div><h3>What changes if the choice changes?</h3><p>Compare conditional branches from the same evidence without pretending a scenario is prophecy.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Sentinel</div><div><h3>Can a human challenge the whole thing?</h3><p>Interrogate evidence, reasoning, degraded sources, uncertainty and weak assumptions.</p></div></div>
+        <div class="stack-item"><div class="stack-name">Outcome</div><div><h3>Were we right?</h3><p>Let later evidence decide whether confidence should rise, fall or stay exactly where it is.</p></div></div>
+      </div>
+      <div class="btn-row" style="justify-content:center"><a class="btn" href="research.html">Explore the wider stack</a></div>
+    </div>
+  </section>
 
+  <section class="pitch-section">
+    <div class="container">
+      <div class="pitch-section-head">
+        <div>
+          <p class="human-kicker">Where this could matter</p>
+          <h2 class="h2">The product is not the dashboard.<br>It is better time to understand and choose.</h2>
+        </div>
+        <p>Different organisations care about different evidence, but many share the same problem: too much information arrives separately, important changes are easy to miss, and the reasoning behind a decision is difficult to audit afterward.</p>
+      </div>
+      <div class="market-grid">
+        <div class="market-item"><span>INSURANCE &amp; REINSURANCE</span><h3>See developing exposure before it becomes a neat historical dataset.</h3><p>Country or portfolio-focused intelligence can connect hazards, evolving evidence and likely downstream pressure while keeping the assumptions inspectable.</p></div>
+        <div class="market-item"><span>GOVERNMENT &amp; EMERGENCY MANAGEMENT</span><h3>Bring different evidence families into one challengeable operating picture.</h3><p>Useful when the question is not simply “is there an alert?” but “what changed, what could it affect, and what are we still unsure about?”</p></div>
+        <div class="market-item"><span>CRITICAL INFRASTRUCTURE</span><h3>Watch the environmental conditions around systems people depend on.</h3><p>Energy, transport, communications and other operators can focus the architecture around assets, regions and dependencies relevant to their decisions.</p></div>
+        <div class="market-item"><span>RESEARCH &amp; STRATEGIC INTELLIGENCE</span><h3>Turn hypotheses into prospective records rather than persuasive hindsight.</h3><p>Prometheus and the causal layer provide a disciplined way to preserve evidence, alternatives, forecasts and later outcomes for review.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch-section">
+    <div class="container">
+      <div class="founder-note">
+        <p class="human-kicker">Why Pythology exists</p>
+        <blockquote>It started with one stubborn question: <span style="color:#8fd9e7">what is actually causing this?</span></blockquote>
+        <p>I did not start Pythology because I had a grand plan to build an intelligence company. I kept building things, asking harder questions, and running into the same problem: plenty of systems could show me an answer, but very few could show me why they believed it — or admit later that they were wrong.</p>
+        <p>Pythology grew from trying to build that discipline into the software itself.</p>
+        <div class="btn-row"><a class="btn" href="about.html">Read the story</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pitch-section">
+    <div class="container pitch-split">
+      <div><p class="human-kicker">Research, investment or deployment</p><h2 class="h2">If this overlaps with a problem you care about, talk to us.</h2></div>
+      <div><p class="lede" style="margin-top:0">We are interested in organisations that need to understand complex evidence sooner, test forecasts prospectively, or build a country, region or system-specific intelligence view around real decisions.</p><div class="btn-row"><a class="btn btn-primary" href="about.html#contact">Start a conversation</a><a class="btn" href="prometheus.html">See the public track record</a></div></div>
+    </div>
+  </section>
+
+  <div class="pitch-disclaimer"><div class="container">Pythology's public systems are research and decision-support products in live validation. They do not replace official warning services, responsible authorities or domain experts.</div></div>
 </main>
-<footer class="site-foot"><div class="site-foot__inner"><p>Pythology &middot; Research and decision-support products in live validation &middot; These products do not replace official warning services, emergency directives or professional engineering, medical or financial advice.</p><p>&copy; 2026 Pythology</p></div></footer>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a class="brand" href="index.html"><img src="Logo (2).jpeg" alt=""><span class="brand-word">PYTHOLOGY</span></a><p class="small" style="max-width:440px;margin-top:18px">Evidence-grounded intelligence built in the Manawatū, New Zealand.</p></div>
+      <div><div class="footer-title">Explore</div><div class="footer-links"><a href="earthnet-platform.html">EarthNet</a><a href="prometheus.html">Prometheus</a><a href="research.html">The stack</a></div></div>
+      <div><div class="footer-title">Pythology</div><div class="footer-links"><a href="about.html">About</a><a href="mailto:enquiries@pythology.co.nz">Contact</a></div></div>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Pythology · Manawatū, New Zealand</span><span>Structure hidden in chaos.</span></div>
+  </div>
+</footer>
 </body>
 </html>
