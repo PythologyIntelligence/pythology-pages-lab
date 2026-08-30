@@ -30,6 +30,14 @@ if [[ ! -f "$SITE/index.html" ]]; then
 fi
 cp -a "$SITE"/. "$OUT"/
 
+# Always overlay the current human-facing FUTURE surface so a first deployment
+# does not depend on the previous Pages package already containing it.
+for file in index.html pythology-human.css future.html future.css; do
+  if [[ -f "$ROOT/$file" ]]; then
+    cp "$ROOT/$file" "$OUT/$file"
+  fi
+done
+
 # Always overlay the current System Control code and safe telemetry from git.
 if [[ -d "$ROOT/monitor" ]]; then
   mkdir -p "$OUT/monitor"
