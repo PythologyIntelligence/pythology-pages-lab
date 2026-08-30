@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-30T02:41:41.076434+00:00",
+  "generatedAt": "2026-08-30T03:11:56.762966+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -288,5 +288,5 @@
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-08-30T02:41:56.277340+00:00"
+  "publishedAt": "2026-08-30T03:12:02.294211+00:00"
 }
