@@ -1,16 +1,48 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": null,
+    "brier_score": 0.25,
     "calibrated_forecast_count": 0,
-    "confirmed_count": 0,
-    "hit_rate": null,
+    "confirmed_count": 1,
+    "hit_rate": 1.0,
     "not_observed_count": 0,
-    "resolved_count": 0
+    "resolved_count": 1
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-08-30T04:12:19+00:00",
-  "history": [],
+  "generated_at": "2026-08-30T12:13:09+00:00",
+  "history": [
+    {
+      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-29T22:15:39+00:00",
+      "domain": "volcanic",
+      "forecast_confidence": 0.5,
+      "forecast_id": "c3ef87f946a366c46c8e250e",
+      "forecast_type": "official_volcanic_unrest_continuation",
+      "outcome": {
+        "brier_component": 0.25,
+        "matched_titles": [
+          "White Island — Alert Level 2"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
+      "region": "White Island",
+      "resolved_at": "2026-08-30T12:13:09+00:00",
+      "source_families": [
+        "GeoNet NZ"
+      ],
+      "source_independence_count": 1,
+      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "status": "resolved",
+      "target_event_id": "geonet-volcano-whiteisland",
+      "target_event_type": "volcanic_alert",
+      "target_title": "White Island — Alert Level 2",
+      "valid_until": "2026-09-01T22:15:39+00:00"
+    }
+  ],
   "integrity": {
     "forecast_records_are_frozen_after_commitment": true,
     "outcomes_are_later_resolutions_not_rewrites": true,
@@ -118,31 +150,6 @@
       "target_event_type": "severe_convective_risk",
       "target_title": "Severe weather risk — Sahel Region",
       "valid_until": "2026-08-30T22:15:39+00:00"
-    },
-    {
-      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
-      "calibrated": false,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "live_validation_uncalibrated",
-      "created_at": "2026-08-29T22:15:39+00:00",
-      "domain": "volcanic",
-      "forecast_confidence": 0.5,
-      "forecast_id": "c3ef87f946a366c46c8e250e",
-      "forecast_type": "official_volcanic_unrest_continuation",
-      "outcome": null,
-      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
-      "region": "White Island",
-      "resolved_at": null,
-      "source_families": [
-        "GeoNet NZ"
-      ],
-      "source_independence_count": 1,
-      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
-      "status": "open",
-      "target_event_id": "geonet-volcano-whiteisland",
-      "target_event_type": "volcanic_alert",
-      "target_title": "White Island — Alert Level 2",
-      "valid_until": "2026-09-01T22:15:39+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
