@@ -6,7 +6,6 @@ OUT="$ROOT/_site"
 MIRROR="$ROOT/.mirror"
 PYTHOLOGY_SOURCE="https://pythology.co.nz"
 VE_SOURCE="https://verry-elleegant-ai.vercel.app"
-CERBERUS_SNAPSHOT_SOURCE="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main/data/cerberus_latest.json"
 
 rm -rf "$OUT" "$MIRROR"
 mkdir -p "$OUT" "$MIRROR/main" "$MIRROR/ve"
@@ -55,10 +54,10 @@ for file in earthnet_latest.json earthnet_status.json earthnet_nz_daily.json ear
   curl -fsSL "$PYTHOLOGY_SOURCE/data/$file" -o "$OUT/data/$file" || echo "EarthNet snapshot unavailable: $file"
 done
 
-# Cerberus remains read-only on GitHub for now. The portal itself is versioned in
-# this Pages repository, while the current technical-state snapshot is copied from
-# the existing Cerberus GitHub data plane. Staleness is surfaced by the UI.
-curl -fsSL "$CERBERUS_SNAPSHOT_SOURCE" -o "$OUT/data/cerberus_latest.json" || echo "Cerberus snapshot unavailable"
+# Cerberus remains read-only on GitHub for now. Keep the seed snapshot in this
+# repository so Pages does not depend on a private cross-repository raw URL.
+# The UI surfaces staleness rather than pretending an old snapshot is current.
+cp "$ROOT/data/cerberus_latest.json" "$OUT/data/cerberus_latest.json"
 
 # Explicitly stage EarthNet v3 and all of its browser-side layers in case the
 # marketing-site crawl did not encounter the operational dashboard.
