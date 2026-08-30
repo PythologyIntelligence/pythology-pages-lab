@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-30T22:42:24.780021+00:00",
+  "generatedAt": "2026-08-30T23:12:40.860747+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -288,5 +288,5 @@
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-08-30T22:42:36.079330+00:00"
+  "publishedAt": "2026-08-30T23:12:41.566932+00:00"
 }
