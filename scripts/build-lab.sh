@@ -6,12 +6,14 @@ OUT="$ROOT/_site"
 MIRROR="$ROOT/.mirror"
 PYTHOLOGY_SOURCE="https://pythology.co.nz"
 VE_SOURCE="https://verry-elleegant-ai.vercel.app"
+CERBERUS_SNAPSHOT_SOURCE="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main/data/cerberus_latest.json"
 
 rm -rf "$OUT" "$MIRROR"
 mkdir -p "$OUT" "$MIRROR/main" "$MIRROR/ve"
 
-# Mirror the public Pythology website only. Cerberus is intentionally excluded
-# from this lab until its high-frequency data path is moved to the VPS.
+# Mirror the public Pythology website. The former Cerberus React application is
+# intentionally excluded; the standalone read-only Cerberus portal is staged
+# deterministically from this repository later in the build.
 wget \
   --recursive \
   --level=3 \
@@ -43,7 +45,7 @@ fi
 MAIN_DIR="$(dirname "$MAIN_INDEX")"
 cp -a "$MAIN_DIR"/. "$OUT"/
 
-# Make sure the public lab never accidentally ships the Cerberus application.
+# Never ship the retired Cerberus React application or former forex route.
 rm -rf "$OUT/cerberus-app" "$OUT/cerberus-app.html" "$OUT/forex.html" "$OUT/forex.html.html"
 find "$OUT" -type f \( -name '*cerberus-app*' -o -name 'forex.html*' \) -delete || true
 
@@ -52,6 +54,11 @@ mkdir -p "$OUT/data"
 for file in earthnet_latest.json earthnet_status.json earthnet_nz_daily.json earthnet_hydrology_nz.json; do
   curl -fsSL "$PYTHOLOGY_SOURCE/data/$file" -o "$OUT/data/$file" || echo "EarthNet snapshot unavailable: $file"
 done
+
+# Cerberus remains read-only on GitHub for now. The portal itself is versioned in
+# this Pages repository, while the current technical-state snapshot is copied from
+# the existing Cerberus GitHub data plane. Staleness is surfaced by the UI.
+curl -fsSL "$CERBERUS_SNAPSHOT_SOURCE" -o "$OUT/data/cerberus_latest.json" || echo "Cerberus snapshot unavailable"
 
 # Explicitly stage EarthNet v3 and all of its browser-side layers in case the
 # marketing-site crawl did not encounter the operational dashboard.
@@ -228,7 +235,7 @@ PY
 
 # Add a tiny lab marker without changing the production source.
 cat > "$OUT/pages-lab-status.json" <<EOF
-{"mode":"github-pages-lab","cerberus":"excluded-vps-later","earthnet":"static-snapshot","agri":"open-meteo-public-lab","verryElleegant":"static-frontend-readonly-snapshots","builtAt":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
+{"mode":"github-pages-lab","cerberus":"standalone-readonly-github-snapshot","earthnet":"static-snapshot","agri":"open-meteo-public-lab","verryElleegant":"static-frontend-readonly-snapshots","builtAt":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
 EOF
 
 # Publish the safe System Control front end and its sanitised telemetry snapshot.
@@ -279,6 +286,7 @@ PUBLIC_OVERRIDES=(
   causal-intelligence.html
   future.css
   future.html
+  cerberus.html
 )
 for file in "${PUBLIC_OVERRIDES[@]}"; do
   if [[ ! -f "$ROOT/$file" ]]; then
@@ -298,7 +306,7 @@ for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_dai
   cp "$ROOT/data/$file" "$OUT/data/$file"
 done
 
-# Fail closed if the homepage overlay or NZ daily-state surface did not land.
+# Fail closed if critical public surfaces did not land.
 grep -Fq 'We build intelligence' "$OUT/index.html" || {
   echo 'Humanised homepage overlay validation failed.' >&2
   exit 1
@@ -313,6 +321,10 @@ grep -Fq 'We build intelligence' "$OUT/index.html" || {
 }
 [[ -s "$OUT/future.html" && -s "$OUT/future.css" ]] || {
   echo 'FUTURE presentation overlay validation failed.' >&2
+  exit 1
+}
+[[ -s "$OUT/cerberus.html" && -s "$OUT/data/cerberus_latest.json" ]] || {
+  echo 'Cerberus standalone portal or snapshot did not stage.' >&2
   exit 1
 }
 
