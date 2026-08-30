@@ -1,19 +1,19 @@
 [
   {
-    "at": "2026-08-30T03:34:56+00:00",
+    "at": "2026-08-30T04:12:05+00:00",
     "causal": null,
     "cf": 0.7,
-    "d": "Texas (Gulf Coast): CAPE 4130 J/kg. Gusts up to 25 km/h. EXTREME — supercell/tornado environment",
+    "d": "Texas (Gulf Coast): CAPE 4130 J/kg. Gusts up to 26 km/h. EXTREME — supercell/tornado environment",
     "e": "atmosphere",
     "et": "severe_convective_risk",
     "f": {
       "context": "hurricane_zone",
       "convective_risk": "EXTREME — supercell/tornado environment",
       "max_cape_jkg": 4130,
-      "max_gust_kmh": 25.2,
+      "max_gust_kmh": 25.9,
       "source": "Open-Meteo"
     },
-    "id": "8ea249a18d581a12",
+    "id": "42ccdf6845f1f61e",
     "la": 29.8,
     "lo": -95.4,
     "media": [],
@@ -26,7 +26,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:59+00:00",
+    "at": "2026-08-30T04:12:08+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 20.1°C (anomaly +4.1°C — EXTREME warm anomaly). Waves: 1.9 m max. Current: avg 0.39 m/s. Primary AMOC monitoring point. Weakening current velocity signals potential AMOC slowdown.",
@@ -45,7 +45,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 4.07
     },
-    "id": "63961e1abed99b4a",
+    "id": "f13fa6b6fe145423",
     "la": 45.0,
     "lo": -35.0,
     "media": [],
@@ -58,7 +58,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:00+00:00",
+    "at": "2026-08-30T04:12:09+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 30.1°C (anomaly +6.1°C — EXTREME warm anomaly). Waves: 0.8 m max. Current: avg 2.34 m/s. Gulf Stream separation point. Temperature and current velocity indicate AMOC transport.",
@@ -77,7 +77,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 6.14
     },
-    "id": "37366d70c2f845e9",
+    "id": "8b4247a26bdba429",
     "la": 35.0,
     "lo": -74.0,
     "media": [],
@@ -90,7 +90,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:04+00:00",
+    "at": "2026-08-30T04:12:13+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Baffin Bay (Canadian Arctic): avg SST 6.5°C (anomaly +5.5°C). SIGNIFICANT WARMING. Northwest Passage approach. Ice-free season lengthening. Waves: 0.6 m.",
@@ -106,7 +106,7 @@
       "source": "Open-Meteo Marine",
       "status": "SIGNIFICANT WARMING"
     },
-    "id": "00169e47f84b9d27",
+    "id": "d03ce6010ee24536",
     "la": 70.0,
     "lo": -60.0,
     "media": [],
@@ -119,7 +119,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:00+00:00",
+    "at": "2026-08-30T04:12:09+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 29.8°C (anomaly +3.8°C — EXTREME warm anomaly). Waves: 1.8 m max. Current: avg 0.55 m/s. Core ENSO monitoring region. SST anomaly here defines El Niño/La Niña state.",
@@ -138,7 +138,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 3.82
     },
-    "id": "75704720018a775a",
+    "id": "13894beeaa438029",
     "la": 0.0,
     "lo": -140.0,
     "media": [],
@@ -151,7 +151,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:04+00:00",
+    "at": "2026-08-30T04:12:13+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Greenland Sea (ice edge): avg SST 6.3°C (anomaly +5.8°C). SIGNIFICANT WARMING. East Greenland Current — ice export corridor. Waves: 1.5 m.",
@@ -167,7 +167,7 @@
       "source": "Open-Meteo Marine",
       "status": "SIGNIFICANT WARMING"
     },
-    "id": "2c50824f4a944fc5",
+    "id": "5b0154cea2b46f98",
     "la": 74.0,
     "lo": -5.0,
     "media": [],
@@ -180,7 +180,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:57+00:00",
+    "at": "2026-08-30T04:12:06+00:00",
     "causal": null,
     "cf": 0.7,
     "d": "Sahel Region: CAPE 3600 J/kg. Gusts up to 29 km/h. EXTREME — supercell/tornado environment",
@@ -193,7 +193,7 @@
       "max_gust_kmh": 29.2,
       "source": "Open-Meteo"
     },
-    "id": "58f4abfa2ca12078",
+    "id": "c468bc869b5cfcda",
     "la": 14.0,
     "lo": 0.0,
     "media": [],
@@ -206,9 +206,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:11+00:00",
+    "at": "2026-08-30T04:12:18+00:00",
     "causal": {
-      "assessment_id": "ede39159df16a4614e",
+      "assessment_id": "b8b43a62a063c6549f",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -222,7 +222,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
       "hypotheses": [
         {
@@ -263,7 +263,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [],
-      "target_event_id": "ae38bb2ecc5f8168",
+      "target_event_id": "4a74020bbda032bc",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports",
@@ -281,7 +281,7 @@
       "population_millions": 7.5,
       "source": "Open-Meteo + infrastructure model"
     },
-    "id": "ae38bb2ecc5f8168",
+    "id": "4a74020bbda032bc",
     "la": 24.7,
     "lo": 46.7,
     "media": [],
@@ -294,7 +294,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:55+00:00",
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Near pass (small) — 2026 QQ1 (~50–125 m). Closest approach: 1,069,359 km (2.78 lunar distances) at 7.3 km/s. Approach time: 2026-08-31T16:17:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -344,9 +344,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:56+00:00",
+    "at": "2026-08-30T04:12:05+00:00",
     "causal": {
-      "assessment_id": "486bd7a76091212de7",
+      "assessment_id": "240797d206d9b1c1a1",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -360,7 +360,7 @@
         "relationship": 0.93
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is elevated; downstream impacts are not yet independently corroborated",
       "hypotheses": [
         {
@@ -369,8 +369,8 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Elevated heat may be contributing to nearby infrastructure, medical or wildfire pressure.",
           "supporting_event_ids": [
-            "424ae56f25cc5b90",
-            "d298836db2632e34"
+            "9b62146bc6c5ecbf",
+            "e33b55790af2b109"
           ]
         }
       ],
@@ -401,18 +401,18 @@
         }
       ],
       "related_event_ids": [
-        "424ae56f25cc5b90",
-        "d298836db2632e34"
+        "9b62146bc6c5ecbf",
+        "e33b55790af2b109"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 72.5,
-          "event_id": "424ae56f25cc5b90",
+          "event_id": "9b62146bc6c5ecbf",
           "event_type": "active_wildfire",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:35:06+00:00",
+          "observed_at": "2026-08-30T04:12:14+00:00",
           "relationship": "Active wildfire provides a nearby hazard consequence",
           "source": "NASA EONET",
           "time_gap_hours": 0.0,
@@ -420,34 +420,34 @@
         },
         {
           "distance_km": 185.2,
-          "event_id": "d298836db2632e34",
+          "event_id": "e33b55790af2b109",
           "event_type": "active_wildfire",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:35:06+00:00",
+          "observed_at": "2026-08-30T04:12:14+00:00",
           "relationship": "Active wildfire provides a nearby hazard consequence",
           "source": "NASA EONET",
           "time_gap_hours": 0.0,
           "title": "Wildfire BISON, Osage, Oklahoma"
         }
       ],
-      "target_event_id": "bac46e1b18eccc99",
+      "target_event_id": "72ea0f1ab6a1d2b5",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
       ]
     },
     "cf": 0.8,
-    "d": "Oklahoma (Tornado Alley): 38.6°C (feels like 38.7°C). Min humidity 24%. Elevated — outdoor activity risk, vulnerable populations at risk",
+    "d": "Oklahoma (Tornado Alley): 38.6°C (feels like 38.4°C). Min humidity 24%. Elevated — outdoor activity risk, vulnerable populations at risk",
     "e": "atmosphere",
     "et": "heat_risk",
     "f": {
       "heat_impact": "Elevated — outdoor activity risk, vulnerable populations at risk",
-      "max_apparent_c": 38.7,
+      "max_apparent_c": 38.4,
       "max_temp_c": 38.6,
       "min_humidity_pct": 24,
       "source": "Open-Meteo"
     },
-    "id": "bac46e1b18eccc99",
+    "id": "72ea0f1ab6a1d2b5",
     "la": 35.5,
     "lo": -97.5,
     "media": [],
@@ -460,9 +460,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:11+00:00",
+    "at": "2026-08-30T04:12:18+00:00",
     "causal": {
-      "assessment_id": "072a6640d10dcf08f0",
+      "assessment_id": "de56edf59b3908c51e",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -476,7 +476,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
       "hypotheses": [
         {
@@ -517,7 +517,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [],
-      "target_event_id": "90786b6cc0b4b58f",
+      "target_event_id": "9b61ceab81a6c499",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports",
@@ -537,7 +537,7 @@
       "population_millions": 7.5,
       "source": "Open-Meteo + infrastructure model"
     },
-    "id": "90786b6cc0b4b58f",
+    "id": "9b61ceab81a6c499",
     "la": 24.7,
     "lo": 46.7,
     "media": [],
@@ -550,9 +550,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:11+00:00",
+    "at": "2026-08-30T04:12:18+00:00",
     "causal": {
-      "assessment_id": "c21963c2a237f3fdf3",
+      "assessment_id": "011224b6a8305b2de4",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -566,7 +566,7 @@
         "relationship": 0.58
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
       "hypotheses": [
         {
@@ -575,8 +575,8 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Elevated apparent temperature is a primary modeled driver of the current medical-stress signal.",
           "supporting_event_ids": [
-            "aa4302a2549e2948",
-            "9fef33e7318066a2"
+            "c602c9c618e665a4",
+            "4cb505f8527f488a"
           ]
         }
       ],
@@ -609,18 +609,18 @@
         }
       ],
       "related_event_ids": [
-        "aa4302a2549e2948",
-        "9fef33e7318066a2"
+        "c602c9c618e665a4",
+        "4cb505f8527f488a"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 736.4,
-          "event_id": "aa4302a2549e2948",
+          "event_id": "c602c9c618e665a4",
           "event_type": "active_wildfire",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:35:06+00:00",
+          "observed_at": "2026-08-30T04:12:14+00:00",
           "relationship": "Active wildfire may compound service and community exposure",
           "source": "NASA EONET",
           "time_gap_hours": 0.0,
@@ -628,17 +628,17 @@
         },
         {
           "distance_km": 778.2,
-          "event_id": "9fef33e7318066a2",
+          "event_id": "4cb505f8527f488a",
           "event_type": "active_wildfire",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:35:06+00:00",
+          "observed_at": "2026-08-30T04:12:14+00:00",
           "relationship": "Active wildfire may compound service and community exposure",
           "source": "NASA EONET",
           "time_gap_hours": 0.0,
           "title": "Wildfire LAUGHLIN, Colfax, New Mexico"
         }
       ],
-      "target_event_id": "dae1e76f5b6385b1",
+      "target_event_id": "905eece78dc2e0bf",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports",
@@ -646,19 +646,19 @@
       ]
     },
     "cf": 0.7,
-    "d": "Phoenix, Arizona (pop. 4.9M): 43.0°C (feels like 44.6°C). Heat stress level: DANGER. Heat cramps/exhaustion likely. Heat stroke probable with prolonged exposure. Hospital surge expected. Desert heat extreme. US record temperatures. Grid stress in peak summer.",
+    "d": "Phoenix, Arizona (pop. 4.9M): 43.0°C (feels like 43.4°C). Heat stress level: DANGER. Heat cramps/exhaustion likely. Heat stroke probable with prolonged exposure. Hospital surge expected. Desert heat extreme. US record temperatures. Grid stress in peak summer.",
     "e": "infrastructure",
     "et": "medical_heat_stress",
     "f": {
       "heat_stress_level": "DANGER",
-      "max_apparent_c": 44.6,
+      "max_apparent_c": 43.4,
       "max_temp_c": 43.0,
       "medical_impact": "Heat cramps/exhaustion likely. Heat stroke probable with prolonged exposure. Hospital surge expected.",
-      "min_humidity_pct": 16,
+      "min_humidity_pct": 14,
       "population_millions": 4.9,
       "source": "Open-Meteo + infrastructure model"
     },
-    "id": "dae1e76f5b6385b1",
+    "id": "905eece78dc2e0bf",
     "la": 33.4,
     "lo": -112.1,
     "media": [],
@@ -671,7 +671,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:55+00:00",
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2026 QB2 (~17–42 m). Closest approach: 1,979,832 km (5.15 lunar distances) at 13.7 km/s. Approach time: 2026-09-01T02:53:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -721,9 +721,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:56+00:00",
+    "at": "2026-08-30T04:12:05+00:00",
     "causal": {
-      "assessment_id": "2cdc24544d5ea50ea1",
+      "assessment_id": "590fd158af79b1349f",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -737,7 +737,7 @@
         "relationship": 0.7
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is elevated; downstream impacts are not yet independently corroborated",
       "hypotheses": [
         {
@@ -746,8 +746,8 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Elevated heat may be contributing to nearby infrastructure, medical or wildfire pressure.",
           "supporting_event_ids": [
-            "f83348bf00a538b2",
-            "424ae56f25cc5b90"
+            "95eff8640dcaa526",
+            "9b62146bc6c5ecbf"
           ]
         }
       ],
@@ -778,18 +778,18 @@
         }
       ],
       "related_event_ids": [
-        "f83348bf00a538b2",
-        "424ae56f25cc5b90"
+        "95eff8640dcaa526",
+        "9b62146bc6c5ecbf"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 431.8,
-          "event_id": "f83348bf00a538b2",
+          "event_id": "95eff8640dcaa526",
           "event_type": "active_wildfire",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:35:06+00:00",
+          "observed_at": "2026-08-30T04:12:14+00:00",
           "relationship": "Active wildfire provides a nearby hazard consequence",
           "source": "NASA EONET",
           "time_gap_hours": 0.0,
@@ -797,34 +797,34 @@
         },
         {
           "distance_km": 651.1,
-          "event_id": "424ae56f25cc5b90",
+          "event_id": "9b62146bc6c5ecbf",
           "event_type": "active_wildfire",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:35:06+00:00",
+          "observed_at": "2026-08-30T04:12:14+00:00",
           "relationship": "Active wildfire provides a nearby hazard consequence",
           "source": "NASA EONET",
           "time_gap_hours": 0.0,
           "title": "Wildfire 2690, Caddo, Oklahoma"
         }
       ],
-      "target_event_id": "34e42e99ba328796",
+      "target_event_id": "bc7b434f8489ee2a",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
       ]
     },
     "cf": 0.8,
-    "d": "Texas (Gulf Coast): 35.4°C (feels like 41.3°C). Min humidity 42%. Notable heat — monitor for escalation",
+    "d": "Texas (Gulf Coast): 35.5°C (feels like 41.6°C). Min humidity 43%. Notable heat — monitor for escalation",
     "e": "atmosphere",
     "et": "heat_risk",
     "f": {
       "heat_impact": "Notable heat — monitor for escalation",
-      "max_apparent_c": 41.3,
-      "max_temp_c": 35.4,
-      "min_humidity_pct": 42,
+      "max_apparent_c": 41.6,
+      "max_temp_c": 35.5,
+      "min_humidity_pct": 43,
       "source": "Open-Meteo"
     },
-    "id": "34e42e99ba328796",
+    "id": "bc7b434f8489ee2a",
     "la": 29.8,
     "lo": -95.4,
     "media": [],
@@ -832,118 +832,14 @@
     "schema": "earthnet.event.v3",
     "sources": [],
     "status": "active",
-    "sv": 77.88000000000001,
+    "sv": 78.10000000000001,
     "t": "Heat risk — Texas (Gulf Coast)",
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:57+00:00",
+    "at": "2026-08-30T04:12:06+00:00",
     "causal": {
-      "assessment_id": "8e3c0ff0e7bd888922",
-      "baseline": {
-        "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
-        "method": "Published hazard thresholds and current-cycle event relationships",
-        "status": "operational_threshold_proxy"
-      },
-      "claim_boundary": "Candidate causal contribution; not proven attribution or an official warning.",
-      "confidence": {
-        "forecast": 0.56,
-        "mechanism": 0.72,
-        "observation": 0.75,
-        "relationship": 0.72
-      },
-      "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
-      "headline": "Heat is coinciding with modeled infrastructure or medical stress",
-      "hypotheses": [
-        {
-          "claim_type": "candidate_causal_contribution",
-          "confidence": 0.72,
-          "id": "heat-dryness-fire-infrastructure",
-          "statement": "Elevated heat may be contributing to nearby infrastructure, medical or wildfire pressure.",
-          "supporting_event_ids": [
-            "a964ff8358fc2726"
-          ]
-        }
-      ],
-      "limitations": [
-        "Spatial proximity does not by itself prove causation.",
-        "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration.",
-        "Forecast confidence describes the mechanism pack, not an emergency-management directive."
-      ],
-      "mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-      "missing_evidence": [
-        "Seasonal climatology and percentile baseline for this exact location",
-        "Observed fuel moisture and vegetation condition",
-        "Asset-level load, outage and resilience telemetry",
-        "Verified dependency and exposure geometry"
-      ],
-      "pathway": [
-        {
-          "label": "Elevated temperature or apparent temperature",
-          "stage": "observed"
-        },
-        {
-          "label": "Cooling demand and physiological heat load rise",
-          "stage": "mechanism"
-        },
-        {
-          "label": "Health and electricity-system pressure may increase",
-          "stage": "potential_consequence"
-        }
-      ],
-      "related_event_ids": [
-        "a964ff8358fc2726"
-      ],
-      "schema": "earthnet.causal-assessment.v0.1",
-      "status": "supported",
-      "supporting_evidence": [
-        {
-          "distance_km": 0.0,
-          "event_id": "a964ff8358fc2726",
-          "event_type": "medical_heat_stress",
-          "independent_source": false,
-          "observed_at": "2026-08-30T03:35:11+00:00",
-          "relationship": "Infrastructure or medical stress is a modeled downstream heat consequence",
-          "source": "Open-Meteo + infrastructure model",
-          "time_gap_hours": 0.0,
-          "title": "Medical heat stress — Rome, Italy"
-        }
-      ],
-      "target_event_id": "08f83929017ebc03",
-      "watch_next": [
-        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
-        "New official fire detections, perimeter updates or containment reports",
-        "Power, transport, communications and health-service status changes"
-      ]
-    },
-    "cf": 0.8,
-    "d": "Rome, Italy: 35.0°C (feels like 38.3°C). Min humidity 37%. Notable heat — monitor for escalation",
-    "e": "atmosphere",
-    "et": "heat_risk",
-    "f": {
-      "heat_impact": "Notable heat — monitor for escalation",
-      "max_apparent_c": 38.3,
-      "max_temp_c": 35.0,
-      "min_humidity_pct": 37,
-      "source": "Open-Meteo"
-    },
-    "id": "08f83929017ebc03",
-    "la": 41.9,
-    "lo": 12.5,
-    "media": [],
-    "r": "Rome, Italy",
-    "schema": "earthnet.event.v3",
-    "sources": [],
-    "status": "active",
-    "sv": 77.0,
-    "t": "Heat risk — Rome, Italy",
-    "until": null
-  },
-  {
-    "at": "2026-08-30T03:34:57+00:00",
-    "causal": {
-      "assessment_id": "d619b05538c7838b29",
+      "assessment_id": "ed180e1dd9c54506b5",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -957,7 +853,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is elevated; downstream impacts are not yet independently corroborated",
       "hypotheses": [
         {
@@ -996,7 +892,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "59e158f895ba9acf",
+      "target_event_id": "08fa3605c5db27cb",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -1013,7 +909,7 @@
       "min_humidity_pct": 48,
       "source": "Open-Meteo"
     },
-    "id": "59e158f895ba9acf",
+    "id": "08fa3605c5db27cb",
     "la": 14.0,
     "lo": 0.0,
     "media": [],
@@ -1026,7 +922,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "On 26/08/2026, a flood started in Nepal, lasting until 28/08/2026 (last update). The flood caused 527 deaths and 0 displaced . ReliefWeb humanitarian context: **Situation Overview** On the morning of 26 August 2026, a sudden and powerful flash flood swept through the Bhote Koshi and Trishuli river systems in central Nepal, affecting settlements across Rasuwa, Nuwakot and Dhading districts, including the Rasuwagadhi border crossing area. Officials suspect that the flooding may have been triggered by an upstream ice or rock avalanche, or by a glacial lake outburst, rather th",
@@ -1043,7 +939,7 @@
         "latest_report_title": "Nepal Flood Response Situation Report #1 | 27 August 2026",
         "latest_report_url": "https://reliefweb.int/node/4227492",
         "match_score": 17.5,
-        "matched_at": "2026-08-30T03:35:12+00:00",
+        "matched_at": "2026-08-30T04:12:20+00:00",
         "provider": "ReliefWeb / UN OCHA",
         "report_count": 3,
         "reports": [
@@ -1102,7 +998,7 @@
       },
       "source": "GDACS"
     },
-    "id": "dda8d1c6ee989e03",
+    "id": "18afb22a005cf38e",
     "la": 27.2952744,
     "lo": 85.3649145,
     "media": [],
@@ -1128,7 +1024,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "On 22/08/2026, a flood started in China, lasting until 26/08/2026 (last update). The flood caused 1 deaths and 87168 displaced .",
@@ -1139,7 +1035,7 @@
       "gdacs_event_type": "FL",
       "source": "GDACS"
     },
-    "id": "36ad086580d84982",
+    "id": "8a400f2e0609a6b9",
     "la": 25.0767425,
     "lo": 117.0123483,
     "media": [],
@@ -1152,7 +1048,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "From 18/08/2026 to 28/08/2026, a Tropical Storm (maximum wind speed of 213 km/h) SAUDEL-26 was active in NWPacific. The cyclone affects these countries: Japan, China, Northern Mariana Islands (vulnerability Medium). Estimated population affected by category 1 (120 km/h) wind speeds or higher is 13.0",
@@ -1163,14 +1059,14 @@
       "gdacs_event_type": "TC",
       "source": "GDACS"
     },
-    "id": "b9f6a7cfd7a2873d",
+    "id": "22ba3866d0bb27d3",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "b9f6a7cfd7a2873d",
+      "event_id": "22ba3866d0bb27d3",
       "event_key": "aae754e025c215b216ac61a4",
       "evidence": {
         "evidence_types": [
@@ -1178,7 +1074,7 @@
           "visual_evidence"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:07+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:15+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable."
@@ -1193,7 +1089,7 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include damaging wind, flooding, storm surge, power loss and transport disruption. Local impacts remain dependent on the final track, intensity and exposure.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -1212,14 +1108,14 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · NOAA GOES ABI GeoColor",
-        "captured_for_event_at": "2026-08-30T03:35:13+00:00",
+        "captured_for_event_at": "2026-08-30T04:12:21+00:00",
         "claim_boundary": "Satellite appearance is contextual imagery, not an official intensity, track or impact forecast.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
         "representation": "remote_sensing",
         "schema": "earthnet.media.v0.1",
         "sensor": "GOES ABI GeoColor",
-        "source_time": "2026-08-30T03:10:00Z",
+        "source_time": "2026-08-30T03:50:00Z",
         "source_url": "https://worldview.earthdata.nasa.gov/",
         "title": "Latest available storm view from space"
       }
@@ -1233,7 +1129,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "On 09/08/2026, a flood started in India, lasting until 26/08/2026 (last update). The flood caused 20 deaths and 240070 displaced .",
@@ -1244,7 +1140,7 @@
       "gdacs_event_type": "FL",
       "source": "GDACS"
     },
-    "id": "12afb95188541ea0",
+    "id": "969031df26ccfcdd",
     "la": 25.3356491,
     "lo": 83.0076292,
     "media": [],
@@ -1257,7 +1153,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "The  Drought notification level is Orange.",
@@ -1268,7 +1164,7 @@
       "gdacs_event_type": "DR",
       "source": "GDACS"
     },
-    "id": "32579ed04fbebd04",
+    "id": "8033a4d30b60cdd0",
     "la": 1.115,
     "lo": 33.577,
     "media": [],
@@ -1281,7 +1177,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "The  Drought notification level is Orange.",
@@ -1292,7 +1188,7 @@
       "gdacs_event_type": "DR",
       "source": "GDACS"
     },
-    "id": "e11041861007cefd",
+    "id": "d5be04148fd5334c",
     "la": 15.049,
     "lo": -88.943,
     "media": [],
@@ -1305,7 +1201,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "The Drought notification level is Orange . ReliefWeb humanitarian context: - WFP assisted 1.9 million people in July, distributing 13,820 mt of food and transferring USD 2.9 million in cash assistance across all activities. In the Somali Region, WFP reached 464,000 crisis-affected people with relief assistance, distributing 60 percent rations due to funding constraints. - WFP scaled up support to 90,000 new South Sudanese refugees in Gambella Region. El Niño-linked rainfall anomalies could ",
@@ -1322,7 +1218,7 @@
         "latest_report_title": "WFP Ethiopia Country Brief August 2026",
         "latest_report_url": "https://reliefweb.int/node/4227503",
         "match_score": 17.5,
-        "matched_at": "2026-08-30T03:35:12+00:00",
+        "matched_at": "2026-08-30T04:12:20+00:00",
         "provider": "ReliefWeb / UN OCHA",
         "report_count": 3,
         "reports": [
@@ -1381,7 +1277,7 @@
       },
       "source": "GDACS"
     },
-    "id": "6e7e8513e09dd60e",
+    "id": "74d52dec502f796a",
     "la": 9.46,
     "lo": 42.131,
     "media": [],
@@ -1407,7 +1303,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "The  Drought notification level is Orange.",
@@ -1418,7 +1314,7 @@
       "gdacs_event_type": "DR",
       "source": "GDACS"
     },
-    "id": "379337c442a70a45",
+    "id": "9fe0093e062712c1",
     "la": 47.752,
     "lo": 11.878,
     "media": [],
@@ -1431,7 +1327,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:07+00:00",
+    "at": "2026-08-30T04:12:15+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "The  Drought notification level is Orange.",
@@ -1442,7 +1338,7 @@
       "gdacs_event_type": "DR",
       "source": "GDACS"
     },
-    "id": "7270bd494778f98c",
+    "id": "bf07598055df69d4",
     "la": -17.932,
     "lo": 47.606,
     "media": [],
@@ -1455,7 +1351,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:02+00:00",
+    "at": "2026-08-30T04:12:11+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 15.1°C (anomaly +1.1°C — warm anomaly). Waves: 6.1 m max. Current: avg 1.74 m/s. Regional marine conditions near NZ. Marine heatwaves affect fisheries and weather.",
@@ -1474,7 +1370,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 1.1
     },
-    "id": "eeb5be3012a3999f",
+    "id": "7a9f35f482d6bec4",
     "la": -40.0,
     "lo": 165.0,
     "media": [],
@@ -1487,9 +1383,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:11+00:00",
+    "at": "2026-08-30T04:12:18+00:00",
     "causal": {
-      "assessment_id": "cbff4f13b2d5c37215",
+      "assessment_id": "b603724a9a42efa881",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -1503,7 +1399,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
       "hypotheses": [
         {
@@ -1544,7 +1440,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [],
-      "target_event_id": "42af07aa02847af5",
+      "target_event_id": "4879638637b36014",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports",
@@ -1564,7 +1460,7 @@
       "population_millions": 32.0,
       "source": "Open-Meteo + infrastructure model"
     },
-    "id": "42af07aa02847af5",
+    "id": "4879638637b36014",
     "la": 28.6,
     "lo": 77.2,
     "media": [],
@@ -1577,9 +1473,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:11+00:00",
+    "at": "2026-08-30T04:12:18+00:00",
     "causal": {
-      "assessment_id": "b69719efda2d07c760",
+      "assessment_id": "68a84021d8e451ea09",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -1593,7 +1489,7 @@
         "relationship": 0.58
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
       "hypotheses": [
         {
@@ -1602,8 +1498,8 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Elevated temperature is a primary modeled driver of the current power-grid stress signal.",
           "supporting_event_ids": [
-            "aa4302a2549e2948",
-            "9fef33e7318066a2"
+            "c602c9c618e665a4",
+            "4cb505f8527f488a"
           ]
         }
       ],
@@ -1636,18 +1532,18 @@
         }
       ],
       "related_event_ids": [
-        "aa4302a2549e2948",
-        "9fef33e7318066a2"
+        "c602c9c618e665a4",
+        "4cb505f8527f488a"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 736.4,
-          "event_id": "aa4302a2549e2948",
+          "event_id": "c602c9c618e665a4",
           "event_type": "active_wildfire",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:35:06+00:00",
+          "observed_at": "2026-08-30T04:12:14+00:00",
           "relationship": "Active wildfire may compound service and community exposure",
           "source": "NASA EONET",
           "time_gap_hours": 0.0,
@@ -1655,17 +1551,17 @@
         },
         {
           "distance_km": 778.2,
-          "event_id": "9fef33e7318066a2",
+          "event_id": "4cb505f8527f488a",
           "event_type": "active_wildfire",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:35:06+00:00",
+          "observed_at": "2026-08-30T04:12:14+00:00",
           "relationship": "Active wildfire may compound service and community exposure",
           "source": "NASA EONET",
           "time_gap_hours": 0.0,
           "title": "Wildfire LAUGHLIN, Colfax, New Mexico"
         }
       ],
-      "target_event_id": "4ba630222cb11607",
+      "target_event_id": "8557bd55f6d12f62",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports",
@@ -1683,7 +1579,7 @@
       "population_millions": 4.9,
       "source": "Open-Meteo + infrastructure model"
     },
-    "id": "4ba630222cb11607",
+    "id": "8557bd55f6d12f62",
     "la": 33.4,
     "lo": -112.1,
     "media": [],
@@ -1696,9 +1592,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:11+00:00",
+    "at": "2026-08-30T04:12:18+00:00",
     "causal": {
-      "assessment_id": "c40273611fa4da56e3",
+      "assessment_id": "0abc7bfb9b5cadc99b",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -1712,7 +1608,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
       "hypotheses": [
         {
@@ -1753,7 +1649,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [],
-      "target_event_id": "e2f6342a98c21ed2",
+      "target_event_id": "673521a29ecda8da",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports",
@@ -1773,7 +1669,7 @@
       "population_millions": 22.0,
       "source": "Open-Meteo + infrastructure model"
     },
-    "id": "e2f6342a98c21ed2",
+    "id": "673521a29ecda8da",
     "la": -23.5,
     "lo": -46.6,
     "media": [],
@@ -1842,7 +1738,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -1873,9 +1769,9 @@
     "until": "2026-08-30T05:40:06+00:00"
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "74831817d1c654b5c7",
+      "assessment_id": "9f85756774a37ce173",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -1889,7 +1785,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -1934,7 +1830,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "d2eb11ffc06a79c4",
+      "target_event_id": "2e83647cf2abc8bf",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -1948,14 +1844,14 @@
       "last_update": "2026-08-26T17:29:00Z",
       "source": "NASA EONET"
     },
-    "id": "d2eb11ffc06a79c4",
+    "id": "2e83647cf2abc8bf",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "d2eb11ffc06a79c4",
+      "event_id": "2e83647cf2abc8bf",
       "event_key": "af79c4c8db1870966270bfe9",
       "evidence": {
         "evidence_types": [
@@ -1964,7 +1860,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable.",
@@ -1981,7 +1877,7 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2000,7 +1896,7 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · VIIRS NOAA-20",
-        "captured_for_event_at": "2026-08-30T03:35:13+00:00",
+        "captured_for_event_at": "2026-08-30T04:12:21+00:00",
         "claim_boundary": "Satellite context and thermal detections do not establish ignition cause, containment or damage by themselves.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
@@ -2022,7 +1918,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": null,
     "cf": 0.8,
     "d": "Active active severe storm. Last update: 2026-08-27.",
@@ -2032,14 +1928,14 @@
       "last_update": "2026-08-27T00:00:00Z",
       "source": "NASA EONET"
     },
-    "id": "04e19bc68756ff5b",
+    "id": "9874a8e103cb3f03",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "04e19bc68756ff5b",
+      "event_id": "9874a8e103cb3f03",
       "event_key": "e584c5128968a879f83f8035",
       "evidence": {
         "evidence_types": [
@@ -2047,7 +1943,7 @@
           "visual_evidence"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable."
@@ -2062,7 +1958,7 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include damaging wind, flooding, storm surge, power loss and transport disruption. Local impacts remain dependent on the final track, intensity and exposure.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2081,14 +1977,14 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · NOAA GOES ABI GeoColor",
-        "captured_for_event_at": "2026-08-30T03:35:13+00:00",
+        "captured_for_event_at": "2026-08-30T04:12:21+00:00",
         "claim_boundary": "Satellite appearance is contextual imagery, not an official intensity, track or impact forecast.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
         "representation": "remote_sensing",
         "schema": "earthnet.media.v0.1",
         "sensor": "GOES ABI GeoColor",
-        "source_time": "2026-08-30T03:10:00Z",
+        "source_time": "2026-08-30T03:50:00Z",
         "source_url": "https://worldview.earthdata.nasa.gov/",
         "title": "Latest available storm view from space"
       }
@@ -2102,7 +1998,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:55+00:00",
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2017 RH16 (~16–39 m). Closest approach: 3,335,900 km (8.68 lunar distances) at 12.1 km/s. Approach time: 2026-08-31T21:05:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -2152,20 +2048,20 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:57+00:00",
+    "at": "2026-08-30T04:12:06+00:00",
     "causal": null,
     "cf": 0.7,
-    "d": "Rome, Italy: CAPE 2550 J/kg. Gusts up to 40 km/h. HIGH — significant severe weather likely",
+    "d": "Rome, Italy: CAPE 2560 J/kg. Gusts up to 37 km/h. HIGH — significant severe weather likely",
     "e": "atmosphere",
     "et": "severe_convective_risk",
     "f": {
       "context": "european_heatwave",
       "convective_risk": "HIGH — significant severe weather likely",
-      "max_cape_jkg": 2550,
-      "max_gust_kmh": 40.3,
+      "max_cape_jkg": 2560,
+      "max_gust_kmh": 36.7,
       "source": "Open-Meteo"
     },
-    "id": "63d4b9c561ac91bc",
+    "id": "d7abda1c8688cf5f",
     "la": 41.9,
     "lo": 12.5,
     "media": [],
@@ -2173,7 +2069,7 @@
     "schema": "earthnet.event.v3",
     "sources": [],
     "status": "active",
-    "sv": 63.75,
+    "sv": 64.0,
     "t": "Severe weather risk — Rome, Italy",
     "until": null
   },
@@ -2181,21 +2077,21 @@
     "at": "2026-08-29T22:35:22+00:00",
     "causal": null,
     "cf": 0.95,
-    "d": "M4.8 — 13 km ENE of Himarë, Albania. Depth: 10.0 km (very shallow). Felt reports: 19",
+    "d": "M4.8 — 13 km ENE of Himarë, Albania. Depth: 10.0 km (very shallow). Felt reports: 21",
     "e": "seismic",
     "et": "earthquake",
     "f": {
       "depth_class": "very shallow",
       "depth_km": 10,
-      "felt_reports": 19,
-      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby. Shallow depth can make shaking feel sharper close to the epicentre. USGS has received 19 felt reports.",
+      "felt_reports": 21,
+      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby. Shallow depth can make shaking feel sharper close to the epicentre. USGS has received 21 felt reports.",
       "magnitude": 4.8,
       "max_mmi": 0.0,
       "network": "us",
       "observed_at": "2026-08-29T22:35:22+00:00",
       "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcvf",
       "place": "13 km ENE of Himarë, Albania",
-      "significance": 362,
+      "significance": 363,
       "source": "USGS",
       "source_record_id": "us7000tcvf",
       "source_urls": [
@@ -2203,14 +2099,14 @@
       ],
       "status": "reviewed",
       "tsunami": false,
-      "updated_at": "2026-08-30T02:14:55+00:00",
+      "updated_at": "2026-08-30T04:03:29+00:00",
       "visible_until": "2026-08-30T22:35:22+00:00"
     },
     "id": "usgs-us7000tcvf",
     "intelligence": {
-      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
+      "change": "Provider reporting changed materially.",
       "change_reasons": [
-        "No material change is confirmed since the previous successful EarthNet cycle."
+        "Provider reporting changed materially."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
       "event_id": "usgs-us7000tcvf",
@@ -2220,7 +2116,7 @@
           "provider_event_record"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T02:14:55+00:00",
+        "latest_evidence_at": "2026-08-30T04:03:29+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Independent corroboration is limited in the current evidence packet."
@@ -2234,13 +2130,13 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event has been felt by the public; confirmed structural damage, injuries and service disruption are not yet established in the current evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
       "schema": "earthnet.event-intelligence.v0.1",
-      "situation": "An earthquake has been recorded in 13 km ENE of Himarë, Albania at magnitude 4.8 and depth 10 km. Maximum reported intensity is MMI 0. The provider currently records 19 felt reports.",
-      "trend": "stable",
+      "situation": "An earthquake has been recorded in 13 km ENE of Himarë, Albania at magnitude 4.8 and depth 10 km. Maximum reported intensity is MMI 0. The provider currently records 21 felt reports.",
+      "trend": "updated",
       "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
       "watch_next": [
         "Aftershocks and official magnitude or intensity revisions",
@@ -2321,7 +2217,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2408,7 +2304,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2439,7 +2335,94 @@
     "until": "2026-08-30T09:15:46+00:00"
   },
   {
-    "at": "2026-08-30T03:34:55+00:00",
+    "at": "2026-08-30T03:55:28+00:00",
+    "causal": null,
+    "cf": 0.95,
+    "d": "M5.1 — South Sandwich Islands region. Depth: 135.7 km (intermediate)",
+    "e": "seismic",
+    "et": "earthquake",
+    "f": {
+      "depth_class": "intermediate",
+      "depth_km": 135.686,
+      "felt_reports": 0,
+      "impact_summary": "Moderate earthquake; widely felt shaking is possible.",
+      "magnitude": 5.1,
+      "max_mmi": 0.0,
+      "network": "us",
+      "observed_at": "2026-08-30T03:55:28+00:00",
+      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcwd",
+      "place": "South Sandwich Islands region",
+      "significance": 400,
+      "source": "USGS",
+      "source_record_id": "us7000tcwd",
+      "source_urls": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcwd"
+      ],
+      "status": "reviewed",
+      "tsunami": false,
+      "updated_at": "2026-08-30T04:10:47+00:00",
+      "visible_until": "2026-08-31T03:55:28+00:00"
+    },
+    "id": "usgs-us7000tcwd",
+    "intelligence": {
+      "change": "This is the first cycle in which the event appears in the Event Intelligence baseline; direction is not established yet.",
+      "change_reasons": [
+        "This event has entered the current EarthNet intelligence baseline."
+      ],
+      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
+      "event_id": "usgs-us7000tcwd",
+      "event_key": "c0b0d3e63e4b0c9f7f6fca74",
+      "evidence": {
+        "evidence_types": [
+          "provider_event_record"
+        ],
+        "freshness": "live",
+        "latest_evidence_at": "2026-08-30T04:10:47+00:00",
+        "limitations": [
+          "No matched humanitarian situation report is attached.",
+          "Independent corroboration is limited in the current evidence packet."
+        ],
+        "provider_count": 1,
+        "providers": [
+          "USGS"
+        ],
+        "reliefweb_report_count": 0,
+        "satellite_observation_count": 0,
+        "strength": "single-source",
+        "visual_record_count": 0
+      },
+      "generated_at": "2026-08-30T04:12:21+00:00",
+      "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
+      "mode": "deterministic_evidence_synthesis",
+      "model_generated": false,
+      "schema": "earthnet.event-intelligence.v0.1",
+      "situation": "An earthquake has been recorded in South Sandwich Islands region at magnitude 5.1 and depth 136 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
+      "trend": "new",
+      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
+      "watch_next": [
+        "Aftershocks and official magnitude or intensity revisions",
+        "Tsunami information and civil-defence instructions",
+        "Confirmed damage, injuries and service disruption"
+      ]
+    },
+    "la": -56.4575,
+    "lo": -27.0033,
+    "media": [],
+    "r": "South Sandwich Islands region",
+    "schema": "earthnet.event.v3",
+    "sources": [
+      {
+        "name": "USGS",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tcwd"
+      }
+    ],
+    "status": "reviewed",
+    "sv": 61.199999999999996,
+    "t": "M5.1 — South Sandwich Islands region",
+    "until": "2026-08-31T03:55:28+00:00"
+  },
+  {
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (small) — 2025 CL3 (~22–56 m). Closest approach: 3,662,616 km (9.53 lunar distances) at 13.5 km/s. Approach time: 2026-09-01T04:24:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -2514,9 +2497,9 @@
         "latest_report_title": "Caritas Indonesia stands with the communities affected by the earthquake",
         "latest_report_url": "https://reliefweb.int/node/4227314",
         "match_score": 15.75,
-        "matched_at": "2026-08-30T03:35:12+00:00",
+        "matched_at": "2026-08-30T04:12:20+00:00",
         "provider": "ReliefWeb / UN OCHA",
-        "report_count": 3,
+        "report_count": 2,
         "reports": [
           {
             "countries": [
@@ -2547,21 +2530,6 @@
             "summary": "CARE Indonesia has launched clean water distribution to the survivors of the earthquake in Nagekeo. The distribution began on 24 August and is planned for 60 days, with the target of delivering up to 900,000 litres of clean water to evacuation centres. It is expected to meet the basic water needs of around 1,000 people a day. Alongside the Indonesian Red Cross (PMI), and with co-ordination with the Nagekeo District Government as well as the Indonesia Humanitarian Coordination Platform (IHCP), CARE Indonesia is continuing the humanitarian response for affected communities. Some 215 emergency packages – including solar-powered lighting, shelter supplies, and water storage – are being transported by air, and are expected to reach families by 28 August. The response has been designed around th",
             "title": "CARE Indonesia distributes 15,000 litres of clean water for earthquake survivors",
             "url": "https://reliefweb.int/node/4227200"
-          },
-          {
-            "countries": [
-              "Indonesia"
-            ],
-            "date": "2026-08-26T03:18:57+00:00",
-            "id": "4227096",
-            "image": null,
-            "match_score": 14.25,
-            "sources": [
-              "Indonesian Society for Disaster Management"
-            ],
-            "summary": "**Situation Report** • BNPB reported the following IDP figures as of August 24 at 09:00 WIB: • Damage was recorded to 502 educational facilities, 396 houses of worship, 504 office buildings, one Bulog warehouse, 10 irrigation facilities, 39 public facilities, 78 road locations, one market, and 13 bridges. • The Ministry of Health's situation report as of August 24 at 07:30 WIB recorded 5,931 cases of acute respiratory infection (ARI/ISPA) across Manggarai, Sikka, Nagekeo, West Manggarai and East Manggarai, as well as 27 cases of rabies-risk animal bites in Nagekeo, Ngada and East Manggarai. The report also noted that stocks of medicines and medical consumables (BMHP) in East Manggarai were beginning to run low. • At its first coordination meeting on August 22, the Sub-Cluster for the Prote",
-            "title": "Indonesian Humanitarian Coordination Platform: Situation Report No. 6 - Earthquake and Tsunami in Flores and Surrounding Areas (25 August 2026)",
-            "url": "https://reliefweb.int/node/4227096"
           }
         ],
         "schema": "earthnet.reliefweb.v0.1",
@@ -2584,9 +2552,9 @@
     },
     "id": "usgs-us7000tcsu",
     "intelligence": {
-      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
+      "change": "The number of matched humanitarian reports changed.",
       "change_reasons": [
-        "No material change is confirmed since the previous successful EarthNet cycle."
+        "The number of matched humanitarian reports changed."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
       "event_id": "usgs-us7000tcsu",
@@ -2597,7 +2565,7 @@
           "attributed_humanitarian_reporting"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:12+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:20+00:00",
         "limitations": [],
         "provider_count": 4,
         "providers": [
@@ -2606,18 +2574,18 @@
           "ReliefWeb / UN OCHA",
           "Caritas"
         ],
-        "reliefweb_report_count": 3,
+        "reliefweb_report_count": 2,
         "satellite_observation_count": 0,
         "strength": "multi-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
       "schema": "earthnet.event-intelligence.v0.1",
       "situation": "An earthquake has been recorded in 64 km W of Labuha, Indonesia at magnitude 5.0 and depth 42 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
-      "trend": "stable",
+      "trend": "updated",
       "uncertainty": "Source latency, revisions and incomplete local reporting may still change this assessment.",
       "watch_next": [
         "Aftershocks and official magnitude or intensity revisions",
@@ -2642,10 +2610,6 @@
       {
         "name": "ReliefWeb humanitarian context",
         "url": "https://reliefweb.int/node/4227200"
-      },
-      {
-        "name": "ReliefWeb humanitarian context",
-        "url": "https://reliefweb.int/node/4227096"
       }
     ],
     "status": "reviewed",
@@ -2654,115 +2618,9 @@
     "until": "2026-08-30T08:08:45+00:00"
   },
   {
-    "at": "2026-08-30T03:35:11+00:00",
+    "at": "2026-08-30T04:12:18+00:00",
     "causal": {
-      "assessment_id": "26f03d353499088ebd",
-      "baseline": {
-        "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
-        "method": "Published hazard thresholds and current-cycle event relationships",
-        "status": "operational_threshold_proxy"
-      },
-      "claim_boundary": "Candidate causal contribution; not proven attribution or an official warning.",
-      "confidence": {
-        "forecast": 0.56,
-        "mechanism": 0.66,
-        "observation": 0.75,
-        "relationship": 0.72
-      },
-      "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
-      "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
-      "hypotheses": [
-        {
-          "claim_type": "candidate_causal_contribution",
-          "confidence": 0.66,
-          "id": "heat-dryness-fire-infrastructure",
-          "statement": "Elevated apparent temperature is a primary modeled driver of the current medical-stress signal.",
-          "supporting_event_ids": [
-            "08f83929017ebc03"
-          ]
-        }
-      ],
-      "limitations": [
-        "Spatial proximity does not by itself prove causation.",
-        "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration.",
-        "Forecast confidence describes the mechanism pack, not an emergency-management directive."
-      ],
-      "mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-      "missing_evidence": [
-        "Seasonal climatology and percentile baseline for this exact location",
-        "Observed fuel moisture and vegetation condition",
-        "Asset-level load, outage and resilience telemetry",
-        "Verified dependency and exposure geometry"
-      ],
-      "pathway": [
-        {
-          "label": "Heat-linked infrastructure or medical stress threshold met",
-          "stage": "observed"
-        },
-        {
-          "label": "High temperature and apparent temperature increase demand or health load",
-          "stage": "candidate_driver"
-        },
-        {
-          "label": "Service pressure, outage risk or hospital demand may rise",
-          "stage": "potential_consequence"
-        }
-      ],
-      "related_event_ids": [
-        "08f83929017ebc03"
-      ],
-      "schema": "earthnet.causal-assessment.v0.1",
-      "status": "supported",
-      "supporting_evidence": [
-        {
-          "distance_km": 0.0,
-          "event_id": "08f83929017ebc03",
-          "event_type": "heat_risk",
-          "independent_source": false,
-          "observed_at": "2026-08-30T03:34:57+00:00",
-          "relationship": "Nearby heat signal is the candidate upstream driver",
-          "source": "Open-Meteo",
-          "time_gap_hours": 0.0,
-          "title": "Heat risk — Rome, Italy"
-        }
-      ],
-      "target_event_id": "a964ff8358fc2726",
-      "watch_next": [
-        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
-        "New official fire detections, perimeter updates or containment reports",
-        "Power, transport, communications and health-service status changes"
-      ]
-    },
-    "cf": 0.7,
-    "d": "Rome, Italy (pop. 4.3M): 35.0°C (feels like 38.3°C). Heat stress level: EXTREME CAUTION. Heat cramps/exhaustion possible. Vulnerable populations (elderly, children, outdoor workers) at elevated risk. Mediterranean climate. Elderly population vulnerable to heat.",
-    "e": "infrastructure",
-    "et": "medical_heat_stress",
-    "f": {
-      "heat_stress_level": "EXTREME CAUTION",
-      "max_apparent_c": 38.3,
-      "max_temp_c": 35.0,
-      "medical_impact": "Heat cramps/exhaustion possible. Vulnerable populations (elderly, children, outdoor workers) at elevated risk.",
-      "min_humidity_pct": 37,
-      "population_millions": 4.3,
-      "source": "Open-Meteo + infrastructure model"
-    },
-    "id": "a964ff8358fc2726",
-    "la": 41.9,
-    "lo": 12.5,
-    "media": [],
-    "r": "Rome, Italy",
-    "schema": "earthnet.event.v3",
-    "sources": [],
-    "status": "active",
-    "sv": 60.0,
-    "t": "Medical heat stress — Rome, Italy",
-    "until": null
-  },
-  {
-    "at": "2026-08-30T03:35:11+00:00",
-    "causal": {
-      "assessment_id": "dc4196a2dbd6216031",
+      "assessment_id": "4aeae46d0541f0c2a1",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -2776,7 +2634,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
       "hypotheses": [
         {
@@ -2817,7 +2675,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [],
-      "target_event_id": "ca4219901946e891",
+      "target_event_id": "6c94673022ba6d65",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports",
@@ -2825,19 +2683,109 @@
       ]
     },
     "cf": 0.7,
-    "d": "Athens, Greece (pop. 3.8M): 33.8°C (feels like 35.0°C). Heat stress level: EXTREME CAUTION. Heat cramps/exhaustion possible. Vulnerable populations (elderly, children, outdoor workers) at elevated risk. Extreme summer heat. Historic heat-mortality events.",
+    "d": "Rome, Italy (pop. 4.3M): 34.5°C (feels like 37.6°C). Heat stress level: EXTREME CAUTION. Heat cramps/exhaustion possible. Vulnerable populations (elderly, children, outdoor workers) at elevated risk. Mediterranean climate. Elderly population vulnerable to heat.",
     "e": "infrastructure",
     "et": "medical_heat_stress",
     "f": {
       "heat_stress_level": "EXTREME CAUTION",
-      "max_apparent_c": 35.0,
+      "max_apparent_c": 37.6,
+      "max_temp_c": 34.5,
+      "medical_impact": "Heat cramps/exhaustion possible. Vulnerable populations (elderly, children, outdoor workers) at elevated risk.",
+      "min_humidity_pct": 38,
+      "population_millions": 4.3,
+      "source": "Open-Meteo + infrastructure model"
+    },
+    "id": "6c94673022ba6d65",
+    "la": 41.9,
+    "lo": 12.5,
+    "media": [],
+    "r": "Rome, Italy",
+    "schema": "earthnet.event.v3",
+    "sources": [],
+    "status": "active",
+    "sv": 60.0,
+    "t": "Medical heat stress — Rome, Italy",
+    "until": null
+  },
+  {
+    "at": "2026-08-30T04:12:18+00:00",
+    "causal": {
+      "assessment_id": "fba6e7a139e6401d8b",
+      "baseline": {
+        "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
+        "method": "Published hazard thresholds and current-cycle event relationships",
+        "status": "operational_threshold_proxy"
+      },
+      "claim_boundary": "Candidate causal contribution; not proven attribution or an official warning.",
+      "confidence": {
+        "forecast": 0.32,
+        "mechanism": 0.52,
+        "observation": 0.7,
+        "relationship": 0.25
+      },
+      "contradicting_evidence": [],
+      "generated_at": "2026-08-30T04:12:19+00:00",
+      "headline": "Heat is the primary modeled driver of the current infrastructure stress signal",
+      "hypotheses": [
+        {
+          "claim_type": "candidate_causal_contribution",
+          "confidence": 0.52,
+          "id": "heat-dryness-fire-infrastructure",
+          "statement": "Elevated apparent temperature is a primary modeled driver of the current medical-stress signal.",
+          "supporting_event_ids": []
+        }
+      ],
+      "limitations": [
+        "Spatial proximity does not by itself prove causation.",
+        "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration.",
+        "Forecast confidence describes the mechanism pack, not an emergency-management directive."
+      ],
+      "mechanism_pack": "heat-wildfire-infrastructure.v0.1",
+      "missing_evidence": [
+        "Seasonal climatology and percentile baseline for this exact location",
+        "Observed fuel moisture and vegetation condition",
+        "Asset-level load, outage and resilience telemetry",
+        "Verified dependency and exposure geometry"
+      ],
+      "pathway": [
+        {
+          "label": "Heat-linked infrastructure or medical stress threshold met",
+          "stage": "observed"
+        },
+        {
+          "label": "High temperature and apparent temperature increase demand or health load",
+          "stage": "candidate_driver"
+        },
+        {
+          "label": "Service pressure, outage risk or hospital demand may rise",
+          "stage": "potential_consequence"
+        }
+      ],
+      "related_event_ids": [],
+      "schema": "earthnet.causal-assessment.v0.1",
+      "status": "provisional",
+      "supporting_evidence": [],
+      "target_event_id": "2d27d917f9933255",
+      "watch_next": [
+        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
+        "New official fire detections, perimeter updates or containment reports",
+        "Power, transport, communications and health-service status changes"
+      ]
+    },
+    "cf": 0.7,
+    "d": "Athens, Greece (pop. 3.8M): 33.8°C (feels like 35.1°C). Heat stress level: EXTREME CAUTION. Heat cramps/exhaustion possible. Vulnerable populations (elderly, children, outdoor workers) at elevated risk. Extreme summer heat. Historic heat-mortality events.",
+    "e": "infrastructure",
+    "et": "medical_heat_stress",
+    "f": {
+      "heat_stress_level": "EXTREME CAUTION",
+      "max_apparent_c": 35.1,
       "max_temp_c": 33.8,
       "medical_impact": "Heat cramps/exhaustion possible. Vulnerable populations (elderly, children, outdoor workers) at elevated risk.",
-      "min_humidity_pct": 27,
+      "min_humidity_pct": 26,
       "population_millions": 3.8,
       "source": "Open-Meteo + infrastructure model"
     },
-    "id": "ca4219901946e891",
+    "id": "2d27d917f9933255",
     "la": 38.0,
     "lo": 23.7,
     "media": [],
@@ -2906,7 +2854,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2978,7 +2926,7 @@
         "evidence_types": [
           "provider_event_record"
         ],
-        "freshness": "live",
+        "freshness": "current",
         "latest_evidence_at": "2026-08-29T21:56:50+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
@@ -2993,7 +2941,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3080,7 +3028,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event has been felt by the public; confirmed structural damage, injuries and service disruption are not yet established in the current evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3111,7 +3059,7 @@
     "until": "2026-08-30T06:32:54+00:00"
   },
   {
-    "at": "2026-08-30T03:35:02+00:00",
+    "at": "2026-08-30T04:12:11+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 2.1°C (anomaly -1.9°C — significant cold anomaly). Waves: 1.6 m max. Current: avg 0.50 m/s. Antarctic Circumpolar Current gateway. Temperature and current signals.",
@@ -3130,7 +3078,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": -1.88
     },
-    "id": "7d204c8ee4ea7d22",
+    "id": "c28a461a9030aabb",
     "la": -58.0,
     "lo": -65.0,
     "media": [],
@@ -3199,7 +3147,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event has been felt by the public; confirmed structural damage, injuries and service disruption are not yet established in the current evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3230,7 +3178,7 @@
     "until": "2026-08-30T15:17:06+00:00"
   },
   {
-    "at": "2026-08-30T03:35:03+00:00",
+    "at": "2026-08-30T04:12:12+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 6.8°C (anomaly +1.8°C — significant warm anomaly). Waves: 1.7 m max. Current: avg 0.83 m/s. Atlantic water inflow to the Arctic. Warming here accelerates sea ice loss.",
@@ -3249,7 +3197,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 1.8
     },
-    "id": "267731befc412b4d",
+    "id": "4483a2c3176efce4",
     "la": 74.0,
     "lo": 35.0,
     "media": [],
@@ -3262,7 +3210,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:55+00:00",
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (very small) — 2007 EK (~3.7–9.2 m). Closest approach: 4,188,706 km (10.90 lunar distances) at 9.1 km/s. Approach time: 2026-08-30T17:37:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -3368,7 +3316,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3399,9 +3347,9 @@
     "until": "2026-08-30T04:48:42+00:00"
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "ccfd1e0c68894bb48d",
+      "assessment_id": "0f345079d2eb95a558",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3415,7 +3363,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3460,7 +3408,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "c7a9756bb414ebb8",
+      "target_event_id": "38e6d5fd6660a998",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3474,14 +3422,14 @@
       "last_update": "2026-08-25T20:43:00Z",
       "source": "NASA EONET"
     },
-    "id": "c7a9756bb414ebb8",
+    "id": "38e6d5fd6660a998",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "c7a9756bb414ebb8",
+      "event_id": "38e6d5fd6660a998",
       "event_key": "ddff5c015c89c01ff0dd8fc9",
       "evidence": {
         "evidence_types": [
@@ -3490,7 +3438,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable.",
@@ -3507,7 +3455,7 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3526,7 +3474,7 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · VIIRS NOAA-20",
-        "captured_for_event_at": "2026-08-30T03:35:13+00:00",
+        "captured_for_event_at": "2026-08-30T04:12:21+00:00",
         "claim_boundary": "Satellite context and thermal detections do not establish ignition cause, containment or damage by themselves.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
@@ -3548,9 +3496,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "c9e40649e7f17644a4",
+      "assessment_id": "225f25c72c4a836abd",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3564,7 +3512,7 @@
         "relationship": 0.65
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire overlaps with weather that may favour further spread",
       "hypotheses": [
         {
@@ -3573,7 +3521,7 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
           "supporting_event_ids": [
-            "bac46e1b18eccc99"
+            "72ea0f1ab6a1d2b5"
           ]
         }
       ],
@@ -3608,24 +3556,24 @@
         }
       ],
       "related_event_ids": [
-        "bac46e1b18eccc99"
+        "72ea0f1ab6a1d2b5"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 635.5,
-          "event_id": "bac46e1b18eccc99",
+          "event_id": "72ea0f1ab6a1d2b5",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
           "title": "Heat risk — Oklahoma (Tornado Alley)"
         }
       ],
-      "target_event_id": "9fef33e7318066a2",
+      "target_event_id": "4cb505f8527f488a",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3639,14 +3587,14 @@
       "last_update": "2026-08-25T18:35:00Z",
       "source": "NASA EONET"
     },
-    "id": "9fef33e7318066a2",
+    "id": "4cb505f8527f488a",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "9fef33e7318066a2",
+      "event_id": "4cb505f8527f488a",
       "event_key": "3aa9dd5628744ec586613906",
       "evidence": {
         "evidence_types": [
@@ -3655,7 +3603,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable.",
@@ -3673,7 +3621,7 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3692,7 +3640,7 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · VIIRS NOAA-20",
-        "captured_for_event_at": "2026-08-30T03:35:13+00:00",
+        "captured_for_event_at": "2026-08-30T04:12:21+00:00",
         "claim_boundary": "Satellite context and thermal detections do not establish ignition cause, containment or damage by themselves.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
@@ -3714,9 +3662,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "83873317ffd304be5a",
+      "assessment_id": "0fd700331b26fdef22",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3730,7 +3678,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3775,7 +3723,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "cda5e6421e178beb",
+      "target_event_id": "5d6eb3b9438dbee4",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3789,14 +3737,14 @@
       "last_update": "2026-08-25T16:04:00Z",
       "source": "NASA EONET"
     },
-    "id": "cda5e6421e178beb",
+    "id": "5d6eb3b9438dbee4",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "cda5e6421e178beb",
+      "event_id": "5d6eb3b9438dbee4",
       "event_key": "f8a3f156960fe11057c6b3b1",
       "evidence": {
         "evidence_types": [
@@ -3804,7 +3752,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -3820,7 +3768,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3847,7 +3795,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": null,
     "cf": 0.8,
     "d": "Active active severe storm. Last update: 2026-08-25.",
@@ -3857,21 +3805,21 @@
       "last_update": "2026-08-25T18:00:00Z",
       "source": "NASA EONET"
     },
-    "id": "a1237c5fe4fbde65",
+    "id": "3d06de0886f2f871",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "a1237c5fe4fbde65",
+      "event_id": "3d06de0886f2f871",
       "event_key": "66b3fae7d69220d14c2d41d6",
       "evidence": {
         "evidence_types": [
           "provider_event_record"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Independent corroboration is limited in the current evidence packet."
@@ -3885,7 +3833,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include damaging wind, flooding, storm surge, power loss and transport disruption. Local impacts remain dependent on the final track, intensity and exposure.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3911,9 +3859,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "f723d7a74518ec1bd2",
+      "assessment_id": "51cf8553eb121b57be",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3927,7 +3875,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3972,7 +3920,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "b2eb7695a2ec8787",
+      "target_event_id": "b1ab5cedacfaf4a5",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3986,14 +3934,14 @@
       "last_update": "2026-08-25T00:18:00Z",
       "source": "NASA EONET"
     },
-    "id": "b2eb7695a2ec8787",
+    "id": "b1ab5cedacfaf4a5",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "b2eb7695a2ec8787",
+      "event_id": "b1ab5cedacfaf4a5",
       "event_key": "6357400a8b3ba366e5183b63",
       "evidence": {
         "evidence_types": [
@@ -4001,7 +3949,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4017,7 +3965,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4044,9 +3992,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "a6b77ab8ce00d46dc6",
+      "assessment_id": "a3bfe9585f8283613d",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4060,7 +4008,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4105,7 +4053,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "fb245e03eaf5e37c",
+      "target_event_id": "85fbc6823b778152",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4119,14 +4067,14 @@
       "last_update": "2026-08-24T17:03:00Z",
       "source": "NASA EONET"
     },
-    "id": "fb245e03eaf5e37c",
+    "id": "85fbc6823b778152",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "fb245e03eaf5e37c",
+      "event_id": "85fbc6823b778152",
       "event_key": "7dd52a8ef6308c08e89284cf",
       "evidence": {
         "evidence_types": [
@@ -4134,7 +4082,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4150,7 +4098,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4177,9 +4125,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "220e4175b142e577cb",
+      "assessment_id": "712df1ca72fa1eee12",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4193,7 +4141,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4238,7 +4186,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "aa4302a2549e2948",
+      "target_event_id": "c602c9c618e665a4",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4252,14 +4200,14 @@
       "last_update": "2026-08-24T15:20:00Z",
       "source": "NASA EONET"
     },
-    "id": "aa4302a2549e2948",
+    "id": "c602c9c618e665a4",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "aa4302a2549e2948",
+      "event_id": "c602c9c618e665a4",
       "event_key": "e117ad849e4e2515a18b0610",
       "evidence": {
         "evidence_types": [
@@ -4267,7 +4215,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4283,7 +4231,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4309,9 +4257,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "12cf5f3ab97ddbbffa",
+      "assessment_id": "2f1a886f55d4af0e79",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4325,7 +4273,7 @@
         "relationship": 0.79
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire overlaps with weather that may favour further spread",
       "hypotheses": [
         {
@@ -4334,8 +4282,8 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
           "supporting_event_ids": [
-            "bac46e1b18eccc99",
-            "34e42e99ba328796"
+            "72ea0f1ab6a1d2b5",
+            "bc7b434f8489ee2a"
           ]
         }
       ],
@@ -4370,18 +4318,18 @@
         }
       ],
       "related_event_ids": [
-        "bac46e1b18eccc99",
-        "34e42e99ba328796"
+        "72ea0f1ab6a1d2b5",
+        "bc7b434f8489ee2a"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 314.4,
-          "event_id": "bac46e1b18eccc99",
+          "event_id": "72ea0f1ab6a1d2b5",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
@@ -4389,17 +4337,17 @@
         },
         {
           "distance_km": 431.8,
-          "event_id": "34e42e99ba328796",
+          "event_id": "bc7b434f8489ee2a",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
           "title": "Heat risk — Texas (Gulf Coast)"
         }
       ],
-      "target_event_id": "f83348bf00a538b2",
+      "target_event_id": "95eff8640dcaa526",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4413,14 +4361,14 @@
       "last_update": "2026-08-24T14:12:00Z",
       "source": "NASA EONET"
     },
-    "id": "f83348bf00a538b2",
+    "id": "95eff8640dcaa526",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "f83348bf00a538b2",
+      "event_id": "95eff8640dcaa526",
       "event_key": "5cf2fe8d0e34c5d4fdff4f67",
       "evidence": {
         "evidence_types": [
@@ -4428,7 +4376,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4444,7 +4392,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4470,9 +4418,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "8622e864c4d5e3d214",
+      "assessment_id": "9d2b1eb7a76a0d8124",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4486,7 +4434,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4531,7 +4479,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "319db05e673dbd0f",
+      "target_event_id": "c51213c47dbea162",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4545,14 +4493,14 @@
       "last_update": "2026-08-24T14:12:00Z",
       "source": "NASA EONET"
     },
-    "id": "319db05e673dbd0f",
+    "id": "c51213c47dbea162",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "319db05e673dbd0f",
+      "event_id": "c51213c47dbea162",
       "event_key": "bcbcc8794c2bd5daa7817bf6",
       "evidence": {
         "evidence_types": [
@@ -4560,7 +4508,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4576,7 +4524,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4602,9 +4550,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "a4ca8f9e62fa869bc8",
+      "assessment_id": "15c89dc92de0fce000",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4618,7 +4566,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4663,7 +4611,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "f193ebeb7402a80b",
+      "target_event_id": "4943e18e70d375c2",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4677,14 +4625,14 @@
       "last_update": "2026-08-24T11:50:00Z",
       "source": "NASA EONET"
     },
-    "id": "f193ebeb7402a80b",
+    "id": "4943e18e70d375c2",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "f193ebeb7402a80b",
+      "event_id": "4943e18e70d375c2",
       "event_key": "54dc119e1bb960e182d32cbf",
       "evidence": {
         "evidence_types": [
@@ -4692,7 +4640,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4708,7 +4656,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4734,9 +4682,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "c42a7653ac057b4e7e",
+      "assessment_id": "c2a8694bad15b99d49",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4750,7 +4698,7 @@
         "relationship": 0.71
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire overlaps with weather that may favour further spread",
       "hypotheses": [
         {
@@ -4759,7 +4707,7 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
           "supporting_event_ids": [
-            "bac46e1b18eccc99"
+            "72ea0f1ab6a1d2b5"
           ]
         }
       ],
@@ -4794,24 +4742,24 @@
         }
       ],
       "related_event_ids": [
-        "bac46e1b18eccc99"
+        "72ea0f1ab6a1d2b5"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 519.6,
-          "event_id": "bac46e1b18eccc99",
+          "event_id": "72ea0f1ab6a1d2b5",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
           "title": "Heat risk — Oklahoma (Tornado Alley)"
         }
       ],
-      "target_event_id": "4e06aecb9e90bd14",
+      "target_event_id": "6f48d2ecfdc1c7cf",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4825,14 +4773,14 @@
       "last_update": "2026-08-24T10:36:00Z",
       "source": "NASA EONET"
     },
-    "id": "4e06aecb9e90bd14",
+    "id": "6f48d2ecfdc1c7cf",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "4e06aecb9e90bd14",
+      "event_id": "6f48d2ecfdc1c7cf",
       "event_key": "1bf912137e1a8a3328bbcb7c",
       "evidence": {
         "evidence_types": [
@@ -4840,7 +4788,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4856,7 +4804,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4882,9 +4830,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "fa0814df173650fc7d",
+      "assessment_id": "ed892f3c91dc80edbf",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4898,7 +4846,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4943,7 +4891,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "1ffcc5b75c7dddcb",
+      "target_event_id": "dadbf8e0aadad5b1",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4957,14 +4905,14 @@
       "last_update": "2026-08-24T08:16:00Z",
       "source": "NASA EONET"
     },
-    "id": "1ffcc5b75c7dddcb",
+    "id": "dadbf8e0aadad5b1",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "1ffcc5b75c7dddcb",
+      "event_id": "dadbf8e0aadad5b1",
       "event_key": "169f691d1f1e136e5fac422c",
       "evidence": {
         "evidence_types": [
@@ -4972,7 +4920,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4988,7 +4936,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5014,9 +4962,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "eb1126ab6c84c79c7d",
+      "assessment_id": "fee5763c3b3a2c1f1a",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5030,7 +4978,7 @@
         "relationship": 0.81
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire overlaps with weather that may favour further spread",
       "hypotheses": [
         {
@@ -5039,7 +4987,7 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
           "supporting_event_ids": [
-            "bac46e1b18eccc99"
+            "72ea0f1ab6a1d2b5"
           ]
         }
       ],
@@ -5074,24 +5022,24 @@
         }
       ],
       "related_event_ids": [
-        "bac46e1b18eccc99"
+        "72ea0f1ab6a1d2b5"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 336.6,
-          "event_id": "bac46e1b18eccc99",
+          "event_id": "72ea0f1ab6a1d2b5",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
           "title": "Heat risk — Oklahoma (Tornado Alley)"
         }
       ],
-      "target_event_id": "dca404ec8ece7b46",
+      "target_event_id": "d28ccb94f33c66ec",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5105,14 +5053,14 @@
       "last_update": "2026-08-23T20:38:00Z",
       "source": "NASA EONET"
     },
-    "id": "dca404ec8ece7b46",
+    "id": "d28ccb94f33c66ec",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "dca404ec8ece7b46",
+      "event_id": "d28ccb94f33c66ec",
       "event_key": "401396af9886696d3e945611",
       "evidence": {
         "evidence_types": [
@@ -5120,7 +5068,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5136,7 +5084,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5162,9 +5110,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "77c8e3b4eea3bb00c0",
+      "assessment_id": "ba6fcc3844bc5d15b2",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5178,7 +5126,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5223,7 +5171,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "67bb2348e1ea0d3d",
+      "target_event_id": "f182d1b05d641926",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5237,14 +5185,14 @@
       "last_update": "2026-08-23T16:30:00Z",
       "source": "NASA EONET"
     },
-    "id": "67bb2348e1ea0d3d",
+    "id": "f182d1b05d641926",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "67bb2348e1ea0d3d",
+      "event_id": "f182d1b05d641926",
       "event_key": "224d9741e6f4855879d5203f",
       "evidence": {
         "evidence_types": [
@@ -5252,7 +5200,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5268,7 +5216,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5294,9 +5242,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "933b57d0820f99c6fe",
+      "assessment_id": "70a685fef1fd73c7b7",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5310,7 +5258,7 @@
         "relationship": 0.7
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire overlaps with weather that may favour further spread",
       "hypotheses": [
         {
@@ -5319,8 +5267,8 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
           "supporting_event_ids": [
-            "bac46e1b18eccc99",
-            "34e42e99ba328796"
+            "72ea0f1ab6a1d2b5",
+            "bc7b434f8489ee2a"
           ]
         }
       ],
@@ -5355,18 +5303,18 @@
         }
       ],
       "related_event_ids": [
-        "bac46e1b18eccc99",
-        "34e42e99ba328796"
+        "72ea0f1ab6a1d2b5",
+        "bc7b434f8489ee2a"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 369.0,
-          "event_id": "bac46e1b18eccc99",
+          "event_id": "72ea0f1ab6a1d2b5",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
@@ -5374,17 +5322,17 @@
         },
         {
           "distance_km": 693.2,
-          "event_id": "34e42e99ba328796",
+          "event_id": "bc7b434f8489ee2a",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
           "title": "Heat risk — Texas (Gulf Coast)"
         }
       ],
-      "target_event_id": "5c50a52fbef5909a",
+      "target_event_id": "20b4f6f326a1a176",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5398,14 +5346,14 @@
       "last_update": "2026-08-23T00:30:00Z",
       "source": "NASA EONET"
     },
-    "id": "5c50a52fbef5909a",
+    "id": "20b4f6f326a1a176",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "5c50a52fbef5909a",
+      "event_id": "20b4f6f326a1a176",
       "event_key": "509dc6f62cd719981c9789e2",
       "evidence": {
         "evidence_types": [
@@ -5413,7 +5361,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5429,7 +5377,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5455,9 +5403,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "3f1e153f7deaccd237",
+      "assessment_id": "bd0b59094c3308cc21",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5471,7 +5419,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5516,7 +5464,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "5affa5289078a8e8",
+      "target_event_id": "c40b4b8bfdd4ef2f",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5530,14 +5478,14 @@
       "last_update": "2026-08-22T23:16:00Z",
       "source": "NASA EONET"
     },
-    "id": "5affa5289078a8e8",
+    "id": "c40b4b8bfdd4ef2f",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "5affa5289078a8e8",
+      "event_id": "c40b4b8bfdd4ef2f",
       "event_key": "537e16f7b9c00a683c1954bc",
       "evidence": {
         "evidence_types": [
@@ -5545,7 +5493,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5561,7 +5509,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5587,9 +5535,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "6dbf38611d27df4c81",
+      "assessment_id": "d1190f63d11fc2bdfc",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5603,7 +5551,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5648,7 +5596,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "7e1848fa0a585063",
+      "target_event_id": "fc0850b19e20a27d",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5662,14 +5610,14 @@
       "last_update": "2026-08-22T21:04:00Z",
       "source": "NASA EONET"
     },
-    "id": "7e1848fa0a585063",
+    "id": "fc0850b19e20a27d",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "7e1848fa0a585063",
+      "event_id": "fc0850b19e20a27d",
       "event_key": "0d1c389bd19fa6f41de52612",
       "evidence": {
         "evidence_types": [
@@ -5677,7 +5625,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5693,7 +5641,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5719,9 +5667,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "319549b883ab7ce35c",
+      "assessment_id": "7ef7bff2fbde215cac",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5735,7 +5683,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5780,7 +5728,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "434c4ea92df8e67d",
+      "target_event_id": "11bd0d23e42418af",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5794,14 +5742,14 @@
       "last_update": "2026-08-22T18:38:00Z",
       "source": "NASA EONET"
     },
-    "id": "434c4ea92df8e67d",
+    "id": "11bd0d23e42418af",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "434c4ea92df8e67d",
+      "event_id": "11bd0d23e42418af",
       "event_key": "81d7b08e1ba54e6ced184f8a",
       "evidence": {
         "evidence_types": [
@@ -5809,7 +5757,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5825,7 +5773,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5851,9 +5799,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "e2b4ebbd6341593ada",
+      "assessment_id": "e1ce847369095c1520",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5867,7 +5815,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5912,7 +5860,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "d67557e1dc7085c5",
+      "target_event_id": "8c3609c87eabec95",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5926,14 +5874,14 @@
       "last_update": "2026-08-22T14:45:00Z",
       "source": "NASA EONET"
     },
-    "id": "d67557e1dc7085c5",
+    "id": "8c3609c87eabec95",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "d67557e1dc7085c5",
+      "event_id": "8c3609c87eabec95",
       "event_key": "d8c2b717548390c8cbdd5b48",
       "evidence": {
         "evidence_types": [
@@ -5941,7 +5889,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5957,7 +5905,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5983,9 +5931,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "e2b4ebbd6341593ada",
+      "assessment_id": "e1ce847369095c1520",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5999,7 +5947,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -6044,7 +5992,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "d67557e1dc7085c5",
+      "target_event_id": "8c3609c87eabec95",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -6058,14 +6006,14 @@
       "last_update": "2026-08-22T14:45:00Z",
       "source": "NASA EONET"
     },
-    "id": "d67557e1dc7085c5",
+    "id": "8c3609c87eabec95",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "d67557e1dc7085c5",
+      "event_id": "8c3609c87eabec95",
       "event_key": "d8c2b717548390c8cbdd5b48",
       "evidence": {
         "evidence_types": [
@@ -6073,7 +6021,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -6089,7 +6037,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6115,9 +6063,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "00104ea16f987d1ccd",
+      "assessment_id": "d3a8a1aa9a2c02d069",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -6131,7 +6079,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -6176,7 +6124,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "666b4c4501a7f463",
+      "target_event_id": "42ec01d99de638b3",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -6190,14 +6138,14 @@
       "last_update": "2026-08-22T11:33:00Z",
       "source": "NASA EONET"
     },
-    "id": "666b4c4501a7f463",
+    "id": "42ec01d99de638b3",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "666b4c4501a7f463",
+      "event_id": "42ec01d99de638b3",
       "event_key": "81c09c6a75b8a311f6d3b555",
       "evidence": {
         "evidence_types": [
@@ -6205,7 +6153,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -6221,7 +6169,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6247,7 +6195,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": null,
     "cf": 0.8,
     "d": "Active active severe storm. Last update: 2026-08-25.",
@@ -6257,21 +6205,21 @@
       "last_update": "2026-08-25T06:00:00Z",
       "source": "NASA EONET"
     },
-    "id": "afa5039ffc7907c3",
+    "id": "ba9ce011cf74d404",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "afa5039ffc7907c3",
+      "event_id": "ba9ce011cf74d404",
       "event_key": "2ff5fa5417eb229ffd5384d6",
       "evidence": {
         "evidence_types": [
           "provider_event_record"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Independent corroboration is limited in the current evidence packet."
@@ -6285,7 +6233,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include damaging wind, flooding, storm surge, power loss and transport disruption. Local impacts remain dependent on the final track, intensity and exposure.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6311,7 +6259,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": null,
     "cf": 0.8,
     "d": "Active active severe storm. Last update: 2026-08-25.",
@@ -6321,21 +6269,21 @@
       "last_update": "2026-08-25T18:00:00Z",
       "source": "NASA EONET"
     },
-    "id": "c2382112ecdc3fcf",
+    "id": "63bd9c4828276d2f",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "c2382112ecdc3fcf",
+      "event_id": "63bd9c4828276d2f",
       "event_key": "daf00da3717aeeb07b2f1b64",
       "evidence": {
         "evidence_types": [
           "provider_event_record"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Independent corroboration is limited in the current evidence packet."
@@ -6349,7 +6297,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include damaging wind, flooding, storm surge, power loss and transport disruption. Local impacts remain dependent on the final track, intensity and exposure.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6431,7 +6379,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6518,7 +6466,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6574,7 +6522,7 @@
         "latest_report_title": "Colombia: Flash Update 010 - Update on the Impact of the Earthquake in Colombia - August 27, 2026",
         "latest_report_url": "https://reliefweb.int/node/4227578",
         "match_score": 16.75,
-        "matched_at": "2026-08-30T03:35:12+00:00",
+        "matched_at": "2026-08-30T04:12:20+00:00",
         "provider": "ReliefWeb / UN OCHA",
         "report_count": 3,
         "reports": [
@@ -6659,7 +6607,7 @@
           "attributed_humanitarian_reporting"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:12+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:20+00:00",
         "limitations": [],
         "provider_count": 5,
         "providers": [
@@ -6674,7 +6622,7 @@
         "strength": "multi-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "The event has been felt by the public; confirmed structural damage, injuries and service disruption are not yet established in the current evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6717,7 +6665,7 @@
     "until": "2026-08-30T10:50:24+00:00"
   },
   {
-    "at": "2026-08-30T03:35:01+00:00",
+    "at": "2026-08-30T04:12:10+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 28.1°C (anomaly +1.6°C — significant warm anomaly). Waves: 2.0 m max. Current: avg 1.44 m/s. Main Development Region for Atlantic hurricanes. SST >26.5°C fuels cyclone formation.",
@@ -6736,7 +6684,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 1.6
     },
-    "id": "39bf6d2937d5bb46",
+    "id": "1897d09512156c96",
     "la": 12.0,
     "lo": -45.0,
     "media": [],
@@ -6749,7 +6697,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:59+00:00",
+    "at": "2026-08-30T04:12:08+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 11.5°C (anomaly +1.5°C — significant warm anomaly). Waves: 1.4 m max. Current: avg 0.53 m/s. AMOC cold blob region. Anomalous cooling here is a fingerprint of AMOC weakening.",
@@ -6768,7 +6716,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 1.51
     },
-    "id": "54065170460e806f",
+    "id": "948adc4c44cc78b5",
     "la": 55.0,
     "lo": -35.0,
     "media": [],
@@ -6781,9 +6729,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "8d231ae4674e886b21",
+      "assessment_id": "f5b116bbbc255f4d65",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -6797,7 +6745,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -6842,7 +6790,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "52fac5250bcb129b",
+      "target_event_id": "b18caa5168fdbcbb",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -6856,14 +6804,14 @@
       "last_update": "2026-08-21T19:25:00Z",
       "source": "NASA EONET"
     },
-    "id": "52fac5250bcb129b",
+    "id": "b18caa5168fdbcbb",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "52fac5250bcb129b",
+      "event_id": "b18caa5168fdbcbb",
       "event_key": "59ac078d24ba06a5ffb76203",
       "evidence": {
         "evidence_types": [
@@ -6871,7 +6819,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -6887,7 +6835,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6913,9 +6861,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "1ac48ce5d3a168decd",
+      "assessment_id": "06a051481e6fc6138b",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -6929,7 +6877,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -6974,7 +6922,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "9912112c550ee14b",
+      "target_event_id": "0de427ae57be48b4",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -6988,14 +6936,14 @@
       "last_update": "2026-08-21T15:40:00Z",
       "source": "NASA EONET"
     },
-    "id": "9912112c550ee14b",
+    "id": "0de427ae57be48b4",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "9912112c550ee14b",
+      "event_id": "0de427ae57be48b4",
       "event_key": "56afdf516c39d20adec15bad",
       "evidence": {
         "evidence_types": [
@@ -7003,7 +6951,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -7019,7 +6967,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7045,9 +6993,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "7460e1d0a0e883d0f7",
+      "assessment_id": "0b3daf9d4b43d3f6c2",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -7061,7 +7009,7 @@
         "relationship": 0.9
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire overlaps with weather that may favour further spread",
       "hypotheses": [
         {
@@ -7070,7 +7018,7 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
           "supporting_event_ids": [
-            "bac46e1b18eccc99"
+            "72ea0f1ab6a1d2b5"
           ]
         }
       ],
@@ -7105,24 +7053,24 @@
         }
       ],
       "related_event_ids": [
-        "bac46e1b18eccc99"
+        "72ea0f1ab6a1d2b5"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 185.2,
-          "event_id": "bac46e1b18eccc99",
+          "event_id": "72ea0f1ab6a1d2b5",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
           "title": "Heat risk — Oklahoma (Tornado Alley)"
         }
       ],
-      "target_event_id": "d298836db2632e34",
+      "target_event_id": "e33b55790af2b109",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -7136,14 +7084,14 @@
       "last_update": "2026-08-21T12:57:00Z",
       "source": "NASA EONET"
     },
-    "id": "d298836db2632e34",
+    "id": "e33b55790af2b109",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "d298836db2632e34",
+      "event_id": "e33b55790af2b109",
       "event_key": "3603781b8f058f33b80d75ba",
       "evidence": {
         "evidence_types": [
@@ -7151,7 +7099,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -7167,7 +7115,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7193,9 +7141,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "e10d8954b107ca63c1",
+      "assessment_id": "5dbaec806164f421f4",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -7209,7 +7157,7 @@
         "relationship": 0.8
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire overlaps with weather that may favour further spread",
       "hypotheses": [
         {
@@ -7218,8 +7166,8 @@
           "id": "heat-dryness-fire-infrastructure",
           "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
           "supporting_event_ids": [
-            "bac46e1b18eccc99",
-            "34e42e99ba328796"
+            "72ea0f1ab6a1d2b5",
+            "bc7b434f8489ee2a"
           ]
         }
       ],
@@ -7254,18 +7202,18 @@
         }
       ],
       "related_event_ids": [
-        "bac46e1b18eccc99",
-        "34e42e99ba328796"
+        "72ea0f1ab6a1d2b5",
+        "bc7b434f8489ee2a"
       ],
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "provisional",
       "supporting_evidence": [
         {
           "distance_km": 72.5,
-          "event_id": "bac46e1b18eccc99",
+          "event_id": "72ea0f1ab6a1d2b5",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
@@ -7273,17 +7221,17 @@
         },
         {
           "distance_km": 651.1,
-          "event_id": "34e42e99ba328796",
+          "event_id": "bc7b434f8489ee2a",
           "event_type": "heat_risk",
           "independent_source": true,
-          "observed_at": "2026-08-30T03:34:56+00:00",
+          "observed_at": "2026-08-30T04:12:05+00:00",
           "relationship": "Nearby heat signal may contribute to fuel drying",
           "source": "Open-Meteo",
           "time_gap_hours": 0.0,
           "title": "Heat risk — Texas (Gulf Coast)"
         }
       ],
-      "target_event_id": "424ae56f25cc5b90",
+      "target_event_id": "9b62146bc6c5ecbf",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -7297,14 +7245,14 @@
       "last_update": "2026-08-21T10:24:00Z",
       "source": "NASA EONET"
     },
-    "id": "424ae56f25cc5b90",
+    "id": "9b62146bc6c5ecbf",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "424ae56f25cc5b90",
+      "event_id": "9b62146bc6c5ecbf",
       "event_key": "cdadc64f8bdc0ac9db6fd1b3",
       "evidence": {
         "evidence_types": [
@@ -7312,7 +7260,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -7328,7 +7276,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7354,9 +7302,9 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:06+00:00",
+    "at": "2026-08-30T04:12:14+00:00",
     "causal": {
-      "assessment_id": "f7c6d810f9e32172d0",
+      "assessment_id": "8079ef03e1eafe6c0c",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -7370,7 +7318,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-08-30T03:35:11+00:00",
+      "generated_at": "2026-08-30T04:12:19+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -7415,7 +7363,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "90e100532dcdba41",
+      "target_event_id": "091bdf22d488f722",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -7429,14 +7377,14 @@
       "last_update": "2026-08-21T07:53:00Z",
       "source": "NASA EONET"
     },
-    "id": "90e100532dcdba41",
+    "id": "091bdf22d488f722",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "90e100532dcdba41",
+      "event_id": "091bdf22d488f722",
       "event_key": "964d5679c6aefdb30018f03a",
       "evidence": {
         "evidence_types": [
@@ -7444,7 +7392,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:35:06+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:14+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -7460,7 +7408,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7542,7 +7490,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7629,7 +7577,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7716,7 +7664,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7803,7 +7751,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7891,7 +7839,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7983,7 +7931,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -8074,7 +8022,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -8161,7 +8109,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -8248,7 +8196,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -8335,7 +8283,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -8366,7 +8314,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:55+00:00",
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (very small) — 2025 QV5 (~9–22 m). Closest approach: 5,433,909 km (14.14 lunar distances) at 7.3 km/s. Approach time: 2026-09-02T11:46:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -8416,7 +8364,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:04+00:00",
+    "at": "2026-08-30T04:12:13+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Barents Sea (Arctic inflow): avg SST 3.4°C (anomaly +2.4°C). Elevated temperatures. Atlantic water gateway into the Arctic. Warming here accelerates ice loss. Waves: 2.2 m.",
@@ -8432,7 +8380,7 @@
       "source": "Open-Meteo Marine",
       "status": "Elevated temperatures"
     },
-    "id": "3b381187d8f6d726",
+    "id": "025f4bfe1206a0fc",
     "la": 78.0,
     "lo": 35.0,
     "media": [],
@@ -8445,7 +8393,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:54+00:00",
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Volcanic Alert Level 2. Aviation colour code: Yellow. Current state: moderate to heightened unrest. Moderate to heightened volcanic unrest.. Hazards: Volcanic unrest hazards, potential for eruption hazards.",
@@ -8491,7 +8439,7 @@
           "provider_event_record"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:34:54+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:04+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Independent corroboration is limited in the current evidence packet."
@@ -8505,7 +8453,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Reported hazards include Volcanic unrest hazards, potential for eruption hazards.. Aviation, communities and access routes may be affected depending on the observed activity and wind direction.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -8536,7 +8484,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:04+00:00",
+    "at": "2026-08-30T04:12:13+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "Space Weather Message Code: WATA30",
@@ -8547,7 +8495,7 @@
       "source": "NOAA SWPC",
       "storm_class": "G2"
     },
-    "id": "fe2d260d6f75c6ce",
+    "id": "46d801ec02f40543",
     "la": null,
     "lo": null,
     "media": [],
@@ -8560,7 +8508,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:03+00:00",
+    "at": "2026-08-30T04:12:12+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 27.1°C (anomaly -0.9°C — cold anomaly). Waves: 3.5 m max. Current: avg 1.05 m/s. Western node of the Indian Ocean Dipole. Positive IOD: warm west, cool east.",
@@ -8579,7 +8527,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": -0.87
     },
-    "id": "28852a0e243dae8b",
+    "id": "b849374f8db1f8e1",
     "la": -5.0,
     "lo": 55.0,
     "media": [],
@@ -8592,7 +8540,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:57+00:00",
+    "at": "2026-08-30T04:12:06+00:00",
     "causal": null,
     "cf": 0.7,
     "d": "Mumbai, India: CAPE 1200 J/kg. Gusts up to 38 km/h. MARGINAL — isolated storms possible",
@@ -8605,7 +8553,7 @@
       "max_gust_kmh": 38.5,
       "source": "Open-Meteo"
     },
-    "id": "63a527e1c049f1f9",
+    "id": "313fcd336c06375a",
     "la": 19.1,
     "lo": 72.9,
     "media": [],
@@ -8618,7 +8566,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:01+00:00",
+    "at": "2026-08-30T04:12:10+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 29.4°C (anomaly +0.4°C — near baseline). Waves: 1.2 m max. Current: avg 0.73 m/s. Typhoon genesis region. SST above 27°C supports tropical cyclone development.",
@@ -8637,7 +8585,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 0.37
     },
-    "id": "811222f36ea79604",
+    "id": "31ecc082bce9c119",
     "la": 10.0,
     "lo": 140.0,
     "media": [],
@@ -8650,7 +8598,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:55+00:00",
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (very small) — 2018 RD2 (~10–25 m). Closest approach: 7,471,152 km (19.44 lunar distances) at 9.6 km/s. Approach time: 2026-09-01T08:10:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -8700,7 +8648,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:34:54+00:00",
+    "at": "2026-08-30T04:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Volcanic Alert Level 1. Aviation colour code: Green. Current state: minor volcanic unrest. Minor volcanic unrest.. Hazards: Volcanic unrest hazards.",
@@ -8746,7 +8694,7 @@
           "provider_event_record"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-08-30T03:34:54+00:00",
+        "latest_evidence_at": "2026-08-30T04:12:04+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Independent corroboration is limited in the current evidence packet."
@@ -8760,7 +8708,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-08-30T03:35:13+00:00",
+      "generated_at": "2026-08-30T04:12:21+00:00",
       "impact": "Reported hazards include Volcanic unrest hazards.. Aviation, communities and access routes may be affected depending on the observed activity and wind direction.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -8791,7 +8739,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:04+00:00",
+    "at": "2026-08-30T04:12:13+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Beaufort Sea (Arctic): avg SST -0.4°C (anomaly -0.4°C). Within expected range. Pacific-side Arctic. Historically perennial ice, now seasonal. Waves: 0.3 m.",
@@ -8807,7 +8755,7 @@
       "source": "Open-Meteo Marine",
       "status": "Within expected range"
     },
-    "id": "7b5d37ff361e3a46",
+    "id": "6f118dabb6de7754",
     "la": 72.0,
     "lo": -145.0,
     "media": [],
@@ -8820,7 +8768,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:04+00:00",
+    "at": "2026-08-30T04:12:13+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Antarctic Peninsula (Weddell): avg SST -1.9°C (anomaly -1.9°C). Within expected range. Most rapidly warming polar region. Key ice shelf stability zone. Waves: 0.9 m.",
@@ -8836,7 +8784,7 @@
       "source": "Open-Meteo Marine",
       "status": "Within expected range"
     },
-    "id": "d5bfb6e26ac2b297",
+    "id": "fe777ccd1bff4a51",
     "la": -64.0,
     "lo": -60.0,
     "media": [],
@@ -8849,7 +8797,7 @@
     "until": null
   },
   {
-    "at": "2026-08-30T03:35:04+00:00",
+    "at": "2026-08-30T04:12:13+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Ross Sea (Antarctica): avg SST -1.7°C (anomaly -0.7°C). Within expected range. Southern Ocean — Antarctic bottom water formation region.",
@@ -8865,7 +8813,7 @@
       "source": "Open-Meteo Marine",
       "status": "Within expected range"
     },
-    "id": "26d04a5fee59ce24",
+    "id": "549676a82f245a6a",
     "la": -75.0,
     "lo": 175.0,
     "media": [],
