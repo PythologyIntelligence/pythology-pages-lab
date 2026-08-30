@@ -277,6 +277,8 @@ PUBLIC_OVERRIDES=(
   about.html
   causal-human.css
   causal-intelligence.html
+  future.css
+  future.html
 )
 for file in "${PUBLIC_OVERRIDES[@]}"; do
   if [[ ! -f "$ROOT/$file" ]]; then
@@ -307,6 +309,10 @@ grep -Fq 'We build intelligence' "$OUT/index.html" || {
 }
 [[ -s "$OUT/data/earthnet_nz_daily.json" ]] || {
   echo 'NZ daily-state projection validation failed.' >&2
+  exit 1
+}
+[[ -s "$OUT/future.html" && -s "$OUT/future.css" ]] || {
+  echo 'FUTURE presentation overlay validation failed.' >&2
   exit 1
 }
 
