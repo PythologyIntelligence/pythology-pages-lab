@@ -1,4 +1,4 @@
-name: Restore Sentinel command centre
+name: Finish Sentinel Pages staging repair
 
 on:
   push:
@@ -10,74 +10,55 @@ permissions:
   contents: write
 
 jobs:
-  restore:
+  patch:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout live Pages repo
+      - name: Checkout latest Pages repo
         uses: actions/checkout@v4
+        with:
+          ref: main
 
-      - name: Restore Sentinel bundle from previous site repo
-        shell: bash
-        run: |
-          set -euo pipefail
-          base="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main"
-          files=(
-            sentinel-command.html
-            sentinel-command.css
-            sentinel-command-polish.css
-            sentinel-private.css
-            sentinel-voice-compat.js
-            sentinel-command.js
-            sentinel-intelligence.js
-            sentinel-brain-diagnostics.js
-            sentinel-ui-enhance.js
-            sentinel-world-fallback.js
-          )
-          for f in "${files[@]}"; do
-            echo "Restoring $f"
-            curl -fsSL "$base/$f" -o "$f"
-          done
-
-      - name: Patch moved Pythology services
+      - name: Add Sentinel to approved public overrides
         shell: python
         run: |
           from pathlib import Path
 
-          p = Path('sentinel-command.js')
-          text = p.read_text(encoding='utf-8')
-          text = text.replace("url: '/cerberus-app/'", "url: 'https://cerberus.pythology.co.nz/'")
-          text = text.replace("url: '/api/agri-data?client=brookfield-newfield-pilot'", "url: '/agri-portal.html'")
-          text = text.replace('https://verry-elleegant-h02cbcajf-pythology.vercel.app', 'https://verry.pythology.co.nz')
-          p.write_text(text, encoding='utf-8')
+          path = Path('scripts/build-lab.sh')
+          text = path.read_text(encoding='utf-8')
+          needle = '''  cerberus.html
+)'''
+          replacement = '''  cerberus.html
+  sentinel-command.html
+  sentinel-command.css
+  sentinel-command.js
+)'''
+          if replacement in text:
+              print('Sentinel overrides already staged.')
+          elif needle in text:
+              text = text.replace(needle, replacement, 1)
+              path.write_text(text, encoding='utf-8')
+              print('Sentinel overrides added.')
+          else:
+              raise SystemExit('Could not locate PUBLIC_OVERRIDES insertion point; refusing to modify build-lab.sh')
 
-          for name in ['sentinel-intelligence.js','sentinel-brain-diagnostics.js','sentinel-ui-enhance.js','sentinel-world-fallback.js']:
-              q = Path(name)
-              if not q.exists():
-                  continue
-              s = q.read_text(encoding='utf-8')
-              s = s.replace('https://verry-elleegant-h02cbcajf-pythology.vercel.app', 'https://verry.pythology.co.nz')
-              q.write_text(s, encoding='utf-8')
+      - name: Verify Sentinel source files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s sentinel-command.html
+          test -s sentinel-command.css
+          test -s sentinel-command.js
+          grep -Fq 'sentinel-command.html' scripts/build-lab.sh
+          grep -Fq 'sentinel-command.css' scripts/build-lab.sh
+          grep -Fq 'sentinel-command.js' scripts/build-lab.sh
 
-      - name: Commit restored command centre
+      - name: Commit staging repair and remove one-shot workflow
         shell: bash
         run: |
           set -euo pipefail
           git config user.name "Pythology Fleet Repair"
           git config user.email "brent@pythology.co.nz"
-          git add \
-            sentinel-command.html \
-            sentinel-command.css \
-            sentinel-command-polish.css \
-            sentinel-private.css \
-            sentinel-voice-compat.js \
-            sentinel-command.js \
-            sentinel-intelligence.js \
-            sentinel-brain-diagnostics.js \
-            sentinel-ui-enhance.js \
-            sentinel-world-fallback.js
-          if git diff --cached --quiet; then
-            echo "Sentinel bundle already matches source."
-            exit 0
-          fi
-          git commit -m "restore Sentinel command centre"
+          git add scripts/build-lab.sh
+          git rm .github/workflows/restore-sentinel-command.yml
+          git commit -m "fix: stage Sentinel command centre in Pages build"
           git push
