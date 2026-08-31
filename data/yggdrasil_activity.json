@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T18:05:21.832257+00:00",
+  "generatedAt": "2026-08-31T18:28:22.507642+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -58,6 +58,16 @@
     "lastError": false
   },
   "recentTrades": [
+    {
+      "ts": "2026-08-31T18:28:12.573540+00:00",
+      "kind": "EXIT",
+      "symbol": "XAUUSD",
+      "side": "SELL",
+      "strategyId": null,
+      "riskPct": null,
+      "state": "CLOSED",
+      "outcome": "WIN"
+    },
     {
       "ts": "2026-08-31T16:59:40.451473+00:00",
       "kind": "EXIT",
@@ -130,6 +140,13 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-31T18:28:12.573540+00:00",
+      "type": "bifrost",
+      "event": "mt5_deal",
+      "title": "MT5 confirmed OUT deal XAUUSD",
+      "detail": "Yggdrasil-owned broker deal reconciled into the local journal."
+    },
     {
       "ts": "2026-08-31T17:05:10.565084+00:00",
       "type": "bifrost",
@@ -290,14 +307,7 @@
       "event": "entry_blocked",
       "title": "T\u00fdr blocked BUY XAUUSD",
       "detail": "symbol already has a Yggdrasil position"
-    },
-    {
-      "ts": "2026-08-31T14:30:19.722486+00:00",
-      "type": "tyr",
-      "event": "entry_blocked",
-      "title": "T\u00fdr blocked BUY XAUUSD",
-      "detail": "symbol already has a Yggdrasil position"
     }
   ],
-  "publishedAt": "2026-08-31T18:05:36.234149+00:00"
+  "publishedAt": "2026-08-31T18:28:27.232296+00:00"
 }
