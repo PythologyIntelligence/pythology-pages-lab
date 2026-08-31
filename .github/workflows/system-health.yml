@@ -8,6 +8,7 @@ on:
       - "scripts/check-system-health.mjs"
       - "scripts/repair-pages-health.mjs"
       - "scripts/merge-yggdrasil-health.mjs"
+      - "scripts/build-lab.sh"
       - "monitor/**"
       - "sentinel-command.html"
       - "sentinel-command.css"
