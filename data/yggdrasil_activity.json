@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T17:35:21.016400+00:00",
+  "generatedAt": "2026-08-31T18:05:21.832257+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -299,5 +299,5 @@
       "detail": "symbol already has a Yggdrasil position"
     }
   ],
-  "publishedAt": "2026-08-31T17:35:29.555146+00:00"
+  "publishedAt": "2026-08-31T18:05:36.234149+00:00"
 }
