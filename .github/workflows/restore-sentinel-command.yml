@@ -1,0 +1,83 @@
+name: Restore Sentinel command centre
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/restore-sentinel-command.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  restore:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout live Pages repo
+        uses: actions/checkout@v4
+
+      - name: Restore Sentinel bundle from previous site repo
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main"
+          files=(
+            sentinel-command.html
+            sentinel-command.css
+            sentinel-command-polish.css
+            sentinel-private.css
+            sentinel-voice-compat.js
+            sentinel-command.js
+            sentinel-intelligence.js
+            sentinel-brain-diagnostics.js
+            sentinel-ui-enhance.js
+            sentinel-world-fallback.js
+          )
+          for f in "${files[@]}"; do
+            echo "Restoring $f"
+            curl -fsSL "$base/$f" -o "$f"
+          done
+
+      - name: Patch moved Pythology services
+        shell: python
+        run: |
+          from pathlib import Path
+
+          p = Path('sentinel-command.js')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace("url: '/cerberus-app/'", "url: 'https://cerberus.pythology.co.nz/'")
+          text = text.replace("url: '/api/agri-data?client=brookfield-newfield-pilot'", "url: '/agri-portal.html'")
+          text = text.replace('https://verry-elleegant-h02cbcajf-pythology.vercel.app', 'https://verry.pythology.co.nz')
+          p.write_text(text, encoding='utf-8')
+
+          for name in ['sentinel-intelligence.js','sentinel-brain-diagnostics.js','sentinel-ui-enhance.js','sentinel-world-fallback.js']:
+              q = Path(name)
+              if not q.exists():
+                  continue
+              s = q.read_text(encoding='utf-8')
+              s = s.replace('https://verry-elleegant-h02cbcajf-pythology.vercel.app', 'https://verry.pythology.co.nz')
+              q.write_text(s, encoding='utf-8')
+
+      - name: Commit restored command centre
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "Pythology Fleet Repair"
+          git config user.email "brent@pythology.co.nz"
+          git add \
+            sentinel-command.html \
+            sentinel-command.css \
+            sentinel-command-polish.css \
+            sentinel-private.css \
+            sentinel-voice-compat.js \
+            sentinel-command.js \
+            sentinel-intelligence.js \
+            sentinel-brain-diagnostics.js \
+            sentinel-ui-enhance.js \
+            sentinel-world-fallback.js
+          if git diff --cached --quiet; then
+            echo "Sentinel bundle already matches source."
+            exit 0
+          fi
+          git commit -m "restore Sentinel command centre"
+          git push
