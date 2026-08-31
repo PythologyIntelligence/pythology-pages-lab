@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>Pythology · Farm Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="agri-portal.css">
+  <link rel="stylesheet" href="agri-decision.css">
+  <link rel="stylesheet" href="agri-enterprise.css">
+  <link rel="stylesheet" href="agri-mark-handover.css">
+  <link rel="stylesheet" href="agri-mark-upgrade.css">
+  <link rel="stylesheet" href="agri-mark-livestock.css">
+</head>
+<body>
+  <section class="gate" id="gate">
+    <form class="gate-card" id="access-form">
+      <div class="gate-logo">PYTHOLOGY</div>
+      <h1>Private Farm Intelligence</h1>
+      <p>Enter the farm access ID and code supplied by Pythology. Client data is checked and delivered by the server; it is not stored in this page.</p>
+      <div class="gate-field"><label for="client-id">Farm access ID</label><input id="client-id" name="client_id" autocomplete="username" spellcheck="false" placeholder="e.g. waikato-pilot" required></div>
+      <div class="gate-field"><label for="access-code">Access code</label><input id="access-code" name="access_code" type="password" autocomplete="current-password" spellcheck="false" required></div>
+      <button class="primary-button" type="submit">Open private farm portal</button>
+      <div class="gate-error" id="access-error" role="alert"></div>
+    </form>
+  </section>
+
+  <div class="portal hidden" id="portal">
+    <header class="topbar">
+      <div class="brand-wrap"><div class="brand">PYTHOLOGY</div><div><div class="farm-title" id="farm-name">Farm Intelligence</div><div class="farm-subtitle" id="farm-subtitle"></div></div></div>
+      <div class="top-actions"><div class="updated mono" id="updated"></div><button class="logout-button" id="logout" type="button">Lock portal</button></div>
+    </header>
+
+    <main class="portal-main">
+      <div id="weather-refresh-banner" class="weather-refresh-banner" hidden></div>
+
+      <section class="decision-banner">
+        <div><span class="eyebrow">Daily operating picture</span><strong id="decision-headline">Loading today’s farm priorities…</strong><span id="decision-subline">Recommendations remain provisional until field observations confirm them.</span></div>
+        <div class="decision-count" id="decision-count">—</div>
+      </section>
+
+      <section class="stats">
+        <div class="stat"><div class="stat-label">Spray Window</div><div class="stat-value" id="spray-value">—</div><div class="stat-sub" id="spray-detail"></div></div>
+        <div class="stat"><div class="stat-label">Frost Risk</div><div class="stat-value" id="frost-value">—</div><div class="stat-sub" id="frost-detail"></div></div>
+        <div class="stat"><div class="stat-label">Rain Forecast</div><div class="stat-value" id="rain-value">—</div><div class="stat-sub" id="rain-detail"></div></div>
+        <div class="stat"><div class="stat-label">Wind</div><div class="stat-value" id="wind-value">—</div><div class="stat-sub" id="wind-detail"></div></div>
+        <div class="stat"><div class="stat-label">Soil Moisture</div><div class="stat-value" id="soil-value">—</div><div class="stat-sub" id="soil-detail"></div></div>
+        <div class="stat"><div class="stat-label">Pasture Growth</div><div class="stat-value" id="growth-value">—</div><div class="stat-sub" id="growth-detail"></div></div>
+      </section>
+
+      <section class="portal-grid">
+        <div class="map-panel">
+          <div class="map" id="map"></div>
+          <div class="map-note" id="map-note">Loading farm map…</div>
+          <div class="map-legend"><span><i class="map-dot go"></i>Go</span><span><i class="map-dot caution"></i>Caution</span><span><i class="map-dot hold"></i>Hold</span></div>
+        </div>
+        <aside class="intel-panel">
+          <section class="panel-section"><div class="panel-title">Daily Action Board <span class="count-badge neutral" id="action-count">0</span></div><div id="recommendations"></div></section>
+          <section class="panel-section"><div class="panel-title">Active alerts <span class="count-badge" id="alert-count">0</span></div><div id="alerts"></div></section>
+          <section class="panel-section"><div class="panel-title">Three-day work planner</div><table><thead><tr><th>Day</th><th>Hi / Lo</th><th>Rain</th><th>Spray</th><th>Graze</th><th>Pug</th></tr></thead><tbody id="planner-body"></tbody></table></section>
+          <section class="panel-section" id="soil-intelligence-section"><div class="panel-title">Soil Intelligence <span class="soil-source-badge">Modelled</span></div><div class="soil-intelligence" id="soil-intelligence"></div></section>
+          <section class="panel-section"><div class="panel-title">Trial evidence & value</div><div id="trial-evidence"></div></section>
+          <section class="panel-section" id="farm-map-section" hidden><div class="panel-title">Farm & paddock context</div><div class="farm-map-context" id="farm-map-context"></div></section>
+          <section class="panel-section"><div class="panel-title">Farm summary</div><div class="summary" id="summary"></div></section>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="agri-portal.js"></script>
+  <script src="agri-enterprise.js"></script>
+  <script src="agri-mark-handover.js"></script>
+  <script src="agri-mark-preflight.js"></script>
+  <script src="agri-mark-upgrade-v2.js"></script>
+  <script src="agri-mark-live-status.js"></script>
+  <script src="agri-brookfield-context.js"></script>
+  <script src="agri-direct-link.js"></script>
+  <script src="agri-mark-livestock.js"></script>
+</body>
+</html>
