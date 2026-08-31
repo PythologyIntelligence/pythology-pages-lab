@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T02:13:33.825839+00:00",
+  "generatedAt": "2026-08-31T02:42:05.302881+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -119,6 +119,27 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-31T02:42:05.097385+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for EURUSD",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-31T02:42:05.097385+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for EURUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-31T02:42:02.502512+00:00",
+      "type": "norns",
+      "event": "tournament_started",
+      "title": "Norns tournament started",
+      "detail": "61 candidates entered research validation."
+    },
     {
       "ts": "2026-08-30T20:41:55.607989+00:00",
       "type": "norns",
@@ -265,28 +286,7 @@
       "event": "training_ranked",
       "title": "Training ranked for XAUUSD",
       "detail": "7 candidates passed the training gate; 54 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-30T14:41:47.365435+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for USDJPY",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-30T14:41:47.365435+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for USDJPY",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-30T14:41:46.818555+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for GBPUSD",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-08-31T02:13:40.534298+00:00"
+  "publishedAt": "2026-08-31T02:42:05.678395+00:00"
 }
