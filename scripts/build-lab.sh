@@ -5,6 +5,7 @@ ROOT="$PWD"
 OUT="$ROOT/_site"
 MIRROR="$ROOT/.mirror"
 PYTHOLOGY_SOURCE="https://pythology.co.nz"
+AGRI_SOURCE="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main"
 VE_SOURCE="https://verry-elleegant-ai.vercel.app"
 
 rm -rf "$OUT" "$MIRROR"
@@ -84,8 +85,10 @@ for file in "${EARTHNET_FILES[@]}"; do
   curl -fsSL "$PYTHOLOGY_SOURCE/$file" -o "$OUT/$file" || echo "EarthNet asset unavailable: $file"
 done
 
-# Stage the Agri frontend only. No production client data, access codes,
-# feedback writes or server-side endpoints are copied into this public lab.
+# Stage the Agri frontend only. Pull from the stable GitHub source instead of the
+# live Pages site so Agri can recover even when its public route is missing.
+# No production client data, access codes, feedback writes or server-side
+# endpoints are copied into this public lab.
 AGRI_FILES=(
   agri-portal.html
   agri-portal.css
@@ -105,7 +108,10 @@ AGRI_FILES=(
   agri-mark-livestock.js
 )
 for file in "${AGRI_FILES[@]}"; do
-  curl -fsSL "$PYTHOLOGY_SOURCE/$file" -o "$OUT/$file" || echo "Agri frontend asset unavailable: $file"
+  curl -fsSL "$AGRI_SOURCE/$file" -o "$OUT/$file" || {
+    echo "Required Agri frontend asset unavailable from GitHub: $file" >&2
+    exit 1
+  }
 done
 
 # Build an independent safe Agri snapshot from Open-Meteo at a generic public
@@ -324,6 +330,10 @@ grep -Fq 'We build intelligence' "$OUT/index.html" || {
 }
 [[ -s "$OUT/cerberus.html" && -s "$OUT/data/cerberus_latest.json" ]] || {
   echo 'Cerberus standalone portal or snapshot did not stage.' >&2
+  exit 1
+}
+[[ -s "$OUT/agri-portal.html" && -s "$OUT/agri-pages-lab-guard.js" && -s "$OUT/data/agri_lab.json" ]] || {
+  echo 'Agri portal, guard or safe lab snapshot did not stage.' >&2
   exit 1
 }
 
