@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T14:20:17.355255+00:00",
+  "generatedAt": "2026-08-31T14:20:47.445133+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 2,
-    "openRiskPct": 0.599,
+    "openRiskPct": 0.6,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -139,6 +139,13 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-31T14:20:19.324433+00:00",
+      "type": "tyr",
+      "event": "entry_blocked",
+      "title": "T\u00fdr blocked BUY XAUUSD",
+      "detail": "symbol already has a Yggdrasil position"
+    },
     {
       "ts": "2026-08-31T14:15:18.934934+00:00",
       "type": "tyr",
@@ -299,14 +306,7 @@
       "event": "no_champion",
       "title": "No champion for EURUSD",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-31T08:42:17.892346+00:00",
-      "type": "norns",
-      "event": "tournament_started",
-      "title": "Norns tournament started",
-      "detail": "61 candidates entered research validation."
     }
   ],
-  "publishedAt": "2026-08-31T14:20:20.323804+00:00"
+  "publishedAt": "2026-08-31T14:20:52.653488+00:00"
 }
