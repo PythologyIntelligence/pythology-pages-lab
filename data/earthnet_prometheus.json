@@ -1,16 +1,103 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.25,
+    "brier_score": 0.3331,
     "calibrated_forecast_count": 0,
     "confirmed_count": 1,
-    "hit_rate": 1.0,
-    "not_observed_count": 0,
-    "resolved_count": 1
+    "hit_rate": 0.25,
+    "not_observed_count": 3,
+    "resolved_count": 4
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-08-30T20:12:42+00:00",
+  "generated_at": "2026-08-31T04:14:18+00:00",
   "history": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-29T22:15:39+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.62,
+      "forecast_id": "665548a193056e964468dc36",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.3844,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Rome, Italy",
+      "resolved_at": "2026-08-31T04:14:18+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "97f53ba5a9795add",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Rome, Italy",
+      "valid_until": "2026-08-30T22:15:39+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-29T22:15:39+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.62,
+      "forecast_id": "ee672d2b58c1b8001e5d898c",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.3844,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-08-31T04:14:18+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "73ee7d5c54c02eb8",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-08-30T22:15:39+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-29T22:15:39+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.56,
+      "forecast_id": "3a93c6cce4ff721c9232a8e7",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.3136,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-08-31T04:14:18+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "3a5f8c3024244be0",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-08-30T22:15:39+00:00"
+    },
     {
       "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
       "calibrated": false,
@@ -51,56 +138,6 @@
   "mode": "live_validation",
   "open": [
     {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": false,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "live_validation_uncalibrated",
-      "created_at": "2026-08-29T22:15:39+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.62,
-      "forecast_id": "665548a193056e964468dc36",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Rome, Italy",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "97f53ba5a9795add",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Rome, Italy",
-      "valid_until": "2026-08-30T22:15:39+00:00"
-    },
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": false,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "live_validation_uncalibrated",
-      "created_at": "2026-08-29T22:15:39+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.62,
-      "forecast_id": "ee672d2b58c1b8001e5d898c",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Texas (Gulf Coast)",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "73ee7d5c54c02eb8",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Texas (Gulf Coast)",
-      "valid_until": "2026-08-30T22:15:39+00:00"
-    },
-    {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
       "calibrated": false,
       "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
@@ -125,31 +162,6 @@
       "target_event_type": "heat_risk",
       "target_title": "Heat risk — Oklahoma (Tornado Alley)",
       "valid_until": "2026-08-31T22:15:39+00:00"
-    },
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": false,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "live_validation_uncalibrated",
-      "created_at": "2026-08-29T22:15:39+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.56,
-      "forecast_id": "3a93c6cce4ff721c9232a8e7",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Sahel Region",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "3a5f8c3024244be0",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Sahel Region",
-      "valid_until": "2026-08-30T22:15:39+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
