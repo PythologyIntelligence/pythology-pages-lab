@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T13:57:13.615625+00:00",
+  "generatedAt": "2026-08-31T13:57:43.742202+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 1,
-    "openRiskPct": 0.525,
+    "openRiskPct": 0.524,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -298,5 +298,5 @@
       "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-08-31T13:57:16.098976+00:00"
+  "publishedAt": "2026-08-31T13:57:53.765913+00:00"
 }
