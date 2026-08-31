@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T15:28:14.599418+00:00",
+  "generatedAt": "2026-08-31T15:30:14.894638+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -150,6 +150,27 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-08-31T15:30:08.844508+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for EURUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-31T15:30:08.829217+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for EURUSD",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-31T15:30:02.406949+00:00",
+      "type": "norns",
+      "event": "tournament_started",
+      "title": "Norns tournament started",
+      "detail": "61 candidates entered research validation."
+    },
+    {
       "ts": "2026-08-31T15:28:02.389851+00:00",
       "type": "tyr",
       "event": "position_flattened",
@@ -295,28 +316,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for XAUUSD",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-31T08:42:23.129487+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for XAUUSD",
-      "detail": "6 candidates passed the training gate; 55 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-31T08:42:21.737836+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for USDJPY",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-31T08:42:21.737836+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for USDJPY",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-08-31T15:28:24.337236+00:00"
+  "publishedAt": "2026-08-31T15:30:29.117349+00:00"
 }
