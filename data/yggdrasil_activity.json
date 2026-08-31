@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T13:59:29.085446+00:00",
+  "generatedAt": "2026-08-31T14:04:29.767729+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -129,6 +129,13 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-31T14:04:28.437090+00:00",
+      "type": "tyr",
+      "event": "entry_blocked",
+      "title": "T\u00fdr blocked BUY XAUUSD",
+      "detail": "symbol cooldown active"
+    },
     {
       "ts": "2026-08-31T13:59:28.225144+00:00",
       "type": "tyr",
@@ -289,14 +296,7 @@
       "event": "champion_selected",
       "title": "XAUUSD champion reached Valhalla",
       "detail": "rsi_revert-lower25-period21-upper75 \u00b7 test Sharpe 0.579 \u00b7 test return 0.077%"
-    },
-    {
-      "ts": "2026-08-31T02:42:12.600545+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-08-31T13:59:36.323636+00:00"
+  "publishedAt": "2026-08-31T14:04:39.099552+00:00"
 }
