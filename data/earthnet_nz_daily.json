@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-08-30T23:09:27+00:00",
-  "generated_at_nz": "2026-08-31T11:09:27+12:00",
+  "generated_at": "2026-08-31T01:33:36+00:00",
+  "generated_at_nz": "2026-08-31T13:33:36+12:00",
   "hydrology": {
     "note": "River and rainfall gauge ingestion will be added region by region; forecast-only rainfall must not be presented as observed flooding.",
     "status": "planned_region_integrations"
@@ -16,51 +16,51 @@
     "regions": [
       {
         "anomaly_class": "EXTREME warm anomaly",
-        "avg_current_ms": 0.59,
-        "avg_sst_c": 29.77,
+        "avg_current_ms": 0.41,
+        "avg_sst_c": 29.51,
         "context": "Core ENSO monitoring region. SST anomaly here defines El Niño/La Niña state.",
         "latitude": 0.0,
         "longitude": -140.0,
-        "max_wave_m": 1.84,
+        "max_wave_m": 2.1,
         "name": "Equatorial Pacific (Niño 3.4)",
         "source": "Open-Meteo Marine",
-        "sst_anomaly_c": 3.77
+        "sst_anomaly_c": 3.51
       },
       {
         "anomaly_class": "near baseline",
         "avg_current_ms": 0.71,
-        "avg_sst_c": 29.42,
+        "avg_sst_c": 29.36,
         "context": "Typhoon genesis region. SST above 27°C supports tropical cyclone development.",
         "latitude": 10.0,
         "longitude": 140.0,
-        "max_wave_m": 1.2,
+        "max_wave_m": 1.24,
         "name": "Western Pacific Warm Pool",
         "source": "Open-Meteo Marine",
-        "sst_anomaly_c": 0.42
+        "sst_anomaly_c": 0.36
       },
       {
         "anomaly_class": "warm anomaly",
-        "avg_current_ms": 1.7,
+        "avg_current_ms": 1.53,
         "avg_sst_c": 15.1,
         "context": "Regional marine conditions near NZ. Marine heatwaves affect fisheries and weather.",
         "latitude": -40.0,
         "longitude": 165.0,
-        "max_wave_m": 5.96,
+        "max_wave_m": 5.8,
         "name": "Tasman Sea / NZ",
         "source": "Open-Meteo Marine",
         "sst_anomaly_c": 1.1
       },
       {
         "anomaly_class": "significant cold anomaly",
-        "avg_current_ms": 0.5,
-        "avg_sst_c": 2.12,
+        "avg_current_ms": 0.77,
+        "avg_sst_c": 2.09,
         "context": "Antarctic Circumpolar Current gateway. Temperature and current signals.",
         "latitude": -58.0,
         "longitude": -65.0,
-        "max_wave_m": 1.56,
+        "max_wave_m": 1.96,
         "name": "Southern Ocean (Drake Passage)",
         "source": "Open-Meteo Marine",
-        "sst_anomaly_c": -1.88
+        "sst_anomaly_c": -1.91
       }
     ]
   },
@@ -69,7 +69,7 @@
     "status": "next_layer"
   },
   "prometheus_interpretation": [
-    "GeoNet recorded 29 usable NZ earthquake catalogue events in the last 24 hours; the largest was M4.0.",
+    "GeoNet recorded 28 usable NZ earthquake catalogue events in the last 24 hours; the largest was M4.2.",
     "No daily GeoNet volcanic status change was detected from the previous stored state.",
     "No NZ forecast point crossed Prometheus's current 40 mm / 48 h rainfall-watch threshold."
   ],
@@ -79,27 +79,57 @@
     "activity_concentrations": [],
     "automatic_or_unreviewed_count": 0,
     "depth_bins": {
-      "10_to_29_km": 9,
+      "10_to_29_km": 8,
       "30_to_69_km": 7,
-      "70_km_plus": 10,
-      "lt_10_km": 3
+      "70_km_plus": 9,
+      "lt_10_km": 4
     },
-    "event_count": 29,
+    "event_count": 28,
     "events": [
       {
-        "depth_km": 172.63710021972656,
+        "depth_km": 121.74291229248047,
         "evaluation_mode": "manual",
         "event_type": "earthquake",
-        "latitude": -36.897457123,
-        "locality": "Ōpōtiki",
-        "locality_distance_km": 124.6,
+        "latitude": -39.499568939,
+        "locality": "Hāwera",
+        "locality_distance_km": 20.3,
         "locality_source": "Pythology NZ settlement fallback",
-        "longitude": 177.464065552,
-        "magnitude": 4.007369914562935,
+        "longitude": 174.487625122,
+        "magnitude": 2.31933695414296,
+        "public_id": "2026p654109",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-08-31T00:29:46.320Z"
+      },
+      {
+        "depth_km": 4.333230018615723,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.553302765,
+        "locality": "Taupō",
+        "locality_distance_km": 17.6,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.182510376,
+        "magnitude": 2.2340894944029634,
+        "public_id": "2026p654021",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-08-30T23:42:44.251Z"
+      },
+      {
+        "depth_km": 173.8238525390625,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -36.882961273,
+        "locality": "Ōpōtiki",
+        "locality_distance_km": 126.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 177.479888916,
+        "magnitude": 4.243435567681535,
         "public_id": "2026p653844",
         "quality": null,
-        "status": "preliminary",
-        "time": "2026-08-30T22:08:04.856Z"
+        "status": "confirmed",
+        "time": "2026-08-30T22:08:04.535Z"
       },
       {
         "depth_km": 103.30217742919922,
@@ -475,69 +505,125 @@
         "quality": null,
         "status": "confirmed",
         "time": "2026-08-30T02:01:58.312Z"
-      },
-      {
-        "depth_km": 262.7374572753906,
-        "evaluation_mode": "manual",
-        "event_type": "earthquake",
-        "latitude": -37.069103241,
-        "locality": "Tauranga",
-        "locality_distance_km": 87.6,
-        "locality_source": "Pythology NZ settlement fallback",
-        "longitude": 176.779281616,
-        "magnitude": 3.490881404519403,
-        "public_id": "2026p651443",
-        "quality": null,
-        "status": "confirmed",
-        "time": "2026-08-30T00:48:58.608Z"
-      },
-      {
-        "depth_km": 12.316840171813965,
-        "evaluation_mode": "manual",
-        "event_type": "earthquake",
-        "latitude": -39.106445312,
-        "locality": "National Park",
-        "locality_distance_km": 20.9,
-        "locality_source": "Pythology NZ settlement fallback",
-        "longitude": 175.167297363,
-        "magnitude": 1.8176241193643285,
-        "public_id": "2026p651385",
-        "quality": null,
-        "status": "confirmed",
-        "time": "2026-08-30T00:18:04.889Z"
-      },
-      {
-        "depth_km": 465.3592224121094,
-        "evaluation_mode": "manual",
-        "event_type": "earthquake",
-        "latitude": -32.35459137,
-        "locality": "Kerikeri",
-        "locality_distance_km": 566.6,
-        "locality_source": "Pythology NZ settlement fallback",
-        "longitude": 179.013931274,
-        "magnitude": 3.2155877514171087,
-        "public_id": "2026p651364",
-        "quality": null,
-        "status": "confirmed",
-        "time": "2026-08-30T00:05:43.949Z"
       }
     ],
-    "largest_magnitude": 4.01,
+    "largest_magnitude": 4.24,
     "magnitude_bins": {
       "0_0_to_0_9": 0,
-      "1_0_to_1_9": 9,
-      "2_0_to_2_9": 16,
-      "3_0_to_3_9": 3,
+      "1_0_to_1_9": 8,
+      "2_0_to_2_9": 18,
+      "3_0_to_3_9": 1,
       "4_0_plus": 1,
       "lt_0": 0
     },
     "research_guard": "All usable catalogue magnitudes are retained, including sub-M1 and negative magnitudes. Automatic detections are stored but not treated as equivalent to reviewed events. Activity concentrations are descriptive and carry no earthquake-prediction claim.",
-    "reviewed_count": 29,
+    "reviewed_count": 28,
+    "small_event_watch_areas": [
+      {
+        "centroid": {
+          "latitude": -40.3583,
+          "longitude": 176.2309
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 22.9,
+          "minimum": 12.7
+        },
+        "first_event_utc": "2026-08-30T09:02:06.508Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-08-30T13:49:12.415Z",
+        "magnitude_range": {
+          "maximum": 2.71,
+          "minimum": 1.84
+        },
+        "nearest_locality": "Waipukurau",
+        "public_ids": [
+          "2026p652907",
+          "2026p652368"
+        ]
+      },
+      {
+        "centroid": {
+          "latitude": -40.1587,
+          "longitude": 174.869
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 20.5,
+          "minimum": 14.0
+        },
+        "first_event_utc": "2026-08-30T04:52:30.102Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-08-30T15:16:30.412Z",
+        "magnitude_range": {
+          "maximum": 2.61,
+          "minimum": 2.26
+        },
+        "nearest_locality": "Whanganui",
+        "public_ids": [
+          "2026p653071",
+          "2026p651900"
+        ]
+      },
+      {
+        "centroid": {
+          "latitude": -39.8031,
+          "longitude": 176.7368
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 37.8,
+          "minimum": 33.1
+        },
+        "first_event_utc": "2026-08-30T05:54:46.834Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-08-30T08:01:20.835Z",
+        "magnitude_range": {
+          "maximum": 2.44,
+          "minimum": 2.31
+        },
+        "nearest_locality": "Waipukurau",
+        "public_ids": [
+          "2026p652254",
+          "2026p652017"
+        ]
+      },
+      {
+        "centroid": {
+          "latitude": -40.7204,
+          "longitude": 174.3613
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 31.4,
+          "minimum": 26.8
+        },
+        "first_event_utc": "2026-08-30T06:11:40.434Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-08-30T13:20:26.715Z",
+        "magnitude_range": {
+          "maximum": 2.17,
+          "minimum": 1.73
+        },
+        "nearest_locality": "Picton",
+        "public_ids": [
+          "2026p652853",
+          "2026p652048"
+        ]
+      }
+    ],
+    "small_event_watch_rule": {
+      "maximum_count": 3,
+      "maximum_magnitude": 3.0,
+      "meaning": "Shows 2–3 sub-M3 earthquakes linked within 30 km. Four-or-more event groups remain formal activity concentrations.",
+      "minimum_count": 2,
+      "radius_km": 30.0
+    },
     "source": "GeoNet WFS quake catalogue",
     "window": {
-      "end_utc": "2026-08-30T23:09:27+00:00",
+      "end_utc": "2026-08-31T01:33:36+00:00",
       "hours": 24,
-      "start_utc": "2026-08-29T23:09:27+00:00"
+      "start_utc": "2026-08-30T01:33:36+00:00"
     }
   },
   "volcanic": {
@@ -700,7 +786,7 @@
     "flooding_guard": "Rainfall watch is forecast-only context, not a flood warning. River/catchment sensor data is not yet included; check MetService, NEMA and council warnings before acting.",
     "points": [
       {
-        "forecast_48h_precip_mm": 26.5,
+        "forecast_48h_precip_mm": 23.1,
         "latitude": -46.413,
         "longitude": 168.353,
         "max_precip_probability_pct": 100.0,
@@ -709,80 +795,106 @@
         "rainfall_watch": "none",
         "region": "Southland",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 9.7,
+        "temperature_max_c": 10.4,
         "temperature_min_c": 3.8
       },
       {
-        "forecast_48h_precip_mm": 16.4,
+        "forecast_48h_precip_mm": 13.3,
         "latitude": -41.752,
         "longitude": 171.603,
         "max_precip_probability_pct": 100.0,
-        "max_wind_gust_kmh": 78.8,
+        "max_wind_gust_kmh": 80.3,
         "name": "Westport",
         "rainfall_watch": "none",
         "region": "West Coast",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 11.7,
-        "temperature_min_c": 8.6
+        "temperature_min_c": 8.9
       },
       {
-        "forecast_48h_precip_mm": 10.0,
+        "forecast_48h_precip_mm": 8.5,
         "latitude": -45.031,
         "longitude": 168.662,
         "max_precip_probability_pct": 100.0,
-        "max_wind_gust_kmh": 73.4,
+        "max_wind_gust_kmh": 78.1,
         "name": "Queenstown",
         "rainfall_watch": "none",
         "region": "Otago",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 7.6,
-        "temperature_min_c": 1.6
+        "temperature_max_c": 8.1,
+        "temperature_min_c": 0.3
       },
       {
-        "forecast_48h_precip_mm": 5.5,
+        "forecast_48h_precip_mm": 6.4,
         "latitude": -45.878,
         "longitude": 170.502,
-        "max_precip_probability_pct": 98.0,
-        "max_wind_gust_kmh": 85.3,
+        "max_precip_probability_pct": 100.0,
+        "max_wind_gust_kmh": 87.1,
         "name": "Dunedin",
         "rainfall_watch": "none",
         "region": "Otago",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 10.8,
-        "temperature_min_c": 1.6
+        "temperature_min_c": 1.7
       },
       {
-        "forecast_48h_precip_mm": 4.1,
-        "latitude": -39.058,
-        "longitude": 174.08,
-        "max_precip_probability_pct": 98.0,
-        "max_wind_gust_kmh": 77.0,
-        "name": "New Plymouth",
-        "rainfall_watch": "none",
-        "region": "Taranaki",
-        "source": "Open-Meteo forecast",
-        "temperature_max_c": 14.7,
-        "temperature_min_c": 9.9
-      },
-      {
-        "forecast_48h_precip_mm": 3.2,
+        "forecast_48h_precip_mm": 3.7,
         "latitude": -40.356,
         "longitude": 175.611,
-        "max_precip_probability_pct": 59.0,
+        "max_precip_probability_pct": 34.0,
         "max_wind_gust_kmh": 85.7,
         "name": "Palmerston North",
         "rainfall_watch": "none",
         "region": "Manawatū-Whanganui",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 13.9,
-        "temperature_min_c": 2.8
+        "temperature_max_c": 13.8,
+        "temperature_min_c": 2.7
       },
       {
-        "forecast_48h_precip_mm": 2.6,
+        "forecast_48h_precip_mm": 3.7,
+        "latitude": -39.058,
+        "longitude": 174.08,
+        "max_precip_probability_pct": 100.0,
+        "max_wind_gust_kmh": 78.5,
+        "name": "New Plymouth",
+        "rainfall_watch": "none",
+        "region": "Taranaki",
+        "source": "Open-Meteo forecast",
+        "temperature_max_c": 14.6,
+        "temperature_min_c": 9.8
+      },
+      {
+        "forecast_48h_precip_mm": 3.4,
+        "latitude": -39.931,
+        "longitude": 175.047,
+        "max_precip_probability_pct": 82.0,
+        "max_wind_gust_kmh": 90.4,
+        "name": "Whanganui",
+        "rainfall_watch": "none",
+        "region": "Manawatū-Whanganui",
+        "source": "Open-Meteo forecast",
+        "temperature_max_c": 14.3,
+        "temperature_min_c": 10.3
+      },
+      {
+        "forecast_48h_precip_mm": 3.1,
+        "latitude": -43.532,
+        "longitude": 172.636,
+        "max_precip_probability_pct": 100.0,
+        "max_wind_gust_kmh": 61.9,
+        "name": "Christchurch",
+        "rainfall_watch": "none",
+        "region": "Canterbury",
+        "source": "Open-Meteo forecast",
+        "temperature_max_c": 12.6,
+        "temperature_min_c": 1.8
+      },
+      {
+        "forecast_48h_precip_mm": 2.9,
         "latitude": -37.787,
         "longitude": 175.279,
         "max_precip_probability_pct": 100.0,
-        "max_wind_gust_kmh": 66.6,
+        "max_wind_gust_kmh": 68.8,
         "name": "Hamilton",
         "rainfall_watch": "none",
         "region": "Waikato",
@@ -794,150 +906,124 @@
         "forecast_48h_precip_mm": 2.5,
         "latitude": -35.725,
         "longitude": 174.323,
-        "max_precip_probability_pct": 58.0,
-        "max_wind_gust_kmh": 64.8,
+        "max_precip_probability_pct": 67.0,
+        "max_wind_gust_kmh": 65.2,
         "name": "Whangārei",
         "rainfall_watch": "none",
         "region": "Northland",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 15.7,
+        "temperature_max_c": 16.1,
         "temperature_min_c": 10.9
       },
       {
-        "forecast_48h_precip_mm": 2.3,
+        "forecast_48h_precip_mm": 2.1,
         "latitude": -36.85,
         "longitude": 174.764,
         "max_precip_probability_pct": 96.0,
-        "max_wind_gust_kmh": 68.8,
+        "max_wind_gust_kmh": 69.5,
         "name": "Auckland",
         "rainfall_watch": "none",
         "region": "Auckland",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 16.0,
-        "temperature_min_c": 12.3
+        "temperature_max_c": 16.1,
+        "temperature_min_c": 12.4
       },
       {
-        "forecast_48h_precip_mm": 1.6,
-        "latitude": -39.931,
-        "longitude": 175.047,
-        "max_precip_probability_pct": 84.0,
-        "max_wind_gust_kmh": 90.4,
-        "name": "Whanganui",
-        "rainfall_watch": "none",
-        "region": "Manawatū-Whanganui",
-        "source": "Open-Meteo forecast",
-        "temperature_max_c": 14.3,
-        "temperature_min_c": 10.2
-      },
-      {
-        "forecast_48h_precip_mm": 1.6,
-        "latitude": -38.685,
-        "longitude": 176.07,
-        "max_precip_probability_pct": 100.0,
-        "max_wind_gust_kmh": 75.2,
-        "name": "Taupō",
-        "rainfall_watch": "none",
-        "region": "Waikato",
-        "source": "Open-Meteo forecast",
-        "temperature_max_c": 11.6,
-        "temperature_min_c": 6.1
-      },
-      {
-        "forecast_48h_precip_mm": 1.4,
-        "latitude": -37.687,
-        "longitude": 176.165,
-        "max_precip_probability_pct": 100.0,
-        "max_wind_gust_kmh": 69.8,
-        "name": "Tauranga",
-        "rainfall_watch": "none",
-        "region": "Bay of Plenty",
-        "source": "Open-Meteo forecast",
-        "temperature_max_c": 16.0,
-        "temperature_min_c": 9.4
-      },
-      {
-        "forecast_48h_precip_mm": 1.4,
-        "latitude": -43.532,
-        "longitude": 172.636,
-        "max_precip_probability_pct": 90.0,
-        "max_wind_gust_kmh": 65.2,
-        "name": "Christchurch",
-        "rainfall_watch": "none",
-        "region": "Canterbury",
-        "source": "Open-Meteo forecast",
-        "temperature_max_c": 14.1,
-        "temperature_min_c": 1.9
-      },
-      {
-        "forecast_48h_precip_mm": 1.0,
-        "latitude": -38.136,
-        "longitude": 176.249,
-        "max_precip_probability_pct": 76.0,
-        "max_wind_gust_kmh": 78.5,
-        "name": "Rotorua",
-        "rainfall_watch": "none",
-        "region": "Bay of Plenty",
-        "source": "Open-Meteo forecast",
-        "temperature_max_c": 13.9,
-        "temperature_min_c": 7.0
-      },
-      {
-        "forecast_48h_precip_mm": 0.6,
+        "forecast_48h_precip_mm": 1.7,
         "latitude": -41.286,
         "longitude": 174.776,
-        "max_precip_probability_pct": 65.0,
-        "max_wind_gust_kmh": 78.5,
+        "max_precip_probability_pct": 60.0,
+        "max_wind_gust_kmh": 88.6,
         "name": "Wellington",
         "rainfall_watch": "none",
         "region": "Wellington",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 15.5,
-        "temperature_min_c": 7.2
+        "temperature_max_c": 15.7,
+        "temperature_min_c": 6.7
       },
       {
-        "forecast_48h_precip_mm": 0.5,
+        "forecast_48h_precip_mm": 1.5,
+        "latitude": -37.687,
+        "longitude": 176.165,
+        "max_precip_probability_pct": 96.0,
+        "max_wind_gust_kmh": 70.9,
+        "name": "Tauranga",
+        "rainfall_watch": "none",
+        "region": "Bay of Plenty",
+        "source": "Open-Meteo forecast",
+        "temperature_max_c": 15.9,
+        "temperature_min_c": 9.5
+      },
+      {
+        "forecast_48h_precip_mm": 1.5,
+        "latitude": -38.685,
+        "longitude": 176.07,
+        "max_precip_probability_pct": 99.0,
+        "max_wind_gust_kmh": 70.2,
+        "name": "Taupō",
+        "rainfall_watch": "none",
+        "region": "Waikato",
+        "source": "Open-Meteo forecast",
+        "temperature_max_c": 11.7,
+        "temperature_min_c": 6.1
+      },
+      {
+        "forecast_48h_precip_mm": 1.3,
         "latitude": -39.493,
         "longitude": 176.912,
-        "max_precip_probability_pct": 71.0,
-        "max_wind_gust_kmh": 70.2,
+        "max_precip_probability_pct": 53.0,
+        "max_wind_gust_kmh": 76.3,
         "name": "Napier",
         "rainfall_watch": "none",
         "region": "Hawke's Bay",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 18.6,
-        "temperature_min_c": 6.9
+        "temperature_min_c": 7.2
       },
       {
-        "forecast_48h_precip_mm": 0.2,
+        "forecast_48h_precip_mm": 1.0,
+        "latitude": -38.136,
+        "longitude": 176.249,
+        "max_precip_probability_pct": 39.0,
+        "max_wind_gust_kmh": 79.6,
+        "name": "Rotorua",
+        "rainfall_watch": "none",
+        "region": "Bay of Plenty",
+        "source": "Open-Meteo forecast",
+        "temperature_max_c": 13.7,
+        "temperature_min_c": 7.1
+      },
+      {
+        "forecast_48h_precip_mm": 0.8,
         "latitude": -38.662,
         "longitude": 178.018,
-        "max_precip_probability_pct": 6.0,
-        "max_wind_gust_kmh": 75.2,
+        "max_precip_probability_pct": 20.0,
+        "max_wind_gust_kmh": 75.6,
         "name": "Gisborne",
         "rainfall_watch": "none",
         "region": "Tairāwhiti",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 17.6,
-        "temperature_min_c": 6.8
+        "temperature_max_c": 17.3,
+        "temperature_min_c": 7.3
       },
       {
         "forecast_48h_precip_mm": 0.1,
         "latitude": -41.271,
         "longitude": 173.284,
-        "max_precip_probability_pct": 45.0,
-        "max_wind_gust_kmh": 93.2,
+        "max_precip_probability_pct": 29.0,
+        "max_wind_gust_kmh": 92.9,
         "name": "Nelson",
         "rainfall_watch": "none",
         "region": "Nelson-Tasman",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 13.9,
-        "temperature_min_c": 7.3
+        "temperature_min_c": 7.0
       }
     ],
     "rainfall_watch_areas": [],
     "strongest_wind_next_48h": [
       {
-        "forecast_48h_precip_mm": 26.5,
+        "forecast_48h_precip_mm": 23.1,
         "latitude": -46.413,
         "longitude": 168.353,
         "max_precip_probability_pct": 100.0,
@@ -946,65 +1032,65 @@
         "rainfall_watch": "none",
         "region": "Southland",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 9.7,
+        "temperature_max_c": 10.4,
         "temperature_min_c": 3.8
       },
       {
         "forecast_48h_precip_mm": 0.1,
         "latitude": -41.271,
         "longitude": 173.284,
-        "max_precip_probability_pct": 45.0,
-        "max_wind_gust_kmh": 93.2,
+        "max_precip_probability_pct": 29.0,
+        "max_wind_gust_kmh": 92.9,
         "name": "Nelson",
         "rainfall_watch": "none",
         "region": "Nelson-Tasman",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 13.9,
-        "temperature_min_c": 7.3
+        "temperature_min_c": 7.0
       },
       {
-        "forecast_48h_precip_mm": 1.6,
+        "forecast_48h_precip_mm": 3.4,
         "latitude": -39.931,
         "longitude": 175.047,
-        "max_precip_probability_pct": 84.0,
+        "max_precip_probability_pct": 82.0,
         "max_wind_gust_kmh": 90.4,
         "name": "Whanganui",
         "rainfall_watch": "none",
         "region": "Manawatū-Whanganui",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 14.3,
-        "temperature_min_c": 10.2
+        "temperature_min_c": 10.3
       },
       {
-        "forecast_48h_precip_mm": 3.2,
-        "latitude": -40.356,
-        "longitude": 175.611,
-        "max_precip_probability_pct": 59.0,
-        "max_wind_gust_kmh": 85.7,
-        "name": "Palmerston North",
+        "forecast_48h_precip_mm": 1.7,
+        "latitude": -41.286,
+        "longitude": 174.776,
+        "max_precip_probability_pct": 60.0,
+        "max_wind_gust_kmh": 88.6,
+        "name": "Wellington",
         "rainfall_watch": "none",
-        "region": "Manawatū-Whanganui",
+        "region": "Wellington",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 13.9,
-        "temperature_min_c": 2.8
+        "temperature_max_c": 15.7,
+        "temperature_min_c": 6.7
       },
       {
-        "forecast_48h_precip_mm": 5.5,
+        "forecast_48h_precip_mm": 6.4,
         "latitude": -45.878,
         "longitude": 170.502,
-        "max_precip_probability_pct": 98.0,
-        "max_wind_gust_kmh": 85.3,
+        "max_precip_probability_pct": 100.0,
+        "max_wind_gust_kmh": 87.1,
         "name": "Dunedin",
         "rainfall_watch": "none",
         "region": "Otago",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 10.8,
-        "temperature_min_c": 1.6
+        "temperature_min_c": 1.7
       }
     ],
     "wettest_next_48h": [
       {
-        "forecast_48h_precip_mm": 26.5,
+        "forecast_48h_precip_mm": 23.1,
         "latitude": -46.413,
         "longitude": 168.353,
         "max_precip_probability_pct": 100.0,
@@ -1013,73 +1099,73 @@
         "rainfall_watch": "none",
         "region": "Southland",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 9.7,
+        "temperature_max_c": 10.4,
         "temperature_min_c": 3.8
       },
       {
-        "forecast_48h_precip_mm": 16.4,
+        "forecast_48h_precip_mm": 13.3,
         "latitude": -41.752,
         "longitude": 171.603,
         "max_precip_probability_pct": 100.0,
-        "max_wind_gust_kmh": 78.8,
+        "max_wind_gust_kmh": 80.3,
         "name": "Westport",
         "rainfall_watch": "none",
         "region": "West Coast",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 11.7,
-        "temperature_min_c": 8.6
+        "temperature_min_c": 8.9
       },
       {
-        "forecast_48h_precip_mm": 10.0,
+        "forecast_48h_precip_mm": 8.5,
         "latitude": -45.031,
         "longitude": 168.662,
         "max_precip_probability_pct": 100.0,
-        "max_wind_gust_kmh": 73.4,
+        "max_wind_gust_kmh": 78.1,
         "name": "Queenstown",
         "rainfall_watch": "none",
         "region": "Otago",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 7.6,
-        "temperature_min_c": 1.6
+        "temperature_max_c": 8.1,
+        "temperature_min_c": 0.3
       },
       {
-        "forecast_48h_precip_mm": 5.5,
+        "forecast_48h_precip_mm": 6.4,
         "latitude": -45.878,
         "longitude": 170.502,
-        "max_precip_probability_pct": 98.0,
-        "max_wind_gust_kmh": 85.3,
+        "max_precip_probability_pct": 100.0,
+        "max_wind_gust_kmh": 87.1,
         "name": "Dunedin",
         "rainfall_watch": "none",
         "region": "Otago",
         "source": "Open-Meteo forecast",
         "temperature_max_c": 10.8,
-        "temperature_min_c": 1.6
+        "temperature_min_c": 1.7
       },
       {
-        "forecast_48h_precip_mm": 4.1,
-        "latitude": -39.058,
-        "longitude": 174.08,
-        "max_precip_probability_pct": 98.0,
-        "max_wind_gust_kmh": 77.0,
-        "name": "New Plymouth",
-        "rainfall_watch": "none",
-        "region": "Taranaki",
-        "source": "Open-Meteo forecast",
-        "temperature_max_c": 14.7,
-        "temperature_min_c": 9.9
-      },
-      {
-        "forecast_48h_precip_mm": 3.2,
+        "forecast_48h_precip_mm": 3.7,
         "latitude": -40.356,
         "longitude": 175.611,
-        "max_precip_probability_pct": 59.0,
+        "max_precip_probability_pct": 34.0,
         "max_wind_gust_kmh": 85.7,
         "name": "Palmerston North",
         "rainfall_watch": "none",
         "region": "Manawatū-Whanganui",
         "source": "Open-Meteo forecast",
-        "temperature_max_c": 13.9,
-        "temperature_min_c": 2.8
+        "temperature_max_c": 13.8,
+        "temperature_min_c": 2.7
+      },
+      {
+        "forecast_48h_precip_mm": 3.7,
+        "latitude": -39.058,
+        "longitude": 174.08,
+        "max_precip_probability_pct": 100.0,
+        "max_wind_gust_kmh": 78.5,
+        "name": "New Plymouth",
+        "rainfall_watch": "none",
+        "region": "Taranaki",
+        "source": "Open-Meteo forecast",
+        "temperature_max_c": 14.6,
+        "temperature_min_c": 9.8
       }
     ]
   }
