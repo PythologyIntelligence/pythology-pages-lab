@@ -5,7 +5,7 @@ ROOT="$PWD"
 OUT="$ROOT/_site"
 MIRROR="$ROOT/.mirror"
 PYTHOLOGY_SOURCE="https://pythology.co.nz"
-AGRI_SOURCE="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main"
+AGRI_SOURCE="$ROOT/agri-source"
 VE_SOURCE="https://verry-elleegant-ai.vercel.app"
 
 rm -rf "$OUT" "$MIRROR"
@@ -85,10 +85,10 @@ for file in "${EARTHNET_FILES[@]}"; do
   curl -fsSL "$PYTHOLOGY_SOURCE/$file" -o "$OUT/$file" || echo "EarthNet asset unavailable: $file"
 done
 
-# Stage the Agri frontend only. Pull from the stable GitHub source instead of the
-# live Pages site so Agri can recover even when its public route is missing.
-# No production client data, access codes, feedback writes or server-side
-# endpoints are copied into this public lab.
+# Stage the vendored Agri frontend only. Keeping these files in this repository
+# removes the circular dependency on the live site and avoids private-repository
+# access from GitHub Actions. No production client data, access codes, feedback
+# writes or server-side endpoints are copied into this public lab.
 AGRI_FILES=(
   agri-portal.html
   agri-portal.css
@@ -108,8 +108,8 @@ AGRI_FILES=(
   agri-mark-livestock.js
 )
 for file in "${AGRI_FILES[@]}"; do
-  curl -fsSL "$AGRI_SOURCE/$file" -o "$OUT/$file" || {
-    echo "Required Agri frontend asset unavailable from GitHub: $file" >&2
+  cp "$AGRI_SOURCE/$file" "$OUT/$file" || {
+    echo "Required vendored Agri frontend asset unavailable: $file" >&2
     exit 1
   }
 done
