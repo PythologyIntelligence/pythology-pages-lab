@@ -74,6 +74,21 @@ const index = health.systems.findIndex((s) => s?.id === "yggdrasil");
 if (index >= 0) health.systems[index] = entry;
 else health.systems.push(entry);
 
+// Poseidon is intentionally offline for now. Keep it visible in Fleet without
+// treating an expected 404 as an outage. Once its public surface is reconnected,
+// remove this parking override and let the synthetic probe determine health again.
+const poseidonIndex = health.systems.findIndex((s) => s?.id === "poseidon");
+if (poseidonIndex >= 0) {
+  health.systems[poseidonIndex] = {
+    ...health.systems[poseidonIndex],
+    status: "unmonitored",
+    summary: "Temporarily parked from Fleet monitoring while the Poseidon public interface is offline.",
+    checkedAt: new Date().toISOString(),
+    averageLatencyMs: null,
+    checks: [],
+  };
+}
+
 const c = counts(health.systems);
 health.fleet = {
   status: c.down > 0 ? "down" : c.degraded > 0 ? "degraded" : c.operational > 0 ? "operational" : "initialising",
@@ -81,4 +96,4 @@ health.fleet = {
 };
 health.schemaVersion = Math.max(Number(health.schemaVersion || 0), 3);
 fs.writeFileSync(healthPath, `${JSON.stringify(health, null, 2)}\n`, "utf8");
-console.log(`Merged Yggdrasil into Fleet: ${status}, age=${ageMinutes ?? "?"}m`);
+console.log(`Merged Yggdrasil into Fleet: ${status}, age=${ageMinutes ?? "?"}m; Poseidon=unmonitored`);
