@@ -1,8 +1,44 @@
 {
-  "active": false,
-  "alert_count": 0,
-  "alerts": [],
-  "generated": "2026-08-31T00:38:08+00:00",
+  "active": true,
+  "alert_count": 1,
+  "alerts": [
+    {
+      "candidate": false,
+      "families": [
+        "ground deformation"
+      ],
+      "id": "53a120b2d6833ee1",
+      "kinds": [
+        "volcanic"
+      ],
+      "latitude": -29.27,
+      "longitude": -177.92,
+      "measurements": [
+        {
+          "direction": "lower",
+          "family": "ground deformation",
+          "score_sigma": -4.134146341463414,
+          "summary": "4.13σ lower vs its 30-day baseline"
+        }
+      ],
+      "name": "Raoul Island",
+      "observed_at": "2026-08-31T12:37:08+00:00",
+      "official_status": {
+        "aviation_colour_code": null,
+        "level": null
+      },
+      "research_only": true,
+      "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
+      "summary": "ground deformation: 4.13σ lower vs its 30-day baseline",
+      "suppressed_families": [
+        "ground deformation"
+      ],
+      "suppression_candidate": false,
+      "title": "Volcanic activity change — Raoul Island",
+      "volcano_id": "kermadec-islands"
+    }
+  ],
+  "generated": "2026-08-31T12:39:54+00:00",
   "research_only": true,
   "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
   "schema": "earthnet.volcano-pulse-web.v0.1"
