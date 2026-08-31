@@ -12,8 +12,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages-ui-finalize
-  cancel-in-progress: true
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   finalize:
