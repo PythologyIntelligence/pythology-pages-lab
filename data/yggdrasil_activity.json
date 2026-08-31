@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T15:30:14.894638+00:00",
+  "generatedAt": "2026-08-31T15:31:00.127239+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -19,9 +19,9 @@
   ],
   "research": {
     "candidateCount": 61,
-    "lastResearchAt": "2026-08-31T08:42:25.613916+00:00",
-    "latestTournamentSelected": 1,
-    "currentTrainingGateEligible": 1,
+    "lastResearchAt": "2026-08-31T15:30:36.799463+00:00",
+    "latestTournamentSelected": 0,
+    "currentTrainingGateEligible": 0,
     "families": [
       "EMA trend",
       "RSI mean reversion",
@@ -29,36 +29,7 @@
       "trend pullback"
     ]
   },
-  "champions": [
-    {
-      "symbol": "XAUUSD",
-      "family": "rsi_revert",
-      "strategyId": "rsi_revert-lower25-period21-upper75",
-      "params": {
-        "lower": 25.0,
-        "period": 21.0,
-        "upper": 75.0
-      },
-      "trainingGate": "eligible",
-      "train": {
-        "returnPct": 0.3458740547345851,
-        "sharpe": 1.0042383151303993,
-        "maxDrawdownPct": 0.986534314253007,
-        "trades": 30,
-        "winRatePct": 48.0
-      },
-      "test": {
-        "returnPct": 0.07665309543072318,
-        "sharpe": 0.5789996651138991,
-        "maxDrawdownPct": 0.722200369548287,
-        "trades": 22,
-        "winRatePct": 44.61538461538462
-      },
-      "mcP05ReturnPct": -0.7533293667252182,
-      "score": 0.49477916464179494,
-      "selectedAt": "2026-08-31T08:42:23.254520+00:00"
-    }
-  ],
+  "champions": [],
   "tyr": {
     "riskPerTradePct": 0.25,
     "maxOpenRiskPct": 0.75,
@@ -150,6 +121,111 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-08-31T15:30:36.799463+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for NAS100",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-31T15:30:36.799463+00:00",
+      "type": "norns",
+      "event": "tournament_completed",
+      "title": "Norns tournament completed",
+      "detail": "0 champion(s) survived all gates."
+    },
+    {
+      "ts": "2026-08-31T15:30:36.783822+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for NAS100",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-31T15:30:28.380460+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-31T15:30:28.380460+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for XAUUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-31T15:30:28.302737+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-31T15:30:28.210012+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-31T15:30:28.068523+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-31T15:30:27.990677+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-31T15:30:27.898643+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for XAUUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-08-31T15:30:27.802734+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for XAUUSD",
+      "detail": "6 candidates passed the training gate; 55 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-31T15:30:21.786876+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for USDJPY",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-08-31T15:30:21.772962+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for USDJPY",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-31T15:30:15.050520+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for GBPUSD",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-08-31T15:30:15.050520+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for GBPUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
       "ts": "2026-08-31T15:30:08.844508+00:00",
       "type": "norns",
       "event": "no_champion",
@@ -211,112 +287,7 @@
       "event": "entry_blocked",
       "title": "T\u00fdr blocked BUY XAUUSD",
       "detail": "symbol already has a Yggdrasil position"
-    },
-    {
-      "ts": "2026-08-31T14:10:18.638193+00:00",
-      "type": "tyr",
-      "event": "entry_blocked",
-      "title": "T\u00fdr blocked BUY XAUUSD",
-      "detail": "symbol already has a Yggdrasil position"
-    },
-    {
-      "ts": "2026-08-31T14:05:18.462363+00:00",
-      "type": "tyr",
-      "event": "entry_blocked",
-      "title": "T\u00fdr blocked BUY XAUUSD",
-      "detail": "symbol already has a Yggdrasil position"
-    },
-    {
-      "ts": "2026-08-31T14:05:08.556253+00:00",
-      "type": "bifrost",
-      "event": "entry_executed",
-      "title": "Bifr\u00f6st executed BUY XAUUSD",
-      "detail": "rsi_revert-lower25-period21-upper75 \u00b7 broker-side stop and target attached \u00b7 0.603% risk budget"
-    },
-    {
-      "ts": "2026-08-31T14:04:28.437090+00:00",
-      "type": "tyr",
-      "event": "entry_blocked",
-      "title": "T\u00fdr blocked BUY XAUUSD",
-      "detail": "symbol cooldown active"
-    },
-    {
-      "ts": "2026-08-31T13:59:28.225144+00:00",
-      "type": "tyr",
-      "event": "entry_blocked",
-      "title": "T\u00fdr blocked BUY XAUUSD",
-      "detail": "symbol cooldown active"
-    },
-    {
-      "ts": "2026-08-31T13:55:17.935648+00:00",
-      "type": "tyr",
-      "event": "entry_blocked",
-      "title": "T\u00fdr blocked BUY XAUUSD",
-      "detail": "symbol already has a Yggdrasil position"
-    },
-    {
-      "ts": "2026-08-31T13:50:17.781422+00:00",
-      "type": "tyr",
-      "event": "entry_blocked",
-      "title": "T\u00fdr blocked BUY XAUUSD",
-      "detail": "symbol already has a Yggdrasil position"
-    },
-    {
-      "ts": "2026-08-31T13:50:07.966718+00:00",
-      "type": "bifrost",
-      "event": "entry_executed",
-      "title": "Bifr\u00f6st executed BUY XAUUSD",
-      "detail": "rsi_revert-lower25-period21-upper75 \u00b7 broker-side stop and target attached \u00b7 0.518% risk budget"
-    },
-    {
-      "ts": "2026-08-31T13:30:06.758579+00:00",
-      "type": "tyr",
-      "event": "session_started",
-      "title": "T\u00fdr armed a new session",
-      "detail": "Session limits and counters were reset for the authorised trading window."
-    },
-    {
-      "ts": "2026-08-31T08:42:25.613916+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for NAS100",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-08-31T08:42:25.613916+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for NAS100",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-08-31T08:42:25.613916+00:00",
-      "type": "norns",
-      "event": "tournament_completed",
-      "title": "Norns tournament completed",
-      "detail": "1 champion(s) survived all gates."
-    },
-    {
-      "ts": "2026-08-31T08:42:23.254520+00:00",
-      "type": "norns",
-      "event": "champion_selected",
-      "title": "XAUUSD champion reached Valhalla",
-      "detail": "rsi_revert-lower25-period21-upper75 \u00b7 test Sharpe 0.579 \u00b7 test return 0.077%"
-    },
-    {
-      "ts": "2026-08-31T08:42:23.176975+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-31T08:42:23.144585+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-08-31T15:30:29.117349+00:00"
+  "publishedAt": "2026-08-31T15:31:06.987626+00:00"
 }
