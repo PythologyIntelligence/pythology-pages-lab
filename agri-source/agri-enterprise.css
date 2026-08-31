@@ -1,0 +1,180 @@
+.weather-refresh-banner {
+  margin: 0 0 14px;
+  padding: 11px 14px;
+  border: 1px solid rgba(243, 189, 85, .38);
+  border-radius: 10px;
+  background: rgba(243, 189, 85, .09);
+  color: #f6d78d;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+.weather-refresh-banner[hidden],
+#farm-map-section[hidden],
+#soil-intelligence-section[hidden] {
+  display: none;
+}
+
+.soil-source-badge {
+  display: inline-flex;
+  margin-left: 7px;
+  padding: 3px 7px;
+  border: 1px solid rgba(84, 207, 156, .3);
+  border-radius: 999px;
+  background: rgba(84, 207, 156, .08);
+  color: #80d8b3;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.soil-intelligence {
+  display: grid;
+  gap: 10px;
+}
+
+.soil-card {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .025);
+}
+
+.soil-card.soil-dry {
+  border-color: rgba(243, 189, 85, .24);
+}
+
+.soil-card.soil-wet {
+  border-color: rgba(79, 164, 224, .28);
+}
+
+.soil-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.soil-card-head strong {
+  color: #eef4f6;
+  font-size: 14px;
+}
+
+.soil-card-head span {
+  color: #8fa1aa;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.soil-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.soil-metrics div {
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+  border: 1px solid rgba(255, 255, 255, .055);
+  border-radius: 8px;
+  background: rgba(3, 13, 24, .22);
+}
+
+.soil-metrics span {
+  color: #71858f;
+  font-size: 9px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+}
+
+.soil-metrics strong {
+  color: #e7eef1;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.soil-source-note {
+  margin: 1px 0 0;
+  color: #71858f;
+  font-size: 10px;
+  line-height: 1.55;
+}
+
+.soil-source-note strong {
+  color: #9caeb7;
+}
+
+.farm-map-context {
+  display: grid;
+  gap: 10px;
+}
+
+.farm-context-card {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, .08);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, .025);
+}
+
+.farm-context-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 9px;
+}
+
+.farm-context-head strong {
+  font-size: 14px;
+}
+
+.farm-context-head span,
+.farm-context-note span {
+  color: #8fa1aa;
+  font-size: 11px;
+}
+
+.farm-context-note {
+  display: grid;
+  gap: 3px;
+  margin: 0 0 9px;
+}
+
+.farm-context-note strong {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+
+.paddock-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.paddock-list span {
+  padding: 5px 7px;
+  border: 1px solid rgba(255, 255, 255, .07);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, .035);
+  color: #9caeb7;
+  font-size: 10px;
+  line-height: 1.25;
+}
+
+.paddock-list strong {
+  color: #e7eef1;
+  font-weight: 600;
+}
+
+@media (max-width: 520px) {
+  .soil-metrics {
+    grid-template-columns: 1fr;
+  }
+}
