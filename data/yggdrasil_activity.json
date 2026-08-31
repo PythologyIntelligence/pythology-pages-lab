@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T14:14:16.366602+00:00",
+  "generatedAt": "2026-08-31T14:15:31.470095+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -139,6 +139,13 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-31T14:15:18.934934+00:00",
+      "type": "tyr",
+      "event": "entry_blocked",
+      "title": "T\u00fdr blocked BUY XAUUSD",
+      "detail": "symbol already has a Yggdrasil position"
+    },
     {
       "ts": "2026-08-31T14:10:18.638193+00:00",
       "type": "tyr",
@@ -299,14 +306,7 @@
       "event": "tournament_started",
       "title": "Norns tournament started",
       "detail": "61 candidates entered research validation."
-    },
-    {
-      "ts": "2026-08-31T02:42:14.851045+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for NAS100",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-08-31T14:14:29.279912+00:00"
+  "publishedAt": "2026-08-31T14:15:46.522873+00:00"
 }
