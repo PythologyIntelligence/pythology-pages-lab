@@ -292,6 +292,9 @@ PUBLIC_OVERRIDES=(
   future.css
   future.html
   cerberus.html
+  sentinel-command.html
+  sentinel-command.css
+  sentinel-command.js
 )
 for file in "${PUBLIC_OVERRIDES[@]}"; do
   if [[ ! -f "$ROOT/$file" ]]; then
