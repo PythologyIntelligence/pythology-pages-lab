@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T13:54:43.003652+00:00",
+  "generatedAt": "2026-08-31T13:55:28.173880+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 1,
-    "openRiskPct": 0.524,
+    "openRiskPct": 0.525,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -129,6 +129,13 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-08-31T13:55:17.935648+00:00",
+      "type": "tyr",
+      "event": "entry_blocked",
+      "title": "T\u00fdr blocked BUY XAUUSD",
+      "detail": "symbol already has a Yggdrasil position"
+    },
     {
       "ts": "2026-08-31T13:50:17.781422+00:00",
       "type": "tyr",
@@ -289,14 +296,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for XAUUSD",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-08-31T02:42:12.555331+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for XAUUSD",
-      "detail": "6 candidates passed the training gate; 55 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-08-31T13:54:44.691692+00:00"
+  "publishedAt": "2026-08-31T13:55:36.681561+00:00"
 }
