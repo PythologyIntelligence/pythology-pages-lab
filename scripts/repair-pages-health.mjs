@@ -3,6 +3,8 @@ import path from "node:path";
 
 const FILE = path.resolve("data/system-health.json");
 const PAGES = "https://pythologyintelligence.github.io/pythology-pages-lab";
+const CERBERUS = "https://cerberus.pythology.co.nz";
+const VERRY = "https://verry.pythology.co.nz";
 const TIMEOUT_MS = 12_000;
 const EARTHNET_STALE_MS = 8 * 60 * 60 * 1000;
 
@@ -21,7 +23,7 @@ async function probe(id, label, url, json = false) {
     if (json) await r.json();
     return { id, label, status: "operational", latencyMs, httpStatus: r.status, checkedAt: nowIso() };
   } catch (e) {
-    return { id, label, status: "degraded", checkedAt: nowIso(), note: e?.name === "AbortError" ? "Pages probe timed out." : String(e).slice(0, 120) };
+    return { id, label, status: "degraded", checkedAt: nowIso(), note: e?.name === "AbortError" ? "Probe timed out." : String(e).slice(0, 120) };
   } finally { clearTimeout(timer); }
 }
 function systemStatus(checks) {
@@ -51,12 +53,28 @@ function recount(health) {
 const health = readJson(FILE);
 if (!health || !Array.isArray(health.systems)) process.exit(0);
 
-const [agriApp, agriData, poseidon, sentinelApp, sentinelRuntime] = await Promise.all([
+const [
+  agriApp,
+  agriData,
+  poseidon,
+  sentinelApp,
+  sentinelRuntime,
+  cerberusApp,
+  cerberusHealth,
+  cerberusSnapshot,
+  verryApp,
+  verryHealth,
+] = await Promise.all([
   probe("agri-app", "Agri Pages interface", `${PAGES}/agri-portal.html`),
   probe("agri-data", "Agri safe Pages data", `${PAGES}/data/agri_lab.json`, true),
   probe("poseidon-app", "Poseidon Pages marine map", `${PAGES}/marine-map.html`),
   probe("sentinel-app", "Sentinel Pages command interface", `${PAGES}/sentinel-command.html`),
   probe("sentinel-runtime", "Sentinel Pages runtime", `${PAGES}/sentinel-command.js`),
+  probe("cerberus-app", "Cerberus VPS interface", `${CERBERUS}/`),
+  probe("cerberus-health", "Cerberus VPS health", `${CERBERUS}/api/health`, true),
+  probe("cerberus-snapshot", "Cerberus live snapshot", `${CERBERUS}/data/cerberus_latest.json`, true),
+  probe("ve-app", "Verry Elleegant VPS interface", `${VERRY}/`),
+  probe("ve-health", "Verry Elleegant VPS health", `${VERRY}/api/health`, true),
 ]);
 
 for (const [id, name, checks, okSummary, badSummary] of [
@@ -67,6 +85,45 @@ for (const [id, name, checks, okSummary, badSummary] of [
   const status = systemStatus(checks);
   replace(health, id, { name, status, summary: status === "operational" ? okSummary : badSummary, checkedAt: nowIso(), averageLatencyMs: average(checks), checks });
 }
+
+// Cerberus now lives on the VPS. Judge core service health from the service itself,
+// not from the retired Pages path or third-party providers that may block GitHub runners.
+const cerberusChecks = [cerberusApp, cerberusHealth, cerberusSnapshot];
+const cerberusStatus = systemStatus(cerberusChecks);
+replace(health, "cerberus", {
+  name: "Cerberus",
+  status: cerberusStatus,
+  summary: cerberusStatus === "operational"
+    ? "VPS interface, health endpoint and live Cerberus snapshot are responding."
+    : cerberusStatus === "down"
+      ? "Cerberus VPS could not be reached by the synthetic monitor."
+      : "Cerberus VPS is reachable, but one live service surface needs attention.",
+  checkedAt: nowIso(),
+  averageLatencyMs: average(cerberusChecks),
+  providersOperational: null,
+  providersAvailable: null,
+  providersTotal: null,
+  snapshotAgeMinutes: null,
+  snapshotUpdatedAt: null,
+  instrumentCount: null,
+  checks: cerberusChecks,
+});
+
+// Verry Elleegant moved from Vercel to the VPS/Caddy route.
+const verryChecks = [verryApp, verryHealth];
+const verryStatus = systemStatus(verryChecks);
+replace(health, "verry-elleegant", {
+  name: "Verry Elleegant",
+  status: verryStatus,
+  summary: verryStatus === "operational"
+    ? "VPS race-intelligence interface and health endpoint are responding."
+    : verryStatus === "down"
+      ? "Verry Elleegant's VPS interface could not be reached by the synthetic monitor."
+      : "Verry Elleegant's VPS interface or health endpoint needs attention.",
+  checkedAt: nowIso(),
+  averageLatencyMs: average(verryChecks),
+  checks: verryChecks,
+});
 
 // Prefer the safe EarthNet status relayed into this repository over the old-host
 // transport embedded in the synthetic checker. This file contains operational
@@ -97,4 +154,4 @@ if (earth) {
 recount(health);
 health.schemaVersion = Math.max(Number(health.schemaVersion || 0), 4);
 fs.writeFileSync(FILE, `${JSON.stringify(health, null, 2)}\n`, "utf8");
-console.log(`Repaired Pages-backed Fleet health: Agri=${systemStatus([agriApp, agriData])}, Poseidon=${systemStatus([poseidon])}, Sentinel=${systemStatus([sentinelApp, sentinelRuntime])}`);
+console.log(`Repaired Fleet health: Cerberus=${cerberusStatus}, Verry=${verryStatus}, Agri=${systemStatus([agriApp, agriData])}, Poseidon=${systemStatus([poseidon])}, Sentinel=${systemStatus([sentinelApp, sentinelRuntime])}`);
