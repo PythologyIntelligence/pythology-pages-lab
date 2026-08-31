@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T13:53:57.815638+00:00",
+  "generatedAt": "2026-08-31T13:54:43.003652+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 1,
-    "openRiskPct": 0.525,
+    "openRiskPct": 0.524,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -298,5 +298,5 @@
       "detail": "6 candidates passed the training gate; 55 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-08-31T13:54:06.056228+00:00"
+  "publishedAt": "2026-08-31T13:54:44.691692+00:00"
 }
