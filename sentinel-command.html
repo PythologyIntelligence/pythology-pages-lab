@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
+  <meta name="theme-color" content="#020b10">
+  <title>Sentinel // Pythology Command</title>
+  <link rel="stylesheet" href="sentinel-command.css">
+  <script defer src="sentinel-command.js"></script>
+</head>
+<body>
+  <div class="scanline" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="identity">
+      <span class="glyph">⬡</span>
+      <div><div class="eyebrow">PYTHOLOGY // COMMAND INTELLIGENCE</div><h1>SENTINEL</h1></div>
+    </div>
+    <div class="top-status">
+      <span class="link-dot" id="link-dot"></span>
+      <b id="link-state">ESTABLISHING</b>
+      <span id="clock">--:--:--</span>
+      <button id="refresh-button" type="button">↻ REFRESH</button>
+    </div>
+  </header>
+
+  <main class="command-grid">
+    <section class="panel hero">
+      <div class="core-visual" aria-hidden="true">
+        <div class="ring ring-1"></div><div class="ring ring-2"></div><div class="ring ring-3"></div><div class="core-dot"></div>
+      </div>
+      <div class="hero-copy">
+        <div class="eyebrow">SENTINEL // OPERATING PICTURE</div>
+        <h2 id="core-state">ASSESSING</h2>
+        <p id="core-summary">Establishing links to the Pythology fleet and planetary intelligence.</p>
+        <div class="hero-metrics">
+          <div><strong id="systems-healthy">—</strong><span>operational</span></div>
+          <div><strong id="systems-attention">—</strong><span>attention</span></div>
+          <div><strong id="last-refresh">—</strong><span>last refresh</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel fleet-panel">
+      <div class="panel-head"><div><div class="eyebrow">OPERATIONS / 01</div><h3>Pythology Fleet</h3></div><span class="chip" id="fleet-chip">LINKING</span></div>
+      <div class="system-grid" id="system-grid"></div>
+      <p class="micro">Public-safe telemetry only. Sentinel's VPS brain remains private on the server and is protected by its Windows watchdog.</p>
+    </section>
+
+    <section class="panel earth-panel">
+      <div class="panel-head"><div><div class="eyebrow">EARTHNET / 02</div><h3>Planetary Pulse</h3></div><span class="chip" id="earth-chip">LINKING</span></div>
+      <div class="big-stat-row">
+        <div><strong id="earth-events">—</strong><span>events</span></div>
+        <div><strong id="earth-engines">—</strong><span>engines</span></div>
+        <div><strong id="earth-failures">—</strong><span>failures</span></div>
+        <div><strong id="earth-age">—</strong><span>min old</span></div>
+      </div>
+      <div class="brief"><span>SENTINEL INTERPRETATION</span><p id="earth-summary">Waiting for EarthNet's latest production cycle.</p></div>
+      <div id="earth-detail" class="detail-stream"></div>
+    </section>
+
+    <section class="panel prom-panel">
+      <div class="panel-head"><div><div class="eyebrow">PROMETHEUS / 03</div><h3>Foresight Ledger</h3></div><span class="chip" id="prom-chip">LINKING</span></div>
+      <div class="big-stat-row">
+        <div><strong id="prom-open">—</strong><span>open</span></div>
+        <div><strong id="prom-resolved">—</strong><span>resolved</span></div>
+        <div><strong id="prom-observed">—</strong><span>observed</span></div>
+        <div><strong id="prom-brier">—</strong><span>Brier</span></div>
+      </div>
+      <div class="brief"><span>ACCOUNTABILITY</span><p id="prom-summary">Prometheus commits before reality answers, then keeps the misses on the record.</p></div>
+    </section>
+
+    <section class="panel command-panel">
+      <div class="panel-head"><div><div class="eyebrow">SENTINEL / 04</div><h3>Command Channel</h3></div><span class="chip good">READY</span></div>
+      <div class="conversation" id="conversation" aria-live="polite">
+        <div class="message sentinel"><span>SENTINEL</span><p>Command centre restored. Ask me for a fleet status, EarthNet status, Prometheus status, or what needs attention.</p></div>
+      </div>
+      <form id="command-form" class="command-bar">
+        <input id="command-input" autocomplete="off" placeholder="Ask Sentinel about the command picture…">
+        <button type="submit">SEND ↗</button>
+      </form>
+      <div class="quick-commands">
+        <button type="button" data-command="status report">STATUS REPORT</button>
+        <button type="button" data-command="earthnet status">EARTHNET</button>
+        <button type="button" data-command="prometheus status">PROMETHEUS</button>
+        <button type="button" data-command="what needs attention">ATTENTION</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>SENTINEL COMMAND // PUBLIC-SAFE CONTROL SURFACE</span>
+    <span>MONITOR · INTERPRET · DIAGNOSE</span>
+  </footer>
+</body>
+</html>
