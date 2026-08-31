@@ -9,6 +9,9 @@ on:
       - "scripts/repair-pages-health.mjs"
       - "scripts/merge-yggdrasil-health.mjs"
       - "monitor/**"
+      - "sentinel-command.html"
+      - "sentinel-command.css"
+      - "sentinel-command.js"
       - ".github/workflows/system-health.yml"
   schedule:
     # Synthetic provider checks hourly, offset from the top of the hour to avoid congestion.
