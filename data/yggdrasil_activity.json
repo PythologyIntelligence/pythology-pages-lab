@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-08-31T14:05:44.949323+00:00",
+  "generatedAt": "2026-08-31T14:07:00.244860+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -81,7 +81,7 @@
     "mt5Connected": true,
     "positions": 1,
     "tradesThisSession": 2,
-    "openRiskPct": 0.6,
+    "openRiskPct": 0.601,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
@@ -308,5 +308,5 @@
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-08-31T14:06:00.677004+00:00"
+  "publishedAt": "2026-08-31T14:07:03.823022+00:00"
 }
