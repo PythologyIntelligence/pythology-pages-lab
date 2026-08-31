@@ -1,16 +1,75 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.3331,
-    "calibrated_forecast_count": 0,
-    "confirmed_count": 1,
-    "hit_rate": 0.25,
-    "not_observed_count": 3,
-    "resolved_count": 4
+    "brier_score": 0.21442,
+    "calibrated_forecast_count": 12,
+    "confirmed_count": 9,
+    "hit_rate": 0.273,
+    "not_observed_count": 24,
+    "resolved_count": 33
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-08-31T20:15:07+00:00",
+  "generated_at": "2026-08-31T22:17:18+00:00",
   "history": [
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-29T22:15:39+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.425,
+      "forecast_id": "7b594e8bf0b9c2ac85c9d211",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.180625,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Oklahoma (Tornado Alley)",
+      "resolved_at": "2026-08-31T22:17:18+00:00",
+      "source_families": [
+        "NASA EONET",
+        "Open-Meteo"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "e6bb549b717f9214",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Oklahoma (Tornado Alley)",
+      "valid_until": "2026-08-31T22:15:39+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-29T22:15:39+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.56,
+      "forecast_id": "3a93c6cce4ff721c9232a8e7",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.3136,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-08-31T04:14:18+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "3a5f8c3024244be0",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-08-30T22:15:39+00:00"
+    },
     {
       "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
       "calibrated": false,
@@ -70,35 +129,6 @@
       "valid_until": "2026-08-30T22:15:39+00:00"
     },
     {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": false,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "live_validation_uncalibrated",
-      "created_at": "2026-08-29T22:15:39+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.56,
-      "forecast_id": "3a93c6cce4ff721c9232a8e7",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": {
-        "brier_component": 0.3136,
-        "matched_titles": [],
-        "state": "not_observed"
-      },
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Sahel Region",
-      "resolved_at": "2026-08-31T04:14:18+00:00",
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "resolved",
-      "target_event_id": "3a5f8c3024244be0",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Sahel Region",
-      "valid_until": "2026-08-30T22:15:39+00:00"
-    },
-    {
       "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
       "calibrated": false,
       "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
@@ -128,6 +158,846 @@
       "target_event_type": "volcanic_alert",
       "target_title": "White Island — Alert Level 2",
       "valid_until": "2026-09-01T22:15:39+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-25T09:02:29+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.381,
+      "forecast_id": "80bb74ce1397bc6fecb0697c",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.145161,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-08-26T09:04:29+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "66bb93aad0510a7b",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-08-26T09:02:29+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-25T09:02:29+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "fa2b77a135965bb0f6df5355",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-08-26T09:04:29+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "a359f43b9712ca73",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-08-26T09:02:29+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-25T01:54:29+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "654146bbb58058c5a91eb34a",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Oklahoma (Tornado Alley)",
+      "resolved_at": "2026-08-26T02:01:51+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "872866d6a699c1e7",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Oklahoma (Tornado Alley)",
+      "valid_until": "2026-08-26T01:54:29+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-25T01:54:29+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "6f7f045927ce782db96addf6",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Rome, Italy",
+      "resolved_at": "2026-08-26T02:01:51+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "e55cb49256f98ea5",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Rome, Italy",
+      "valid_until": "2026-08-26T01:54:29+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-25T16:57:46+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.534,
+      "forecast_id": "d5f61c07deb31c1c2525c297",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.217156,
+        "matched_titles": [
+          "Medical heat stress — Athens, Greece"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Athens, Greece",
+      "resolved_at": "2026-08-26T02:01:51+00:00",
+      "source_families": [
+        "GDACS",
+        "Open-Meteo",
+        "Open-Meteo + infrastructure model"
+      ],
+      "source_independence_count": 3,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "0d36cd5ccda1adb7",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Athens, Greece",
+      "valid_until": "2026-08-27T16:57:46+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-24T01:59:19+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "eaa6e979e23c0ea2c096726c",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Tokyo, Japan",
+      "resolved_at": "2026-08-25T09:02:29+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "3729dcc53891f96a",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Tokyo, Japan",
+      "valid_until": "2026-08-25T01:59:19+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-22T21:10:17+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.455,
+      "forecast_id": "d29e829b6554865c080154c1",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.207025,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "California (Central Valley)",
+      "resolved_at": "2026-08-25T01:54:29+00:00",
+      "source_families": [
+        "NASA EONET",
+        "Open-Meteo"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "a174c866dfbd671a",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — California (Central Valley)",
+      "valid_until": "2026-08-24T21:10:17+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-23T03:26:25+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.381,
+      "forecast_id": "20163aa345b56dae3625b9df",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.145161,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-08-24T09:06:19+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "a5a22aebca36b681",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-08-24T03:26:25+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-23T03:26:25+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "77039b62c54179027b886d6e",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-08-24T09:06:19+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "21cd5b40db9e8033",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-08-24T03:26:25+00:00"
+    },
+    {
+      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-24T01:59:19+00:00",
+      "domain": "volcanic",
+      "forecast_confidence": 0.59,
+      "forecast_id": "517c15bfb1aa43efdd94d179",
+      "forecast_type": "official_volcanic_unrest_continuation",
+      "outcome": {
+        "brier_component": 0.1681,
+        "matched_titles": [
+          "White Island — Alert Level 2"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
+      "region": "White Island",
+      "resolved_at": "2026-08-24T09:06:19+00:00",
+      "source_families": [
+        "GeoNet NZ"
+      ],
+      "source_independence_count": 1,
+      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "status": "resolved",
+      "target_event_id": "geonet-volcano-whiteisland",
+      "target_event_type": "volcanic_alert",
+      "target_title": "White Island — Alert Level 2",
+      "valid_until": "2026-08-27T01:59:19+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-23T16:45:06+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.463,
+      "forecast_id": "4691255962ba08ded21abc21",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.288369,
+        "matched_titles": [
+          "Medical heat stress — Athens, Greece"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Athens, Greece",
+      "resolved_at": "2026-08-24T01:59:19+00:00",
+      "source_families": [
+        "GDACS",
+        "Open-Meteo",
+        "Open-Meteo + infrastructure model"
+      ],
+      "source_independence_count": 3,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "b2eba040e202bcda",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Athens, Greece",
+      "valid_until": "2026-08-25T16:45:06+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-21T07:41:19+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.417,
+      "forecast_id": "66203d5a1aed69aa8c7ea665",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.173889,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-08-23T08:50:33+00:00",
+      "source_families": [
+        "NASA EONET",
+        "Open-Meteo"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "e3f4e88ed9f1c5fa",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Texas (Gulf Coast)",
+      "valid_until": "2026-08-23T07:41:19+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-21T07:41:19+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.471,
+      "forecast_id": "ef708472adef7e09bc937fdc",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.221841,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Oklahoma (Tornado Alley)",
+      "resolved_at": "2026-08-23T08:50:33+00:00",
+      "source_families": [
+        "NASA EONET",
+        "Open-Meteo"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "e435605e91cdb624",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Oklahoma (Tornado Alley)",
+      "valid_until": "2026-08-23T07:41:19+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-21T16:53:36+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "c2fce0d72cfe365b80b4bc97",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Rome, Italy",
+      "resolved_at": "2026-08-22T19:21:25+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "20deff3b062d9ca5",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Rome, Italy",
+      "valid_until": "2026-08-22T16:53:36+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-21T07:41:19+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.381,
+      "forecast_id": "3b7801555a80aa8fbb64552d",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.145161,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-08-22T08:50:15+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "975cee7d9c75b6c4",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-08-22T07:41:19+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-21T07:41:19+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "b37d99bcce574178e22bcd98",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-08-22T08:50:15+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "3365f03656955f89",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-08-22T07:41:19+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-21T16:53:36+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.468,
+      "forecast_id": "6d95a987625e0617e6d2deb9",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.283024,
+        "matched_titles": [
+          "Medical heat stress — Athens, Greece"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Athens, Greece",
+      "resolved_at": "2026-08-22T01:52:23+00:00",
+      "source_families": [
+        "GDACS",
+        "Open-Meteo",
+        "Open-Meteo + infrastructure model"
+      ],
+      "source_independence_count": 3,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "c199a59e94976e6e",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Athens, Greece",
+      "valid_until": "2026-08-23T16:53:36+00:00"
+    },
+    {
+      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-21T07:41:19+00:00",
+      "domain": "volcanic",
+      "forecast_confidence": 0.55,
+      "forecast_id": "3ef2b1a54f895181c3c5a5b8",
+      "forecast_type": "official_volcanic_unrest_continuation",
+      "outcome": {
+        "brier_component": 0.2025,
+        "matched_titles": [
+          "White Island — Alert Level 2"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
+      "region": "White Island",
+      "resolved_at": "2026-08-21T16:53:36+00:00",
+      "source_families": [
+        "GeoNet NZ"
+      ],
+      "source_independence_count": 1,
+      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "status": "resolved",
+      "target_event_id": "geonet-volcano-whiteisland",
+      "target_event_type": "volcanic_alert",
+      "target_title": "White Island — Alert Level 2",
+      "valid_until": "2026-08-24T07:41:19+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-17T09:03:33+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.425,
+      "forecast_id": "5e8a533fe819c9fec3ecce88",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.180625,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "California (Central Valley)",
+      "resolved_at": "2026-08-21T07:41:19+00:00",
+      "source_families": [
+        "NASA EONET",
+        "Open-Meteo"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "2c3da58b555108aa",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — California (Central Valley)",
+      "valid_until": "2026-08-19T09:03:33+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-18T01:52:51+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.494,
+      "forecast_id": "22d8ba858e8f018e8ebaa81f",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.244036,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-08-19T01:55:13+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "34d2082a789f0aa0",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-08-19T01:52:51+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-18T01:52:51+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.452,
+      "forecast_id": "5234d6f49418e2e922e2f15c",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.204304,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-08-19T01:55:13+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "22c50b98d7a711fb",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-08-19T01:52:51+00:00"
+    },
+    {
+      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-18T08:55:46+00:00",
+      "domain": "volcanic",
+      "forecast_confidence": 0.517,
+      "forecast_id": "c4fc75f9a30fc65ef9d9c3e8",
+      "forecast_type": "official_volcanic_unrest_continuation",
+      "outcome": {
+        "brier_component": 0.233289,
+        "matched_titles": [
+          "White Island — Alert Level 2"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
+      "region": "White Island",
+      "resolved_at": "2026-08-18T16:50:58+00:00",
+      "source_families": [
+        "GeoNet NZ"
+      ],
+      "source_independence_count": 1,
+      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "status": "resolved",
+      "target_event_id": "geonet-volcano-whiteisland",
+      "target_event_type": "volcanic_alert",
+      "target_title": "White Island — Alert Level 2",
+      "valid_until": "2026-08-21T08:55:46+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-18T01:52:51+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.481,
+      "forecast_id": "76f05edc136041acf326d7df",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.269361,
+        "matched_titles": [
+          "Medical heat stress — Madrid, Spain"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Madrid, Spain",
+      "resolved_at": "2026-08-18T08:55:46+00:00",
+      "source_families": [
+        "Open-Meteo",
+        "Open-Meteo + infrastructure model"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "68e31dc7522c1a27",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Madrid, Spain",
+      "valid_until": "2026-08-20T01:52:51+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-16T01:14:06+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.425,
+      "forecast_id": "79fa6213dc974c187ff97895",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.180625,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Oklahoma (Tornado Alley)",
+      "resolved_at": "2026-08-18T01:52:51+00:00",
+      "source_families": [
+        "NASA EONET",
+        "Open-Meteo"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "b7dde252a4b6b148",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Oklahoma (Tornado Alley)",
+      "valid_until": "2026-08-18T01:14:06+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-16T01:14:06+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.56,
+      "forecast_id": "ab013c2381839a3b8a0bd771",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.3136,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-08-17T01:57:15+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "cb9c6f74832c7cfe",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-08-17T01:14:06+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-16T01:14:06+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.56,
+      "forecast_id": "cf5c58e8520b5fbedac63d1a",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.3136,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Rome, Italy",
+      "resolved_at": "2026-08-17T01:57:15+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "aaebbc6b1f387e86",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Rome, Italy",
+      "valid_until": "2026-08-17T01:14:06+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-16T01:14:06+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.56,
+      "forecast_id": "d3c2cd4aa9a430b9f04bb17a",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.3136,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-08-17T01:57:15+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "aec3a95e5b8c8682",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-08-17T01:14:06+00:00"
+    },
+    {
+      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-08-16T01:14:06+00:00",
+      "domain": "volcanic",
+      "forecast_confidence": 0.5,
+      "forecast_id": "95a7501d5204a5be8c391224",
+      "forecast_type": "official_volcanic_unrest_continuation",
+      "outcome": {
+        "brier_component": 0.25,
+        "matched_titles": [
+          "White Island — Alert Level 2"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
+      "region": "White Island",
+      "resolved_at": "2026-08-16T08:49:44+00:00",
+      "source_families": [
+        "GeoNet NZ"
+      ],
+      "source_independence_count": 1,
+      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "status": "resolved",
+      "target_event_id": "geonet-volcano-whiteisland",
+      "target_event_type": "volcanic_alert",
+      "target_title": "White Island — Alert Level 2",
+      "valid_until": "2026-08-19T01:14:06+00:00"
     }
   ],
   "integrity": {
@@ -138,30 +1008,29 @@
   "mode": "live_validation",
   "open": [
     {
-      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
-      "calibrated": false,
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
       "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "live_validation_uncalibrated",
-      "created_at": "2026-08-29T22:15:39+00:00",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-08-31T22:17:18+00:00",
       "domain": "atmosphere",
-      "forecast_confidence": 0.425,
-      "forecast_id": "7b594e8bf0b9c2ac85c9d211",
-      "forecast_type": "heat_to_infrastructure",
+      "forecast_confidence": 0.381,
+      "forecast_id": "70cad4918cb7937f1f2ad9c7",
+      "forecast_type": "convective_to_severe_weather",
       "outcome": null,
-      "predicted_outcome": "infrastructure_pressure",
-      "region": "Oklahoma (Tornado Alley)",
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
       "resolved_at": null,
       "source_families": [
-        "NASA EONET",
         "Open-Meteo"
       ],
-      "source_independence_count": 2,
-      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
       "status": "open",
-      "target_event_id": "e6bb549b717f9214",
-      "target_event_type": "heat_risk",
-      "target_title": "Heat risk — Oklahoma (Tornado Alley)",
-      "valid_until": "2026-08-31T22:15:39+00:00"
+      "target_event_id": "e1f2a7afdbd5dd39",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-09-01T22:17:18+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
