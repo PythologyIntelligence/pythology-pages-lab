@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-01T13:02:07.317485+00:00",
+  "generatedAt": "2026-09-01T13:30:08.920198+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -78,14 +78,24 @@
   },
   "live": {
     "mt5Connected": true,
-    "positions": 0,
-    "tradesThisSession": 2,
-    "openRiskPct": 0.0,
+    "positions": 1,
+    "tradesThisSession": 1,
+    "openRiskPct": 0.751,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
   },
   "recentTrades": [
+    {
+      "ts": "2026-09-01T13:30:07.888937+00:00",
+      "kind": "ENTRY",
+      "symbol": "XAUUSD",
+      "side": "SELL",
+      "strategyId": "breakout-hold3-window60",
+      "riskPct": 0.7517521479820778,
+      "state": "OPENED",
+      "outcome": null
+    },
     {
       "ts": "2026-08-31T18:28:12.573540+00:00",
       "kind": "EXIT",
@@ -168,6 +178,20 @@
     }
   ],
   "recentActivity": [
+    {
+      "ts": "2026-09-01T13:30:07.888937+00:00",
+      "type": "bifrost",
+      "event": "entry_executed",
+      "title": "Bifr\u00f6st executed SELL XAUUSD",
+      "detail": "breakout-hold3-window60 \u00b7 broker-side stop and target attached \u00b7 0.752% risk budget"
+    },
+    {
+      "ts": "2026-09-01T13:30:07.295158+00:00",
+      "type": "tyr",
+      "event": "session_started",
+      "title": "T\u00fdr armed a new session",
+      "detail": "Session limits and counters were reset for the authorised trading window."
+    },
     {
       "ts": "2026-09-01T09:31:06.069225+00:00",
       "type": "norns",
@@ -321,21 +345,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for XAUUSD",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-09-01T03:30:53.942723+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for XAUUSD",
-      "detail": "4 candidates passed the training gate; 57 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-01T03:30:53.131351+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for USDJPY",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-09-01T13:02:15.412644+00:00"
+  "publishedAt": "2026-09-01T13:30:12.202308+00:00"
 }
