@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-01T16:01:48.891813+00:00",
+  "generatedAt": "2026-09-01T16:30:35.514973+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -179,6 +179,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-09-01T16:30:24.669637+00:00",
+      "type": "bifrost",
+      "event": "mt5_deal",
+      "title": "MT5 confirmed IN deal XAUUSD",
+      "detail": "Yggdrasil-owned broker deal reconciled into the local journal."
+    },
+    {
       "ts": "2026-09-01T15:31:20.998615+00:00",
       "type": "norns",
       "event": "training_ranked",
@@ -338,14 +345,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for XAUUSD",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-09-01T09:31:04.959796+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-09-01T16:01:58.862232+00:00"
+  "publishedAt": "2026-09-01T16:30:39.517501+00:00"
 }
