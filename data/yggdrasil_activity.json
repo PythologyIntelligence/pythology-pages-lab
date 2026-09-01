@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-01T13:30:08.920198+00:00",
+  "generatedAt": "2026-09-01T13:30:23.938791+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -179,6 +179,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-09-01T13:30:17.327819+00:00",
+      "type": "tyr",
+      "event": "entry_blocked",
+      "title": "T\u00fdr blocked SELL XAUUSD",
+      "detail": "symbol already has a Yggdrasil position"
+    },
+    {
       "ts": "2026-09-01T13:30:07.888937+00:00",
       "type": "bifrost",
       "event": "entry_executed",
@@ -338,14 +345,7 @@
       "event": "candidate_rejected",
       "title": "Candidate rejected for XAUUSD",
       "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-09-01T03:30:53.947255+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-09-01T13:30:12.202308+00:00"
+  "publishedAt": "2026-09-01T13:30:38.066498+00:00"
 }
