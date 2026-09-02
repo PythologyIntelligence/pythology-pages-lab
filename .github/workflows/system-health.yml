@@ -7,6 +7,7 @@ on:
     paths:
       - "scripts/check-system-health.mjs"
       - "scripts/repair-pages-health.mjs"
+      - "scripts/merge-helios-health.mjs"
       - "scripts/merge-yggdrasil-health.mjs"
       - "scripts/build-lab.sh"
       - "monitor/**"
@@ -41,6 +42,9 @@ jobs:
 
       - name: Prefer resilient GitHub Pages health surfaces
         run: node scripts/repair-pages-health.mjs
+
+      - name: Merge live Helios VPS health
+        run: node scripts/merge-helios-health.mjs
 
       - name: Merge live Yggdrasil VPS heartbeat
         run: node scripts/merge-yggdrasil-health.mjs
