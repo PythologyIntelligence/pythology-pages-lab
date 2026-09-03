@@ -133,12 +133,18 @@ async function probeHydra() {
       note: nominal ? undefined : "Hydra responded but its service assertion was not nominal.",
     };
   } catch (error) {
+    const code = String(error?.cause?.code || "").toUpperCase();
+    const dnsPending = ["ENOTFOUND", "EAI_AGAIN"].includes(code);
     return {
       id: "hydra-health",
       label: "Hydra resident custodian",
-      status: "degraded",
+      status: dnsPending ? "initialising" : "degraded",
       checkedAt: nowIso(),
-      note: error?.name === "AbortError" ? "Synthetic runner timed out after 12 seconds." : safeMessage(error),
+      note: dnsPending
+        ? "Hydra's public health hostname has not propagated yet."
+        : error?.name === "AbortError"
+          ? "Synthetic runner timed out after 12 seconds."
+          : safeMessage(error),
     };
   }
 }
@@ -200,9 +206,11 @@ upsert(health, {
   status: hydraCheck.status,
   summary: hydraCheck.status === "operational"
     ? `Resident VPS custodian is responding; currently tracking ${hydraCheck.critical ?? 0} critical and ${hydraCheck.warnings ?? 0} warning condition(s).`
-    : hydraCheck.status === "down"
-      ? "Hydra resident custodian is not reachable through its health route."
-      : "Hydra could not be conclusively verified by the synthetic runner.",
+    : hydraCheck.status === "initialising"
+      ? "Resident custodian is staged; public health transport is waiting for DNS propagation."
+      : hydraCheck.status === "down"
+        ? "Hydra resident custodian is not reachable through its health route."
+        : "Hydra could not be conclusively verified by the synthetic runner.",
   checkedAt: nowIso(),
   averageLatencyMs: Number.isFinite(hydraCheck.latencyMs) ? hydraCheck.latencyMs : null,
   fleetStatus: hydraCheck.fleetStatus ?? null,
