@@ -8,6 +8,7 @@ on:
       - "scripts/check-system-health.mjs"
       - "scripts/repair-pages-health.mjs"
       - "scripts/merge-helios-health.mjs"
+      - "scripts/merge-atlas-hydra-health.mjs"
       - "scripts/merge-yggdrasil-health.mjs"
       - "scripts/build-lab.sh"
       - "monitor/**"
@@ -45,6 +46,9 @@ jobs:
 
       - name: Merge live Helios VPS health
         run: node scripts/merge-helios-health.mjs
+
+      - name: Merge live Atlas and Hydra VPS health
+        run: node scripts/merge-atlas-hydra-health.mjs
 
       - name: Merge live Yggdrasil VPS heartbeat
         run: node scripts/merge-yggdrasil-health.mjs
