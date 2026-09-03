@@ -1,6 +1,6 @@
 {
   "schemaVersion": 6,
-  "generatedAt": "2026-09-03T05:50:37.385Z",
+  "generatedAt": "2026-09-03T11:18:07.717Z",
   "fleet": {
     "status": "down",
     "operational": 9,
@@ -15,8 +15,8 @@
       "name": "Cerberus",
       "status": "operational",
       "summary": "VPS interface, health endpoint and live Cerberus snapshot are responding.",
-      "checkedAt": "2026-09-03T05:50:38.080Z",
-      "averageLatencyMs": 222,
+      "checkedAt": "2026-09-03T11:18:08.539Z",
+      "averageLatencyMs": 469,
       "providersOperational": null,
       "providersAvailable": null,
       "providersTotal": null,
@@ -28,25 +28,25 @@
           "id": "cerberus-app",
           "label": "Cerberus VPS interface",
           "status": "operational",
-          "latencyMs": 224,
+          "latencyMs": 374,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:37.700Z"
+          "checkedAt": "2026-09-03T11:18:08.163Z"
         },
         {
           "id": "cerberus-health",
           "label": "Cerberus VPS health",
           "status": "operational",
-          "latencyMs": 216,
+          "latencyMs": 371,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:37.695Z"
+          "checkedAt": "2026-09-03T11:18:08.162Z"
         },
         {
           "id": "cerberus-snapshot",
           "label": "Cerberus live snapshot",
           "status": "operational",
-          "latencyMs": 227,
+          "latencyMs": 662,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:37.707Z"
+          "checkedAt": "2026-09-03T11:18:08.453Z"
         }
       ]
     },
@@ -55,9 +55,9 @@
       "name": "EarthNet",
       "status": "operational",
       "summary": "10 engines completed the latest EarthNet cycle with 140 events and no engine failures.",
-      "checkedAt": "2026-09-03T05:50:38.081Z",
-      "averageLatencyMs": 281,
-      "snapshotAgeMinutes": 96,
+      "checkedAt": "2026-09-03T11:18:08.539Z",
+      "averageLatencyMs": 269,
+      "snapshotAgeMinutes": 423,
       "snapshotUpdatedAt": "2026-09-03T04:14:47.000Z",
       "engineCount": 10,
       "eventCount": 140,
@@ -67,20 +67,20 @@
           "id": "earthnet-app",
           "label": "EarthNet interface",
           "status": "down",
-          "latencyMs": 282,
+          "latencyMs": 274,
           "httpStatus": 404,
-          "checkedAt": "2026-09-03T05:50:36.651Z",
+          "checkedAt": "2026-09-03T11:18:07.664Z",
           "note": "The synthetic reachability check returned an HTTP error."
         },
         {
           "id": "earthnet-snapshot",
           "label": "EarthNet intelligence cycle",
           "status": "operational",
-          "latencyMs": 279,
+          "latencyMs": 264,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:36.650Z",
+          "checkedAt": "2026-09-03T11:18:07.657Z",
           "dataUpdatedAt": "2026-09-03T04:14:47.000Z",
-          "ageMinutes": 96,
+          "ageMinutes": 423,
           "freshnessLimitMinutes": 480,
           "engineCount": 10,
           "eventCount": 140,
@@ -94,24 +94,24 @@
       "name": "Agri",
       "status": "operational",
       "summary": "GitHub Pages interface and safe agricultural telemetry are responding.",
-      "checkedAt": "2026-09-03T05:50:38.080Z",
-      "averageLatencyMs": 556,
+      "checkedAt": "2026-09-03T11:18:08.539Z",
+      "averageLatencyMs": 680,
       "checks": [
         {
           "id": "agri-app",
           "label": "Agri Pages interface",
           "status": "operational",
-          "latencyMs": 504,
+          "latencyMs": 777,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:37.943Z"
+          "checkedAt": "2026-09-03T11:18:08.536Z"
         },
         {
           "id": "agri-data",
           "label": "Agri safe Pages data",
           "status": "operational",
-          "latencyMs": 607,
+          "latencyMs": 583,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:38.080Z"
+          "checkedAt": "2026-09-03T11:18:08.371Z"
         }
       ]
     },
@@ -120,7 +120,7 @@
       "name": "Poseidon",
       "status": "unmonitored",
       "summary": "Temporarily parked from Fleet monitoring while the Poseidon public interface is offline.",
-      "checkedAt": "2026-09-03T05:50:39.218Z",
+      "checkedAt": "2026-09-03T11:18:09.520Z",
       "averageLatencyMs": null,
       "checks": []
     },
@@ -129,24 +129,24 @@
       "name": "Verry Elleegant",
       "status": "down",
       "summary": "Verry Elleegant's VPS interface could not be reached by the synthetic monitor.",
-      "checkedAt": "2026-09-03T05:50:38.080Z",
-      "averageLatencyMs": 249,
+      "checkedAt": "2026-09-03T11:18:08.539Z",
+      "averageLatencyMs": 469,
       "checks": [
         {
           "id": "ve-app",
           "label": "Verry Elleegant VPS interface",
           "status": "down",
-          "latencyMs": 254,
+          "latencyMs": 465,
           "httpStatus": 502,
-          "checkedAt": "2026-09-03T05:50:37.733Z"
+          "checkedAt": "2026-09-03T11:18:08.257Z"
         },
         {
           "id": "ve-health",
           "label": "Verry Elleegant VPS health",
           "status": "down",
-          "latencyMs": 244,
+          "latencyMs": 473,
           "httpStatus": 502,
-          "checkedAt": "2026-09-03T05:50:37.725Z"
+          "checkedAt": "2026-09-03T11:18:08.266Z"
         }
       ]
     },
@@ -155,24 +155,24 @@
       "name": "Sentinel",
       "status": "operational",
       "summary": "GitHub Pages command interface and browser runtime are responding.",
-      "checkedAt": "2026-09-03T05:50:38.080Z",
-      "averageLatencyMs": 470,
+      "checkedAt": "2026-09-03T11:18:08.539Z",
+      "averageLatencyMs": 748,
       "checks": [
         {
           "id": "sentinel-app",
           "label": "Sentinel Pages command interface",
           "status": "operational",
-          "latencyMs": 472,
+          "latencyMs": 749,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:37.946Z"
+          "checkedAt": "2026-09-03T11:18:08.536Z"
         },
         {
           "id": "sentinel-runtime",
           "label": "Sentinel Pages runtime",
           "status": "operational",
-          "latencyMs": 468,
+          "latencyMs": 747,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:37.944Z"
+          "checkedAt": "2026-09-03T11:18:08.535Z"
         }
       ]
     },
@@ -181,8 +181,8 @@
       "name": "Yggdrasil",
       "status": "operational",
       "summary": "MT5 DEMO connected; live VPS heartbeat is fresh, 0 open position(s), 1 trade(s) this session.",
-      "checkedAt": "2026-09-03T05:39:52.747039+00:00",
-      "snapshotAgeMinutes": 11,
+      "checkedAt": "2026-09-03T11:11:27.107038+00:00",
+      "snapshotAgeMinutes": 7,
       "mode": "DEMO_ONLY",
       "championCount": 1,
       "positions": 0,
@@ -196,17 +196,17 @@
       "name": "Helios",
       "status": "operational",
       "summary": "Live VPS weather-intelligence interface is responding.",
-      "checkedAt": "2026-09-03T05:50:38.528Z",
-      "averageLatencyMs": 178,
+      "checkedAt": "2026-09-03T11:18:08.953Z",
+      "averageLatencyMs": 136,
       "liveUrl": "https://helios.pythology.co.nz/",
       "checks": [
         {
           "id": "helios-app",
           "label": "Helios live weather interface",
           "status": "operational",
-          "latencyMs": 178,
+          "latencyMs": 136,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:38.310Z"
+          "checkedAt": "2026-09-03T11:18:08.718Z"
         }
       ]
     },
@@ -215,17 +215,17 @@
       "name": "Helios · Chatham Islands",
       "status": "operational",
       "summary": "Community weather, marine and tide service health endpoint is responding.",
-      "checkedAt": "2026-09-03T05:50:38.529Z",
-      "averageLatencyMs": 132,
+      "checkedAt": "2026-09-03T11:18:08.953Z",
+      "averageLatencyMs": 53,
       "liveUrl": "https://chathams.pythology.co.nz/",
       "checks": [
         {
           "id": "chathams-health",
           "label": "Chathams community weather health",
           "status": "operational",
-          "latencyMs": 132,
+          "latencyMs": 53,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:38.528Z"
+          "checkedAt": "2026-09-03T11:18:08.953Z"
         }
       ]
     },
@@ -234,25 +234,25 @@
       "name": "Atlas",
       "status": "operational",
       "summary": "New Zealand geological-intelligence interface and live status endpoint are responding.",
-      "checkedAt": "2026-09-03T05:50:39.122Z",
-      "averageLatencyMs": 433,
+      "checkedAt": "2026-09-03T11:18:09.436Z",
+      "averageLatencyMs": 393,
       "liveUrl": "https://atlas.pythology.co.nz/atlas",
       "checks": [
         {
           "id": "atlas-app",
           "label": "Atlas geological intelligence",
           "status": "operational",
-          "latencyMs": 459,
+          "latencyMs": 437,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:39.044Z"
+          "checkedAt": "2026-09-03T11:18:09.436Z"
         },
         {
           "id": "atlas-status",
           "label": "Atlas live status",
           "status": "operational",
-          "latencyMs": 406,
+          "latencyMs": 348,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:39.026Z"
+          "checkedAt": "2026-09-03T11:18:09.374Z"
         }
       ]
     },
@@ -261,28 +261,28 @@
       "name": "Hydra",
       "status": "operational",
       "summary": "Resident VPS custodian is responding; currently tracking 1 critical and 0 warning condition(s).",
-      "checkedAt": "2026-09-03T05:50:39.122Z",
-      "averageLatencyMs": 501,
+      "checkedAt": "2026-09-03T11:18:09.436Z",
+      "averageLatencyMs": 390,
       "fleetStatus": "degraded",
       "criticalIssues": 1,
       "warningIssues": 0,
       "repairsThisScan": 0,
       "recoveredThisScan": 0,
-      "snapshotUpdatedAt": "2026-09-03T05:49:19.496703Z",
+      "snapshotUpdatedAt": "2026-09-03T11:17:37.369078Z",
       "checks": [
         {
           "id": "hydra-health",
           "label": "Hydra resident custodian",
           "status": "operational",
-          "latencyMs": 501,
+          "latencyMs": 390,
           "httpStatus": 200,
-          "checkedAt": "2026-09-03T05:50:39.122Z",
+          "checkedAt": "2026-09-03T11:18:09.417Z",
           "fleetStatus": "degraded",
           "critical": 1,
           "warnings": 0,
           "repairsThisScan": 0,
           "recoveredThisScan": 0,
-          "dataUpdatedAt": "2026-09-03T05:49:19.496703Z"
+          "dataUpdatedAt": "2026-09-03T11:17:37.369078Z"
         }
       ]
     }
