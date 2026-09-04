@@ -1,16 +1,76 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.215824,
-    "calibrated_forecast_count": 17,
-    "confirmed_count": 12,
-    "hit_rate": 0.316,
-    "not_observed_count": 26,
-    "resolved_count": 38
+    "brier_score": 0.210689,
+    "calibrated_forecast_count": 19,
+    "confirmed_count": 13,
+    "hit_rate": 0.325,
+    "not_observed_count": 27,
+    "resolved_count": 40
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-09-04T04:13:11+00:00",
+  "generated_at": "2026-09-04T12:13:47+00:00",
   "history": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-03T04:14:39+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "8336ee5bfc6732c73ec0f255",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-09-04T12:13:47+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "12bb47de31944948",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-09-04T04:14:39+00:00"
+    },
+    {
+      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-04T04:13:11+00:00",
+      "domain": "volcanic",
+      "forecast_confidence": 0.679,
+      "forecast_id": "a898417a8adfa662de73402a",
+      "forecast_type": "official_volcanic_unrest_continuation",
+      "outcome": {
+        "brier_component": 0.103041,
+        "matched_titles": [
+          "White Island — Alert Level 2"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
+      "region": "White Island",
+      "resolved_at": "2026-09-04T12:13:47+00:00",
+      "source_families": [
+        "GeoNet NZ"
+      ],
+      "source_independence_count": 1,
+      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "status": "resolved",
+      "target_event_id": "geonet-volcano-whiteisland",
+      "target_event_type": "volcanic_alert",
+      "target_title": "White Island — Alert Level 2",
+      "valid_until": "2026-09-07T04:13:11+00:00"
+    },
     {
       "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
       "calibrated": true,
@@ -1160,29 +1220,29 @@
   "mode": "live_validation",
   "open": [
     {
-      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
       "calibrated": true,
       "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
       "confidence_label": "empirically_calibrated",
-      "created_at": "2026-09-04T04:13:11+00:00",
-      "domain": "volcanic",
-      "forecast_confidence": 0.679,
-      "forecast_id": "a898417a8adfa662de73402a",
-      "forecast_type": "official_volcanic_unrest_continuation",
+      "created_at": "2026-09-04T12:13:47+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "aed867eea6c4b4510776d109",
+      "forecast_type": "convective_to_severe_weather",
       "outcome": null,
-      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
-      "region": "White Island",
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
       "resolved_at": null,
       "source_families": [
-        "GeoNet NZ"
+        "Open-Meteo"
       ],
       "source_independence_count": 1,
-      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
       "status": "open",
-      "target_event_id": "geonet-volcano-whiteisland",
-      "target_event_type": "volcanic_alert",
-      "target_title": "White Island — Alert Level 2",
-      "valid_until": "2026-09-07T04:13:11+00:00"
+      "target_event_id": "b232030b944e5fd8",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-09-05T12:13:47+00:00"
     },
     {
       "alternative": "Heavy rainfall occurs without a qualifying EarthNet flood report in the forecast window.",
@@ -1208,31 +1268,6 @@
       "target_event_type": "heavy_rain_risk",
       "target_title": "Heavy rainfall — Texas (Gulf Coast)",
       "valid_until": "2026-09-04T12:15:25+00:00"
-    },
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-09-03T04:14:39+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.351,
-      "forecast_id": "8336ee5bfc6732c73ec0f255",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Sahel Region",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "12bb47de31944948",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Sahel Region",
-      "valid_until": "2026-09-04T04:14:39+00:00"
     },
     {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
