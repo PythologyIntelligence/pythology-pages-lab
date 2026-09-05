@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-05T09:14:28.505993+00:00",
+  "generatedAt": "2026-09-05T09:33:13.984099+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -59,6 +59,55 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-09-05T09:33:11.202148+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for EURUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-05T09:33:11.202148+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for GBPUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-05T09:33:11.202148+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for USDJPY",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-05T09:33:11.202148+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for XAUUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-05T09:33:11.202148+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for NAS100",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-05T09:33:11.202148+00:00",
+      "type": "norns",
+      "event": "tournament_completed",
+      "title": "Norns tournament completed",
+      "detail": "0 champion(s) survived all gates."
+    },
+    {
+      "ts": "2026-09-05T09:33:11.061654+00:00",
+      "type": "norns",
+      "event": "tournament_started",
+      "title": "Norns tournament started",
+      "detail": "61 candidates entered research validation."
+    },
     {
       "ts": "2026-09-05T03:33:06.120192+00:00",
       "type": "norns",
@@ -160,34 +209,6 @@
     {
       "ts": "2026-09-04T15:32:54.524302+00:00",
       "type": "norns",
-      "event": "tournament_started",
-      "title": "Norns tournament started",
-      "detail": "61 candidates entered research validation."
-    },
-    {
-      "ts": "2026-09-04T15:32:54.524302+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for EURUSD",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-04T15:32:54.524302+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for GBPUSD",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-04T15:32:54.524302+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for USDJPY",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-04T15:32:54.524302+00:00",
-      "type": "norns",
       "event": "no_champion",
       "title": "No champion for XAUUSD",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
@@ -205,28 +226,7 @@
       "event": "tournament_completed",
       "title": "Norns tournament completed",
       "detail": "0 champion(s) survived all gates."
-    },
-    {
-      "ts": "2026-09-04T15:29:54.429467+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
-    },
-    {
-      "ts": "2026-09-04T15:29:44.413366+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
-    },
-    {
-      "ts": "2026-09-04T15:29:34.406922+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
     }
   ],
-  "publishedAt": "2026-09-05T09:14:32.597622+00:00"
+  "publishedAt": "2026-09-05T09:33:22.472029+00:00"
 }
