@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-05T06:13:53.937216+00:00",
+  "generatedAt": "2026-09-05T06:43:54.684672+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -228,5 +228,5 @@
       "detail": "Diagnostic detail remains private on the VPS."
     }
   ],
-  "publishedAt": "2026-09-05T06:14:01.884802+00:00"
+  "publishedAt": "2026-09-05T06:44:07.764863+00:00"
 }
