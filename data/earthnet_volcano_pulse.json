@@ -1,8 +1,42 @@
 {
-  "active": false,
-  "alert_count": 0,
-  "alerts": [],
-  "generated": "2026-09-06T00:38:04+00:00",
+  "active": true,
+  "alert_count": 1,
+  "alerts": [
+    {
+      "candidate": false,
+      "families": [
+        "ground deformation"
+      ],
+      "id": "faa3fae2e7791035",
+      "kinds": [
+        "volcanic"
+      ],
+      "latitude": -38.08,
+      "longitude": 176.27,
+      "measurements": [
+        {
+          "direction": "higher",
+          "family": "ground deformation",
+          "score_sigma": 4.458333333333334,
+          "summary": "4.46σ higher vs its 30-day baseline"
+        }
+      ],
+      "name": "Rotorua",
+      "observed_at": "2026-09-06T12:37:02+00:00",
+      "official_status": {
+        "aviation_colour_code": "Green",
+        "level": 0
+      },
+      "research_only": true,
+      "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
+      "summary": "ground deformation: 4.46σ higher vs its 30-day baseline",
+      "suppressed_families": [],
+      "suppression_candidate": false,
+      "title": "Volcanic activity change — Rotorua",
+      "volcano_id": "rotorua"
+    }
+  ],
+  "generated": "2026-09-06T12:38:01+00:00",
   "research_only": true,
   "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
   "schema": "earthnet.volcano-pulse-web.v0.1"
