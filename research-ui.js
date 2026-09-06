@@ -11,6 +11,7 @@
         ['index.html', 'Home'],
         ['earthnet-platform.html', 'EarthNet'],
         ['prometheus.html', 'Prometheus'],
+        ['causal-intelligence.html', 'Causal Core'],
         ['research.html', 'The stack'],
         ['where-it-fits.html', 'Where it fits'],
         ['about.html', 'About']
