@@ -1,38 +1,10 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-06T01:20:57.591977+00:00",
+  "engineObservedAt": "2026-09-06T01:21:37.587905+00:00",
   "engineFresh": true,
-  "resolvedSymbols": [
-    "EURUSD",
-    "GBPUSD",
-    "USDJPY",
-    "XAUUSD",
-    "USDX",
-    "SP500",
-    "NAS100",
-    "DJ30",
-    "AAPL",
-    "MSFT",
-    "NVIDIA",
-    "AMAZON",
-    "GOOG",
-    "META",
-    "TSLA",
-    "AVGO",
-    "JPM",
-    "BRKB",
-    "EXXON",
-    "WMT",
-    "LLY"
-  ],
+  "resolvedSymbols": [],
   "unresolvedSymbols": [],
-  "executionSymbols": [
-    "EURUSD",
-    "GBPUSD",
-    "USDJPY",
-    "XAUUSD",
-    "SP500"
-  ],
+  "executionSymbols": [],
   "causalShadow": {
     "available": true,
     "mode": "OBSERVE_ONLY",
@@ -40,9 +12,9 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-06T01:21:07.648894+00:00",
+  "generatedAt": "2026-09-06T01:21:37.688152+00:00",
   "mode": "DEMO_ONLY",
-  "status": "operational",
+  "status": "degraded",
   "bridge": {
     "status": "live",
     "note": "Live sanitised heartbeat from Yggdrasil's DEMO VPS. No account identifiers, balances/equity, broker tickets, trade prices, credentials or raw logs are published."
@@ -102,15 +74,15 @@
     "researchMutatesChampionsDuringSession": false
   },
   "live": {
-    "mt5Connected": true,
+    "mt5Connected": false,
     "sessionKey": "2026-09-02",
     "tradeCountVerified": false,
-    "positions": 0,
+    "positions": null,
     "tradesThisSession": null,
-    "openRiskPct": 0.0,
+    "openRiskPct": null,
     "killSwitch": false,
     "flattenRequested": false,
-    "lastError": false
+    "lastError": true
   },
   "recentTrades": [
     {
@@ -266,6 +238,27 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-09-06T01:21:37.587905+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
+      "ts": "2026-09-06T01:21:27.599700+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
+      "ts": "2026-09-06T01:21:17.590852+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
       "ts": "2026-09-06T01:21:07.601583+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -411,28 +404,7 @@
       "event": "training_ranked",
       "title": "Training ranked for AMAZON",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-06T01:09:42.220840+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for AMAZON",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-06T01:09:41.422537+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for NVIDIA",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-06T01:09:41.422537+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for NVIDIA",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-09-06T01:21:16.830022+00:00"
+  "publishedAt": "2026-09-06T01:21:38.563686+00:00"
 }
