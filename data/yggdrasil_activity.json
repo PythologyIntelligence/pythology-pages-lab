@@ -2,7 +2,7 @@
   "schemaVersion": 2,
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-06T00:43:57.141118+00:00",
+  "generatedAt": "2026-09-06T00:44:12.152868+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -19,7 +19,7 @@
   ],
   "research": {
     "candidateCount": 61,
-    "lastResearchAt": "2026-09-06T00:43:42.916710+00:00",
+    "lastResearchAt": "2026-09-06T00:43:57.648269+00:00",
     "latestTournamentSelected": 0,
     "currentTrainingGateEligible": 0,
     "families": [
@@ -59,6 +59,34 @@
   },
   "recentTrades": [],
   "recentActivity": [
+    {
+      "ts": "2026-09-06T00:43:57.648269+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for NAS100",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-06T00:43:57.648269+00:00",
+      "type": "norns",
+      "event": "tournament_completed",
+      "title": "Norns tournament completed",
+      "detail": "0 champion(s) survived all gates."
+    },
+    {
+      "ts": "2026-09-06T00:43:57.632941+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for NAS100",
+      "detail": "1 candidates passed the training gate; 60 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-09-06T00:43:57.632941+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
+    },
     {
       "ts": "2026-09-06T00:43:56.966701+00:00",
       "type": "norns",
@@ -198,35 +226,7 @@
       "event": "no_champion",
       "title": "No champion for XAUUSD",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-06T00:43:42.072974+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-09-06T00:43:42.072974+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
-    },
-    {
-      "ts": "2026-09-06T00:43:42.057347+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for XAUUSD",
-      "detail": "4 candidates passed the training gate; 57 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-06T00:43:42.057347+00:00",
-      "type": "norns",
-      "event": "candidate_rejected",
-      "title": "Candidate rejected for XAUUSD",
-      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-09-06T00:43:57.323284+00:00"
+  "publishedAt": "2026-09-06T00:44:17.276650+00:00"
 }
