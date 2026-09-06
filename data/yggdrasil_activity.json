@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-06T11:10:46.711367+00:00",
+  "engineObservedAt": "2026-09-06T11:40:57.400413+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -40,7 +40,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-06T11:10:56.571768+00:00",
+  "generatedAt": "2026-09-06T11:40:58.432136+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -434,5 +434,5 @@
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-09-06T11:10:59.167800+00:00"
+  "publishedAt": "2026-09-06T11:41:04.932629+00:00"
 }
