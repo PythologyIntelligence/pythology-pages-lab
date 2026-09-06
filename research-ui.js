@@ -16,11 +16,22 @@
         ['where-it-fits.html', 'Where it fits'],
         ['about.html', 'About']
       ];
-      nav.innerHTML = links.map(([href, label]) => {
-        const active = page === href || (page === '' && href === 'index.html');
-        return `<a class="nav-link${active ? ' active' : ''}" href="${href}">${label}</a>`;
-      }).join('');
-      nav.setAttribute('aria-label', 'Primary navigation');
+      const renderPublicNav = () => {
+        nav.innerHTML = links.map(([href, label]) => {
+          const active = page === href || (page === '' && href === 'index.html');
+          return `<a class="nav-link${active ? ' active' : ''}" href="${href}">${label}</a>`;
+        }).join('');
+        nav.setAttribute('aria-label', 'Primary navigation');
+      };
+      renderPublicNav();
+
+      // Some mirrored pages can inject a second, unversioned copy of this UI
+      // script after the cache-busted overlay. Restore the canonical menu if
+      // that late script replaces it with an older link set.
+      const navObserver = new MutationObserver(() => {
+        if (!nav.querySelector('a[href="causal-intelligence.html"]')) renderPublicNav();
+      });
+      navObserver.observe(nav, { childList: true });
     }
   }
 
