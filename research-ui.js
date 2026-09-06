@@ -12,6 +12,7 @@
         ['earthnet-platform.html', 'EarthNet'],
         ['prometheus.html', 'Prometheus'],
         ['causal-intelligence.html', 'Causal Core'],
+        ['https://atlas.pythology.co.nz/atlas', 'Atlas'],
         ['research.html', 'The stack'],
         ['where-it-fits.html', 'Where it fits'],
         ['about.html', 'About']
