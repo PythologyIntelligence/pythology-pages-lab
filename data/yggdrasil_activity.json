@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-06T01:22:07.664328+00:00",
+  "engineObservedAt": "2026-09-06T01:22:37.642830+00:00",
   "engineFresh": true,
   "resolvedSymbols": [],
   "unresolvedSymbols": [],
@@ -12,7 +12,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-06T01:22:07.742847+00:00",
+  "generatedAt": "2026-09-06T01:22:37.784002+00:00",
   "mode": "DEMO_ONLY",
   "status": "degraded",
   "bridge": {
@@ -238,6 +238,27 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-09-06T01:22:37.641806+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
+      "ts": "2026-09-06T01:22:27.646845+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
+      "ts": "2026-09-06T01:22:17.631426+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
       "ts": "2026-09-06T01:22:07.618340+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -383,28 +404,7 @@
       "event": "training_ranked",
       "title": "Training ranked for TSLA",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-06T01:09:43.984009+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for TSLA",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-06T01:09:43.416582+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for META",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-06T01:09:43.416582+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for META",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-09-06T01:22:20.375739+00:00"
+  "publishedAt": "2026-09-06T01:22:40.445508+00:00"
 }
