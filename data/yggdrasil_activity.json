@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-07T13:30:09.634851+00:00",
+  "engineObservedAt": "2026-09-07T13:45:10.255865+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -36,11 +36,11 @@
   "causalShadow": {
     "available": true,
     "mode": "OBSERVE_ONLY",
-    "acceleratedBy": "unavailable"
+    "acceleratedBy": "rust"
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-07T13:30:09.994431+00:00",
+  "generatedAt": "2026-09-07T13:45:11.445166+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -134,14 +134,24 @@
     "mt5Connected": true,
     "sessionKey": "2026-09-07",
     "tradeCountVerified": true,
-    "positions": 0,
+    "positions": 1,
     "tradesThisSession": 0,
-    "openRiskPct": 0.0,
+    "openRiskPct": 0.266,
     "killSwitch": false,
     "flattenRequested": false,
     "lastError": false
   },
   "recentTrades": [
+    {
+      "ts": "2026-09-07T13:45:00.363210+00:00",
+      "kind": "ENTRY",
+      "symbol": "XAUUSD",
+      "side": "SELL",
+      "strategyId": "rsi_revert-lower25-period21-upper75",
+      "riskPct": 0.26417705851821294,
+      "state": "OPENED",
+      "outcome": null
+    },
     {
       "ts": "2026-09-02T18:28:12.704195+00:00",
       "kind": "EXIT",
@@ -295,6 +305,27 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-09-07T13:45:10.255865+00:00",
+      "type": "tyr",
+      "event": "entry_blocked",
+      "title": "T\u00fdr blocked SELL XAUUSD",
+      "detail": "symbol already has a Yggdrasil position"
+    },
+    {
+      "ts": "2026-09-07T13:45:00.363210+00:00",
+      "type": "bifrost",
+      "event": "entry_executed",
+      "title": "Bifr\u00f6st executed SELL XAUUSD",
+      "detail": "rsi_revert-lower25-period21-upper75 \u00b7 broker-side stop and target attached \u00b7 0.264% risk budget"
+    },
+    {
+      "ts": "2026-09-07T13:45:00.300914+00:00",
+      "type": "causal",
+      "event": "causal_shadow",
+      "title": "Causal shadow: supportive context for XAUUSD",
+      "detail": "Observation only; this assessment did not block, place or resize the order."
+    },
+    {
       "ts": "2026-09-07T13:30:09.571441+00:00",
       "type": "tyr",
       "event": "session_started",
@@ -440,28 +471,7 @@
       "event": "training_ranked",
       "title": "Training ranked for AMAZON",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-07T13:15:15.916949+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for AMAZON",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-07T13:15:14.432510+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for NVIDIA",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-07T13:15:14.432510+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for NVIDIA",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-09-07T13:30:13.307592+00:00"
+  "publishedAt": "2026-09-07T13:45:19.273259+00:00"
 }
