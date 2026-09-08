@@ -40,7 +40,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-08T07:19:00.813170+00:00",
+  "generatedAt": "2026-09-08T07:19:46.621641+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -354,6 +354,104 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-09-08T07:19:45.352383+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for MSFT",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-09-08T07:19:45.352383+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for MSFT",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-08T07:19:37.258679+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for AAPL",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-08T07:19:37.243158+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for AAPL",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-09-08T07:19:29.347050+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for DJ30",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-08T07:19:29.315132+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for DJ30",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-09-08T07:19:22.512132+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for NAS100",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-09-08T07:19:22.512132+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for NAS100",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-08T07:19:12.398092+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for SP500",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-09-08T07:19:12.334498+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for SP500",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-09-08T07:19:10.397016+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for SP500",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-09-08T07:19:10.319137+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for SP500",
+      "detail": "2 candidates passed the training gate; 59 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-09-08T07:19:01.771858+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for USDX",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-09-08T07:19:01.771858+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for USDX",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
       "ts": "2026-09-08T07:18:51.642632+00:00",
       "type": "norns",
       "event": "champion_selected",
@@ -422,105 +520,7 @@
       "event": "tournament_started",
       "title": "Norns tournament started",
       "detail": "61 candidates entered research validation."
-    },
-    {
-      "ts": "2026-09-08T01:18:00.575097+00:00",
-      "type": "norns",
-      "event": "tournament_completed",
-      "title": "Norns tournament completed",
-      "detail": "1 champion(s) survived all gates."
-    },
-    {
-      "ts": "2026-09-08T01:18:00.559611+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for LLY",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-08T01:18:00.559611+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for LLY",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-08T01:17:55.395784+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for WMT",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-08T01:17:55.395784+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for WMT",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-08T01:17:49.705322+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for EXXON",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-08T01:17:49.705322+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for EXXON",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-08T01:17:42.767113+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for BRKB",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-08T01:17:42.755296+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for BRKB",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-08T01:17:34.573416+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for JPM",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-08T01:17:34.558405+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for JPM",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-08T01:17:27.693002+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for AVGO",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-08T01:17:27.693002+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for AVGO",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-08T01:17:22.349740+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for TSLA",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-09-08T07:19:16.574960+00:00"
+  "publishedAt": "2026-09-08T07:20:01.523271+00:00"
 }
