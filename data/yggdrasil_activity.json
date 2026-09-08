@@ -1,48 +1,20 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-08T07:01:13.551417+00:00",
-  "engineFresh": true,
-  "resolvedSymbols": [
-    "EURUSD",
-    "GBPUSD",
-    "USDJPY",
-    "XAUUSD",
-    "USDX",
-    "SP500",
-    "NAS100",
-    "DJ30",
-    "AAPL",
-    "MSFT",
-    "NVIDIA",
-    "AMAZON",
-    "GOOG",
-    "META",
-    "TSLA",
-    "AVGO",
-    "JPM",
-    "BRKB",
-    "EXXON",
-    "WMT",
-    "LLY"
-  ],
+  "engineObservedAt": null,
+  "engineFresh": false,
+  "resolvedSymbols": [],
   "unresolvedSymbols": [],
-  "executionSymbols": [
-    "EURUSD",
-    "GBPUSD",
-    "USDJPY",
-    "XAUUSD",
-    "SP500"
-  ],
+  "executionSymbols": [],
   "causalShadow": {
-    "available": true,
+    "available": false,
     "mode": "OBSERVE_ONLY",
-    "acceleratedBy": "rust"
+    "acceleratedBy": "unavailable"
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-08T07:01:19.619681+00:00",
+  "generatedAt": "2026-09-08T07:08:24.114883+00:00",
   "mode": "DEMO_ONLY",
-  "status": "operational",
+  "status": "degraded",
   "bridge": {
     "status": "live",
     "note": "Live sanitised heartbeat from Yggdrasil's DEMO VPS. No account identifiers, balances/equity, broker tickets, trade prices, credentials or raw logs are published."
@@ -130,15 +102,15 @@
     "researchMutatesChampionsDuringSession": false
   },
   "live": {
-    "mt5Connected": true,
-    "sessionKey": "2026-09-07",
+    "mt5Connected": false,
+    "sessionKey": null,
     "tradeCountVerified": false,
-    "positions": 0,
+    "positions": null,
     "tradesThisSession": null,
-    "openRiskPct": 0.0,
-    "killSwitch": false,
-    "flattenRequested": false,
-    "lastError": false
+    "openRiskPct": null,
+    "killSwitch": null,
+    "flattenRequested": null,
+    "lastError": true
   },
   "recentTrades": [
     {
@@ -522,5 +494,5 @@
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-09-08T07:01:26.245506+00:00"
+  "publishedAt": "2026-09-08T07:08:33.887532+00:00"
 }
