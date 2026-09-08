@@ -1,16 +1,46 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.211858,
-    "calibrated_forecast_count": 28,
+    "brier_score": 0.210207,
+    "calibrated_forecast_count": 29,
     "confirmed_count": 19,
-    "hit_rate": 0.373,
-    "not_observed_count": 32,
-    "resolved_count": 51
+    "hit_rate": 0.365,
+    "not_observed_count": 33,
+    "resolved_count": 52
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-09-08T04:13:43+00:00",
+  "generated_at": "2026-09-08T12:13:26+00:00",
   "history": [
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-06T12:12:58+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.355,
+      "forecast_id": "4913d3f2ba4651107a4a271f",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.126025,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Oklahoma (Tornado Alley)",
+      "resolved_at": "2026-09-08T12:13:26+00:00",
+      "source_families": [
+        "NASA EONET",
+        "Open-Meteo"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "49e95aa1dd7086e3",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Oklahoma (Tornado Alley)",
+      "valid_until": "2026-09-08T12:12:58+00:00"
+    },
     {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
       "calibrated": true,
@@ -1554,6 +1584,56 @@
   "mode": "live_validation",
   "open": [
     {
+      "alternative": "Heavy rainfall occurs without a qualifying EarthNet flood report in the forecast window.",
+      "calibrated": false,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "live_validation_uncalibrated",
+      "created_at": "2026-09-08T12:13:26+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.434,
+      "forecast_id": "e8de44c6f8d0f4acaafaa531",
+      "forecast_type": "rain_to_flood",
+      "outcome": null,
+      "predicted_outcome": "flood_emergence",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": null,
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current heavy-rainfall signal may be followed by a qualifying flood report in this area.",
+      "status": "open",
+      "target_event_id": "c9ae283dc8f48dcc",
+      "target_event_type": "heavy_rain_risk",
+      "target_title": "Heavy rainfall — Texas (Gulf Coast)",
+      "valid_until": "2026-09-09T12:13:26+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-08T12:13:26+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.453,
+      "forecast_id": "f18fc090ad6f361379beef23",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": null,
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": null,
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "open",
+      "target_event_id": "73488f4c8ebcb228",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-09-09T12:13:26+00:00"
+    },
+    {
       "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
       "calibrated": true,
       "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
@@ -1628,32 +1708,6 @@
       "target_event_type": "severe_convective_risk",
       "target_title": "Severe weather risk — Sahel Region",
       "valid_until": "2026-09-08T20:13:08+00:00"
-    },
-    {
-      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-09-06T12:12:58+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.355,
-      "forecast_id": "4913d3f2ba4651107a4a271f",
-      "forecast_type": "heat_to_infrastructure",
-      "outcome": null,
-      "predicted_outcome": "infrastructure_pressure",
-      "region": "Oklahoma (Tornado Alley)",
-      "resolved_at": null,
-      "source_families": [
-        "NASA EONET",
-        "Open-Meteo"
-      ],
-      "source_independence_count": 2,
-      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
-      "status": "open",
-      "target_event_id": "49e95aa1dd7086e3",
-      "target_event_type": "heat_risk",
-      "target_title": "Heat risk — Oklahoma (Tornado Alley)",
-      "valid_until": "2026-09-08T12:12:58+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
