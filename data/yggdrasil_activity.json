@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-08T01:15:40.438944+00:00",
-  "engineFresh": false,
+  "engineObservedAt": "2026-09-08T01:18:41.821005+00:00",
+  "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
     "GBPUSD",
@@ -40,9 +40,9 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-08T01:17:59.852797+00:00",
+  "generatedAt": "2026-09-08T01:18:45.415171+00:00",
   "mode": "DEMO_ONLY",
-  "status": "degraded",
+  "status": "operational",
   "bridge": {
     "status": "live",
     "note": "Live sanitised heartbeat from Yggdrasil's DEMO VPS. No account identifiers, balances/equity, broker tickets, trade prices, credentials or raw logs are published."
@@ -72,7 +72,7 @@
   ],
   "research": {
     "candidateCount": 61,
-    "lastResearchAt": "2026-09-07T19:15:45.394310+00:00",
+    "lastResearchAt": "2026-09-08T01:18:00.575097+00:00",
     "latestTournamentSelected": 1,
     "currentTrainingGateEligible": 1,
     "families": [
@@ -85,31 +85,30 @@
   "champions": [
     {
       "symbol": "XAUUSD",
-      "family": "rsi_revert",
-      "strategyId": "rsi_revert-lower25-period21-upper75",
+      "family": "ema",
+      "strategyId": "ema-fast12-slow30",
       "params": {
-        "lower": 25.0,
-        "period": 21.0,
-        "upper": 75.0
+        "fast": 12.0,
+        "slow": 30.0
       },
       "trainingGate": "eligible",
       "train": {
-        "returnPct": 0.028367153459285532,
-        "sharpe": 0.09132842799067376,
-        "maxDrawdownPct": 0.9865343142529737,
-        "trades": 38,
-        "winRatePct": 47.32824427480916
+        "returnPct": 0.43891796586106313,
+        "sharpe": 0.5045495435220848,
+        "maxDrawdownPct": 3.2457985897185293,
+        "trades": 119,
+        "winRatePct": 49.740932642487046
       },
       "test": {
-        "returnPct": 0.11150240930402067,
-        "sharpe": 0.807853957339407,
-        "maxDrawdownPct": 0.37264076772602905,
-        "trades": 22,
-        "winRatePct": 42.1875
+        "returnPct": 0.6842192540032599,
+        "sharpe": 2.036211474620964,
+        "maxDrawdownPct": 1.0913906296249998,
+        "trades": 54,
+        "winRatePct": 48.92601431980907
       },
-      "mcP05ReturnPct": -0.6967024302717001,
-      "score": 0.7611159283335309,
-      "selectedAt": "2026-09-07T19:15:35.500777+00:00"
+      "mcP05ReturnPct": -1.3650265787302933,
+      "score": 1.9271406502439887,
+      "selectedAt": "2026-09-08T01:16:30.281827+00:00"
     }
   ],
   "tyr": {
@@ -131,15 +130,15 @@
     "researchMutatesChampionsDuringSession": false
   },
   "live": {
-    "mt5Connected": false,
+    "mt5Connected": true,
     "sessionKey": "2026-09-07",
-    "tradeCountVerified": false,
-    "positions": null,
-    "tradesThisSession": null,
-    "openRiskPct": null,
+    "tradeCountVerified": true,
+    "positions": 0,
+    "tradesThisSession": 0,
+    "openRiskPct": 0.0,
     "killSwitch": false,
     "flattenRequested": false,
-    "lastError": true
+    "lastError": false
   },
   "recentTrades": [
     {
@@ -355,6 +354,27 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-09-08T01:18:00.575097+00:00",
+      "type": "norns",
+      "event": "tournament_completed",
+      "title": "Norns tournament completed",
+      "detail": "1 champion(s) survived all gates."
+    },
+    {
+      "ts": "2026-09-08T01:18:00.559611+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for LLY",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-09-08T01:18:00.559611+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for LLY",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
       "ts": "2026-09-08T01:17:55.395784+00:00",
       "type": "norns",
       "event": "training_ranked",
@@ -500,28 +520,7 @@
       "event": "no_champion",
       "title": "No champion for MSFT",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-09-08T01:16:58.803788+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for MSFT",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-08T01:16:54.376007+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for AAPL",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-08T01:16:54.376007+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for AAPL",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-09-08T01:18:01.106582+00:00"
+  "publishedAt": "2026-09-08T01:18:52.901030+00:00"
 }
