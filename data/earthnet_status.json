@@ -1,19 +1,19 @@
 {
   "causal_assessment_count": 35,
   "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-  "cycle_completed_at": "2026-09-08T12:13:01+00:00",
+  "cycle_completed_at": "2026-09-08T20:13:01+00:00",
   "cycle_scoped_source": true,
-  "cycle_started_at": "2026-09-08T12:12:02+00:00",
+  "cycle_started_at": "2026-09-08T20:12:02+00:00",
   "degraded": false,
   "engine_count": 10,
   "engine_counts": {
-    "atmosphere": 11,
+    "atmosphere": 10,
     "cryosphere": 6,
-    "geopolitical_conflict": 17,
+    "geopolitical_conflict": 11,
     "infrastructure_risk": 7,
-    "neo": 15,
+    "neo": 16,
     "ocean": 10,
-    "seismic": 9,
+    "seismic": 14,
     "space_weather": 1,
     "volcanic": 12,
     "wildfire_flood_landslide": 34
@@ -33,7 +33,7 @@
   ],
   "event_count": 133,
   "event_intelligence": {
-    "assessment_count": 68,
+    "assessment_count": 67,
     "autonomous": true,
     "degraded": false,
     "deterministic": true,
@@ -43,12 +43,12 @@
       "active_severe_storm": 5,
       "active_wildfire": 25,
       "armed_conflict": 2,
-      "ceasefire_update": 2,
-      "earthquake": 9,
-      "humanitarian_crisis": 13,
+      "ceasefire_update": 1,
+      "earthquake": 14,
+      "humanitarian_crisis": 8,
       "volcanic_alert": 2
     },
-    "generated": "2026-09-08T12:13:33+00:00",
+    "generated": "2026-09-08T20:13:40+00:00",
     "model_generated": false,
     "schema": "earthnet.event-intelligence-status.v0.1",
     "supported_event_types": [
@@ -70,32 +70,34 @@
       "volcanic_alert"
     ],
     "trend_counts": {
-      "new": 11,
-      "stable": 52,
+      "escalating": 1,
+      "improving": 1,
+      "new": 13,
+      "stable": 47,
       "updated": 5
     }
   },
   "expired_quakes_hidden": 0,
   "failed_engines": {},
-  "generated": "2026-09-08T12:13:22+00:00",
+  "generated": "2026-09-08T20:13:27+00:00",
   "live_data_plane": {
     "branch": "main",
-    "prepared_at": "2026-09-08T12:13:33+00:00",
+    "prepared_at": "2026-09-08T20:13:40+00:00",
     "provider": "github-repository",
     "publication_mode": "canonical_static_snapshot",
     "published": true,
-    "published_at": "2026-09-08T12:13:35+00:00",
+    "published_at": "2026-09-08T20:13:42+00:00",
     "repository": "PythologyIntelligence/pythology-pages-lab",
-    "runner_local_media_assets_stripped": 5,
+    "runner_local_media_assets_stripped": 3,
     "runner_local_satellite_assets_stripped": 0,
     "visual_asset_note": "Ephemeral runner-local image files are not published. Source/external evidence URLs already present in records are retained. A future Cloudflare-native object store can be added without changing the core evidence snapshot."
   },
   "media": {
     "autonomous": true,
-    "collected_record_count": 5,
-    "generated": "2026-09-08T12:13:33+00:00",
-    "local_image_count": 5,
-    "neo_lookup_count": 0,
+    "collected_record_count": 7,
+    "generated": "2026-09-08T20:13:40+00:00",
+    "local_image_count": 3,
+    "neo_lookup_count": 4,
     "provider_errors": [],
     "published_image_count": 0,
     "schema": "earthnet.media-status.v0.1",
@@ -105,18 +107,18 @@
     "all_engine_observation_memory": true,
     "calibration": {
       "automatic_weight_updates": false,
-      "brier_score": 0.210207,
-      "calibrated_forecast_count": 29,
+      "brier_score": 0.210244,
+      "calibrated_forecast_count": 31,
       "confidence_bins": {
         "20-40": {
           "confirmed": 3,
-          "count": 18,
-          "observed_frequency": 0.167
+          "count": 19,
+          "observed_frequency": 0.158
         },
         "40-60": {
-          "confirmed": 12,
-          "count": 28,
-          "observed_frequency": 0.429
+          "confirmed": 13,
+          "count": 29,
+          "observed_frequency": 0.448
         },
         "60-80": {
           "confirmed": 4,
@@ -124,32 +126,32 @@
           "observed_frequency": 0.667
         }
       },
-      "confirmed_count": 19,
-      "hit_rate": 0.365,
-      "not_observed_count": 33,
-      "resolved_count": 52
+      "confirmed_count": 20,
+      "hit_rate": 0.37,
+      "not_observed_count": 34,
+      "resolved_count": 54
     },
     "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
     "evidence": {
-      "forecast_receipts_created": 2,
-      "ledger_records": 118,
-      "outcome_receipts_created": 1
+      "forecast_receipts_created": 0,
+      "ledger_records": 120,
+      "outcome_receipts_created": 2
     },
     "evidence_git": {
       "commit": null,
       "error": null,
       "state": "not_github_actions"
     },
-    "generated": "2026-09-08T12:13:26+00:00",
-    "ledger_records_appended": 3,
+    "generated": "2026-09-08T20:13:31+00:00",
+    "ledger_records_appended": 2,
     "mode": "live_validation",
     "model_version": "prometheus-core.v0.1",
-    "new_forecast_count": 2,
-    "open_forecast_count": 5,
-    "resolved_forecast_count": 1,
+    "new_forecast_count": 0,
+    "open_forecast_count": 3,
+    "resolved_forecast_count": 2,
     "slack": "sent",
     "slack_error": null,
-    "slack_messages_sent": 3
+    "slack_messages_sent": 2
   },
   "quake_live_window_hours": 24,
   "reliefweb": {
@@ -157,15 +159,15 @@
     "cache_hit": false,
     "degraded": false,
     "error": null,
-    "generated": "2026-09-08T12:13:30+00:00",
-    "geography_mismatch_removed": 5,
+    "generated": "2026-09-08T20:13:37+00:00",
+    "geography_mismatch_removed": 4,
     "image_event_count": 0,
     "lookback_hours": 96,
-    "matched_event_count": 20,
-    "matched_report_count": 31,
-    "primary_geopolitical_context_count": 17,
+    "matched_event_count": 14,
+    "matched_report_count": 20,
+    "primary_geopolitical_context_count": 11,
     "provider": "ReliefWeb / UN OCHA",
-    "reports_considered": 93,
+    "reports_considered": 84,
     "schema": "earthnet.reliefweb-status.v0.1"
   },
   "satellite": {
