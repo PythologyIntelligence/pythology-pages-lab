@@ -304,6 +304,15 @@ for file in "${PUBLIC_OVERRIDES[@]}"; do
   cp "$ROOT/$file" "$OUT/$file"
 done
 
+# Stage the approved Pythology title banner from this public Pages repository.
+TITLE_BANNER="$ROOT/png_images/pythology_environmental_ai_banner.webp"
+if [[ ! -s "$TITLE_BANNER" ]]; then
+  echo "Required Pythology title banner missing: $TITLE_BANNER" >&2
+  exit 1
+fi
+mkdir -p "$OUT/png_images"
+cp "$TITLE_BANNER" "$OUT/png_images/pythology_environmental_ai_banner.webp"
+
 # These public evidence projections are deliberately staged with the humanised
 # pages because wget does not discover browser-fetched JSON.
 for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_daily.json; do
