@@ -1,16 +1,76 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.210244,
-    "calibrated_forecast_count": 31,
-    "confirmed_count": 20,
-    "hit_rate": 0.37,
-    "not_observed_count": 34,
-    "resolved_count": 54
+    "brier_score": 0.207771,
+    "calibrated_forecast_count": 33,
+    "confirmed_count": 21,
+    "hit_rate": 0.375,
+    "not_observed_count": 35,
+    "resolved_count": 56
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-09-09T04:13:37+00:00",
+  "generated_at": "2026-09-09T12:13:23+00:00",
   "history": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-08T04:13:43+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.423,
+      "forecast_id": "0a19f73a1fe667d96c0653bf",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.178929,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Rome, Italy",
+      "resolved_at": "2026-09-09T12:13:23+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "a0a23de5ab08a0a3",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Rome, Italy",
+      "valid_until": "2026-09-09T04:13:43+00:00"
+    },
+    {
+      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-09T04:13:37+00:00",
+      "domain": "volcanic",
+      "forecast_confidence": 0.679,
+      "forecast_id": "8c98e0c050ce8cf001952de2",
+      "forecast_type": "official_volcanic_unrest_continuation",
+      "outcome": {
+        "brier_component": 0.103041,
+        "matched_titles": [
+          "White Island — Alert Level 2"
+        ],
+        "state": "confirmed"
+      },
+      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
+      "region": "White Island",
+      "resolved_at": "2026-09-09T12:13:23+00:00",
+      "source_families": [
+        "GeoNet NZ"
+      ],
+      "source_independence_count": 1,
+      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "status": "resolved",
+      "target_event_id": "geonet-volcano-whiteisland",
+      "target_event_type": "volcanic_alert",
+      "target_title": "White Island — Alert Level 2",
+      "valid_until": "2026-09-12T04:13:37+00:00"
+    },
     {
       "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
       "calibrated": true,
@@ -1644,31 +1704,6 @@
   "mode": "live_validation",
   "open": [
     {
-      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-09-09T04:13:37+00:00",
-      "domain": "volcanic",
-      "forecast_confidence": 0.679,
-      "forecast_id": "8c98e0c050ce8cf001952de2",
-      "forecast_type": "official_volcanic_unrest_continuation",
-      "outcome": null,
-      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
-      "region": "White Island",
-      "resolved_at": null,
-      "source_families": [
-        "GeoNet NZ"
-      ],
-      "source_independence_count": 1,
-      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
-      "status": "open",
-      "target_event_id": "geonet-volcano-whiteisland",
-      "target_event_type": "volcanic_alert",
-      "target_title": "White Island — Alert Level 2",
-      "valid_until": "2026-09-12T04:13:37+00:00"
-    },
-    {
       "alternative": "Heavy rainfall occurs without a qualifying EarthNet flood report in the forecast window.",
       "calibrated": false,
       "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
@@ -1692,31 +1727,6 @@
       "target_event_type": "heavy_rain_risk",
       "target_title": "Heavy rainfall — Texas (Gulf Coast)",
       "valid_until": "2026-09-09T12:13:26+00:00"
-    },
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-09-08T04:13:43+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.423,
-      "forecast_id": "0a19f73a1fe667d96c0653bf",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Rome, Italy",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "a0a23de5ab08a0a3",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Rome, Italy",
-      "valid_until": "2026-09-09T04:13:43+00:00"
     },
     {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
