@@ -1,4 +1,4 @@
-name: Make Pythology Title Banner Durable
+name: Fix Pythology Title Banner Path
 
 on:
   push:
@@ -19,44 +19,37 @@ jobs:
         with:
           ref: main
 
-      - name: Patch the real Pages deployment pipeline
+      - name: Point homepage at local public banner asset
         shell: bash
         run: |
           set -euo pipefail
           python3 - <<'PY'
           from pathlib import Path
 
-          path = Path('.github/workflows/pages.yml')
+          path = Path('index.html')
           text = path.read_text(encoding='utf-8')
-          marker = '      - name: Configure Pages\n'
-          step_name = 'Install Pythology title banner into built Pages artifact'
-          if step_name not in text:
-              if marker not in text:
-                  raise SystemExit('Configure Pages marker not found')
-              step_lines = [
-                  '      - name: Install Pythology title banner into built Pages artifact',
-                  '        shell: bash',
-                  '        run: |',
-                  '          set -euo pipefail',
-                  '          mkdir -p _site/png_images',
-                  "          curl --fail --silent --show-error --location --retry 3 --connect-timeout 10 --max-time 60 'https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main/png_images/file_000000009b0c820bb7c25cd80f501580.png' -o _site/png_images/pythology_environmental_ai_banner.png",
-                  '          python3 scripts/install-home-banner.py',
-                  '',
-              ]
-              step = '\n'.join(step_lines) + '\n'
-              path.write_text(text.replace(marker, step + marker, 1), encoding='utf-8')
-              print('Pages deployment pipeline patched.')
+          old = 'https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main/png_images/file_000000009b0c820bb7c25cd80f501580.png'
+          new = 'png_images/pythology_environmental_ai_banner.webp'
+
+          if new in text:
+              print('Homepage already points at the local banner asset.')
+          elif old in text:
+              path.write_text(text.replace(old, new, 1), encoding='utf-8')
+              print('Homepage banner path fixed.')
           else:
-              print('Pages deployment pipeline already contains the durable banner step.')
+              raise SystemExit('Expected title-banner source was not found in index.html')
           PY
 
-      - name: Commit durable fix and remove patcher
+      - name: Commit homepage path fix
         shell: bash
         run: |
           set -euo pipefail
+          if git diff --quiet -- index.html; then
+            echo 'No homepage change required.'
+            exit 0
+          fi
           git config user.name 'Pythology Pages'
           git config user.email 'actions@users.noreply.github.com'
-          git add .github/workflows/pages.yml scripts/install-home-banner.py
-          git rm .github/workflows/make-title-banner-durable.yml
-          git commit -m 'pages: inject Pythology title banner into deployed artifact'
+          git add index.html
+          git commit -m 'home: use local Pythology title banner asset'
           git push
