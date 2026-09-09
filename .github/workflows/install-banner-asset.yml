@@ -1,0 +1,51 @@
+name: Install final Pythology banner asset
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.banner-install-trigger'
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Rebuild and validate banner
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p png_images
+          cat .banner-parts/*.b64 | tr -d '\n\r' | base64 --decode > png_images/pythology_environmental_ai_banner.webp
+          test "$(stat -c%s png_images/pythology_environmental_ai_banner.webp)" -eq 54500
+          printf '%s  %s\n' 'fd1fc8938cabb56a7514f419785e815cb83e16bf39f26256f0b801cae3aab973' 'png_images/pythology_environmental_ai_banner.webp' | sha256sum -c -
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('png_images/pythology_environmental_ai_banner.webp')
+          data = p.read_bytes()
+          if data[:4] != b'RIFF' or data[8:12] != b'WEBP':
+              raise SystemExit('Banner is not a valid RIFF/WEBP container')
+          print(f'Validated final Pythology banner: {len(data)} bytes')
+          PY
+
+      - name: Commit final binary banner
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf .banner-parts
+          git config user.name "pythology-pages[bot]"
+          git config user.email "actions@users.noreply.github.com"
+          git add -A .banner-parts png_images/pythology_environmental_ai_banner.webp
+          if git diff --cached --quiet; then
+            echo "No banner changes to commit."
+            exit 0
+          fi
+          git commit -m "assets: install final Pythology environmental AI banner"
+          git push origin HEAD:main
