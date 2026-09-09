@@ -1,0 +1,73 @@
+name: Install Pythology Title Banner
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/install-pythology-title-banner.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout live Pages repository
+        uses: actions/checkout@v4
+
+      - name: Download approved Pythology banner
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p png_images
+          curl -L --fail --retry 3 \
+            'https://pythologyintelligence-github-lajf98qhc-pythology.vercel.app/png_images/pythology_environmental_ai_banner.png?_vercel_share=SUhI4Ekp3qW2yQdrqHKEHZCwL3he6M1t' \
+            -o png_images/pythology_environmental_ai_banner.png
+          python - <<'PY'
+          from pathlib import Path
+          p = Path('png_images/pythology_environmental_ai_banner.png')
+          b = p.read_bytes()
+          if not b.startswith(b'\x89PNG\r\n\x1a\n'):
+              raise SystemExit('Downloaded banner is not a PNG')
+          if len(b) < 100_000:
+              raise SystemExit(f'Banner unexpectedly small: {len(b)} bytes')
+          print(f'Banner verified: {len(b):,} bytes')
+          PY
+
+      - name: Put banner at the top without changing live copy
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+
+          path = Path('index.html')
+          html = path.read_text(encoding='utf-8')
+
+          preload = '  <link rel="preload" as="image" href="png_images/pythology_environmental_ai_banner.png">\n'
+          if 'pythology_environmental_ai_banner.png' not in html:
+              marker = '  <script defer src="site.js"></script>'
+              html = html.replace(marker, preload + marker, 1)
+
+          style = '''\n  <style id="pythology-title-banner-style">\n    .home-title-banner {\n      position: relative;\n      overflow: hidden;\n      padding: clamp(10px, 1.4vw, 22px);\n      background: radial-gradient(circle at 50% 0%, rgba(84,224,177,.09), transparent 42%), #03080a;\n      border-bottom: 1px solid rgba(143,217,231,.14);\n      isolation: isolate;\n    }\n    .home-title-banner::before {\n      content: '';\n      position: absolute;\n      z-index: -1;\n      inset: -25% 8% 0;\n      background: radial-gradient(ellipse at center, rgba(47,203,151,.12), transparent 64%);\n      filter: blur(28px);\n      pointer-events: none;\n    }\n    .home-title-banner-frame {\n      position: relative;\n      width: min(100%, 1800px);\n      margin: 0 auto;\n      overflow: hidden;\n      border: 1px solid rgba(143,217,231,.18);\n      border-radius: clamp(12px, 1.4vw, 24px);\n      background: #020607;\n      box-shadow: 0 30px 90px rgba(0,0,0,.52), 0 0 70px rgba(47,203,151,.08);\n    }\n    .home-title-banner img {\n      display: block;\n      width: 100%;\n      height: auto;\n      object-fit: contain;\n      filter: saturate(1.04) contrast(1.02);\n    }\n    @media (max-width: 680px) {\n      .home-title-banner { padding: 0; }\n      .home-title-banner-frame {\n        width: 100%;\n        border-inline: 0;\n        border-radius: 0;\n        box-shadow: 0 18px 54px rgba(0,0,0,.48);\n      }\n    }\n  </style>\n'''
+          if 'id="pythology-title-banner-style"' not in html:
+              html = html.replace('</head>', style + '</head>', 1)
+
+          banner = '''\n  <section class="home-title-banner" aria-label="Pythology Environmental AI Systems">\n    <div class="home-title-banner-frame">\n      <img src="png_images/pythology_environmental_ai_banner.png" alt="Pythology Environmental AI Systems — Monitor, Model, Predict, Protect" width="1672" height="941" fetchpriority="high">\n    </div>\n  </section>\n'''
+          if '<section class="home-title-banner"' not in html:
+              html = html.replace('<main>', '<main>' + banner, 1)
+
+          path.write_text(html, encoding='utf-8')
+          PY
+
+      - name: Commit live-site banner and remove installer
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name 'Pythology Pages'
+          git config user.email 'actions@users.noreply.github.com'
+          git add index.html png_images/pythology_environmental_ai_banner.png
+          git rm .github/workflows/install-pythology-title-banner.yml
+          git commit -m 'home: add Pythology environmental AI title banner'
+          git push
