@@ -1,19 +1,19 @@
 {
-  "causal_assessment_count": 34,
+  "causal_assessment_count": 25,
   "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-  "cycle_completed_at": "2026-09-12T04:13:14+00:00",
+  "cycle_completed_at": "2026-09-12T12:14:06+00:00",
   "cycle_scoped_source": true,
-  "cycle_started_at": "2026-09-12T04:12:02+00:00",
-  "degraded": false,
-  "engine_count": 10,
+  "cycle_started_at": "2026-09-12T12:12:02+00:00",
+  "degraded": true,
+  "engine_count": 9,
   "engine_counts": {
-    "atmosphere": 9,
+    "atmosphere": 0,
     "cryosphere": 6,
-    "geopolitical_conflict": 13,
-    "infrastructure_risk": 5,
+    "geopolitical_conflict": 12,
+    "infrastructure_risk": 0,
     "neo": 11,
     "ocean": 10,
-    "seismic": 10,
+    "seismic": 13,
     "space_weather": 1,
     "volcanic": 12,
     "wildfire_flood_landslide": 33
@@ -23,7 +23,6 @@
     "atmosphere",
     "cryosphere",
     "geopolitical_conflict",
-    "infrastructure",
     "neo",
     "ocean",
     "seismic",
@@ -31,9 +30,9 @@
     "volcanic",
     "wildfire_flood_landslide"
   ],
-  "event_count": 122,
+  "event_count": 103,
   "event_intelligence": {
-    "assessment_count": 65,
+    "assessment_count": 67,
     "autonomous": true,
     "degraded": false,
     "deterministic": true,
@@ -44,12 +43,12 @@
       "active_wildfire": 25,
       "armed_conflict": 1,
       "ceasefire_update": 1,
-      "earthquake": 10,
-      "humanitarian_crisis": 10,
+      "earthquake": 13,
+      "humanitarian_crisis": 9,
       "infrastructure_disruption": 1,
       "volcanic_alert": 2
     },
-    "generated": "2026-09-12T04:13:30+00:00",
+    "generated": "2026-09-12T12:14:49+00:00",
     "model_generated": false,
     "schema": "earthnet.event-intelligence-status.v0.1",
     "supported_event_types": [
@@ -71,33 +70,36 @@
       "volcanic_alert"
     ],
     "trend_counts": {
-      "improving": 2,
+      "improving": 17,
       "new": 7,
-      "stable": 52,
-      "updated": 4
+      "stable": 38,
+      "updated": 5
     }
   },
   "expired_quakes_hidden": 0,
-  "failed_engines": {},
-  "generated": "2026-09-12T04:13:24+00:00",
+  "failed_engines": {
+    "atmosphere": "Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-27.0&longitude=152.0&hourly=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,wind_gusts_10m,cape,relative_humidity_2m,surface_pressure&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=29.8&longitude=-95.4&hourly=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,wind_gusts_10m,cape,relative_humidity_2m,surface_pressur",
+    "infrastructure_risk": "Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=40.4&longitude=-3.7&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=41.9&longitude=12.5&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/foreca"
+  },
+  "generated": "2026-09-12T12:14:42+00:00",
   "live_data_plane": {
     "branch": "main",
-    "prepared_at": "2026-09-12T04:13:30+00:00",
+    "prepared_at": "2026-09-12T12:14:49+00:00",
     "provider": "github-repository",
     "publication_mode": "canonical_static_snapshot",
     "published": true,
-    "published_at": "2026-09-12T04:13:33+00:00",
+    "published_at": "2026-09-12T12:14:52+00:00",
     "repository": "PythologyIntelligence/pythology-pages-lab",
-    "runner_local_media_assets_stripped": 3,
+    "runner_local_media_assets_stripped": 5,
     "runner_local_satellite_assets_stripped": 0,
     "visual_asset_note": "Ephemeral runner-local image files are not published. Source/external evidence URLs already present in records are retained. A future Cloudflare-native object store can be added without changing the core evidence snapshot."
   },
   "media": {
     "autonomous": true,
-    "collected_record_count": 6,
-    "generated": "2026-09-12T04:13:30+00:00",
-    "local_image_count": 3,
-    "neo_lookup_count": 3,
+    "collected_record_count": 5,
+    "generated": "2026-09-12T12:14:49+00:00",
+    "local_image_count": 5,
+    "neo_lookup_count": 0,
     "provider_errors": [],
     "published_image_count": 0,
     "schema": "earthnet.media-status.v0.1",
@@ -107,13 +109,13 @@
     "all_engine_observation_memory": true,
     "calibration": {
       "automatic_weight_updates": false,
-      "brier_score": 0.203787,
-      "calibrated_forecast_count": 37,
+      "brier_score": 0.201863,
+      "calibrated_forecast_count": 38,
       "confidence_bins": {
         "20-40": {
           "confirmed": 3,
-          "count": 22,
-          "observed_frequency": 0.136
+          "count": 23,
+          "observed_frequency": 0.13
         },
         "40-60": {
           "confirmed": 13,
@@ -127,31 +129,31 @@
         }
       },
       "confirmed_count": 22,
-      "hit_rate": 0.349,
-      "not_observed_count": 41,
-      "resolved_count": 63
+      "hit_rate": 0.344,
+      "not_observed_count": 42,
+      "resolved_count": 64
     },
     "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
     "evidence": {
-      "forecast_receipts_created": 3,
-      "ledger_records": 139,
-      "outcome_receipts_created": 0
+      "forecast_receipts_created": 0,
+      "ledger_records": 140,
+      "outcome_receipts_created": 1
     },
     "evidence_git": {
       "commit": null,
       "error": null,
       "state": "not_github_actions"
     },
-    "generated": "2026-09-12T04:13:26+00:00",
-    "ledger_records_appended": 3,
+    "generated": "2026-09-12T12:14:45+00:00",
+    "ledger_records_appended": 1,
     "mode": "live_validation",
     "model_version": "prometheus-core.v0.1",
-    "new_forecast_count": 3,
-    "open_forecast_count": 4,
-    "resolved_forecast_count": 0,
+    "new_forecast_count": 0,
+    "open_forecast_count": 3,
+    "resolved_forecast_count": 1,
     "slack": "sent",
     "slack_error": null,
-    "slack_messages_sent": 3
+    "slack_messages_sent": 1
   },
   "quake_live_window_hours": 24,
   "reliefweb": {
@@ -159,15 +161,15 @@
     "cache_hit": false,
     "degraded": false,
     "error": null,
-    "generated": "2026-09-12T04:13:28+00:00",
+    "generated": "2026-09-12T12:14:48+00:00",
     "geography_mismatch_removed": 0,
     "image_event_count": 0,
     "lookback_hours": 96,
     "matched_event_count": 15,
     "matched_report_count": 21,
-    "primary_geopolitical_context_count": 13,
+    "primary_geopolitical_context_count": 12,
     "provider": "ReliefWeb / UN OCHA",
-    "reports_considered": 133,
+    "reports_considered": 120,
     "schema": "earthnet.reliefweb-status.v0.1"
   },
   "satellite": {
@@ -182,6 +184,6 @@
   },
   "schema": "earthnet.snapshot.v3",
   "source_file": "current_cycle_events.jsonl",
-  "source_record_count": 122,
-  "success": true
+  "source_record_count": 103,
+  "success": false
 }
