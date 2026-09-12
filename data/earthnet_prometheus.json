@@ -9,7 +9,7 @@
     "resolved_count": 63
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-09-11T20:13:21+00:00",
+  "generated_at": "2026-09-12T04:13:26+00:00",
   "history": [
     {
       "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
@@ -1909,6 +1909,82 @@
   },
   "mode": "live_validation",
   "open": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-12T04:13:26+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.453,
+      "forecast_id": "25cb99854bf85dcd43ab55fb",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": null,
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": null,
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "open",
+      "target_event_id": "7945dcde0c46e7a4",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-09-13T04:13:26+00:00"
+    },
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-12T04:13:26+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.427,
+      "forecast_id": "0e31ee0db1320291b9f7b7c3",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": null,
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "California (Central Valley)",
+      "resolved_at": null,
+      "source_families": [
+        "NASA EONET",
+        "Open-Meteo"
+      ],
+      "source_independence_count": 2,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "open",
+      "target_event_id": "f792e8ea4075e389",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — California (Central Valley)",
+      "valid_until": "2026-09-14T04:13:26+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-12T04:13:26+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "18c069875f3eb847f8d18985",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": null,
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": null,
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "open",
+      "target_event_id": "44da5e6a42c9d6a2",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-09-13T04:13:26+00:00"
+    },
     {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
       "calibrated": true,
