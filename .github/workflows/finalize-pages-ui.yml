@@ -53,11 +53,17 @@ jobs:
         run: |
           set -euo pipefail
           VERSION="${SOURCE_SHA:0:12}"
-          [[ -n "$VERSION" ]] || VERSION="earthnet-ui"
+          [[ -n "$VERSION" ]] || VERSION="pages-ui"
 
-          [[ -s earthnet-map-controls.js ]] || { echo 'earthnet-map-controls.js missing' >&2; exit 1; }
+          for required in earthnet-map-controls.js mdra.html mdra.css mdra-nav.js; do
+            [[ -s "$required" ]] || { echo "$required missing" >&2; exit 1; }
+          done
           [[ -s _site/earthnet-global/index.html ]] || { echo 'EarthNet index missing from Pages artifact' >&2; exit 1; }
+
           cp earthnet-map-controls.js _site/earthnet-global/earthnet-map-controls.js
+          cp mdra.html _site/mdra.html
+          cp mdra.css _site/mdra.css
+          cp mdra-nav.js _site/mdra-nav.js
 
           VERSION="$VERSION" python3 - <<'PY'
           from pathlib import Path
@@ -66,14 +72,14 @@ jobs:
 
           version = os.environ['VERSION']
 
+          def version_asset(source, asset):
+              pattern = rf'(["\']){re.escape(asset)}(?:\?v=[^"\']*)?(["\'])'
+              return re.sub(pattern, rf'\1{asset}?v={version}\2', source)
+
           home = Path('_site/index.html')
           if not home.exists():
               raise SystemExit('Homepage missing from Pages artifact')
           text = home.read_text(encoding='utf-8')
-
-          def version_asset(source, asset):
-              pattern = rf'(["\']){re.escape(asset)}(?:\?v=[^"\']*)?(["\'])'
-              return re.sub(pattern, rf'\1{asset}?v={version}\2', source)
 
           for asset in ('site.css', 'pythology-human.css', 'site.js', 'home-proof.js'):
               text = version_asset(text, asset)
@@ -86,8 +92,30 @@ jobs:
               text = text[:anchor.start()] + research_tag + '\n  ' + text[anchor.start():]
           else:
               text = version_asset(text, 'research-ui.js')
-
           home.write_text(text, encoding='utf-8')
+
+          # MDRA is the canonical public front door for the three operating systems.
+          # Inject a tiny last-writer nav guard into all root human-facing pages so
+          # legacy EarthNet/Atlas rewrites cannot reappear after load.
+          nav_tag = f'<script defer src="mdra-nav.js?v={version}"></script>'
+          for page in Path('_site').glob('*.html'):
+              try:
+                  page_text = page.read_text(encoding='utf-8')
+              except UnicodeDecodeError:
+                  continue
+              if 'data-nav-links' not in page_text:
+                  continue
+              page_text = re.sub(
+                  r'\s*<script defer src="mdra-nav\.js(?:\?v=[^"]*)?"></script>\s*',
+                  '\n',
+                  page_text,
+              )
+              if '</head>' not in page_text:
+                  raise SystemExit(f'{page} has no closing head tag')
+              page_text = page_text.replace('</head>', f'  {nav_tag}\n</head>', 1)
+              if page.name == 'mdra.html':
+                  page_text = version_asset(page_text, 'mdra.css')
+              page.write_text(page_text, encoding='utf-8')
 
           earth = Path('_site/earthnet-global/index.html')
           earth_text = earth.read_text(encoding='utf-8')
@@ -102,8 +130,16 @@ jobs:
           earth_text = earth_text.replace('</body>', control_tag + '</body>')
           earth.write_text(earth_text, encoding='utf-8')
 
-          if f'home-proof.js?v={version}' not in text or f'research-ui.js?v={version}' not in text:
+          final_home = home.read_text(encoding='utf-8')
+          final_mdra = Path('_site/mdra.html').read_text(encoding='utf-8')
+          if f'home-proof.js?v={version}' not in final_home or f'research-ui.js?v={version}' not in final_home:
               raise SystemExit('Homepage cache-busting overlay did not land')
+          if f'mdra-nav.js?v={version}' not in final_home:
+              raise SystemExit('Canonical MDRA nav guard did not land on homepage')
+          if 'EARTHNET 2.0' not in final_mdra or 'ATLAS 2.0' not in final_mdra or 'ARCUS' not in final_mdra:
+              raise SystemExit('MDRA operating trio validation failed')
+          if 'https://earthnet.pythology.co.nz/' not in final_mdra:
+              raise SystemExit('EarthNet 2.0 public URL missing from MDRA')
           if f'earthnet-map-controls.js?v={version}' not in earth_text:
               raise SystemExit('EarthNet control overlay did not land')
 
@@ -116,7 +152,7 @@ jobs:
           if 'data:image/webp;base64' not in proof:
               raise SystemExit('Homepage NZ artwork payload is missing from home-proof.js')
 
-          print(f'UI overlay validated for Pages source {version}.')
+          print(f'MDRA + canonical navigation overlay validated for Pages source {version}.')
           PY
 
       - name: Configure Pages
