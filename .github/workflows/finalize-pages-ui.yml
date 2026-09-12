@@ -55,7 +55,7 @@ jobs:
           VERSION="${SOURCE_SHA:0:12}"
           [[ -n "$VERSION" ]] || VERSION="pages-ui"
 
-          for required in earthnet-map-controls.js mdra.html mdra.css mdra-nav.js; do
+          for required in earthnet-map-controls.js mdra.html mdra.css mdra-nav.js mdra-refresh.js mdra-refresh.css; do
             [[ -s "$required" ]] || { echo "$required missing" >&2; exit 1; }
           done
           [[ -s _site/earthnet-global/index.html ]] || { echo 'EarthNet index missing from Pages artifact' >&2; exit 1; }
@@ -64,6 +64,8 @@ jobs:
           cp mdra.html _site/mdra.html
           cp mdra.css _site/mdra.css
           cp mdra-nav.js _site/mdra-nav.js
+          cp mdra-refresh.js _site/mdra-refresh.js
+          cp mdra-refresh.css _site/mdra-refresh.css
 
           VERSION="$VERSION" python3 - <<'PY'
           from pathlib import Path
@@ -95,9 +97,11 @@ jobs:
           home.write_text(text, encoding='utf-8')
 
           # MDRA is the canonical public front door for the three operating systems.
-          # Inject a tiny last-writer nav guard into all root human-facing pages so
-          # legacy EarthNet/Atlas rewrites cannot reappear after load.
+          # The refresh overlay updates the agreed public copy across the human-facing
+          # pages without disturbing the underlying live-product mirrors.
           nav_tag = f'<script defer src="mdra-nav.js?v={version}"></script>'
+          refresh_tag = f'<script defer src="mdra-refresh.js?v={version}"></script>'
+          refresh_css = f'<link rel="stylesheet" href="mdra-refresh.css?v={version}">'
           for page in Path('_site').glob('*.html'):
               try:
                   page_text = page.read_text(encoding='utf-8')
@@ -105,14 +109,12 @@ jobs:
                   continue
               if 'data-nav-links' not in page_text:
                   continue
-              page_text = re.sub(
-                  r'\s*<script defer src="mdra-nav\.js(?:\?v=[^"]*)?"></script>\s*',
-                  '\n',
-                  page_text,
-              )
+              page_text = re.sub(r'\s*<script defer src="mdra-nav\.js(?:\?v=[^"]*)?"></script>\s*', '\n', page_text)
+              page_text = re.sub(r'\s*<script defer src="mdra-refresh\.js(?:\?v=[^"]*)?"></script>\s*', '\n', page_text)
+              page_text = re.sub(r'\s*<link rel="stylesheet" href="mdra-refresh\.css(?:\?v=[^"]*)?">\s*', '\n', page_text)
               if '</head>' not in page_text:
                   raise SystemExit(f'{page} has no closing head tag')
-              page_text = page_text.replace('</head>', f'  {nav_tag}\n</head>', 1)
+              page_text = page_text.replace('</head>', f'  {refresh_css}\n  {nav_tag}\n  {refresh_tag}\n</head>', 1)
               if page.name == 'mdra.html':
                   page_text = version_asset(page_text, 'mdra.css')
               page.write_text(page_text, encoding='utf-8')
@@ -131,11 +133,14 @@ jobs:
           earth.write_text(earth_text, encoding='utf-8')
 
           final_home = home.read_text(encoding='utf-8')
+          final_about = Path('_site/about.html').read_text(encoding='utf-8')
           final_mdra = Path('_site/mdra.html').read_text(encoding='utf-8')
           if f'home-proof.js?v={version}' not in final_home or f'research-ui.js?v={version}' not in final_home:
               raise SystemExit('Homepage cache-busting overlay did not land')
-          if f'mdra-nav.js?v={version}' not in final_home:
-              raise SystemExit('Canonical MDRA nav guard did not land on homepage')
+          if f'mdra-nav.js?v={version}' not in final_home or f'mdra-refresh.js?v={version}' not in final_home:
+              raise SystemExit('Canonical MDRA UI overlay did not land on homepage')
+          if f'mdra-refresh.css?v={version}' not in final_about:
+              raise SystemExit('Responsive About refresh CSS did not land')
           if 'EARTHNET 2.0' not in final_mdra or 'ATLAS 2.0' not in final_mdra or 'ARCUS' not in final_mdra:
               raise SystemExit('MDRA operating trio validation failed')
           if 'https://earthnet.pythology.co.nz/' not in final_mdra:
@@ -152,7 +157,7 @@ jobs:
           if 'data:image/webp;base64' not in proof:
               raise SystemExit('Homepage NZ artwork payload is missing from home-proof.js')
 
-          print(f'MDRA + canonical navigation overlay validated for Pages source {version}.')
+          print(f'MDRA architecture refresh validated for Pages source {version}.')
           PY
 
       - name: Configure Pages

@@ -1,0 +1,13 @@
+.mdra-home-view{margin-top:42px;min-height:520px}.mdra-home-view .home-view-copy{max-width:920px}.mdra-home-view::after{background:linear-gradient(90deg,rgba(5,10,13,.96) 0%,rgba(5,10,13,.82) 46%,rgba(5,10,13,.42) 72%,rgba(5,10,13,.22) 100%)}
+.stack-name small,.mdra-system-line{display:block;margin-top:6px;color:#708b92;font:600 9px/1.5 'JetBrains Mono',monospace;letter-spacing:.05em;text-transform:uppercase}.stack-name span{display:block}.mdra-system-line{margin-top:8px}
+.about-mobile-visual{display:none}
+@media(max-width:1020px){
+  .pitch-body .about-hero{min-height:auto!important;padding-bottom:44px}
+  .pitch-body .about-hero::before,.pitch-body .about-hero::after{display:none!important}
+  .about-hero .container{display:block}
+  .about-mobile-visual{display:block;width:100%;aspect-ratio:16/10;margin-top:34px;border:1px solid rgba(161,213,222,.16);border-radius:22px;background:url('png_images/about_me.png') 72% 44%/cover no-repeat;box-shadow:0 24px 64px rgba(0,0,0,.28)}
+}
+@media(max-width:720px){
+  .mdra-home-view{min-height:460px}.mdra-home-view::after{background:linear-gradient(180deg,rgba(5,10,13,.30) 0%,rgba(5,10,13,.74) 46%,rgba(5,10,13,.96) 100%)}
+  .about-mobile-visual{aspect-ratio:4/3;margin-top:28px;border-radius:16px;background-position:70% 46%}
+}
