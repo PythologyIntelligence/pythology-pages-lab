@@ -317,6 +317,16 @@ jobs:
               page.write_text(text, encoding='utf-8')
           PY
 
+      - name: Stage private Prometheus control centre
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s prometheus-private.html
+          cp prometheus-private.html _site/prometheus-private.html
+          grep -q 'prometheus-data.pythology.co.nz' _site/prometheus-private.html
+          grep -q 'noindex,nofollow,noarchive' _site/prometheus-private.html
+          echo "Private Prometheus control centre staged."
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
