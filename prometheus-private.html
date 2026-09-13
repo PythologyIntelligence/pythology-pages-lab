@@ -115,6 +115,11 @@ body.prom-private{background:radial-gradient(circle at 15% 0,rgba(255,128,70,.13
 <script>
 const API = "https://prometheus-data.pythology.co.nz";
 const tokenKey = "pythology_prometheus_private_token";
+const incomingToken = new URLSearchParams(location.hash.slice(1)).get("token");
+if (incomingToken) {
+  localStorage.setItem(tokenKey, incomingToken);
+  history.replaceState(null, "", location.pathname + location.search);
+}
 const byId = id => document.getElementById(id);
 const array = value => Array.isArray(value) ? value : [];
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
