@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="color-scheme" content="dark">
+<title>Prometheus Private Intelligence — Pythology</title>
+<link rel="stylesheet" href="site.css">
+<link rel="stylesheet" href="pythology-human.css">
+<script defer src="site.js"></script>
+<style>
+:root{--p-bg:#040b0e;--p-card:#09171c;--p-line:#1c353b;--p-text:#edf6f3;--p-muted:#8ba2a4;--p-mint:#70edbe;--p-blue:#7bd2ef;--p-fire:#ff9a5c;--p-good:#5fe0a2;--p-bad:#ff7770}
+body.prom-private{background:radial-gradient(circle at 15% 0,rgba(255,128,70,.13),transparent 34%),radial-gradient(circle at 92% 10%,rgba(70,185,220,.12),transparent 30%),var(--p-bg);color:var(--p-text);min-height:100vh}
+.private-main{width:min(1280px,94vw);margin:0 auto;padding:42px 0 70px}
+.private-hero{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:24px}
+.private-hero h1{font:600 clamp(48px,7vw,94px)/.9 "Newsreader",Georgia,serif;letter-spacing:-.055em;margin:8px 0}
+.private-hero p{max-width:760px;color:var(--p-muted);font-size:17px;line-height:1.6}
+.private-kicker,.private-label{color:var(--p-muted);font-size:11px;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.private-live{display:flex;align-items:center;gap:9px;color:var(--p-good);white-space:nowrap}
+.private-dot{width:9px;height:9px;border-radius:50%;background:var(--p-good);box-shadow:0 0 15px var(--p-good)}
+.private-grid{display:grid;gap:14px;margin-bottom:14px}
+.private-systems{grid-template-columns:repeat(3,1fr)}
+.private-metrics{grid-template-columns:repeat(4,1fr)}
+.private-two{grid-template-columns:repeat(2,1fr)}
+.private-card{background:linear-gradient(145deg,rgba(13,32,37,.97),rgba(6,18,22,.97));border:1px solid var(--p-line);border-radius:17px;padding:21px}
+.private-system{position:relative;overflow:hidden}
+.private-system:before{content:"";position:absolute;inset:0 auto 0 0;width:3px;background:var(--p-blue)}
+.private-system.good:before{background:var(--p-good)}
+.private-value{font-size:31px;font-weight:850;color:var(--p-mint);margin-top:7px}
+.private-card h2{font-size:16px;color:var(--p-blue);margin:0 0 15px}
+.private-list{margin:0;padding-left:19px}
+.private-list li{margin:9px 0;color:#c8d8d5;line-height:1.46}
+.private-mechanisms{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.private-mechanism{border-top:1px solid var(--p-line);padding-top:12px}
+.private-mechanism strong{display:block;color:var(--p-mint);font-size:13px;word-break:break-word}
+.private-meta{color:var(--p-muted);font-size:13px;line-height:1.5;margin-top:6px}
+.private-note{border-left:3px solid var(--p-fire);color:#d7c5ba;line-height:1.55}
+.private-login{width:min(520px,92vw);margin:11vh auto;background:var(--p-card);border:1px solid var(--p-line);border-radius:20px;padding:30px}
+.private-login h1{font:600 42px/1 "Newsreader",Georgia,serif;margin:8px 0 12px}
+.private-login p{color:var(--p-muted);line-height:1.55}
+.private-form{display:flex;gap:9px;margin-top:22px}
+.private-form input{min-width:0;flex:1;background:#03090c;border:1px solid var(--p-line);border-radius:10px;color:var(--p-text);padding:12px;font:inherit}
+.private-form button{border:0;border-radius:10px;background:var(--p-mint);color:#04100c;font-weight:800;padding:12px 17px;cursor:pointer}
+.private-error{color:var(--p-bad);min-height:22px;margin-top:12px}
+.private-hidden{display:none!important}
+.private-footer{text-align:center;color:var(--p-muted);font-size:12px;margin-top:24px}
+@media(max-width:850px){.private-systems,.private-metrics,.private-two{grid-template-columns:1fr 1fr}.private-hero{display:block}.private-live{margin-top:14px}}
+@media(max-width:560px){.private-systems,.private-metrics,.private-two,.private-mechanisms{grid-template-columns:1fr}.private-form{display:block}.private-form button{width:100%;margin-top:9px}}
+</style>
+</head>
+<body class="pitch-body prom-private">
+<section id="login" class="private-login private-hidden">
+  <div class="private-kicker">Pythology private intelligence</div>
+  <h1>Prometheus</h1>
+  <p>This view contains Prometheus's private operational state across EarthNet, Atlas and ARCUS.</p>
+  <form id="loginForm" class="private-form">
+    <input id="code" type="password" autocomplete="current-password" placeholder="Access code" required>
+    <button type="submit">Open</button>
+  </form>
+  <div id="loginError" class="private-error"></div>
+</section>
+
+<div id="dashboard" class="private-hidden">
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html"><img src="Logo (2).jpeg" alt="Pythology"><span class="brand-word">PYTHOLOGY</span></a>
+    <div class="private-live"><span class="private-dot"></span><span id="live">Connecting</span></div>
+  </div>
+</header>
+
+<main class="private-main">
+  <section class="private-hero">
+    <div>
+      <div class="private-kicker">Private multi-domain intelligence</div>
+      <h1>Prometheus<br>Control Centre</h1>
+      <p>What Prometheus is watching, testing and learning—and what he currently thinks may happen next—across EarthNet, Atlas and ARCUS.</p>
+    </div>
+    <div class="private-meta" id="updated">Awaiting current state</div>
+  </section>
+
+  <section class="private-grid private-systems">
+    <article class="private-card private-system good"><div class="private-label">EarthNet</div><div class="private-value">Learning</div><div class="private-meta">Environmental evidence and relationships</div></article>
+    <article class="private-card private-system good"><div class="private-label">Atlas</div><div class="private-value">Connected</div><div class="private-meta">Events and observations through MDRA intake</div></article>
+    <article class="private-card private-system good"><div class="private-label">ARCUS</div><div class="private-value">Connected</div><div class="private-meta">Theatres, causal chains and assessments</div></article>
+  </section>
+
+  <section class="private-grid private-metrics">
+    <article class="private-card"><div class="private-label">Events examined</div><div class="private-value" id="events">—</div></article>
+    <article class="private-card"><div class="private-label">New trials</div><div class="private-value" id="newTrials">—</div></article>
+    <article class="private-card"><div class="private-label">Resolved this run</div><div class="private-value" id="resolved">—</div></article>
+    <article class="private-card"><div class="private-label">Causal candidates</div><div class="private-value" id="causalCount">—</div></article>
+  </section>
+
+  <section class="private-grid private-two">
+    <article class="private-card"><h2>What I’m watching</h2><ul id="watching" class="private-list"></ul></article>
+    <article class="private-card"><h2>What may happen next</h2><ul id="next" class="private-list"></ul></article>
+  </section>
+
+  <section class="private-grid private-two">
+    <article class="private-card"><h2>Relationship learning</h2><div id="mechanisms" class="private-mechanisms"></div></article>
+    <article class="private-card"><h2>Causal assessments</h2><ul id="assessments" class="private-list"></ul></article>
+  </section>
+
+  <section class="private-grid private-two">
+    <article class="private-card"><h2>Solar and ionosphere learning</h2><div id="solar" class="private-meta"></div></article>
+    <article class="private-card"><h2>Ionosphere observation</h2><div id="ionosphere" class="private-meta"></div></article>
+  </section>
+
+  <section class="private-card private-note">Prometheus keeps prospective trials separate from retrospective seed evidence. Relationships and hypotheses are evidence—not proof of causation—and misses stay in the record.</section>
+  <div class="private-footer">Private operational view · Pythology Intelligence</div>
+</main>
+</div>
+
+<script>
+const API = "https://prometheus-data.pythology.co.nz";
+const tokenKey = "pythology_prometheus_private_token";
+const byId = id => document.getElementById(id);
+const array = value => Array.isArray(value) ? value : [];
+const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
+const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const itemText = value => typeof value === "string" ? value : value?.title || value?.summary || value?.hypothesis || value?.description || JSON.stringify(value);
+
+function headers() {
+  const token = localStorage.getItem(tokenKey);
+  return token ? {Authorization: `Bearer ${token}`} : {};
+}
+function showLogin(message = "") {
+  byId("dashboard").classList.add("private-hidden");
+  byId("login").classList.remove("private-hidden");
+  byId("loginError").textContent = message;
+}
+function list(id, values, empty) {
+  byId(id).innerHTML = values.length
+    ? values.slice(0,10).map(v => `<li>${escapeHtml(itemText(v))}</li>`).join("")
+    : `<li class="private-meta">${escapeHtml(empty)}</li>`;
+}
+function mechanismList(value) {
+  if (Array.isArray(value)) return value;
+  return Object.entries(value || {}).map(([mechanism_id, detail]) => ({mechanism_id, ...detail}));
+}
+function render(payload) {
+  const states = payload.states || {};
+  const current = states["prometheus-current"] || {};
+  const rel = states["relationship-learning-v2"] || {};
+  const causal = states["causal-current"] || {};
+  const iono = states["ionosphere-current"] || {};
+  const solar = states["solar-learning"] || {};
+  const solarIono = states["solar-ionosphere-learning"] || {};
+
+  byId("events").textContent = rel.earthnet_events_examined ?? "—";
+  byId("newTrials").textContent = rel.new_trials ?? "—";
+  byId("resolved").textContent = rel.resolved_this_run ?? "—";
+  byId("causalCount").textContent = current.causal_candidate_count ?? array(causal.assessments).length;
+
+  list("watching", array(current.what_im_watching), "No watch items currently published.");
+  list("next", array(current.what_i_think_may_happen_next), "No calibrated next-state hypotheses currently published.");
+  list("assessments", array(causal.assessments), "No causal assessments currently published.");
+
+  const mechanisms = mechanismList(rel.mechanisms);
+  byId("mechanisms").innerHTML = mechanisms.length ? mechanisms.map(m => `
+    <div class="private-mechanism">
+      <strong>${escapeHtml(m.mechanism_id || m.id || "mechanism")}</strong>
+      <div class="private-meta">${number(m.open)} open · ${number(m.hits)} hits · ${number(m.misses)} misses · ${m.hit_rate == null ? "rate pending" : (number(m.hit_rate) * 100).toFixed(1) + "% hit rate"}</div>
+    </div>`).join("") : '<div class="private-meta">No mechanisms currently published.</div>';
+
+  byId("solar").textContent = `${number(solar.samples)} samples · ${number(solar.trials)} trials · ${number(solarIono.ionosphere_snapshots)} ionosphere snapshots · ${number(solarIono.responses_recorded_now)} responses recorded now`;
+  byId("ionosphere").textContent = `${number(iono.feature_count)} observed features · quality flags: ${JSON.stringify(iono.quality_flag_counts || {})}`;
+  byId("updated").textContent = `Updated ${new Date(payload.generated_at).toLocaleString()}`;
+  byId("live").textContent = "Live";
+  byId("login").classList.add("private-hidden");
+  byId("dashboard").classList.remove("private-hidden");
+}
+async function loadState() {
+  const response = await fetch(`${API}/api/state`, {headers: headers(), cache:"no-store"});
+  if (response.status === 401) {
+    localStorage.removeItem(tokenKey);
+    showLogin();
+    return;
+  }
+  if (!response.ok) throw new Error(`Private feed returned HTTP ${response.status}`);
+  render(await response.json());
+}
+byId("loginForm").addEventListener("submit", async event => {
+  event.preventDefault();
+  byId("loginError").textContent = "Checking…";
+  try {
+    const response = await fetch(`${API}/api/login`, {
+      method:"POST",
+      headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({code:byId("code").value})
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error === "too_many_attempts" ? "Too many attempts. Try again later." : "That access code was not accepted.");
+    localStorage.setItem(tokenKey, result.token);
+    byId("code").value = "";
+    await loadState();
+  } catch (error) {
+    showLogin(error.message);
+  }
+});
+loadState().catch(error => showLogin(error.message));
+setInterval(() => loadState().catch(() => { byId("live").textContent = "Connection interrupted"; }), 60000);
+</script>
+</body>
+</html>
