@@ -36,6 +36,20 @@ body.prom-private{background:radial-gradient(circle at 15% 0,rgba(255,128,70,.13
 .private-mechanism strong{display:block;color:var(--p-mint);font-size:13px;word-break:break-word}
 .private-meta{color:var(--p-muted);font-size:13px;line-height:1.5;margin-top:6px}
 .private-note{border-left:3px solid var(--p-fire);color:#d7c5ba;line-height:1.55}
+.private-section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin:28px 0 12px}
+.private-section-head h2{margin:0;font-size:22px;color:var(--p-text)}
+.private-tabs{display:flex;gap:7px;flex-wrap:wrap}
+.private-tab{border:1px solid var(--p-line);border-radius:999px;background:#071216;color:var(--p-muted);padding:7px 12px;cursor:pointer;font:700 13px inherit}
+.private-tab.active{background:var(--p-mint);color:#04100c;border-color:var(--p-mint)}
+.private-bar{height:8px;border-radius:999px;background:#14272c;overflow:hidden;margin-top:12px}
+.private-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--p-mint),var(--p-blue));border-radius:inherit}
+.private-table-wrap{overflow-x:auto}
+.private-table{width:100%;border-collapse:collapse;font-size:14px}
+.private-table th,.private-table td{text-align:left;padding:11px 9px;border-bottom:1px solid var(--p-line);vertical-align:top}
+.private-table th{color:var(--p-muted);font-size:11px;text-transform:uppercase;letter-spacing:.1em}
+.private-status{display:inline-block;border-radius:999px;padding:4px 8px;font-size:11px;font-weight:800;background:#13292b;color:var(--p-mint)}
+.private-source-meta{min-height:40px}
+.private-empty{color:var(--p-muted);padding:14px 0}
 .private-login{width:min(520px,92vw);margin:11vh auto;background:var(--p-card);border:1px solid var(--p-line);border-radius:20px;padding:30px}
 .private-login h1{font:600 42px/1 "Newsreader",Georgia,serif;margin:8px 0 12px}
 .private-login p{color:var(--p-muted);line-height:1.55}
@@ -80,9 +94,9 @@ body.prom-private{background:radial-gradient(circle at 15% 0,rgba(255,128,70,.13
   </section>
 
   <section class="private-grid private-systems">
-    <article class="private-card private-system good"><div class="private-label">EarthNet</div><div class="private-value">Learning</div><div class="private-meta">Environmental evidence and relationships</div></article>
-    <article class="private-card private-system good"><div class="private-label">Atlas</div><div class="private-value">Connected</div><div class="private-meta">Events and observations through MDRA intake</div></article>
-    <article class="private-card private-system good"><div class="private-label">ARCUS</div><div class="private-value">Connected</div><div class="private-meta">Theatres, causal chains and assessments</div></article>
+    <article class="private-card private-system good"><div class="private-label">EarthNet</div><div class="private-value">Evidence + learning</div><div class="private-meta private-source-meta" id="earthnetSource">Environmental evidence and scored relationships</div></article>
+    <article class="private-card private-system good"><div class="private-label">Atlas</div><div class="private-value">Evidence feed</div><div class="private-meta private-source-meta" id="atlasSource">Events and observations through MDRA intake</div></article>
+    <article class="private-card private-system good"><div class="private-label">ARCUS</div><div class="private-value">Evidence feed</div><div class="private-meta private-source-meta" id="arcusSource">Theatres, causal chains and assessments</div></article>
   </section>
 
   <section class="private-grid private-metrics">
@@ -107,6 +121,28 @@ body.prom-private{background:radial-gradient(circle at 15% 0,rgba(255,128,70,.13
     <article class="private-card"><h2>Ionosphere observation</h2><div id="ionosphere" class="private-meta"></div></article>
   </section>
 
+  <div class="private-section-head">
+    <div><div class="private-kicker">Recorded outcomes</div><h2>Learning history</h2></div>
+    <div class="private-tabs" aria-label="Performance window">
+      <button class="private-tab active" data-window="7">7 days</button>
+      <button class="private-tab" data-window="30">30 days</button>
+      <button class="private-tab" data-window="90">90 days</button>
+    </div>
+  </div>
+  <section class="private-grid private-metrics">
+    <article class="private-card"><div class="private-label">Resolved</div><div class="private-value" id="historyResolved">—</div></article>
+    <article class="private-card"><div class="private-label">Effects observed</div><div class="private-value" id="historyHits">—</div></article>
+    <article class="private-card"><div class="private-label">No effect observed</div><div class="private-value" id="historyMisses">—</div></article>
+    <article class="private-card"><div class="private-label">Observed-effect rate</div><div class="private-value" id="historyRate">—</div><div class="private-bar"><span id="historyRateBar" style="width:0"></span></div></article>
+  </section>
+
+  <section class="private-grid private-two">
+    <article class="private-card"><h2>Recent watches</h2><div id="recentWatches" class="private-table-wrap"></div></article>
+    <article class="private-card"><h2>Recent trial outcomes</h2><div id="recentTrials" class="private-table-wrap"></div></article>
+  </section>
+
+  <section class="private-card"><h2>Latest intake activity</h2><div id="intakeHistory" class="private-table-wrap"></div></section>
+
   <section class="private-card private-note">Prometheus keeps prospective trials separate from retrospective seed evidence. Relationships and hypotheses are evidence—not proof of causation—and misses stay in the record.</section>
   <div class="private-footer">Private operational view · Pythology Intelligence</div>
 </main>
@@ -124,7 +160,17 @@ const byId = id => document.getElementById(id);
 const array = value => Array.isArray(value) ? value : [];
 const number = value => Number.isFinite(Number(value)) ? Number(value) : 0;
 const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const itemText = value => typeof value === "string" ? value : value?.title || value?.summary || value?.hypothesis || value?.description || JSON.stringify(value);
+const itemText = value => {
+  if (typeof value === "string") return value;
+  if (!value || typeof value !== "object") return String(value ?? "");
+  return value.statement || value.title || value.summary || value.hypothesis ||
+    value.description || value.expected_next || value.claim_boundary ||
+    Object.values(value).find(v => typeof v === "string" && v.length > 12) ||
+    "Structured assessment";
+};
+const fmtDate = value => value ? new Date(value).toLocaleString() : "—";
+const fmtName = value => String(value || "unknown").replace(/[_\.]/g, " ").replace(/\bv\d+$/i, "").replace(/\b\w/g, c => c.toUpperCase());
+let historyData = {};
 
 function headers() {
   const token = localStorage.getItem(tokenKey);
@@ -144,6 +190,49 @@ function mechanismList(value) {
   if (Array.isArray(value)) return value;
   return Object.entries(value || {}).map(([mechanism_id, detail]) => ({mechanism_id, ...detail}));
 }
+function sourceSummary(system) {
+  const rows = array(historyData.sources).filter(row => row.system === system);
+  if (!rows.length) return "No retained evidence yet.";
+  const total = rows.reduce((sum,row) => sum + number(row.count), 0);
+  const latest = rows.map(row => row.latest).filter(Boolean).sort().at(-1);
+  return `${total.toLocaleString()} retained records · last intake ${fmtDate(latest)}`;
+}
+function renderPerformance(days) {
+  const row = array(historyData.performance).find(item => number(item.days) === number(days)) || {};
+  const hits = number(row.hits), misses = number(row.misses), resolved = hits + misses;
+  const rate = resolved ? hits / resolved : 0;
+  byId("historyResolved").textContent = resolved.toLocaleString();
+  byId("historyHits").textContent = hits.toLocaleString();
+  byId("historyMisses").textContent = misses.toLocaleString();
+  byId("historyRate").textContent = resolved ? `${(rate * 100).toFixed(1)}%` : "Pending";
+  byId("historyRateBar").style.width = `${Math.round(rate * 100)}%`;
+}
+function historyTable(rows, columns, empty) {
+  if (!rows.length) return `<div class="private-empty">${escapeHtml(empty)}</div>`;
+  return `<table class="private-table"><thead><tr>${columns.map(c => `<th>${escapeHtml(c.label)}</th>`).join("")}</tr></thead><tbody>${rows.map(row => `<tr>${columns.map(c => `<td>${c.render ? c.render(row[c.key],row) : escapeHtml(row[c.key] ?? "—")}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+}
+function renderHistory(history) {
+  historyData = history || {};
+  byId("earthnetSource").textContent = sourceSummary("earthnet");
+  byId("atlasSource").textContent = sourceSummary("atlas");
+  byId("arcusSource").textContent = sourceSummary("arcus");
+  renderPerformance(7);
+  byId("recentWatches").innerHTML = historyTable(array(historyData.watches), [
+    {key:"title",label:"Signal",render:(v,r)=>`<strong>${escapeHtml(v)}</strong><div class="private-meta">${escapeHtml(fmtName(r.system))} · ${escapeHtml(fmtName(r.domain))}</div>`},
+    {key:"confidence",label:"Confidence",render:v=>escapeHtml(number(v) <= 1 ? Math.round(number(v)*100)+"%" : Math.round(number(v))+"%")},
+    {key:"created_at",label:"Seen",render:v=>escapeHtml(fmtDate(v))}
+  ], "No historical watches retained yet.");
+  byId("recentTrials").innerHTML = historyTable(array(historyData.trials), [
+    {key:"mechanism_id",label:"Mechanism",render:v=>escapeHtml(fmtName(v))},
+    {key:"status",label:"Outcome",render:v=>`<span class="private-status">${escapeHtml(fmtName(v))}</span>`},
+    {key:"resolved_at",label:"Resolved",render:v=>escapeHtml(fmtDate(v))}
+  ], "No resolved trials in the retained history yet.");
+  byId("intakeHistory").innerHTML = historyTable(array(historyData.intakes), [
+    {key:"completed_at",label:"Completed",render:v=>escapeHtml(fmtDate(v))},
+    {key:"status",label:"Status",render:v=>`<span class="private-status">${escapeHtml(fmtName(v))}</span>`},
+    {key:"counts",label:"Change",render:v=>escapeHtml(typeof v === "string" ? v : Object.entries(v || {}).map(([k,n])=>`${fmtName(k)}: ${n}`).join(" · ") || "No counts published")}
+  ], "No intake history retained yet.");
+}
 function render(payload) {
   const states = payload.states || {};
   const current = states["prometheus-current"] || {};
@@ -152,6 +241,7 @@ function render(payload) {
   const iono = states["ionosphere-current"] || {};
   const solar = states["solar-learning"] || {};
   const solarIono = states["solar-ionosphere-learning"] || {};
+  renderHistory(payload.history || {});
 
   byId("events").textContent = rel.earthnet_events_examined ?? "—";
   byId("newTrials").textContent = rel.new_trials ?? "—";
@@ -205,6 +295,10 @@ byId("loginForm").addEventListener("submit", async event => {
   }
 });
 loadState().catch(error => showLogin(error.message));
+document.querySelectorAll("[data-window]").forEach(button => button.addEventListener("click", () => {
+  document.querySelectorAll("[data-window]").forEach(item => item.classList.toggle("active", item === button));
+  renderPerformance(button.dataset.window);
+}));
 setInterval(() => loadState().catch(() => { byId("live").textContent = "Connection interrupted"; }), 60000);
 </script>
 </body>
