@@ -45,31 +45,35 @@ jobs:
           mkdir -p .earthnet-seed
 
           api="https://api.github.com/repos/PythologyIntelligence/pythology-pages-lab"
-          runs_json="$(curl --fail --silent --show-error --location \
+          curl --fail --silent --show-error --location \
             -H "Authorization: Bearer $GH_TOKEN" \
             -H "Accept: application/vnd.github+json" \
-            "$api/actions/workflows/pages.yml/runs?branch=main&status=success&per_page=20")"
+            "$api/actions/workflows/pages.yml/runs?branch=main&status=success&per_page=20" \
+            -o "$RUNNER_TEMP/pages-runs.json"
 
-          mapfile -t run_ids < <(RUNS_JSON="$runs_json" python3 - <<'PY'
+          mapfile -t run_ids < <(RUNS_FILE="$RUNNER_TEMP/pages-runs.json" python3 - <<'PY'
           import json
           import os
+          from pathlib import Path
 
-          payload = json.loads(os.environ['RUNS_JSON'])
+          payload = json.loads(Path(os.environ['RUNS_FILE']).read_text())
           for run in payload.get('workflow_runs', []):
               print(run['id'])
           PY
           )
 
           for run_id in "${run_ids[@]}"; do
-            artifacts_json="$(curl --fail --silent --show-error --location \
+            curl --fail --silent --show-error --location \
               -H "Authorization: Bearer $GH_TOKEN" \
               -H "Accept: application/vnd.github+json" \
-              "$api/actions/runs/$run_id/artifacts?name=github-pages&per_page=10")"
-            artifact_id="$(ARTIFACTS_JSON="$artifacts_json" python3 - <<'PY'
+              "$api/actions/runs/$run_id/artifacts?name=github-pages&per_page=10" \
+              -o "$RUNNER_TEMP/pages-artifacts.json"
+            artifact_id="$(ARTIFACTS_FILE="$RUNNER_TEMP/pages-artifacts.json" python3 - <<'PY'
           import json
           import os
+          from pathlib import Path
 
-          payload = json.loads(os.environ['ARTIFACTS_JSON'])
+          payload = json.loads(Path(os.environ['ARTIFACTS_FILE']).read_text())
           for artifact in payload.get('artifacts', []):
               if artifact.get('name') == 'github-pages' and not artifact.get('expired', False):
                   print(artifact['id'])
