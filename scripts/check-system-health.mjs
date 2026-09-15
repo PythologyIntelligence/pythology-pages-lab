@@ -150,7 +150,7 @@ async function main() {
     probeJson("binance", "Binance crypto feed", "https://api.binance.com/api/v3/ticker/24hr?symbol=BTCUSDT", (p) => Number(p?.lastPrice) > 0),
     probeJson("yahoo", "Yahoo market feed", "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC?interval=15m&range=1d", (p) => Number(p?.chart?.result?.[0]?.meta?.regularMarketPrice) > 0),
     probeJson("xaus", "XAUS metals feed", "https://xaus.com/api/v1/spot?compact=1", (p) => Number(p?.spot_usd_oz) > 0),
-    probePage("earthnet-app", "EarthNet interface", `${PAGES_BASE}/earthnet-v3.html`),
+    probePage("earthnet-app", "EarthNet 2.0 interface", "https://earthnet.pythology.co.nz/"),
     probeEarthNetSnapshot(),
     probePage("agri-app", "Agri interface", "https://pythology.co.nz/agri-portal.html"),
     probePage("agri-data", "Agri data service", "https://pythology.co.nz/api/agri-data?client=brookfield-newfield-pilot"),
