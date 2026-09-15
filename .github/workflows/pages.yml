@@ -31,20 +31,67 @@ jobs:
         with:
           ref: main
 
-      # Emergency seed from a known-good Pages package that contains the complete
-      # EarthNet Vite runtime. This is only used when a self-mirror cannot recover
-      # the JS asset. Once the public deployment is clean, subsequent mirrors can
-      # recover the runtime from the live Pages site itself.
-      - name: Download known-good EarthNet seed
+      # Recover the complete EarthNet Vite runtime from the newest unexpired
+      # artifact produced by a successful Pages deployment. This avoids pinning
+      # recovery to an artifact that GitHub will eventually expire.
+      - name: Download latest successful EarthNet seed
         id: earthnet_seed
         continue-on-error: true
-        uses: actions/download-artifact@v4
-        with:
-          name: github-pages
-          path: .earthnet-seed
-          github-token: ${{ github.token }}
-          repository: PythologyIntelligence/pythology-pages-lab
-          run-id: 32951531815
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p .earthnet-seed
+
+          api="https://api.github.com/repos/PythologyIntelligence/pythology-pages-lab"
+          runs_json="$(curl --fail --silent --show-error --location \
+            -H "Authorization: Bearer $GH_TOKEN" \
+            -H "Accept: application/vnd.github+json" \
+            "$api/actions/workflows/pages.yml/runs?branch=main&status=success&per_page=20")"
+
+          mapfile -t run_ids < <(RUNS_JSON="$runs_json" python3 - <<'PY'
+          import json
+          import os
+
+          payload = json.loads(os.environ['RUNS_JSON'])
+          for run in payload.get('workflow_runs', []):
+              print(run['id'])
+          PY
+          )
+
+          for run_id in "${run_ids[@]}"; do
+            artifacts_json="$(curl --fail --silent --show-error --location \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "$api/actions/runs/$run_id/artifacts?name=github-pages&per_page=10")"
+            artifact_id="$(ARTIFACTS_JSON="$artifacts_json" python3 - <<'PY'
+          import json
+          import os
+
+          payload = json.loads(os.environ['ARTIFACTS_JSON'])
+          for artifact in payload.get('artifacts', []):
+              if artifact.get('name') == 'github-pages' and not artifact.get('expired', False):
+                  print(artifact['id'])
+                  break
+          PY
+            )"
+
+            if [[ -n "$artifact_id" ]]; then
+              curl --fail --silent --show-error --location \
+                -H "Authorization: Bearer $GH_TOKEN" \
+                -H "Accept: application/vnd.github+json" \
+                "$api/actions/artifacts/$artifact_id/zip" \
+                -o .earthnet-seed/github-pages.zip
+              unzip -q .earthnet-seed/github-pages.zip -d .earthnet-seed
+              rm .earthnet-seed/github-pages.zip
+              echo "Recovered EarthNet seed from successful Pages run $run_id (artifact $artifact_id)."
+              exit 0
+            fi
+          done
+
+          echo "::warning::No unexpired successful Pages artifact is available; live mirror must supply the runtime."
+          exit 0
 
       - name: Extract EarthNet seed
         shell: bash
