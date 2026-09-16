@@ -272,6 +272,8 @@ fi
 # intact while allowing the public presentation to move forward deliberately.
 PUBLIC_OVERRIDES=(
   index.html
+  site.css
+  architecture-in-action.css
   pythology-human.css
   home-proof.js
   earthnet-human.css
@@ -304,6 +306,15 @@ for file in "${PUBLIC_OVERRIDES[@]}"; do
   cp "$ROOT/$file" "$OUT/$file"
 done
 
+# The round header/footer mark is a binary asset owned by the canonical public
+# website repository. Recover it explicitly instead of trusting the live-site
+# mirror, which may already be missing the file.
+CANONICAL_ASSET_BASE="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main"
+curl -fsSL "$CANONICAL_ASSET_BASE/Logo%20(2).jpeg" -o "$OUT/Logo (2).jpeg" || {
+  echo 'Required Pythology logo could not be recovered.' >&2
+  exit 1
+}
+
 # Stage the approved Pythology title banner from this public Pages repository.
 TITLE_BANNER="$ROOT/png_images/pythology_environmental_ai_banner.webp"
 if [[ ! -s "$TITLE_BANNER" ]]; then
@@ -326,6 +337,10 @@ done
 # Fail closed if critical public surfaces did not land.
 grep -Fq 'We build intelligence' "$OUT/index.html" || {
   echo 'Humanised homepage overlay validation failed.' >&2
+  exit 1
+}
+[[ -s "$OUT/site.css" && -s "$OUT/architecture-in-action.css" && -s "$OUT/Logo (2).jpeg" ]] || {
+  echo 'Critical homepage stylesheet or logo validation failed.' >&2
   exit 1
 }
 [[ -s "$OUT/earthnet-nz-intelligence.html" ]] || {
