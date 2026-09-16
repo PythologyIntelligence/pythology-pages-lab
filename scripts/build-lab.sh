@@ -306,14 +306,13 @@ for file in "${PUBLIC_OVERRIDES[@]}"; do
   cp "$ROOT/$file" "$OUT/$file"
 done
 
-# The round header/footer mark is a binary asset owned by the canonical public
-# website repository. Recover it explicitly instead of trusting the live-site
-# mirror, which may already be missing the file.
-CANONICAL_ASSET_BASE="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main"
-curl -fsSL "$CANONICAL_ASSET_BASE/Logo%20(2).jpeg" -o "$OUT/Logo (2).jpeg" || {
-  echo 'Required Pythology logo could not be recovered.' >&2
+# Stage the round header/footer mark from this repository. Keeping the binary
+# beside the build removes a private cross-repository dependency from Pages.
+if [[ ! -s "$ROOT/Logo (2).jpeg" ]]; then
+  echo 'Required Pythology logo is missing from the Pages repository.' >&2
   exit 1
-}
+fi
+cp "$ROOT/Logo (2).jpeg" "$OUT/Logo (2).jpeg"
 
 # Stage the approved Pythology title banner from this public Pages repository.
 TITLE_BANNER="$ROOT/png_images/pythology_environmental_ai_banner.webp"
