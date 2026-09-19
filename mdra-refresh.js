@@ -89,7 +89,7 @@
         trio.innerHTML = `
           <div class="pitch-step"><span class="step-no">MDRA</span><h3>Test mechanisms against a changing world.</h3><p>MDRA supplies retained, provenance-linked evidence across EarthNet 2.0, Atlas 2.0 and A.R.C.U.S. The causal core can evaluate declared pathways and intervention branches against that evidence without promoting correlation into causation.</p></div>
           <div class="pitch-step"><span class="step-no">PROMETHEUS</span><h3>Turn mechanisms into forecasts that risk being wrong.</h3><p>Prometheus uses traceable causal outputs to form prospective expectations, commit them before outcomes and learn when reality answers.</p></div>
-          <div class="pitch-step"><span class="step-no">DECISION FUTURES</span><h3>Ask what changes when the intervention changes.</h3><p>Decision Futures carries explicit causal structure into conditional branches so alternative choices can be compared without presenting a scenario as an observed fact or guaranteed outcome.</p></div>`;
+          <div class="pitch-step"><span class="step-no">DECISION FUTURES</span><h3>Prometheus runs the alternatives himself.</h3><p>He autonomously finds eligible candidates, freezes the evidence and runs each declared conditional branch while keeping simulated outcomes separate from later observed reality.</p></div>`;
       }
       const buttons = rust.querySelector('.btn-row');
       if (buttons) buttons.innerHTML = '<a class="btn btn-primary" href="mdra.html">Explore MDRA</a><a class="btn" href="prometheus.html">Open Prometheus</a>';
@@ -171,7 +171,7 @@
     if (infrastructure) infrastructure.textContent = 'Severe weather can touch power, transport, communications, ports, water and workforce access at the same time. A focused MDRA deployment could combine relevant public evidence with authorised private operational context to make those relationships easier to see and interrogate.';
 
     const resilience = document.querySelector('#resilience .fit-problem p');
-    if (resilience) resilience.textContent = 'MDRA can establish the surrounding physical and environmental state, Atlas can provide country-level depth where configured, Prometheus can preserve a baseline expectation, and Decision Futures can make assumptions around alternative interventions explicit. Over time, observed outcomes can begin separating useful interventions from persuasive stories.';
+    if (resilience) resilience.textContent = 'MDRA can establish the surrounding physical and environmental state and Atlas can provide country-level depth where configured. Prometheus preserves the baseline, autonomously runs and logs each Decision Futures scenario, then follows observed outcomes so useful interventions can gradually be separated from persuasive stories.';
 
     const research = document.querySelector('#research .fit-problem p');
     if (research) research.textContent = 'Prometheus creates a record of what was believed before reality answered. MDRA can supply retained multi-domain histories, the causal layer keeps competing mechanisms visible, and the outcome layer preserves misses instead of cleaning the story up afterward.';
