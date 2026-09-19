@@ -215,7 +215,7 @@
         : 'Fleet telemetry has not loaded yet.';
     }
 
-    return 'I can answer from the public-safe command picture: ask for a status report, EarthNet status, Prometheus status, or what needs attention. Private neural reasoning remains on the VPS rather than being exposed through this page.';
+    return 'I can answer from the public-safe command picture: ask for fleet health, EarthNet pipeline status, Prometheus runtime status, failed or degraded checks, stale data, or what needs attention. Sentinel’s private diagnostics remain on the VPS rather than being exposed through this page.';
   }
 
   function addMessage(role, text) {

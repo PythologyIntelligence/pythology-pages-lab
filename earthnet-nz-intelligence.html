@@ -17,7 +17,7 @@
     <div class="top">
       <div class="eyebrow">EarthNet · Prometheus · New Zealand</div>
       <h1>24-hour state map</h1>
-      <p>The same geographic state Prometheus records for Slack and Sentinel: microseismic concentrations, GeoNet volcanic status, incoming weather and Tasman/Pacific context.</p>
+      <p>The same geographic state Prometheus records for the research feed: microseismic concentrations, GeoNet volcanic status, incoming weather and Tasman/Pacific context. Sentinel monitors the publication health and freshness of that state rather than interpreting it.</p>
     </div>
     <div class="summary">
       <div class="grid">
@@ -65,7 +65,7 @@ function render(data){
  (data.volcanic?.volcanoes||[]).forEach(v=>{if(!Number.isFinite(Number(v.latitude))||!Number.isFinite(Number(v.longitude)))return;const level=Number(v.alert_level||0);circle(v.latitude,v.longitude,{radius:8+level*2,color:level>0?'#ea580c':'#64748b',weight:2,fillColor:level>0?'#f97316':'#94a3b8',fillOpacity:.72},`<h3>${esc(v.name)}</h3><p>GeoNet Alert Level <b>${level}</b> · aviation ${esc(v.aviation_colour_code)}</p><p>${esc(v.activity||'No activity text supplied.')}</p>`,layers.v)});
  const weather=(data.weather?.points||[]);weather.forEach(w=>{if(!Number.isFinite(Number(w.latitude))||!Number.isFinite(Number(w.longitude)))return;const mm=Number(w.forecast_48h_precip_mm||0),watch=w.rainfall_watch&&w.rainfall_watch!=='none';circle(w.latitude,w.longitude,{radius:watch?8:4,color:watch?'#1d4ed8':'#94a3b8',weight:1.5,fillColor:watch?'#2563eb':'#cbd5e1',fillOpacity:watch?.7:.45},`<h3>${esc(w.name)}</h3><p>${fmt(mm,0)} mm forecast / 48 h · gusts ${fmt(w.max_wind_gust_kmh,0)} km/h</p><p>${esc(w.rainfall_watch||'none')} · forecast context only</p>`,layers.w)});
  (data.ocean?.regions||[]).forEach(o=>{if(!Number.isFinite(Number(o.latitude))||!Number.isFinite(Number(o.longitude)))return;circle(o.latitude,o.longitude,{radius:7,color:'#6d28d9',weight:2,fillColor:'#7c3aed',fillOpacity:.65},`<h3>${esc(o.name)}</h3><p>SST ${fmt(o.avg_sst_c)}°C · heuristic anomaly ${Number(o.sst_anomaly_c)>=0?'+':''}${fmt(o.sst_anomaly_c)}°C</p><p>Max wave ${fmt(o.max_wave_m)} m · current ${fmt(o.avg_current_ms,2)} m/s</p>`,layers.o)});
- document.getElementById('status').textContent=`Schema ${data.schema||'unknown'} · map and Sentinel consume the same machine snapshot.`;
+ document.getElementById('status').textContent=`Schema ${data.schema||'unknown'} · map consumes this machine snapshot; Sentinel monitors its publication health and freshness.`;
 }
 fetch('/data/earthnet_nz_daily.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error(`HTTP ${r.status}`);return r.json()}).then(render).catch(err=>{document.getElementById('status').textContent=`First daily state not available yet (${err.message}). Prometheus will populate this at the next 07:05 NZ cycle.`});
 </script>
