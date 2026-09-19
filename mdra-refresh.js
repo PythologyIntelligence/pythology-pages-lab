@@ -199,7 +199,7 @@
     const story = document.querySelector('.about-story-copy');
     if (story) {
       const p = [...story.querySelectorAll(':scope > p')].find((el) => /EarthNet became a place/.test(el.textContent));
-      if (p) p.textContent = 'Eventually those questions stopped looking like features and started looking like the architecture itself. EarthNet learned to watch the planet, Atlas learned to resolve environmental state in depth, and A.R.C.U.S extended the same evidence discipline into geopolitical instability. Together they became MDRA. Prometheus became the part willing to write a forecast down before the answer was known, while Sentinel became the idea that a human should be able to challenge the machinery instead of simply accepting whatever appears on the screen.';
+      if (p) p.textContent = 'Eventually those questions stopped looking like features and started looking like the architecture itself. EarthNet learned to watch the planet, Atlas learned to resolve environmental state in depth, and A.R.C.U.S extended the same evidence discipline into geopolitical instability. Together they became MDRA. Prometheus became the part willing to write a forecast down before the answer was known — and then run Decision Futures scenarios himself — while Sentinel became the operational overseer that watches the machinery and raises attention when something breaks or degrades.';
     }
 
     const path = document.querySelector('.about-path');
