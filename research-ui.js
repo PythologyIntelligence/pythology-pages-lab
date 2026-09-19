@@ -147,7 +147,7 @@
         </div>`;
     }
 
-    // Decision Futures stays visibly conditional until the human receiver is deployed.
+    // Decision Futures is run autonomously by Prometheus while remaining visibly conditional.
     const stackSection = document.querySelector('#stack');
     if (stackSection && !document.getElementById('decision-futures-home')) {
       const section = document.createElement('section');
@@ -156,26 +156,26 @@
       section.innerHTML = `
         <div class="container">
           <div class="pitch-section-head">
-            <div><p class="human-kicker">Decision Futures · human in the loop</p><h2 class="h2">What changes if<br>the choice changes?</h2></div>
-            <p>Freeze the evidence first, compare a small number of pre-declared branches, let a human review the reasoning, then preserve the chosen path so later reality can judge what actually happened.</p>
+            <div><p class="human-kicker">Decision Futures · Prometheus autonomous</p><h2 class="h2">What changes if<br>the choice changes?</h2></div>
+            <p>Prometheus freezes the evidence first, identifies an eligible candidate, runs each pre-declared branch himself, preserves every result, then follows later reality and logs what actually happened.</p>
           </div>
           <div class="df-home-grid">
             <article class="df-home-card">
-              <span class="human-kicker">Current review candidate</span>
+              <span class="human-kicker">Example autonomous candidate</span>
               <h3>Athens heat risk</h3>
               <p><strong>Conditional question:</strong> if sustained heat persists, does earlier readiness or resource staging materially change plausible downstream electricity-system or heat-health pressure?</p>
               <div class="df-home-branches"><span class="df-home-branch">Maintain posture</span><span class="df-home-branch">Escalate readiness</span><span class="df-home-branch">Stage resources earlier</span><span class="df-home-branch">Dismiss</span></div>
-              <div class="df-home-status">REVIEW: PENDING · TRIAL OPENED: NO</div>
+              <div class="df-home-status">PROMETHEUS: AUTONOMOUS · HUMAN TRIGGER: NOT REQUIRED</div>
             </article>
             <article class="df-home-card">
               <span class="human-kicker">Example conditional branch</span>
               <h3>A wildfire changes when the wind changes.</h3>
               <p>If wind direction or speed shifts, the useful question is not simply whether the fire remains active. It is whether the plausible exposure corridor changes with it — and whether homes, roads, power assets or other people and systems move into that corridor.</p>
-              <div class="df-home-branches"><span class="df-home-branch">Baseline wind</span><span class="df-home-branch">Shifted wind</span><span class="df-home-branch">Changed exposure</span><span class="df-home-branch">Human review</span></div>
+              <div class="df-home-branches"><span class="df-home-branch">Baseline wind</span><span class="df-home-branch">Shifted wind</span><span class="df-home-branch">Changed exposure</span><span class="df-home-branch">Prometheus trace</span></div>
               <div class="df-home-status">CONDITIONAL SCENARIO · NOT A WARNING OR EVACUATION ORDER</div>
             </article>
           </div>
-          <p class="df-home-note">Decision Futures is research decision support. A scenario is not an observed outcome, a forecast is not causal proof, and operational authority remains with responsible humans and official agencies.</p>
+          <p class="df-home-note">Decision Futures is autonomous research decision support run by Prometheus. A simulated scenario is not an observed outcome, a forecast is not causal proof, and real-world operational authority remains with responsible humans and official agencies.</p>
         </div>`;
       stackSection.insertAdjacentElement('afterend', section);
     }
