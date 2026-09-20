@@ -5,7 +5,7 @@
   .pitch-body .about-hero{min-height:auto!important;padding-bottom:44px}
   .pitch-body .about-hero::before,.pitch-body .about-hero::after{display:none!important}
   .about-hero .container{display:block}
-  .about-mobile-visual{display:block;width:100%;aspect-ratio:16/10;margin-top:34px;border:1px solid rgba(161,213,222,.16);border-radius:22px;background:url('png_images/about_me.png') 72% 44%/cover no-repeat;box-shadow:0 24px 64px rgba(0,0,0,.28)}
+  .about-mobile-visual{display:block;width:100%;aspect-ratio:16/10;margin-top:34px;border:1px solid rgba(161,213,222,.16);border-radius:22px;background:url('png_images/about_me.png?v=20260920-restored') 72% 44%/cover no-repeat;box-shadow:0 24px 64px rgba(0,0,0,.28)}
 }
 @media(max-width:720px){
   .mdra-home-view{min-height:460px}.mdra-home-view::after{background:linear-gradient(180deg,rgba(5,10,13,.30) 0%,rgba(5,10,13,.74) 46%,rgba(5,10,13,.96) 100%)}
