@@ -276,6 +276,11 @@ PUBLIC_OVERRIDES=(
   site.js
   architecture-in-action.css
   pythology-human.css
+  mdra.html
+  mdra.css
+  mdra-nav.js
+  mdra-refresh.js
+  mdra-refresh.css
   home-proof.js
   earthnet-human.css
   earthnet-page.js
@@ -332,6 +337,64 @@ for page in Path("_site").glob("*.html"):
 if changed < 1:
     raise SystemExit("No public HTML page referenced site.js for cache busting.")
 print(f"Cache-busted site.js on {changed} public page(s) with version {version}.")
+PY
+
+# Apply the MDRA/public UI overlays inside the primary build so deployment is
+# atomic. No second workflow is allowed to rewrite the site after publication.
+VERSION="$NAV_VERSION" python3 - <<'PY'
+from pathlib import Path
+import os
+import re
+
+version = os.environ["VERSION"]
+
+def version_asset(source: str, asset: str) -> str:
+    pattern = rf'(["\']){re.escape(asset)}(?:\?v=[^"\']*)?(["\'])'
+    return re.sub(pattern, rf'\1{asset}?v={version}\2', source)
+
+home = Path("_site/index.html")
+text = home.read_text(encoding="utf-8")
+for asset in ("site.css", "pythology-human.css", "site.js", "home-proof.js"):
+    text = version_asset(text, asset)
+
+research_tag = f'<script defer src="research-ui.js?v={version}"></script>'
+if "research-ui.js" not in text:
+    anchor = re.search(r'<script defer src="home-proof\.js\?v=[^"]+"></script>', text)
+    if not anchor:
+        raise SystemExit("Could not locate versioned home-proof.js tag")
+    text = text[:anchor.start()] + research_tag + "\n  " + text[anchor.start():]
+else:
+    text = version_asset(text, "research-ui.js")
+home.write_text(text, encoding="utf-8")
+
+nav_tag = f'<script defer src="mdra-nav.js?v={version}"></script>'
+refresh_tag = f'<script defer src="mdra-refresh.js?v={version}"></script>'
+refresh_css = f'<link rel="stylesheet" href="mdra-refresh.css?v={version}">'
+
+for page in Path("_site").glob("*.html"):
+    try:
+        page_text = page.read_text(encoding="utf-8")
+    except UnicodeDecodeError:
+        continue
+    if "data-nav-links" not in page_text:
+        continue
+
+    page_text = re.sub(r'\s*<script defer src="mdra-nav\.js(?:\?v=[^"]*)?"></script>\s*', "\n", page_text)
+    page_text = re.sub(r'\s*<script defer src="mdra-refresh\.js(?:\?v=[^"]*)?"></script>\s*', "\n", page_text)
+    page_text = re.sub(r'\s*<link rel="stylesheet" href="mdra-refresh\.css(?:\?v=[^"]*)?">\s*', "\n", page_text)
+
+    if "</head>" not in page_text:
+        raise SystemExit(f"{page} has no closing head tag")
+    page_text = page_text.replace(
+        "</head>",
+        f"  {refresh_css}\n  {nav_tag}\n  {refresh_tag}\n</head>",
+        1,
+    )
+    if page.name == "mdra.html":
+        page_text = version_asset(page_text, "mdra.css")
+    page.write_text(page_text, encoding="utf-8")
+
+print(f"Primary build UI overlay applied for {version}.")
 PY
 
 # Stage the round header/footer mark from this repository. Keeping the binary
@@ -418,6 +481,22 @@ grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/future.html" || {
 }
 grep -Fq 'He does not just predict.' "$OUT/prometheus.html" || {
   echo 'Prometheus autonomous research presentation validation failed.' >&2
+  exit 1
+}
+grep -Fq 'https://earthnet.pythology.co.nz/' "$OUT/index.html" || {
+  echo 'Homepage EarthNet 2.0 link validation failed.' >&2
+  exit 1
+}
+grep -Fq 'mdra-refresh.css?v=' "$OUT/index.html" || {
+  echo 'Homepage MDRA refresh overlay validation failed.' >&2
+  exit 1
+}
+grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
+  echo 'Homepage research UI overlay validation failed.' >&2
+  exit 1
+}
+[[ -s "$OUT/about.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
+  echo 'Human-facing site is incomplete.' >&2
   exit 1
 }
 [[ -s "$OUT/future.html" && -s "$OUT/future.css" ]] || {
