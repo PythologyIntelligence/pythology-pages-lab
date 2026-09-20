@@ -9,28 +9,27 @@
     if (nav) {
       const links = [
         ['index.html', 'Home'],
-        ['earthnet-platform.html', 'EarthNet'],
+        ['mdra.html', 'MDRA'],
         ['prometheus.html', 'Prometheus'],
         ['causal-intelligence.html', 'Causal Core'],
-        ['https://atlas.pythology.co.nz/atlas', 'Atlas'],
         ['research.html', 'The stack'],
         ['where-it-fits.html', 'Where it fits'],
+        ['future.html', 'Future'],
         ['about.html', 'About']
       ];
+      const canonicalHtml = () => links
+        .filter(([href]) => href !== page)
+        .map(([href, label]) => `<a class="nav-link" href="${href}">${label}</a>`)
+        .join('');
       const renderPublicNav = () => {
-        nav.innerHTML = links.map(([href, label]) => {
-          const active = page === href || (page === '' && href === 'index.html');
-          return `<a class="nav-link${active ? ' active' : ''}" href="${href}">${label}</a>`;
-        }).join('');
+        nav.innerHTML = canonicalHtml();
         nav.setAttribute('aria-label', 'Primary navigation');
       };
       renderPublicNav();
 
-      // Some mirrored pages can inject a second, unversioned copy of this UI
-      // script after the cache-busted overlay. Restore the canonical menu if
-      // that late script replaces it with an older link set.
+      // Keep late mirrored UI code from reintroducing a different menu.
       const navObserver = new MutationObserver(() => {
-        if (!nav.querySelector('a[href="causal-intelligence.html"]')) renderPublicNav();
+        if (nav.innerHTML !== canonicalHtml()) renderPublicNav();
       });
       navObserver.observe(nav, { childList: true });
     }
