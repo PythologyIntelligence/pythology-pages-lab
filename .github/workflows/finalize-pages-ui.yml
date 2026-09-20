@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: pages
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   finalize:
@@ -139,6 +139,9 @@ jobs:
               raise SystemExit('Homepage cache-busting overlay did not land')
           if f'mdra-nav.js?v={version}' not in final_home or f'mdra-refresh.js?v={version}' not in final_home:
               raise SystemExit('Canonical MDRA UI overlay did not land on homepage')
+          nav_source = Path('_site/mdra-nav.js').read_text(encoding='utf-8')
+          if "['future.html', 'Future']" not in nav_source or ".filter(([href]) => href !== page)" not in nav_source:
+              raise SystemExit('Finalized canonical navigation is stale')
           if f'mdra-refresh.css?v={version}' not in final_about:
               raise SystemExit('Responsive About refresh CSS did not land')
           if 'EARTHNET 2.0' not in final_mdra or 'ATLAS 2.0' not in final_mdra or 'ARCUS' not in final_mdra:
