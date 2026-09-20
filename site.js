@@ -1,10 +1,36 @@
 (() => {
   const nav = document.querySelector('[data-nav-links]');
   const menuButton = document.querySelector('[data-menu-button]');
-  const dropdownTriggers = Array.from(document.querySelectorAll('[data-dropdown-trigger]'));
 
   if (!nav || !menuButton) return;
 
+  const canonicalNav = [
+    ['index.html', 'Home'],
+    ['mdra.html', 'MDRA'],
+    ['prometheus.html', 'Prometheus'],
+    ['causal-intelligence.html', 'Causal Core'],
+    ['research.html', 'The stack'],
+    ['where-it-fits.html', 'Where it fits'],
+    ['about.html', 'About']
+  ];
+
+  const path = window.location.pathname;
+  const currentPage = path.endsWith('/')
+    ? 'index.html'
+    : (path.split('/').filter(Boolean).pop() || 'index.html');
+
+  nav.replaceChildren();
+  canonicalNav
+    .filter(([href]) => href !== currentPage)
+    .forEach(([href, label]) => {
+      const link = document.createElement('a');
+      link.className = 'nav-link';
+      link.href = href;
+      link.textContent = label;
+      nav.appendChild(link);
+    });
+
+  const dropdownTriggers = Array.from(document.querySelectorAll('[data-dropdown-trigger]'));
   const isMobile = () => window.matchMedia('(max-width: 1000px)').matches;
 
   const closeDropdowns = (except = null) => {

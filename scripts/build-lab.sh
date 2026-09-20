@@ -347,6 +347,14 @@ grep -Fq "mobile-open" "$OUT/site.js" || {
   echo 'Responsive navigation controller validation failed.' >&2
   exit 1
 }
+grep -Fq "['mdra.html', 'MDRA']" "$OUT/site.js" || {
+  echo 'Canonical primary navigation is missing MDRA.' >&2
+  exit 1
+}
+grep -Fq "href !== currentPage" "$OUT/site.js" || {
+  echo 'Current-page navigation omission validation failed.' >&2
+  exit 1
+}
 [[ -s "$OUT/earthnet-nz-intelligence.html" ]] || {
   echo 'NZ intelligence page overlay validation failed.' >&2
   exit 1
