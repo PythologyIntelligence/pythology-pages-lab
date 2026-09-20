@@ -325,7 +325,7 @@ cp "$TITLE_BANNER" "$OUT/png_images/pythology_environmental_ai_banner.webp"
 
 # These public evidence projections are deliberately staged with the humanised
 # pages because wget does not discover browser-fetched JSON.
-for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_daily.json; do
+for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_daily.json prometheus_research_state.json; do
   if [[ ! -f "$ROOT/data/$file" ]]; then
     echo "Required public evidence projection missing: data/$file" >&2
     exit 1
@@ -348,6 +348,14 @@ grep -Fq 'We build intelligence' "$OUT/index.html" || {
 }
 [[ -s "$OUT/data/earthnet_nz_daily.json" ]] || {
   echo 'NZ daily-state projection validation failed.' >&2
+  exit 1
+}
+[[ -s "$OUT/data/prometheus_research_state.json" ]] || {
+  echo 'Prometheus research-state projection validation failed.' >&2
+  exit 1
+}
+grep -Fq 'He does not just predict.' "$OUT/prometheus.html" || {
+  echo 'Prometheus autonomous research presentation validation failed.' >&2
   exit 1
 }
 [[ -s "$OUT/future.html" && -s "$OUT/future.css" ]] || {
