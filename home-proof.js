@@ -100,17 +100,41 @@
     }
   }
 
+  function nzStateAgeHours(data) {
+    const value = data?.generated_at_nz || data?.generated_at;
+    if (!value) return Infinity;
+    const at = new Date(value).getTime();
+    return Number.isFinite(at) ? Math.max(0, (Date.now() - at) / 36e5) : Infinity;
+  }
+
   function renderNz(data) {
     const seismic = data.seismic || {};
     const events = Array.isArray(seismic.events) ? seismic.events : [];
-    const largest = events.reduce((max, item) => Math.max(max, Number(item.magnitude) || -Infinity), -Infinity);
+    const explicitLargest = Number(seismic.largest_magnitude);
+    const eventLargest = events.reduce((max, item) => Math.max(max, Number(item.magnitude) || -Infinity), -Infinity);
+    const largest = Number.isFinite(explicitLargest) ? explicitLargest : eventLargest;
     const concentration = Array.isArray(seismic.activity_concentrations) ? seismic.activity_concentrations[0] : null;
-    text('[data-home-nz-date]', data.local_date ? `Daily state · ${data.local_date}` : 'Latest daily state');
+    const ageHours = nzStateAgeHours(data);
+    const stale = !Number.isFinite(ageHours) || ageHours > 30;
+    const stateDate = data.generated_at_nz || data.generated_at || data.local_date;
+
+    text(
+      '[data-home-nz-date]',
+      stale
+        ? `STALE state · ${shortDate(stateDate)}${Number.isFinite(ageHours) ? ` · ${Math.floor(ageHours)}h old` : ''}`
+        : (data.local_date ? `Daily state · ${data.local_date}` : `Daily state · ${shortDate(stateDate)}`)
+    );
     text('[data-home-nz-count]', seismic.event_count);
     text('[data-home-nz-largest]', Number.isFinite(largest) ? `M${largest.toFixed(1)}` : '—');
     text('[data-home-nz-cluster]', concentration ? `${concentration.count} near ${safe(concentration.nearest_locality, 'leading concentration')}` : '—');
+
     const interpretation = Array.isArray(data.prometheus_interpretation) ? data.prometheus_interpretation[0] : null;
-    text('[data-home-nz-line]', interpretation || 'The latest New Zealand interpretation is not available just now.');
+    text(
+      '[data-home-nz-line]',
+      stale
+        ? `Publication freshness guard: this state is not current. ${interpretation || 'The latest New Zealand interpretation is unavailable.'}`
+        : (interpretation || 'The latest New Zealand interpretation is not available just now.')
+    );
   }
 
   function renderVolcano(data) {
