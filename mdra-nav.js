@@ -6,6 +6,7 @@
     ['causal-intelligence.html', 'Causal Core'],
     ['research.html', 'The stack'],
     ['where-it-fits.html', 'Where it fits'],
+    ['future.html', 'Future'],
     ['about.html', 'About']
   ];
 
@@ -16,10 +17,10 @@
 
   const canonicalHtml = () => {
     const page = currentPage();
-    return links.map(([href, label]) => {
-      const active = page === href;
-      return `<a class="nav-link${active ? ' active' : ''}" href="${href}">${label}</a>`;
-    }).join('');
+    return links
+      .filter(([href]) => href !== page)
+      .map(([href, label]) => `<a class="nav-link" href="${href}">${label}</a>`)
+      .join('');
   };
 
   const apply = () => {
