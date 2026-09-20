@@ -3,6 +3,7 @@
   const $$ = (selector) => Array.from(document.querySelectorAll(selector));
   const safe = (value, fallback = '—') => value === undefined || value === null || value === '' ? fallback : value;
   const pct = (value) => Number.isFinite(Number(value)) ? `${Math.round(Number(value) * 100)}%` : '—';
+  const whole = (value) => Number.isFinite(Number(value)) ? Number(value).toLocaleString('en-NZ') : '—';
 
   function nzDate(value) {
     if (!value) return '—';
@@ -192,6 +193,44 @@
     }
   }
 
+  function renderResearch(data) {
+    const counts = data.lifecycle_counts || {};
+    const specialists = data.specialist_programmes || {};
+    const generated = data.generated_at ? new Date(data.generated_at) : null;
+    const ageHours = generated && !Number.isNaN(generated.getTime())
+      ? Math.max(0, (Date.now() - generated.getTime()) / 36e5)
+      : null;
+    const fresh = ageHours !== null && ageHours <= 30;
+
+    text('[data-research-evidence]', whole(data.evidence_considered));
+    text('[data-research-domains]', whole(data.domains_discovered));
+    text('[data-research-relationships]', whole(data.relationships_retained));
+    text('[data-research-mediator]', whole(data.mediator_chains));
+    text('[data-research-candidate]', whole(counts.candidate || 0));
+    text('[data-research-observed]', whole(counts.observed || 0));
+    text('[data-research-replicated]', whole(counts.replicated || 0));
+    text('[data-research-predictive]', whole(counts.predictive_shadow || 0));
+
+    text('[data-research-seismic]', specialists.nz_seismic ? 'ONLINE' : 'NOT PUBLISHED');
+    text('[data-research-volcano]', specialists.volcano_pulse ? 'ONLINE' : 'NOT PUBLISHED');
+
+    const ionosphere = String(specialists.solar_ionosphere || '').toLowerCase();
+    const ionosphereLabel = ionosphere.includes('collecting') || ionosphere.includes('calibrat')
+      ? 'CALIBRATING'
+      : ionosphere ? ionosphere.replaceAll('_', ' ').toUpperCase() : 'NOT PUBLISHED';
+    text('[data-research-ionosphere]', ionosphereLabel);
+
+    text('[data-research-status]', fresh ? 'Prometheus // published research state' : 'Prometheus // research snapshot');
+    text('[data-research-updated]', generated
+      ? `Research snapshot published ${nzDate(data.generated_at)} NZ time`
+      : 'Research snapshot timestamp unavailable.');
+    text('[data-research-freshness]', ageHours === null
+      ? 'freshness unknown'
+      : fresh
+        ? `fresh · ${ageHours < 1 ? '<1' : Math.round(ageHours)}h old`
+        : `archived · ${Math.round(ageHours)}h since publication`);
+  }
+
   function renderNz(data) {
     const seismic = data.seismic || {};
     const events = Array.isArray(seismic.events) ? seismic.events : [];
@@ -238,11 +277,12 @@
     const results = await Promise.allSettled([
       getJson('data/earthnet_prometheus.json'),
       getJson('data/earthnet_nz_daily.json'),
-      getJson('data/earthnet_volcano_pulse.json')
+      getJson('data/earthnet_volcano_pulse.json'),
+      getJson('data/prometheus_research_state.json')
     ]);
 
     if (results[0].status === 'fulfilled') renderPrometheus(results[0].value);
-    else $$('.prometheus-data-error').forEach((node) => { node.textContent = 'The live public ledger could not be loaded just now.'; });
+    else $('.prometheus-data-error').forEach((node) => { node.textContent = 'The live public ledger could not be loaded just now.'; });
 
     if (results[1].status === 'fulfilled') renderNz(results[1].value);
     else {
@@ -254,6 +294,13 @@
     else {
       const node = $('[data-volcano-copy]');
       if (node) node.textContent = 'The latest public volcanic pulse could not be loaded just now.';
+    }
+
+    if (results[3].status === 'fulfilled') renderResearch(results[3].value);
+    else {
+      text('[data-research-status]', 'Prometheus // research snapshot unavailable');
+      text('[data-research-freshness]', 'public projection unavailable');
+      text('[data-research-updated]', 'The public research-state projection could not be loaded just now.');
     }
   }
 
