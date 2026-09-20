@@ -351,18 +351,19 @@ fi
 mkdir -p "$OUT/png_images"
 cp "$TITLE_BANNER" "$OUT/png_images/pythology_environmental_ai_banner.webp"
 
-# Restore the original founder portrait used by the About page. The binary lives
-# in the legacy public-site repository, pinned to a known commit so this build is
-# deterministic rather than depending on a moving branch.
-FOUNDER_PORTRAIT_URL="https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/2646c69a66645eecf076758f71537ab308ac565f/png_images/about_me.png"
-curl -fsSL "$FOUNDER_PORTRAIT_URL" -o "$OUT/png_images/about_me.png" || {
-  echo 'Required About founder portrait could not be restored.' >&2
+# Stage the original founder portrait directly from this repository. Keeping the
+# binary in Pages Lab removes the private cross-repository dependency that caused
+# the primary build to fall back to an incomplete artifact.
+FOUNDER_PORTRAIT="$ROOT/png_images/about_me.png"
+[[ -s "$FOUNDER_PORTRAIT" ]] || {
+  echo 'Required About founder portrait is missing from Pages Lab.' >&2
   exit 1
 }
-[[ "$(stat -c%s "$OUT/png_images/about_me.png")" -eq 808020 ]] || {
+[[ "$(stat -c%s "$FOUNDER_PORTRAIT")" -eq 808020 ]] || {
   echo 'About founder portrait size validation failed.' >&2
   exit 1
 }
+cp "$FOUNDER_PORTRAIT" "$OUT/png_images/about_me.png"
 
 # These public evidence projections are deliberately staged with the humanised
 # pages because wget does not discover browser-fetched JSON.

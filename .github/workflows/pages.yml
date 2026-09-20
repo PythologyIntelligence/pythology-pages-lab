@@ -119,6 +119,17 @@ jobs:
             bash scripts/build-pages-fallback.sh
           fi
 
+      - name: Validate complete human-facing site before deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          for required in             index.html             mdra.html             prometheus.html             causal-intelligence.html             research.html             where-it-fits.html             future.html             about.html             site.js             png_images/about_me.png; do
+            [[ -s "_site/$required" ]] || {
+              echo "Refusing to deploy incomplete Pages artifact: $required missing" >&2
+              exit 1
+            }
+          done
+
       - name: Remove former-host HUD and surface live EarthNet
         shell: bash
         run: |
