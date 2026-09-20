@@ -3,6 +3,9 @@ name: Deploy Pythology Pages Lab
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'data/system-health.json'
+      - 'data/yggdrasil_activity.json'
   workflow_run:
     workflows: ["Pythology system health"]
     types: [completed]
@@ -15,7 +18,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: pages
+  group: pages-${{ github.event_name }}
   cancel-in-progress: true
 
 jobs:
@@ -109,15 +112,12 @@ jobs:
             echo "::warning::Known-good EarthNet seed unavailable; live mirror must supply the runtime."
           fi
 
-      - name: Build public lab mirror with resilient fallback
+      - name: Build complete public site
         shell: bash
         run: |
-          if bash scripts/build-lab.sh; then
-            echo "Primary Pythology source mirror succeeded."
-          else
-            echo "Primary Pythology source unavailable; preserving the last-good Pages deployment."
-            bash scripts/build-pages-fallback.sh
-          fi
+          set -euo pipefail
+          bash scripts/build-lab.sh
+          echo "Complete Pythology Pages build succeeded."
 
       - name: Validate complete human-facing site before deployment
         shell: bash
@@ -355,6 +355,35 @@ jobs:
               raise SystemExit('EarthNet deterministic JS entrypoint missing')
           print(f'EarthNet first-visit bundle validated: {len(latest)} events; JS={os.environ["JS_BASE"]}; CSS={os.environ["CSS_BASE"]}.')
           PY
+
+      - name: Stage EarthNet map controls in primary artifact
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ -s earthnet-map-controls.js ]] || { echo 'earthnet-map-controls.js missing' >&2; exit 1; }
+          [[ -s _site/earthnet-global/index.html ]] || { echo 'EarthNet index missing' >&2; exit 1; }
+          cp earthnet-map-controls.js _site/earthnet-global/earthnet-map-controls.js
+          VERSION="${GITHUB_SHA:0:12}" python3 - <<'PY'
+          from pathlib import Path
+          import os
+          import re
+
+          path = Path('_site/earthnet-global/index.html')
+          text = path.read_text(encoding='utf-8')
+          text = re.sub(
+              r'\s*<script defer src="earthnet-map-controls\.js(?:\?v=[^"]*)?"></script>\s*',
+              '\n',
+              text,
+          )
+          tag = f'  <script defer src="earthnet-map-controls.js?v={os.environ["VERSION"]}"></script>\n'
+          if '</body>' not in text:
+              raise SystemExit('EarthNet index has no closing body tag')
+          path.write_text(text.replace('</body>', tag + '</body>'), encoding='utf-8')
+          PY
+          grep -Fq 'earthnet-map-controls.js?v=' _site/earthnet-global/index.html || {
+            echo 'EarthNet control overlay validation failed.' >&2
+            exit 1
+          }
 
       - name: Stage current safe System Control snapshots
         shell: bash

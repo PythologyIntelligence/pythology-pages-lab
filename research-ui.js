@@ -108,7 +108,7 @@
                   <div class="home-view-stat"><strong data-home-nz-largest>—</strong><span>largest event</span></div>
                   <div class="home-view-stat"><strong data-home-nz-cluster>—</strong><span>largest concentration</span></div>
                 </div>
-                <div class="btn-row"><a class="btn" href="earthnet-nz-intelligence.html">Open New Zealand intelligence</a></div>
+                <div class="btn-row"><a class="btn" href="https://earthnet.pythology.co.nz/" target="_blank" rel="noopener">Open EarthNet 2.0</a></div>
               </div>
             </article>
           </div>
