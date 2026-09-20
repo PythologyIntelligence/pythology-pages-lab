@@ -307,6 +307,33 @@ for file in "${PUBLIC_OVERRIDES[@]}"; do
   cp "$ROOT/$file" "$OUT/$file"
 done
 
+# Cache-bust the canonical navigation controller on every Pages deployment.
+# Mobile/tablet browsers can otherwise keep an older site.js even after a new
+# deployment and show stale menu contents.
+NAV_VERSION="${GITHUB_SHA:-local}"
+NAV_VERSION="${NAV_VERSION:0:12}"
+NAV_VERSION="$NAV_VERSION" python3 - <<'PY'
+from pathlib import Path
+import os
+import re
+
+version = os.environ["NAV_VERSION"]
+pattern = re.compile(r'''src=(["'])site\.js(?:\?v=[^"']*)?\1''')
+replacement = lambda m: f'src={m.group(1)}site.js?v={version}{m.group(1)}'
+
+changed = 0
+for page in Path("_site").glob("*.html"):
+    text = page.read_text(encoding="utf-8")
+    new = pattern.sub(replacement, text)
+    if new != text:
+        page.write_text(new, encoding="utf-8")
+        changed += 1
+
+if changed < 1:
+    raise SystemExit("No public HTML page referenced site.js for cache busting.")
+print(f"Cache-busted site.js on {changed} public page(s) with version {version}.")
+PY
+
 # Stage the round header/footer mark from this repository. Keeping the binary
 # beside the build removes a private cross-repository dependency from Pages.
 if [[ ! -s "$ROOT/Logo (2).jpeg" ]]; then
@@ -353,6 +380,14 @@ grep -Fq "['mdra.html', 'MDRA']" "$OUT/site.js" || {
 }
 grep -Fq "href !== currentPage" "$OUT/site.js" || {
   echo 'Current-page navigation omission validation failed.' >&2
+  exit 1
+}
+grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/index.html" || {
+  echo 'Navigation cache-bust validation failed on homepage.' >&2
+  exit 1
+}
+grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/future.html" || {
+  echo 'Navigation cache-bust validation failed on Future page.' >&2
   exit 1
 }
 [[ -s "$OUT/earthnet-nz-intelligence.html" ]] || {
