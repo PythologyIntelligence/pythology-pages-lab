@@ -273,6 +273,7 @@ fi
 PUBLIC_OVERRIDES=(
   index.html
   site.css
+  site.js
   architecture-in-action.css
   pythology-human.css
   home-proof.js
@@ -338,8 +339,12 @@ grep -Fq 'We build intelligence' "$OUT/index.html" || {
   echo 'Humanised homepage overlay validation failed.' >&2
   exit 1
 }
-[[ -s "$OUT/site.css" && -s "$OUT/architecture-in-action.css" && -s "$OUT/Logo (2).jpeg" ]] || {
-  echo 'Critical homepage stylesheet or logo validation failed.' >&2
+[[ -s "$OUT/site.css" && -s "$OUT/site.js" && -s "$OUT/architecture-in-action.css" && -s "$OUT/Logo (2).jpeg" ]] || {
+  echo 'Critical homepage stylesheet, navigation script or logo validation failed.' >&2
+  exit 1
+}
+grep -Fq "mobile-open" "$OUT/site.js" || {
+  echo 'Responsive navigation controller validation failed.' >&2
   exit 1
 }
 [[ -s "$OUT/earthnet-nz-intelligence.html" ]] || {
