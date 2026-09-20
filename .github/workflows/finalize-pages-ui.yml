@@ -139,9 +139,22 @@ jobs:
               raise SystemExit('Homepage cache-busting overlay did not land')
           if f'mdra-nav.js?v={version}' not in final_home or f'mdra-refresh.js?v={version}' not in final_home:
               raise SystemExit('Canonical MDRA UI overlay did not land on homepage')
-          nav_source = Path('_site/mdra-nav.js').read_text(encoding='utf-8')
-          if "['future.html', 'Future']" not in nav_source or ".filter(([href]) => href !== page)" not in nav_source:
-              raise SystemExit('Finalized canonical navigation is stale')
+          site_nav = Path('_site/site.js').read_text(encoding='utf-8')
+          if "['future.html', 'Future']" not in site_nav or ".filter(([href]) => href !== currentPage)" not in site_nav:
+              raise SystemExit('Canonical site.js navigation is stale')
+          nav_overlay = Path('_site/mdra-nav.js').read_text(encoding='utf-8')
+          if "data-nav-links" in nav_overlay or "nav.innerHTML" in nav_overlay:
+              raise SystemExit('MDRA overlay must not rewrite primary navigation')
+          prom_text = Path('_site/prometheus.html').read_text(encoding='utf-8')
+          prom_nav = re.search(r'<nav class="nav-links" data-nav-links[^>]*>(.*?)</nav>', prom_text, flags=re.S)
+          if not prom_nav:
+              raise SystemExit('Prometheus primary navigation block missing')
+          prom_nav_html = prom_nav.group(1)
+          if 'href="prometheus.html"' in prom_nav_html or 'href="future.html"' not in prom_nav_html or 'href="mdra.html"' not in prom_nav_html:
+              raise SystemExit('Prometheus static navigation is not canonical')
+          portrait = Path('_site/png_images/about_me.png')
+          if not portrait.exists() or portrait.stat().st_size != 808020:
+              raise SystemExit('About founder portrait missing or invalid')
           if f'mdra-refresh.css?v={version}' not in final_about:
               raise SystemExit('Responsive About refresh CSS did not land')
           if 'EARTHNET 2.0' not in final_mdra or 'ATLAS 2.0' not in final_mdra or 'ARCUS' not in final_mdra:

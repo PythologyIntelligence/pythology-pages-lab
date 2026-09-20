@@ -2,38 +2,8 @@
   const programmes = window.PYTHOLOGY_RESEARCH_PROGRAMMES || [];
   const page = location.pathname.split('/').pop() || 'index.html';
 
-  // Human-facing pages use one stable public navigation. Keep research programmes
-  // discoverable in-page rather than promoting specialist domains into the top nav.
-  if (document.body.classList.contains('pitch-body')) {
-    const nav = document.querySelector('[data-nav-links]');
-    if (nav) {
-      const links = [
-        ['index.html', 'Home'],
-        ['mdra.html', 'MDRA'],
-        ['prometheus.html', 'Prometheus'],
-        ['causal-intelligence.html', 'Causal Core'],
-        ['research.html', 'The stack'],
-        ['where-it-fits.html', 'Where it fits'],
-        ['future.html', 'Future'],
-        ['about.html', 'About']
-      ];
-      const canonicalHtml = () => links
-        .filter(([href]) => href !== page)
-        .map(([href, label]) => `<a class="nav-link" href="${href}">${label}</a>`)
-        .join('');
-      const renderPublicNav = () => {
-        nav.innerHTML = canonicalHtml();
-        nav.setAttribute('aria-label', 'Primary navigation');
-      };
-      renderPublicNav();
-
-      // Keep late mirrored UI code from reintroducing a different menu.
-      const navObserver = new MutationObserver(() => {
-        if (nav.innerHTML !== canonicalHtml()) renderPublicNav();
-      });
-      navObserver.observe(nav, { childList: true });
-    }
-  }
+  // Primary navigation is owned exclusively by site.js.
+  // Research UI may enhance page content, but it must never rewrite the header.
 
   // The redesign deliberately leaves the EarthNet planetary statement untouched: it
   // is the visual benchmark. Other artwork gets a modest lift so it reads as imagery,
