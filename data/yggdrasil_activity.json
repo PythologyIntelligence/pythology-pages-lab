@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-26T03:01:27.421260+00:00",
+  "engineObservedAt": "2026-09-26T03:11:01.487775+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-26T03:01:35.811118+00:00",
+  "generatedAt": "2026-09-26T03:11:06.281371+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -359,6 +359,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-09-26T03:11:01.366371+00:00",
+      "type": "engine",
+      "event": "engine_started",
+      "title": "Yggdrasil engine started",
+      "detail": "DEMO_ONLY \u00b7 21 configured markets attached."
+    },
+    {
       "ts": "2026-09-26T03:01:27.379419+00:00",
       "type": "engine",
       "event": "engine_started",
@@ -518,14 +525,7 @@
       "event": "training_ranked",
       "title": "Training ranked for AMAZON",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-09-26T02:42:36.058042+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for NVIDIA",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-09-26T03:01:50.965989+00:00"
+  "publishedAt": "2026-09-26T03:11:21.350247+00:00"
 }
