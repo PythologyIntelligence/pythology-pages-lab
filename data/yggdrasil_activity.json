@@ -1,7 +1,7 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-26T02:31:16.219830+00:00",
-  "engineFresh": true,
+  "engineObservedAt": "2026-09-26T02:37:46.336158+00:00",
+  "engineFresh": false,
   "resolvedSymbols": [
     "EURUSD",
     "GBPUSD",
@@ -41,9 +41,9 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-26T02:31:19.233988+00:00",
+  "generatedAt": "2026-09-26T02:42:19.472138+00:00",
   "mode": "DEMO_ONLY",
-  "status": "operational",
+  "status": "degraded",
   "bridge": {
     "status": "live",
     "note": "Live sanitised heartbeat from Yggdrasil's DEMO VPS. No account identifiers, balances/equity, broker tickets, trade prices, credentials or raw logs are published."
@@ -135,15 +135,15 @@
     "researchMutatesChampionsDuringSession": false
   },
   "live": {
-    "mt5Connected": true,
+    "mt5Connected": false,
     "sessionKey": "",
     "tradeCountVerified": false,
-    "positions": 0,
+    "positions": null,
     "tradesThisSession": null,
-    "openRiskPct": 0.0,
+    "openRiskPct": null,
     "killSwitch": false,
     "flattenRequested": false,
-    "lastError": false
+    "lastError": true
   },
   "recentTrades": [
     {
@@ -527,5 +527,5 @@
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-09-26T02:31:21.779577+00:00"
+  "publishedAt": "2026-09-26T02:42:34.515171+00:00"
 }
