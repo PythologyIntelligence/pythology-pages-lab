@@ -1,10 +1,39 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-09-26T02:46:32.614438+00:00",
+  "engineObservedAt": "2026-09-26T02:47:02.508138+00:00",
   "engineFresh": true,
-  "resolvedSymbols": [],
+  "resolvedSymbols": [
+    "EURUSD",
+    "GBPUSD",
+    "USDJPY",
+    "XAUUSD",
+    "USDX",
+    "SP500",
+    "NAS100",
+    "DJ30",
+    "AAPL",
+    "MSFT",
+    "NVIDIA",
+    "AMAZON",
+    "GOOG",
+    "META",
+    "TSLA",
+    "AVGO",
+    "JPM",
+    "BRKB",
+    "EXXON",
+    "WMT",
+    "LLY"
+  ],
   "unresolvedSymbols": [],
-  "executionSymbols": [],
+  "executionSymbols": [
+    "EURUSD",
+    "GBPUSD",
+    "USDJPY",
+    "XAUUSD",
+    "SP500",
+    "NAS100"
+  ],
   "causalShadow": {
     "available": true,
     "mode": "OBSERVE_ONLY",
@@ -12,9 +41,9 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-09-26T02:46:35.112178+00:00",
+  "generatedAt": "2026-09-26T02:47:05.523815+00:00",
   "mode": "DEMO_ONLY",
-  "status": "degraded",
+  "status": "operational",
   "bridge": {
     "status": "live",
     "note": "Live sanitised heartbeat from Yggdrasil's DEMO VPS. No account identifiers, balances/equity, broker tickets, trade prices, credentials or raw logs are published."
@@ -106,15 +135,15 @@
     "researchMutatesChampionsDuringSession": false
   },
   "live": {
-    "mt5Connected": false,
+    "mt5Connected": true,
     "sessionKey": "",
     "tradeCountVerified": false,
-    "positions": null,
+    "positions": 0,
     "tradesThisSession": null,
-    "openRiskPct": null,
+    "openRiskPct": 0.0,
     "killSwitch": false,
     "flattenRequested": false,
-    "lastError": true
+    "lastError": false
   },
   "recentTrades": [
     {
@@ -498,5 +527,5 @@
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-09-26T02:46:46.914865+00:00"
+  "publishedAt": "2026-09-26T02:47:10.276356+00:00"
 }
