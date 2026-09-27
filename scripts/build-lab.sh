@@ -295,6 +295,9 @@ PUBLIC_OVERRIDES=(
   where-it-fits.html
   about-human.css
   about.html
+  ask-brent.html
+  brent-ai.css
+  brent-ai.js
   causal-human.css
   causal-intelligence.html
   future.css
@@ -513,6 +516,19 @@ grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
 }
 [[ -s "$OUT/agri-portal.html" && -s "$OUT/agri-pages-lab-guard.js" && -s "$OUT/data/agri_lab.json" ]] || {
   echo 'Agri portal, guard or safe lab snapshot did not stage.' >&2
+  exit 1
+}
+
+[[ -s "$OUT/ask-brent.html" && -s "$OUT/brent-ai.css" && -s "$OUT/brent-ai.js" ]] || {
+  echo 'BrentAI public page or runtime assets missing.' >&2
+  exit 1
+}
+grep -Fq "['ask-brent.html', 'Ask BrentAI']" "$OUT/site.js" || {
+  echo 'BrentAI canonical navigation missing.' >&2
+  exit 1
+}
+grep -Fq 'id="meet-brentai"' "$OUT/about.html" || {
+  echo 'Founder invitation to BrentAI missing.' >&2
   exit 1
 }
 
