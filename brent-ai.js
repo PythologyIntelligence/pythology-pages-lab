@@ -202,6 +202,11 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   document.querySelectorAll('[data-question]').forEach(function (button) {
     button.addEventListener('click',function () {
+      if (!knowledgeReady) {
+        document.getElementById('brent-story').scrollIntoView({behavior:'smooth',block:'start'});
+        error.textContent = 'Chat opens once the approved knowledge index is verified. Explore the public story above in the meantime.';
+        return;
+      }
       input.value=button.getAttribute('data-question') || '';
       document.getElementById('ask').scrollIntoView({behavior:'smooth',block:'start'});
       input.focus();
