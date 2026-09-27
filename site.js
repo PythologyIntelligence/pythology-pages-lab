@@ -12,7 +12,8 @@
     ['research.html', 'The stack'],
     ['where-it-fits.html', 'Where it fits'],
     ['future.html', 'Future'],
-    ['about.html', 'About']
+    ['about.html', 'About'],
+    ['ask-brent.html', 'Ask BrentAI']
   ];
 
   const path = window.location.pathname;
