@@ -1,0 +1,27 @@
+name: Verify BrentAI Pages Lab
+on:
+  pull_request:
+    paths:
+      - 'ask-brent.html'
+      - 'brent-ai.*'
+      - 'site.js'
+      - 'about.html'
+      - 'about-human.css'
+      - 'index.html'
+      - 'scripts/build-lab.sh'
+      - 'scripts/verify-brent-publication.mjs'
+      - '.github/workflows/verify-brent-ai.yml'
+  push:
+    branches: [feature/ask-brent-pageslab-20260928]
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: node --check brent-ai.js
+      - run: node --check site.js
+      - run: bash -n scripts/build-lab.sh
+      - run: node scripts/verify-brent-publication.mjs
