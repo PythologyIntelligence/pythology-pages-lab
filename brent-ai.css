@@ -37,3 +37,13 @@
 .brent-invest .lede{max-width:790px}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:950px){.brent-hero-grid{grid-template-columns:1fr}.brent-theme-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.brent-theme-grid{grid-template-columns:1fr}.brent-chat-section .container{width:min(calc(100% - 20px),1240px)}.brent-messages{padding:14px}.brent-msg{max-width:96%}.brent-composer{flex-wrap:wrap}.brent-composer textarea{flex-basis:100%}.brent-composer button{width:100%}.brent-trace{padding:16px}.brent-invest .container{padding:25px}}
+
+.brent-editorial{border-top:1px solid rgba(161,213,222,.12)}
+.brent-editorial-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin-top:45px}
+.brent-editorial-grid article{padding:clamp(22px,3vw,34px);border:1px solid rgba(161,213,222,.16);border-radius:15px;background:rgba(9,20,25,.7);display:flex;flex-direction:column;align-items:flex-start}
+.brent-editorial-grid span{font:600 10px 'JetBrains Mono',monospace;letter-spacing:.13em;color:#d2ad54}
+.brent-editorial-grid h3{font:500 clamp(25px,3vw,35px)/1.13 'Newsreader',Georgia,serif;color:#e8f0f1;margin:23px 0 12px}
+.brent-editorial-grid p{color:#98abb0;line-height:1.78;font-size:14px;flex:1}
+.brent-editorial-grid a{color:#9bddE7;font-size:12px;text-decoration:none;margin-top:13px}
+.brent-editorial-grid a:hover{text-decoration:underline}
+@media(max-width:700px){.brent-editorial-grid{grid-template-columns:1fr}}
