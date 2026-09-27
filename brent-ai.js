@@ -13,7 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
   const error = box.querySelector('[data-chat-error]');
   const trace = document.querySelector('[data-chat-trace]');
   const sessionId = crypto.randomUUID ? crypto.randomUUID() : String(Date.now());
-  let history = [], busy = false;
+  let history = [], busy = false, knowledgeReady = false;
+  input.disabled = true;
+  submit.disabled = true;
+  state.textContent = 'checking approved knowledge';
 
   async function api(payload) {
     const response = await fetch(API, {
@@ -35,14 +38,47 @@ document.addEventListener('DOMContentLoaded', function () {
     const hours = Math.max(0, (Date.now() - Date.parse(value)) / 3600000);
     return hours < 1 ? Math.round(hours * 60) + ' min ago' : hours < 48 ? Math.round(hours) + ' h ago' : Math.floor(hours / 24) + ' d ago';
   }
+  const REQUIRED_BRIEFS = ['purpose','systems','integration','chathams','research','investment'];
+  const APPROVED_PAGES = new Set([
+    '/', '/index.html', '/about.html', '/research.html', '/causal-intelligence.html',
+    '/prometheus.html', '/earthnet-platform.html', '/earthnet-nz-intelligence.html',
+    '/mdra.html', '/precursor-domains.html', '/poseidon.html',
+    '/marine-intelligence.html', '/where-it-fits.html', '/ask-brent.html',
+    '/technosphere-twin.html', '/synthetic-cognition.html'
+  ]);
+  function allowedPublicSource(raw) {
+    if (raw === 'internal://founder-brief') return true;
+    if (REQUIRED_BRIEFS.some(function (name) { return raw === 'internal://approved/knowledge-' + name + '.md'; })) return true;
+    try {
+      const u = new URL(raw);
+      if (u.hostname === 'pythology.co.nz' || u.hostname === 'www.pythology.co.nz') return APPROVED_PAGES.has(u.pathname);
+      return raw === 'https://earthnet.pythology.co.nz/' || raw === 'https://atlas.pythology.co.nz/atlas';
+    } catch { return false; }
+  }
   api({action:'kb'}).then(function (kb) {
-    document.querySelector('[data-kb-pages]').textContent = String(kb.pages);
-    document.querySelector('[data-kb-chunks]').textContent = String(kb.chunks);
+    document.querySelector('[data-kb-pages]').textContent = String(kb.pages || 0);
+    document.querySelector('[data-kb-chunks]').textContent = String(kb.chunks || 0);
     document.querySelector('[data-kb-updated]').textContent = timeAgo(kb.lastIngestAt);
-    document.querySelector('[data-kb-status]').textContent = kb.lastIngestStatus || 'unavailable';
+    const pages = Array.isArray(kb.pageList) ? kb.pageList : [];
+    const active = pages.filter(function (p) { return p.status === 'active'; });
+    const briefsReady = REQUIRED_BRIEFS.every(function (name) {
+      return active.some(function (p) { return p.url === 'internal://approved/knowledge-' + name + '.md' && p.chunks > 0; });
+    });
+    const noOldSources = active.every(function (p) { return allowedPublicSource(p.url); });
+    const fresh = Number.isFinite(Date.parse(kb.lastIngestAt)) && Date.now() - Date.parse(kb.lastIngestAt) < 13 * 3600000;
+    knowledgeReady = kb.version === 'public-founder-story-20260928' && briefsReady && noOldSources && fresh
+      && (kb.lastIngestStatus === 'ok' || kb.lastIngestStatus === 'partial');
+    document.querySelector('[data-kb-status]').textContent = knowledgeReady ? 'approved knowledge ready' : 'knowledge update pending';
+    state.textContent = knowledgeReady ? 'ready' : 'knowledge update pending';
+    input.disabled = !knowledgeReady;
+    submit.disabled = !knowledgeReady;
+    input.placeholder = knowledgeReady ? 'Ask about our purpose, Prometheus, the Chathams…' : 'Chat opens after the approved knowledge refresh.';
+    if (!knowledgeReady) error.textContent = 'The public story is available above. Chat is paused until the revised backend and approved source index have been verified.';
   }).catch(function () {
     document.querySelector('[data-kb-updated]').textContent = 'unavailable';
-    document.querySelector('[data-kb-status]').textContent = 'unavailable';
+    document.querySelector('[data-kb-status]').textContent = 'service unavailable';
+    state.textContent = 'temporarily unavailable';
+    error.textContent = 'BrentAI chat is unavailable; the public company story and direct contact links remain available.';
   });
 
   function writeWithCitations(line, container, sources) {
@@ -132,7 +168,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   async function send(question) {
     const q = question.trim();
-    if (!q || busy) return;
+    if (!q || busy || !knowledgeReady) return;
     busy = true; submit.disabled = true; input.disabled = true;
     state.textContent='retrieving & answering'; error.textContent='';
     addMessage('You',q,'visitor');
@@ -151,7 +187,7 @@ document.addEventListener('DOMContentLoaded', function () {
       error.textContent = e.message || 'Could not complete the answer.';
       input.value = q;
     } finally {
-      busy=false; submit.disabled=false; input.disabled=false; state.textContent='ready'; input.focus();
+      busy=false; submit.disabled=!knowledgeReady; input.disabled=!knowledgeReady; state.textContent=knowledgeReady ? 'ready' : 'knowledge update pending'; if (knowledgeReady) input.focus();
     }
   }
   form.addEventListener('submit',function (event) { event.preventDefault(); send(input.value); });
