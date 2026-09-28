@@ -1,7 +1,7 @@
 /* Public read-only client for the separately hosted BrentAI API. No secrets live here. */
 document.addEventListener('DOMContentLoaded', function () {
   'use strict';
-  const API = 'https://ysmeaptz5yq22q7irccl5tzqdi0dessn.lambda-url.ap-southeast-1.on.aws/';
+  const API = 'https://brentai-api.pythology.co.nz/';
   const box = document.querySelector('[data-brent-chat]');
   if (!box) return;
   const messages = box.querySelector('[data-chat-messages]');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     input.disabled = !knowledgeReady;
     submit.disabled = !knowledgeReady;
     input.placeholder = knowledgeReady ? 'Ask about our purpose, Prometheus, the Chathams…' : 'Chat opens after the approved knowledge refresh.';
-    if (!knowledgeReady) error.textContent = 'The public story is available above. Chat is paused until the revised backend and approved source index have been verified.';
+    if (!knowledgeReady) error.textContent = 'The public story is available above. Chat is paused until the approved BrentAI service and source index are ready.';
   }).catch(function () {
     document.querySelector('[data-kb-updated]').textContent = 'unavailable';
     document.querySelector('[data-kb-status]').textContent = 'service unavailable';
