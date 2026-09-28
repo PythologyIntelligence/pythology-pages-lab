@@ -370,6 +370,12 @@ else:
     text = version_asset(text, "research-ui.js")
 home.write_text(text, encoding="utf-8")
 
+brent = Path("_site/ask-brent.html")
+brent_text = brent.read_text(encoding="utf-8")
+for asset in ("brent-ai.css", "brent-ai.js"):
+    brent_text = version_asset(brent_text, asset)
+brent.write_text(brent_text, encoding="utf-8")
+
 nav_tag = f'<script defer src="mdra-nav.js?v={version}"></script>'
 refresh_tag = f'<script defer src="mdra-refresh.js?v={version}"></script>'
 refresh_css = f'<link rel="stylesheet" href="mdra-refresh.css?v={version}">'
@@ -529,6 +535,18 @@ grep -Fq "['ask-brent.html', 'Ask BrentAI']" "$OUT/site.js" || {
 }
 grep -Fq 'id="meet-brentai"' "$OUT/about.html" || {
   echo 'Founder invitation to BrentAI missing.' >&2
+  exit 1
+}
+grep -Fq 'https://brentai-api.pythology.co.nz/' "$OUT/brent-ai.js" || {
+  echo 'BrentAI self-hosted API endpoint missing.' >&2
+  exit 1
+}
+grep -Eq 'brent-ai\.js\?v=[A-Za-z0-9._-]+' "$OUT/ask-brent.html" || {
+  echo 'BrentAI JS cache-bust validation failed.' >&2
+  exit 1
+}
+grep -Eq 'brent-ai\.css\?v=[A-Za-z0-9._-]+' "$OUT/ask-brent.html" || {
+  echo 'BrentAI CSS cache-bust validation failed.' >&2
   exit 1
 }
 
