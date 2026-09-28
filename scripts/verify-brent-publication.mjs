@@ -15,6 +15,8 @@ assert.match(page,/brent-ai\.css/);
 assert.match(page,/brent-ai\.js/);
 assert.doesNotMatch(page, /Kia ora|FinRobot|forex|agricultural-intelligence/i);
 assert.match(script,/public-founder-story-20260928/);
+assert.match(script,/https:\/\/brentai-api\.pythology\.co\.nz\//);
+assert.doesNotMatch(script,/lambda-url\.ap-southeast-1\.on\.aws/);
 assert.match(script,/knowledgeReady/);
 assert.match(script,/REQUIRED_BRIEFS/);
 assert.doesNotMatch(script,/innerHTML|OPENKBS_API_KEY|ANTHROPIC_API_KEY/);
