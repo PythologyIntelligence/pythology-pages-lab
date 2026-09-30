@@ -1,16 +1,45 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.185623,
-    "calibrated_forecast_count": 64,
+    "brier_score": 0.184937,
+    "calibrated_forecast_count": 65,
     "confirmed_count": 28,
-    "hit_rate": 0.311,
-    "not_observed_count": 62,
-    "resolved_count": 90
+    "hit_rate": 0.308,
+    "not_observed_count": 63,
+    "resolved_count": 91
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-09-29T20:14:38+00:00",
+  "generated_at": "2026-09-30T04:12:57+00:00",
   "history": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-09-29T04:12:50+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "98661ccbe55ca12e5887ef39",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Sahel Region",
+      "resolved_at": "2026-09-30T04:12:57+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "a943e340825a9fae",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Sahel Region",
+      "valid_until": "2026-09-30T04:12:50+00:00"
+    },
     {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
       "calibrated": true,
@@ -2713,14 +2742,14 @@
       "calibrated": true,
       "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
       "confidence_label": "empirically_calibrated",
-      "created_at": "2026-09-29T04:12:50+00:00",
+      "created_at": "2026-09-30T04:12:57+00:00",
       "domain": "atmosphere",
-      "forecast_confidence": 0.351,
-      "forecast_id": "98661ccbe55ca12e5887ef39",
+      "forecast_confidence": 0.423,
+      "forecast_id": "eddc73dcf27e41e664ef6384",
       "forecast_type": "convective_to_severe_weather",
       "outcome": null,
       "predicted_outcome": "severe_weather_escalation",
-      "region": "Sahel Region",
+      "region": "Mumbai, India",
       "resolved_at": null,
       "source_families": [
         "Open-Meteo"
@@ -2728,10 +2757,10 @@
       "source_independence_count": 1,
       "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
       "status": "open",
-      "target_event_id": "a943e340825a9fae",
+      "target_event_id": "faf7e6acbd17dc4e",
       "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Sahel Region",
-      "valid_until": "2026-09-30T04:12:50+00:00"
+      "target_title": "Severe weather risk — Mumbai, India",
+      "valid_until": "2026-10-01T04:12:57+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
