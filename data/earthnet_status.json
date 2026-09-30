@@ -1,22 +1,22 @@
 {
   "causal_assessment_count": 22,
   "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-  "cycle_completed_at": "2026-09-30T12:14:28+00:00",
+  "cycle_completed_at": "2026-09-30T20:14:15+00:00",
   "cycle_scoped_source": true,
-  "cycle_started_at": "2026-09-30T12:12:05+00:00",
+  "cycle_started_at": "2026-09-30T20:12:02+00:00",
   "degraded": true,
   "engine_count": 9,
   "engine_counts": {
     "atmosphere": 1,
     "cryosphere": 6,
-    "geopolitical_conflict": 18,
+    "geopolitical_conflict": 16,
     "infrastructure_risk": 0,
     "neo": 8,
     "ocean": 10,
-    "seismic": 19,
+    "seismic": 15,
     "space_weather": 1,
     "volcanic": 12,
-    "wildfire_flood_landslide": 38
+    "wildfire_flood_landslide": 37
   },
   "engine_errors_hidden": 0,
   "engines": [
@@ -30,9 +30,9 @@
     "volcanic",
     "wildfire_flood_landslide"
   ],
-  "event_count": 128,
+  "event_count": 118,
   "event_intelligence": {
-    "assessment_count": 80,
+    "assessment_count": 74,
     "autonomous": true,
     "degraded": false,
     "deterministic": true,
@@ -42,12 +42,13 @@
       "active_severe_storm": 8,
       "active_wildfire": 22,
       "armed_conflict": 1,
-      "earthquake": 19,
+      "ceasefire_update": 1,
+      "earthquake": 15,
       "gdacs_cyclone": 1,
-      "humanitarian_crisis": 17,
+      "humanitarian_crisis": 14,
       "volcanic_alert": 2
     },
-    "generated": "2026-09-30T12:15:16+00:00",
+    "generated": "2026-09-30T20:14:53+00:00",
     "model_generated": false,
     "schema": "earthnet.event-intelligence-status.v0.1",
     "supported_event_types": [
@@ -69,24 +70,26 @@
       "volcanic_alert"
     ],
     "trend_counts": {
-      "new": 29,
-      "stable": 47,
-      "updated": 4
+      "escalating": 1,
+      "improving": 4,
+      "new": 7,
+      "stable": 55,
+      "updated": 7
     }
   },
   "expired_quakes_hidden": 0,
   "failed_engines": {
-    "atmosphere": "Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-40.9&longitude=174.9&hourly=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,wind_gusts_10m,cape,relative_humidity_2m,surface_pressure&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=29.8&longitude=-95.4&hourly=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,wind_gusts_10m,cape,relative_humidity_2m,surface_pressur",
+    "atmosphere": "Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=29.8&longitude=-95.4&hourly=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,wind_gusts_10m,cape,relative_humidity_2m,surface_pressure&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-40.9&longitude=174.9&hourly=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,wind_gusts_10m,cape,relative_humidity_2m,surface_pressur",
     "infrastructure_risk": "Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=40.4&longitude=-3.7&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=41.9&longitude=12.5&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/foreca"
   },
-  "generated": "2026-09-30T12:14:49+00:00",
+  "generated": "2026-09-30T20:14:38+00:00",
   "live_data_plane": {
     "branch": "main",
-    "prepared_at": "2026-09-30T12:15:16+00:00",
+    "prepared_at": "2026-09-30T20:14:53+00:00",
     "provider": "github-repository",
     "publication_mode": "canonical_static_snapshot",
     "published": true,
-    "published_at": "2026-09-30T12:15:20+00:00",
+    "published_at": "2026-09-30T20:14:56+00:00",
     "repository": "PythologyIntelligence/pythology-pages-lab",
     "runner_local_media_assets_stripped": 5,
     "runner_local_satellite_assets_stripped": 0,
@@ -95,7 +98,7 @@
   "media": {
     "autonomous": true,
     "collected_record_count": 5,
-    "generated": "2026-09-30T12:15:16+00:00",
+    "generated": "2026-09-30T20:14:53+00:00",
     "local_image_count": 5,
     "neo_lookup_count": 0,
     "provider_errors": [],
@@ -142,7 +145,7 @@
       "error": null,
       "state": "not_github_actions"
     },
-    "generated": "2026-09-30T12:14:55+00:00",
+    "generated": "2026-09-30T20:14:44+00:00",
     "ledger_records_appended": 0,
     "mode": "live_validation",
     "model_version": "prometheus-core.v0.1",
@@ -159,15 +162,15 @@
     "cache_hit": false,
     "degraded": false,
     "error": null,
-    "generated": "2026-09-30T12:15:09+00:00",
-    "geography_mismatch_removed": 2,
-    "image_event_count": 1,
+    "generated": "2026-09-30T20:14:50+00:00",
+    "geography_mismatch_removed": 4,
+    "image_event_count": 0,
     "lookback_hours": 96,
-    "matched_event_count": 27,
-    "matched_report_count": 42,
-    "primary_geopolitical_context_count": 18,
+    "matched_event_count": 26,
+    "matched_report_count": 36,
+    "primary_geopolitical_context_count": 16,
     "provider": "ReliefWeb / UN OCHA",
-    "reports_considered": 91,
+    "reports_considered": 97,
     "schema": "earthnet.reliefweb-status.v0.1"
   },
   "satellite": {
@@ -182,6 +185,6 @@
   },
   "schema": "earthnet.snapshot.v3",
   "source_file": "current_cycle_events.jsonl",
-  "source_record_count": 128,
+  "source_record_count": 118,
   "success": false
 }
