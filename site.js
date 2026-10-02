@@ -6,7 +6,7 @@
 
   const canonicalNav = [
     ['index.html', 'Home'],
-    ['mdra.html', 'MDRA'],
+    ['mdra.html', 'EnviroArc'],
     ['prometheus.html', 'Prometheus'],
     ['causal-intelligence.html', 'Causal Core'],
     ['research.html', 'The stack'],
