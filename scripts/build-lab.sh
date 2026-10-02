@@ -342,7 +342,7 @@ if changed < 1:
 print(f"Cache-busted site.js on {changed} public page(s) with version {version}.")
 PY
 
-# Apply the MDRA/public UI overlays inside the primary build so deployment is
+# Apply the EnviroArc/public UI overlays inside the primary build so deployment is
 # atomic. No second workflow is allowed to rewrite the site after publication.
 VERSION="$NAV_VERSION" python3 - <<'PY'
 from pathlib import Path
@@ -460,8 +460,8 @@ grep -Fq "mobile-open" "$OUT/site.js" || {
   echo 'Responsive navigation controller validation failed.' >&2
   exit 1
 }
-grep -Fq "['mdra.html', 'MDRA']" "$OUT/site.js" || {
-  echo 'Canonical primary navigation is missing MDRA.' >&2
+grep -Fq "['mdra.html', 'EnviroArc']" "$OUT/site.js" || {
+  echo 'Canonical primary navigation is missing EnviroArc.' >&2
   exit 1
 }
 grep -Fq "href !== currentPage" "$OUT/site.js" || {
@@ -497,7 +497,7 @@ grep -Fq 'https://earthnet.pythology.co.nz/' "$OUT/index.html" || {
   exit 1
 }
 grep -Fq 'mdra-refresh.css?v=' "$OUT/index.html" || {
-  echo 'Homepage MDRA refresh overlay validation failed.' >&2
+  echo 'Homepage EnviroArc refresh overlay validation failed.' >&2
   exit 1
 }
 grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
