@@ -52,12 +52,13 @@ jobs:
           VERSION="${SOURCE_SHA:0:12}"
           [[ -n "$VERSION" ]] || VERSION="pages-ui"
 
-          for required in earthnet-map-controls.js mdra.html mdra.css mdra-nav.js mdra-refresh.js mdra-refresh.css; do
+          for required in earthnet-map-controls.js enviroarc.html mdra.html mdra.css mdra-nav.js mdra-refresh.js mdra-refresh.css; do
             [[ -s "$required" ]] || { echo "$required missing" >&2; exit 1; }
           done
           [[ -s _site/earthnet-global/index.html ]] || { echo 'EarthNet index missing from Pages artifact' >&2; exit 1; }
 
           cp earthnet-map-controls.js _site/earthnet-global/earthnet-map-controls.js
+          cp enviroarc.html _site/enviroarc.html
           cp mdra.html _site/mdra.html
           cp mdra.css _site/mdra.css
           cp mdra-nav.js _site/mdra-nav.js
@@ -112,7 +113,7 @@ jobs:
               if '</head>' not in page_text:
                   raise SystemExit(f'{page} has no closing head tag')
               page_text = page_text.replace('</head>', f'  {refresh_css}\n  {nav_tag}\n  {refresh_tag}\n</head>', 1)
-              if page.name == 'mdra.html':
+              if page.name == 'enviroarc.html':
                   page_text = version_asset(page_text, 'mdra.css')
               page.write_text(page_text, encoding='utf-8')
 
@@ -131,7 +132,7 @@ jobs:
 
           final_home = home.read_text(encoding='utf-8')
           final_about = Path('_site/about.html').read_text(encoding='utf-8')
-          final_mdra = Path('_site/mdra.html').read_text(encoding='utf-8')
+          final_enviroarc = Path('_site/enviroarc.html').read_text(encoding='utf-8')
           if f'home-proof.js?v={version}' not in final_home or f'research-ui.js?v={version}' not in final_home:
               raise SystemExit('Homepage cache-busting overlay did not land')
           if f'mdra-nav.js?v={version}' not in final_home or f'mdra-refresh.js?v={version}' not in final_home:
@@ -147,16 +148,16 @@ jobs:
           if not prom_nav:
               raise SystemExit('Prometheus primary navigation block missing')
           prom_nav_html = prom_nav.group(1)
-          if 'href="prometheus.html"' in prom_nav_html or 'href="future.html"' not in prom_nav_html or 'href="mdra.html"' not in prom_nav_html:
+          if 'href="prometheus.html"' in prom_nav_html or 'href="future.html"' not in prom_nav_html or 'href="enviroarc.html"' not in prom_nav_html:
               raise SystemExit('Prometheus static navigation is not canonical')
           portrait = Path('_site/png_images/about_me.png')
           if not portrait.exists() or portrait.stat().st_size != 808020:
               raise SystemExit('About founder portrait missing or invalid')
           if f'mdra-refresh.css?v={version}' not in final_about:
               raise SystemExit('Responsive About refresh CSS did not land')
-          if 'EnviroArc' not in final_mdra or 'EARTHNET' not in final_mdra or 'ATLAS' not in final_mdra:
+          if 'EnviroArc' not in final_enviroarc or 'EARTHNET' not in final_enviroarc or 'ATLAS' not in final_enviroarc:
               raise SystemExit('EnviroArc environmental family validation failed')
-          if 'https://earthnet.pythology.co.nz/' not in final_mdra:
+          if 'https://earthnet.pythology.co.nz/' not in final_enviroarc:
               raise SystemExit('EarthNet 2.0 public URL missing from EnviroArc')
           if f'earthnet-map-controls.js?v={version}' not in earth_text:
               raise SystemExit('EarthNet control overlay did not land')
