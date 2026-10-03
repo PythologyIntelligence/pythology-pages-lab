@@ -94,7 +94,7 @@
               <div class="home-view-copy">
                 <p class="human-kicker">Global view</p>
                 <h3>Keep watch across the whole board.</h3>
-                <p>See developing environmental and human-system context together: severe weather, seismic activity, ocean and cryosphere signals, wildfire, humanitarian pressure and other changing evidence.</p>
+                <p>See developing planetary and human-system context together: severe weather, seismic activity, ocean and cryosphere signals, wildfire, infrastructure risk, humanitarian pressure and geopolitical/conflict intelligence. Related major crime and security reporting stays visibly separate rather than being flattened into the same evidence class.</p>
                 <div class="btn-row"><a class="btn" href="https://earthnet.pythology.co.nz/" target="_blank" rel="noopener">Open EarthNet 2.0</a></div>
               </div>
             </article>
