@@ -86,7 +86,7 @@
     if (domainBand && !document.querySelector('.home-dual-view')) {
       domainBand.innerHTML = `
         <div class="container">
-          <p class="human-kicker">EarthNet · planetary intelligence</p>
+          <p class="human-kicker">EarthNet 2.0 · planetary intelligence</p>
           <h2 class="h2">New Zealand proves the country model.<br>EarthNet proves the global model.</h2>
           <p class="lede">The same architecture can keep watch across the whole board or go much deeper where decisions live. The evidence model stays explicit either way.</p>
           <div class="home-dual-view">
