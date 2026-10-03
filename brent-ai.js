@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const APPROVED_PAGES = new Set([
     '/', '/index.html', '/about.html', '/research.html', '/causal-intelligence.html',
     '/prometheus.html', '/earthnet-platform.html', '/earthnet-nz-intelligence.html',
-    '/mdra.html', '/precursor-domains.html', '/poseidon.html',
+    '/enviroarc.html', '/precursor-domains.html', '/poseidon.html',
     '/marine-intelligence.html', '/where-it-fits.html', '/ask-brent.html',
     '/technosphere-twin.html', '/synthetic-cognition.html'
   ]);
