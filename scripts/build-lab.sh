@@ -276,6 +276,7 @@ PUBLIC_OVERRIDES=(
   site.js
   architecture-in-action.css
   pythology-human.css
+  enviroarc.html
   mdra.html
   mdra.css
   mdra-nav.js
@@ -399,7 +400,7 @@ for page in Path("_site").glob("*.html"):
         f"  {refresh_css}\n  {nav_tag}\n  {refresh_tag}\n</head>",
         1,
     )
-    if page.name == "mdra.html":
+    if page.name == "enviroarc.html":
         page_text = version_asset(page_text, "mdra.css")
     page.write_text(page_text, encoding="utf-8")
 
@@ -460,7 +461,7 @@ grep -Fq "mobile-open" "$OUT/site.js" || {
   echo 'Responsive navigation controller validation failed.' >&2
   exit 1
 }
-grep -Fq "['mdra.html', 'EnviroArc']" "$OUT/site.js" || {
+grep -Fq "['enviroarc.html', 'EnviroArc']" "$OUT/site.js" || {
   echo 'Canonical primary navigation is missing EnviroArc.' >&2
   exit 1
 }
@@ -504,7 +505,7 @@ grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
   echo 'Homepage research UI overlay validation failed.' >&2
   exit 1
 }
-[[ -s "$OUT/about.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
+[[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
   echo 'Human-facing site is incomplete.' >&2
   exit 1
 }
