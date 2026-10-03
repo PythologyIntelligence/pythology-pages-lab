@@ -90,7 +90,7 @@
           <h2 class="h2">New Zealand proves the country model.<br>EarthNet proves the global model.</h2>
           <p class="lede">The same architecture can keep watch across the whole board or go much deeper where decisions live. The evidence model stays explicit either way.</p>
           <div class="home-dual-view">
-            <article class="home-view-card" style="--view-art:url('https://raw.githubusercontent.com/PythologyIntelligence/pythologyintelligence.github.io/main/png_images/earthnet.png')">
+            <article class="home-view-card" style="--view-art:url('png_images/earthnet.png')">
               <div class="home-view-copy">
                 <p class="human-kicker">Global view</p>
                 <h3>Keep watch across the whole board.</h3>
