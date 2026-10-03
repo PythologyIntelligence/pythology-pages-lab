@@ -252,6 +252,52 @@
     }
   }
 
+  function renderTriggeredResearch(data) {
+    const item = data && typeof data === 'object' ? data.latest : null;
+    const cases = Array.isArray(data?.cases) ? data.cases : [];
+
+    text('[data-triggered-archive-count]', cases.length
+      ? `${cases.length} qualifying public case${cases.length === 1 ? '' : 's'} retained under the current publication feed.`
+      : 'No qualifying public cases are retained yet.');
+
+    if (!item || typeof item !== 'object') {
+      text('[data-triggered-title]', 'No qualifying triggered research case is available yet');
+      text('[data-triggered-date]', 'Awaiting qualifying event');
+      return;
+    }
+
+    const method = item.methodology || {};
+    const observations = item.observations || {};
+    const findings = Array.isArray(item.findings) ? item.findings : [];
+
+    text('[data-triggered-date]', item.event_time ? shortDate(item.event_time) : 'Latest case');
+    text('[data-triggered-title]', item.title || 'Triggered New Zealand research case');
+    text('[data-triggered-method]', method.description || 'Prometheus compared the evidence preceding this event with matched non-event windows.');
+    text('[data-triggered-events]', whole(observations.catalogue_event_count));
+    text('[data-triggered-signals]', whole(item.candidate_signal_count));
+    text('[data-triggered-controls]', whole(method.matched_non_event_windows));
+    text('[data-triggered-radius]', Number.isFinite(Number(method.radius_km)) ? `${Number(method.radius_km)} km` : '—');
+    text('[data-triggered-safety]', item.safety || 'Retrospective research only. This is not a prediction or public warning.');
+
+    const list = $('[data-triggered-findings]');
+    if (list) {
+      list.replaceChildren();
+      const visible = findings.filter((finding) => finding && finding.plain_language).slice(0, 6);
+      visible.forEach((finding) => list.appendChild(el('li', '', finding.plain_language)));
+      if (!visible.length) list.appendChild(el('li', '', 'No candidate signal passed the current comparison guard in this case.'));
+    }
+
+    const official = $('[data-triggered-official]');
+    if (official) {
+      if (item.official_url) {
+        official.href = item.official_url;
+        official.hidden = false;
+      } else {
+        official.hidden = true;
+      }
+    }
+  }
+
   function renderVolcano(data) {
     const alert = Array.isArray(data.alerts) ? data.alerts[0] : null;
     if (!alert) {
@@ -278,7 +324,8 @@
       getJson('data/earthnet_prometheus.json'),
       getJson('data/earthnet_nz_daily.json'),
       getJson('data/earthnet_volcano_pulse.json'),
-      getJson('data/prometheus_research_state.json')
+      getJson('data/prometheus_research_state.json'),
+      getJson('data/nz_triggered_research.json')
     ]);
 
     if (results[0].status === 'fulfilled') renderPrometheus(results[0].value);
@@ -301,6 +348,12 @@
       text('[data-research-status]', 'Prometheus // research snapshot unavailable');
       text('[data-research-freshness]', 'public projection unavailable');
       text('[data-research-updated]', 'The public research-state projection could not be loaded just now.');
+    }
+
+    if (results[4].status === 'fulfilled') renderTriggeredResearch(results[4].value);
+    else {
+      text('[data-triggered-title]', 'The latest triggered research case could not be loaded just now.');
+      text('[data-triggered-date]', 'public projection unavailable');
     }
   }
 
