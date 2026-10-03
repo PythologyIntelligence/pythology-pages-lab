@@ -303,6 +303,7 @@ PUBLIC_OVERRIDES=(
   causal-intelligence.html
   future.css
   future.html
+  physical-intelligence.html
   cerberus.html
   sentinel-command.html
   sentinel-command.css
