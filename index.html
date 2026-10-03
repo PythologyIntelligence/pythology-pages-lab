@@ -132,30 +132,51 @@
   </section>
 
   <section class="pitch-section">
-    <div class="container home-proof-grid">
-      <div class="home-proof-copy">
-        <p class="human-kicker">New Zealand · daily intelligence</p>
-        <h2 class="h2" style="font-size:clamp(36px,4.4vw,60px)">A country-level morning brief.</h2>
-        <p>New Zealand is EarthNet's current country-level proving ground. The daily state combines seismic activity, volcanic status, incoming weather and ocean context, then adds a short interpretation without pretending every unusual signal is a prediction.</p>
-        <p data-home-nz-line>Loading the latest New Zealand interpretation…</p>
-        <div class="btn-row"><a class="btn" href="https://earthnet.pythology.co.nz/" target="_blank" rel="noopener">Open EarthNet 2.0</a></div>
+    <div class="container">
+      <div class="pitch-section-head">
+        <div>
+          <p class="human-kicker">New Zealand · daily intelligence</p>
+          <h2 class="h2">The daily state.<br>And the cases Prometheus opens when something qualifies.</h2>
+        </div>
+        <div>
+          <p>New Zealand is EarthNet's current country-level proving ground. The daily state keeps the latest seismic, volcanic, weather and ocean evidence visible; triggered research then asks a different question after a qualifying event: what was happening beforehand, and how unusual was it against matched non-event windows?</p>
+          <p data-home-nz-line>Loading the latest New Zealand interpretation…</p>
+          <div class="btn-row"><a class="btn" href="https://earthnet.pythology.co.nz/" target="_blank" rel="noopener">Open EarthNet 2.0</a></div>
+        </div>
       </div>
 
-      <article class="paper-brief" aria-live="polite">
-        <div class="paper-meta"><span>Prometheus // New Zealand</span><span data-home-nz-date>Latest daily state</span></div>
-        <h3>24-hour state</h3>
-        <p class="paper-subtitle">A compact national view from the latest public evidence available to EarthNet.</p>
-        <div class="home-nz-strip">
-          <div><strong data-home-nz-count>—</strong><span>catalogue earthquakes</span></div>
-          <div><strong data-home-nz-largest>—</strong><span>largest event</span></div>
-          <div><strong data-home-nz-cluster>—</strong><span>largest concentration</span></div>
-        </div>
-        <div style="margin-top:28px">
-          <div class="paper-meta" style="border:0;padding:0"><span>Latest guarded volcanic change</span><span data-home-volcano-value>—</span></div>
-          <p style="margin:12px 0 0;color:#394e55;font:500 24px/1.16 'Newsreader',Georgia,serif" data-home-volcano-title>Loading volcanic pulse…</p>
-        </div>
-        <div class="paper-footnote">Research and operational context only. Official agencies and responsible authorities remain the source of public safety advice.</div>
-      </article>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px;align-items:stretch">
+        <article class="paper-brief" aria-live="polite">
+          <div class="paper-meta"><span>Prometheus // New Zealand</span><span data-home-nz-date>Latest daily state</span></div>
+          <h3>NZ Daily State</h3>
+          <p class="paper-subtitle">A compact 24-hour national view from the latest public evidence available to EarthNet.</p>
+          <div class="home-nz-strip">
+            <div><strong data-home-nz-count>—</strong><span>catalogue earthquakes</span></div>
+            <div><strong data-home-nz-largest>—</strong><span>largest event</span></div>
+            <div><strong data-home-nz-cluster>—</strong><span>largest concentration</span></div>
+          </div>
+          <div style="margin-top:28px">
+            <div class="paper-meta" style="border:0;padding:0"><span>Latest guarded volcanic change</span><span data-home-volcano-value>—</span></div>
+            <p style="margin:12px 0 0;color:#394e55;font:500 24px/1.16 'Newsreader',Georgia,serif" data-home-volcano-title>Loading volcanic pulse…</p>
+          </div>
+          <div class="paper-footnote">Research and operational context only. Official agencies and responsible authorities remain the source of public safety advice.</div>
+        </article>
+
+        <article class="paper-brief" aria-live="polite">
+          <div class="paper-meta"><span>Prometheus // Triggered research</span><span data-home-research-date>Latest qualifying case</span></div>
+          <h3 data-home-research-title>Loading triggered research…</h3>
+          <p class="paper-subtitle" data-home-research-method>Prometheus opens a retrospective case after a qualifying New Zealand event and compares the preceding evidence with matched non-event windows.</p>
+          <div class="home-nz-strip" style="grid-template-columns:repeat(2,minmax(0,1fr))">
+            <div><strong data-home-research-signals>—</strong><span>candidate signals</span></div>
+            <div><strong data-home-research-events>—</strong><span>preceding catalogue events</span></div>
+            <div><strong data-home-research-controls>—</strong><span>matched controls</span></div>
+            <div><strong data-home-research-radius>—</strong><span>study radius</span></div>
+          </div>
+          <ul class="paper-list" data-home-research-findings><li>Loading the latest research case…</li></ul>
+          <div class="btn-row"><a class="btn" href="prometheus.html#triggered-research">Open the research case</a></div>
+          <div class="paper-footnote">Retrospective research only. Candidate signals are comparisons, not earthquake predictions or public warnings.</div>
+        </article>
+      </div>
     </div>
   </section>
 
