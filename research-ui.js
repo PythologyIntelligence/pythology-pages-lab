@@ -162,7 +162,7 @@
           </div>
           <div class="cross-domain-grid">
             <article class="cross-domain-card" style="--domain-art:url('png_images/bio_symbology.png')">
-              <div><p class="human-kicker">Biological intelligence</p><h3>Detect the transition, not only the tumour.</h3><p>Model biological transitions that may precede invasive disease while keeping pathway reasoning and evidence provenance explicit.</p><a href="biosymbology.html">Explore biological work →</a></div>
+              <div><p class="human-kicker">Biological intelligence</p><h3>Detect the transition, not only the tumour.</h3><p>Model biological transitions that may precede invasive disease while keeping pathway reasoning and evidence provenance explicit.</p></div>
             </article>
             <article class="cross-domain-card cross-domain-card--physical" style="--domain-art:url('png_images/digital_infrastructure_twin.png')">
               <div><p class="human-kicker">Physical intelligence</p><h3>Understand the machine. Then test the decision.</h3><p>Physics-constrained world models for high-value engineered systems — freeze the evidence and decision before the machine reveals the answer.</p><a href="physical-intelligence.html">Explore physical work →</a></div>
