@@ -38,6 +38,12 @@ PUBLIC_FALLBACK_OVERRIDES=(
   site.js
   architecture-in-action.css
   pythology-human.css
+  enviroarc.html
+  mdra.html
+  mdra.css
+  mdra-nav.js
+  mdra-refresh.js
+  mdra-refresh.css
   home-proof.js
   earthnet-human.css
   earthnet-page.js
@@ -52,10 +58,14 @@ PUBLIC_FALLBACK_OVERRIDES=(
   where-it-fits.html
   about-human.css
   about.html
+  ask-brent.html
+  brent-ai.css
+  brent-ai.js
   causal-human.css
   causal-intelligence.html
   future.css
   future.html
+  physical-intelligence.html
   cerberus.html
   sentinel-command.html
   sentinel-command.css
