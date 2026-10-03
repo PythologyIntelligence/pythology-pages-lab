@@ -1,0 +1,71 @@
+{
+  "candidate_signal_count": 4,
+  "depth_km": 10.504551887512207,
+  "event_id": "2026p742111",
+  "event_time": "2026-10-02T13:57:17.111000+00:00",
+  "findings": [
+    {
+      "control_count": 6,
+      "control_median": 76.47481899384678,
+      "metric": "centroid_distance_km",
+      "percentile": 0.0,
+      "plain_language": "Distance of activity centre from target epicentre was lower than all 6 matched non-event windows.",
+      "target_value": 67.55098219285641,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 10.562209663718562,
+      "metric": "log10_energy_proxy",
+      "percentile": 100.0,
+      "plain_language": "Combined seismic-energy proxy was higher than all 6 matched non-event windows.",
+      "target_value": 11.081738533949215,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 3.3963330038131887,
+      "metric": "maximum_magnitude",
+      "percentile": 100.0,
+      "plain_language": "Largest precursor-window magnitude was higher than all 6 matched non-event windows.",
+      "target_value": 3.9483964323588356,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 1.8951547916666667,
+      "metric": "median_interevent_hours",
+      "percentile": 0.0,
+      "plain_language": "Typical time between earthquakes was lower than all 6 matched non-event windows.",
+      "target_value": 1.2675390277777776,
+      "unusual": true
+    }
+  ],
+  "historical_pattern_matches": [],
+  "historical_pattern_registry": {
+    "available": false,
+    "eligible_pattern_count": 0,
+    "version": null
+  },
+  "kind": "earthquake",
+  "locality": "New Plymouth",
+  "magnitude": 5.33407136708809,
+  "methodology": {
+    "description": "Prometheus examined the 14 days preceding this qualifying event within 150 km and compared the measurements with matched non-event windows.",
+    "matched_non_event_windows": 6,
+    "radius_km": 150,
+    "window_days": 14
+  },
+  "observations": {
+    "b_value": 0.8935031527929137,
+    "b_value_guard": null,
+    "catalogue_event_count": 155,
+    "events_per_day": 11.071428571428571,
+    "maximum_precursor_magnitude": 3.9483964323588356
+  },
+  "official_url": "https://www.geonet.org.nz/earthquake/2026p742111",
+  "research_only": true,
+  "safety": "Retrospective research only. This is not an earthquake prediction or public warning. GeoNet and NEMA remain authoritative for public safety advice.",
+  "schema": "pythology.nz-triggered-research-case.v0.1",
+  "title": "M5.3 retrospective — New Plymouth"
+}
