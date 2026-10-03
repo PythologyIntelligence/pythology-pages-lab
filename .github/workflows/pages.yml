@@ -140,7 +140,7 @@ jobs:
           import re
 
           version = os.environ.get('GITHUB_SHA', 'earthnet')[:12]
-          live = f'earthnet-global/?v={version}'
+          live = 'https://earthnet.pythology.co.nz/'
 
           # The rescued site was mirrored from Netlify and still carried its
           # injected HUD script. GitHub Pages must not advertise the old host.
@@ -195,6 +195,7 @@ jobs:
           # Self-mirroring can preserve a previous deployment SHA. Normalise any
           # existing live link to this deployment rather than multiplying variants.
           text = re.sub(r'earthnet-global/\?v=[A-Za-z0-9._-]+', live, text)
+          text = text.replace('earthnet-global/', live)
           home.write_text(text, encoding='utf-8')
 
           direct_links = text.count(live)
