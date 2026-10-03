@@ -82,7 +82,7 @@ for file in system-health.json yggdrasil_activity.json earthnet_status.json; do
   fi
 done
 
-for required in about.html prometheus.html mdra.html future.html site.js png_images/about_me.png; do
+for required in about.html prometheus.html enviroarc.html mdra.html future.html site.js png_images/about_me.png; do
   [[ -s "$OUT/$required" ]] || { echo "Fallback site incomplete: $required" >&2; exit 1; }
 done
 
