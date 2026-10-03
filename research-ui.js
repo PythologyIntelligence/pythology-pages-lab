@@ -90,12 +90,12 @@
           <h2 class="h2">New Zealand proves the country model.<br>EarthNet proves the global model.</h2>
           <p class="lede">The same architecture can keep watch across the whole board or go much deeper where decisions live. The evidence model stays explicit either way.</p>
           <div class="home-dual-view">
-            <article class="home-view-card" style="--view-art:url('png_images/earthnet.png')">
+            <article class="home-view-card" style="--view-art:url('png_images/pythology_environmental_ai_banner.webp')">
               <div class="home-view-copy">
                 <p class="human-kicker">Global view</p>
                 <h3>Keep watch across the whole board.</h3>
                 <p>See developing environmental and human-system context together: severe weather, seismic activity, ocean and cryosphere signals, wildfire, humanitarian pressure and other changing evidence.</p>
-                <div class="btn-row"><a class="btn" href="earthnet-global/">Open the global platform</a></div>
+                <div class="btn-row"><a class="btn" href="https://earthnet.pythology.co.nz/" target="_blank" rel="noopener">Open EarthNet 2.0</a></div>
               </div>
             </article>
             <article class="home-view-card" style="--view-art:url('png_images/nz_report.webp')">
@@ -108,7 +108,7 @@
                   <div class="home-view-stat"><strong data-home-nz-largest>—</strong><span>largest event</span></div>
                   <div class="home-view-stat"><strong data-home-nz-cluster>—</strong><span>largest concentration</span></div>
                 </div>
-                <div class="btn-row"><a class="btn" href="https://earthnet.pythology.co.nz/" target="_blank" rel="noopener">Open EarthNet 2.0</a></div>
+                <div class="btn-row"><a class="btn" href="https://atlas.pythology.co.nz/atlas" target="_blank" rel="noopener">Open Atlas</a></div>
               </div>
             </article>
           </div>
