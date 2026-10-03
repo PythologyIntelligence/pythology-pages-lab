@@ -1,16 +1,74 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.183992,
-    "calibrated_forecast_count": 67,
+    "brier_score": 0.183984,
+    "calibrated_forecast_count": 69,
     "confirmed_count": 29,
-    "hit_rate": 0.312,
-    "not_observed_count": 64,
-    "resolved_count": 93
+    "hit_rate": 0.305,
+    "not_observed_count": 66,
+    "resolved_count": 95
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Mechanism-level scoring measures prospective predictive consistency; a hit does not prove causation and a miss does not automatically falsify the mechanism. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-10-03T04:12:58+00:00",
+  "generated_at": "2026-10-03T12:13:10+00:00",
   "history": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-10-02T04:13:51+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.494,
+      "forecast_id": "1d131d35935177232915ffef",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.244036,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-10-03T12:13:10+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "ada69beed0e6d725",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-10-03T04:13:51+00:00"
+    },
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-10-02T04:13:51+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "e9f226d82fdc627e9be72057",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Mumbai, India",
+      "resolved_at": "2026-10-03T12:13:10+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "65b29effb6ff22d8",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Mumbai, India",
+      "valid_until": "2026-10-03T04:13:51+00:00"
+    },
     {
       "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
       "calibrated": true,
@@ -2847,56 +2905,6 @@
       "target_event_type": "heat_risk",
       "target_title": "Heat risk — California (Central Valley)",
       "valid_until": "2026-10-04T04:13:51+00:00"
-    },
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-10-02T04:13:51+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.494,
-      "forecast_id": "1d131d35935177232915ffef",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Texas (Gulf Coast)",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "ada69beed0e6d725",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Texas (Gulf Coast)",
-      "valid_until": "2026-10-03T04:13:51+00:00"
-    },
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-10-02T04:13:51+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.351,
-      "forecast_id": "e9f226d82fdc627e9be72057",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Mumbai, India",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "65b29effb6ff22d8",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Mumbai, India",
-      "valid_until": "2026-10-03T04:13:51+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
