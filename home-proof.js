@@ -137,6 +137,42 @@
     );
   }
 
+  function renderTriggeredResearch(data) {
+    const item = data && typeof data === 'object' ? data.latest : null;
+    if (!item || typeof item !== 'object') {
+      text('[data-home-research-title]', 'No qualifying public research case is available yet');
+      text('[data-home-research-date]', 'Awaiting qualifying event');
+      return;
+    }
+
+    const method = item.methodology || {};
+    const observations = item.observations || {};
+    const findings = Array.isArray(item.findings) ? item.findings : [];
+
+    text('[data-home-research-date]', item.event_time ? `Case · ${shortDate(item.event_time)}` : 'Latest qualifying case');
+    text('[data-home-research-title]', item.title || 'Triggered New Zealand research case');
+    text('[data-home-research-method]', method.description || 'Prometheus examined the evidence preceding this qualifying event against matched non-event windows.');
+    text('[data-home-research-signals]', item.candidate_signal_count);
+    text('[data-home-research-events]', observations.catalogue_event_count);
+    text('[data-home-research-controls]', method.matched_non_event_windows);
+    text('[data-home-research-radius]', Number.isFinite(Number(method.radius_km)) ? `${Number(method.radius_km)} km` : '—');
+
+    all('[data-home-research-findings]').forEach((list) => {
+      list.replaceChildren();
+      const visible = findings.filter((finding) => finding && finding.plain_language).slice(0, 2);
+      visible.forEach((finding) => {
+        const li = document.createElement('li');
+        li.textContent = String(finding.plain_language);
+        list.appendChild(li);
+      });
+      if (!visible.length) {
+        const li = document.createElement('li');
+        li.textContent = 'No candidate signal passed the current comparison guard in this case.';
+        list.appendChild(li);
+      }
+    });
+  }
+
   function renderVolcano(data) {
     const alert = Array.isArray(data.alerts) ? data.alerts[0] : null;
     if (!alert) {
@@ -153,11 +189,13 @@
     const results = await Promise.allSettled([
       getJson('data/earthnet_prometheus.json'),
       getJson('data/earthnet_nz_daily.json'),
-      getJson('data/earthnet_volcano_pulse.json')
+      getJson('data/earthnet_volcano_pulse.json'),
+      getJson('data/nz_triggered_research.json')
     ]);
     if (results[0].status === 'fulfilled') renderPrometheus(results[0].value);
     if (results[1].status === 'fulfilled') renderNz(results[1].value);
     if (results[2].status === 'fulfilled') renderVolcano(results[2].value);
+    if (results[3].status === 'fulfilled') renderTriggeredResearch(results[3].value);
   }
 
   if (!document.getElementById('home-visual-presence')) {
