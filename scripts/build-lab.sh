@@ -424,6 +424,19 @@ fi
 mkdir -p "$OUT/png_images"
 cp "$TITLE_BANNER" "$OUT/png_images/pythology_environmental_ai_banner.webp"
 
+# Stage the EarthNet global artwork from the public production site. The source
+# repository is private, so the Pages build copies the publicly served asset
+# into this deployment rather than hot-linking raw.githubusercontent.com.
+EARTHNET_HOME_ART="$OUT/png_images/earthnet.png"
+curl -fsSL "$PYTHOLOGY_SOURCE/png_images/earthnet.png" -o "$EARTHNET_HOME_ART" || {
+  echo "Required EarthNet homepage artwork unavailable from $PYTHOLOGY_SOURCE/png_images/earthnet.png" >&2
+  exit 1
+}
+[[ -s "$EARTHNET_HOME_ART" ]] || {
+  echo 'EarthNet homepage artwork downloaded empty.' >&2
+  exit 1
+}
+
 # Stage the original founder portrait directly from this repository. Keeping the
 # binary in Pages Lab removes the private cross-repository dependency that caused
 # the primary build to fall back to an incomplete artifact.
