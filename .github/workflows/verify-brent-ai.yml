@@ -1,5 +1,4 @@
 name: Verify BrentAI Pages Lab
-# Aegis PG-001 authorised harmless change
 on:
   pull_request:
     paths:
