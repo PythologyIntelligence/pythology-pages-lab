@@ -1,4 +1,5 @@
 name: Verify BrentAI Pages Lab
+# Aegis PG-002 authorised correlation test
 on:
   pull_request:
     paths:
