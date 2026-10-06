@@ -1,16 +1,45 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.180465,
-    "calibrated_forecast_count": 73,
+    "brier_score": 0.179892,
+    "calibrated_forecast_count": 74,
     "confirmed_count": 30,
-    "hit_rate": 0.303,
-    "not_observed_count": 69,
-    "resolved_count": 99
+    "hit_rate": 0.3,
+    "not_observed_count": 70,
+    "resolved_count": 100
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Mechanism-level scoring measures prospective predictive consistency; a hit does not prove causation and a miss does not automatically falsify the mechanism. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-10-06T04:13:15+00:00",
+  "generated_at": "2026-10-06T12:14:08+00:00",
   "history": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-10-05T04:13:17+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "2ec01fd22419fb32c7ab8e3c",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Mumbai, India",
+      "resolved_at": "2026-10-06T12:14:08+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "3b9b42bafdca3073",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Mumbai, India",
+      "valid_until": "2026-10-06T04:13:17+00:00"
+    },
     {
       "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
       "calibrated": true,
@@ -2975,6 +3004,31 @@
   "mode": "live_validation",
   "open": [
     {
+      "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-10-06T12:14:08+00:00",
+      "domain": "volcanic",
+      "forecast_confidence": 0.679,
+      "forecast_id": "bc3d002ef83774986b375b94",
+      "forecast_type": "official_volcanic_unrest_continuation",
+      "outcome": null,
+      "predicted_outcome": "volcanic_unrest_persists_or_escalates",
+      "region": "White Island",
+      "resolved_at": null,
+      "source_families": [
+        "GeoNet NZ"
+      ],
+      "source_independence_count": 1,
+      "statement": "Officially reported volcanic unrest may persist or escalate during the next 72 hours.",
+      "status": "open",
+      "target_event_id": "geonet-volcano-whiteisland",
+      "target_event_type": "volcanic_alert",
+      "target_title": "White Island — Alert Level 2",
+      "valid_until": "2026-10-09T12:14:08+00:00"
+    },
+    {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
       "calibrated": true,
       "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
@@ -3024,31 +3078,6 @@
       "target_event_type": "severe_convective_risk",
       "target_title": "Severe weather risk — Sahel Region",
       "valid_until": "2026-10-07T04:13:15+00:00"
-    },
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-10-05T04:13:17+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.351,
-      "forecast_id": "2ec01fd22419fb32c7ab8e3c",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Mumbai, India",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "3b9b42bafdca3073",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Mumbai, India",
-      "valid_until": "2026-10-06T04:13:17+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
