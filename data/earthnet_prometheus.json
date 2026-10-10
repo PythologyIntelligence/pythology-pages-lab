@@ -9,7 +9,7 @@
     "resolved_count": 108
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Mechanism-level scoring measures prospective predictive consistency; a hit does not prove causation and a miss does not automatically falsify the mechanism. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-10-10T12:13:06+00:00",
+  "generated_at": "2026-10-10T20:13:02+00:00",
   "history": [
     {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
@@ -3242,6 +3242,31 @@
   },
   "mode": "live_validation",
   "open": [
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-10-10T20:13:02+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.284,
+      "forecast_id": "ba9203061309efc08c99a351",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": null,
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Sahel Region",
+      "resolved_at": null,
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "open",
+      "target_event_id": "0f5de2883bf39e8c",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Sahel Region",
+      "valid_until": "2026-10-12T20:13:02+00:00"
+    },
     {
       "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
       "calibrated": true,
