@@ -17,26 +17,26 @@
         {
           "direction": "higher",
           "family": "thermal and hydrothermal",
-          "score_sigma": 2.993121398029372,
-          "summary": "2.99σ higher vs its 30-day baseline"
+          "score_sigma": 3.0840656607527763,
+          "summary": "3.08σ higher vs its 30-day baseline"
         }
       ],
       "name": "Raoul Island",
-      "observed_at": "2026-10-10T11:37:02+00:00",
+      "observed_at": "2026-10-10T23:37:02+00:00",
       "official_status": {
         "aviation_colour_code": null,
         "level": null
       },
       "research_only": true,
       "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
-      "summary": "thermal and hydrothermal: 2.99σ higher vs its 30-day baseline",
+      "summary": "thermal and hydrothermal: 3.08σ higher vs its 30-day baseline",
       "suppressed_families": [],
       "suppression_candidate": false,
       "title": "Geothermal baseline change — Raoul Island",
       "volcano_id": "kermadec-islands"
     }
   ],
-  "generated": "2026-10-10T11:37:53+00:00",
+  "generated": "2026-10-10T23:37:57+00:00",
   "research_only": true,
   "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
   "schema": "earthnet.volcano-pulse-web.v0.1"
