@@ -46,7 +46,7 @@
 .future-hero .container{
   position:relative;
   z-index:1;
-  width:100%;
+  /* Retain the shared, centred .container width for hero copy. */
   padding-top:112px;
   padding-bottom:92px;
 }
