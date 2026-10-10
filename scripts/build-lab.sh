@@ -296,9 +296,6 @@ PUBLIC_OVERRIDES=(
   where-it-fits.html
   about-human.css
   about.html
-  ask-brent.html
-  brent-ai.css
-  brent-ai.js
   causal-human.css
   causal-intelligence.html
   future.css
@@ -316,6 +313,9 @@ for file in "${PUBLIC_OVERRIDES[@]}"; do
   fi
   cp "$ROOT/$file" "$OUT/$file"
 done
+
+# Retired public founder AI: remove any previous upstream-mirrored files.
+find "$OUT" -maxdepth 1 -type f \( -name 'ask-brent.html*' -o -name 'brent-ai.css*' -o -name 'brent-ai.js*' \) -delete
 
 # Cache-bust the canonical navigation controller on every Pages deployment.
 # Mobile/tablet browsers can otherwise keep an older site.js even after a new
@@ -372,11 +372,6 @@ else:
     text = version_asset(text, "research-ui.js")
 home.write_text(text, encoding="utf-8")
 
-brent = Path("_site/ask-brent.html")
-brent_text = brent.read_text(encoding="utf-8")
-for asset in ("brent-ai.css", "brent-ai.js"):
-    brent_text = version_asset(brent_text, asset)
-brent.write_text(brent_text, encoding="utf-8")
 
 nav_tag = f'<script defer src="mdra-nav.js?v={version}"></script>'
 refresh_tag = f'<script defer src="mdra-refresh.js?v={version}"></script>'
@@ -540,30 +535,11 @@ grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
   exit 1
 }
 
-[[ -s "$OUT/ask-brent.html" && -s "$OUT/brent-ai.css" && -s "$OUT/brent-ai.js" ]] || {
-  echo 'BrentAI public page or runtime assets missing.' >&2
+
+if grep -Fq "ask-brent.html" "$OUT/index.html" "$OUT/about.html" "$OUT/site.js"; then
+  echo "Retired BrentAI link unexpectedly remains in the published site." >&2
   exit 1
-}
-grep -Fq "['ask-brent.html', 'Ask BrentAI']" "$OUT/site.js" || {
-  echo 'BrentAI canonical navigation missing.' >&2
-  exit 1
-}
-grep -Fq 'id="meet-brentai"' "$OUT/about.html" || {
-  echo 'Founder invitation to BrentAI missing.' >&2
-  exit 1
-}
-grep -Fq 'https://brentai-api.pythology.co.nz/' "$OUT/brent-ai.js" || {
-  echo 'BrentAI self-hosted API endpoint missing.' >&2
-  exit 1
-}
-grep -Eq 'brent-ai\.js\?v=[A-Za-z0-9._-]+' "$OUT/ask-brent.html" || {
-  echo 'BrentAI JS cache-bust validation failed.' >&2
-  exit 1
-}
-grep -Eq 'brent-ai\.css\?v=[A-Za-z0-9._-]+' "$OUT/ask-brent.html" || {
-  echo 'BrentAI CSS cache-bust validation failed.' >&2
-  exit 1
-}
+fi
 
 echo "Prepared GitHub Pages lab at $OUT"
 find "$OUT" -maxdepth 2 -type f | sort | head -n 100
