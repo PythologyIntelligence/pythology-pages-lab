@@ -58,9 +58,6 @@ PUBLIC_FALLBACK_OVERRIDES=(
   where-it-fits.html
   about-human.css
   about.html
-  ask-brent.html
-  brent-ai.css
-  brent-ai.js
   causal-human.css
   causal-intelligence.html
   future.css
@@ -95,6 +92,13 @@ done
 for required in about.html prometheus.html enviroarc.html mdra.html future.html site.js png_images/about_me.png; do
   [[ -s "$OUT/$required" ]] || { echo "Fallback site incomplete: $required" >&2; exit 1; }
 done
+
+# Retired public founder AI must not be restored from an older Pages mirror.
+find "$OUT" -maxdepth 1 -type f \( -name 'ask-brent.html*' -o -name 'brent-ai.css*' -o -name 'brent-ai.js*' \) -delete
+if grep -Fq 'ask-brent.html' "$OUT/index.html" "$OUT/about.html" "$OUT/site.js"; then
+  echo 'Retired BrentAI link found in Pages fallback.' >&2
+  exit 1
+fi
 
 touch "$OUT/.nojekyll"
 rm -rf "$OUT/private-data" "$OUT/netlify" "$OUT/api" "$OUT/.git" "$OUT/.github"
