@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Pythology Prometheus Subterranean: public research notes on historical earthquake and volcano-context seismic-catalogue experiments, methods, negative findings, and prospective validation.">
+  <title>Precursor Research Record — Pythology Intelligence</title>
+  <link rel="canonical" href="https://pythology.co.nz/precursor-research.html">
+  <link rel="stylesheet" href="site.css">
+  <link rel="stylesheet" href="pythology-human.css">
+  <script defer src="site.js"></script>
+  <style>
+    html{scroll-behavior:smooth;scroll-padding-top:92px}
+    .pr-page{background:#060e17;color:#d8e8f0;min-height:100vh}
+    .pr-page *{box-sizing:border-box}
+    .pr-container{width:min(1150px,calc(100% - 40px));margin-inline:auto}
+    .pr-hero{position:relative;padding:clamp(85px,10vw,150px) 0 64px;overflow:hidden;border-bottom:1px solid #254b5b;background:radial-gradient(ellipse at 70% 15%,rgba(29,176,201,.22),transparent 47%),radial-gradient(ellipse at 3% 90%,rgba(5,72,119,.3),transparent 44%),#06121f}
+    .pr-hero:after{content:'';position:absolute;inset:0;opacity:.28;pointer-events:none;background:repeating-linear-gradient(135deg,transparent 0,transparent 35px,rgba(104,220,233,.05) 36px,transparent 37px)}
+    .pr-hero .pr-container{position:relative;z-index:1}
+    .pr-kicker{color:#79e4ea;font:700 11px/1.5 Consolas,monospace;letter-spacing:.15em;text-transform:uppercase}
+    .pr-hero h1{font-size:clamp(43px,6.6vw,76px);line-height:1.07;letter-spacing:-.035em;margin:17px 0;color:#f0fbff;max-width:960px}
+    .pr-hero h1 em{font-style:normal;color:#81eff3}
+    .pr-lede{font-size:clamp(17px,2vw,21px);line-height:1.7;max-width:860px;color:#b6d3e2;margin:22px 0 26px}
+    .pr-chips{display:flex;flex-wrap:wrap;gap:10px}
+    .pr-chip{display:inline-flex;gap:7px;align-items:center;border:1px solid #346778;padding:9px 12px;border-radius:7px;background:#0b2938;color:#bff0f0;font:700 11px/1.4 Consolas,monospace}
+    .pr-chip.warn{border-color:#8c7542;background:#41341866;color:#f2d89b}
+    .pr-nav{position:relative;padding:17px 0;background:#0a1c29;border-bottom:1px solid #244a5d}
+    .pr-nav .pr-container{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px}
+    .pr-nav a{font:700 12px Consolas,monospace;color:#8fe7ee;text-decoration:none;padding:7px 9px;border:1px solid #295768;border-radius:5px}
+    .pr-nav a:hover,.pr-nav a:focus-visible{background:#143949;color:white}
+    .pr-main{padding:42px 0 96px}
+    .pr-section{scroll-margin-top:30px;margin-bottom:52px}
+    .pr-section-head{display:flex;justify-content:space-between;gap:14px;align-items:start;margin-bottom:22px}
+    .pr-section-head h2{font-size:clamp(28px,3.4vw,39px);line-height:1.18;color:#e9f8ff;margin:10px 0}
+    .pr-section-head p{max-width:840px;color:#afcedd;font-size:15px;line-height:1.8}
+    .pr-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:58px}
+    .pr-number{padding:21px;border-radius:12px;border:1px solid #315e6f;background:linear-gradient(160deg,#0d2b3d,#0a1723)}
+    .pr-number strong{display:block;color:#8df1f5;font:800 clamp(24px,3vw,34px)/1.15 Consolas,monospace}
+    .pr-number span{display:block;margin-top:10px;color:#b7ccdb;font-size:12px;line-height:1.6}
+    .pr-callout{padding:23px 27px;background:linear-gradient(115deg,#0f3547,#09202f);border:1px solid #368094;border-left:4px solid #7de4ee;border-radius:10px;margin:22px 0;color:#c6dfe9}
+    .pr-callout strong{display:block;color:#9ff4f1;font:700 12px Consolas,monospace;letter-spacing:.08em;margin-bottom:8px}
+    .pr-callout p{margin:0;font-size:14px;line-height:1.75}
+    .pr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .pr-card{background:linear-gradient(150deg,#0e2533,#091620);border:1px solid #315667;border-radius:12px;padding:24px 22px;min-width:0}
+    .pr-card .pr-label{color:#79deeb;font:700 11px Consolas,monospace;letter-spacing:.1em}
+    .pr-card h3{font-size:22px;color:#ebf9fc;margin:11px 0 13px;line-height:1.3}
+    .pr-card .pr-metric{font:800 clamp(25px,3.6vw,38px) Consolas,monospace;color:#81e8eb}
+    .pr-card .pr-metric small{display:inline;font:500 12px Arial,sans-serif;color:#b4cfda}
+    .pr-card p{color:#bdced8;font-size:13px;line-height:1.8;margin:11px 0}
+    .pr-card ul{padding-left:18px;margin:13px 0;color:#c7dbe3;font-size:13px;line-height:1.7}
+    .pr-card li{margin:5px 0}
+    .pr-card .pr-detail{padding-top:12px;border-top:1px solid #284c5a;margin-top:14px;font:11px/1.65 Consolas,monospace;color:#8bbed1}
+    .pr-table-wrap{border:1px solid #315968;border-radius:12px;overflow-x:auto;background:#0b2130}
+    .pr-table{width:100%;border-collapse:collapse;text-align:left;min-width:650px;font-size:13px}
+    .pr-table th{background:#134052;color:#a6f1ef;font:700 11px Consolas,monospace;letter-spacing:.04em}
+    .pr-table th,.pr-table td{padding:15px 17px;border-bottom:1px solid #234d5b}
+    .pr-table td{color:#d0e2ea}
+    .pr-table tbody tr:last-child td{border-bottom:0}
+    .pr-timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+    .pr-panel{padding:22px;background:#0b1f2d;border:1px solid #315568;border-radius:11px}
+    .pr-panel h3{color:#b4f8f6;font-size:18px;margin:0 0 12px}
+    .pr-panel p,.pr-panel li{font-size:13px;color:#bed4df;line-height:1.75}
+    .pr-panel ul{padding-left:19px;margin-bottom:0}
+    .pr-panel li{padding:3px 0}
+    .pr-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+    .pr-links a{color:#091923;background:#a2f2ed;border-radius:8px;padding:12px 19px;font-weight:700;text-decoration:none}
+    .pr-links a.secondary{background:#0b2d40;border:1px solid #55a2b1;color:#b8edf1}
+    .pr-note{font:11px/1.6 Consolas,monospace;color:#93b8c7;margin:20px 0 0}
+    .pr-card a,.pr-panel a{color:#94f1f0}
+    .pr-footer-note{background:#101e29;border-top:1px solid #2b5a68;padding:20px 0;color:#a4c3d2;font-size:12px;line-height:1.7}
+    @media(max-width:920px){.pr-summary{grid-template-columns:repeat(2,minmax(0,1fr))}.pr-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:690px){.pr-container{width:min(100% - 28px,1150px)}.pr-summary,.pr-grid,.pr-timeline{grid-template-columns:1fr}.pr-section{margin-bottom:37px}.pr-card{padding:20px}.pr-hero{padding-top:100px}.pr-chip{font-size:10px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body class="pitch-body pr-page">
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html"><img src="Logo (2).jpeg" alt="Pythology"><span class="brand-word">PYTHOLOGY</span></a>
+    <nav class="nav-links" data-nav-links aria-label="Primary navigation">
+      <a class="nav-link" href="index.html">Home</a><a class="nav-link" href="enviroarc.html">EnviroArc</a>
+      <a class="nav-link active" href="precursor-research.html">Precursor research</a>
+      <a class="nav-link" href="prometheus.html">Prometheus</a><a class="nav-link" href="about.html">About</a>
+    </nav>
+    <div class="nav-actions">
+      <a class="btn btn-primary" href="enviroarc.html#precursor-research">Latest research screen</a>
+      <button class="menu-button" data-menu-button aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+<main>
+  <section class="pr-hero">
+    <div class="pr-container">
+      <p class="pr-kicker">PYTHOLOGY INTELLIGENCE · PROMETHEUS SUBTERRANEAN · PUBLIC RESEARCH NOTES</p>
+      <h1>Searching for <em>early signals.</em><br>Keeping the evidence.</h1>
+      <p class="pr-lede">Seven historical seismic-catalogue replay experiments, their limitations, and the next tests needed before any claim about earthquake or volcanic forecasting can be made. Read the results here, in plain language, without navigating our working research repositories.</p>
+      <div class="pr-chips">
+        <span class="pr-chip">RESEARCH NOTES · 11 OCTOBER 2026</span>
+        <span class="pr-chip">HISTORICAL REPLAYS · ARCHIVED 10 OCTOBER</span>
+        <span class="pr-chip warn">PRELIMINARY · NOT VALIDATED</span>
+      </div>
+    </div>
+  </section>
+
+  <nav class="pr-nav" aria-label="Research sections"><div class="pr-container">
+    <a href="#nz-replays">NZ earthquake replays</a>
+    <a href="#volcano-replays">Volcano context</a>
+    <a href="#panama-replay">Panama non-detection</a>
+    <a href="#methods">Methods &amp; provenance</a>
+    <a href="#validation">Next tests</a>
+  </div></nav>
+
+  <div class="pr-container pr-main">
+    <div class="pr-summary" aria-label="Research summary">
+      <div class="pr-number"><strong>3</strong><span>New Zealand historical earthquake replay cases</span></div>
+      <div class="pr-number"><strong>3</strong><span>Eruption-selected volcano-context seismic replays</span></div>
+      <div class="pr-number"><strong>1</strong><span>Panama replay retaining a multi-signal non-detection</span></div>
+      <div class="pr-number"><strong>0</strong><span>Validated prospective earthquake or eruption forecasts</span></div>
+    </div>
+
+    <section class="pr-section" id="nz-replays">
+      <div class="pr-section-head"><div>
+        <p class="pr-kicker">01 / HISTORICAL EARTHQUAKE CATALOGUE EXPERIMENTS</p>
+        <h2>New Zealand · GeoNet V3 replay</h2>
+        <p>The same seismic signal core and thresholds were replayed over known historic earthquake periods with revised GeoNet catalogue coverage. The output is a set of <strong>multi-signal classifications in spatial cells</strong>, not a list of predicted earthquakes. The revision changed results — useful evidence about the method's sensitivity to catalogue inputs.</p>
+      </div></div>
+      <div class="pr-grid">
+        <article class="pr-card">
+          <div class="pr-label">CANTERBURY · 2011</div><h3>Christchurch</h3>
+          <div class="pr-metric">5 <small>of 33 cells</small></div>
+          <p><strong>601</strong> merged catalogue events; <strong>199</strong> unique GeoNet events after merging.</p>
+          <p>First regional multi-signal classification: <time datetime="2011-02-12T00:00:00Z">12 February 2011, 00:00 UTC</time>, near -43.800, 172.258.</p>
+          <p>The near-Canterbury pattern persisted with GeoNet added, but one cell logged 11 qualifying six-hour checkpoints versus 23 previously. Both duration and geography changed.</p>
+          <div class="pr-detail">CLASSIFICATIONS: quiescence + locally counted preceding events</div>
+        </article>
+        <article class="pr-card">
+          <div class="pr-label">MARLBOROUGH / CANTERBURY · 2016</div><h3>Kaikōura</h3>
+          <div class="pr-metric">3 <small>of 31 cells</small></div>
+          <p><strong>338</strong> merged events; <strong>109</strong> unique GeoNet contributions.</p>
+          <p>First regional multi-signal classification: <time datetime="2016-11-05T06:00:00Z">5 November 2016, 06:00 UTC</time>, near -40.851, 174.050.</p>
+          <p><strong>Critical negative finding:</strong> the previously reported near-epicentral cell's short signal did <em>not</em> survive the V3 catalogue change.</p>
+          <div class="pr-detail">THE REVISION WEAKENED A PREVIOUSLY INTERESTING RESULT</div>
+        </article>
+        <article class="pr-card">
+          <div class="pr-label">SOUTH-WEST NEW ZEALAND · 2009</div><h3>Fiordland</h3>
+          <div class="pr-metric">4 <small>of 33 cells</small></div>
+          <p><strong>358</strong> merged events; <strong>191</strong> unique GeoNet contributions.</p>
+          <p>First regional multi-signal classification: <time datetime="2009-07-01T06:00:00Z">1 July 2009, 06:00 UTC</time>, near -44.151, 168.925.</p>
+          <p>The first regional multi-signal cell lay away from the eventual mainshock. A closer cell qualified later, which is why <strong>regional occurrence and target proximity must be scored separately</strong>.</p>
+          <div class="pr-detail">FIRST DETECTION IN REGION ≠ EARLY LOCAL WARNING</div>
+        </article>
+      </div>
+      <div class="pr-callout"><strong>WHAT THESE RESULTS MEAN</strong><p>All three time windows were chosen because a significant earthquake was already known to have occurred. Historical catalogues may contain later revisions that would not have been available to an observer at the time. Multiple six-hour checkpoints in the same cell are not independent detections. These results do not establish a true prospective lead time, false-alarm rate or prediction accuracy.</p></div>
+    </section>
+
+    <section class="pr-section" id="volcano-replays">
+      <div class="pr-section-head"><div>
+        <p class="pr-kicker">02 / ERUPTION-SELECTED SEISMIC CATALOGUE REPLAYS</p>
+        <h2>Volcano context · three test cases</h2>
+        <p>These experiments applied an earthquake-catalogue screen around places known to have erupted. They did <strong>not</strong> ingest continuous volcanic tremor, gas emissions, GNSS or InSAR deformation, or satellite thermal measurements. Nearby earthquakes may be tectonic.</p>
+      </div></div>
+      <div class="pr-grid">
+        <article class="pr-card">
+          <div class="pr-label">ERITREA · NABRO · 2011</div><h3>A short-lived regional signal</h3>
+          <div class="pr-metric">4 <small>of 49 cells</small></div>
+          <p>107 catalogue events merged. First reported regional multi-signal classification at <time datetime="2011-06-12T18:00:00Z">12 June 2011, 18:00 UTC</time>.</p>
+          <p>The recorded classification preceded a literature-inferred eruption onset by approximately 2.5 hours. <strong>Each of the four qualifying cells had only one checkpoint</strong>, and the centre cell did not qualify.</p>
+          <div class="pr-detail">SOURCE COMPLETENESS AND HISTORICAL AVAILABILITY NOT RECONSTRUCTED</div>
+        </article>
+        <article class="pr-card">
+          <div class="pr-label">NEW ZEALAND · WHAKAARI · 2019</div><h3>Wide-area seismic activity</h3>
+          <div class="pr-metric">25 <small>of 49 cells</small></div>
+          <p>360 catalogue events merged. Multi-signal was already present at the first replay checkpoint on <time datetime="2019-11-10T00:00:00Z">10 November 2019</time>; a true onset cannot be inferred.</p>
+          <p>The volcano's centre cell never reached multi-signal. Many qualifying cells were in the <strong>wider Bay of Plenty</strong> — this was <strong>not a successful volcano-localised eruption signal</strong>.</p>
+          <div class="pr-detail">REGIONAL EARTHQUAKE PATTERN ≠ VOLCANIC PROCESS</div>
+        </article>
+        <article class="pr-card">
+          <div class="pr-label">CANARY ISLANDS · LA PALMA · 2021</div><h3>A pattern in overlapping cells</h3>
+          <div class="pr-metric">9 <small>of 49 cells</small></div>
+          <p>1,451 catalogue events merged. The first reported regional multi-signal state occurred on <time datetime="2021-09-12T03:00:00Z">12 September 2021, 03:00 UTC</time>, roughly seven days before the eruption.</p>
+          <p>The nine qualifying cells overlap geographically, so they are <strong>not nine independent successes</strong>. Later-reviewed data availability and quiet-period controls remain unresolved.</p>
+          <div class="pr-detail">HISTORICAL PATTERN · NO VERIFIED FORECAST SKILL</div>
+        </article>
+      </div>
+      <div class="pr-callout"><strong>THE ESSENTIAL DISTINCTION</strong><p>Finding an unusual earthquake-catalogue pattern in a region selected after a known eruption is not equivalent to predicting an eruption. To evaluate genuine skill we need eruption-free volcano controls, tectonic comparisons, data-as-available-at-the-time, false-positive rates and an independently frozen prospective protocol.</p></div>
+    </section>
+
+    <section class="pr-section" id="panama-replay">
+      <div class="pr-section-head"><div>
+        <p class="pr-kicker">03 / A NEGATIVE RESULT WE KEEP</p>
+        <h2>Panama 2026 · no multi-signal cells</h2>
+        <p>A retrospective regional replay near 7.80° N, 81.00° W covered late September to early October 2026. Several cells were classified as anomalous at some checkpoints, but none met the multi-signal threshold. Negative findings belong in the public record too.</p>
+      </div></div>
+      <div class="pr-summary">
+        <div class="pr-number"><strong>33</strong><span>spatial sight-lines tested</span></div>
+        <div class="pr-number"><strong>0</strong><span>cells with any multi-signal checkpoint</span></div>
+        <div class="pr-number"><strong>156</strong><span>merged catalogue events</span></div>
+        <div class="pr-number"><strong>7</strong><span>duplicate source reports identified</span></div>
+      </div>
+      <div class="pr-timeline">
+        <div class="pr-panel"><h3>Experiment configuration</h3>
+          <ul>
+            <li>Replay: 25 September to 9 October 2026 (UTC).</li>
+            <li>28-day lookback; six-hour checkpoint spacing.</li>
+            <li>300 km region; 90 km spatial grid; 120 km cell analysis radius.</li>
+            <li>Source catalogues: USGS, EMSC and ISC.</li>
+          </ul>
+        </div>
+        <div class="pr-panel"><h3>What we observed</h3>
+          <ul>
+            <li>Four cells had some anomaly-classified checkpoints.</li>
+            <li>Cell 25 had 28 anomaly checkpoints; cell 18 had 23; cell 24 had 17; cell 12 had 3.</li>
+            <li>Even with these anomaly-classified intervals, <strong>zero of 33 cells reached multi-signal</strong>.</li>
+            <li>The first recorded state lies at the replay boundary; its onset was not established.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="pr-note">This experiment is a non-detection for this chosen region, rule and catalogue sample. It is not a properly designed quiet-period control and does not establish safety, future earthquake risk or a meaningful forecasting skill score.</p>
+    </section>
+
+    <section class="pr-section" id="methods">
+      <div class="pr-section-head"><div>
+        <p class="pr-kicker">04 / METHOD · PROVENANCE · DEFINITIONS</p>
+        <h2>What the evidence really is.</h2>
+        <p>These public notes are condensed from labelled operator console transcripts and research summaries archived on 10 October 2026. Some cell-summary tables were reconstructed from printed console output; the original full-fidelity time series and local audit records have not all been independently rechecked or published here.</p>
+      </div></div>
+      <div class="pr-table-wrap">
+        <table class="pr-table">
+          <thead><tr><th>Term</th><th>Plain-language meaning</th><th>What it does not mean</th></tr></thead>
+          <tbody>
+            <tr><td>Catalogue event</td><td>An earthquake recorded in a public source catalogue, subject to coverage and revision.</td><td>A complete or uniform account of all earthquakes, everywhere.</td></tr>
+            <tr><td>Spatial cell</td><td>A geographical area over which the screening rules examine preceding catalogue patterns.</td><td>An independent sensor, confirmed hazard zone or prediction target.</td></tr>
+            <tr><td>Multi-signal</td><td>Several configured earthquake-catalogue pattern rules qualified at a sampled checkpoint.</td><td>Proof that an earthquake or eruption is imminent.</td></tr>
+            <tr><td>“Foreshocks” label</td><td>Historical name for the screening core's recent local event-count condition.</td><td>A scientifically identified foreshock before a mainshock is known.</td></tr>
+            <tr><td>Replay checkpoint</td><td>A sampled point in a known historical period, typically six hours apart.</td><td>A separate independent prediction or proof of historic publication-time availability.</td></tr>
+            <tr><td>Shadow research watch</td><td>A scheduled catalogue-screening prototype that records timestamped findings and negative scans.</td><td>A public safety alert system or validated forecast product.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="pr-timeline" style="margin-top:16px">
+        <div class="pr-panel"><h3>Data families</h3><p>Historical tests used public earthquake catalogues from GeoNet, USGS, EMSC and ISC in differing combinations. The newer worldwide shadow scanner uses the USGS all-month catalogue and location context from the Smithsonian Global Volcanism Program. USGS HANS is independent, official U.S.-only volcano-status context.</p></div>
+        <div class="pr-panel"><h3>Research custody</h3><p>Detailed machine-readable experiment outputs, run journals and private watcher state remain in the research workspace. This page deliberately publishes reviewed summaries and scientific boundaries only. It does not expose credentials, private alert text, raw operational files or a public link into the working code repository.</p></div>
+      </div>
+    </section>
+
+    <section class="pr-section" id="validation">
+      <div class="pr-section-head"><div>
+        <p class="pr-kicker">05 / NEXT PHASE · PROSPECTIVE RESEARCH</p>
+        <h2>Can any pattern survive the controls?</h2>
+        <p>The current worldwide programme is an earthquake-catalogue shadow scanner with volcano-location context. A scientifically useful next phase will require more than finding interesting examples in the past.</p>
+      </div></div>
+      <div class="pr-timeline">
+        <div class="pr-panel"><h3>01 · Freeze the rules</h3><p>Preserve exact code and thresholds before measuring future outcomes. Retain all scanned cells, negative results, source outages and original observation times.</p></div>
+        <div class="pr-panel"><h3>02 · Add proper controls</h3><p>Use eruption-free volcanoes, tectonic regions and event-free time windows. Measure the background rate of the same patterns, including false alarms and missed events.</p></div>
+        <div class="pr-panel"><h3>03 · Reconstruct information availability</h3><p>Separate earthquake origin times from when a catalogue actually published each record. Track revisions, regional detection completeness and cross-provider de-duplication.</p></div>
+        <div class="pr-panel"><h3>04 · Introduce volcanic observations</h3><p>Integrate station tremor/RSAM, deformation, gas and thermal evidence source by source. Keep volcanic and tectonic hypotheses separate until independent evidence supports a mechanism.</p></div>
+      </div>
+      <div class="pr-callout"><strong>PUBLIC SAFETY AND SCIENTIFIC BOUNDARY</strong><p>These experiments do not establish earthquake or volcanic eruption forecasting skill. No finding on this page is an official warning or a declaration that a location is safe or unsafe. Follow GeoNet, GNS Science, NEMA and the relevant national geological or volcanological authorities for public safety information.</p></div>
+      <div class="pr-links">
+        <a href="enviroarc.html#precursor-research">See the latest public research scan →</a>
+        <a class="secondary" href="enviroarc.html">Back to EnviroArc →</a>
+        <a class="secondary" href="prometheus.html">Explore Prometheus →</a>
+      </div>
+    </section>
+  </div>
+</main>
+<div class="pr-footer-note"><div class="pr-container">Pythology Intelligence · Prometheus Subterranean · Public research summary, not a hazard advisory. Last editorial update 11 October 2026.</div></div>
+<footer class="site-footer"><div class="container"><div class="footer-grid">
+  <div><a class="brand" href="index.html"><img src="Logo (2).jpeg" alt=""><span class="brand-word">PYTHOLOGY</span></a><p class="small" style="max-width:440px;margin-top:18px">Evidence-grounded intelligence developed in New Zealand.</p></div>
+  <div><div class="footer-title">Explore</div><div class="footer-links"><a href="enviroarc.html">EnviroArc</a><a href="precursor-research.html">Precursor research</a><a href="prometheus.html">Prometheus</a><a href="research.html">The stack</a></div></div>
+  <div><div class="footer-title">Pythology</div><div class="footer-links"><a href="about.html">About</a><a href="mailto:enquiries@pythology.co.nz">Contact</a></div></div>
+</div><div class="footer-bottom"><span>© 2026 Pythology · New Zealand</span><span>Research notes · evidence before confidence</span></div></div></footer>
+</body>
+</html>
