@@ -133,6 +133,103 @@
     </div>
   </section>
 
+  <section class="pitch-section er-section" id="precursor-research">
+    <div class="container">
+      <div class="er-head">
+        <div>
+          <p class="human-kicker">EnviroArc × Prometheus Subterranean · research in progress</p>
+          <h2 class="h2">Looking for early signals.<br>Keeping the misses.</h2>
+          <p>The first seismic-catalogue replays are archived. A separate hourly worldwide shadow scan now screens earthquake activity around tectonic and volcano-context locations. The scientific question is whether patterns survive controls, changing catalogues and prospective tests — not whether a historical chart looks convincing.</p>
+        </div>
+        <a class="btn er-link" href="https://github.com/PythologyIntelligence/Prometheus-Subterranean/tree/feat/prometheus-blind-watch/research" target="_blank" rel="noopener noreferrer">Explore the research archive ↗</a>
+      </div>
+
+      <div class="er-live-panel" id="enviroarc-research-live" aria-label="Latest public hourly Subterranean research scan">
+        <div class="er-live-head">
+          <div><p class="human-kicker">LATEST HOURLY SCREEN · READ-ONLY RESEARCH FEED</p><h3>Where Prometheus is looking now.</h3></div>
+          <span class="er-status" data-er-status data-tone="stale" role="status" aria-live="polite">CHECKING RESEARCH FEED</span>
+        </div>
+        <div class="er-metrics">
+          <div class="er-metric"><strong data-er-analysed>—</strong><span>locations analysed · latest scan</span></div>
+          <div class="er-metric"><strong data-er-multisignal>—</strong><span>multi-signal screening locations</span></div>
+          <div class="er-metric"><strong data-er-candidates>—</strong><span>preliminary active candidates</span></div>
+        </div>
+        <div class="er-source-info">
+          <span data-er-updated>Checking latest completed hourly scan…</span>
+          <span data-er-origin>Awaiting USGS catalogue time.</span>
+          <span data-er-source>Source health not yet verified.</span>
+          <span data-er-mode>These are seismic catalogue patterns, not earthquake or eruption forecasts.</span>
+        </div>
+        <h4 class="er-findings-title">RECENTLY SCREENED AREAS · NOT FORECAST TARGETS</h4>
+        <div class="er-findings" data-er-findings aria-live="polite"><p class="er-empty">Connecting to the curated research record…</p></div>
+        <p class="er-disclaimer">This is a display of the independent hourly watch's latest saved research scan, not a separate collector or a continuous live seismometer feed. No private logs, tokens or Slack message history are exposed. An unavailable or old scan is labelled explicitly. USGS global catalogue completeness varies; research observations are not public warnings or validated predictions.</p>
+      </div>
+
+      <div class="er-history" id="precursor-results">
+        <div class="er-head">
+          <div><p class="human-kicker">10 October 2026 · first archived experiments</p>
+            <h2 class="h2">The early results, including failures.</h2>
+            <p>Selected historical replays, not prospective forecasts. Matching a known event's preceding catalogue does not establish prediction skill or false-alarm rates.</p>
+          </div>
+        </div>
+        <div class="er-study-grid">
+          <article class="er-study">
+            <span class="er-tag">GEONET V3 · HISTORICAL NZ SEISMIC TESTS</span>
+            <h3>Christchurch, Kaikōura, Fiordland</h3>
+            <div class="er-result">5 / 3 / 4 <small>multi-signal cells in each replay</small></div>
+            <p>Multi-signal classifications occurred in 5 of 33 Christchurch cells, 3 of 31 Kaikōura cells, and 4 of 33 Fiordland cells. These are spatial counts, not independent predictions.</p>
+            <ul>
+              <li>Christchurch's early pattern survived adding GeoNet, but shifted in extent and duration.</li>
+              <li>The previously reported near-epicentral Kaikōura signal <strong>did not survive</strong> the updated catalogue.</li>
+              <li>Fiordland's earliest regional detection was distant from the eventual mainshock.</li>
+            </ul>
+            <a href="https://github.com/PythologyIntelligence/Prometheus-Subterranean/blob/feat/prometheus-blind-watch/research/baselines/nz-geonet-v3/README.md" target="_blank" rel="noopener noreferrer">Original counts, method and caveats ↗</a>
+          </article>
+          <article class="er-study">
+            <span class="er-tag">VOLCANO CONTEXT · ERUPTION-SELECTED REPLAYS</span>
+            <h3>Nabro, Whakaari, La Palma</h3>
+            <div class="er-result">4 / 25 / 9 <small>multi-signal cells out of 49 each</small></div>
+            <p>Seismic-catalogue patterns were identified in all three eruption-selected historic windows. That does not demonstrate volcano-specific sensing.</p>
+            <ul>
+              <li>Nabro's centre cell did not reach multi-signal.</li>
+              <li>Whakaari's centre cell did not either; many qualifying cells were in the wider Bay of Plenty.</li>
+              <li>La Palma's preceding pattern covered overlapping cells that cannot count as independent tests.</li>
+            </ul>
+            <a href="https://github.com/PythologyIntelligence/Prometheus-Subterranean/blob/feat/prometheus-blind-watch/research/volcano-baselines/runs-2026-10-10/README.md" target="_blank" rel="noopener noreferrer">Volcano replays and limitations ↗</a>
+          </article>
+          <article class="er-study">
+            <span class="er-tag">PANAMA 2026 · NON-DETECTION</span>
+            <h3>The result we keep rather than hide.</h3>
+            <div class="er-result">0 / 33 <small>cells with multi-signal classification</small></div>
+            <p>Panama showed some anomaly-classified checkpoints but no multi-signal cells under the tested rule. It is a useful negative result from the selected replay, not a formal quiet-region control or proof of safety.</p>
+            <a href="https://github.com/PythologyIntelligence/Prometheus-Subterranean/blob/feat/prometheus-blind-watch/research/baselines/panama-2026/README.md" target="_blank" rel="noopener noreferrer">Inspect the archived Panama run ↗</a>
+          </article>
+          <article class="er-study">
+            <span class="er-tag">NEXT STAGE · SCIENTIFIC VALIDATION</span>
+            <h3>Can the patterns beat the controls?</h3>
+            <div class="er-result">NOT VALIDATED <small>forecasting skill</small></div>
+            <p>The global prototype examines earthquake catalogues, with volcano location context, not a worldwide network measuring gas, tremor, deformation or thermal changes.</p>
+            <ul>
+              <li>Freeze detection rules and preserve negative scans.</li>
+              <li>Measure false alarms, misses, catalogue changes and lead time against quiet controls.</li>
+              <li>Add volcano-specific evidence before making any eruption-related claim.</li>
+            </ul>
+            <a href="https://github.com/PythologyIntelligence/Prometheus-Subterranean/blob/feat/prometheus-blind-watch/research/GLOBAL-SUBTERRANEAN-SCOPE.md" target="_blank" rel="noopener noreferrer">Read the global research safeguards ↗</a>
+          </article>
+        </div>
+      </div>
+
+      <div class="er-poseidon">
+        <div>
+          <span class="er-tag">ALSO NEW · ATLAS MARINE</span>
+          <h3>Poseidon is on watch. &#x1F531;</h3>
+          <p>His dedicated protected-waters dashboard now shows 49 DOC marine reserves, Global Fishing Watch-derived screening, reporting windows and retained review history. Research screening is not vessel tracking or evidence that a fisheries offence occurred.</p>
+        </div>
+        <a class="btn btn-primary" href="https://poseidon.pythology.co.nz/" target="_blank" rel="noopener noreferrer">Open Poseidon ↗</a>
+      </div>
+    </div>
+  </section>
+
   <section class="pitch-section mdra-prometheus" id="prometheus">
     <div class="container mdra-prom-grid">
       <div>
