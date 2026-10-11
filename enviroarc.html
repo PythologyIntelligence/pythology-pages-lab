@@ -185,6 +185,29 @@
           <span data-wx-adapters>Source freshness not verified.</span>
           <span data-wx-scope>Only explicitly configured radar sites are covered.</span>
         </div>
+        
+  <div class="wx-systems-panel">
+    <div class="wx-systems-head">
+      <div>
+        <p class="wx-kicker">WHAT THE SOURCES ARE ACTUALLY SHOWING</p>
+        <h4>Named storm systems · radar coverage · severe-alert context</h4>
+      </div>
+      <span class="wx-source-note">Official NHC / NWS · NEXRAD observations</span>
+    </div>
+    <div class="wx-systems-grid">
+      <div class="wx-system-list"><h5>Active tropical systems <span>NHC</span></h5>
+        <div data-wx-storm-list><p class="wx-observation-empty">Awaiting verified NHC advisory feed…</p></div>
+      </div>
+      <div class="wx-system-list"><h5>Severe-weather alerts <span>NWS</span></h5>
+        <div data-wx-alert-list><p class="wx-observation-empty">Awaiting verified NWS alert feed…</p></div>
+      </div>
+      <div class="wx-system-list"><h5>Radar stations under observation <span>NEXRAD</span></h5>
+        <div data-wx-site-list><p class="wx-observation-empty">Awaiting fresh radar evidence…</p></div>
+      </div>
+    </div>
+    <p class="wx-observation-note">These are current-source observations and official advisory fixes, not predicted storm paths, new tornado warnings or evidence of independent forecasting skill. If no active systems are listed, the corresponding source must first be verified fresh; otherwise the display reports the gap.</p>
+  </div>
+
         <p class="wx-live-note">The research observer runs independently of this webpage. Counts are only displayed when its source freshness can be verified; no live observation is inferred from a historical case, refreshed webpage, or old snapshot. The Prometheus watcher can preserve time-matched Solar Lab observations as research context, never as proof that solar activity causes tornadoes.</p>
       </div>
       <div class="wx-cta">
