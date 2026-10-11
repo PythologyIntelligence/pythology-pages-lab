@@ -1,0 +1,164 @@
+/* EnviroArc architecture diagram v2 — ordered hierarchy, not overlapping orbits.
+   Scoped to .mdra-arch-v2: leaves all other EnviroArc components untouched. */
+.mdra-hero-system.mdra-arch-v2{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  grid-template-rows:auto 25px auto 25px auto;
+  align-content:center;
+  gap:0;
+  min-height:480px;
+  padding:clamp(17px,2.4vw,32px);
+  border:1px solid rgba(110,225,228,.23);
+  border-radius:25px;
+  background:radial-gradient(ellipse at 50% 16%,rgba(40,154,146,.13),transparent 64%),linear-gradient(160deg,rgba(6,22,30,.95),rgba(3,13,21,.94));
+  box-shadow:inset 0 0 72px rgba(43,133,148,.06),0 24px 80px rgba(0,0,0,.29);
+  isolation:isolate;
+}
+.mdra-hero-system.mdra-arch-v2::before,
+.mdra-hero-system.mdra-arch-v2::after{display:none;content:none}
+.mdra-arch-v2 .mdra-arch-top,
+.mdra-arch-v2 .mdra-arch-platforms,
+.mdra-arch-v2 .mdra-arch-bottom{position:relative;z-index:2;min-width:0;width:100%}
+.mdra-arch-v2 .mdra-arch-platforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(7px,1vw,13px);align-items:stretch}
+.mdra-arch-v2 .mdra-core,
+.mdra-arch-v2 .mdra-prom-core,
+.mdra-arch-v2 .mdra-system-status{
+  position:relative;
+  inset:auto;
+  left:auto;right:auto;top:auto;bottom:auto;
+  transform:none;
+  margin:0;
+  height:auto;
+  width:100%;
+  max-width:none;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  overflow-wrap:break-word;
+  white-space:normal;
+  border-radius:13px;
+  background:linear-gradient(150deg,rgba(8,36,45,.95),rgba(5,19,30,.98));
+  border:1px solid rgba(103,212,222,.25);
+  box-shadow:0 8px 26px rgba(0,0,0,.18);
+}
+.mdra-arch-v2 .mdra-core{
+  min-height:111px;
+  padding:17px 14px;
+  border-radius:17px;
+  border-color:rgba(121,243,211,.43);
+  background:linear-gradient(120deg,rgba(21,75,71,.75),rgba(8,40,58,.89));
+  box-shadow:inset 0 0 28px rgba(84,231,201,.05),0 0 28px rgba(44,195,172,.065);
+}
+.mdra-arch-v2 .mdra-core span{
+  color:#ecfffe;
+  font:750 clamp(25px,2.6vw,32px)/1.13 'Space Grotesk',sans-serif;
+  letter-spacing:.045em;
+  text-shadow:0 0 21px rgba(120,241,211,.16);
+}
+.mdra-arch-v2 .mdra-core small{
+  max-width:95%;
+  margin-top:8px;
+  color:#b9d9da;
+  font-size:clamp(13px,1.1vw,14px);
+  line-height:1.45;
+}
+.mdra-arch-v2 .mdra-system-status{
+  min-height:128px;
+  padding:19px clamp(7px,.9vw,13px) 16px;
+}
+.mdra-arch-v2 .mdra-system-status b{
+  color:#b2f7e2;
+  font:750 clamp(12px,1.22vw,15px)/1.25 'JetBrains Mono',Consolas,monospace;
+  letter-spacing:.065em;
+}
+.mdra-arch-v2 .mdra-system-status small{
+  max-width:100%;
+  margin-top:10px;
+  color:#b3cbd4;
+  font:500 clamp(11.5px,1vw,13px)/1.52 'Space Grotesk',Arial,sans-serif;
+  letter-spacing:0;
+}
+.mdra-arch-v2 .status-pulse{
+  width:7px;height:7px;top:10px;right:10px;
+  background:#70eac1;box-shadow:0 0 12px #61dcaa9c;
+}
+.mdra-arch-v2 .system-earthnet{border-top-color:rgba(80,205,226,.58)}
+.mdra-arch-v2 .system-atlas{border-top-color:rgba(92,231,175,.58)}
+.mdra-arch-v2 .system-arcus{border-top-color:rgba(98,215,240,.58)}
+.mdra-arch-v2 .mdra-prom-core{
+  min-height:96px;
+  padding:16px 15px;
+  border-radius:16px;
+  border-color:rgba(121,222,247,.42);
+  background:linear-gradient(125deg,rgba(10,46,66,.83),rgba(6,24,38,.94));
+}
+.mdra-arch-v2 .mdra-prom-core span{
+  color:#a3ecff;
+  font:750 clamp(15px,1.45vw,18px)/1.3 'JetBrains Mono',Consolas,monospace;
+  letter-spacing:.09em;
+}
+.mdra-arch-v2 .mdra-prom-core small{
+  max-width:95%;
+  color:#bacfdb;
+  font:500 clamp(12px,1.06vw,14px)/1.5 'Space Grotesk',Arial,sans-serif;
+  margin-top:8px;
+}
+.mdra-arch-v2 .mdra-arch-arrow{
+  display:flex;align-items:center;justify-content:center;
+  height:25px;position:relative;z-index:1;
+}
+.mdra-arch-v2 .mdra-arch-arrow::before{
+  content:'';position:absolute;left:50%;top:0;bottom:0;
+  width:1px;background:linear-gradient(180deg,rgba(92,231,175,.48),rgba(101,198,230,.57));
+}
+.mdra-arch-v2 .mdra-arch-arrow::after{
+  content:'';position:absolute;width:6px;height:6px;
+  left:calc(50% - 3px);bottom:3px;
+  border-right:1px solid #6bdded;border-bottom:1px solid #6bdded;
+  transform:rotate(45deg);
+}
+@media(max-width:980px){
+  .mdra-hero-system.mdra-arch-v2{min-height:455px;padding:clamp(16px,3.5vw,32px)}
+  .mdra-arch-v2 .mdra-system-status{min-height:111px}
+}
+@media(max-width:640px){
+  .mdra-hero-system.mdra-arch-v2{
+    min-height:0;
+    grid-template-rows:auto 23px auto 23px auto;
+    padding:15px 13px 17px;
+    border-radius:21px;
+  }
+  .mdra-arch-v2 .mdra-core{
+    width:100%;height:auto;min-height:91px;
+    padding:13px 9px;
+  }
+  .mdra-arch-v2 .mdra-core span{font-size:clamp(23px,5.7vw,29px)}
+  .mdra-arch-v2 .mdra-core small{font-size:13px}
+  .mdra-arch-v2 .mdra-arch-platforms{gap:7px}
+  .mdra-arch-v2 .mdra-system-status{
+    width:100%;min-height:112px;padding:19px 5px 12px;
+    border-radius:10px;
+  }
+  .mdra-arch-v2 .mdra-system-status b{
+    font-size:clamp(11px,2.8vw,14px);letter-spacing:.035em;
+  }
+  .mdra-arch-v2 .mdra-system-status small{
+    font-size:clamp(10.8px,2.65vw,12px);line-height:1.4;
+    margin-top:8px;
+  }
+  .mdra-arch-v2 .mdra-prom-core{
+    width:100%;min-height:82px;
+    padding:12px 9px;
+  }
+  .mdra-arch-v2 .mdra-prom-core span{font-size:15px}
+  .mdra-arch-v2 .mdra-prom-core small{font-size:12.5px;margin-top:6px}
+  .mdra-arch-v2 .mdra-arch-arrow{height:23px}
+}
+@media(max-width:340px){
+  .mdra-arch-v2 .mdra-arch-platforms{gap:5px}
+  .mdra-arch-v2 .mdra-system-status b{font-size:10.5px}
+  .mdra-arch-v2 .mdra-system-status small{font-size:10.5px}
+}
