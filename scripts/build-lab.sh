@@ -277,6 +277,9 @@ PUBLIC_OVERRIDES=(
   architecture-in-action.css
   pythology-human.css
   enviroarc.html
+  weather-lab.html
+  weather-lab.css
+  weather-lab-live.js
   precursor-research.html
   enviroarc-research.css
   enviroarc-research.js
@@ -401,7 +404,10 @@ for page in Path("_site").glob("*.html"):
         1,
     )
     if page.name == "enviroarc.html":
-        for asset in ("mdra.css", "mdra-architecture.css", "enviroarc-research.css", "enviroarc-research.js"):
+        for asset in ("mdra.css", "mdra-architecture.css", "enviroarc-research.css", "enviroarc-research.js", "weather-lab.css", "weather-lab-live.js"):
+            page_text = version_asset(page_text, asset)
+    if page.name == "weather-lab.html":
+        for asset in ("weather-lab.css", "weather-lab-live.js"):
             page_text = version_asset(page_text, asset)
     page.write_text(page_text, encoding="utf-8")
 
@@ -519,8 +525,20 @@ grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
   echo 'Homepage research UI overlay validation failed.' >&2
   exit 1
 }
-[[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/precursor-research.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
+[[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/precursor-research.html" && -s "$OUT/weather-lab.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
   echo 'Human-facing site or precursor research page is incomplete.' >&2
+  exit 1
+}
+[[ -s "$OUT/weather-lab.css" && -s "$OUT/weather-lab-live.js" ]] || {
+  echo 'Public Weather Lab styling or live research client missing from Pages build' >&2
+  exit 1
+}
+grep -Fq 'id="weather-lab"' "$OUT/enviroarc.html" || {
+  echo 'EnviroArc Weather Lab feature section missing from Pages build' >&2
+  exit 1
+}
+grep -Fq 'id="moore"' "$OUT/weather-lab.html" || {
+  echo 'Public Weather Lab tornado research page missing its Moore study' >&2
   exit 1
 }
 [[ -s "$OUT/mdra-architecture.css" ]] || {
