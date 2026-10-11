@@ -282,6 +282,7 @@ PUBLIC_OVERRIDES=(
   enviroarc-research.js
   mdra.html
   mdra.css
+  mdra-architecture.css
   mdra-nav.js
   mdra-refresh.js
   mdra-refresh.css
@@ -400,7 +401,7 @@ for page in Path("_site").glob("*.html"):
         1,
     )
     if page.name == "enviroarc.html":
-        for asset in ("mdra.css", "enviroarc-research.css", "enviroarc-research.js"):
+        for asset in ("mdra.css", "mdra-architecture.css", "enviroarc-research.css", "enviroarc-research.js"):
             page_text = version_asset(page_text, asset)
     page.write_text(page_text, encoding="utf-8")
 
@@ -520,6 +521,14 @@ grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
 }
 [[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/precursor-research.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
   echo 'Human-facing site or precursor research page is incomplete.' >&2
+  exit 1
+}
+[[ -s "$OUT/mdra-architecture.css" ]] || {
+  echo 'EnviroArc architecture stylesheet missing from Pages build' >&2
+  exit 1
+}
+grep -Fq 'mdra-arch-v2' "$OUT/enviroarc.html" || {
+  echo 'Updated EnviroArc architecture diagram missing from Pages HTML' >&2
   exit 1
 }
 [[ -s "$OUT/enviroarc-research.css" && -s "$OUT/enviroarc-research.js" ]] || {
