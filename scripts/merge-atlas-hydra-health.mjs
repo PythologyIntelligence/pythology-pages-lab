@@ -62,7 +62,7 @@ async function probePage(id, label, url) {
 
 async function probeAtlasStatus() {
   try {
-    const { response, latencyMs } = await timedFetch(`${ATLAS}/api/atlas/status`, {
+    const { response, latencyMs } = await timedFetch(`${ATLAS}/api/status`, {
       headers: { "User-Agent": "Pythology-System-Monitor/1.3", Accept: "application/json" },
     });
     if (!response.ok) {
@@ -77,16 +77,22 @@ async function probeAtlasStatus() {
       };
     }
     const payload = await response.json();
-    const declared = String(payload?.status || payload?.state || "").toLowerCase();
-    const nominal = payload && typeof payload === "object" && !["down", "failed", "error"].includes(declared);
+    const sources = Array.isArray(payload?.sources) ? payload.sources : null;
+    const enabled = sources?.filter((item) => item?.enabled === true) || [];
+    const stale = enabled.filter((item) => item?.stale === true);
+    const valid = Boolean(sources && enabled.length > 0);
+    const nominal = valid && stale.length === 0;
     return {
       id: "atlas-status",
-      label: "Atlas live status",
+      label: "Atlas upstream source health",
       status: nominal ? "operational" : "degraded",
       latencyMs,
       httpStatus: response.status,
       checkedAt: nowIso(),
-      note: nominal ? undefined : "Atlas responded but its status assertion was not nominal.",
+      enabledSources: enabled.length,
+      staleSources: valid ? stale.length : null,
+      note: !valid ? "Atlas status response contained no enabled source health records."
+        : stale.length ? stale.length + " enabled Atlas source(s) reported stale." : undefined,
     };
   } catch (error) {
     return {
