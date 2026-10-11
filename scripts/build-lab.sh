@@ -274,6 +274,8 @@ PUBLIC_OVERRIDES=(
   index.html
   site.css
   site.js
+  editorial-2026.css
+  prometheus-stats.js
   architecture-in-action.css
   pythology-human.css
   enviroarc.html
@@ -297,6 +299,8 @@ PUBLIC_OVERRIDES=(
   earthnet-nz-intelligence.html
   prometheus-page.js
   prometheus.html
+  core-technology.html
+  current-research.html
   research-ui.js
   stack-human.css
   research.html
@@ -367,17 +371,11 @@ def version_asset(source: str, asset: str) -> str:
 
 home = Path("_site/index.html")
 text = home.read_text(encoding="utf-8")
-for asset in ("site.css", "pythology-human.css", "site.js", "home-proof.js"):
+for asset in ("site.css", "pythology-human.css", "editorial-2026.css", "site.js", "home-proof.js"):
     text = version_asset(text, asset)
 
-research_tag = f'<script defer src="research-ui.js?v={version}"></script>'
-if "research-ui.js" not in text:
-    anchor = re.search(r'<script defer src="home-proof\.js\?v=[^"]+"></script>', text)
-    if not anchor:
-        raise SystemExit("Could not locate versioned home-proof.js tag")
-    text = text[:anchor.start()] + research_tag + "\n  " + text[anchor.start():]
-else:
-    text = version_asset(text, "research-ui.js")
+# The homepage uses its existing home-proof.js data hooks. Do not inject the
+# legacy standalone research-UI panel into the renewed mission page.
 home.write_text(text, encoding="utf-8")
 
 
@@ -466,7 +464,7 @@ for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_dai
 done
 
 # Fail closed if critical public surfaces did not land.
-grep -Fq 'We build intelligence' "$OUT/index.html" || {
+grep -Fq 'Environmental<br>Precursor Signals.' "$OUT/index.html" || {
   echo 'Humanised homepage overlay validation failed.' >&2
   exit 1
 }
@@ -490,8 +488,8 @@ grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/index.html" || {
   echo 'Navigation cache-bust validation failed on homepage.' >&2
   exit 1
 }
-grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/future.html" || {
-  echo 'Navigation cache-bust validation failed on Future page.' >&2
+grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/current-research.html" || {
+  echo 'Navigation cache-bust validation failed on Current Research page.' >&2
   exit 1
 }
 [[ -s "$OUT/earthnet-nz-intelligence.html" ]] || {
@@ -510,20 +508,20 @@ grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/future.html" || {
   echo 'Prometheus research-state projection validation failed.' >&2
   exit 1
 }
-grep -Fq 'He does not just predict.' "$OUT/prometheus.html" || {
+grep -Fq 'Looking for the signals that come before the event.' "$OUT/prometheus.html" || {
   echo 'Prometheus autonomous research presentation validation failed.' >&2
   exit 1
 }
-grep -Fq 'https://earthnet.pythology.co.nz/' "$OUT/index.html" || {
-  echo 'Homepage EarthNet 2.0 link validation failed.' >&2
+grep -Fq 'href="enviroarc.html#precursor-research"' "$OUT/index.html" || {
+  echo 'Homepage EnviroArc research link validation failed.' >&2
   exit 1
 }
 grep -Fq 'mdra-refresh.css?v=' "$OUT/index.html" || {
   echo 'Homepage EnviroArc refresh overlay validation failed.' >&2
   exit 1
 }
-grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
-  echo 'Homepage research UI overlay validation failed.' >&2
+grep -Fq 'data-home-research-findings' "$OUT/index.html" || {
+  echo 'Homepage live research-card hook validation failed.' >&2
   exit 1
 }
 [[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/precursor-research.html" && -s "$OUT/weather-lab.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
@@ -561,8 +559,8 @@ if grep -q 'github\.com/PythologyIntelligence/Prometheus-Subterranean' "$OUT/env
   echo "Public research page unexpectedly links to working research repository." >&2
   exit 1
 fi
-[[ -s "$OUT/future.html" && -s "$OUT/future.css" ]] || {
-  echo 'FUTURE presentation overlay validation failed.' >&2
+[[ -s "$OUT/current-research.html" && -s "$OUT/core-technology.html" && -s "$OUT/editorial-2026.css" && -s "$OUT/prometheus-stats.js" && -s "$OUT/future.html" ]] || {
+  echo 'Core Technology, Current Research or legacy redirect validation failed.' >&2
   exit 1
 }
 [[ -s "$OUT/png_images/about_me.png" ]] || {
