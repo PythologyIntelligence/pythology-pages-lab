@@ -277,6 +277,8 @@ PUBLIC_OVERRIDES=(
   architecture-in-action.css
   pythology-human.css
   enviroarc.html
+  enviroarc-research.css
+  enviroarc-research.js
   mdra.html
   mdra.css
   mdra-nav.js
@@ -397,7 +399,8 @@ for page in Path("_site").glob("*.html"):
         1,
     )
     if page.name == "enviroarc.html":
-        page_text = version_asset(page_text, "mdra.css")
+        for asset in ("mdra.css", "enviroarc-research.css", "enviroarc-research.js"):
+            page_text = version_asset(page_text, asset)
     page.write_text(page_text, encoding="utf-8")
 
 print(f"Primary build UI overlay applied for {version}.")
@@ -514,7 +517,11 @@ grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
   echo 'Homepage research UI overlay validation failed.' >&2
   exit 1
 }
-[[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
+[[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]]
+[[ -s "$OUT/enviroarc-research.css" && -s "$OUT/enviroarc-research.js" ]] || {
+  echo 'EnviroArc public precursor research assets missing from Pages build' >&2
+  exit 1
+} || {
   echo 'Human-facing site is incomplete.' >&2
   exit 1
 }
