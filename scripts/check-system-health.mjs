@@ -154,7 +154,7 @@ async function main() {
     probeEarthNetSnapshot(),
     probePage("agri-app", "Agri interface", "https://pythology.co.nz/agri-portal.html"),
     probePage("agri-data", "Agri data service", "https://pythology.co.nz/api/agri-data?client=brookfield-newfield-pilot"),
-    probePage("poseidon-app", "Poseidon marine map", "https://pythology.co.nz/marine-map.html"),
+    probePage("poseidon-app", "Poseidon dedicated protected-waters map", "https://poseidon.pythology.co.nz/"),
     probePage("ve-app", "Verry Elleegant interface", "https://verry-elleegant-ai.vercel.app/"),
     probeJson("ve-health", "Verry Elleegant health", "https://verry-elleegant-ai.vercel.app/api/health", (p) => p && typeof p === "object" && p?.ok !== false && !["down", "error", "failed"].includes(String(p?.status || "").toLowerCase())),
     probePage("sentinel-app", "Sentinel command interface", "https://pythology.co.nz/sentinel-command.html"),
