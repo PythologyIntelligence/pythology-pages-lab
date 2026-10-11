@@ -280,6 +280,7 @@ PUBLIC_OVERRIDES=(
   weather-lab.html
   weather-lab.css
   weather-lab-live.js
+  weather-observation-list.js
   precursor-research.html
   enviroarc-research.css
   enviroarc-research.js
@@ -404,10 +405,10 @@ for page in Path("_site").glob("*.html"):
         1,
     )
     if page.name == "enviroarc.html":
-        for asset in ("mdra.css", "mdra-architecture.css", "enviroarc-research.css", "enviroarc-research.js", "weather-lab.css", "weather-lab-live.js"):
+        for asset in ("mdra.css", "mdra-architecture.css", "enviroarc-research.css", "enviroarc-research.js", "weather-lab.css", "weather-lab-live.js", "weather-observation-list.js"):
             page_text = version_asset(page_text, asset)
     if page.name == "weather-lab.html":
-        for asset in ("weather-lab.css", "weather-lab-live.js"):
+        for asset in ("weather-lab.css", "weather-lab-live.js", "weather-observation-list.js"):
             page_text = version_asset(page_text, asset)
     page.write_text(page_text, encoding="utf-8")
 
@@ -529,7 +530,7 @@ grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
   echo 'Human-facing site or precursor research page is incomplete.' >&2
   exit 1
 }
-[[ -s "$OUT/weather-lab.css" && -s "$OUT/weather-lab-live.js" ]] || {
+[[ -s "$OUT/weather-lab.css" && -s "$OUT/weather-lab-live.js" && -s "$OUT/weather-observation-list.js" ]] || {
   echo 'Public Weather Lab styling or live research client missing from Pages build' >&2
   exit 1
 }
