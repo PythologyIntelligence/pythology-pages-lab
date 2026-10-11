@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Pythology Weather Lab: Moore 2013 tornado replay findings, Hurricane Michael 2018 limits, and the current read-only live radar, NWS and NHC research programme.">
+<title>Weather Lab Research — Pythology Intelligence</title>
+<link rel="canonical" href="https://pythology.co.nz/weather-lab.html">
+<link rel="stylesheet" href="site.css"><link rel="stylesheet" href="pythology-human.css">
+<link rel="stylesheet" href="weather-lab.css?v=20261011-weather1">
+<script defer src="site.js"></script><script defer src="weather-lab-live.js?v=20261011-weather1"></script>
+</head>
+<body class="pitch-body">
+<header class="site-header"><div class="container nav-wrap">
+<a class="brand" href="index.html"><img src="Logo (2).jpeg" alt="Pythology"><span class="brand-word">PYTHOLOGY</span></a>
+<nav class="nav-links" data-nav-links aria-label="Primary navigation">
+<a class="nav-link" href="index.html">Home</a><a class="nav-link" href="enviroarc.html">EnviroArc</a><a class="nav-link active" href="weather-lab.html">Weather Lab</a><a class="nav-link" href="about.html">About</a>
+</nav>
+<div class="nav-actions"><a class="btn btn-primary" href="enviroarc.html#weather-lab">EnviroArc · Weather</a><button class="menu-button" data-menu-button aria-label="Open menu" aria-expanded="false">☰</button></div>
+</div></header>
+<main>
+<section class="wx-page-header"><div class="wx-container">
+<p class="wx-kicker">PYTHOLOGY INTELLIGENCE · WEATHER LAB · RESEARCH RECORD</p>
+<h1>Looking inside <em>the storm.</em></h1>
+<p>Weather Lab reconstructs observed storm structure, tests time-gated historical radar analyses and watches selected live feeds for research purposes. Its findings carry evidence, provenance, revisions and uncertainty. This is not an official tornado warning or hurricane forecasting service.</p>
+<div class="wx-cta"><a href="#moore">Moore 2013 tornado test →</a><a href="#current" class="secondary">Current weather research →</a><a href="enviroarc.html#weather-lab" class="secondary">Back to EnviroArc →</a></div>
+</div></section>
+<div class="wx-page-main"><div class="wx-container">
+<section class="wx-page-section" id="moore">
+<p class="wx-kicker">01 / MOORE, OKLAHOMA · 20 MAY 2013 · HISTORICAL REPLAY</p>
+<h2>The tornado experiment: what the radar test actually found.</h2>
+<p>The research engine replayed 39 KTLX Level II radar volumes recorded between 18:07 and 20:59 UTC. Its inputs were gated by estimated operational availability, so the replay did not knowingly use later official tornado reports as early evidence. The engine was also developed using this same Moore case, making it a <strong>retrospective engineering test, not an independent validation</strong>.</p>
+<div class="wx-study-grid">
+<article class="wx-study">
+<p class="wx-kicker">EARLIEST PERSISTENT RADAR ROTATION</p>
+<div class="wx-value">26.4 MIN <small>before NWS warning</small></div>
+<h3>First radar precursor</h3>
+<p>First persistent rotation at 19:13:35 UTC, about 42.4 minutes before touchdown and 26.4 minutes before the first NWS tornado warning at 19:40 UTC.</p>
+<p>This early classification had <strong>0.64 confidence</strong>, not a validated tornado probability; the same event was used while building and tuning the analysis engine.</p>
+</article>
+<article class="wx-study">
+<p class="wx-kicker">HIGH-CONFIDENCE ROTATION</p>
+<div class="wx-value">9.3 MIN <small>before NWS warning</small></div>
+<h3>Rotation intensified in the replay</h3>
+<p>The first high-confidence rotation classification was emitted at 19:30:41 UTC, 9.3 minutes before the warning and 25.3 minutes before touchdown, with confidence 0.72.</p>
+<p>Recognising rotating storm structure does <strong>not</strong> mean accurately forecasting tornado formation or issuing a public warning.</p>
+</article>
+<article class="wx-study">
+<p class="wx-kicker">HIGH-CONFIDENCE FUSED STORM STRUCTURE</p>
+<div class="wx-value wx-critical">7.8 MIN <small>after NWS warning</small></div>
+<h3>The finding that came too late</h3>
+<p>The fused tornado-supportive-structure hypothesis did not reach 0.7 confidence until 19:47:47 UTC — <strong>7.8 minutes after</strong> the NWS warning and 8.2 minutes before touchdown.</p>
+<p>That negative result prevents us claiming the full detector demonstrated a 26-minute warning advantage.</p>
+</article>
+<article class="wx-study">
+<p class="wx-kicker">REPRODUCIBILITY · ENGINE RECORD</p>
+<div class="wx-value">168 <small>finding revisions</small></div>
+<h3>Not 168 separate predictions</h3>
+<p>The pinned Moore baseline processed 68 engine inputs and recorded 168 finding revisions. Revisions preserve how evolving storm evidence changed classifications over time.</p>
+<p>Missing scans, reduced radar resolution and absent soundings produced different timings; <strong>halved azimuthal resolution</strong> was particularly damaging.</p>
+</article>
+</div>
+<div class="wx-disclaimer"><strong>Scientific boundary:</strong> One tornado, one development case and one radar do not establish forecast skill, a population false-alarm rate or a reliable warning lead-time distribution. Results are retrospective; NWS warning decisions are not equivalent to model finding timestamps.</div>
+</section>
+
+<section class="wx-page-section" id="current">
+<p class="wx-kicker">02 / ONGOING OBSERVATIONS · READ-ONLY PUBLIC RESEARCH SUMMARY</p>
+<h2>What Weather Lab is examining now.</h2>
+<p>The existing native Rust weather backend can poll NOAA NEXRAD Level II radar volumes at configured U.S. sites, official National Weather Service alerts and National Hurricane Center active cyclone advisories. The first operational radar trial was <strong>KTLX in Oklahoma</strong>. A separate Prometheus research watcher can review qualifying live radar finding revisions and preserve timestamped solar observations as context.</p>
+<div class="wx-live" data-weather-live data-wx-state="unavailable">
+<div class="wx-live-head"><div><p class="wx-kicker">LATEST VERIFIED PUBLIC WEATHER RESEARCH SNAPSHOT</p><h3>Radar analysis · NWS context · NHC context</h3></div><span class="wx-badge" data-wx-badge>CURRENT STATUS UNVERIFIED</span></div>
+<div class="wx-live-grid">
+<div class="wx-live-metric"><strong data-wx-radar>—</strong><span>NEXRAD volumes analysed since backend start</span></div>
+<div class="wx-live-metric"><strong data-wx-findings>—</strong><span>current radar research finding revisions</span></div>
+<div class="wx-live-metric"><strong data-wx-nws>—</strong><span>official NWS alerts in force (US context)</span></div>
+<div class="wx-live-metric"><strong data-wx-nhc>—</strong><span>active NHC storm advisory entries</span></div>
+</div>
+<div class="wx-data-info"><span data-wx-updated>Checking public research bridge…</span><span data-wx-adapters>Source health not verified yet.</span><span data-wx-scope>Only configured radar sites are monitored.</span></div>
+<p class="wx-live-note">The source-level badges must be verified before counts are described as current. NWS warnings and NHC advisories originate from official agencies, not Weather Lab. This public projection does not expose investigation APIs, bearer tokens, Slack records or private radar archives. If unavailable it shows unverified, never fictitious zeroes.</p>
+</div>
+<div class="wx-tech-grid" style="margin-top:18px">
+<div class="wx-tech"><strong>NEXRAD radar analysis</strong><p>Selected U.S. radar volumes are decoded, gridded and analysed for rotating storm structure. No worldwide tornado-radar coverage or independently evaluated forecast skill is implied.</p></div>
+<div class="wx-tech"><strong>NWS &amp; NHC as-issued context</strong><p>Official U.S. warning polygons and tropical advisory fixes are time-stamped context. Current NHC positions and headings are not Weather Lab's predicted cyclone tracks.</p></div>
+<div class="wx-tech"><strong>Solar history · research context</strong><p>Solar Lab observations can be attached using data actually available before the storm observation. Solar forcing of tornadoes or tropical cyclones has not been demonstrated by this work.</p></div>
+</div>
+</section>
+
+<section class="wx-page-section" id="michael">
+<p class="wx-kicker">03 / HURRICANE MICHAEL · OCTOBER 2018 · HISTORICAL REPLAY</p>
+<h2>A 3D tropical-cyclone reconstruction — not a validated track forecast.</h2>
+<div class="wx-study-grid">
+<div class="wx-study"><h3>Observed and reconstructed, clearly separated</h3><p>The 2018 Hurricane Michael experiment combines observed radar, advisory fixes and GOES infrared context with a separately labelled, seeded model reconstruction for radar-unsampled inner-core regions. The interface distinguishes observed/derived layers from <strong>reconstructed estimates</strong> and their uncertainty.</p></div>
+<div class="wx-study"><h3>Negative results remain in the record</h3><p>The rapid-intensification precursor did not offer demonstrated lead over the truth onset in the evaluated replay; the first relevant revision appeared around 30 hours after a later intensification onset. The first land-interaction finding came 30 minutes after evaluated landfall. Live NHC advisory fixes are context only and do not yet drive a live tropical prediction engine.</p></div>
+</div>
+</section>
+
+<section class="wx-page-section" id="next">
+<p class="wx-kicker">04 / NEXT TESTS · SCIENTIFIC AND OPERATIONAL</p>
+<h2>What we need to prove next.</h2>
+<div class="wx-tech-grid">
+<div class="wx-tech"><strong>Prospective radar evaluation</strong><p>Collect genuinely unseen storm episodes. Predefine target events and matching criteria, then measure false alarms, misses, robustness, source gaps and reproducible availability-time lead.</p></div>
+<div class="wx-tech"><strong>Geographical expansion</strong><p>Add NEXRAD stations and independent regional weather agencies only where source provenance and operational access are verified. Western-Pacific typhoons require separate JMA/JTWC/RSMC integrations.</p></div>
+<div class="wx-tech"><strong>Separate hypotheses from triggers</strong><p>Investigate any solar-weather statistical relationship with quiet-weather controls, confounder checks and pre-registered analysis. Do not use solar observations to raise weather hazard scores in the current system.</p></div>
+</div>
+<div class="wx-disclaimer"><strong>Weather Lab is not a warning service.</strong> For actual protective action, always follow the responsible national meteorological service (including the U.S. National Weather Service and National Hurricane Center). Radar-derived model confidence is not a calibrated tornado probability.</div>
+<div class="wx-cta"><a href="enviroarc.html#weather-lab">Return to EnviroArc →</a><a class="secondary" href="precursor-research.html">Read Subterranean precursor research →</a></div>
+</section>
+</div></div>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-grid"><div><a class="brand" href="index.html"><img src="Logo (2).jpeg" alt=""><span class="brand-word">PYTHOLOGY</span></a><p class="small" style="max-width:440px;margin-top:18px">Evidence-grounded intelligence built in New Zealand.</p></div><div><div class="footer-title">Research</div><div class="footer-links"><a href="enviroarc.html">EnviroArc</a><a href="weather-lab.html">Weather Lab</a><a href="precursor-research.html">Precursor research</a></div></div><div><div class="footer-title">Contact</div><div class="footer-links"><a href="mailto:enquiries@pythology.co.nz">Enquiries</a></div></div></div><div class="footer-bottom"><span>© 2026 Pythology · New Zealand</span><span>Research only · Not an official warning</span></div></div></footer>
+</body></html>
