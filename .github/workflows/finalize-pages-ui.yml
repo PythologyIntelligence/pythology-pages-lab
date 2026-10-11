@@ -52,13 +52,20 @@ jobs:
           VERSION="${SOURCE_SHA:0:12}"
           [[ -n "$VERSION" ]] || VERSION="pages-ui"
 
-          for required in earthnet-map-controls.js enviroarc.html mdra.html mdra.css mdra-nav.js mdra-refresh.js mdra-refresh.css; do
+          for required in earthnet-map-controls.js enviroarc.html precursor-research.html weather-lab.html weather-lab.css weather-lab-live.js enviroarc-research.css enviroarc-research.js mdra.html mdra.css mdra-architecture.css mdra-nav.js mdra-refresh.js mdra-refresh.css; do
             [[ -s "$required" ]] || { echo "$required missing" >&2; exit 1; }
           done
           [[ -s _site/earthnet-global/index.html ]] || { echo 'EarthNet index missing from Pages artifact' >&2; exit 1; }
 
           cp earthnet-map-controls.js _site/earthnet-global/earthnet-map-controls.js
           cp enviroarc.html _site/enviroarc.html
+          cp precursor-research.html _site/precursor-research.html
+          cp weather-lab.html _site/weather-lab.html
+          cp weather-lab.css _site/weather-lab.css
+          cp weather-lab-live.js _site/weather-lab-live.js
+          cp enviroarc-research.css _site/enviroarc-research.css
+          cp enviroarc-research.js _site/enviroarc-research.js
+          cp mdra-architecture.css _site/mdra-architecture.css
           cp mdra.html _site/mdra.html
           cp mdra.css _site/mdra.css
           cp mdra-nav.js _site/mdra-nav.js
@@ -114,7 +121,11 @@ jobs:
                   raise SystemExit(f'{page} has no closing head tag')
               page_text = page_text.replace('</head>', f'  {refresh_css}\n  {nav_tag}\n  {refresh_tag}\n</head>', 1)
               if page.name == 'enviroarc.html':
-                  page_text = version_asset(page_text, 'mdra.css')
+                  for asset in ('mdra.css', 'mdra-architecture.css', 'enviroarc-research.css', 'enviroarc-research.js', 'weather-lab.css', 'weather-lab-live.js'):
+                      page_text = version_asset(page_text, asset)
+              if page.name == 'weather-lab.html':
+                  for asset in ('weather-lab.css', 'weather-lab-live.js'):
+                      page_text = version_asset(page_text, asset)
               page.write_text(page_text, encoding='utf-8')
 
           earth = Path('_site/earthnet-global/index.html')
