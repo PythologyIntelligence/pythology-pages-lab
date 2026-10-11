@@ -277,6 +277,7 @@ PUBLIC_OVERRIDES=(
   architecture-in-action.css
   pythology-human.css
   enviroarc.html
+  precursor-research.html
   enviroarc-research.css
   enviroarc-research.js
   mdra.html
@@ -517,14 +518,21 @@ grep -Fq 'research-ui.js?v=' "$OUT/index.html" || {
   echo 'Homepage research UI overlay validation failed.' >&2
   exit 1
 }
-[[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]]
+[[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/precursor-research.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
+  echo 'Human-facing site or precursor research page is incomplete.' >&2
+  exit 1
+}
 [[ -s "$OUT/enviroarc-research.css" && -s "$OUT/enviroarc-research.js" ]] || {
   echo 'EnviroArc public precursor research assets missing from Pages build' >&2
   exit 1
-} || {
-  echo 'Human-facing site is incomplete.' >&2
-  exit 1
 }
+for anchor in nz-replays volcano-replays panama-replay methods validation; do
+  grep -Fq "id=\"$anchor\"" "$OUT/precursor-research.html" || { echo "Missing precursor research section: $anchor" >&2; exit 1; }
+done
+if grep -q 'github\.com/PythologyIntelligence/Prometheus-Subterranean' "$OUT/enviroarc.html" "$OUT/precursor-research.html"; then
+  echo "Public research page unexpectedly links to working research repository." >&2
+  exit 1
+fi
 [[ -s "$OUT/future.html" && -s "$OUT/future.css" ]] || {
   echo 'FUTURE presentation overlay validation failed.' >&2
   exit 1
