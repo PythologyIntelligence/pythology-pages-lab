@@ -7,6 +7,8 @@ const CERBERUS = "https://cerberus.pythology.co.nz";
 const VERRY = "https://verry.pythology.co.nz";
 const TIMEOUT_MS = 12_000;
 const EARTHNET_STALE_MS = 8 * 60 * 60 * 1000;
+const POSEIDON = "https://poseidon.pythology.co.nz";
+const POSEIDON_SNAPSHOT_FRESH_MS = 30 * 60 * 60 * 1000;
 
 function readJson(file) {
   try { return JSON.parse(fs.readFileSync(file, "utf8")); } catch { return null; }
@@ -26,6 +28,41 @@ async function probe(id, label, url, json = false) {
     return { id, label, status: "degraded", checkedAt: nowIso(), note: e?.name === "AbortError" ? "Probe timed out." : String(e).slice(0, 120) };
   } finally { clearTimeout(timer); }
 }
+async function probePoseidonSnapshot() {
+  const id = "poseidon-snapshot", label = "Protected waters / GFW research";
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), TIMEOUT_MS);
+  const start = performance.now();
+  try {
+    const r = await fetch(POSEIDON + "/media/atlas/protected_waters.geojson", {
+      signal: ctl.signal, cache: "no-store",
+      headers: { "User-Agent": "Pythology-System-Monitor/1.3", Accept: "application/json" }
+    });
+    const latencyMs = Math.round(performance.now() - start);
+    if (!r.ok) return { id, label, status: "down", httpStatus: r.status, latencyMs, checkedAt: nowIso(), note: "Public marine snapshot unavailable." };
+    const data = await r.json();
+    const ms = Date.parse(data?.generated_at || "");
+    const ageMs = Date.now() - ms;
+    const fresh = Number.isFinite(ageMs) && ageMs >= -60000 && ageMs <= POSEIDON_SNAPSHOT_FRESH_MS;
+    const boundaries = Number(data?.count) >= 40;
+    const gfw = data?.live_provider === true && data?.vps_parity === "native-live";
+    const nominal = fresh && boundaries && gfw;
+    return {
+      id, label, status: nominal ? "operational" : "degraded",
+      httpStatus: r.status, latencyMs, checkedAt: nowIso(),
+      dataUpdatedAt: data?.generated_at || null,
+      reserves: boundaries ? Number(data.count) : null,
+      currentReviews: Number.isFinite(Number(data?.review_count)) ? Number(data.review_count) : null,
+      note: nominal ? "Current protected-waters snapshot includes GFW-derived research; not live vessel tracking."
+        : !fresh ? "Marine research snapshot is outside its freshness guard."
+        : !gfw ? "GFW research provider not verified." : "DOC reserve geometry unavailable."
+    };
+  } catch (error) {
+    return { id, label, status: "degraded", checkedAt: nowIso(),
+      note: error?.name === "AbortError" ? "Marine research health probe timed out." : String(error).slice(0,120) };
+  } finally { clearTimeout(timer); }
+}
+
 function systemStatus(checks) {
   const ok = checks.filter(c => c.status === "operational").length;
   const down = checks.filter(c => c.status === "down").length;
@@ -56,7 +93,8 @@ if (!health || !Array.isArray(health.systems)) process.exit(0);
 const [
   agriApp,
   agriData,
-  poseidon,
+  poseidonApp,
+  poseidonSnapshot,
   sentinelApp,
   sentinelRuntime,
   cerberusApp,
@@ -67,7 +105,8 @@ const [
 ] = await Promise.all([
   probe("agri-app", "Agri Pages interface", `${PAGES}/agri-portal.html`),
   probe("agri-data", "Agri safe Pages data", `${PAGES}/data/agri_lab.json`, true),
-  probe("poseidon-app", "Poseidon Pages marine map", `${PAGES}/marine-map.html`),
+  probe("poseidon-app", "Poseidon live marine research map", `${POSEIDON}/`),
+  probePoseidonSnapshot(),
   probe("sentinel-app", "Sentinel Pages command interface", `${PAGES}/sentinel-command.html`),
   probe("sentinel-runtime", "Sentinel Pages runtime", `${PAGES}/sentinel-command.js`),
   probe("cerberus-app", "Cerberus VPS interface", `${CERBERUS}/`),
@@ -79,7 +118,7 @@ const [
 
 for (const [id, name, checks, okSummary, badSummary] of [
   ["agri", "Agri", [agriApp, agriData], "GitHub Pages interface and safe agricultural telemetry are responding.", "Agri's Pages copy is only partially reachable."],
-  ["poseidon", "Poseidon", [poseidon], "GitHub Pages marine operational surface is responding.", "Poseidon's Pages copy is not fully reachable."],
+  ["poseidon", "Poseidon", [poseidonApp, poseidonSnapshot], "Dedicated marine map and recent DOC/GFW research snapshot are responding.", "Marine interface or GFW research snapshot needs attention."],
   ["sentinel", "Sentinel", [sentinelApp, sentinelRuntime], "GitHub Pages command interface and browser runtime are responding.", "Sentinel's Pages copy is only partially reachable."],
 ]) {
   const status = systemStatus(checks);
@@ -154,4 +193,4 @@ if (earth) {
 recount(health);
 health.schemaVersion = Math.max(Number(health.schemaVersion || 0), 4);
 fs.writeFileSync(FILE, `${JSON.stringify(health, null, 2)}\n`, "utf8");
-console.log(`Repaired Fleet health: Cerberus=${cerberusStatus}, Verry=${verryStatus}, Agri=${systemStatus([agriApp, agriData])}, Poseidon=${systemStatus([poseidon])}, Sentinel=${systemStatus([sentinelApp, sentinelRuntime])}`);
+console.log(`Repaired Fleet health: Cerberus=${cerberusStatus}, Verry=${verryStatus}, Agri=${systemStatus([agriApp, agriData])}, Poseidon=${systemStatus([poseidonApp, poseidonSnapshot])}, Sentinel=${systemStatus([sentinelApp, sentinelRuntime])}`);
