@@ -75,7 +75,30 @@
 <div class="wx-live-metric"><strong data-wx-nhc>—</strong><span>active NHC storm advisory entries</span></div>
 </div>
 <div class="wx-data-info"><span data-wx-updated>Checking public research bridge…</span><span data-wx-adapters>Source health not verified yet.</span><span data-wx-scope>Only configured radar sites are monitored.</span></div>
-<p class="wx-live-note">The source-level badges must be verified before counts are described as current. NWS warnings and NHC advisories originate from official agencies, not Weather Lab. This public projection does not expose investigation APIs, bearer tokens, Slack records or private radar archives. If unavailable it shows unverified, never fictitious zeroes.</p>
+
+  <div class="wx-systems-panel">
+    <div class="wx-systems-head">
+      <div>
+        <p class="wx-kicker">WHAT THE SOURCES ARE ACTUALLY SHOWING</p>
+        <h4>Named storm systems · radar coverage · severe-alert context</h4>
+      </div>
+      <span class="wx-source-note">Official NHC / NWS · NEXRAD observations</span>
+    </div>
+    <div class="wx-systems-grid">
+      <div class="wx-system-list"><h5>Active tropical systems <span>NHC</span></h5>
+        <div data-wx-storm-list><p class="wx-observation-empty">Awaiting verified NHC advisory feed…</p></div>
+      </div>
+      <div class="wx-system-list"><h5>Severe-weather alerts <span>NWS</span></h5>
+        <div data-wx-alert-list><p class="wx-observation-empty">Awaiting verified NWS alert feed…</p></div>
+      </div>
+      <div class="wx-system-list"><h5>Radar stations under observation <span>NEXRAD</span></h5>
+        <div data-wx-site-list><p class="wx-observation-empty">Awaiting fresh radar evidence…</p></div>
+      </div>
+    </div>
+    <p class="wx-observation-note">These are current-source observations and official advisory fixes, not predicted storm paths, new tornado warnings or evidence of independent forecasting skill. If no active systems are listed, the corresponding source must first be verified fresh; otherwise the display reports the gap.</p>
+  </div>
+
+        <p class="wx-live-note">The source-level badges must be verified before counts are described as current. NWS warnings and NHC advisories originate from official agencies, not Weather Lab. This public projection does not expose investigation APIs, bearer tokens, Slack records or private radar archives. If unavailable it shows unverified, never fictitious zeroes.</p>
 </div>
 <div class="wx-tech-grid" style="margin-top:18px">
 <div class="wx-tech"><strong>NEXRAD radar analysis</strong><p>Selected U.S. radar volumes are decoded, gridded and analysed for rotating storm structure. No worldwide tornado-radar coverage or independently evaluated forecast skill is implied.</p></div>
