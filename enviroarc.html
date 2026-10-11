@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="EnviroArc is Pythology Intelligence's environmental intelligence family: EarthNet provides the global picture, Atlas provides New Zealand depth, and Poseidon contributes specialist marine intelligence.">
+  <meta name="description" content="EnviroArc is Pythology Intelligence's environmental intelligence family: EarthNet provides the global picture, Atlas provides New Zealand depth, Poseidon monitors protected waters, and Weather Lab conducts extreme-weather research.">
   <title>EnviroArc — Environmental Intelligence</title>
   <link rel="canonical" href="https://pythology.co.nz/enviroarc.html">
   <link rel="stylesheet" href="site.css">
@@ -11,8 +11,10 @@
   <link rel="stylesheet" href="mdra.css">
   <link rel="stylesheet" href="mdra-architecture.css?v=20261011-hierarchy2">
   <link rel="stylesheet" href="enviroarc-research.css">
+  <link rel="stylesheet" href="weather-lab.css?v=20261011-weather1">
   <script defer src="site.js"></script>
   <script defer src="enviroarc-research.js"></script>
+  <script defer src="weather-lab-live.js?v=20261011-weather1"></script>
 </head>
 <body class="pitch-body mdra-body">
 <header class="site-header">
@@ -42,8 +44,8 @@
       <div class="mdra-hero-copy">
         <div class="mdra-live-ribbon"><span class="live-dot"></span> GLOBAL BREADTH · NEW ZEALAND DEPTH · SHARED EVIDENCE DISCIPLINE</div>
         <p class="human-kicker">EnviroArc · Environmental Intelligence</p>
-        <h1 class="h1">From Aotearoa<br>to the planet.</h1>
-        <p class="lede">EarthNet 2.0 provides the global environmental, geophysical and geopolitical picture. Atlas resolves New Zealand in operational depth. Poseidon now operates its own protected-waters and Global Fishing Watch research interface alongside the Atlas marine lens. EnviroArc is the clean public family that connects them without turning them into one oversized application.</p>
+        <h1 class="h1">From NZ<br>to global scale.</h1>
+        <p class="lede">EarthNet 2.0 provides the global environmental, geophysical and geopolitical picture. Atlas resolves New Zealand in operational depth. Poseidon now operates its own protected-waters and Global Fishing Watch research interface alongside the Atlas marine lens. Weather Lab adds radar-based storm structure research and official NWS/NHC context. EnviroArc connects the four systems without pretending they are one application.</p>
         <div class="btn-row">
           <a class="btn btn-primary" href="https://earthnet.pythology.co.nz/" target="_blank" rel="noopener">Open EarthNet</a>
           <a class="btn" href="https://atlas.pythology.co.nz/atlas" target="_blank" rel="noopener">Open Atlas</a>
@@ -57,7 +59,7 @@
         </div>
       </div>
 
-      <div class="mdra-hero-system mdra-arch-v2" aria-label="EnviroArc environmental intelligence family: EnviroArc connects EarthNet, Atlas and Poseidon, with Prometheus research underneath">
+      <div class="mdra-hero-system mdra-arch-v2" aria-label="EnviroArc environmental intelligence family: EnviroArc connects EarthNet, Atlas, Poseidon and Weather Lab, with Prometheus research underneath">
         <div class="mdra-arch-top">
           <div class="mdra-core"><span>ENVIROARC</span><small>one environmental intelligence family</small></div>
         </div>
@@ -66,6 +68,7 @@
           <div class="mdra-system-status system-earthnet"><span class="status-pulse"></span><b>EARTHNET</b><small>global environmental intelligence</small></div>
           <div class="mdra-system-status system-atlas"><span class="status-pulse"></span><b>ATLAS</b><small>Aotearoa operational depth</small></div>
           <div class="mdra-system-status system-arcus"><span class="status-pulse"></span><b>POSEIDON</b><small>specialist marine intelligence</small></div>
+          <div class="mdra-system-status system-weather"><span class="status-pulse"></span><b>WEATHER LAB</b><small>severe-storm radar research</small></div>
         </div>
         <div class="mdra-arch-arrow" aria-hidden="true"></div>
         <div class="mdra-arch-bottom">
@@ -80,6 +83,7 @@
       <div><span class="live-dot"></span><strong>EarthNet</strong><small>global environmental view</small></div>
       <div><span class="live-dot"></span><strong>Atlas</strong><small>New Zealand operational view</small></div>
       <div><span class="live-dot"></span><strong>Poseidon</strong><small>protected-waters research · linked to Atlas</small></div>
+      <div><span class="live-dot"></span><strong>Weather Lab</strong><small>radar and severe-weather research</small></div>
       <div class="prom-ready"><span class="ready-dot"></span><strong>Prometheus</strong><small>cross-system reasoning</small></div>
     </div>
   </section>
@@ -87,11 +91,11 @@
   <section class="pitch-section mdra-thesis">
     <div class="container pitch-split">
       <div>
-        <p class="human-kicker">One family · two operational views</p>
+        <p class="human-kicker">One family · four specialist systems</p>
         <h2 class="h2">Clean on the surface.<br>Serious underneath.</h2>
       </div>
       <div>
-        <p class="lede" style="margin-top:0">EnviroArc does not add another map. EarthNet stays global. Atlas stays national and operational. Poseidon now has its own marine-reserve map and evidence dossier, backed by the shared Atlas marine pipeline.</p>
+        <p class="lede" style="margin-top:0">EnviroArc gives EarthNet the planetary view, Atlas New Zealand depth, Poseidon protected waters and Weather Lab evidence-led storm analysis. The marine research pipeline is shared with Atlas; Weather Lab operates its own native severe-weather research backend.</p>
         <p>The shared discipline is provenance, freshness, evidence class, change detection and causal traceability. A live observation, a model estimate and a derived anomaly should never look like the same kind of evidence.</p>
       </div>
     </div>
@@ -119,7 +123,7 @@
         </article>
 
         <article class="mdra-system-card atlas-card">
-          <div class="mdra-card-top"><span>02 · AOTEAROA NEW ZEALAND</span><strong>ATLAS</strong></div>
+          <div class="mdra-card-top"><span>02 · NEW ZEALAND</span><strong>ATLAS</strong></div>
           <div class="mdra-card-state"><span class="live-dot"></span> OPERATIONAL</div>
           <h3>Environmental intelligence at decision-grade local depth.</h3>
           <p>Geohazards, freshwater, terrestrial systems, atmosphere and marine intelligence with source health, freshness and local event history.</p>
@@ -132,12 +136,62 @@
           <div class="mdra-card-top"><span>03 · SPECIALIST MARINE</span><strong>POSEIDON · PROTECTED WATERS</strong></div>
           <div class="mdra-card-state"><span class="live-dot"></span> OPERATIONAL · RESEARCH</div>
           <h3>A dedicated watch over protected waters.</h3>
-          <p>Poseidon now runs at his own address, with 49 DOC marine reserves, Global Fishing Watch-derived screening, and retained historical review evidence. Atlas shares the underlying protected-waters data pipeline. GFW-derived fishing effort is a research prompt, not proof of illegal fishing or real-time vessel tracking.</p>
+          <p>Poseidon watches over New Zealands 49 DOC marine reserves, Global Fishing Watch-derived screening, and retained historical review evidence. Atlas shares the underlying protected-waters data pipeline. GFW-derived fishing effort is a research prompt, not proof of illegal fishing or real-time vessel tracking.</p>
           <div class="mdra-capabilities"><span>49 DOC reserves</span><span>GFW screening</span><span>AIS / SAR report windows</span><span>Retained reviews</span><span>Evidence boundaries</span></div>
-          <div class="mdra-card-boundary"><b>Design rule</b><span>Separate map · shared Atlas marine evidence and provenance</span></div>
+          <div class="mdra-card-boundary"><b>Design rule</b><span>Shared Atlas marine evidence and provenance</span></div>
           <a class="btn mdra-open" href="https://poseidon.pythology.co.nz/" target="_blank" rel="noopener">Open Poseidon protected waters <span>↗</span></a>
         </article>
       </div>
+    </div>
+  </section>
+
+  <section class="pitch-section wx-section" id="weather-lab">
+    <div class="container">
+      <div class="wx-intro">
+        <div>
+          <p class="human-kicker">EnviroArc · Weather Lab · extreme-weather research</p>
+          <h2>Inside the storm.<br>Evidence before forecasts.</h2>
+          <p>Weather Lab combines time-gated historical storm replays with live research observation of selected U.S. radar stations, plus independently issued NWS warnings and NHC cyclone advisory context. Our Moore 2013 tornado test produced an early radar-rotation signal — and an equally important negative result for the later high-confidence fused classification.</p>
+        </div>
+        <a class="btn" href="weather-lab.html#moore">Read the Weather Lab study ↗</a>
+      </div>
+      <div class="wx-study-grid" aria-label="Moore 2013 historical tornado replay milestones">
+        <article class="wx-study">
+          <p class="wx-kicker">MOORE, OKLAHOMA · 20 MAY 2013</p>
+          <h3>First persistent radar rotation</h3>
+          <div class="wx-value">26.4 MIN <small>before the NWS warning</small></div>
+          <p>The replay emitted an early persistent radar-rotation classification at 19:13:35 UTC — about 42.4 minutes before touchdown. The model was developed on this same historical case: <strong>this is not an independent 26-minute forecast advantage</strong>.</p>
+        </article>
+        <article class="wx-study">
+          <p class="wx-kicker">THE RESULT THAT KEEPS US HONEST</p>
+          <h3>High-confidence fused structure</h3>
+          <div class="wx-value wx-critical">7.8 MIN <small>after the NWS warning</small></div>
+          <p>The high-confidence tornado-supportive-structure finding came after the official NWS warning. Radar rotation was observed earlier, but the complete storm interpretation did <strong>not</strong> demonstrate an early operational warning.</p>
+        </article>
+      </div>
+      <div class="wx-live" data-weather-live data-wx-state="unavailable">
+        <div class="wx-live-head">
+          <div><p class="wx-kicker">WHAT HE IS WATCHING · VERIFIED PUBLIC RESEARCH STATE</p><h3>Live NEXRAD · official NWS and NHC context</h3></div>
+          <span class="wx-badge" data-wx-badge>CURRENT STATUS UNVERIFIED</span>
+        </div>
+        <div class="wx-live-grid">
+          <div class="wx-live-metric"><strong data-wx-radar>—</strong><span>radar volumes analysed since backend start</span></div>
+          <div class="wx-live-metric"><strong data-wx-findings>—</strong><span>current radar research findings</span></div>
+          <div class="wx-live-metric"><strong data-wx-nws>—</strong><span>official NWS alerts in force</span></div>
+          <div class="wx-live-metric"><strong data-wx-nhc>—</strong><span>NHC active-storm advisory entries</span></div>
+        </div>
+        <div class="wx-data-info">
+          <span data-wx-updated>Checking public weather research feed…</span>
+          <span data-wx-adapters>Source freshness not verified.</span>
+          <span data-wx-scope>Only explicitly configured radar sites are covered.</span>
+        </div>
+        <p class="wx-live-note">The research observer runs independently of this webpage. Counts are only displayed when its source freshness can be verified; no live observation is inferred from a historical case, refreshed webpage, or old snapshot. The Prometheus watcher can preserve time-matched Solar Lab observations as research context, never as proof that solar activity causes tornadoes.</p>
+      </div>
+      <div class="wx-cta">
+        <a href="weather-lab.html">Explore Weather Lab research →</a>
+        <a class="secondary" href="precursor-research.html">View Subterranean precursor experiments →</a>
+      </div>
+      <div class="wx-disclaimer">Research only — neither the Moore 2013 retrospective timing nor the live radar research feed provides validated tornado forecasts. Official warnings and cyclone advisories come from NWS/NHC and responsible meteorological agencies, not Pythology.</div>
     </div>
   </section>
 
