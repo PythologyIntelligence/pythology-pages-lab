@@ -46,3 +46,23 @@
 @media(max-width:900px){.wx-tech-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:700px){.wx-intro{display:block}.wx-study-grid,.wx-tech-grid{grid-template-columns:1fr}.wx-live-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:380px){.wx-live-grid{grid-template-columns:1fr}.wx-live{padding:14px}.wx-container{width:calc(100% - 28px)}}
+
+/* Live named storm systems / official alerts / configured radar sites. */
+.wx-systems-panel{margin:24px 0 0;border-top:1px solid #316079;padding-top:22px}
+.wx-systems-head{display:flex;gap:15px;align-items:end;justify-content:space-between;flex-wrap:wrap;margin-bottom:17px}
+.wx-systems-head h4{font-size:clamp(16px,1.75vw,21px);color:#e5faff;margin:8px 0}
+.wx-source-note{font:700 10px Consolas,monospace;color:#9cbdca}
+.wx-systems-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.wx-system-list{min-width:0;border:1px solid #2f6173;border-radius:11px;background:#081a28;padding:15px}
+.wx-system-list h5{font-size:13px;line-height:1.4;margin:0 0 14px;color:#dcf4fb;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.wx-system-list h5 span{font:700 10px Consolas,monospace;color:#83c9d8}
+.wx-observation{padding:11px 0 12px;border-top:1px solid #244556}
+.wx-observation:first-child{border-top:0}
+.wx-observation-title{display:flex;flex-wrap:wrap;gap:9px;align-items:center;justify-content:space-between}
+.wx-observation-title strong{color:#b9eff8;font-size:13px;overflow-wrap:anywhere}
+.wx-observation-title span{border-radius:4px;color:#8cf0dd;background:#154640;padding:3px 5px;font:700 10px Consolas,monospace}
+.wx-observation p{font-size:11px;line-height:1.6;color:#b5cedd;margin:5px 0;overflow-wrap:anywhere}
+.wx-observation-empty{color:#afc6d5;font-size:12px;line-height:1.65;margin:0;padding:11px 0}
+.wx-observation-note{font-size:12px;line-height:1.7;color:#9dbccc;margin:13px 0 0}
+@media(max-width:960px){.wx-systems-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.wx-systems-grid{grid-template-columns:1fr}.wx-system-list{padding:13px}}
