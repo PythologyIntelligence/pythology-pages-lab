@@ -1,0 +1,50 @@
+/* Pythology Pages Lab — approved 2026 editorial refresh */
+.lab-mission-hero{min-height:unset;padding:clamp(84px,9vw,138px) 0}
+.lab-mission-hero::before{opacity:.25;inset:0 0 0 38%;filter:saturate(.6)}
+.lab-mission-hero .pitch-hero-copy{max-width:960px}
+.lab-mission-hero .lede{max-width:800px;margin:18px 0 0;line-height:1.72}
+.lab-hero-question{font:500 clamp(27px,3.2vw,46px)/1.12 'Newsreader',Georgia,serif;color:#9ce5e8;max-width:850px;margin:28px 0}
+.lab-mission-hero .btn-row{margin-top:32px}
+.lab-section-lead{margin-bottom:36px;max-width:1080px}
+.lab-section-lead .h2{margin:0}
+.lab-copy{font-size:clamp(15px,1.3vw,17px);line-height:1.9;color:#a7b9be;max-width:940px}
+.lab-copy strong{color:#e5f2f4}
+.lab-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,5vw,78px);align-items:start}
+.lab-quote{margin:24px 0;font:500 clamp(26px,3.2vw,43px)/1.18 'Newsreader',Georgia,serif;color:#92e2e7;letter-spacing:-.02em;max-width:940px}
+.lab-card-grid{display:grid;gap:16px;margin:30px 0}
+.lab-card-grid.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.lab-card-grid.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.lab-card{padding:clamp(22px,2.5vw,36px);border:1px solid rgba(161,213,222,.16);border-radius:17px;background:linear-gradient(155deg,rgba(13,28,35,.85),rgba(5,13,17,.72));min-width:0}
+.lab-card-label{font:700 11px/1.5 'Manrope',sans-serif;letter-spacing:.06em;color:#8ddce5}
+.lab-card h3{font:500 clamp(25px,2.3vw,34px)/1.12 'Newsreader',Georgia,serif;margin:22px 0 12px;color:#e7f2f3}
+.lab-card .lab-copy{font-size:14px;margin:0;color:#9aafb5}
+.lab-shaded{background:linear-gradient(110deg,rgba(12,29,37,.45),rgba(6,16,21,.16))}
+.lab-subhead{font:500 clamp(29px,3vw,41px)/1.13 'Newsreader',Georgia,serif;margin:58px 0 18px;color:#eaf4f5}
+.lab-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid rgba(148,213,225,.2);border-radius:18px;overflow:hidden;margin:38px 0 15px}
+.lab-stats>div{padding:27px 19px;border-right:1px solid rgba(148,213,225,.16);background:rgba(9,23,29,.6)}
+.lab-stats>div:last-child{border-right:0}
+.lab-stats strong{display:block;color:#e9f9fa;font:500 clamp(31px,4vw,53px)/1.1 'Newsreader',Georgia,serif}
+.lab-stats span{display:block;margin-top:9px;color:#9bb3b8;font-size:12px}
+.lab-stats .lab-brier{background:rgba(62,140,152,.14)}
+.lab-stats .lab-brier strong{color:#9be9e6}
+.lab-flow{max-width:790px;margin:26px auto 44px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px}
+.lab-flow>div{width:100%;border:1px solid rgba(155,218,226,.2);border-radius:13px;padding:22px 15px;background:#08171d;color:#eefafa;font-weight:700;font-size:15px;letter-spacing:.045em}
+.lab-flow>div small{display:block;font-size:12px;font-weight:400;letter-spacing:normal;margin-top:7px;color:#9db9c1}
+.lab-flow .lab-flow-core{border-color:rgba(116,223,231,.7);background:rgba(14,53,62,.63);box-shadow:0 0 25px rgba(72,204,216,.09)}
+.lab-flow>b{color:#8dd8e4;font-size:22px;font-weight:400}
+.lab-flow .lab-flow-note{font-size:12px;color:#9cb7be;margin:10px 0}
+.lab-research-hero{background:radial-gradient(ellipse at 85% 17%,rgba(40,134,122,.25),transparent 40%),radial-gradient(ellipse at 65% 70%,rgba(59,89,182,.2),transparent 44%),#041015}
+.lab-research-hero::before{background:none;opacity:0}
+.lab-research-band{border-left:3px solid rgba(128,220,233,.4);padding:22px 27px;border-radius:4px 16px 16px 4px;margin:20px 0 34px;background:rgba(18,44,53,.37);max-width:990px}
+.lab-research-band p{line-height:1.75;color:#bacbd0;margin:0 0 14px}.lab-research-band p:last-child{margin:0}
+.lab-biology-band{background:radial-gradient(ellipse at right,rgba(65,171,142,.18),transparent 60%),rgba(14,32,37,.4)}
+.lab-physics-band{background:radial-gradient(ellipse at right,rgba(71,133,220,.16),transparent 60%),rgba(14,32,37,.4)}
+.lab-about .about-hero{min-height:650px}
+.lab-about .about-hero .pitch-hero-copy{max-width:610px}
+.lab-about .about-hero .about-small{color:#c0ced2;font-size:15px;max-width:580px;line-height:1.8}
+.lab-home .home-title-banner{margin:0}
+.lab-home .lab-mission-hero .lede{max-width:780px}
+.lab-home .pitch-section .home-proof-grid{margin-top:35px}
+.lab-home .lab-card-grid.three .lab-card{min-height:260px}
+@media(max-width:1000px){.lab-card-grid.three{grid-template-columns:1fr 1fr}.lab-stats{grid-template-columns:1fr 1fr}.lab-stats>div:nth-child(2){border-right:0}.lab-stats>div:nth-child(-n+2){border-bottom:1px solid rgba(148,213,225,.16)}}
+@media(max-width:720px){.lab-split,.lab-card-grid.two,.lab-card-grid.three{grid-template-columns:1fr}.lab-stats{grid-template-columns:1fr 1fr}.lab-stats>div{padding:18px 12px}.lab-mission-hero{padding:76px 0}.lab-research-band{padding:18px}.lab-home .home-title-banner img{max-height:none}}

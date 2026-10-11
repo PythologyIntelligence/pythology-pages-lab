@@ -8,10 +8,9 @@
     ['index.html', 'Home'],
     ['enviroarc.html', 'EnviroArc'],
     ['prometheus.html', 'Prometheus'],
-    ['causal-intelligence.html', 'Causal Core'],
-    ['research.html', 'The stack'],
-    ['where-it-fits.html', 'Where it fits'],
-    ['future.html', 'Future'],
+    ['core-technology.html', 'Core Technology'],
+    ['where-it-fits.html', 'Where It Fits'],
+    ['current-research.html', 'Current Research'],
     ['about.html', 'About']
   ];
 
