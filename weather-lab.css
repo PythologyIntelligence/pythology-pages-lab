@@ -66,3 +66,15 @@
 .wx-observation-note{font-size:12px;line-height:1.7;color:#9dbccc;margin:13px 0 0}
 @media(max-width:960px){.wx-systems-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:650px){.wx-systems-grid{grid-template-columns:1fr}.wx-system-list{padding:13px}}
+
+.wx-timeline{margin:21px 0 25px;padding:22px;border:1px solid #357080;border-radius:13px;background:linear-gradient(135deg,#0b3040,#091b2a)}
+.wx-timeline>h3{color:#ebfaff;font-size:21px;margin:0 0 17px}
+.wx-timeline-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.wx-timeline-grid>div{border:1px solid #295c6d;border-radius:8px;padding:14px;background:#071f30}
+.wx-timeline-grid time{display:block;color:#8ff1ee;font:800 21px Consolas,monospace}
+.wx-timeline-grid strong{display:block;margin:9px 0 6px;color:#e9f7fa;font-size:14px;line-height:1.35}
+.wx-timeline-grid span{color:#b4cddc;display:block;font-size:12px;line-height:1.65}
+.wx-timeline-grid em{color:#f4c294;font-style:normal;font-weight:700}
+.wx-timeline>p{color:#bed0dc;font-size:13px;line-height:1.7;margin:18px 0 0}
+@media(max-width:850px){.wx-timeline-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:570px){.wx-timeline-grid{grid-template-columns:1fr}.wx-timeline{padding:16px}}
