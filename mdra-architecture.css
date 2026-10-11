@@ -19,7 +19,7 @@
 .mdra-arch-v2 .mdra-arch-top,
 .mdra-arch-v2 .mdra-arch-platforms,
 .mdra-arch-v2 .mdra-arch-bottom{position:relative;z-index:2;min-width:0;width:100%}
-.mdra-arch-v2 .mdra-arch-platforms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(7px,1vw,13px);align-items:stretch}
+.mdra-arch-v2 .mdra-arch-platforms{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(8px,1.1vw,12px);align-items:stretch}
 .mdra-arch-v2 .mdra-core,
 .mdra-arch-v2 .mdra-prom-core,
 .mdra-arch-v2 .mdra-system-status{
@@ -88,6 +88,7 @@
 .mdra-arch-v2 .system-earthnet{border-top-color:rgba(80,205,226,.58)}
 .mdra-arch-v2 .system-atlas{border-top-color:rgba(92,231,175,.58)}
 .mdra-arch-v2 .system-arcus{border-top-color:rgba(98,215,240,.58)}
+.mdra-arch-v2 .system-weather{border-top-color:rgba(131,196,255,.7);background:linear-gradient(150deg,rgba(12,42,61,.95),rgba(5,22,37,.98))}
 .mdra-arch-v2 .mdra-prom-core{
   min-height:96px;
   padding:16px 15px;
