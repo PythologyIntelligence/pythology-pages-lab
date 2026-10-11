@@ -163,3 +163,7 @@
   .mdra-arch-v2 .mdra-system-status b{font-size:10.5px}
   .mdra-arch-v2 .mdra-system-status small{font-size:10.5px}
 }
+
+@media(min-width:981px){
+  .mdra-operational-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+}
