@@ -196,9 +196,12 @@
   function renderNz(data) {
     const seismic = data.seismic || {};
     const events = Array.isArray(seismic.events) ? seismic.events : [];
-    const explicitLargest = Number(seismic.largest_magnitude);
-    const eventLargest = events.reduce((max, item) => Math.max(max, Number(item.magnitude) || -Infinity), -Infinity);
-    const largest = Number.isFinite(explicitLargest) ? explicitLargest : eventLargest;
+    const explicitLargest = nzQuakeNumber(seismic.largest_magnitude);
+    const eventLargest = events.reduce((max, item) => {
+      const magnitude = nzQuakeNumber(item?.magnitude);
+      return magnitude === null ? max : Math.max(max, magnitude);
+    }, -Infinity);
+    const largest = explicitLargest !== null ? explicitLargest : eventLargest;
     const concentration = Array.isArray(seismic.activity_concentrations) ? seismic.activity_concentrations[0] : null;
     const ageHours = nzStateAgeHours(data);
     const stale = !Number.isFinite(ageHours) || ageHours > 30;
