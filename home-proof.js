@@ -182,7 +182,7 @@
       const id = String(event.public_id || '');
       const quality = event.quality ? ` · catalogue quality: ${event.quality}` : '';
       text('[data-home-nz-largest-source]', `GeoNet catalogue${id ? ' · event ' + id : ''}${quality}`);
-      if (geonet && /^\\d{4}p\\d+$/.test(id)) {
+      if (geonet && /^\d{4}p\d+$/.test(id)) {
         geonet.href = `https://www.geonet.org.nz/earthquake/${id}`;
         geonet.hidden = false;
       }
