@@ -107,12 +107,105 @@
     return Number.isFinite(at) ? Math.max(0, (Date.now() - at) / 36e5) : Infinity;
   }
 
+  function nzQuakeNumber(value) {
+    if (value === null || value === undefined || value === '') return null;
+    const parsed = Number(value);
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function renderNzQuakeDetail(seismic, events) {
+    const bins = seismic.magnitude_bins || {};
+    const keys = ['lt_0', '0_0_to_0_9', '1_0_to_1_9', '2_0_to_2_9', '3_0_to_3_9', '4_0_plus'];
+    const counts = keys.map((key) => nzQuakeNumber(bins[key]));
+    const total = nzQuakeNumber(seismic.event_count);
+    const deleted = events.length === total
+      ? events.filter((event) => String(event?.quality || event?.status || '').toLowerCase() === 'deleted').length
+      : 0;
+    const deletedNote = deleted ? ` · ${deleted} source record${deleted === 1 ? '' : 's'} flagged deleted (included in published total).` : '';
+    const valid = total !== null && Number.isInteger(total) && total >= 0 &&
+      counts.every((count) => count !== null && Number.isInteger(count) && count >= 0) &&
+      counts.reduce((sum, count) => sum + count, 0) === total;
+
+    if (valid) {
+      text('[data-home-nz-bin-lt1]', counts[0] + counts[1]);
+      text('[data-home-nz-bin-m1]', counts[2]);
+      text('[data-home-nz-bin-m2]', counts[3]);
+      text('[data-home-nz-bin-m3]', counts[4]);
+
+      // Atlas preserves a combined M4+ band. Split it only when the full event
+      // catalogue is present and agrees with the authoritative summary.
+      const fullEvents = events.length === total &&
+        events.every((event) => nzQuakeNumber(event?.magnitude) !== null);
+      const upper = fullEvents
+        ? events.map((event) => nzQuakeNumber(event.magnitude)).filter((mag) => mag >= 4)
+        : [];
+      if (fullEvents && upper.length === counts[5]) {
+        text('[data-home-nz-bin-m4]', upper.filter((mag) => mag < 5).length);
+        text('[data-home-nz-bin-m5]', upper.filter((mag) => mag >= 5).length);
+        text('[data-home-nz-bin-m4-label]', 'M4–4.9');
+        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · counts reconcile to the 24-hour total' + deletedNote);
+      } else {
+        text('[data-home-nz-bin-m4]', counts[5]);
+        text('[data-home-nz-bin-m4-label]', 'M4+ (combined)');
+        text('[data-home-nz-bin-m5]', '—');
+        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · M5+ cannot be split from M4+ in this snapshot' + deletedNote);
+      }
+    } else {
+      text('[data-home-nz-quake-integrity]', 'Magnitude distribution unavailable or does not reconcile with the catalogue total.');
+    }
+
+    const largest = events.reduce((best, event) => {
+      const mag = nzQuakeNumber(event?.magnitude);
+      return mag !== null && (!best || mag > best.mag)
+        ? { event, mag }
+        : best;
+    }, null);
+    const summaryMagnitude = nzQuakeNumber(seismic.largest_magnitude);
+    const geonet = document.querySelector('[data-home-nz-largest-geonet]');
+    if (geonet) {
+      geonet.hidden = true;
+      geonet.removeAttribute('href');
+    }
+
+    if (largest && (summaryMagnitude === null || Math.abs(largest.mag - summaryMagnitude) < 0.05)) {
+      const { event, mag } = largest;
+      text('[data-home-nz-largest-event]', `M${mag.toFixed(1)} · ${safe(event.locality, 'Location unavailable')}`);
+      const depth = nzQuakeNumber(event.depth_km);
+      const when = event.time ? new Date(event.time) : null;
+      const localTime = when && Number.isFinite(when.getTime())
+        ? new Intl.DateTimeFormat('en-NZ', {
+          timeZone: 'Pacific/Auckland', dateStyle: 'medium', timeStyle: 'short'
+        }).format(when) + ' NZ time'
+        : 'Time unavailable';
+      const lat = nzQuakeNumber(event.latitude);
+      const lon = nzQuakeNumber(event.longitude);
+      const position = lat !== null && lon !== null
+        ? `${Math.abs(lat).toFixed(2)}°${lat < 0 ? 'S' : 'N'}, ${Math.abs(lon).toFixed(2)}°${lon < 0 ? 'W' : 'E'}`
+        : 'Coordinates unavailable';
+      text('[data-home-nz-largest-meta]', `${depth !== null ? depth.toFixed(1) + ' km deep' : 'Depth unavailable'} · ${localTime} · ${position}`);
+      const id = String(event.public_id || '');
+      const quality = event.quality ? ` · catalogue quality: ${event.quality}` : '';
+      text('[data-home-nz-largest-source]', `GeoNet catalogue${id ? ' · event ' + id : ''}${quality}`);
+      if (geonet && /^\d{4}p\d+$/.test(id)) {
+        geonet.href = `https://www.geonet.org.nz/earthquake/${id}`;
+        geonet.hidden = false;
+      }
+    } else {
+      text('[data-home-nz-largest-event]', summaryMagnitude !== null ? `M${summaryMagnitude.toFixed(1)} · event details unavailable` : 'No verified largest event in this snapshot');
+      text('[data-home-nz-largest-meta]', 'Detailed location, time and depth unavailable.');
+      text('[data-home-nz-largest-source]', 'GeoNet earthquake catalogue');
+    }
+  }
+
   function renderNz(data) {
     const seismic = data.seismic || {};
     const events = Array.isArray(seismic.events) ? seismic.events : [];
-    const explicitLargest = Number(seismic.largest_magnitude);
-    const eventLargest = events.reduce((max, item) => Math.max(max, Number(item.magnitude) || -Infinity), -Infinity);
-    const largest = Number.isFinite(explicitLargest) ? explicitLargest : eventLargest;
+    const explicitLargest = nzQuakeNumber(seismic.largest_magnitude);
+    const eventLargest = events.reduce((max, item) => {
+      const magnitude = nzQuakeNumber(item?.magnitude);
+      return magnitude === null ? max : Math.max(max, magnitude);
+    }, -Infinity);
+    const largest = explicitLargest !== null ? explicitLargest : eventLargest;
     const concentration = Array.isArray(seismic.activity_concentrations) ? seismic.activity_concentrations[0] : null;
     const ageHours = nzStateAgeHours(data);
     const stale = !Number.isFinite(ageHours) || ageHours > 30;
@@ -135,6 +228,7 @@
         ? `Publication freshness guard: this state is not current. ${interpretation || 'The latest New Zealand interpretation is unavailable.'}`
         : (interpretation || 'The latest New Zealand interpretation is not available just now.')
     );
+    renderNzQuakeDetail(seismic, events);
   }
 
   function renderTriggeredResearch(data) {

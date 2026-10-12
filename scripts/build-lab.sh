@@ -326,6 +326,10 @@ for file in "${PUBLIC_OVERRIDES[@]}"; do
   cp "$ROOT/$file" "$OUT/$file"
 done
 
+# Keep the homepage quake breakdown and largest-event detail from silently
+# disappearing when the public presentation is refreshed again.
+node "$ROOT/scripts/test-home-nz-quakes.mjs"
+
 # Retired public founder AI: remove any previous upstream-mirrored files.
 find "$OUT" -maxdepth 1 -type f \( -name 'ask-brent.html*' -o -name 'brent-ai.css*' -o -name 'brent-ai.js*' \) -delete
 
