@@ -118,6 +118,10 @@
     const keys = ['lt_0', '0_0_to_0_9', '1_0_to_1_9', '2_0_to_2_9', '3_0_to_3_9', '4_0_plus'];
     const counts = keys.map((key) => nzQuakeNumber(bins[key]));
     const total = nzQuakeNumber(seismic.event_count);
+    const deleted = events.length === total
+      ? events.filter((event) => String(event?.quality || event?.status || '').toLowerCase() === 'deleted').length
+      : 0;
+    const deletedNote = deleted ? ` · ${deleted} source record${deleted === 1 ? '' : 's'} flagged deleted (included in published total).` : '';
     const valid = total !== null && Number.isInteger(total) && total >= 0 &&
       counts.every((count) => count !== null && Number.isInteger(count) && count >= 0) &&
       counts.reduce((sum, count) => sum + count, 0) === total;
@@ -139,12 +143,12 @@
         text('[data-home-nz-bin-m4]', upper.filter((mag) => mag < 5).length);
         text('[data-home-nz-bin-m5]', upper.filter((mag) => mag >= 5).length);
         text('[data-home-nz-bin-m4-label]', 'M4–4.9');
-        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · counts reconcile to the 24-hour total.');
+        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · counts reconcile to the 24-hour total.' + deletedNote);
       } else {
         text('[data-home-nz-bin-m4]', counts[5]);
         text('[data-home-nz-bin-m4-label]', 'M4+ (combined)');
         text('[data-home-nz-bin-m5]', '—');
-        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · M5+ cannot be split from M4+ in this snapshot.');
+        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · M5+ cannot be split from M4+ in this snapshot.' + deletedNote);
       }
     } else {
       text('[data-home-nz-quake-integrity]', 'Magnitude distribution unavailable or does not reconcile with the catalogue total.');
