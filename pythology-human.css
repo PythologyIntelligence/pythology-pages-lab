@@ -396,3 +396,22 @@
   .prometheus-loop-line { text-align: left; }
   .prometheus-loop-line i { padding: 0 5px; }
 }
+
+/* NZ daily-state evidence detail: restores the source magnitude buckets and
+   the largest event without touching the rest of the homepage design. */
+.home-nz-quake-breakdown{margin-top:24px;padding-top:23px;border-top:1px solid rgba(16,32,39,.15);color:#233b42}
+.home-nz-quake-heading{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:6px 12px}
+.home-nz-quake-heading h4{margin:0;font:500 23px/1.15 'Newsreader',Georgia,serif;color:#19383f}
+.home-nz-quake-heading span{font-size:10px;color:#6b7d82}
+.home-nz-quake-bins{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:15px 0 8px}
+.home-nz-quake-bins>div{min-width:0;padding:12px 10px;border:1px solid rgba(16,32,39,.12);border-radius:9px;background:rgba(255,255,255,.45)}
+.home-nz-quake-bins strong{display:block;font:600 28px/1 'Newsreader',Georgia,serif;color:#143942}
+.home-nz-quake-bins span{display:block;margin-top:5px;font-size:11px;color:#526a71;line-height:1.35}
+.home-nz-quake-note{margin:9px 0 0;font-size:10px;color:#697f84;line-height:1.5}
+.home-nz-largest-detail{margin-top:19px;padding:18px 19px;border-left:3px solid #36828c;background:rgba(53,139,151,.08);border-radius:0 11px 11px 0;overflow-wrap:anywhere}
+.home-nz-largest-label{display:block;color:#52666d;font-size:10px;font-weight:700;letter-spacing:.035em;text-transform:uppercase}
+.home-nz-largest-detail>strong{display:block;margin-top:9px;font:500 24px/1.12 'Newsreader',Georgia,serif;color:#15353d}
+.home-nz-largest-detail p{margin:9px 0 0;font-size:11px;line-height:1.65;color:#495f67}
+.home-nz-largest-detail a{display:inline-block;margin-top:12px;color:#14616d;font-size:11px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.home-nz-largest-detail a[hidden]{display:none}
+@media(max-width:480px){.home-nz-quake-bins{grid-template-columns:repeat(2,minmax(0,1fr))}.home-nz-largest-detail{padding:15px}.home-nz-largest-detail>strong{font-size:22px}}
