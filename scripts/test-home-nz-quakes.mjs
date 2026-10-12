@@ -54,7 +54,7 @@ const event = (magnitude, id) => ({
   longitude: 176.1, quality: 'best'
 });
 const events = [
-  event(-0.2, '2026p000001'),
+  {...event(-0.2, '2026p000001'), quality: 'deleted'},
   event(0.5, '2026p000002'),
   event(1.9, '2026p000003'),
   event(2.9, '2026p000004'),
@@ -86,6 +86,7 @@ assert.deepEqual(
   'Exactly one 24-hour catalogue and complete M4/M5 split'
 );
 assert.match(primary.get('quake-integrity'), /reconcile/);
+assert.match(primary.get('quake-integrity'), /1 source record flagged deleted/);
 assert.match(primary.get('largest-event'), /M5\.4.*Taupō/);
 assert.match(primary.get('largest-meta'), /14\.2 km deep.*NZ time.*38\.80°S/);
 assert.match(primary.get('largest-source'), /event 2026p000007/);
