@@ -143,12 +143,12 @@
         text('[data-home-nz-bin-m4]', upper.filter((mag) => mag < 5).length);
         text('[data-home-nz-bin-m5]', upper.filter((mag) => mag >= 5).length);
         text('[data-home-nz-bin-m4-label]', 'M4–4.9');
-        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · counts reconcile to the 24-hour total.' + deletedNote);
+        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · counts reconcile to the 24-hour total' + deletedNote);
       } else {
         text('[data-home-nz-bin-m4]', counts[5]);
         text('[data-home-nz-bin-m4-label]', 'M4+ (combined)');
         text('[data-home-nz-bin-m5]', '—');
-        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · M5+ cannot be split from M4+ in this snapshot.' + deletedNote);
+        text('[data-home-nz-quake-integrity]', 'GeoNet catalogue · M5+ cannot be split from M4+ in this snapshot' + deletedNote);
       }
     } else {
       text('[data-home-nz-quake-integrity]', 'Magnitude distribution unavailable or does not reconcile with the catalogue total.');
