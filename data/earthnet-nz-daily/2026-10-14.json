@@ -1,0 +1,510 @@
+{
+  "avalanche": {
+    "notable_regions": [
+      {
+        "confidence": "Moderate",
+        "name": "Aoraki/Mt Cook",
+        "rating": 3,
+        "rating_label": "Considerable",
+        "valid_period": "48hrs"
+      },
+      {
+        "confidence": "High",
+        "name": "Nelson Lakes",
+        "rating": 2,
+        "rating_label": "Moderate",
+        "valid_period": "24hrs"
+      },
+      {
+        "confidence": "Low",
+        "name": "Two Thumbs",
+        "rating": 2,
+        "rating_label": "Moderate",
+        "valid_period": "24hrs"
+      },
+      {
+        "confidence": "Moderate",
+        "name": "Ohau",
+        "rating": 2,
+        "rating_label": "Moderate",
+        "valid_period": "48hrs"
+      },
+      {
+        "confidence": "Moderate",
+        "name": "Aspiring",
+        "rating": 2,
+        "rating_label": "Moderate",
+        "valid_period": "48hrs"
+      },
+      {
+        "confidence": "Moderate",
+        "name": "Wanaka",
+        "rating": 2,
+        "rating_label": "Moderate",
+        "valid_period": "24hrs"
+      },
+      {
+        "confidence": "Moderate",
+        "name": "Queenstown",
+        "rating": 2,
+        "rating_label": "Moderate",
+        "valid_period": "24hrs"
+      },
+      {
+        "confidence": "Moderate",
+        "name": "Fiordland",
+        "rating": 2,
+        "rating_label": "Moderate",
+        "valid_period": "48hrs"
+      }
+    ]
+  },
+  "change_since_previous_state": {
+    "baseline_available": true,
+    "cleared": [],
+    "new": [
+      "Avalanche: Aoraki/Mt Cook - Considerable"
+    ]
+  },
+  "freshness": {
+    "missing": [],
+    "sources": {
+      "avalanche": {
+        "age_hours": 1.73,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:55:03+00:00",
+        "generated_at": "2026-10-13T16:51:04+00:00"
+      },
+      "blooms": {
+        "age_hours": 1.77,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:51:03+00:00",
+        "generated_at": "2026-10-13T16:49:04+00:00"
+      },
+      "quakes": {
+        "age_hours": 1.77,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:51:02+00:00",
+        "generated_at": "2026-10-13T16:49:04+00:00"
+      },
+      "rivers": {
+        "age_hours": 1.73,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:55:03+00:00",
+        "generated_at": "2026-10-13T16:51:04+00:00"
+      },
+      "status": {
+        "age_hours": 1.77,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:51:02+00:00",
+        "generated_at": "2026-10-13T16:49:04+00:00"
+      },
+      "volcanoes": {
+        "age_hours": 1.77,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:51:02+00:00",
+        "generated_at": "2026-10-13T16:49:04+00:00"
+      },
+      "weather_ar": {
+        "age_hours": 1.73,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:55:03+00:00",
+        "generated_at": "2026-10-13T16:51:04+00:00"
+      },
+      "weather_field": {
+        "age_hours": 1.73,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:55:03+00:00",
+        "generated_at": "2026-10-13T16:51:04+00:00"
+      },
+      "weather_gauges": {
+        "age_hours": 1.73,
+        "available": true,
+        "file_modified_at": "2026-10-13T16:55:03+00:00",
+        "generated_at": "2026-10-13T16:51:04+00:00"
+      }
+    },
+    "stale_over_6h": []
+  },
+  "generated_at": "2026-10-13T18:35:03+00:00",
+  "generated_at_nz": "2026-10-14T07:35:03+13:00",
+  "hydrology": {
+    "notable_rivers": [],
+    "status": "atlas_2_observed_context"
+  },
+  "local_date": "2026-10-14",
+  "marine": {
+    "bloom_signals": []
+  },
+  "ocean": {
+    "regions": [],
+    "status": "not_in_this_public_projection"
+  },
+  "overall_state": "Active watch items present",
+  "prometheus_interpretation": [
+    "Atlas recorded 15 New Zealand catalogue events in the last 24 hours; the largest was M3.7.",
+    "Highest current volcanic status in this state: whiteisland at VAL 2; official GeoNet advice remains authoritative.",
+    "No Atlas weather gauge crossed the current Prometheus briefing threshold in this state."
+  ],
+  "provenance": {
+    "public_projection": true,
+    "source": "Atlas 2.0 verified daily state"
+  },
+  "publication": {
+    "published_at": "2026-10-13T18:35:04+00:00",
+    "target": "data/earthnet_nz_daily.json"
+  },
+  "research_only": true,
+  "schema": "prometheus.aotearoa.daily-state.v0.2-atlas2",
+  "seismic": {
+    "activity_concentrations": [],
+    "automatic_or_unreviewed_count": 15,
+    "depth_bins": {
+      "10_to_29_km": 3,
+      "30_to_69_km": 4,
+      "70_km_plus": 5,
+      "lt_10_km": 3
+    },
+    "event_count": 15,
+    "events": [
+      {
+        "depth_km": 98.25713348388672,
+        "evaluation_mode": null,
+        "latitude": -39.663772583,
+        "locality": "25 km east of Taihape",
+        "longitude": 176.143234253,
+        "magnitude": 2.6059630219161884,
+        "public_id": "2026p770912",
+        "quality": "automatic",
+        "status": null,
+        "time": "2026-10-13T05:42:16.749Z"
+      },
+      {
+        "depth_km": 243.52915954589844,
+        "evaluation_mode": null,
+        "latitude": -29.96175766,
+        "locality": "825 km north-east of Whangarei",
+        "longitude": 179.949905396,
+        "magnitude": 3.733773302251825,
+        "public_id": "2026p770845",
+        "quality": "preliminary",
+        "status": null,
+        "time": "2026-10-13T05:04:33.546Z"
+      },
+      {
+        "depth_km": 52.92919158935547,
+        "evaluation_mode": null,
+        "latitude": -39.082401276,
+        "locality": "30 km east of Turangi",
+        "longitude": 176.139328003,
+        "magnitude": 2.8708887451608525,
+        "public_id": "2026p770801",
+        "quality": "preliminary",
+        "status": null,
+        "time": "2026-10-13T04:43:14.347Z"
+      },
+      {
+        "depth_km": 51.42458724975586,
+        "evaluation_mode": null,
+        "latitude": -39.082221985,
+        "locality": "30 km east of Turangi",
+        "longitude": 176.154312134,
+        "magnitude": 1.7157914989905918,
+        "public_id": "2026p770800",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-13T04:42:38.274Z"
+      },
+      {
+        "depth_km": 30.62331008911133,
+        "evaluation_mode": null,
+        "latitude": -39.950763702,
+        "locality": "5 km north-east of Waipukurau",
+        "longitude": 176.584655762,
+        "magnitude": 1.2590323245212218,
+        "public_id": "2026p770731",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-13T04:05:45.002Z"
+      },
+      {
+        "depth_km": 140.30770874023438,
+        "evaluation_mode": null,
+        "latitude": -38.57963562,
+        "locality": "20 km north-west of Taupo",
+        "longitude": 175.855606079,
+        "magnitude": 2.5911024786202095,
+        "public_id": "2026p770607",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-13T02:59:36.481Z"
+      },
+      {
+        "depth_km": 29.321630477905273,
+        "evaluation_mode": null,
+        "latitude": -37.874584198,
+        "locality": "20 km south-west of Te Kaha",
+        "longitude": 177.505172729,
+        "magnitude": 2.4949725718197224,
+        "public_id": "2026p770280",
+        "quality": "preliminary",
+        "status": null,
+        "time": "2026-10-13T00:05:10.296Z"
+      },
+      {
+        "depth_km": 31.181379318237305,
+        "evaluation_mode": null,
+        "latitude": -42.32888031,
+        "locality": "65 km east of Kaikoura",
+        "longitude": 174.502822876,
+        "magnitude": 2.539401905670006,
+        "public_id": "2026p770279",
+        "quality": "preliminary",
+        "status": null,
+        "time": "2026-10-13T00:04:54.544Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": null,
+        "latitude": -35.545902252,
+        "locality": "35 km north-east of Whangarei",
+        "longitude": 174.687515259,
+        "magnitude": 2.145949653024032,
+        "public_id": "2026p770225",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-12T23:36:12.282Z"
+      },
+      {
+        "depth_km": 193.23699951171875,
+        "evaluation_mode": null,
+        "latitude": -39.835899353,
+        "locality": "35 km south-west of Hawera",
+        "longitude": 173.962982178,
+        "magnitude": 2.37587279439113,
+        "public_id": "2026p770092",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-12T22:25:36.932Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": null,
+        "latitude": -39.516090393,
+        "locality": "25 km north-east of Taihape",
+        "longitude": 176.060577393,
+        "magnitude": 0.751645000361521,
+        "public_id": "2026p770088",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-12T22:23:21.216Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": null,
+        "latitude": -44.450515747,
+        "locality": "25 km north of Milford Sound",
+        "longitude": 167.922195435,
+        "magnitude": 2.195344223711901,
+        "public_id": "2026p770074",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-12T22:15:48.462Z"
+      },
+      {
+        "depth_km": 27.649505615234375,
+        "evaluation_mode": null,
+        "latitude": -40.336223602,
+        "locality": "15 km south of Dannevirke",
+        "longitude": 176.154449463,
+        "magnitude": 1.4314754009844468,
+        "public_id": "2026p770071",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-12T22:14:18.266Z"
+      },
+      {
+        "depth_km": 28.30722427368164,
+        "evaluation_mode": null,
+        "latitude": -37.887676239,
+        "locality": "20 km south-west of Te Kaha",
+        "longitude": 177.491622925,
+        "magnitude": 2.290790982947536,
+        "public_id": "2026p770066",
+        "quality": "preliminary",
+        "status": null,
+        "time": "2026-10-12T22:11:36.538Z"
+      },
+      {
+        "depth_km": 167.67222595214844,
+        "evaluation_mode": null,
+        "latitude": -40.964881897,
+        "locality": "20 km north-west of Motueka",
+        "longitude": 172.812667847,
+        "magnitude": 1.7435753056120955,
+        "public_id": "2026p769865",
+        "quality": "best",
+        "status": null,
+        "time": "2026-10-12T20:24:26.681Z"
+      }
+    ],
+    "largest_magnitude": 3.733773302251825,
+    "magnitude_bins": {
+      "0_0_to_0_9": 1,
+      "1_0_to_1_9": 4,
+      "2_0_to_2_9": 9,
+      "3_0_to_3_9": 1,
+      "4_0_plus": 0,
+      "lt_0": 0
+    },
+    "research_guard": "Catalogue activity and spatial concentrations are descriptive; they are not earthquake predictions.",
+    "reviewed_count": 0,
+    "source": "Atlas 2.0 published GeoNet gold layer",
+    "window": {
+      "end_utc": "2026-10-13T18:35:03+00:00",
+      "hours": 24,
+      "start_utc": "2026-10-12T18:35:03+00:00"
+    }
+  },
+  "volcanic": {
+    "changes": [],
+    "source": "Atlas 2.0 published GeoNet gold layer",
+    "volcanoes": [
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -38.784,
+        "longitude": 175.896,
+        "name": "taupo",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -39.133318,
+        "longitude": 175.641727,
+        "name": "tongariro",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -36.985,
+        "longitude": 174.77,
+        "name": "aucklandvolcanicfield",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -29.254,
+        "longitude": -177.914,
+        "name": "kermadecislands",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -37.286,
+        "longitude": 176.251,
+        "name": "mayorisland",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -39.156,
+        "longitude": 175.632,
+        "name": "ngauruhoe",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -35.395,
+        "longitude": 173.63,
+        "name": "northland",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -38.119,
+        "longitude": 176.501,
+        "name": "okataina",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -38.093,
+        "longitude": 176.281,
+        "name": "rotorua",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "Moderate to heightened volcanic unrest.",
+        "alert_level": 2,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic unrest hazards, potential for eruption hazards.",
+        "latitude": -37.521,
+        "longitude": 177.183,
+        "name": "whiteisland",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "Minor volcanic unrest.",
+        "alert_level": 1,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic unrest hazards.",
+        "latitude": -39.281,
+        "longitude": 175.563,
+        "name": "ruapehu",
+        "source": "Atlas 2.0 / GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": null,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -39.298,
+        "longitude": 174.061,
+        "name": "taranakiegmont",
+        "source": "Atlas 2.0 / GeoNet"
+      }
+    ]
+  },
+  "watch_items": [
+    "Volcanic: whiteisland is at VAL 2",
+    "Volcanic: ruapehu is at VAL 1",
+    "Avalanche: Aoraki/Mt Cook - Considerable"
+  ],
+  "weather": {
+    "atmospheric_rivers": [],
+    "errors": [],
+    "notable_gauges": [],
+    "observation_guard": "Atlas 2.0 weather items in this projection are observed gauge context; no forecast rainfall is inferred from them.",
+    "points": [],
+    "rainfall_watch_areas": [],
+    "strongest_wind_next_48h": [],
+    "wettest_next_48h": []
+  }
+}
