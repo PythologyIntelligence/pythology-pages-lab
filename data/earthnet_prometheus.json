@@ -1,16 +1,45 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.173768,
-    "calibrated_forecast_count": 87,
+    "brier_score": 0.173813,
+    "calibrated_forecast_count": 88,
     "confirmed_count": 34,
-    "hit_rate": 0.301,
-    "not_observed_count": 79,
-    "resolved_count": 113
+    "hit_rate": 0.298,
+    "not_observed_count": 80,
+    "resolved_count": 114
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Mechanism-level scoring measures prospective predictive consistency; a hit does not prove causation and a miss does not automatically falsify the mechanism. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-10-13T12:14:10+00:00",
+  "generated_at": "2026-10-13T20:14:05+00:00",
   "history": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-10-12T20:13:31+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.423,
+      "forecast_id": "9d5fda6d477abc6927be77d3",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.178929,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Texas (Gulf Coast)",
+      "resolved_at": "2026-10-13T20:14:05+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "010da00805e5119e",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Texas (Gulf Coast)",
+      "valid_until": "2026-10-13T20:13:31+00:00"
+    },
     {
       "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
       "calibrated": true,
@@ -3388,32 +3417,6 @@
     "public_projection_is_not_the_internal_research_ledger": true
   },
   "mode": "live_validation",
-  "open": [
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-10-12T20:13:31+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.423,
-      "forecast_id": "9d5fda6d477abc6927be77d3",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Texas (Gulf Coast)",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "010da00805e5119e",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Texas (Gulf Coast)",
-      "valid_until": "2026-10-13T20:13:31+00:00"
-    }
-  ],
+  "open": [],
   "schema": "earthnet.prometheus-public.v0.1"
 }
