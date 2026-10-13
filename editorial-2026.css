@@ -7,6 +7,10 @@
 .lab-mission-hero .btn-row{margin-top:32px}
 .lab-section-lead{margin-bottom:36px;max-width:1080px}
 .lab-section-lead .h2{margin:0}
+/* Chatham Islands proof-of-impact label: original size on phones, 2x on tablets, 4x on desktop. */
+#chathams .human-kicker{font-size:13px;line-height:1.25}
+@media (min-width:768px) and (max-width:1199px){#chathams .human-kicker{font-size:26px}}
+@media (min-width:1200px){#chathams .human-kicker{font-size:52px}}
 .lab-copy{font-size:clamp(15px,1.3vw,17px);line-height:1.9;color:#a7b9be;max-width:940px}
 .lab-copy strong{color:#e5f2f4}
 .lab-split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(20px,5vw,78px);align-items:start}
