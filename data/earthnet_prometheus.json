@@ -1,16 +1,45 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.173198,
-    "calibrated_forecast_count": 89,
+    "brier_score": 0.172767,
+    "calibrated_forecast_count": 90,
     "confirmed_count": 35,
-    "hit_rate": 0.304,
-    "not_observed_count": 80,
-    "resolved_count": 115
+    "hit_rate": 0.302,
+    "not_observed_count": 81,
+    "resolved_count": 116
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Mechanism-level scoring measures prospective predictive consistency; a hit does not prove causation and a miss does not automatically falsify the mechanism. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-10-14T20:14:09+00:00",
+  "generated_at": "2026-10-15T04:14:04+00:00",
   "history": [
+    {
+      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-10-14T04:14:00+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.351,
+      "forecast_id": "c7fb07a2d01654a9d7359a2b",
+      "forecast_type": "convective_to_severe_weather",
+      "outcome": {
+        "brier_component": 0.123201,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "severe_weather_escalation",
+      "region": "Oklahoma (Tornado Alley)",
+      "resolved_at": "2026-10-15T04:14:04+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
+      "status": "resolved",
+      "target_event_id": "8b75dddb45daea10",
+      "target_event_type": "severe_convective_risk",
+      "target_title": "Severe weather risk — Oklahoma (Tornado Alley)",
+      "valid_until": "2026-10-15T04:14:00+00:00"
+    },
     {
       "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
       "calibrated": true,
@@ -3548,31 +3577,6 @@
       "target_event_type": "severe_convective_risk",
       "target_title": "Severe weather risk — Sahel Region",
       "valid_until": "2026-10-15T20:14:09+00:00"
-    },
-    {
-      "alternative": "The convective environment does not develop into a qualifying severe-weather report in the forecast window.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-10-14T04:14:00+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.351,
-      "forecast_id": "c7fb07a2d01654a9d7359a2b",
-      "forecast_type": "convective_to_severe_weather",
-      "outcome": null,
-      "predicted_outcome": "severe_weather_escalation",
-      "region": "Oklahoma (Tornado Alley)",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "The current convective environment may be followed by an active severe-storm report or official severe-weather warning.",
-      "status": "open",
-      "target_event_id": "8b75dddb45daea10",
-      "target_event_type": "severe_convective_risk",
-      "target_title": "Severe weather risk — Oklahoma (Tornado Alley)",
-      "valid_until": "2026-10-15T04:14:00+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
