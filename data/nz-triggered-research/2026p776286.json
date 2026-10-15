@@ -1,0 +1,71 @@
+{
+  "candidate_signal_count": 4,
+  "depth_km": 268.6524658203125,
+  "event_id": "2026p776286",
+  "event_time": "2026-10-15T05:25:34.163000+00:00",
+  "findings": [
+    {
+      "control_count": 6,
+      "control_median": 186.0,
+      "metric": "event_count",
+      "percentile": 100.0,
+      "plain_language": "Earthquake count was higher than all 6 matched non-event windows.",
+      "target_value": 257.0,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 13.285714285714286,
+      "metric": "events_per_day",
+      "percentile": 100.0,
+      "plain_language": "Earthquake rate was higher than all 6 matched non-event windows.",
+      "target_value": 18.357142857142858,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 11.316574587540629,
+      "metric": "log10_energy_proxy",
+      "percentile": 100.0,
+      "plain_language": "Combined seismic-energy proxy was higher than all 6 matched non-event windows.",
+      "target_value": 12.666208794908481,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 4.019614708584168,
+      "metric": "maximum_magnitude",
+      "percentile": 100.0,
+      "plain_language": "Largest precursor-window magnitude was higher than all 6 matched non-event windows.",
+      "target_value": 5.227122786583538,
+      "unusual": true
+    }
+  ],
+  "historical_pattern_matches": [],
+  "historical_pattern_registry": {
+    "available": false,
+    "eligible_pattern_count": 0,
+    "version": null
+  },
+  "kind": "earthquake",
+  "locality": "Taumarunui",
+  "magnitude": 5.658060024388448,
+  "methodology": {
+    "description": "Prometheus examined the 14 days preceding this qualifying event within 150 km and compared the measurements with matched non-event windows.",
+    "matched_non_event_windows": 6,
+    "radius_km": 150,
+    "window_days": 14
+  },
+  "observations": {
+    "b_value": 0.9039251038345859,
+    "b_value_guard": null,
+    "catalogue_event_count": 257,
+    "events_per_day": 18.357142857142858,
+    "maximum_precursor_magnitude": 5.227122786583538
+  },
+  "official_url": "https://www.geonet.org.nz/earthquake/2026p776286",
+  "research_only": true,
+  "safety": "Retrospective research only. This is not an earthquake prediction or public warning. GeoNet and NEMA remain authoritative for public safety advice.",
+  "schema": "pythology.nz-triggered-research-case.v0.1",
+  "title": "M5.7 retrospective — Taumarunui"
+}
