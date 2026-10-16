@@ -1,19 +1,19 @@
 {
-  "causal_assessment_count": 26,
+  "causal_assessment_count": 25,
   "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-  "cycle_completed_at": "2026-10-16T12:13:06+00:00",
+  "cycle_completed_at": "2026-10-16T20:12:49+00:00",
   "cycle_scoped_source": true,
-  "cycle_started_at": "2026-10-16T12:12:04+00:00",
+  "cycle_started_at": "2026-10-16T20:12:03+00:00",
   "degraded": false,
   "engine_count": 10,
   "engine_counts": {
-    "atmosphere": 6,
+    "atmosphere": 7,
     "cryosphere": 6,
-    "geopolitical_conflict": 18,
+    "geopolitical_conflict": 15,
     "infrastructure_risk": 1,
     "neo": 15,
     "ocean": 10,
-    "seismic": 12,
+    "seismic": 14,
     "space_weather": 1,
     "volcanic": 12,
     "wildfire_flood_landslide": 35
@@ -33,23 +33,23 @@
   ],
   "event_count": 129,
   "event_intelligence": {
-    "assessment_count": 73,
+    "assessment_count": 72,
     "autonomous": true,
     "degraded": false,
     "deterministic": true,
     "errors": [],
     "event_type_counts": {
       "active_eruption": 10,
-      "active_severe_storm": 6,
-      "active_wildfire": 23,
+      "active_severe_storm": 7,
+      "active_wildfire": 22,
       "armed_conflict": 2,
-      "ceasefire_update": 2,
-      "earthquake": 12,
+      "ceasefire_update": 3,
+      "earthquake": 14,
       "gdacs_cyclone": 2,
-      "humanitarian_crisis": 14,
+      "humanitarian_crisis": 10,
       "volcanic_alert": 2
     },
-    "generated": "2026-10-16T12:13:46+00:00",
+    "generated": "2026-10-16T20:13:59+00:00",
     "model_generated": false,
     "schema": "earthnet.event-intelligence-status.v0.1",
     "supported_event_types": [
@@ -71,22 +71,23 @@
       "volcanic_alert"
     ],
     "trend_counts": {
+      "escalating": 1,
       "improving": 2,
-      "new": 12,
-      "stable": 49,
-      "updated": 10
+      "new": 15,
+      "stable": 50,
+      "updated": 4
     }
   },
   "expired_quakes_hidden": 0,
   "failed_engines": {},
-  "generated": "2026-10-16T12:13:13+00:00",
+  "generated": "2026-10-16T20:13:02+00:00",
   "live_data_plane": {
     "branch": "main",
-    "prepared_at": "2026-10-16T12:13:46+00:00",
+    "prepared_at": "2026-10-16T20:13:59+00:00",
     "provider": "github-repository",
     "publication_mode": "canonical_static_snapshot",
     "published": true,
-    "published_at": "2026-10-16T12:13:49+00:00",
+    "published_at": "2026-10-16T20:14:06+00:00",
     "repository": "PythologyIntelligence/pythology-pages-lab",
     "runner_local_media_assets_stripped": 4,
     "runner_local_satellite_assets_stripped": 0,
@@ -94,10 +95,10 @@
   },
   "media": {
     "autonomous": true,
-    "collected_record_count": 6,
-    "generated": "2026-10-16T12:13:46+00:00",
+    "collected_record_count": 7,
+    "generated": "2026-10-16T20:13:59+00:00",
     "local_image_count": 4,
-    "neo_lookup_count": 2,
+    "neo_lookup_count": 3,
     "provider_errors": [],
     "published_image_count": 0,
     "schema": "earthnet.media-status.v0.1",
@@ -113,9 +114,9 @@
       "event_type_counts": {},
       "feeds": {
         "atmospheric_rivers": {
-          "error": null,
+          "error": "TimeoutError: The read operation timed out",
           "observations": 0,
-          "ok": true
+          "ok": false
         },
         "blooms": {
           "error": "TimeoutError: The read operation timed out",
@@ -123,7 +124,7 @@
           "ok": false
         },
         "poseidon": {
-          "error": "HTTPError: HTTP Error 404: Not Found",
+          "error": "TimeoutError: The read operation timed out",
           "observations": 0,
           "ok": false
         },
@@ -138,9 +139,9 @@
           "ok": false
         },
         "weather_gauges": {
-          "error": null,
+          "error": "TimeoutError: The read operation timed out",
           "observations": 0,
-          "ok": true
+          "ok": false
         }
       },
       "observation_count": 0
@@ -257,14 +258,14 @@
         "observations": 27,
         "ok": true
       },
-      "generated": "2026-10-15T17:05:36.207Z",
+      "generated": "2026-10-16T17:05:47.298Z",
       "material_count": 7,
       "observation_count": 27,
       "period": "2026-09"
     },
     "evidence": {
-      "forecast_receipts_created": 0,
-      "ledger_records": 249,
+      "forecast_receipts_created": 1,
+      "ledger_records": 250,
       "outcome_receipts_created": 0
     },
     "evidence_git": {
@@ -272,21 +273,21 @@
       "error": null,
       "state": "not_github_actions"
     },
-    "generated": "2026-10-16T12:13:37+00:00",
-    "ledger_records_appended": 0,
+    "generated": "2026-10-16T20:13:49+00:00",
+    "ledger_records_appended": 1,
     "mode": "live_validation",
     "model_version": "prometheus-core.v0.2",
-    "new_forecast_count": 0,
+    "new_forecast_count": 1,
     "observation_sources": {
       "atlas": 0,
       "earthnet": 129,
       "ecowatch": 27
     },
-    "open_forecast_count": 2,
+    "open_forecast_count": 3,
     "resolved_forecast_count": 0,
-    "slack": "quiet",
+    "slack": "sent",
     "slack_error": null,
-    "slack_messages_sent": 0
+    "slack_messages_sent": 1
   },
   "quake_live_window_hours": 24,
   "reliefweb": {
@@ -294,15 +295,15 @@
     "cache_hit": false,
     "degraded": false,
     "error": null,
-    "generated": "2026-10-16T12:13:42+00:00",
-    "geography_mismatch_removed": 13,
+    "generated": "2026-10-16T20:13:56+00:00",
+    "geography_mismatch_removed": 14,
     "image_event_count": 0,
     "lookback_hours": 96,
-    "matched_event_count": 27,
-    "matched_report_count": 55,
-    "primary_geopolitical_context_count": 18,
+    "matched_event_count": 24,
+    "matched_report_count": 42,
+    "primary_geopolitical_context_count": 15,
     "provider": "ReliefWeb / UN OCHA",
-    "reports_considered": 167,
+    "reports_considered": 163,
     "schema": "earthnet.reliefweb-status.v0.1"
   },
   "satellite": {
