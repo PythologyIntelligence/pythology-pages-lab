@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EarthNet — global environmental intelligence</title>
+<meta name="description" content="EarthNet is Pythology Intelligence's global environmental intelligence surface, combining hazards, geophysics, atmosphere, ocean, cryosphere and environmental change on an interactive globe.">
+<meta name="theme-color" content="#03060f">
+<link rel="preconnect" href="https://gibs.earthdata.nasa.gov" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="./css/app.css?v=unified-20261017">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='13' fill='%230a1f3c'/><circle cx='16' cy='16' r='13' fill='none' stroke='%2338bdf8' stroke-width='2'/><circle cx='22' cy='11' r='3.5' fill='%23ff3355'/></svg>">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.169.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<canvas id="globe"></canvas>
+<div class="vignette" aria-hidden="true"></div>
+
+<header id="topbar">
+  <div class="brand">
+    <div class="mark" aria-hidden="true"><span></span></div>
+    <div class="wordmark">
+      <h1>EARTHNET</h1>
+      <p>EnviroArc · Global environmental intelligence</p>
+    </div>
+  </div>
+
+  <div id="status" class="status"></div>
+
+  <nav class="tools">
+    <!-- The Sun is clickable in the sky, but only when it is on this side of the
+         globe. This chip is the reliable way in, and doubles as a live readout. -->
+    <button id="btn-sun" class="tool sun-chip" hidden title="Solar activity">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></g></svg>
+      <span class="sun-chip-val">Sun</span>
+    </button>
+    <!-- The geographical view keeps NASA bathymetry and continents visible
+         on the night hemisphere; astronomical lighting remains one click away. -->
+    <button id="btn-geography" class="tool on" type="button" aria-pressed="true"
+      title="Visible Earth: illuminated map of oceans and continents (not actual daylight). Click for astronomical day/night.">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+        stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="9"/><path d="M3.5 12h17M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/>
+      </svg>
+      <span>Visible Earth</span>
+    </button>
+    <button id="btn-truecolor" class="tool" title="Swap Blue Marble for yesterday's VIIRS true-colour mosaic">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16.5 4.5 21 3l-1.5 4.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      <span>Today's imagery</span>
+    </button>
+    <button id="btn-nz" class="tool" title="Filter to New Zealand and fly there">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.1 7-11a7 7 0 1 0-14 0c0 4.9 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" fill="currentColor"/></svg>
+      <span>NZ focus</span>
+    </button>
+    <button id="btn-home" class="tool icon-only" title="Reset the view">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.6 12h16.8M12 3.6c2.4 2.6 2.4 14.2 0 16.8-2.4-2.6-2.4-14.2 0-16.8Z" fill="none" stroke="currentColor" stroke-width="1.4"/></svg>
+    </button>
+    <button id="btn-spin" class="tool icon-only on" title="Pause rotation" aria-pressed="true">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.6-5.9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M20.5 3.4V8h-4.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<aside id="sidebar">
+  <!-- Mobile only: the sheet's visible lip when collapsed. It doubles as the
+       live-status readout, which has nowhere to go in a 390px-wide topbar. -->
+  <button id="sheet-handle" class="sheet-handle" aria-expanded="false" aria-controls="sidebar">
+    <i aria-hidden="true"></i>
+    <span class="sheet-label">Map legend &amp; events</span>
+    <div id="sheet-status" class="status"></div>
+  </button>
+
+  <div class="filters">
+    <label class="search">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.4" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="m16 16 4.4 4.4" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+      <input id="search" type="search" placeholder="Search events, places, sources" autocomplete="off">
+    </label>
+
+    <div class="slider">
+      <div class="slider-head"><span>Minimum severity</span><b id="sev-val">0</b></div>
+      <input id="sev" type="range" min="0" max="90" value="0" step="5">
+    </div>
+
+    <div class="switches">
+      <label><input id="nz-only" type="checkbox"> <span>New Zealand only</span></label>
+      <label><input id="active-only" type="checkbox" checked> <span>Active only</span></label>
+    </div>
+
+    <section class="enviroarc-controls" aria-label="Earth-system layers">
+      <div class="rail-head enviroarc-head">
+        <h3>Earth-system layers</h3>
+        <button id="env-mechanisms" type="button">linkages</button>
+      </div>
+      <label class="row"><input id="env-currents" type="checkbox" checked>
+        <span>Ocean currents</span></label>
+      <label class="row"><input id="env-salinity" type="checkbox">
+        <span>Salinity anomaly</span></label>
+      <label class="row"><input id="env-sst" type="checkbox">
+        <span>SST anomaly</span></label>
+      <p id="enviroarc-state" class="enviroarc-state">Loading linked ocean / cryosphere context…</p>
+    </section>
+
+    <div class="rail-head" id="rail-head">
+      <h3>Map legend</h3>
+      <button id="cats-all" hidden>show all</button>
+      <button id="cats-none">hide all</button>
+    </div>
+    <div id="rail" class="rail"></div>
+  </div>
+
+  <div class="list-head">
+    <h3>Ranked by severity</h3>
+  </div>
+  <ul id="list" class="list"></ul>
+</aside>
+
+<div id="panel" class="panel"></div>
+
+<div id="tooltip" class="tooltip"></div>
+
+<footer id="footer">
+  <div id="legend" class="legend"></div>
+  <div id="imagery-note" class="imagery-note">Blue Marble · shaded relief and bathymetry</div>
+  <div class="credits">Data: USGS · GeoNet · NASA · NOAA · NSIDC · GDACS · MetService · Open-Meteo</div>
+</footer>
+
+<div id="loader" class="loader">
+  <div class="loader-orb"><span></span><span></span><span></span></div>
+  <h2>EARTHNET</h2>
+  <p id="loader-note">Starting up</p>
+</div>
+
+<script type="module" src="./app/main.js?v=unified-20261017"></script>
+
+<!-- Startup guard. This page is never cached but its scripts can be, so a
+     half-updated browser cache used to leave the loader spinning with nothing
+     on screen and nothing in the note. Anything that stops the app reaching
+     "ready" now says so and offers the one action that fixes it. -->
+<script>
+(function () {
+  var note = document.getElementById('loader-note');
+  var loader = document.getElementById('loader');
+  var shown = false;
+  function fail(detail) {
+    if (shown || document.body.classList.contains('ready')) return;
+    shown = true;
+    loader.classList.add('error');
+    note.innerHTML =
+      'Could not start up.<br><small>' + String(detail || '').slice(0, 160) +
+      '</small><br><button id="loader-retry" type="button">Reload</button>';
+    document.getElementById('loader-retry').addEventListener('click', function () {
+      // Cache-bust the reload: the usual cause is a stale script still sitting
+      // in this browser, which a plain reload would happily serve again.
+      location.replace(location.pathname + '?r=' + Date.now());
+    });
+  }
+  window.addEventListener('error', function (e) {
+    // Capture phase also sees resource errors. A satellite tile that fails to
+    // load is not a failed startup — the globe carries on without it — so only
+    // a script that could not load, or a real uncaught exception, counts.
+    var t = e.target;
+    if (t && t !== window && t.tagName !== 'SCRIPT') return;
+    fail(e.message || (t && t.src ? 'Failed to load ' + t.src : ''));
+  }, true);
+  window.addEventListener('unhandledrejection', function (e) {
+    fail((e.reason && e.reason.message) || e.reason);
+  });
+  // Nothing threw, but nothing finished either — a hung fetch or a stalled
+  // texture. Twenty seconds is well past a slow-but-working start.
+  setTimeout(function () { fail('Startup timed out.'); }, 20000);
+})();
+</script>
+</body>
+</html>

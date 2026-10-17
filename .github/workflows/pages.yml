@@ -10,6 +10,9 @@ on:
     workflows: ["Pythology system health"]
     types: [completed]
   workflow_dispatch:
+  # Refresh the public EarthNet/ARCUS/Nemesis snapshots hourly on Pages.
+  schedule:
+    - cron: '17 * * * *'
 
 permissions:
   actions: read
@@ -385,6 +388,23 @@ jobs:
             echo 'EarthNet control overlay validation failed.' >&2
             exit 1
           }
+
+      - name: Stage unified EnviroArc EarthNet 2.0 on GitHub Pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Public and sanitized read-only JSON only. No private API keys.
+          node --check scripts/build-enviroarc-pages.mjs
+          node scripts/build-enviroarc-pages.mjs
+          test -s _site/EarthNet.html
+          test -s _site/earthnet2/index.html
+          test -s _site/earthnet2/media/feed/feed.json
+          test -s _site/earthnet2/data/enviroarc/arcus.json
+          test -s _site/earthnet2/data/enviroarc/nemesis.json
+          # Verify the original EarthNet and homepage coexist with the new UI.
+          test -s _site/earthnet-global-legacy/index.html
+          test -s _site/index.html
+          echo "Unified EnviroArc Pages bundle validated."
 
       - name: Stage current safe System Control snapshots
         shell: bash
