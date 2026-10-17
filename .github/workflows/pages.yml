@@ -126,7 +126,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for required in             index.html             enviroarc.html             mdra.html             prometheus.html             causal-intelligence.html             research.html             core-technology.html             where-it-fits.html             future.html             current-research.html             about.html             site.js             editorial-2026.css             prometheus-stats.js             png_images/about_me.png; do
+          for required in             index.html             chathams.html             enviroarc.html             mdra.html             prometheus.html             causal-intelligence.html             research.html             core-technology.html             where-it-fits.html             future.html             current-research.html             about.html             site.js             editorial-2026.css             prometheus-stats.js             png_images/about_me.png; do
             [[ -s "_site/$required" ]] || {
               echo "Refusing to deploy incomplete Pages artifact: $required missing" >&2
               exit 1
