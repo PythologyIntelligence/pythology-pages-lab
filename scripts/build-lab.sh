@@ -272,6 +272,9 @@ fi
 # intact while allowing the public presentation to move forward deliberately.
 PUBLIC_OVERRIDES=(
   index.html
+  chathams.html
+  pythology-showcase.css
+  prometheus-research-cards.js
   site.css
   site.js
   editorial-2026.css
@@ -433,6 +436,16 @@ if [[ ! -s "$TITLE_BANNER" ]]; then
 fi
 mkdir -p "$OUT/png_images"
 cp "$TITLE_BANNER" "$OUT/png_images/pythology_environmental_ai_banner.webp"
+# Stage user-provided Chathams screenshots as static public assets.
+# The upload folder is literally named png_imageschathams in the repository.
+# Normalise it to png_images/chathams in the published site; no binary moves needed.
+CHATHAMS_SOURCE="$ROOT/png_imageschathams"
+for name in ecowatch-dashboard.png ecowatch-charts1.png ecowatch-charts2.png ecowatch-charts3.png helios-dashboard.png helios-forecast.png; do
+  [[ -s "$CHATHAMS_SOURCE/$name" ]] || { echo "Missing Chathams screenshot: $name" >&2; exit 1; }
+done
+mkdir -p "$OUT/png_images/chathams"
+cp "$CHATHAMS_SOURCE/"*.png "$OUT/png_images/chathams/"
+
 
 # Stage the EarthNet global artwork from this repository. Keeping the binary
 # beside the Pages build avoids a private cross-repository runtime dependency.
@@ -459,7 +472,7 @@ cp "$FOUNDER_PORTRAIT" "$OUT/png_images/about_me.png"
 
 # These public evidence projections are deliberately staged with the humanised
 # pages because wget does not discover browser-fetched JSON.
-for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_daily.json nz_triggered_research.json prometheus_research_state.json; do
+for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_daily.json nz_triggered_research.json prometheus_research_state.json prometheus_weather_research.json; do
   if [[ ! -f "$ROOT/data/$file" ]]; then
     echo "Required public evidence projection missing: data/$file" >&2
     exit 1
@@ -567,6 +580,16 @@ fi
   echo 'Core Technology, Current Research or legacy redirect validation failed.' >&2
   exit 1
 }
+# Chathams and atmospheric research are first-class public surfaces.
+[[ -s "$OUT/chathams.html" && -s "$OUT/pythology-showcase.css" && -s "$OUT/prometheus-research-cards.js" ]] || {
+  echo 'Chathams showcase/research client missing from site' >&2; exit 1;
+}
+[[ -s "$OUT/png_images/chathams/ecowatch-dashboard.png" && -s "$OUT/png_images/chathams/helios-dashboard.png" && -s "$OUT/data/prometheus_weather_research.json" ]] || {
+  echo 'Chathams imagery or weather public snapshot missing from site' >&2; exit 1;
+}
+grep -Fq "['chathams.html', 'Chatham Islands']" "$OUT/site.js" || { echo 'Chathams primary navigation missing' >&2; exit 1; }
+grep -Fq 'data-py-lab="weather"' "$OUT/enviroarc.html" || { echo 'Weather research card missing' >&2; exit 1; }
+grep -Fq 'data-home-forecast-caveat' "$OUT/index.html" || { echo 'Forecast card fallback hook missing' >&2; exit 1; }
 [[ -s "$OUT/png_images/about_me.png" ]] || {
   echo 'About founder portrait did not stage.' >&2
   exit 1
