@@ -113,6 +113,27 @@ async function stageArcus() {
   }
 }
 async function stageNemesis() {
+  // Source from the VPS's public-safe export if it is fresh. GitHub Actions
+  // cannot call 127.0.0.1:8100 on the Windows VPS. The older CloudFront API
+  // is a secondary fallback, not the sole source of truth for this layer.
+  const localSnapshot=path.join(home,'earthnet2/data/enviroarc/nemesis.json');
+  let local=null;
+  try {
+    const data=JSON.parse(await readFile(localSnapshot,'utf8'));
+    if (data?.source==='Nemesis' && Array.isArray(data.events) &&
+        data.events.length<=2500 && !data.unavailable &&
+        data.events.every(e=>e.id && e.title &&
+          asFinite(e.lat,-90,90)!==null && asFinite(e.lon,-180,180)!==null &&
+          asFinite(e.gp,2,4)!==null && /^https?:/.test(String(e.t||''))===false)) {
+      local=data;
+    }
+  } catch { /* no safe export has been committed yet */ }
+  const localAge=local?.generatedAt ? Date.now()-Date.parse(local.generatedAt) : Infinity;
+  if(local && Number.isFinite(localAge) && localAge>=0 && localAge<90*60_000) {
+    await saveJson('data/enviroarc/nemesis.json',local);
+    report.nemesis={events:local.events.length,source:'vps-sanitized',ageMinutes:Math.round(localAge/60000)};
+    return;
+  }
   try {
     const u=new URL(nemesis);
     u.searchParams.set('action','events');
@@ -149,11 +170,24 @@ async function stageNemesis() {
     });
     report.nemesis={events:events.length};
   } catch(e) {
-    await saveJson('data/enviroarc/nemesis.json',{
-      source:'Nemesis',unavailable:true,degraded:true,
-      generatedAt:null,events:[]
-    });
-    report.nemesis={unavailable:true};
+    // The last verified projection is more truthful than an invented zero
+    // incident count, but must explicitly show STALE. Old data may still be
+    // useful historically; avoid retaining snapshots older than seven days.
+    if(local && Number.isFinite(localAge) && localAge>=0 &&
+       localAge<7*86400000) {
+      await saveJson('data/enviroarc/nemesis.json',{
+        ...local,degraded:true,
+        staleReason:'The VPS publisher has not refreshed the Nemesis snapshot',
+        staleAt:new Date().toISOString()
+      });
+      report.nemesis={events:local.events.length,stale:true,source:'vps-last-known'};
+    } else {
+      await saveJson('data/enviroarc/nemesis.json',{
+        source:'Nemesis',unavailable:true,degraded:true,
+        generatedAt:null,events:[]
+      });
+      report.nemesis={unavailable:true,reason:'Nemesis public API unavailable and no recent VPS export'};
+    }
     console.warn('[EnviroArc] Nemesis public API unavailable:',e.message);
   }
 }
