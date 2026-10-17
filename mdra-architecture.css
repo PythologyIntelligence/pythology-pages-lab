@@ -167,3 +167,7 @@
 @media(min-width:981px){
   .mdra-operational-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
 }
+
+/* Wide EarthNet tier above Poseidon and Atlas. */
+.mdra-arch-v2 .mdra-arch-platforms .system-earthnet{grid-column:1 / -1;min-height:108px;background:linear-gradient(125deg,rgba(7,44,57,.96),rgba(5,27,42,.96));border-color:rgba(94,207,225,.53)}
+@media(max-width:640px){.mdra-arch-v2 .mdra-arch-platforms .system-earthnet{min-height:92px}}
