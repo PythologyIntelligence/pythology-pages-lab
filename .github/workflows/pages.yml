@@ -395,6 +395,7 @@ jobs:
           set -euo pipefail
           # Public and sanitized read-only JSON only. No private API keys.
           node --check scripts/build-enviroarc-pages.mjs
+          node --check scripts/export-nemesis-vps.mjs
           node scripts/build-enviroarc-pages.mjs
           test -s _site/EarthNet.html
           test -s _site/earthnet2/index.html
