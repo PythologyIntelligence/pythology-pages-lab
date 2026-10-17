@@ -8,6 +8,7 @@
     ['index.html', 'Home'],
     ['enviroarc.html', 'EnviroArc'],
     ['prometheus.html', 'Prometheus'],
+    ['chathams.html', 'Chatham Islands'],
     ['core-technology.html', 'Core Technology'],
     ['where-it-fits.html', 'Where It Fits'],
     ['current-research.html', 'Current Research'],
