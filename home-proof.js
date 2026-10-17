@@ -46,9 +46,19 @@
   }
 
   function featuredForecast(data) {
-    if (Array.isArray(data.featured) && data.featured.length) return { item: data.featured[0], native: true };
-    if (Array.isArray(data?.publication?.featured) && data.publication.featured.length) return { item: data.publication.featured[0], native: true };
-    return { item: fallbackFeatured(data), native: false };
+    if (Array.isArray(data.featured) && data.featured.length) return { item: data.featured[0], native: true, kind: 'featured' };
+    if (Array.isArray(data?.publication?.featured) && data.publication.featured.length) return { item: data.publication.featured[0], native: true, kind: 'featured' };
+    const eligible = fallbackFeatured(data);
+    if (eligible) return { item: eligible, native: false, kind: 'eligible' };
+    const now = Date.now();
+    const open = (Array.isArray(data.open) ? data.open : [])
+      .filter(item => item && Number.isFinite(Date.parse(item.valid_until || '')) &&
+        Date.parse(item.valid_until) > now && Number.isFinite(Number(item.forecast_confidence)))
+      .sort((a, b) => Date.parse(b.created_at || 0) - Date.parse(a.created_at || 0));
+    if (open.length) return { item: open[0], native: false, kind: 'wider-ledger' };
+    const resolved = latestResolved(data);
+    if (resolved) return { item: resolved, native: false, kind: 'resolved' };
+    return { item: null, native: false, kind: 'empty' };
   }
 
   function latestResolved(data) {
@@ -74,19 +84,31 @@
 
     const featured = featuredForecast(data);
     if (!featured.item) {
-      textAny(['[data-home-forecast-title]', '#proof-forecast-label'], 'No public forecast currently passes the featured gate');
-      textAny(['[data-home-forecast-statement]', '#proof-forecast-text'], 'The wider Prometheus ledger remains available.');
+      textAny(['[data-home-forecast-title]', '#proof-forecast-label'], 'No current forecast has been published');
+      textAny(['[data-home-forecast-statement]', '#proof-forecast-text'], 'Forecast and precursor research run separately; no new forecast should be inferred.');
       textAny(['#proof-forecast-confidence', '#proof-forecast-confindence'], '—');
-      text('#proof-forecast-horizon', '—');
+      text('[data-home-forecast-confidence]', '—');
+      text('[data-home-forecast-mode]', 'NO PUBLIC COMMITMENT');
+      text('[data-home-forecast-caveat]', 'A quiet forecast ledger does not mean research activity has stopped or that conditions are safe.');
+      text('[data-home-forecast-valid]', '—');
     } else {
       const forecast = featured.item;
-      textAny(['[data-home-forecast-title]', '#proof-forecast-label'], forecast.target_title || forecast.region || 'Validation forecast');
-      textAny(['[data-home-forecast-statement]', '#proof-forecast-text'], forecast.statement);
+      const resolved = featured.kind === 'resolved';
+      const status = resolved ? String(forecast?.outcome?.state || 'resolved').replaceAll('_', ' ').toUpperCase() : '';
+      textAny(['[data-home-forecast-title]', '#proof-forecast-label'], forecast.target_title || forecast.region || 'Recorded forecast');
+      textAny(['[data-home-forecast-statement]', '#proof-forecast-text'], String(forecast.statement || '') + (resolved ? ' · Outcome: ' + status : ''));
       const confidence = pct(forecast.forecast_confidence);
-      textAny(['[data-home-forecast-confidence]', '#proof-forecast-confidence', '#proof-forecast-confindence'], confidence === '—' ? confidence : `${confidence} confidence`);
-      textAny(['[data-home-forecast-valid]', '#proof-forecast-horizon'], forecast.valid_until ? `Valid to ${shortDate(forecast.valid_until)}` : 'Open forecast');
-      text('[data-home-forecast-sources]', `${Number(forecast.source_independence_count || 0)} source ${Number(forecast.source_independence_count || 0) === 1 ? 'family' : 'families'}`);
-      text('[data-home-forecast-mode]', featured.native ? 'Chosen by Prometheus' : 'Validation forecast');
+      textAny(['[data-home-forecast-confidence]', '#proof-forecast-confidence', '#proof-forecast-confindence'], confidence === '—' ? confidence : confidence + ' original confidence');
+      textAny(['[data-home-forecast-valid]', '#proof-forecast-horizon'], resolved
+        ? 'Resolved ' + shortDate(forecast.resolved_at || forecast.valid_until)
+        : 'Valid to ' + shortDate(forecast.valid_until));
+      text('[data-home-forecast-sources]', Number(forecast.source_independence_count || 0) + ' source family/families');
+      text('[data-home-forecast-mode]', featured.kind === 'featured' ? 'Chosen by Prometheus' : featured.kind === 'eligible' ? 'Policy-eligible public forecast' : resolved ? 'LATEST RESOLVED OUTCOME' : 'WIDER LEDGER · NOT FEATURED');
+      text('[data-home-forecast-caveat]', resolved
+        ? 'Historical resolution, not an active forecast. The original probability and statement are unchanged.'
+        : featured.kind === 'wider-ledger'
+          ? 'This is a real public forecast below the featured presentation threshold, not a featured or officially verified prediction.'
+          : 'A time-bound research forecast, not an official warning. The original commitment remains on the record.');
     }
 
     const resolvedItem = latestResolved(data);
