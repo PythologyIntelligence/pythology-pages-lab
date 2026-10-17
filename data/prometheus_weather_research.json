@@ -1,0 +1,17 @@
+{
+  "schema": "pythology.weather-public-screening.v1",
+  "generated_at": "2026-10-17T19:47:06.177033+00:00",
+  "global": {
+    "status": "screening_only",
+    "source_event_rows": 1113,
+    "matched_rows": 93,
+    "unique_signals": 55,
+    "possible_upstream_truncation": false
+  },
+  "new_zealand": {
+    "status": "observational_context",
+    "existing_atlas_watch_count": 0,
+    "exploratory_context_count": 1
+  },
+  "claim_boundary": "Public-safe research-screening projection. No validated weather prediction, probabilistic forecast, or official warning is established."
+}
