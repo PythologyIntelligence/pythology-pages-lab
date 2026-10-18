@@ -63,9 +63,26 @@ async function stageFeed() {
   await saveJson('media/feed/feed.json',feed);
   report.earthnet = {events:feed.events.length,
     observedAt:feed.meta.generatedAt || null};
-  for (const name of ['detail','enviroarc','solar']) {
+  for (const name of ['detail','enviroarc','solar','incident3d']) {
     try {
       const optional = await readJson(remoteEarth + '/media/feed/' + name + '.json', 10000);
+      if (name === 'incident3d') {
+        // Browser validates every event again. The Pages mirror must NEVER
+        // publish fictional, unknown or outdated Prometheus research.
+        const generatedAt = Date.parse(optional?.meta?.generatedAt);
+        const feedAt = Date.parse(feed?.meta?.generatedAt);
+        const sourceAt = Date.parse(optional?.meta?.sourceGeneratedAt);
+        if (optional.schemaVersion !== 1 ||
+            optional.meta?.producer !== 'Prometheus Subterranean / EnviroArc research bridge' ||
+            optional.meta?.containsForecasts !== false ||
+            optional.meta?.realTime !== false ||
+            optional.meta?.containsApprovedInterventions !== false ||
+            !optional.incidents || typeof optional.incidents !== 'object' ||
+            ![generatedAt,feedAt,sourceAt].every(Number.isFinite) ||
+            generatedAt > Date.now()+600_000 || Date.now()-generatedAt>3*3600_000 ||
+            sourceAt > feedAt + 600_000 || feedAt-sourceAt>3*3600_000)
+          throw new Error('Invalid, unrecognised or stale Prometheus research');
+      }
       await saveJson('media/feed/' + name + '.json',optional);
       report[name] = 'available';
     } catch (err) {
