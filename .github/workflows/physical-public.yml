@@ -1,0 +1,40 @@
+name: Physical Intelligence public research and pilot claims
+
+on:
+  pull_request:
+    paths:
+      - "physical-intelligence.html"
+      - "physical-intelligence-showcase.css"
+      - "physical-outreach.css"
+      - "where-it-fits.html"
+      - "current-research.html"
+      - "scripts/test-physical-public.mjs"
+      - "scripts/build-lab.sh"
+      - ".github/workflows/physical-public.yml"
+  push:
+    branches: [main]
+    paths:
+      - "physical-intelligence.html"
+      - "physical-intelligence-showcase.css"
+      - "physical-outreach.css"
+      - "where-it-fits.html"
+      - "current-research.html"
+      - "scripts/test-physical-public.mjs"
+      - "scripts/build-lab.sh"
+      - ".github/workflows/physical-public.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  marketing-research-gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Validate links, synthetic evidence labels and no-obligation offer wording
+        run: node scripts/test-physical-public.mjs
+      - name: Check Pages build script shell syntax
+        run: bash -n scripts/build-lab.sh
