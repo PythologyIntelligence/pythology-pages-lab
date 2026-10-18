@@ -43,4 +43,4 @@ test('globe and renderer agree on supported terrestrial categories',()=>{
 test('the source is a frozen trusted link, not an attacker-controlled destination',()=>{
   assert.equal(new URL(incident3DUrl(fire)).href.startsWith('https://pythologyintelligence.github.io/pythology-pages-lab/earthnet2/incident3d/index.html'),true);
 });
-globalThis.location=originalLocation;
+// Global location deliberately stays set for the test runner's callbacks.
