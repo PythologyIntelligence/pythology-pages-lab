@@ -147,5 +147,5 @@ body:has(.timeline:not([hidden])) .camera-controls{bottom:188px}
  .camera-hint{display:none}
  .camera-controls{flex-direction:row;max-width:calc(100vw - 16px);left:8px;right:8px;justify-content:flex-end}
  .camera-controls button{font-size:9px;white-space:nowrap}
- .left .fire-panel{display:block!important}
+ .left .fire-panel:not([hidden]){display:block}
 }
