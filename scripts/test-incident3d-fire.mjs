@@ -47,8 +47,13 @@ test('rejects unlabeled/unsourced or unverified operational geometry',()=>{
   const f=sample.fire.incidents[id].frames[0];
   const normal={...f,
     activeBurning:{...f.activeBurning,evidenceClass:'official'}};
-  assert.equal(normalizeFireEvolution({frames:[normal]},{demo:false}).length,0,
-    'Burned-area hypothetical is not allowed, and alone is invalid in official mode');
+  const screened=normalizeFireEvolution({frames:[normal]},{demo:false});
+  assert.equal(screened.length,1);
+  assert.equal(screened[0].activeBurning.evidenceClass,'official');
+  assert.equal(screened[0].burnedArea,null,'Unvalidated burned-area hypothesis is rejected');
+  const broken={...normal,activeBurning:{...normal.activeBurning,sourceUrl:''}};
+  assert.equal(normalizeFireEvolution({frames:[broken]},{demo:false}).length,0,
+    'No sourced geometry remains once the URL is removed');
 });
 test('rejects malformed, proposed and future publication',()=>{
   const now=Date.parse('2026-10-18T05:00:00Z');
