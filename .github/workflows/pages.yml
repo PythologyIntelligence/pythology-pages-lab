@@ -407,6 +407,37 @@ jobs:
           test -s _site/index.html
           echo "Unified EnviroArc Pages bundle validated."
 
+      # Build a self-hosted public 3D runtime from the pinned upstream npm
+      # release; the Pythology OpenGlobus source fork is not a dependency.
+      # No write to the GitHub repository or any VPS service.
+      - name: Stage EarthNet Incident 3D with pinned OpenGlobus
+        shell: bash
+        run: |
+          set -euo pipefail
+          VENDOR="$RUNNER_TEMP/earthnet3d-npm"
+          mkdir -p "$VENDOR" _site/earthnet2/vendor/openglobus
+          npm install --prefix "$VENDOR" --no-save --ignore-scripts --no-audit --no-fund '@openglobus/og@0.28.7'
+          SRC="$VENDOR/node_modules/@openglobus/og"
+          node -e 'const p=require(process.argv[1]);if(p.version!=="0.28.7"||p.license!=="MIT")process.exit(1)' "$SRC/package.json"
+          for f in og.es.js og.css; do
+            [[ -s "$SRC/lib/$f" ]] || { echo "Missing OpenGlobus $f" >&2; exit 1; }
+          done
+          [[ -s "$SRC/LICENSE.md" ]] || { echo 'Missing OpenGlobus licence' >&2; exit 1; }
+          cp -a "$SRC/lib/." _site/earthnet2/vendor/openglobus/
+          cp "$SRC/LICENSE.md" _site/earthnet2/vendor/openglobus/LICENSE.md
+          echo '{"name":"@openglobus/og","version":"0.28.7","source":"npm","licence":"MIT","forkRequired":false}' > _site/earthnet2/vendor/openglobus/PROVENANCE.json
+          for f in index.html main.js incident-data.js storm-footprint.js style.css; do
+            [[ -s "_site/earthnet2/incident3d/$f" ]] || {
+              echo "Missing EarthNet Incident 3D $f" >&2; exit 1;
+            }
+          done
+          node --check _site/earthnet2/incident3d/main.js
+          node --check _site/earthnet2/incident3d/incident-data.js
+          node --check _site/earthnet2/incident3d/storm-footprint.js
+          grep -Fq '../media/feed/feed.json' _site/earthnet2/incident3d/main.js
+          grep -Fq '../vendor/openglobus/og.es.js' _site/earthnet2/incident3d/main.js
+          echo "EarthNet Incident 3D staged at /earthnet2/incident3d/ (Pages prefix may apply)."
+
       - name: Stage current safe System Control snapshots
         shell: bash
         run: |
