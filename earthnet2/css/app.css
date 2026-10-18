@@ -945,3 +945,35 @@ body.layer-menu-enhanced #sidebar #rail-head { display: none; }
   }
   .layer-menu-anchor { position: static; }
 }
+
+
+/* Accessible direct EarthNet -> 3D inspection. A normal click on the row
+ * still opens the 2D details; the compact shortcut jumps straight to
+ * the same incident ID, without silently switching to another event. */
+.incident-3d-quick{
+  flex:none;align-self:center;display:inline-flex;align-items:center;
+  justify-content:center;min-width:47px;min-height:32px;
+  padding:5px 6px;border-radius:7px;
+  font:700 10px/1 var(--mono);letter-spacing:.02em;
+  text-decoration:none;color:#80f5ed;background:rgba(7,114,128,.19);
+  border:1px solid rgba(85,235,220,.40);
+}
+.incident-3d-quick:hover,.incident-3d-quick:focus-visible{
+  color:#e0fffb;background:rgba(27,187,177,.24);
+  border-color:#4df3de;outline-offset:3px;
+}
+.incident-3d-entry{display:grid;gap:6px;margin:14px 0;
+  padding:12px;border:1px solid rgba(72,230,217,.35);
+  border-radius:10px;background:linear-gradient(125deg,rgba(9,99,110,.26),rgba(12,27,50,.66))}
+.incident-3d-entry .incident-3d-launch{
+  width:100%;height:auto;min-height:44px;justify-content:space-between;
+  gap:12px;padding:10px 15px;border-color:rgba(64,243,219,.75);
+  background:rgba(8,93,112,.30);color:#d6fffa;font-weight:800;
+  font-size:14px;text-decoration:none;
+}
+.incident-3d-entry .incident-3d-launch:hover,
+.incident-3d-entry .incident-3d-launch:focus-visible{
+  background:rgba(11,135,139,.50);border-color:#57ffe7;
+  color:#fff;outline-offset:3px;
+}
+.incident-3d-entry small{color:#a3b6cc;font-size:10px;line-height:1.5}

@@ -14,11 +14,10 @@
  */
 
 import { normalizeWindFields } from "./storm-footprint.js";
+import { THREE_D_CATEGORIES } from "../app/incident3d-link.js";
 
-export const INCIDENT_CATEGORIES = new Set([
-  "wildfire", "cyclone", "severe_storm", "tornado", "flood",
-  "atmospheric_river", "landslide", "volcano"
-]);
+// Exactly the same terrestrial categories as the EarthNet globe's 3D link.
+export const INCIDENT_CATEGORIES = THREE_D_CATEGORIES;
 export const EVIDENCE = new Set([
   "observed", "official", "modelled", "derived", "hypothetical", "proposed", "screened"
 ]);

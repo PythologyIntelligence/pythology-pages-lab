@@ -652,6 +652,20 @@ function showPrometheus() {
   });
 }
 
+function returnToEarthNet(eventId) {
+  // Only this explicit enum can switch the destination, never arbitrary
+  // user-supplied redirect URLs from query parameters.
+  const liveOrigin = new URLSearchParams(location.search).get("from") === "live";
+  const target = new URL(liveOrigin
+    ? "https://earthnet.pythology.co.nz/"
+    : "../index.html", location.href);
+  if (eventId) target.searchParams.set("id",String(eventId));
+  const back=$("back-earthnet");
+  back.href=target.href;
+  back.title="Return to "+(liveOrigin?"live EarthNet":"EarthNet Pages Lab")+
+    " with this same incident selected";
+}
+
 function selectedIncident(id, moveCamera = true) {
   const e = events.find(it => it.id === id);
   if (!e) {setStatus("Selected event not in current feed", "warn");return;}
@@ -679,6 +693,7 @@ function selectedIncident(id, moveCamera = true) {
   const targetUrl = new URL(location.href);
   targetUrl.searchParams.set("id", id);
   history.replaceState(null, "", targetUrl.pathname + targetUrl.search);
+  returnToEarthNet(id);
   setStatus(syntheticMode
     ? "SYNTHETIC EXERCISE · no real incidents"
     : unpublishedPreviewMode
@@ -703,6 +718,39 @@ function buildChoices(preferred) {
   if (!events.length) {
     text("incident-name", "No suitable events in this feed");
     setStatus("No incident data available", "warn");
+    return;
+  }
+  // A deep-linked ID may be newer than the hourly GitHub Pages snapshot.
+  // Never silently show the newest DIFFERENT hazard as though it were
+  // the requested fire or cyclone.
+  const requested = new URLSearchParams(location.search).get("id");
+  if (requested && !events.some(e => e.id === requested)) {
+    incident=null;
+    for (const key of [
+      "locationLayer","perimeterLayer","nifcLayer","burnedLayer",
+      "burningLayer","fedsAreaLayer","fedsFrontLayer","windExtentLayer",
+      "trackLayer","annotationsLayer"
+    ]) world?.[key]?.clear();
+    $("incident-select").selectedIndex=-1;
+    $("time-controls").hidden=true;
+    $("fire-panel").hidden=true;
+    $("nifc-panel").hidden=true;
+    $("feds-panel").hidden=true;
+    $("fire-map-status").hidden=true;
+    text("incident-name","Selected incident not in this snapshot yet");
+    text("incident-place","Requested EarthNet ID: "+requested.slice(0,125));
+    text("incident-summary",
+      "EarthNet's live source and GitHub Pages may refresh at different times. "+
+      "This viewer will NOT substitute another incident. Choose another event, "+
+      "or try Refresh after the next snapshot.");
+    text("provenance","Original source event not present in current Pages snapshot.");
+    text("evidence","No geometry can be associated with this absent event ID.");
+    text("geometry-label","SOURCE EVENT NOT IN SNAPSHOT");
+    text("reported-metrics","—");
+    text("prometheus","No event-specific research is displayed when the requested ID is absent.");
+    text("overlay-list","No source overlays available.");
+    returnToEarthNet(requested);
+    setStatus("Requested EarthNet incident not present in current snapshot", "warn");
     return;
   }
   const id = events.some(e => e.id === preferred) ? preferred : events[0].id;

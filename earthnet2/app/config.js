@@ -86,3 +86,7 @@ export const NZ_VIEW = { lat: -41.0, lon: 173.5, distance: 2.05 };
 export const HOME_VIEW = { lat: 12, lon: 20, distance: 3.1 };
 
 export const EARTH_RADIUS = 1;
+
+/** Same selected-event ID contract for the 2D globe and the public terrain viewer. */
+export const INCIDENT_3D_BASE_URL = "./incident3d/index.html";
+export const INCIDENT_3D_FROM = "pages";
