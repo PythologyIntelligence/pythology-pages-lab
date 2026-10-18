@@ -18,6 +18,7 @@
     <a class="back" href="../index.html" title="Return to EarthNet globe">← EARTHNET</a>
     <div class="identity"><strong>INCIDENT <span>3D</span></strong><small>ENVIRONMENTAL INTELLIGENCE</small></div>
     <div class="status" id="status" role="status">Starting terrain engine…</div>
+    <button id="btn-fire-exercise" class="action fire-demo-btn" type="button" title="Synthetic graphics training example. Not a real wildfire.">🔥 Fire demo</button>
     <button id="btn-quality" class="action" type="button" title="Toggle terrain rendering detail">⚙ Balanced</button>
     <button id="btn-refresh" class="action" type="button">↻ Refresh</button>
   </header>
@@ -46,10 +47,9 @@
       <div id="fire-panel" class="fire-panel" hidden>
         <div class="overline">FIRE EVOLUTION · SOURCE SNAPSHOTS</div>
         <label class="check"><input id="toggle-burning" type="checkbox" checked><span class="key fire-red"></span><span><strong>Active burning</strong> · soft red with thin outline</span></label>
-        <label class="check"><input id="toggle-burned" type="checkbox" checked><span class="key fire-blue"></span><span><strong>Burned ground</strong> · blue cumulative observations</span></label>
+        <label class="check"><input id="toggle-burned" type="checkbox" checked><span class="key fire-blue"></span><span><strong>Burned ground</strong> · mapped blue burn area</span></label>
         <p id="fire-availability" class="small muted">No verified active-burning or burned ground area supplied.</p>
         <p id="fire-frame-provenance" class="small muted">Reported perimeters do not identify which ground is actively burning.</p>
-        <button id="btn-fire-exercise" class="action fire-demo-btn" type="button">View synthetic fire evolution</button>
       </div>
       <label class="check"><input id="toggle-track" type="checkbox" checked><span class="key blue"></span><span>Recorded event track</span></label>
       <label class="check"><input id="toggle-wind" type="checkbox" checked><span class="key storm"></span><span>Wind-speed coverage (when sourced)</span></label>
