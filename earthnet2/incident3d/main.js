@@ -18,11 +18,15 @@ import {
   usableResearchSnapshot
 } from "./incident-data.js";
 import { windFootprintGeoJSON, windSpanKm } from "./storm-footprint.js";
+import {usableFireFeed,firePlayback} from "./fire-evolution.js";
 
 const $ = id => document.getElementById(id);
 const FEED = "../media/feed/feed.json";
 const DETAIL = "../media/feed/detail.json";
 const INCIDENT_EXTENSION = "../media/feed/incident3d.json"; // optional; never fabricate unavailable inputs
+const FIRE_FEED = "../media/feed/fire3d.json"; // independent source geometry; optional
+const FIRE_EXERCISE = "./fixtures/fire-evolution-exercise.json"; // synthetic-only, isolated
+const isFireExercise = new URLSearchParams(location.search).get("exercise") === "fire";
 const COLORS = {
   observed: [1, .28, .09, .24], official: [1, .27, .08, .28],
   modelled: [.99, .68, .22, .18], derived: [.88, .69, .37, .20],
@@ -33,6 +37,7 @@ let world, incident = null, playable = {kind:"none", items:[]};
 let events = [], details = {}, enriched = {};
 let researchState = {status:"unavailable",generatedAt:null};
 let syntheticMode=false, unpublishedPreviewMode=false;
+let fireSnapshots={}, fireState="unavailable";
 let activeIndex = 0, pollBusy = false;
 const detailedTerrain = new URLSearchParams(location.search).get("quality") === "high";
 const WIND_STYLE = {
@@ -64,6 +69,8 @@ function external(id, url, label) {
 function createWorld() {
   const locationLayer = new Vector("Incident location", {clampToGround: true, relativeToGround: true});
   const perimeterLayer = new Vector("Source geometry", {clampToGround: true, relativeToGround: true});
+  const burnedLayer = new Vector("Burned ground · blue", {clampToGround:true,relativeToGround:true});
+  const burningLayer = new Vector("Mapped actively burning area · red", {clampToGround:true,relativeToGround:true});
   const windExtentLayer = new Vector("Wind speed threshold footprints", {
     clampToGround: true, relativeToGround: true
   });
@@ -75,7 +82,7 @@ function createWorld() {
     target: "terrain",
     name: "EarthNet — Incident 3D",
     terrain: new GlobusRgbTerrain(),
-    layers: [new OpenStreetMap(), locationLayer, perimeterLayer, windExtentLayer, trackLayer, annotationsLayer],
+    layers: [new OpenStreetMap(), locationLayer, perimeterLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer],
     // Terrain performance is affected by remote DEM/imagery tiles and GPU
     // load. Balanced mode reduces geometry and pixel work; DNS alone cannot
     // remove the third-party elevation tile round trip.
@@ -92,7 +99,7 @@ function createWorld() {
       ? "../vendor/openglobus/res/fonts"
       : "https://cdn.jsdelivr.net/npm/@openglobus/og@0.28.7/lib/res/fonts"
   });
-  return {globe, locationLayer, perimeterLayer, windExtentLayer, trackLayer, annotationsLayer};
+  return {globe, locationLayer, perimeterLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer};
 }
 
 function focusCamera(ground = false) {
@@ -196,19 +203,64 @@ function drawWindFix(fix) {
     " · Approximate wind-speed coverage, NOT storm cloud, rain, surge or damage area.";
 }
 
+function firePolygon(layer, item, kind) {
+  if (!item?.geometries?.length) return;
+  // Burned ground: cool, distinct blue; mapped active burning: soft red
+  // fill with a THIN red edge. No fabricated fire front from an incident
+  // perimeter or acreage. Burned and active polygons must be independently
+  // provided by a qualified source.
+  const red=kind==="active";
+  const fill=red ? [1.0,.20,.22,.28] : [.15,.44,.98,.40];
+  const line=red ? [1.0,.12,.16,.96] : [.14,.55,1,.88];
+  for (const [index,g] of item.geometries.entries()) {
+    layer.add(new Entity({
+      name:(red?"Mapped active burning":"Mapped burned ground")+" "+(index+1),
+      geometry:{type:g.type,coordinates:g.coordinates,style:{
+        fillColor:fill,lineColor:line,lineWidth:red?1.5:1.3
+      }}
+    }));
+  }
+}
+function renderFireFrame(frame) {
+  world.burnedLayer.clear();
+  world.burningLayer.clear();
+  firePolygon(world.burnedLayer,frame?.burnedArea,"burned");
+  firePolygon(world.burningLayer,frame?.activeBurning,"active");
+  const marks=[];
+  if(frame?.activeBurning) {
+    marks.push("RED: mapped actively burning · "+frame.activeBurning.evidenceClass.toUpperCase()+
+      " · "+frame.activeBurning.source+" · "+readableTime(frame.activeBurning.validTime));
+  }
+  if(frame?.burnedArea) {
+    marks.push("BLUE: mapped burned ground · "+frame.burnedArea.evidenceClass.toUpperCase()+
+      " · "+frame.burnedArea.source+" · "+readableTime(frame.burnedArea.validTime));
+  }
+  text("fire-frame-provenance", marks.join(" | ") ||
+    "No active-burning or burned-area source polygons available.");
+  text("fire-availability",frame
+    ? "Two independently sourced classes. Snapshots only; never interpreted as live flame positions."
+    : "No verified active-burning or burned-ground geometry received. An incident outline cannot substitute.");
+}
+
 function showFrame(index) {
   if (!incident || !world) return;
   if (playable.kind === "none") return;
   activeIndex = Math.max(0, Math.min(index, playable.items.length - 1));
   const frame = playable.items[activeIndex];
   $("time-range").value = String(activeIndex);
-  text("frame-time", playable.kind === "frames"
-    ? readableTime(frame.validTime)
-    : readableTime(frame.ts));
+  text("frame-time", playable.kind === "track"
+    ? readableTime(frame.ts) : readableTime(frame.validTime));
   world.perimeterLayer.clear();
   world.trackLayer.clear();
   world.windExtentLayer.clear();
-  if (playable.kind === "frames") {
+  world.burnedLayer.clear();
+  world.burningLayer.clear();
+  if (playable.kind === "fire") {
+    renderFireFrame(frame);
+    text("geometry-note","FIRE EVOLUTION · source snapshots · "+
+      readableTime(frame.validTime)+" · "+(syntheticMode?"SYNTHETIC exercise":"Source verified classification required"));
+    drawWindFix(null);
+  } else if (playable.kind === "frames") {
     drawOn(world.perimeterLayer, frame.geometries, frame.evidenceClass, "Timestamped area");
     text("geometry-note", frame.evidenceClass.toUpperCase() + " FRAME · " + frame.source +
       " · " + readableTime(frame.validTime));
@@ -233,6 +285,8 @@ function showFrame(index) {
 function toggleLayers() {
   if (!world) return;
   world.perimeterLayer.setVisibility($("toggle-area").checked);
+  world.burnedLayer.setVisibility($("toggle-burned").checked);
+  world.burningLayer.setVisibility($("toggle-burning").checked);
   world.windExtentLayer.setVisibility($("toggle-wind").checked);
   world.trackLayer.setVisibility($("toggle-track").checked);
   world.annotationsLayer.setVisibility($("toggle-research").checked);
@@ -241,6 +295,8 @@ function toggleLayers() {
 function paintScene() {
   world.locationLayer.clear();
   world.perimeterLayer.clear();
+  world.burnedLayer.clear();
+  world.burningLayer.clear();
   world.windExtentLayer.clear();
   world.trackLayer.clear();
   world.annotationsLayer.clear();
@@ -251,13 +307,23 @@ function paintScene() {
     drawOn(world.annotationsLayer, o.geometries, o.evidenceClass, o.label);
   });
 
-  playable = playback(incident);
+  const fire = fireSnapshots[incident.id] || null;
+  playable = firePlayback(incident,fire) || playback(incident);
+  $("fire-panel").hidden = incident.category !== "wildfire";
+  if(incident.category === "wildfire") {
+    text("fire-availability", fire?.frames?.length
+      ? fire.frames.length+" sourced fire-evolution snapshots available."
+      : "No verified active-burning or burned-ground geometry available. A general incident perimeter is not the fire front.");
+    text("fire-frame-provenance", fire?.frames?.length
+      ? "Select a timestamp to inspect separately sourced burning/burned polygons."
+      : "Fire evolution: "+fireState+". Burn scars, hotspots and incident boundaries are different evidence types.");
+  }
   const visible = playable.items.length > 1;
   $("time-controls").hidden = !visible;
   $("time-range").max = String(Math.max(0,playable.items.length-1));
   activeIndex = Math.max(0,playable.items.length-1);
 
-  if (visible) showFrame(activeIndex);
+  if (visible || playable.kind === "fire") showFrame(activeIndex);
   else {
     drawOn(world.perimeterLayer, incident.geometry, "observed", "Source event geometry");
     if (incident.track.length >= 2) {
@@ -446,12 +512,19 @@ async function refresh(first = false) {
 
 function bind() {
   $("incident-select").addEventListener("change", ev => selectedIncident(ev.target.value));
-  ["toggle-area","toggle-track","toggle-wind","toggle-research"].forEach(id =>
+  ["toggle-area","toggle-track","toggle-wind","toggle-research","toggle-burning","toggle-burned"].forEach(id =>
     $(id).addEventListener("change",toggleLayers));
   $("time-range").addEventListener("input", e => showFrame(Number(e.target.value)));
   $("btn-focus").addEventListener("click", () => focusCamera(false));
   $("btn-ground").addEventListener("click", () => focusCamera(true));
   $("btn-refresh").addEventListener("click", () => refresh());
+  $("btn-fire-exercise").addEventListener("click", () => {
+    const url = new URL(location.href);
+    url.searchParams.delete("id");
+    if(isFireExercise) url.searchParams.delete("exercise");
+    else url.searchParams.set("exercise","fire");
+    location.assign(url.toString());
+  });
   $("btn-quality").textContent = detailedTerrain ? "⚙ High detail" : "⚙ Balanced";
   $("btn-quality").title = detailedTerrain
     ? "Switch to faster balanced rendering"
