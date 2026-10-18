@@ -105,6 +105,11 @@ function createWorld() {
 function focusCamera(mode = "oblique") {
   if (!world || !incident) return;
   const {lon, lat} = incident;
+  // The synthetic exercise sits on mountainous Central North Island terrain.
+  // Looking at elevation=0 aims UNDER the ground surface there, making
+  // ground overlays appear missing from an oblique perspective. Prefer an
+  // above-terrain demo look-at; actual terrain height remains source-dependent.
+  const lookHeight = isFireExercise ? 1750 : 0;
   // Genuine OpenGlobus perspective: camera eye != ground look-at. The
   // previous high/near-vertical camera resembled a 2D map even though the
   // WebGL terrain was elevated. These views deliberately expose relief.
@@ -114,13 +119,13 @@ function focusCamera(mode = "oblique") {
   const cosLat = Math.max(0.35, Math.cos(lat*Math.PI/180));
   let altitude, east, south;
   if (mode === "overhead") {
-    altitude = 95000; east = 0; south = 0;
+    altitude = lookHeight + 95000; east = 0; south = 0;
   } else if (mode === "terrain") {
-    altitude = 6500; east = .075; south = .07;
+    altitude = lookHeight + 9000; east = .075; south = .07;
   } else if (stormWithRadii) {
-    altitude = 270000; east = .85; south = .75;
+    altitude = lookHeight + 270000; east = .85; south = .75;
   } else {
-    altitude = 15500; east = .18; south = .16;
+    altitude = lookHeight + 21000; east = .18; south = .16;
   }
   const eyeLon = ((lon + east/cosLat + 180) % 360 + 360) % 360 - 180;
   const eyeLat = Math.max(-89.8,Math.min(89.8,lat-south));
@@ -128,7 +133,7 @@ function focusCamera(mode = "oblique") {
   // PlanetCamera; it is not just a map zoom or CSS perspective effect.
   world.globe.planet.camera.setLonLat(
     new LonLat(eyeLon,eyeLat,altitude),
-    new LonLat(lon,lat,0)
+    new LonLat(lon,lat,lookHeight)
   );
   $("camera-hint").textContent = mode === "overhead"
     ? "Overhead reference · choose 3D oblique or Terrain approach to see elevation"
@@ -229,8 +234,8 @@ function firePolygon(layer, item, kind) {
   // perimeter or acreage. Burned and active polygons must be independently
   // provided by a qualified source.
   const red=kind==="active";
-  const fill=red ? [1.0,.20,.22,.28] : [.15,.44,.98,.40];
-  const line=red ? [1.0,.12,.16,.96] : [.14,.55,1,.88];
+  const fill=red ? [1.0,.24,.28,.48] : [.14,.47,.98,.54];
+  const line=red ? [1.0,.13,.16,1] : [.15,.62,1,.98];
   for (const [index,g] of item.geometries.entries()) {
     layer.add(new Entity({
       name:(red?"Mapped active burning":"Mapped burned ground")+" "+(index+1),
@@ -256,9 +261,23 @@ function renderFireFrame(frame) {
   }
   text("fire-frame-provenance", marks.join(" | ") ||
     "No active-burning or burned-area source polygons available.");
-  text("fire-availability",frame
-    ? "Two independently sourced classes. Snapshots only; never interpreted as live flame positions."
+  const redCount=frame?.activeBurning?.geometries?.length || 0;
+  const blueCount=frame?.burnedArea?.geometries?.length || 0;
+  text("fire-map-status", syntheticMode
+    ? "GRAPHICS EXERCISE · " + redCount + " red actively burning polygon(s), " +
+      blueCount + " blue burned-ground polygon(s) · NOT REAL"
+    : "MAPPED SOURCE SNAPSHOT · " + redCount + " active · " + blueCount + " burned polygons");
+  text("fire-availability", frame
+    ? (syntheticMode ? "SYNTHETIC DEMO · " : "SOURCE SNAPSHOT · ") +
+      redCount+" red active polygon(s) · "+blueCount+" blue burned-area polygon(s). " +
+      "If red/blue shapes are not visible, try Overhead and check the browser console."
     : "No verified active-burning or burned-ground geometry received. An incident outline cannot substitute.");
+  if (frame) {
+    console.info("[EarthNet 3D] Fire evolution layers staged", {
+      eventId:incident.id,time:frame.validTime,
+      redPolygons:redCount,bluePolygons:blueCount,synthetic:syntheticMode
+    });
+  }
 }
 
 function showFrame(index) {
@@ -329,7 +348,11 @@ function paintScene() {
   const fire = fireSnapshots[incident.id] || null;
   playable = firePlayback(incident,fire) || playback(incident);
   $("fire-panel").hidden = incident.category !== "wildfire";
+  $("fire-map-status").hidden = incident.category !== "wildfire";
   if(incident.category === "wildfire") {
+    text("fire-map-status", fire?.frames?.length
+      ? "Fire geometry snapshots supplied · "+fire.frames.length+" recorded frames"
+      : "No verified active-burning / burned-ground polygons supplied for this real wildfire");
     text("fire-availability", fire?.frames?.length
       ? fire.frames.length+" sourced fire-evolution snapshots available."
       : "No verified active-burning or burned-ground geometry available. A general incident perimeter is not the fire front.");
