@@ -102,20 +102,39 @@ function createWorld() {
   return {globe, locationLayer, perimeterLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer};
 }
 
-function focusCamera(ground = false) {
+function focusCamera(mode = "oblique") {
   if (!world || !incident) return;
   const {lon, lat} = incident;
-  // Ground level means an oblique terrain view with height above sea level.
-  // Avoid placing the camera on the terrain or pretending DEM is metre-perfect.
-  const expandedStorm = !ground && incident.category === "cyclone" &&
+  // Genuine OpenGlobus perspective: camera eye != ground look-at. The
+  // previous high/near-vertical camera resembled a 2D map even though the
+  // WebGL terrain was elevated. These views deliberately expose relief.
+  // Heights are metres ASL; keep above NZ's highest mountainous terrain.
+  const stormWithRadii = incident.category === "cyclone" &&
     incident.track.some(p => p.windFields?.length);
-  const delta = ground ? 0.035 : expandedStorm ? 1.15 : 0.25;
-  const offsetLon = ((lon + delta + 180) % 360 + 360) % 360 - 180;
-  const altitude = ground ? 12000 : expandedStorm ? 340000 : 70000;
+  const cosLat = Math.max(0.35, Math.cos(lat*Math.PI/180));
+  let altitude, east, south;
+  if (mode === "overhead") {
+    altitude = 95000; east = 0; south = 0;
+  } else if (mode === "terrain") {
+    altitude = 6500; east = .075; south = .07;
+  } else if (stormWithRadii) {
+    altitude = 270000; east = .85; south = .75;
+  } else {
+    altitude = 15500; east = .18; south = .16;
+  }
+  const eyeLon = ((lon + east/cosLat + 180) % 360 + 360) % 360 - 180;
+  const eyeLat = Math.max(-89.8,Math.min(89.8,lat-south));
+  // setLonLat(position, lookPosition) is a REAL 3D view transform in
+  // PlanetCamera; it is not just a map zoom or CSS perspective effect.
   world.globe.planet.camera.setLonLat(
-    new LonLat(offsetLon, Math.max(-89.8, Math.min(89.8, lat - delta)), altitude),
-    new LonLat(lon, lat, 0)
+    new LonLat(eyeLon,eyeLat,altitude),
+    new LonLat(lon,lat,0)
   );
+  $("camera-hint").textContent = mode === "overhead"
+    ? "Overhead reference · choose 3D oblique or Terrain approach to see elevation"
+    : mode === "terrain"
+      ? "Low-angle 3D terrain perspective · drag to orbit/pan · scroll to zoom"
+      : "3D oblique perspective · real elevation mesh · drag to move · scroll to zoom";
 }
 function featuresFor(geometries, evidenceClass, prefix, opacityScale = 1) {
   const color = COLORS[evidenceClass] || COLORS.derived;
@@ -533,8 +552,9 @@ function bind() {
   ["toggle-area","toggle-track","toggle-wind","toggle-research","toggle-burning","toggle-burned"].forEach(id =>
     $(id).addEventListener("change",toggleLayers));
   $("time-range").addEventListener("input", e => showFrame(Number(e.target.value)));
-  $("btn-focus").addEventListener("click", () => focusCamera(false));
-  $("btn-ground").addEventListener("click", () => focusCamera(true));
+  $("btn-overhead").addEventListener("click", () => focusCamera("overhead"));
+  $("btn-focus").addEventListener("click", () => focusCamera("oblique"));
+  $("btn-ground").addEventListener("click", () => focusCamera("terrain"));
   $("btn-refresh").addEventListener("click", () => refresh());
   $("btn-fire-exercise").addEventListener("click", () => {
     const url = new URL(location.href);
