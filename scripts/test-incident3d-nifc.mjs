@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  NIFC_LAYER,eligibleUSFire,perimeterQuery,screenNifcFeatures,queryNifcPerimeters
+  NIFC_LAYER,eligibleUSFire,nifcTypeForEvent,perimeterQuery,screenNifcFeatures,queryNifcPerimeters
 } from '../earthnet2/incident3d/nifc-perimeters.js';
 
 const NOW=Date.parse('2026-10-18T15:00:00Z');
@@ -19,6 +19,33 @@ const near=(props={})=>({
     poly_FeatureAccess:'Public',poly_IsVisible:'Yes',...props}
 });
 const col=features=>({type:'FeatureCollection',features});
+
+test('EONET prescribed burns search NIFC RX, not WF, and never imply a wildfire',()=>{
+  const jane={...ev,title:'Prescribed Fire Jane 102 RX, Harney, Oregon',
+    lat:44.026,lon:-118.766,source:'NASA EONET'};
+  const west={...ev,title:'Prescribed Fire West Fork RX, Wasatch, Utah',
+    lat:40.465,lon:-111.058};
+  assert.equal(nifcTypeForEvent(jane),'RX');
+  assert.equal(nifcTypeForEvent(west),'RX');
+  assert.equal(new URL(perimeterQuery(jane)).searchParams.get('where'),
+    "attr_IncidentTypeCategory='RX'");
+  assert.equal(nifcTypeForEvent(ev),'WF');
+  const prescribed=near({
+    attr_IncidentTypeCategory:'RX',
+    poly_IncidentName:'Reported agency prescribed burn',
+    poly_PolygonDateTime:Date.parse('2026-10-15T12:00:00Z')
+  });
+  assert.equal(screenNifcFeatures(jane,col([prescribed]),{now:NOW}).length,0,
+    'A polygon elsewhere is not the Jane event merely because both are RX');
+  const local={...prescribed,geometry:{type:'Polygon',coordinates:[
+    [[-118.81,44],[-118.71,44],[-118.71,44.07],[-118.81,44.07],[-118.81,44]]
+  ]}};
+  const screened=screenNifcFeatures(jane,col([local,near()]),{now:NOW});
+  assert.equal(screened.length,1);
+  assert.equal(screened[0].sourceFireClass,'RX');
+  assert.match(screened[0].source,/Prescribed Fire/);
+  assert.match(screened[0].association,/unconfirmed/);
+});
 
 test('only US-region wildfire events make geographic requests',()=>{
   assert.equal(eligibleUSFire(ev),true);
