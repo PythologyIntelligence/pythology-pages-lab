@@ -3,6 +3,7 @@ import { setsFor, snapshotUrl, worldviewUrl, imageryDate } from './imagery.js';
 import { solarMarkup, CHANNELS } from './solar.js';
 import { API_BASE } from './config.js';
 import { enviroarcMarkup } from './enviroarc.js';
+import { incident3DUrl } from './incident3d-link.js';
 
 /**
  * The event detail panel. Everything shown here is either in the feed already
@@ -183,6 +184,7 @@ export class Panel {
     const extra = d.extra || {};
     const color = eventColor(e);
     const b = band(e.severity);
+    const terrainHref = incident3DUrl(e);
     const sets = setsFor(e.category);
     const set = sets[Math.min(this.imagerySet, sets.length - 1)];
 
@@ -207,6 +209,15 @@ export class Panel {
           </div>
         </header>
 
+        ${terrainHref ? `<section class="incident-3d-entry">
+          <a class="btn incident-3d-launch" href="${esc(terrainHref)}"
+             aria-label="Explore ${esc(e.title)} in 3D terrain and research"
+             title="Open this exact EarthNet event with its source geometry, terrain and Prometheus evidence">
+             ◈ Explore this event in 3D <span aria-hidden="true">↗</span>
+          </a>
+          <small>Terrain + source evidence + Prometheus screening. Missing polygons stay labelled as unavailable.</small>
+        </section>` : ''}
+
         <div class="panel-facts">
           <div><span>Location</span>${esc(e.place || e.country || '—')}<em>${e.orbit ? `${e.orbit.ld} lunar distances` : fmtCoord(e.lat, e.lon)}</em></div>
           <div><span>Updated</span>${fmtAgo(e.updatedAt || e.lastSeen)}<em>${e.updatedAt ? new Date(e.updatedAt).toUTCString().slice(5, 22) + ' UTC' : ''}</em></div>
@@ -227,7 +238,6 @@ export class Panel {
 
         <div class="panel-actions">
           ${e.lat == null ? '' : '<button class="btn ghost" data-act="focus">Centre on globe</button>'}
-          ${['wildfire','cyclone','severe_storm','tornado','flood','atmospheric_river','landslide','volcano'].includes(e.category) && Number.isFinite(Number(e.lat)) && Number.isFinite(Number(e.lon)) ? `<a class="btn ghost" href="./incident3d/index.html?id=${encodeURIComponent(e.id)}" title="Explore available source geometry and Prometheus evidence in 3D">↗ Explore in 3D</a>` : ''}
           ${e.sourceUrl ? `<a class="btn ghost" href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">Source data</a>` : ''}
         </div>
       </div>`;
