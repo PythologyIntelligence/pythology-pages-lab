@@ -227,6 +227,7 @@ export class Panel {
 
         <div class="panel-actions">
           ${e.lat == null ? '' : '<button class="btn ghost" data-act="focus">Centre on globe</button>'}
+          ${['wildfire','cyclone','severe_storm','tornado','flood','atmospheric_river','landslide','volcano'].includes(e.category) && Number.isFinite(Number(e.lat)) && Number.isFinite(Number(e.lon)) ? `<a class="btn ghost" href="./incident3d/index.html?id=${encodeURIComponent(e.id)}" title="Explore available source geometry and Prometheus evidence in 3D">↗ Explore in 3D</a>` : ''}
           ${e.sourceUrl ? `<a class="btn ghost" href="${esc(e.sourceUrl)}" target="_blank" rel="noopener">Source data</a>` : ''}
         </div>
       </div>`;
