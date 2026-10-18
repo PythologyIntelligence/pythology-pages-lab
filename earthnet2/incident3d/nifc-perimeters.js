@@ -26,13 +26,26 @@ export function eligibleUSFire(event) {
     Number(event.lon) >= -169 && Number(event.lon) <= -65;
 }
 
+/**
+ * EarthNet's public NASA EONET feed classifies BOTH wildfires and prescribed
+ * burns under "wildfire". WFIGS correctly distinguishes WF and RX. If the
+ * source event explicitly identifies a prescribed burn, we must query RX.
+ * Never reclassify it as an uncontrolled wildfire to get a polygon.
+ */
+export function nifcTypeForEvent(event) {
+  if (!eligibleUSFire(event)) return null;
+  const label=[event.title,event.subtype].filter(Boolean).join(' ').toLowerCase();
+  return /\b(?:prescribed\s+(?:fire|burn)|controlled\s+burn|rx\s+(?:fire|burn))\b/.test(label)
+    ? 'RX' : 'WF';
+}
+
 export function perimeterQuery(event) {
   if (!eligibleUSFire(event)) return null;
   const lat=Number(event.lat),lon=Number(event.lon);
   const cos=Math.max(0.30,Math.cos(lat*Math.PI/180));
   const radiusLat=.20, radiusLon=Math.min(.75,radiusLat/cos);
   const params=new URLSearchParams({
-    where:"attr_IncidentTypeCategory='WF'",
+    where:"attr_IncidentTypeCategory='"+nifcTypeForEvent(event)+"'",
     geometry:[lon-radiusLon,lat-radiusLat,lon+radiusLon,lat+radiusLat]
       .map(n=>n.toFixed(5)).join(','),
     geometryType:'esriGeometryEnvelope',
@@ -102,7 +115,7 @@ export function screenNifcFeatures(event,collection,{now=Date.now()}={}){
     if(feature?.type!=='Feature'||!feature.geometry||
       !['Polygon','MultiPolygon'].includes(feature.geometry.type)) continue;
     const a=feature.properties||{};
-    if(a.attr_IncidentTypeCategory !== 'WF')continue;
+    if(a.attr_IncidentTypeCategory !== nifcTypeForEvent(event))continue;
     if(a.poly_FeatureAccess && a.poly_FeatureAccess !== 'Public')continue;
     if(a.poly_IsVisible && a.poly_IsVisible !== 'Yes')continue;
     if(a.poly_DeleteThis === 'Yes')continue;
@@ -120,7 +133,9 @@ export function screenNifcFeatures(event,collection,{now=Date.now()}={}){
     good.push({
       label,
       time,
-      source:'US National Interagency Fire Center · WFIGS Current Perimeters',
+      source:'US National Interagency Fire Center · WFIGS Current '+
+        (a.attr_IncidentTypeCategory==='RX'?'Prescribed Fire':'Wildfire')+' Perimeters',
+      sourceFireClass:a.attr_IncidentTypeCategory,
       sourceUrl:NIFC_INFO_URL,
       acres:a.poly_GISAcres != null && Number.isFinite(Number(a.poly_GISAcres)) ? Number(a.poly_GISAcres) : null,
       distanceFromEventKm:proximity.km,
@@ -145,5 +160,9 @@ export async function queryNifcPerimeters(event,{signal}={}){
   if(raw.length>2_500_000)throw new Error('NIFC response too large');
   const data=JSON.parse(raw);
   if(data.error)throw new Error('NIFC ArcGIS error '+(data.error.code||'unknown'));
-  return {status:'available',items:screenNifcFeatures(event,data)};
+  if(data?.type !== 'FeatureCollection' || !Array.isArray(data.features))
+    throw new Error('NIFC returned an unexpected geometry format');
+  return {status:'available',items:screenNifcFeatures(event,data),
+    nearbyFeatureCount:data.features.length,
+    searchedFireClass:nifcTypeForEvent(event)};
 }

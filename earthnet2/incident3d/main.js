@@ -19,7 +19,7 @@ import {
 } from "./incident-data.js";
 import { windFootprintGeoJSON, windSpanKm } from "./storm-footprint.js";
 import {usableFireFeed,firePlayback} from "./fire-evolution.js";
-import {eligibleUSFire,queryNifcPerimeters,NIFC_INFO_URL} from "./nifc-perimeters.js";
+import {eligibleUSFire,nifcTypeForEvent,queryNifcPerimeters,NIFC_INFO_URL} from "./nifc-perimeters.js";
 import {eligibleFeds,loadFedsNearby,FEDS_CITATION} from "./nasa-feds.js";
 
 const $ = id => document.getElementById(id);
@@ -360,7 +360,13 @@ async function updateNearbyOfficialPerimeters(event){
   $("nifc-panel").hidden = isFireExercise || !eligibleUSFire(event);
   const area=$("nifc-results");area.replaceChildren();
   if(isFireExercise || !eligibleUSFire(event))return;
-  text("nifc-status","Checking for independently reported US wildfire perimeters nearby…");
+  const fireClass=nifcTypeForEvent(event);
+  text("nifc-category",fireClass==='RX'
+    ? "US PRESCRIBED-BURN PERIMETERS · NIFC · RX"
+    : "US WILDFIRE PERIMETERS · NIFC · WF");
+  text("nifc-status","Searching for recent NIFC "+
+    (fireClass==='RX'?"prescribed-burn (RX)":"wildfire (WF)")+
+    " boundary polygons near this location…");
   const seen=nifcCache.get(event.id);
   if(seen && Date.now()-seen.checkedAt<NIFC_RECHECK_MS){
     showNearbyResult(event,seen.result);
@@ -375,7 +381,9 @@ async function updateNearbyOfficialPerimeters(event){
     showNearbyResult(event,result);
   }catch(err){
     if(nifcAbort!==ac || incident?.id!==event.id)return;
-    text("nifc-status","NIFC service unavailable / browser blocked request. This is not evidence that no wildfire exists.");
+    text("nifc-status","NIFC source could not be queried (network, access or response error). "+
+      "A missing perimeter is NOT evidence that no fire exists.");
+    text("fire-map-status","Agency perimeter query unavailable · no red/blue fire-state evidence");
     console.warn("[EarthNet 3D] NIFC perimeters lookup failed",err);
   }finally{
     clearTimeout(timeout);
@@ -385,13 +393,33 @@ async function updateNearbyOfficialPerimeters(event){
 function showNearbyResult(event,result){
   if(incident?.id!==event.id)return;
   const items=result.items||[];
+  const type=nifcTypeForEvent(event)==='RX'?"prescribed-burn (RX)":"wildfire (WF)";
+  const checked=Number.isFinite(result.nearbyFeatureCount)
+    ? result.nearbyFeatureCount : null;
   text("nifc-status",items.length
-    ? items.length+" NIFC mapped polygon group(s) near the reported event location. NOT confirmed to be the selected EarthNet incident."
-    : "No recent NIFC polygon found within this local search. No fire-front or burned-ground shape inferred.");
+    ? items.length+" recent NIFC "+type+" perimeter(s) nearby. "+
+      "These MAY BE DIFFERENT incidents. No active-burning or burned-ground geometry inferred."
+    : checked === 0
+      ? "NIFC returned NO "+type+" GIS perimeters in this search area. "+
+        "The NASA event's reported acres do not establish a mapped boundary."
+      : checked != null
+        ? "NIFC returned "+checked+" candidate "+type+" feature(s), but none passed "+
+          "proximity, visibility, source timestamp and geometry checks."
+        : "No recent NIFC "+type+" polygon found within this local search. "+
+          "A prescribed-burn record does not guarantee an agency GIS boundary.");
+  text("fire-map-status",items.length
+    ? items.length+" nearby NIFC "+type+" perimeter(s) · AMBER (not active flames) · "+
+      "identity unconfirmed"
+    : checked === 0
+      ? "NIFC has no mapped "+type+" perimeter here · "+
+        "red/blue fire states also not available"
+      : "No verified red/blue burning/burned polygons · NIFC "+
+        type+" search returned no usable boundary");
   const list=$("nifc-results");list.replaceChildren();
   items.forEach(item=>{
     const p=document.createElement("p");
-    p.textContent=item.label+" · perimeter "+readableTime(item.time)+
+    p.textContent=item.label+" · "+(item.sourceFireClass==='RX'?"prescribed burn":"wildfire")+
+      " perimeter "+readableTime(item.time)+
       " · approximately "+item.distanceFromEventKm+" km from reported event centre · association UNVERIFIED";
     list.append(p);
   });
