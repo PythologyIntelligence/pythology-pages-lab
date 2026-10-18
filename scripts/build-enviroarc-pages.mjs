@@ -63,9 +63,26 @@ async function stageFeed() {
   await saveJson('media/feed/feed.json',feed);
   report.earthnet = {events:feed.events.length,
     observedAt:feed.meta.generatedAt || null};
-  for (const name of ['detail','enviroarc','solar','incident3d']) {
+  for (const name of ['detail','enviroarc','solar','incident3d','fire3d']) {
     try {
       const optional = await readJson(remoteEarth + '/media/feed/' + name + '.json', 10000);
+      if (name === 'fire3d') {
+        // Official active-burning zones, burned areas and incident perimeters
+        // are DIFFERENT datasets; this is an optional separately validated
+        // fire-evolution snapshot, not derived from NASA hotspots or acres.
+        const published=Date.parse(optional?.generatedAt);
+        const currentFeed=Date.parse(feed?.meta?.generatedAt);
+        if(optional.schemaVersion !== 1 ||
+            optional.producer !== 'Pythology Fire Evolution Geometry v1' ||
+            optional.demo === true ||
+            !optional.incidents || Array.isArray(optional.incidents) ||
+            typeof optional.incidents !== 'object' ||
+            ![published,currentFeed].every(Number.isFinite) ||
+            published > Date.now()+600_000 || Date.now()-published > 6*3600_000 ||
+            published > currentFeed+600_000 || currentFeed-published>6*3600_000) {
+          throw new Error('Unverified/stale fire-evolution geometry snapshot');
+        }
+      }
       if (name === 'incident3d') {
         // Browser validates every event again. The Pages mirror must NEVER
         // publish fictional, unknown or outdated Prometheus research.
