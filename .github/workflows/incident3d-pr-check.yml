@@ -84,6 +84,13 @@ jobs:
           console.log('3D evidence safety smoke test passed');
           JS
 
+      - name: Verify source-only fire evolution and independent burn-state polygons
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test scripts/test-incident3d-fire.mjs
+          node --check earthnet2/incident3d/fire-evolution.js
+
       - name: Confirm pinned OpenGlobus package contents and licence
         shell: bash
         run: |
