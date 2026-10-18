@@ -129,6 +129,12 @@ function openSun({ reveal = false } = {}) {
 
 function select(event, { fly = false } = {}) {
   if (event) document.getElementById('btn-sun')?.classList.remove('on');
+  // An exact ID in the URL allows the 3D viewer to return to THIS
+  // selected event. Normal globe navigation remains unchanged.
+  const targetUrl = new URL(location.href);
+  if (event?.id) targetUrl.searchParams.set('id',event.id);
+  else targetUrl.searchParams.delete('id');
+  history.replaceState(null,'',targetUrl.pathname+targetUrl.search+targetUrl.hash);
   selectedId = event?.id || null;
   globe.select(selectedId);
   sidebar.renderList(selectedId);
@@ -269,6 +275,14 @@ window.addEventListener('keydown', (e) => {
   try {
     loaderNote.textContent = 'Loading hazard feed';
     await store.load();
+    // Deep link from the 3D terrain view; never choose an unrelated incident
+    // if the source feed no longer contains the event ID.
+    const selectedFromTerrain = new URLSearchParams(location.search).get('id');
+    if (selectedFromTerrain && selectedFromTerrain.length <= 250) {
+      const match = store.byId(selectedFromTerrain);
+      if (match) select(match,{fly:true});
+      else console.info('[EarthNet] Linked incident absent from the latest feed:',selectedFromTerrain);
+    }
     loaderNote.textContent = 'Assembling NASA imagery';
     await globe.loadImagery((stage) => {
       if (stage === 'base') loader.classList.add('fading');
