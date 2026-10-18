@@ -40,7 +40,9 @@ jobs:
             node --check "$file"
           done
           test -s earthnet2/incident3d/index.html
-          grep -Fq 'href="./incident3d/index.html?id=' earthnet2/app/panel.js
+          grep -Fq 'incident3DUrl(e)' earthnet2/app/panel.js
+          grep -Fq 'incident3DUrl(e)' earthnet2/app/ui.js
+          grep -Fq "export const INCIDENT_3D_BASE_URL = './incident3d/index.html'" earthnet2/app/config.js
           grep -Fq '../media/feed/feed.json' earthnet2/incident3d/main.js
           grep -Fq '../vendor/openglobus/og.es.js' earthnet2/incident3d/main.js
 
