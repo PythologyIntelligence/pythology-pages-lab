@@ -18,6 +18,7 @@
     <a class="back" href="../index.html" title="Return to EarthNet globe">← EARTHNET</a>
     <div class="identity"><strong>INCIDENT <span>3D</span></strong><small>ENVIRONMENTAL INTELLIGENCE</small></div>
     <div class="status" id="status" role="status">Starting terrain engine…</div>
+    <button id="btn-fire-exercise" class="action fire-demo-btn" type="button" title="Synthetic graphics training example. Not a real wildfire.">🔥 Fire demo</button>
     <button id="btn-quality" class="action" type="button" title="Toggle terrain rendering detail">⚙ Balanced</button>
     <button id="btn-refresh" class="action" type="button">↻ Refresh</button>
   </header>
@@ -42,7 +43,14 @@
       <div class="metrics" id="reported-metrics">No source metrics supplied.</div>
       <div class="divider"></div>
       <div class="overline">MAP LAYERS</div>
-      <label class="check"><input id="toggle-area" type="checkbox" checked><span class="key orange"></span><span>Source polygon / footprint</span></label>
+      <label class="check"><input id="toggle-area" type="checkbox" checked><span class="key orange"></span><span>Source incident footprint (not fire front)</span></label>
+      <div id="fire-panel" class="fire-panel" hidden>
+        <div class="overline">FIRE EVOLUTION · SOURCE SNAPSHOTS</div>
+        <label class="check"><input id="toggle-burning" type="checkbox" checked><span class="key fire-red"></span><span><strong>Active burning</strong> · soft red with thin outline</span></label>
+        <label class="check"><input id="toggle-burned" type="checkbox" checked><span class="key fire-blue"></span><span><strong>Burned ground</strong> · mapped blue burn area</span></label>
+        <p id="fire-availability" class="small muted">No verified active-burning or burned ground area supplied.</p>
+        <p id="fire-frame-provenance" class="small muted">Reported perimeters do not identify which ground is actively burning.</p>
+      </div>
       <label class="check"><input id="toggle-track" type="checkbox" checked><span class="key blue"></span><span>Recorded event track</span></label>
       <label class="check"><input id="toggle-wind" type="checkbox" checked><span class="key storm"></span><span>Wind-speed coverage (when sourced)</span></label>
       <div class="wind-insight"><strong id="wind-summary">No sourced wind extents available.</strong><p id="wind-extent-note">An event track is not an affected-area boundary.</p></div>
@@ -54,10 +62,12 @@
       <p class="warning">Satellite hotspots, event footprints and operational fire perimeters are different evidence types. No fire-control action is authorised by this viewer.</p>
     </aside>
 
-    <div class="camera-controls">
-      <button id="btn-focus" type="button">⌖ Regional view</button>
-      <button id="btn-ground" type="button">↗ Terrain approach</button>
+    <div class="camera-controls" role="group" aria-label="3D camera perspective">
+      <button id="btn-overhead" type="button" title="Look vertically down like a 2D map">⬇ Overhead</button>
+      <button id="btn-focus" type="button" title="True perspective over the landscape">◈ 3D oblique</button>
+      <button id="btn-ground" type="button" title="Low-angle view over terrain elevation">↗ Terrain approach</button>
     </div>
+    <div id="camera-hint" class="camera-hint">Real elevation mesh · perspective camera · drag to move · scroll to zoom</div>
 
     <aside class="right glass" aria-label="Prometheus evidence panel">
       <div class="overline research-mark">◈ PROMETHEUS / RESEARCH</div>
