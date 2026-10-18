@@ -471,22 +471,40 @@ async function refresh(first = false) {
   pollBusy = true;
   setStatus("Updating EarthNet sources…");
   try {
-    const [feed, detail, addition] = await Promise.all([
-      fetchJSON(FEED+"?t="+Date.now()),
-      fetchJSON(DETAIL+"?t="+Date.now()),
-      fetchJSON(INCIDENT_EXTENSION+"?t="+Date.now(),true).catch(() => ({}))
-    ]);
+    // The fire evolution feed is independent of Prometheus's conservative
+    // source-only research contract. A missing polygon feed NEVER becomes an
+    // automatically invented red/blue burn zone.
+    const exerciseDoc = isFireExercise
+      ? await fetchJSON(FIRE_EXERCISE+"?t="+Date.now())
+      : null;
+    const [feed, detail, addition, fireDoc] = exerciseDoc
+      ? [{meta:{demo:true,generatedAt:new Date().toISOString()},
+           events:exerciseDoc.events},
+         exerciseDoc.detail, {},exerciseDoc.fire]
+      : await Promise.all([
+          fetchJSON(FEED+"?t="+Date.now()),
+          fetchJSON(DETAIL+"?t="+Date.now()),
+          fetchJSON(INCIDENT_EXTENSION+"?t="+Date.now(),true).catch(() => ({})),
+          fetchJSON(FIRE_FEED+"?t="+Date.now(),true).catch(() => ({}))
+        ]);
     const isDemoFeed = feed?.meta?.demo === true;
     syntheticMode = isDemoFeed;
     unpublishedPreviewMode = !isDemoFeed && feed?.meta?.localResearchPreview === true;
     $("demo-banner").hidden = !isDemoFeed && !unpublishedPreviewMode;
-    $("demo-banner").textContent = isDemoFeed
-      ? "SYNTHETIC EXERCISE — NOT REAL INCIDENT DATA · LOCAL DEVELOPMENT PREVIEW"
-      : "REAL EARTHNET EVENTS · UNPUBLISHED LOCAL PROMETHEUS RESEARCH PREVIEW";
+    $("demo-banner").textContent = isFireExercise
+      ? "SYNTHETIC FIRE EVOLUTION EXERCISE — NOT A REAL FIRE OR FORECAST"
+      : isDemoFeed
+        ? "SYNTHETIC EXERCISE — NOT REAL INCIDENT DATA · LOCAL DEVELOPMENT PREVIEW"
+        : "REAL EARTHNET EVENTS · UNPUBLISHED LOCAL PROMETHEUS RESEARCH PREVIEW";
     events = (feed.events || []).filter(e =>
       INCIDENT_CATEGORIES.has(e.category) && Number.isFinite(Number(e.lon)) &&
       Number.isFinite(Number(e.lat)));
     details = detail || {};
+    const fireEnvelope=fireDoc?.schemaVersion === 1
+      ? usableFireFeed(fireDoc,feed?.meta?.generatedAt,{demo:isFireExercise})
+      : {status:"unavailable",incidents:{}};
+    fireSnapshots=fireEnvelope.incidents;
+    fireState=fireEnvelope.status;
     if (isDemoFeed) {
       // Demo intentionally includes fake annotations and may never masquerade
       // as a live source or be conflated with a Prometheus publication.
