@@ -128,3 +128,24 @@ body:has(.timeline:not([hidden])) .camera-controls{bottom:188px}
 .wind-insight strong{display:block;color:#a9f4f3;font:600 10px/1.6 'JetBrains Mono',monospace}
 .wind-insight p{font-size:10px;line-height:1.5;color:#aacbd2;margin:5px 0 0}
 @media(max-width:660px){.left .wind-insight{display:none}.topbar .action{max-width:90px;overflow:hidden;text-overflow:ellipsis}}
+
+/* Fire-evolution visualization: two INDEPENDENT sourced classes; no guessed
+ * fire front from generic acreage or event boundary. */
+.fire-panel[hidden] {display:none}
+.fire-panel {margin:12px 0 16px;padding:11px;border-radius:6px;border:1px solid rgba(113,151,196,.27);background:rgba(9,31,49,.46)}
+.fire-panel .check strong {font-weight:700}
+.fire-panel p {margin:8px 0;font-size:10px;line-height:1.55;color:#9cbcca}
+.fire-red {background:rgba(255,58,62,.85)!important;box-shadow:0 0 0 1px #ff444b}
+.fire-blue {background:rgba(43,126,253,.75)!important;box-shadow:0 0 0 1px #58a6ff}
+.fire-demo-btn {width:100%;white-space:normal;font-size:10px;text-align:center;margin-top:5px}
+.camera-hint {position:fixed;z-index:6;left:50%;bottom:123px;transform:translateX(-50%);font:500 9px/1.5 'JetBrains Mono',monospace;letter-spacing:.045em;text-align:center;max-width:min(600px,72vw);padding:6px 12px;background:rgba(5,17,31,.87);border-radius:5px;color:#a6e5ed;border:1px solid rgba(132,222,241,.2);pointer-events:none}
+@media(max-width:950px){
+ .camera-hint{left:auto;right:10px;bottom:151px;transform:none;max-width:260px;font-size:8px}
+ body:has(.timeline:not([hidden])) .camera-hint{bottom:260px}
+}
+@media(max-width:660px){
+ .camera-hint{display:none}
+ .camera-controls{flex-direction:row;max-width:calc(100vw - 16px);left:8px;right:8px;justify-content:flex-end}
+ .camera-controls button{font-size:9px;white-space:nowrap}
+ .left .fire-panel{display:block!important}
+}
