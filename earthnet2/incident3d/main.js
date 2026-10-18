@@ -19,6 +19,7 @@ import {
 } from "./incident-data.js";
 import { windFootprintGeoJSON, windSpanKm } from "./storm-footprint.js";
 import {usableFireFeed,firePlayback} from "./fire-evolution.js";
+import {eligibleUSFire,queryNifcPerimeters,NIFC_INFO_URL} from "./nifc-perimeters.js";
 
 const $ = id => document.getElementById(id);
 const FEED = "../media/feed/feed.json";
@@ -38,6 +39,9 @@ let events = [], details = {}, enriched = {};
 let researchState = {status:"unavailable",generatedAt:null};
 let syntheticMode=false, unpublishedPreviewMode=false;
 let fireSnapshots={}, fireState="unavailable";
+let nifcAbort=null;
+const nifcCache=new Map();
+const NIFC_RECHECK_MS=10*60*1000;
 let activeIndex = 0, pollBusy = false;
 const detailedTerrain = new URLSearchParams(location.search).get("quality") === "high";
 const WIND_STYLE = {
@@ -69,6 +73,9 @@ function external(id, url, label) {
 function createWorld() {
   const locationLayer = new Vector("Incident location", {clampToGround: true, relativeToGround: true});
   const perimeterLayer = new Vector("Source geometry", {clampToGround: true, relativeToGround: true});
+  const nifcLayer = new Vector("Nearby NIFC official wildfire perimeters · not event-matched",{
+    clampToGround:true,relativeToGround:true
+  });
   const burnedLayer = new Vector("Burned ground · blue", {clampToGround:true,relativeToGround:true});
   const burningLayer = new Vector("Mapped actively burning area · red", {clampToGround:true,relativeToGround:true});
   const windExtentLayer = new Vector("Wind speed threshold footprints", {
@@ -82,7 +89,7 @@ function createWorld() {
     target: "terrain",
     name: "EarthNet — Incident 3D",
     terrain: new GlobusRgbTerrain(),
-    layers: [new OpenStreetMap(), locationLayer, perimeterLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer],
+    layers: [new OpenStreetMap(), locationLayer, perimeterLayer, nifcLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer],
     // Terrain performance is affected by remote DEM/imagery tiles and GPU
     // load. Balanced mode reduces geometry and pixel work; DNS alone cannot
     // remove the third-party elevation tile round trip.
@@ -99,7 +106,7 @@ function createWorld() {
       ? "../vendor/openglobus/res/fonts"
       : "https://cdn.jsdelivr.net/npm/@openglobus/og@0.28.7/lib/res/fonts"
   });
-  return {globe, locationLayer, perimeterLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer};
+  return {globe, locationLayer, perimeterLayer, nifcLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer};
 }
 
 function focusCamera(mode = "oblique") {
@@ -320,9 +327,73 @@ function showFrame(index) {
   toggleLayers();
 }
 
+function renderNearbyOfficialPerimeters(items){
+  if(!world || !incident || incident.category!=="wildfire")return;
+  world.nifcLayer.clear();
+  for(const item of items){
+    // Bronze/gold separates general incident perimeter from actual
+    // actively burning (red) and burned ground (blue) source products.
+    for(const [i,geom] of item.geometries.entries()){
+      world.nifcLayer.add(new Entity({
+        name:"NEARBY NIFC PERIMETER (UNMATCHED) · "+item.label+" · "+(i+1),
+        geometry:{type:geom.type,coordinates:geom.coordinates,style:{
+          fillColor:[1,.72,.25,.17],lineColor:[1,.75,.22,1],lineWidth:2
+        }}
+      }));
+    }
+  }
+  toggleLayers();
+}
+
+async function updateNearbyOfficialPerimeters(event){
+  nifcAbort?.abort();
+  nifcAbort=null;
+  world?.nifcLayer.clear();
+  $("nifc-panel").hidden = isFireExercise || !eligibleUSFire(event);
+  const area=$("nifc-results");area.replaceChildren();
+  if(isFireExercise || !eligibleUSFire(event))return;
+  text("nifc-status","Checking for independently reported US wildfire perimeters nearby…");
+  const seen=nifcCache.get(event.id);
+  if(seen && Date.now()-seen.checkedAt<NIFC_RECHECK_MS){
+    showNearbyResult(event,seen.result);
+    return;
+  }
+  const ac=new AbortController();nifcAbort=ac;
+  const timeout=setTimeout(()=>ac.abort(),12_000);
+  try {
+    const result=await queryNifcPerimeters(event,{signal:ac.signal});
+    if(nifcAbort!==ac || incident?.id!==event.id || ac.signal.aborted)return;
+    nifcCache.set(event.id,{checkedAt:Date.now(),result});
+    showNearbyResult(event,result);
+  }catch(err){
+    if(nifcAbort!==ac || incident?.id!==event.id)return;
+    text("nifc-status","NIFC service unavailable / browser blocked request. This is not evidence that no wildfire exists.");
+    console.warn("[EarthNet 3D] NIFC perimeters lookup failed",err);
+  }finally{
+    clearTimeout(timeout);
+    if(nifcAbort===ac)nifcAbort=null;
+  }
+}
+function showNearbyResult(event,result){
+  if(incident?.id!==event.id)return;
+  const items=result.items||[];
+  text("nifc-status",items.length
+    ? items.length+" NIFC mapped polygon group(s) near the reported event location. NOT confirmed to be the selected EarthNet incident."
+    : "No recent NIFC polygon found within this local search. No fire-front or burned-ground shape inferred.");
+  const list=$("nifc-results");list.replaceChildren();
+  items.forEach(item=>{
+    const p=document.createElement("p");
+    p.textContent=item.label+" · perimeter "+readableTime(item.time)+
+      " · approximately "+item.distanceFromEventKm+" km from reported event centre · association UNVERIFIED";
+    list.append(p);
+  });
+  renderNearbyOfficialPerimeters(items);
+}
+
 function toggleLayers() {
   if (!world) return;
   world.perimeterLayer.setVisibility($("toggle-area").checked);
+  world.nifcLayer.setVisibility($("toggle-nifc").checked);
   world.burnedLayer.setVisibility($("toggle-burned").checked);
   world.burningLayer.setVisibility($("toggle-burning").checked);
   world.windExtentLayer.setVisibility($("toggle-wind").checked);
@@ -333,6 +404,7 @@ function toggleLayers() {
 function paintScene() {
   world.locationLayer.clear();
   world.perimeterLayer.clear();
+  world.nifcLayer.clear();
   world.burnedLayer.clear();
   world.burningLayer.clear();
   world.windExtentLayer.clear();
@@ -468,6 +540,9 @@ function selectedIncident(id, moveCamera = true) {
   showPrometheus();
   paintScene();
   if (moveCamera) focusCamera();
+  // NIFC perimeters are a read-only ON-DEMAND context query, never
+  // automatically joined to the EarthNet event by location alone.
+  void updateNearbyOfficialPerimeters(e);
   const targetUrl = new URL(location.href);
   targetUrl.searchParams.set("id", id);
   history.replaceState(null, "", targetUrl.pathname + targetUrl.search);
@@ -572,7 +647,7 @@ async function refresh(first = false) {
 
 function bind() {
   $("incident-select").addEventListener("change", ev => selectedIncident(ev.target.value));
-  ["toggle-area","toggle-track","toggle-wind","toggle-research","toggle-burning","toggle-burned"].forEach(id =>
+  ["toggle-area","toggle-nifc","toggle-track","toggle-wind","toggle-research","toggle-burning","toggle-burned"].forEach(id =>
     $(id).addEventListener("change",toggleLayers));
   $("time-range").addEventListener("input", e => showFrame(Number(e.target.value)));
   $("btn-overhead").addEventListener("click", () => focusCamera("overhead"));
