@@ -41,7 +41,7 @@ export function perimeterQuery(event) {
     spatialRel:'esriSpatialRelIntersects',
     outFields:[
       'OBJECTID','poly_IncidentName','attr_IncidentName','poly_IRWINID',
-      'poly_PolygonDateTime','poly_GISAcres','poly_FeatureAccess',
+      'poly_PolygonDateTime','poly_GISAcres','poly_DeleteThis','poly_FeatureAccess',
       'poly_FeatureStatus','poly_FeatureCategory','poly_IsVisible',
       'attr_IncidentTypeCategory'
     ].join(','),
@@ -122,7 +122,7 @@ export function screenNifcFeatures(event,collection,{now=Date.now()}={}){
       time,
       source:'US National Interagency Fire Center · WFIGS Current Perimeters',
       sourceUrl:NIFC_INFO_URL,
-      acres:Number.isFinite(Number(a.poly_GISAcres)) ? Number(a.poly_GISAcres) : null,
+      acres:a.poly_GISAcres != null && Number.isFinite(Number(a.poly_GISAcres)) ? Number(a.poly_GISAcres) : null,
       distanceFromEventKm:proximity.km,
       positionInsideBoundingBox:proximity.insideEnvelope,
       // The event identity is not independently verified. Never call this a
