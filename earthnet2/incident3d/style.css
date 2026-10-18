@@ -171,3 +171,20 @@ body:has(.timeline:not([hidden])) .camera-controls{bottom:188px}
  .left .nifc-panel .check{display:flex}
  .left .nifc-panel .warning{display:block}
 }
+
+/* Experimental NASA FEDS fire evolution is a RESEARCH model. Blue does not
+ * represent validated burned ground; red is a satellite-inferred LINE. */
+.feds-panel[hidden],#feds-playback[hidden],#feds-select[hidden]{display:none}
+.feds-panel{padding:12px;margin:15px 0;border-radius:7px;background:rgba(19,32,69,.45);border:1px solid rgba(120,151,251,.36)}
+.feds-panel .overline{color:#a5bdff}
+.feds-panel p{font-size:10px;line-height:1.6;color:#c3d2ec}
+.feds-panel .warning{border-left-color:#719cfa;color:#a9badd}
+.feds-load{display:block;margin:12px 0 8px;width:100%;white-space:normal;text-align:center;font-size:11px}
+.feds-panel select{width:100%;font-size:10px;margin:8px 0}
+#feds-range{width:100%;margin:9px 0;accent-color:#708dff}
+.feds-time{font:600 10px/1.5 'JetBrains Mono',monospace;color:#d7e5ff!important}
+.key.feds-blue{background:rgba(42,121,250,.88)!important;border:1px solid #8bd2ff}
+.key.feds-red{background:rgba(255,60,60,.94)!important;border:1px solid #ffaaaa}
+.feds-panel .check{display:flex;font-size:10px;margin:12px 0}
+.feds-panel .source{display:block;margin-top:12px}
+@media(max-width:660px){.left .feds-panel:not([hidden]){display:block}.left .feds-panel .check{display:flex}.left .feds-panel .warning{display:block}}
