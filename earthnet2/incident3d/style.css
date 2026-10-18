@@ -156,3 +156,18 @@ body:has(.timeline:not([hidden])) .camera-controls{bottom:188px}
 .fire-map-status{position:fixed;z-index:7;left:50%;transform:translateX(-50%);top:77px;max-width:min(650px,calc(100vw - 740px));padding:8px 13px;border:1px solid rgba(246,129,106,.65);border-radius:6px;background:rgba(20,23,39,.92);color:#ffc8b4;text-align:center;font:600 10px/1.5 'JetBrains Mono',monospace;letter-spacing:.02em;pointer-events:none}
 @media(max-width:950px){.fire-map-status{left:auto;right:10px;top:90px;transform:none;max-width:300px}}
 @media(max-width:660px){.fire-map-status{left:8px;right:8px;top:calc(28vh + 78px);max-width:none;font-size:8px}}
+
+/* Independently sourced official incident perimeters; GOLD intentionally
+ * differs from actively burning red / burned-area blue. */
+.nifc-panel[hidden]{display:none}
+.nifc-panel{margin:14px 0;padding:12px;border-radius:7px;border:1px solid rgba(245,198,104,.36);background:rgba(64,46,19,.23)}
+.nifc-panel .overline{color:#eec986}
+.nifc-panel p{font-size:10px;line-height:1.65;color:#ddd2bb;margin:8px 0}
+.nifc-panel .nifc-results{font:500 10px/1.65 'JetBrains Mono',monospace;border-left:2px solid #efba57;margin:10px 0;padding-left:9px}
+.nifc-panel .nifc-results p{color:#ffe2ab;margin:6px 0}
+.key.nifc-gold{background:#fcbf4c!important;box-shadow:0 0 0 1px #ffda8f}
+@media(max-width:660px){
+ .left .nifc-panel:not([hidden]){display:block}
+ .left .nifc-panel .check{display:flex}
+ .left .nifc-panel .warning{display:block}
+}
