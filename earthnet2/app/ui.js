@@ -1,6 +1,7 @@
 import { esc, fmtAgo, catColor, eventColor, band } from './util.js';
 import { GROUP_ORDER, SEVERITY_BANDS } from './config.js';
 import { healthColor } from './solar.js';
+import { incident3DUrl } from './incident3d-link.js';
 
 /** Sidebar: live status, filters, and the ranked list of what matters now. */
 export class Sidebar {
@@ -46,6 +47,9 @@ export class Sidebar {
     });
 
     this.listEl.addEventListener('click', (e) => {
+      // The dedicated 3D link navigates directly; regular item selection
+      // still opens its 2D globe detail card with no behavior change.
+      if (e.target.closest('a.incident-3d-quick')) return;
       const li = e.target.closest('[data-id]');
       if (li) this.onSelect?.(this.store.byId(li.dataset.id));
     });
@@ -134,6 +138,7 @@ export class Sidebar {
     this.listEl.innerHTML = items
       .map((e) => {
         const b = band(e.severity);
+        const terrainHref = incident3DUrl(e);
         return `<li data-id="${esc(e.id)}" class="${e.id === selectedId ? 'sel' : ''}${e.nz ? ' nz' : ''}">
           <span class="bar" style="background:${eventColor(e)}"></span>
           <div class="li-main">
@@ -145,6 +150,9 @@ export class Sidebar {
             <div class="li-title">${esc(e.title)}</div>
             ${e.headline ? `<div class="li-head">${esc(e.headline)}</div>` : ''}
           </div>
+          ${terrainHref ? `<a class="incident-3d-quick" href="${esc(terrainHref)}"
+            aria-label="Open ${esc(e.title)} directly in 3D terrain"
+            title="Open this selected incident in 3D">3D ↗</a>` : ''}
           <div class="li-sev" style="color:${b.color}" title="${esc(e.severityLabel || b.label)}">${e.severity}</div>
         </li>`;
       })
