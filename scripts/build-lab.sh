@@ -304,6 +304,7 @@ PUBLIC_OVERRIDES=(
   prometheus.html
   core-technology.html
   current-research.html
+  computational-biology-lab.html
   research-ui.js
   stack-human.css
   research.html
