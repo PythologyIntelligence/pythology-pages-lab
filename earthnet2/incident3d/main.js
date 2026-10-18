@@ -20,6 +20,7 @@ import {
 import { windFootprintGeoJSON, windSpanKm } from "./storm-footprint.js";
 import {usableFireFeed,firePlayback} from "./fire-evolution.js";
 import {eligibleUSFire,queryNifcPerimeters,NIFC_INFO_URL} from "./nifc-perimeters.js";
+import {eligibleFeds,loadFedsNearby,FEDS_CITATION} from "./nasa-feds.js";
 
 const $ = id => document.getElementById(id);
 const FEED = "../media/feed/feed.json";
@@ -41,6 +42,7 @@ let syntheticMode=false, unpublishedPreviewMode=false;
 let fireSnapshots={}, fireState="unavailable";
 let nifcAbort=null;
 const nifcCache=new Map();
+let fedsAbort=null, fedsOptions=[], fedsChosen=null;
 const NIFC_RECHECK_MS=10*60*1000;
 let activeIndex = 0, pollBusy = false;
 const detailedTerrain = new URLSearchParams(location.search).get("quality") === "high";
@@ -73,6 +75,12 @@ function external(id, url, label) {
 function createWorld() {
   const locationLayer = new Vector("Incident location", {clampToGround: true, relativeToGround: true});
   const perimeterLayer = new Vector("Source geometry", {clampToGround: true, relativeToGround: true});
+  const fedsAreaLayer=new Vector("NASA FEDS MODELLED fire-affected footprint · NOT burned ground",{
+    clampToGround:true,relativeToGround:true
+  });
+  const fedsFrontLayer=new Vector("NASA FEDS MODELLED active fire-line segment · NOT burning-area polygon",{
+    clampToGround:true,relativeToGround:true
+  });
   const nifcLayer = new Vector("Nearby NIFC official wildfire perimeters · not event-matched",{
     clampToGround:true,relativeToGround:true
   });
@@ -89,7 +97,7 @@ function createWorld() {
     target: "terrain",
     name: "EarthNet — Incident 3D",
     terrain: new GlobusRgbTerrain(),
-    layers: [new OpenStreetMap(), locationLayer, perimeterLayer, nifcLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer],
+    layers: [new OpenStreetMap(), locationLayer, perimeterLayer, nifcLayer, fedsAreaLayer, fedsFrontLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer],
     // Terrain performance is affected by remote DEM/imagery tiles and GPU
     // load. Balanced mode reduces geometry and pixel work; DNS alone cannot
     // remove the third-party elevation tile round trip.
@@ -106,7 +114,7 @@ function createWorld() {
       ? "../vendor/openglobus/res/fonts"
       : "https://cdn.jsdelivr.net/npm/@openglobus/og@0.28.7/lib/res/fonts"
   });
-  return {globe, locationLayer, perimeterLayer, nifcLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer};
+  return {globe, locationLayer, perimeterLayer, nifcLayer, fedsAreaLayer, fedsFrontLayer, burnedLayer, burningLayer, windExtentLayer, trackLayer, annotationsLayer};
 }
 
 function focusCamera(mode = "oblique") {
@@ -390,10 +398,102 @@ function showNearbyResult(event,result){
   renderNearbyOfficialPerimeters(items);
 }
 
+function renderFedsFrame(index){
+  if(!world || !fedsChosen)return;
+  const idx=Math.max(0,Math.min(index,fedsChosen.frames.length-1));
+  const frame=fedsChosen.frames[idx];
+  world.fedsAreaLayer.clear();
+  world.fedsFrontLayer.clear();
+  for(const [i,g] of (frame.area||[]).entries()){
+    world.fedsAreaLayer.add(new Entity({
+      name:"NASA FEDS MODELLED cumulative affected footprint "+i,
+      geometry:{type:g.type,coordinates:g.coordinates,style:{
+        fillColor:[.18,.46,1,.29],lineColor:[.20,.59,1,.95],lineWidth:1.2
+      }}
+    }));
+  }
+  for(const [i,g] of (frame.front||[]).entries()){
+    world.fedsFrontLayer.add(new Entity({
+      name:"NASA FEDS MODELLED active fire front (segment) "+i,
+      geometry:{type:g.type,coordinates:g.coordinates,style:{
+        fillColor:[1,.1,.1,.03],lineColor:[1,.14,.16,1],lineWidth:4
+      }}
+    }));
+  }
+  $("feds-range").value=String(idx);
+  text("feds-time",frame.time+" (FEDS nominal local-solar time bucket)");
+  text("feds-summary",(frame.area?.length||0)+" modelled blue affected-area polygon(s) · "+
+    (frame.front?.length||0)+" modelled red active-line segment(s). "+
+    "Area is NOT verified burned ground. Red is an active-front LINE, not filled actively burning land."+
+    (frame.lowConfidence?" LOW CONFIDENCE grouping flag.":""));
+  world.fedsAreaLayer.setVisibility($("toggle-feds-area").checked);
+  world.fedsFrontLayer.setVisibility($("toggle-feds-front").checked);
+}
+function chooseFeds(key){
+  fedsChosen=fedsOptions.find(x=>x.key===key)||null;
+  world?.fedsAreaLayer.clear();
+  world?.fedsFrontLayer.clear();
+  if(!fedsChosen)return;
+  $("feds-select").value=fedsChosen.key;
+  $("feds-playback").hidden=false;
+  $("feds-range").max=String(Math.max(0,fedsChosen.frames.length-1));
+  renderFedsFrame(fedsChosen.frames.length-1);
+}
+function resetFeds(event){
+  fedsAbort?.abort();fedsAbort=null;
+  fedsOptions=[];fedsChosen=null;
+  world.fedsAreaLayer.clear();world.fedsFrontLayer.clear();
+  $("feds-panel").hidden=isFireExercise||!eligibleFeds(event);
+  $("feds-playback").hidden=true;
+  $("feds-select").replaceChildren();
+  text("feds-status","Optional experimental NASA satellite model. Only US/Canada large-fire tracks; user must explicitly load the source.");
+}
+async function loadFedsOnDemand(){
+  if(!incident||!eligibleFeds(incident)||isFireExercise)return;
+  fedsAbort?.abort();
+  const ac=new AbortController();fedsAbort=ac;
+  const id=incident.id;
+  const timeout=setTimeout(()=>ac.abort(),18_000);
+  $("btn-feds").disabled=true;
+  text("feds-status","Loading NASA FEDS experimental 12-hourly fire-tracking records…");
+  try{
+    const data=await loadFedsNearby(incident,{signal:ac.signal});
+    if(ac.signal.aborted||fedsAbort!==ac||incident?.id!==id)return;
+    fedsOptions=data.options;
+    const select=$("feds-select");select.replaceChildren();
+    data.options.forEach(o=>{
+      const opt=document.createElement("option");
+      opt.value=o.key;
+      opt.textContent=o.key+" · ≈"+o.distanceKm+" km away · "+o.frames.length+" steps";
+      select.append(opt);
+    });
+    select.hidden=!data.options.length;
+    if(!data.options.length){
+      text("feds-status","No nearby NASA FEDS modeled 12-hourly fire track returned. This is not evidence that the fire has stopped.");
+      return;
+    }
+    text("feds-status",data.options.length+" nearby MODELLED satellite fire track(s). "+
+      "NOT verified as the selected EarthNet incident. "+
+      (data.truncated?"Source results truncated; showing partial nearby model history. ":"")+
+      "Select a FEDS fire ID to view its research timeline.");
+    chooseFeds(data.options[0].key);
+  }catch(e){
+    if(fedsAbort!==ac||incident?.id!==id)return;
+    text("feds-status","NASA FEDS source unavailable, timed out or browser access blocked; no modelled shapes displayed.");
+    console.warn("[EarthNet 3D] FEDS load failed",e);
+  }finally{
+    clearTimeout(timeout);
+    if(fedsAbort===ac)fedsAbort=null;
+    $("btn-feds").disabled=false;
+  }
+}
+
 function toggleLayers() {
   if (!world) return;
   world.perimeterLayer.setVisibility($("toggle-area").checked);
   world.nifcLayer.setVisibility($("toggle-nifc").checked);
+  world.fedsAreaLayer.setVisibility($("toggle-feds-area").checked);
+  world.fedsFrontLayer.setVisibility($("toggle-feds-front").checked);
   world.burnedLayer.setVisibility($("toggle-burned").checked);
   world.burningLayer.setVisibility($("toggle-burning").checked);
   world.windExtentLayer.setVisibility($("toggle-wind").checked);
@@ -405,6 +505,8 @@ function paintScene() {
   world.locationLayer.clear();
   world.perimeterLayer.clear();
   world.nifcLayer.clear();
+  world.fedsAreaLayer.clear();
+  world.fedsFrontLayer.clear();
   world.burnedLayer.clear();
   world.burningLayer.clear();
   world.windExtentLayer.clear();
@@ -525,9 +627,11 @@ function showPrometheus() {
 function selectedIncident(id, moveCamera = true) {
   const e = events.find(it => it.id === id);
   if (!e) {setStatus("Selected event not in current feed", "warn");return;}
+  const previousId=incident?.id;
   try {
     incident = normalizeIncident(e, details[id] || {}, enriched[id] || {});
   } catch (err) {setStatus(err.message || "Invalid event", "error");return;}
+  if(previousId!==incident.id)resetFeds(e);
   $("incident-select").value = id;
   text("incident-name", incident.title);
   text("incident-place", incident.place || incident.subtype || incident.category);
@@ -539,6 +643,7 @@ function selectedIncident(id, moveCamera = true) {
   showMetrics();
   showPrometheus();
   paintScene();
+  if(fedsChosen)renderFedsFrame(Number($("feds-range").value));
   if (moveCamera) focusCamera();
   // NIFC perimeters are a read-only ON-DEMAND context query, never
   // automatically joined to the EarthNet event by location alone.
@@ -647,13 +752,16 @@ async function refresh(first = false) {
 
 function bind() {
   $("incident-select").addEventListener("change", ev => selectedIncident(ev.target.value));
-  ["toggle-area","toggle-nifc","toggle-track","toggle-wind","toggle-research","toggle-burning","toggle-burned"].forEach(id =>
+  ["toggle-area","toggle-nifc","toggle-feds-area","toggle-feds-front","toggle-track","toggle-wind","toggle-research","toggle-burning","toggle-burned"].forEach(id =>
     $(id).addEventListener("change",toggleLayers));
   $("time-range").addEventListener("input", e => showFrame(Number(e.target.value)));
   $("btn-overhead").addEventListener("click", () => focusCamera("overhead"));
   $("btn-focus").addEventListener("click", () => focusCamera("oblique"));
   $("btn-ground").addEventListener("click", () => focusCamera("terrain"));
   $("btn-refresh").addEventListener("click", () => refresh());
+  $("btn-feds").addEventListener("click",loadFedsOnDemand);
+  $("feds-select").addEventListener("change",e=>chooseFeds(e.target.value));
+  $("feds-range").addEventListener("input",e=>renderFedsFrame(Number(e.target.value)));
   $("btn-fire-exercise").addEventListener("click", () => {
     const url = new URL(location.href);
     url.searchParams.delete("id");
