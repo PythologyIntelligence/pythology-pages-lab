@@ -316,6 +316,8 @@ PUBLIC_OVERRIDES=(
   future.css
   future.html
   physical-intelligence.html
+  physical-intelligence-showcase.css
+  physical-outreach.css
   cerberus.html
   sentinel-command.html
   sentinel-command.css
@@ -328,6 +330,9 @@ for file in "${PUBLIC_OVERRIDES[@]}"; do
   fi
   cp "$ROOT/$file" "$OUT/$file"
 done
+
+# Public physical research/pilot content must ship with every Pages build.
+node "$ROOT/scripts/test-physical-public.mjs"
 
 # Keep the homepage quake breakdown and largest-event detail from silently
 # disappearing when the public presentation is refreshed again.
@@ -576,6 +581,18 @@ if grep -q 'github\.com/PythologyIntelligence/Prometheus-Subterranean' "$OUT/env
   echo "Public research page unexpectedly links to working research repository." >&2
   exit 1
 fi
+[[ -s "$OUT/physical-intelligence.html" && -s "$OUT/physical-intelligence-showcase.css" && -s "$OUT/physical-outreach.css" ]] || {
+  echo 'Physical Intelligence monitoring/research showcase assets failed to stage.' >&2
+  exit 1
+}
+for check in "$OUT/physical-intelligence.html:href=\"#pilot\"" "$OUT/where-it-fits.html:id=\"physical-monitoring\"" "$OUT/current-research.html:id=\"physical-research-evidence\""; do
+  file="${check%%:*}"
+  needle="${check#*:}"
+  grep -Fq "$needle" "$file" || {
+    echo "Physical Intelligence public content validation failed: $file" >&2
+    exit 1
+  }
+done
 [[ -s "$OUT/current-research.html" && -s "$OUT/core-technology.html" && -s "$OUT/editorial-2026.css" && -s "$OUT/prometheus-stats.js" && -s "$OUT/future.html" ]] || {
   echo 'Core Technology, Current Research or legacy redirect validation failed.' >&2
   exit 1
