@@ -53,6 +53,22 @@
         <a href="https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/WFIGS_Interagency_Perimeters_Current/FeatureServer/0"
            target="_blank" rel="noopener noreferrer" class="source">US NIFC WFIGS source ↗</a>
       </section>
+      <section id="feds-panel" class="feds-panel" hidden aria-label="Experimental NASA satellite fire-progression research">
+        <div class="overline">◈ NASA FEDS · RESEARCH MODEL · 12-HOUR FRAMES</div>
+        <p class="warning">Satellite-derived estimates, NOT official fire perimeters, verified burned ground or confirmed flames. A nearby FEDS track is NOT necessarily the selected EarthNet incident.</p>
+        <button class="action feds-load" id="btn-feds" type="button">Load nearby modelled fire progression</button>
+        <p class="feds-status" id="feds-status">Load manually for a historical research investigation.</p>
+        <select id="feds-select" aria-label="Choose a nearby NASA FEDS satellite model fire track" hidden></select>
+        <div id="feds-playback" hidden>
+          <label class="check"><input id="toggle-feds-area" type="checkbox" checked><span class="key feds-blue"></span><span>BLUE: modelled fire-affected footprint (NOT confirmed burned ground)</span></label>
+          <label class="check"><input id="toggle-feds-front" type="checkbox" checked><span class="key feds-red"></span><span>RED: satellite-estimated active fire-line segment (NOT a filled burning zone)</span></label>
+          <input id="feds-range" type="range" min="0" max="0" step="1" value="0" aria-label="Browse historical FEDS 12-hour snapshots">
+          <p id="feds-time" class="feds-time">—</p>
+          <p id="feds-summary" class="feds-status">Modelled data pending.</p>
+        </div>
+        <a class="source" target="_blank" rel="noopener noreferrer"
+           href="https://gis.earthdata.nasa.gov/portal/rest/services/FireTracking/veda_public_eis_fire_lf_fireline_nrt/MapServer/0/iteminfo">NASA FEDS provenance and limitations ↗</a>
+      </section>
       <div id="fire-panel" class="fire-panel" hidden>
         <div class="overline">FIRE EVOLUTION · SOURCE SNAPSHOTS</div>
         <label class="check"><input id="toggle-burning" type="checkbox" checked><span class="key fire-red"></span><span><strong>Active burning</strong> · soft red with thin outline</span></label>

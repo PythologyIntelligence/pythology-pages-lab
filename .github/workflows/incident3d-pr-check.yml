@@ -88,9 +88,10 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          node --test scripts/test-incident3d-fire.mjs scripts/test-prometheus-pages.mjs scripts/test-incident3d-nifc.mjs
+          node --test scripts/test-incident3d-fire.mjs scripts/test-prometheus-pages.mjs scripts/test-incident3d-nifc.mjs scripts/test-incident3d-feds.mjs
           node --check earthnet2/incident3d/fire-evolution.js
           node --check earthnet2/incident3d/nifc-perimeters.js
+          node --check earthnet2/incident3d/nasa-feds.js
           node --check scripts/prometheus-enviroarc-screening.mjs
 
       - name: Confirm pinned OpenGlobus package contents and licence
