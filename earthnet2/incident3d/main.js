@@ -263,6 +263,10 @@ function renderFireFrame(frame) {
     "No active-burning or burned-area source polygons available.");
   const redCount=frame?.activeBurning?.geometries?.length || 0;
   const blueCount=frame?.burnedArea?.geometries?.length || 0;
+  text("fire-map-status", syntheticMode
+    ? "GRAPHICS EXERCISE · " + redCount + " red actively burning polygon(s), " +
+      blueCount + " blue burned-ground polygon(s) · NOT REAL"
+    : "MAPPED SOURCE SNAPSHOT · " + redCount + " active · " + blueCount + " burned polygons");
   text("fire-availability", frame
     ? (syntheticMode ? "SYNTHETIC DEMO · " : "SOURCE SNAPSHOT · ") +
       redCount+" red active polygon(s) · "+blueCount+" blue burned-area polygon(s). " +
@@ -344,7 +348,11 @@ function paintScene() {
   const fire = fireSnapshots[incident.id] || null;
   playable = firePlayback(incident,fire) || playback(incident);
   $("fire-panel").hidden = incident.category !== "wildfire";
+  $("fire-map-status").hidden = incident.category !== "wildfire";
   if(incident.category === "wildfire") {
+    text("fire-map-status", fire?.frames?.length
+      ? "Fire geometry snapshots supplied · "+fire.frames.length+" recorded frames"
+      : "No verified active-burning / burned-ground polygons supplied for this real wildfire");
     text("fire-availability", fire?.frames?.length
       ? fire.frames.length+" sourced fire-evolution snapshots available."
       : "No verified active-burning or burned-ground geometry available. A general incident perimeter is not the fire front.");
