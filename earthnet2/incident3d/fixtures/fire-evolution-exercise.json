@@ -1,0 +1,241 @@
+{
+  "label": "SYNTHETIC DEMONSTRATION — no actual wildfire; no fire forecast; no Prometheus analysis",
+  "schemaVersion": 1,
+  "demo": true,
+  "events": [
+    {
+      "id": "synthetic:fire-evolution",
+      "category": "wildfire",
+      "title": "SYNTHETIC EXERCISE — active fire and burned ground",
+      "source": "Synthetic graphics fixture",
+      "sourceUrl": null,
+      "lat": -39.3,
+      "lon": 175.53,
+      "updatedAt": "2026-10-17T18:00:00Z",
+      "firstSeen": "2026-10-17T08:00:00Z",
+      "place": "Fictional event geometry near central North Island NZ",
+      "summary": "Three invented time-stamped frames show a red active-burning zone moving east while a blue burned-area polygon grows. These shapes are purely graphical training data and are NOT real fire observations or a prediction.",
+      "metrics": [
+        {
+          "label": "Evidence",
+          "value": "SYNTHETIC",
+          "unit": "only"
+        }
+      ]
+    }
+  ],
+  "detail": {
+    "synthetic:fire-evolution": {}
+  },
+  "fire": {
+    "schemaVersion": 1,
+    "demo": true,
+    "incidents": {
+      "synthetic:fire-evolution": {
+        "frames": [
+          {
+            "validTime": "2026-10-17T08:00:00Z",
+            "burnedArea": {
+              "evidenceClass": "hypothetical",
+              "source": "SYNTHETIC fire-evolution graphics exercise",
+              "sourceUrl": "https://example.org/synthetic-only",
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      175.5,
+                      -39.311
+                    ],
+                    [
+                      175.518,
+                      -39.311
+                    ],
+                    [
+                      175.518,
+                      -39.289
+                    ],
+                    [
+                      175.5,
+                      -39.289
+                    ],
+                    [
+                      175.5,
+                      -39.311
+                    ]
+                  ]
+                ]
+              }
+            },
+            "activeBurning": {
+              "evidenceClass": "hypothetical",
+              "source": "SYNTHETIC fire-evolution graphics exercise",
+              "sourceUrl": "https://example.org/synthetic-only",
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      175.518,
+                      -39.311
+                    ],
+                    [
+                      175.535,
+                      -39.311
+                    ],
+                    [
+                      175.535,
+                      -39.289
+                    ],
+                    [
+                      175.518,
+                      -39.289
+                    ],
+                    [
+                      175.518,
+                      -39.311
+                    ]
+                  ]
+                ]
+              }
+            }
+          },
+          {
+            "validTime": "2026-10-17T12:00:00Z",
+            "burnedArea": {
+              "evidenceClass": "hypothetical",
+              "source": "SYNTHETIC fire-evolution graphics exercise",
+              "sourceUrl": "https://example.org/synthetic-only",
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      175.5,
+                      -39.311
+                    ],
+                    [
+                      175.535,
+                      -39.311
+                    ],
+                    [
+                      175.535,
+                      -39.289
+                    ],
+                    [
+                      175.5,
+                      -39.289
+                    ],
+                    [
+                      175.5,
+                      -39.311
+                    ]
+                  ]
+                ]
+              }
+            },
+            "activeBurning": {
+              "evidenceClass": "hypothetical",
+              "source": "SYNTHETIC fire-evolution graphics exercise",
+              "sourceUrl": "https://example.org/synthetic-only",
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      175.535,
+                      -39.311
+                    ],
+                    [
+                      175.553,
+                      -39.311
+                    ],
+                    [
+                      175.553,
+                      -39.289
+                    ],
+                    [
+                      175.535,
+                      -39.289
+                    ],
+                    [
+                      175.535,
+                      -39.311
+                    ]
+                  ]
+                ]
+              }
+            }
+          },
+          {
+            "validTime": "2026-10-17T18:00:00Z",
+            "burnedArea": {
+              "evidenceClass": "hypothetical",
+              "source": "SYNTHETIC fire-evolution graphics exercise",
+              "sourceUrl": "https://example.org/synthetic-only",
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      175.5,
+                      -39.311
+                    ],
+                    [
+                      175.548,
+                      -39.311
+                    ],
+                    [
+                      175.548,
+                      -39.289
+                    ],
+                    [
+                      175.5,
+                      -39.289
+                    ],
+                    [
+                      175.5,
+                      -39.311
+                    ]
+                  ]
+                ]
+              }
+            },
+            "activeBurning": {
+              "evidenceClass": "hypothetical",
+              "source": "SYNTHETIC fire-evolution graphics exercise",
+              "sourceUrl": "https://example.org/synthetic-only",
+              "geometry": {
+                "type": "Polygon",
+                "coordinates": [
+                  [
+                    [
+                      175.548,
+                      -39.311
+                    ],
+                    [
+                      175.567,
+                      -39.311
+                    ],
+                    [
+                      175.567,
+                      -39.289
+                    ],
+                    [
+                      175.548,
+                      -39.289
+                    ],
+                    [
+                      175.548,
+                      -39.311
+                    ]
+                  ]
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}
