@@ -44,6 +44,15 @@
       <div class="divider"></div>
       <div class="overline">MAP LAYERS</div>
       <label class="check"><input id="toggle-area" type="checkbox" checked><span class="key orange"></span><span>Source incident footprint (not fire front)</span></label>
+      <section id="nifc-panel" class="nifc-panel" hidden aria-label="Nearby official US wildfire perimeters">
+        <div class="overline">US WILDFIRE PERIMETERS · NIFC</div>
+        <label class="check"><input id="toggle-nifc" type="checkbox" checked><span class="key nifc-gold"></span><span>Nearby official incident perimeters (amber)</span></label>
+        <p id="nifc-status">Checking nearby NIFC wildfire perimeters…</p>
+        <div id="nifc-results" class="nifc-results"></div>
+        <p class="warning">A nearby agency perimeter is NOT automatically this EarthNet event. A perimeter also cannot identify active flames or precisely burned ground.</p>
+        <a href="https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/WFIGS_Interagency_Perimeters_Current/FeatureServer/0"
+           target="_blank" rel="noopener noreferrer" class="source">US NIFC WFIGS source ↗</a>
+      </section>
       <div id="fire-panel" class="fire-panel" hidden>
         <div class="overline">FIRE EVOLUTION · SOURCE SNAPSHOTS</div>
         <label class="check"><input id="toggle-burning" type="checkbox" checked><span class="key fire-red"></span><span><strong>Active burning</strong> · soft red with thin outline</span></label>
