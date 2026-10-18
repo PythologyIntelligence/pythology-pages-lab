@@ -149,3 +149,10 @@ body:has(.timeline:not([hidden])) .camera-controls{bottom:188px}
  .camera-controls button{font-size:9px;white-space:nowrap}
  .left .fire-panel:not([hidden]){display:block}
 }
+
+/* An explicit state badge prevents a generic wildfire location from being
+ * mistaken for a missing rendered perimeter or mapped active flame front. */
+.fire-map-status[hidden]{display:none}
+.fire-map-status{position:fixed;z-index:7;left:50%;transform:translateX(-50%);top:77px;max-width:min(650px,calc(100vw - 740px));padding:8px 13px;border:1px solid rgba(246,129,106,.65);border-radius:6px;background:rgba(20,23,39,.92);color:#ffc8b4;text-align:center;font:600 10px/1.5 'JetBrains Mono',monospace;letter-spacing:.02em;pointer-events:none}
+@media(max-width:950px){.fire-map-status{left:auto;right:10px;top:90px;transform:none;max-width:300px}}
+@media(max-width:660px){.fire-map-status{left:8px;right:8px;top:calc(28vh + 78px);max-width:none;font-size:8px}}
