@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#030916">
+  <meta name="description" content="EarthNet Incident 3D: terrain-level environmental event investigation with traceable observations, scenarios and research overlays.">
+  <title>Incident 3D | EarthNet | Pythology Intelligence</title>
+  <!-- OpenGlobus runtime is upstream npm, pinned; fork is NOT a runtime dependency. -->
+  <link rel="stylesheet" href="../vendor/openglobus/og.css" onerror="this.onerror=null;this.href='https://cdn.jsdelivr.net/npm/@openglobus/og@0.28.7/lib/og.css';">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="terrain" role="img" aria-label="Interactive OpenGlobus three-dimensional terrain map"></div>
+  <div class="vignette" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="back" href="../index.html" title="Return to EarthNet globe">← EARTHNET</a>
+    <div class="identity"><strong>INCIDENT <span>3D</span></strong><small>ENVIRONMENTAL INTELLIGENCE</small></div>
+    <div class="status" id="status" role="status">Starting terrain engine…</div>
+    <button id="btn-quality" class="action" type="button" title="Toggle terrain rendering detail">⚙ Balanced</button>
+    <button id="btn-refresh" class="action" type="button">↻ Refresh</button>
+  </header>
+
+  <div id="demo-banner" class="demo-banner" role="alert" hidden>SYNTHETIC EXERCISE — NOT REAL INCIDENT DATA · LOCAL DEVELOPMENT PREVIEW</div>
+
+  <main>
+    <aside class="left glass">
+      <div class="overline">ACTIVE ENVIRONMENTAL EVENTS <span class="dot"></span></div>
+      <label class="select-label" for="incident-select">Incident selection</label>
+      <select id="incident-select" aria-label="Choose EarthNet incident"></select>
+      <div class="category" id="incident-type">HAZARD EVENT</div>
+      <h1 id="incident-name">Loading events…</h1>
+      <p id="incident-place" class="muted">EarthNet global monitor</p>
+      <p id="incident-summary">Source observations and available spatial geometry will appear here.</p>
+      <div class="divider"></div>
+      <div class="row"><span>Source updated</span><b id="last-update">—</b></div>
+      <div class="row"><span>Feed generated</span><b id="feed-time">—</b></div>
+      <div class="source" id="original-source">Source information pending…</div>
+      <div class="divider"></div>
+      <div class="overline">REPORTED SIGNALS</div>
+      <div class="metrics" id="reported-metrics">No source metrics supplied.</div>
+      <div class="divider"></div>
+      <div class="overline">MAP LAYERS</div>
+      <label class="check"><input id="toggle-area" type="checkbox" checked><span class="key orange"></span><span>Source polygon / footprint</span></label>
+      <label class="check"><input id="toggle-track" type="checkbox" checked><span class="key blue"></span><span>Recorded event track</span></label>
+      <label class="check"><input id="toggle-wind" type="checkbox" checked><span class="key storm"></span><span>Wind-speed coverage (when sourced)</span></label>
+      <div class="wind-insight"><strong id="wind-summary">No sourced wind extents available.</strong><p id="wind-extent-note">An event track is not an affected-area boundary.</p></div>
+      <label class="check"><input id="toggle-research" type="checkbox" checked><span class="key mint"></span><span>Research / proposal overlays</span></label>
+      <div class="divider"></div>
+      <div class="overline">DATA INTEGRITY</div>
+      <p id="geometry-label" class="geometry-tag">NO GEOMETRY LOADED</p>
+      <p id="evidence" class="muted small"></p>
+      <p class="warning">Satellite hotspots, event footprints and operational fire perimeters are different evidence types. No fire-control action is authorised by this viewer.</p>
+    </aside>
+
+    <div class="camera-controls">
+      <button id="btn-focus" type="button">⌖ Regional view</button>
+      <button id="btn-ground" type="button">↗ Terrain approach</button>
+    </div>
+
+    <aside class="right glass" aria-label="Prometheus evidence panel">
+      <div class="overline research-mark">◈ PROMETHEUS / RESEARCH</div>
+      <h2>What does the evidence show?</h2>
+      <p class="muted small" id="provenance">Source data not yet loaded.</p>
+      <div class="assessment" id="prometheus">Waiting for event evidence…</div>
+      <div class="divider"></div>
+      <div class="overline">MAP ANNOTATIONS</div>
+      <div class="annotations" id="overlay-list">No research geometries supplied.</div>
+      <div class="divider"></div>
+      <p class="warning">Research hypotheses, simulations and proposed interventions must remain visibly separate from confirmed observations. Operational decisions require authoritative guidance and human review.</p>
+    </aside>
+  </main>
+
+  <section id="time-controls" class="timeline glass" aria-label="Observed spatial history" hidden>
+    <div><span class="overline">◷ TEMPORAL LAYERS</span><strong id="frame-time">—</strong></div>
+    <input id="time-range" type="range" min="0" max="0" step="1" value="0" aria-label="Step through source-labelled observed or modelled spatial frames">
+    <p id="geometry-note">Available source fixes only. No invented intermediate steps.</p>
+  </section>
+  <footer class="footer">
+    <span>PYTHOLOGY INTELLIGENCE <i>·</i> ENVIROARC</span>
+    <span>OPEN GLOBUS TERRAIN <i>·</i> SOURCE DATA MAY BE DELAYED <i>·</i> NOT AN EMERGENCY SERVICE</span>
+  </footer>
+
+  <script type="module" src="./main.js"></script>
+</body>
+</html>
