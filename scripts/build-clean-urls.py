@@ -110,9 +110,9 @@ def build(out):
             raise SystemExit("Clean page missing asset base: " + route)
         # Not every legacy page spells its CSS links the same way, and some
         # use only inline styles. Check the actual external load tags instead.
-        for tag in re.finditer(r'<(?:link|script)\\b[^>]*>', page, re.I):
+        for tag in re.finditer(r'<(?:link|script)\b[^>]*>', page, re.I):
             if ('stylesheet' in tag.group().lower() or
-                    re.search(r'\\bsrc\\s*=', tag.group(), re.I)):
+                    re.search(r'\bsrc\s*=', tag.group(), re.I)):
                 if tag.start() < base_pos:
                     raise SystemExit("CSS or JS starts before clean asset base: " + route)
     for route in ("subterranean", "weather-lab", "enviroarc"):
