@@ -78,7 +78,7 @@ def rewrite(source, slug, clone):
                 root_url = urlunsplit(("", "", path, parts.query, parts.fragment))
                 return href["head"] + href["quote"] + root_url + href["quote"]
             return ATTR.sub(rooted, block)
-        out = re.sub(r"<header\\b[^>]*>.*?</header>", root_header, out, count=1, flags=re.I | re.S)
+        out = re.sub(r"<header\b[^>]*>.*?</header>", root_header, out, count=1, flags=re.I | re.S)
         if "</head>" not in out:
             raise ValueError("Missing closing <head> in clean page")
         extra = '  <base href="../">\n'
