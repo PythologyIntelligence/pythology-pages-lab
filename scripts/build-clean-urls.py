@@ -63,7 +63,8 @@ def rewrite(source, slug, clone):
         extra = '  <base href="../">\n'
         if 'rel="canonical"' not in out:
             extra += '  <link rel="canonical" href="' + DOMAIN + "/" + slug + '/">\n'
-        out = out.replace("</head>", extra + "</head>", 1)
+        # HTML fetches assets as it parses; <base> must precede CSS/JS links.
+        out = out.replace("<head>", "<head>\n" + extra, 1)
     return out
 
 def build(out):
