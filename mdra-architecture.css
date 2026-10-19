@@ -275,3 +275,23 @@
   .mdra-arch-v2 .py-branch-row>a{padding-inline:5px}
   .mdra-arch-v2 .py-branch-row>a small{font-size:10px}
 }
+
+
+/* Keep all five EnviroArc hero shortcuts on one row on desktop only.
+   Tablet/mobile retain the original full labels and natural wrapping. */
+.mdra-hero-copy .mdra-btn-short{display:none}
+@media(min-width:981px){
+  .mdra-hero-copy .btn-row{
+    flex-wrap:nowrap;
+    gap:6px;
+  }
+  .mdra-hero-copy .btn-row .btn{
+    min-width:0;
+    min-height:42px;
+    padding-inline:9px;
+    font-size:clamp(10.5px,.84vw,12px);
+    white-space:nowrap;
+  }
+  .mdra-hero-copy .mdra-btn-full{display:none}
+  .mdra-hero-copy .mdra-btn-short{display:inline}
+}
