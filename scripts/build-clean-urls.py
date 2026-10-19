@@ -105,7 +105,22 @@ def build(out):
     assert weather.index('<base href="../">') < weather.index('href="site.css"')
     for route in list(PAGES.values())[1:] + list(ALIASES):
         page = (out / route / "index.html").read_text(encoding="utf-8")
-        assert page.index('<base href="../">') < page.index('<link rel="stylesheet"'), route
+        base_pos = page.find('<base href="../">')
+        if base_pos < 0:
+            raise SystemExit("Clean page missing asset base: " + route)
+        # Not every legacy page spells its CSS links the same way, and some
+        # use only inline styles. Check the actual external load tags instead.
+        for tag in re.finditer(r'<(?:link|script)\\b[^>]*>', page, re.I):
+            if ('stylesheet' in tag.group().lower() or
+                    re.search(r'\\bsrc\\s*=', tag.group(), re.I)):
+                if tag.start() < base_pos:
+                    raise SystemExit("CSS or JS starts before clean asset base: " + route)
+    for route in ("subterranean", "weather-lab", "enviroarc"):
+        page = (out / route / "index.html").read_text(encoding="utf-8")
+        if page.find('href="site.css"') < page.find('<base href="../">'):
+            raise SystemExit("Core stylesheet loads before clean asset base: " + route)
+        if 'href="site.css"' not in page:
+            raise SystemExit("Core stylesheet missing from clean page: " + route)
     assert 'href="weather-lab/#moore"' in weather
     assert 'href="enviroarc/#weather-lab"' in weather
     assert 'href="subterranean/"' in enviro
