@@ -1,0 +1,31 @@
+name: Public Site Audit Checks
+
+on:
+  pull_request:
+    paths:
+      - 'index.html'
+      - 'site.js'
+      - 'physical-intelligence.html'
+      - 'where-it-fits.html'
+      - 'scripts/build-site-discovery.py'
+      - 'scripts/test-site-discovery.py'
+      - 'scripts/test-physical-public.mjs'
+      - '.github/workflows/pages.yml'
+      - '.github/workflows/site-audit-checks.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout exact proposed revision
+        uses: actions/checkout@v4
+      - name: Check public website navigation syntax
+        run: node --check site.js
+      - name: Check public Physical Intelligence safety and pilot claims
+        run: node scripts/test-physical-public.mjs
+      - name: Validate discovery metadata, canonical URLs and navigation
+        run: python3 scripts/test-site-discovery.py
