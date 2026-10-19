@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="pythology-showcase.css">
   <script defer src="site.js"></script>
   <script defer src="enviroarc-research.js"></script>
+  <script defer src="global-volcano-research.js"></script>
   <script defer src="prometheus-research-cards.js"></script>
   <style>
     html{scroll-behavior:smooth;scroll-padding-top:92px}
@@ -108,6 +109,7 @@
 
   <nav class="pr-nav" aria-label="Research sections"><div class="pr-container">
     <a href="#hourly-scan">Latest hourly research</a>
+    <a href="#global-volcano-research">Global volcano observations</a>
     <a href="#nz-replays">NZ earthquake replays</a>
     <a href="#volcano-replays">Volcano context</a>
     <a href="#panama-replay">Panama non-detection</a>
@@ -207,7 +209,40 @@
         </div>
       </div>
 
-    <section class="pr-section" id="nz-replays">
+        <section class="pr-section" id="global-volcano-research" data-global-volcano-research aria-label="Worldwide volcanic observation research status">
+      <div class="pr-section-head"><div>
+        <p class="pr-kicker">SUBTERRANEAN · GLOBAL VOLCANIC RESEARCH · READ-ONLY SHADOW</p>
+        <h2>Worldwide volcanoes. Verified sources. Clear limits.</h2>
+        <p>Smithsonian historical volcano and eruption records are joined to available USGS official notice metadata and nearby earthquakes. They are separate types of evidence. NZ Volcano Pulse remains its own detailed regional study.</p>
+      </div></div>
+      <div class="pr-callout">
+        <strong data-gv-status data-state="stale">AWAITING VERIFIED PUBLIC SNAPSHOT</strong>
+        <p data-gv-note>Global volcanic research figures appear only after a successfully collected source-checked snapshot is published. Missing data is not interpreted as quiet volcanic activity.</p>
+      </div>
+      <div class="pr-summary" aria-label="Global volcanic research coverage metrics">
+        <div class="pr-number"><strong data-gv-catalogue>—</strong><span>Holocene volcanoes catalogued worldwide · historical inventory</span></div>
+        <div class="pr-number"><strong data-gv-eruptions>—</strong><span>Historical eruption records since 1960 · not ongoing eruptions</span></div>
+        <div class="pr-number"><strong data-gv-usgs>—</strong><span>Volcanoes matched to official USGS HANS notices/listings</span></div>
+        <div class="pr-number"><strong data-gv-nearby>—</strong><span>M2.5+ earthquake–volcano proximity associations · 7 days</span></div>
+      </div>
+      <div class="pr-grid">
+        <article class="pr-card"><div class="pr-label">DATA COVERAGE</div><h3>Evidence before interpretations</h3>
+          <p><strong data-gv-with-nearby>—</strong> volcanoes with one or more catalogue earthquakes within 50 km. This counts geographic proximity only and does not establish volcanic seismicity.</p>
+          <p><strong data-gv-instrumented>—</strong> individually verified continuous volcanic sensor streams in this global collector; sensor availability remains unassessed.</p>
+          <div class="pr-detail">REGIONAL DATA COMPLETENESS VARIES · M2.5+ MISSES MANY SMALL VOLCANIC QUAKES</div></article>
+        <article class="pr-card"><div class="pr-label">OFFICIAL REPORTING</div><h3>Recent USGS notices</h3>
+          <p><strong data-gv-recent-notices>—</strong> listed volcanoes with a recent elevated USGS notice. USGS HANS coverage is not worldwide.</p>
+          <ul data-gv-notices><li>Waiting for a source-checked snapshot.</li></ul>
+          <div class="pr-detail">OFFICIAL NOTICE STATUS IS NOT AN INDEPENDENT PYTHOLOGY WARNING</div></article>
+        <article class="pr-card"><div class="pr-label">VALIDATION STATUS</div><h3>Learning without exaggerating</h3>
+          <p><strong data-gv-precursors>—</strong> volcanic precursors independently validated by this new global collector.</p>
+          <p>Future work: per-volcano observing histories, deformation, thermal and gas feeds, eruption-free controls, monitoring gaps and prospective false-alarm tests.</p>
+          <div class="pr-detail">NO GLOBAL ERUPTION PROBABILITY OR TIMING FORECASTS</div></article>
+      </div>
+      <p class="pr-note">Last successful snapshot: <span data-gv-updated>Not yet published</span>. Sources: Smithsonian GVP · USGS HANS · USGS earthquake feed. Only aggregate research coverage is published, not private raw measurements, credentials or operator logs. For safety decisions follow official volcanic observatories and civil-protection authorities.</p>
+    </section>
+
+<section class="pr-section" id="nz-replays">
       <div class="pr-section-head"><div>
         <p class="pr-kicker">01 / HISTORICAL EARTHQUAKE CATALOGUE EXPERIMENTS</p>
         <h2>New Zealand · GeoNet V3 replay</h2>
