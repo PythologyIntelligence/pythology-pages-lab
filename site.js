@@ -22,13 +22,19 @@
     ? (canonicalNav.some(([href]) => href === segment + '.html') ? segment + '.html' : 'index.html')
     : (segment || 'index.html');
 
+  // Rooted in the document's established site base. On clean /about/ routes
+  // the builder supplies <base href="../">; on legacy .html pages the URL's
+  // own directory is the base. Both custom domains and GitHub project prefixes
+  // work. Emit explicit path-absolute hrefs, not subpage-relative hrefs.
+  const siteRoot = new URL('./', document.baseURI);
   nav.replaceChildren();
   canonicalNav
     .filter(([href]) => href !== currentPage)
     .forEach(([href, label]) => {
       const link = document.createElement('a');
       link.className = 'nav-link';
-      link.href = href === 'index.html' ? './' : href.replace(/\.html$/, '/');
+      const target = href === 'index.html' ? './' : href.replace(/\.html$/, '/');
+      link.href = new URL(target, siteRoot).pathname;
       link.textContent = label;
       nav.appendChild(link);
     });
