@@ -282,6 +282,7 @@ PUBLIC_OVERRIDES=(
   architecture-in-action.css
   pythology-human.css
   enviroarc.html
+  enviroarc-labs.css
   weather-lab.html
   weather-lab.css
   weather-lab-live.js
@@ -553,6 +554,22 @@ grep -Fq 'data-home-research-findings' "$OUT/index.html" || {
 }
 [[ -s "$OUT/weather-lab.css" && -s "$OUT/weather-lab-live.js" && -s "$OUT/weather-observation-list.js" ]] || {
   echo 'Public Weather Lab styling or live research client missing from Pages build' >&2
+  exit 1
+}
+[[ -s "$OUT/enviroarc-labs.css" ]] || {
+  echo 'EnviroArc dedicated research-lab gateway stylesheet was not staged.' >&2
+  exit 1
+}
+grep -Fq 'mdra-lab-portals' "$OUT/enviroarc.html" || {
+  echo 'EnviroArc specialist-lab gateway section is missing from the Pages build.' >&2
+  exit 1
+}
+grep -Fq 'href="precursor-research.html"' "$OUT/enviroarc.html" || {
+  echo 'EnviroArc geological lab link is missing.' >&2
+  exit 1
+}
+grep -Fq 'href="weather-lab.html"' "$OUT/enviroarc.html" || {
+  echo 'EnviroArc extreme-weather lab link is missing.' >&2
   exit 1
 }
 grep -Fq 'id="weather-lab"' "$OUT/enviroarc.html" || {
