@@ -36,9 +36,10 @@ class WebsiteAuditTests(unittest.TestCase):
         </body></html>''')
         for slug in ("prometheus", "about", "subterranean"):
             new = clean.rewrite(source, slug, True)
+            header = new.split("<header", 1)[1].split("</header>", 1)[0]
             for dest in ("enviroarc/", "about/", "where-it-fits/"):
-                self.assertIn('href="/' + dest + '"', new)
-                self.assertNotIn('href="' + dest + '"', new)
+                self.assertIn('href="/' + dest + '"', header)
+                self.assertNotIn('href="' + dest + '"', header)
             self.assertIn('href="/about/#contact"', new)
             self.assertIn('href="/"', new)
             # Other links keep the supported relative-to-base routing semantics.
