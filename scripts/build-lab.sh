@@ -623,7 +623,13 @@ done
   echo 'Chathams imagery or weather public snapshot missing from site' >&2; exit 1;
 }
 grep -Fq "['chathams.html', 'Chatham Islands']" "$OUT/site.js" || { echo 'Chathams primary navigation missing' >&2; exit 1; }
-grep -Fq 'data-py-lab="weather"' "$OUT/enviroarc.html" || { echo 'Weather research card missing' >&2; exit 1; }
+# The detailed research cards now live on their dedicated lab pages.
+grep -Fq 'data-py-lab="weather"' "$OUT/weather-lab.html" || { echo 'Extreme Weather Lab research card missing' >&2; exit 1; }
+grep -Fq 'data-py-lab="geology"' "$OUT/precursor-research.html" || { echo 'Subterranean Lab research card missing' >&2; exit 1; }
+grep -Fq 'id="enviroarc-research-live"' "$OUT/precursor-research.html" || { echo 'Subterranean public hourly screening hook missing' >&2; exit 1; }
+if grep -Eq 'data-py-lab=|data-weather-live|id="enviroarc-research-live"' "$OUT/enviroarc.html"; then
+  echo 'Detailed research screen unexpectedly remains on EnviroArc gateway' >&2; exit 1
+fi
 grep -Fq 'data-home-forecast-caveat' "$OUT/index.html" || { echo 'Forecast card fallback hook missing' >&2; exit 1; }
 [[ -s "$OUT/png_images/about_me.png" ]] || {
   echo 'About founder portrait did not stage.' >&2
