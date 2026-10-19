@@ -171,3 +171,107 @@
 /* Wide EarthNet tier above Poseidon and Atlas. */
 .mdra-arch-v2 .mdra-arch-platforms .system-earthnet{grid-column:1 / -1;min-height:108px;background:linear-gradient(125deg,rgba(7,44,57,.96),rgba(5,27,42,.96));border-color:rgba(94,207,225,.53)}
 @media(max-width:640px){.mdra-arch-v2 .mdra-arch-platforms .system-earthnet{min-height:92px}}
+
+
+/* Specialist labs are real diagram nodes, not unstyled links beneath Prometheus. */
+.mdra-arch-v2 .mdra-arch-bottom{
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  width:100%;
+}
+.mdra-arch-v2 .py-branch-row{
+  position:relative;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:clamp(8px,1vw,12px);
+  padding-top:22px;
+  min-width:0;
+}
+.mdra-arch-v2 .py-branch-row::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:0;
+  width:1px;
+  height:17px;
+  transform:translateX(-50%);
+  background:linear-gradient(180deg,rgba(100,213,237,.7),rgba(105,225,182,.65));
+}
+.mdra-arch-v2 .py-branch-row::after{
+  content:'';
+  position:absolute;
+  left:calc(50% - 3px);
+  top:12px;
+  width:6px;
+  height:6px;
+  border-right:1px solid #8ce4de;
+  border-bottom:1px solid #8ce4de;
+  transform:rotate(45deg);
+}
+.mdra-arch-v2 .py-branch-row>a{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  min-width:0;
+  min-height:86px;
+  padding:14px 10px;
+  gap:7px;
+  border:1px solid rgba(103,212,222,.36);
+  border-top:2px solid rgba(121,233,210,.6);
+  border-radius:13px;
+  background:linear-gradient(150deg,rgba(8,39,49,.97),rgba(4,23,35,.97));
+  box-shadow:0 8px 26px rgba(0,0,0,.19);
+  text-align:center;
+  text-decoration:none;
+  color:#e9ffff;
+  white-space:normal;
+  transition:border-color .18s ease,background .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.mdra-arch-v2 .py-branch-row>a:nth-child(2){
+  border-top-color:rgba(120,197,249,.74);
+  background:linear-gradient(150deg,rgba(10,40,60,.97),rgba(5,24,41,.97));
+}
+.mdra-arch-v2 .py-branch-row>a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(142,244,224,.85);
+  box-shadow:0 12px 30px rgba(0,0,0,.28),0 0 18px rgba(83,214,215,.12);
+}
+.mdra-arch-v2 .py-branch-row>a:focus-visible{
+  outline:2px solid #98f7e1;
+  outline-offset:3px;
+}
+.mdra-arch-v2 .py-branch-row>a b{
+  display:block;
+  font:750 clamp(11px,1.06vw,13px)/1.35 'JetBrains Mono',Consolas,monospace;
+  letter-spacing:.035em;
+  color:#bdf7e7;
+  overflow-wrap:normal;
+}
+.mdra-arch-v2 .py-branch-row>a small{
+  display:block;
+  font:500 clamp(10.5px,.95vw,12px)/1.4 'Space Grotesk',Arial,sans-serif;
+  color:#b7d4dc;
+  margin:0;
+}
+.mdra-hero-copy .btn-row{gap:10px}
+.mdra-hero-copy .btn-row .mdra-lab-action{
+  min-height:42px;
+  padding:0 12px;
+  font-size:12px;
+  color:#c5f5ed;
+  background:rgba(12,65,66,.25);
+  border-color:rgba(115,225,203,.37);
+}
+@media(max-width:640px){
+  .mdra-arch-v2 .py-branch-row{gap:8px;padding-top:21px}
+  .mdra-arch-v2 .py-branch-row>a{min-height:92px;padding:12px 7px}
+  .mdra-arch-v2 .py-branch-row>a b{font-size:clamp(10px,2.85vw,12px);letter-spacing:.015em}
+  .mdra-arch-v2 .py-branch-row>a small{font-size:11px}
+}
+@media(max-width:340px){
+  .mdra-arch-v2 .py-branch-row{gap:6px}
+  .mdra-arch-v2 .py-branch-row>a{padding-inline:5px}
+  .mdra-arch-v2 .py-branch-row>a small{font-size:10px}
+}
