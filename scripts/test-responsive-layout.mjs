@@ -88,8 +88,9 @@ try {
         els => els.map(a => ({ text: a.textContent?.trim(), path: new URL(a.href).pathname })),
       );
       for (const link of nav) {
-        assert.ok(!link.path.startsWith(route + 'enviroarc/') &&
-                  !link.path.startsWith(route + 'about/'),
+        assert.ok(route === '/' ||
+                  (!link.path.startsWith(route + 'enviroarc/') &&
+                   !link.path.startsWith(route + 'about/')),
                   'Nested/broken ' + viewport.name + ' link on ' + route + ': ' + JSON.stringify(link));
       }
       const navLink = nav.find(x => x.text === 'EnviroArc');
