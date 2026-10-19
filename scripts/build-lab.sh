@@ -453,7 +453,13 @@ done
 mkdir -p "$OUT/png_images/chathams"
 # Keep legacy PNG assets for old links while current pages serve optimised WebP.
 cp "$CHATHAMS_SOURCE/"*.png "$OUT/png_images/chathams/"
-python3 "$ROOT/scripts/build-chathams-webp.py" "$CHATHAMS_SOURCE" "$OUT/png_images/chathams"
+# Runner images do not guarantee ffmpeg/Pillow. Install a pinned WebP codec
+# into a temporary build-only directory; no site/runtime Python is changed.
+PYTHOLOGY_IMAGE_TOOLS="${RUNNER_TEMP:-$ROOT/.site-build-cache}/pythology-image-codec"
+python3 -m pip install --disable-pip-version-check --no-input --quiet \
+  --target "$PYTHOLOGY_IMAGE_TOOLS" "Pillow==11.3.0"
+PYTHONPATH="$PYTHOLOGY_IMAGE_TOOLS${PYTHONPATH:+:$PYTHONPATH}" \
+  python3 "$ROOT/scripts/build-chathams-webp.py" "$CHATHAMS_SOURCE" "$OUT/png_images/chathams"
 test -s "$OUT/png_images/chathams/helios-dashboard.webp"
 test -s "$OUT/png_images/chathams/ecowatch-dashboard.webp"
 
