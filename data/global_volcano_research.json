@@ -1,0 +1,62 @@
+{
+  "generated_at_utc": "2026-10-19T08:10:13.559652+00:00",
+  "historical_eruption_records_since_1960": 2248,
+  "historical_volcanoes_catalogued": 1214,
+  "instrumental_volcanoes_individually_verified": 0,
+  "limits": [
+    "All volcanoes catalogued; worldwide live instrumental monitoring NOT established.",
+    "Historical eruption record counts describe documentation, NOT eruption risk.",
+    "USGS HANS is not worldwide; even listed sites have no individually verified live sensor status here.",
+    "A recent official notice is distinct from a validated volcanic precursor.",
+    "USGS M2.5+ nearby quakes are spatial associations, not proven volcanic events.",
+    "No gas, deformation, thermal, tremor or eruption-prediction data connected yet."
+  ],
+  "longitudinal_baseline_scans_compared": 0,
+  "nearby_earthquake_feed_age_hours": 0.0,
+  "nearby_earthquake_source_stale": false,
+  "nearby_m2_5_plus_earthquake_associations": 102,
+  "research_only": true,
+  "schema": "pythology.subterranean.global-volcano-public.v0.1",
+  "sources": {
+    "smithsonian": "https://volcano.si.edu/",
+    "usgs_earthquakes": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/2.5_week.geojson",
+    "usgs_hans": "https://volcanoes.usgs.gov/hans-public/api/volcano/default"
+  },
+  "state": "observational_sources_received",
+  "tectonic_group_inventory_counts_heuristic": {
+    "hotspot_or_intraplate": 149,
+    "rift_or_divergent": 221,
+    "subduction": 838,
+    "unclassified": 6
+  },
+  "usgs_elevated_notice_examples": [
+    {
+      "country": "United States",
+      "name": "Kilauea",
+      "notice_at_utc": "2026-10-18T20:30:01+00:00",
+      "reported_alert_level": "ADVISORY"
+    },
+    {
+      "country": "United States",
+      "name": "Great Sitkin",
+      "notice_at_utc": "2026-10-18T18:52:41+00:00",
+      "reported_alert_level": "WATCH"
+    },
+    {
+      "country": "United States",
+      "name": "Shishaldin",
+      "notice_at_utc": "2026-10-18T18:52:41+00:00",
+      "reported_alert_level": "ADVISORY"
+    },
+    {
+      "country": "United States",
+      "name": "Ahyi",
+      "notice_at_utc": "2026-10-15T23:34:00+00:00",
+      "reported_alert_level": "ADVISORY"
+    }
+  ],
+  "usgs_official_recent_elevated_notices": 4,
+  "volcanoes_matched_to_usgs_hans": 62,
+  "volcanoes_with_geographic_earthquake_associations": 70,
+  "volcanoes_with_validated_precursors": 0
+}
