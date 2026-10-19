@@ -471,6 +471,19 @@ jobs:
           grep -q 'noindex,nofollow,noarchive' _site/prometheus-private.html
           echo "Private Prometheus control centre staged."
 
+      - name: Validate and stage search and LinkedIn discovery metadata
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/test-site-discovery.py
+          python3 scripts/build-site-discovery.py _site
+          test -s _site/robots.txt
+          test -s _site/sitemap.xml
+          test -s _site/favicon.ico
+          grep -Fq 'property="og:image"' _site/index.html
+          grep -Fq 'rel="canonical"' _site/about.html
+          echo 'Public discovery and LinkedIn card metadata staged.'
+
       - name: Publish clean public URLs
         shell: bash
         run: |
