@@ -10,12 +10,8 @@
   <link rel="stylesheet" href="pythology-human.css">
   <link rel="stylesheet" href="mdra.css">
   <link rel="stylesheet" href="mdra-architecture.css?v=20261011-weatherlab1">
-  <link rel="stylesheet" href="enviroarc-research.css"><link rel="stylesheet" href="pythology-showcase.css">
-  <link rel="stylesheet" href="weather-lab.css?v=20261011-observations2">
+  <link rel="stylesheet" href="enviroarc-labs.css?v=20261019">
   <script defer src="site.js"></script>
-  <script defer src="enviroarc-research.js"></script><script defer src="prometheus-research-cards.js"></script>
-  <script defer src="weather-lab-live.js?v=20261011-weather1"></script>
-  <script defer src="weather-observation-list.js?v=20261011-systemcards1"></script>
 </head>
 <body class="pitch-body mdra-body">
 <header class="site-header">
@@ -60,7 +56,7 @@
         </div>
       </div>
 
-      <div class="mdra-hero-system mdra-arch-v2" aria-label="EnviroArc research architecture: EarthNet worldwide observation, Poseidon marine and Atlas New Zealand operational layers, with Prometheus and geological and weather precursor research underneath. Weather Lab radar research is described separately on this page.">
+      <div class="mdra-hero-system mdra-arch-v2" aria-label="EnviroArc research architecture: EarthNet worldwide observation, Poseidon marine and Atlas New Zealand operational layers, with Prometheus and geological and weather precursor research underneath. Weather Lab radar research has a dedicated linked research record.">
         <div class="mdra-arch-top">
           <div class="mdra-core"><span>ENVIROARC</span><small>one environmental intelligence family</small></div>
         </div>
@@ -145,217 +141,33 @@
     </div>
   </section>
 
-  <section class="pitch-section wx-section" id="weather-lab">
+
+  <!-- EnviroArc remains the concise gateway; detailed evidence lives with each lab. -->
+  <section class="pitch-section mdra-lab-portals" aria-labelledby="lab-portals-heading">
     <div class="container">
-      <div class="wx-intro">
-        <div>
-          <p class="human-kicker">EnviroArc · Weather Lab · extreme-weather research</p>
-          <h2>Inside the storm.<br>Evidence before forecasts.</h2>
-          <p>Weather Lab combines time-gated historical storm replays with live research observation of selected U.S. radar stations, plus independently issued NWS warnings and NHC cyclone advisory context. Our Moore 2013 tornado test produced an early radar-rotation signal — and an equally important negative result for the later high-confidence fused classification.</p>
-        </div>
-        <a class="btn" href="weather-lab.html#moore">Read the Weather Lab study ↗</a>
+      <div class="mdra-lab-portals-head">
+        <p class="human-kicker">PROMETHEUS · SPECIALIST RESEARCH LABORATORIES</p>
+        <h2 class="h2" id="lab-portals-heading">Study what happens <em>before.</em></h2>
+        <p>Beyond monitoring the world as it is, our research laboratories investigate how environments change before major events. Follow each lab for its live research screens, historical evidence, negative findings and validation methods.</p>
       </div>
-      <div class="wx-study-grid" aria-label="Moore 2013 historical tornado replay milestones">
-        <article class="wx-study">
-          <p class="wx-kicker">MOORE, OKLAHOMA · 20 MAY 2013</p>
-          <h3>First persistent radar rotation</h3>
-          <div class="wx-value">26.4 MIN <small>before the NWS warning</small></div>
-          <p class="wx-kicker" style="margin:10px 0;color:#9fdce7">20 MAY 2013 · ROTATION 19:13:35 UTC · NWS WARNING 19:40 UTC</p>
-          <p>The replay emitted an early persistent radar-rotation classification at 19:13:35 UTC — about 42.4 minutes before touchdown. The model was developed on this same historical case: <strong>this is not an independent 26-minute forecast advantage</strong>.</p>
+      <div class="mdra-lab-portals-grid">
+        <article class="mdra-lab-portal mdra-lab-portal-earth" id="precursor-research">
+          <div class="mdra-lab-portal-top"><span>01 / SUBTERRANEAN</span><span>GEOLOGICAL PRECURSOR RESEARCH</span></div>
+          <h3>What changes before the Earth moves?</h3>
+          <p>Subterranean studies earthquake-catalogue patterns and volcanic-region context, comparing emerging signals with historical replays, quiet controls and regional differences. The aim is to test whether any precursor holds up across faults, places and time.</p>
+          <div class="mdra-lab-portal-tags"><span>Earthquakes</span><span>Volcanic context</span><span>Global + NZ comparisons</span></div>
+          <a class="mdra-lab-portal-link" href="precursor-research.html">Enter Subterranean Lab <span aria-hidden="true">↗</span></a>
         </article>
-        <article class="wx-study">
-          <p class="wx-kicker">THE RESULT THAT KEEPS US HONEST</p>
-          <h3>High-confidence fused structure</h3>
-          <div class="wx-value wx-critical">7.8 MIN <small>after the NWS warning</small></div>
-          <p class="wx-kicker" style="margin:10px 0;color:#9fdce7">20 MAY 2013 · HIGH-CONFIDENCE FUSED 19:47:47 UTC · TOUCHDOWN 19:56 UTC</p>
-          <p>The high-confidence tornado-supportive-structure finding came after the official NWS warning. Radar rotation was observed earlier, but the complete storm interpretation did <strong>not</strong> demonstrate an early operational warning.</p>
+        <article class="mdra-lab-portal mdra-lab-portal-sky" id="weather-lab">
+          <span id="weather-precursor" class="mdra-lab-anchor" aria-hidden="true"></span>
+          <div class="mdra-lab-portal-top"><span>02 / EXTREME WEATHER</span><span>ATMOSPHERIC PRECURSOR RESEARCH</span></div>
+          <h3>What changes before a storm develops?</h3>
+          <p>Extreme Weather Lab examines radar storm structure alongside separate global and New Zealand environmental precursor screens. Time-gated replays, official advisory context and careful testing seek repeatable patterns without mistaking a research signal for a warning.</p>
+          <div class="mdra-lab-portal-tags"><span>Severe storms</span><span>Radar research</span><span>Global + NZ screening</span></div>
+          <a class="mdra-lab-portal-link" href="weather-lab.html">Enter Extreme Weather Lab <span aria-hidden="true">↗</span></a>
         </article>
       </div>
-      <div class="wx-live" data-weather-live data-wx-state="unavailable">
-        <div class="wx-live-head">
-          <div><p class="wx-kicker">WHAT HE IS WATCHING · VERIFIED PUBLIC RESEARCH STATE</p><h3>Live NEXRAD · official NWS and NHC context</h3></div>
-          <span class="wx-badge" data-wx-badge>CURRENT STATUS UNVERIFIED</span>
-        </div>
-        <div class="wx-live-grid">
-          <div class="wx-live-metric"><strong data-wx-radar>—</strong><span>radar volumes analysed since backend start</span></div>
-          <div class="wx-live-metric"><strong data-wx-findings>—</strong><span>current radar research findings</span></div>
-          <div class="wx-live-metric"><strong data-wx-nws>—</strong><span>official NWS alerts in force</span></div>
-          <div class="wx-live-metric"><strong data-wx-nhc>—</strong><span>NHC active-storm advisory entries</span></div>
-        </div>
-        <div class="wx-data-info">
-          <span data-wx-updated>Checking public weather research feed…</span>
-          <span data-wx-adapters>Source freshness not verified.</span>
-          <span data-wx-scope>Only explicitly configured radar sites are covered.</span>
-        </div>
-        
-  <div class="wx-systems-panel">
-    <div class="wx-systems-head">
-      <div>
-        <p class="wx-kicker">WHAT THE SOURCES ARE ACTUALLY SHOWING</p>
-        <h4>Named storm systems · radar coverage · severe-alert context</h4>
-      </div>
-      <span class="wx-source-note">Official NHC / NWS · NEXRAD observations</span>
-    </div>
-    <div class="wx-systems-grid">
-      <div class="wx-system-list"><h5>Active tropical systems <span>NHC</span></h5>
-        <div data-wx-storm-list><p class="wx-observation-empty">Awaiting verified NHC advisory feed…</p></div>
-      </div>
-      <div class="wx-system-list"><h5>Severe-weather alerts <span>NWS</span></h5>
-        <div data-wx-alert-list><p class="wx-observation-empty">Awaiting verified NWS alert feed…</p></div>
-      </div>
-      <div class="wx-system-list"><h5>Radar stations under observation <span>NEXRAD</span></h5>
-        <div data-wx-site-list><p class="wx-observation-empty">Awaiting fresh radar evidence…</p></div>
-      </div>
-    </div>
-    <p class="wx-observation-note">These are current-source observations and official advisory fixes, not predicted storm paths, new tornado warnings or evidence of independent forecasting skill. If no active systems are listed, the corresponding source must first be verified fresh; otherwise the display reports the gap.</p>
-  </div>
-
-        <p class="wx-live-note">The research observer runs independently of this webpage. Counts are only displayed when its source freshness can be verified; no live observation is inferred from a historical case, refreshed webpage, or old snapshot. The Prometheus watcher can preserve time-matched Solar Lab observations as research context, never as proof that solar activity causes tornadoes.</p>
-      </div>
-      <div class="wx-cta">
-        <a href="weather-lab.html">Explore Weather Lab research →</a>
-        <a class="secondary" href="precursor-research.html">View Subterranean precursor experiments →</a>
-      </div>
-      <div class="wx-disclaimer">Research only — neither the Moore 2013 retrospective timing nor the live radar research feed provides validated tornado forecasts. Official warnings and cyclone advisories come from NWS/NHC and responsible meteorological agencies, not Pythology.</div>
-    </div>
-  </section>
-
-  <section class="pitch-section" id="weather-precursor"><div class="container"><div class="er-head"><div><p class="human-kicker">ENVIROARC × PROMETHEUS · WEATHER PRECURSOR RESEARCH</p><h2 class="h2">What happens before the storm?</h2><p>Global environmental signals and New Zealand gauge, river and atmospheric context are investigated as research. The public snapshot is read-only, and unpublished or stale data is labelled rather than mistaken for current findings.</p></div><a class="btn er-link" href="weather-lab.html">See the separate radar Weather Lab ↗</a></div><div class="py-lab-grid"><article class="py-lab-card" data-py-lab="weather"><span class="py-lab-eyebrow">PROMETHEUS · GLOBAL + NZ RESEARCH</span><div class="py-lab-head"><h3>Weather Precursor Lab</h3><span class="py-lab-state" data-py-state data-state="stale">CHECKING PUBLIC SNAPSHOT</span></div><p class="py-lab-copy">Patterns in global environmental conditions, with separate New Zealand observational screening. These are research candidates, not weather warnings or validated predictions.</p><div class="py-lab-metrics"><div><strong data-py-count-1>—</strong><span>source records</span></div><div><strong data-py-count-2>—</strong><span>weather rows</span></div><div><strong data-py-count-3>—</strong><span>distinct screens</span></div></div><p class="py-lab-copy"><strong data-py-nz>—</strong> NZ exploratory observations</p><small class="py-lab-time" data-py-time>Checking publication date…</small><p class="py-lab-copy" data-py-detail>Research only; no validated weather forecast.</p><a class="py-lab-cta" href="enviroarc.html#weather-precursor">Explore atmospheric investigations →</a></article><article class="py-lab-card" data-py-lab="geology"><span class="py-lab-eyebrow">PROMETHEUS · WORLDWIDE RESEARCH</span><div class="py-lab-head"><h3>Subterranean Precursor Lab</h3><span class="py-lab-state" data-py-state data-state="stale">CHECKING PUBLIC RELAY</span></div><p class="py-lab-copy">Independent hourly screening of earthquake-catalogue patterns and known volcanic settings, with evidence limits kept visible.</p><div class="py-lab-metrics"><div><strong data-py-count-1>—</strong><span>centres screened</span></div><div><strong data-py-count-2>—</strong><span>multi-signal areas</span></div><div><strong data-py-count-3>—</strong><span>research candidates</span></div></div><small class="py-lab-time" data-py-time>Checking publication date…</small><p class="py-lab-copy" data-py-detail>Catalogue screening is not an earthquake or eruption prediction.</p><a class="py-lab-cta" href="enviroarc.html#precursor-research">Explore geological investigations →</a></article></div><p class="er-disclaimer">Weather V5 screening is distinct from official meteorological forecasts, NEXRAD radar research and Subterranean geology. Neither programme has yet demonstrated independent forecasting skill from these screens.</p></div></section>
-<section class="pitch-section er-section" id="precursor-research">
-    <div class="container">
-      <div class="er-head">
-        <div>
-          <p class="human-kicker">EnviroArc × Prometheus Subterranean · research in progress</p>
-          <h2 class="h2">Looking for early signals.<br>Keeping the misses.</h2>
-          <p>The first seismic-catalogue replays are archived. A separate hourly worldwide shadow scan now screens earthquake activity around tectonic and volcano-context locations. The scientific question is whether patterns survive controls, changing catalogues and prospective tests — not whether a historical chart looks convincing.</p>
-        </div>
-        <a class="btn er-link" href="precursor-research.html">Open our research notes ↗</a>
-      </div>
-
-      <div class="er-live-panel" id="enviroarc-research-live" aria-label="Latest public hourly Subterranean research scan">
-        <div class="er-live-head">
-          <div><p class="human-kicker">LATEST HOURLY SCREEN · READ-ONLY RESEARCH FEED</p><h3>Where Prometheus is looking now.</h3></div>
-          <span class="er-status" data-er-status data-tone="stale" role="status" aria-live="polite">CHECKING RESEARCH FEED</span>
-        </div>
-        <div class="er-metrics">
-          <div class="er-metric"><strong data-er-analysed>—</strong><span>locations analysed · latest scan</span></div>
-          <div class="er-metric"><strong data-er-multisignal>—</strong><span>multi-signal screening locations</span></div>
-          <div class="er-metric"><strong data-er-candidates>—</strong><span>preliminary active candidates</span></div>
-        </div>
-        <div class="er-source-info">
-          <span data-er-updated>Checking latest completed hourly scan…</span>
-          <span data-er-origin>Awaiting USGS catalogue time.</span>
-          <span data-er-source>Source health not yet verified.</span>
-          <span data-er-mode>These are seismic catalogue patterns, not earthquake or eruption forecasts.</span>
-        </div>
-        <h4 class="er-findings-title">RECENTLY SCREENED AREAS · NOT FORECAST TARGETS</h4>
-        <div class="er-findings" data-er-findings aria-live="polite"><p class="er-empty">Connecting to the curated research record…</p></div>
-        <p class="er-disclaimer">This is a display of the independent hourly watch's latest saved research scan, not a separate collector or a continuous live seismometer feed. No private logs, tokens or Slack message history are exposed. An unavailable or old scan is labelled explicitly. USGS global catalogue completeness varies; research observations are not public warnings or validated predictions.</p>
-      </div>
-
-      <div class="er-history" id="precursor-results">
-        <div class="er-head">
-          <div><p class="human-kicker">10 October 2026 · first archived experiments</p>
-            <h2 class="h2">The early results, including failures.</h2>
-            <p>Selected historical replays, not prospective forecasts. Matching a known event's preceding catalogue does not establish prediction skill or false-alarm rates.</p>
-          </div>
-        </div>
-        <div class="er-study-grid">
-          <article class="er-study">
-            <span class="er-tag">GEONET V3 · HISTORICAL NZ SEISMIC TESTS</span>
-            <h3>Christchurch, Kaikōura, Fiordland</h3>
-            <p class="wx-kicker" style="margin:6px 0 12px;color:#9fdce7">EARTHQUAKE DATES · Christchurch <time datetime="2011-02-22">22 Feb 2011</time> · Kaikōura <time datetime="2016-11-14">14 Nov 2016</time> · Fiordland <time datetime="2009-07-15">15 Jul 2009</time></p>
-            <div class="er-result">5 / 3 / 4 <small>multi-signal cells in each replay</small></div>
-            <p>Multi-signal classifications occurred in 5 of 33 Christchurch cells, 3 of 31 Kaikōura cells, and 4 of 33 Fiordland cells. These are spatial counts, not independent predictions.</p>
-            <ul>
-              <li>Christchurch's early pattern survived adding GeoNet, but shifted in extent and duration.</li>
-              <li>The previously reported near-epicentral Kaikōura signal <strong>did not survive</strong> the updated catalogue.</li>
-              <li>Fiordland's earliest regional detection was distant from the eventual mainshock.</li>
-            </ul>
-            <a href="precursor-research.html#nz-replays">Full research notes & methods ↗</a>
-          </article>
-          <article class="er-study">
-            <span class="er-tag">VOLCANO CONTEXT · ERUPTION-SELECTED REPLAYS</span>
-            <h3>Nabro, Whakaari, La Palma</h3>
-            <p class="wx-kicker" style="margin:6px 0 12px;color:#9fdce7">ERUPTION DATES · Nabro <time datetime="2011-06-12">12–13 Jun 2011</time> · Whakaari <time datetime="2019-12-09">9 Dec 2019</time> · La Palma <time datetime="2021-09-19">19 Sep 2021</time></p>
-            <div class="er-result">4 / 25 / 9 <small>multi-signal cells out of 49 each</small></div>
-            <p>Seismic-catalogue patterns were identified in all three eruption-selected historic windows. That does not demonstrate volcano-specific sensing.</p>
-            <ul>
-              <li>Nabro's centre cell did not reach multi-signal.</li>
-              <li>Whakaari's centre cell did not either; many qualifying cells were in the wider Bay of Plenty.</li>
-              <li>La Palma's preceding pattern covered overlapping cells that cannot count as independent tests.</li>
-            </ul>
-            <a href="precursor-research.html#volcano-replays">View the volcano study notes ↗</a>
-          </article>
-          <article class="er-study">
-            <span class="er-tag">PANAMA 2026 · NON-DETECTION</span>
-            <h3>The result we keep rather than hide.</h3>
-            <p class="wx-kicker" style="margin:6px 0 12px;color:#9fdce7">REPLAY WINDOW · <time datetime="2026-09-25">25 Sep</time> – <time datetime="2026-10-09">9 Oct 2026</time> · no specific future event forecast</p>
-            <div class="er-result">0 / 33 <small>cells with multi-signal classification</small></div>
-            <p>Panama showed some anomaly-classified checkpoints but no multi-signal cells under the tested rule. It is a useful negative result from the selected replay, not a formal quiet-region control or proof of safety.</p>
-            <a href="precursor-research.html#panama-replay">Read the Panama study ↗</a>
-          </article>
-          <article class="er-study">
-            <span class="er-tag">NEXT STAGE · SCIENTIFIC VALIDATION</span>
-            <h3>Can the patterns beat the controls?</h3>
-            <div class="er-result">NOT VALIDATED <small>forecasting skill</small></div>
-            <p>The global prototype examines earthquake catalogues, with volcano location context, not a worldwide network measuring gas, tremor, deformation or thermal changes.</p>
-            <ul>
-              <li>Freeze detection rules and preserve negative scans.</li>
-              <li>Measure false alarms, misses, catalogue changes and lead time against quiet controls.</li>
-              <li>Add volcano-specific evidence before making any eruption-related claim.</li>
-            </ul>
-            <a href="precursor-research.html#validation">Read the validation plan ↗</a>
-          </article>
-        </div>
-      </div>
-
-      <div class="er-poseidon">
-        <div>
-          <span class="er-tag">ALSO NEW · ATLAS MARINE</span>
-          <h3>Poseidon is on watch. &#x1F531;</h3>
-          <p>His dedicated protected-waters dashboard now shows 49 DOC marine reserves, Global Fishing Watch-derived screening, reporting windows and retained review history. Research screening is not vessel tracking or evidence that a fisheries offence occurred.</p>
-        </div>
-        <a class="btn btn-primary" href="https://poseidon.pythology.co.nz/" target="_blank" rel="noopener noreferrer">Open Poseidon ↗</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="pitch-section mdra-prometheus" id="prometheus">
-    <div class="container mdra-prom-grid">
-      <div>
-        <p class="human-kicker">From signal to mechanism</p>
-        <h2 class="h2">Watch what changed.<br>Then ask what it could change next.</h2>
-        <p class="lede">EnviroArc is being built around connected Earth-system mechanisms rather than disconnected data feeds: atmosphere ↔ ocean ↔ cryosphere ↔ ecosystems ↔ human exposure.</p>
-        <p>That lets EarthNet move beyond plotting sea ice, salinity or current speed and instead preserve the evidence needed to test chains such as ice loss → freshwater input → density change → circulation response → regional impacts.</p>
-        <div class="mdra-prom-boundary"><span>BOUNDARY</span><p>Mechanism chains are hypotheses to test against evidence, not permission to turn correlation into causation.</p></div>
-        <div class="btn-row"><a class="btn btn-primary" href="prometheus.html">Open Prometheus record</a></div>
-      </div>
-      <div class="mdra-flow" aria-label="EnviroArc to Prometheus flow">
-        <div><span>EARTHNET</span><small>global state · anomalies · mechanisms</small></div>
-        <div><span>ATLAS</span><small>New Zealand operational evidence</small></div>
-        <div><span>POSEIDON</span><small>specialist marine intelligence</small></div>
-        <b>↓ TIME · PROVENANCE · FRESHNESS · EVIDENCE CLASS ↓</b>
-        <div class="flow-prom"><span>PROMETHEUS</span><small>hypotheses · decision futures · forecasts · resolution</small></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="pitch-section mdra-boundary-section">
-    <div class="container">
-      <div class="pitch-section-head">
-        <div>
-          <p class="human-kicker">Evidence before confidence</p>
-          <h2 class="h2">The boundary stays visible.</h2>
-        </div>
-        <p>EnviroArc is useful only if the system remains explicit about where a claim came from, how fresh it is and whether it was observed, modelled, derived or inferred.</p>
-      </div>
-      <div class="mdra-boundary-grid">
-        <div><span>OBSERVED</span><h3>What a source actually reported</h3><p>Original timestamps, location, source identity, quality and retained evidence.</p></div>
-        <div><span>MODELLED</span><h3>What a model estimates</h3><p>Forecasts, reanalysis and other model products remain visibly separate from observations.</p></div>
-        <div><span>DERIVED</span><h3>What a transparent rule calculated</h3><p>Baselines, anomalies, rates of change, persistence and other reproducible computations.</p></div>
-        <div><span>INFERRED</span><h3>What analysis suggests</h3><p>Mechanisms, competing explanations and scenario implications that remain challengeable.</p></div>
-      </div>
+      <p class="mdra-lab-portal-boundary">Both laboratories are experimental. Identified patterns are research candidates, not validated earthquake, eruption, tornado or cyclone predictions. Official agencies remain the source of public warnings.</p>
     </div>
   </section>
 

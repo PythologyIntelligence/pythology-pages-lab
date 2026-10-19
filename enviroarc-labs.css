@@ -1,0 +1,23 @@
+/* Compact EnviroArc lab doorways; detail pages own the research evidence. */
+.mdra-lab-portals{background:radial-gradient(ellipse at 12% 8%,rgba(45,144,182,.16),transparent 52%),radial-gradient(ellipse at 90% 95%,rgba(54,152,119,.13),transparent 48%),#071118;border-top:1px solid rgba(147,223,224,.17);padding:clamp(62px,7vw,103px) 0}
+.mdra-lab-portals-head{max-width:860px;margin-bottom:30px}
+.mdra-lab-portals-head .h2{font-size:clamp(37px,4.5vw,64px);line-height:1.08;margin:14px 0 18px;color:#f1fbff}
+.mdra-lab-portals-head .h2 em{color:#a1ecea;font-style:normal}
+.mdra-lab-portals-head>p:last-child{max-width:790px;color:#bad0d6;line-height:1.75;font-size:clamp(15px,1.65vw,18px)}
+.mdra-lab-portals-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.mdra-lab-portal{position:relative;min-width:0;display:flex;flex-direction:column;padding:clamp(25px,3.2vw,40px);border-radius:18px;border:1px solid rgba(130,222,228,.29);background:linear-gradient(155deg,#112a37,#07131c);box-shadow:0 25px 75px #0003;scroll-margin-top:100px}
+.mdra-lab-portal-sky{background:linear-gradient(150deg,#182b3f,#08121c);border-color:rgba(122,176,238,.29)}
+.mdra-lab-portal-top{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#9be6df;font:700 10px/1.7 'Manrope',Consolas,monospace;letter-spacing:.1em;text-transform:uppercase}
+.mdra-lab-portal-sky .mdra-lab-portal-top{color:#a4d1f5}
+.mdra-lab-portal h3{font-size:clamp(26px,3.1vw,41px);line-height:1.13;letter-spacing:-.024em;color:#f2fcff;margin:29px 0 17px}
+.mdra-lab-portal p{color:#bed1dc;font-size:clamp(14px,1.35vw,16px);line-height:1.77;margin:0 0 22px}
+.mdra-lab-portal-tags{display:flex;flex-wrap:wrap;gap:8px;margin:auto 0 24px}
+.mdra-lab-portal-tags span{border:1px solid rgba(157,225,229,.25);background:#0a252f;color:#b5e3e7;border-radius:100px;padding:7px 11px;font-size:11px}
+.mdra-lab-portal-sky .mdra-lab-portal-tags span{background:#12263a;border-color:#3a6480}
+.mdra-lab-portal-link{display:flex;align-items:center;justify-content:space-between;gap:16px;border-radius:12px;border:1px solid #88ccce;padding:17px 19px;color:#eaffff;text-decoration:none;font-weight:800;font-size:14px;transition:background .18s,border-color .18s}
+.mdra-lab-portal-link span{font-size:20px}
+.mdra-lab-portal-link:hover,.mdra-lab-portal-link:focus-visible{background:#183e4a;border-color:#b7f2f2;outline-offset:3px}
+.mdra-lab-portal-boundary{margin:23px 0 0;color:#91abb5;font-size:12px;line-height:1.7;max-width:950px}
+.mdra-lab-anchor{position:absolute;top:0;scroll-margin-top:100px}
+@media(max-width:780px){.mdra-lab-portals-grid{grid-template-columns:1fr}.mdra-lab-portal h3{margin-top:20px}.mdra-lab-portals{padding:52px 0}}
+@media(max-width:440px){.mdra-lab-portal{padding:21px}.mdra-lab-portal-top{flex-direction:column;gap:2px}.mdra-lab-portal-link{padding:15px 14px}}
