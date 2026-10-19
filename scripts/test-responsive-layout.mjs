@@ -120,6 +120,9 @@ try {
         for (const screenshot of ['helios-dashboard.webp', 'ecowatch-dashboard.webp']) {
           const img = page.locator('img[src$="' + screenshot + '"]').first();
           await img.scrollIntoViewIfNeeded();
+          // Lazy images only start loading after scrolling. decode() explicitly
+          // waits for the image bytes; an actual 404/decode error still fails.
+          await img.evaluate(el => el.decode());
           const loaded = await img.evaluate(el => el.complete && el.naturalWidth > 0);
           assert.ok(loaded, viewport.name + ': Chathams ' + screenshot + ' is not visible/loaded');
         }
