@@ -58,6 +58,27 @@ def rewrite(source, slug, clone):
     for name, route in PAGES.items():
         out = out.replace(DOMAIN + "/" + name, DOMAIN + "/" + (route + "/" if route else ""))
     if clone:
+        # Static header links must work without JavaScript as well as after
+        # site.js builds the interactive navigation. Use explicit site-root
+        # paths, so /prometheus/ never resolves "enviroarc/" inside itself.
+        # JS restores GitHub Pages project-prefix paths where applicable.
+        def root_header(match):
+            block = match.group(0)
+            def rooted(href):
+                value = html.unescape(href["url"])
+                parts = urlsplit(value)
+                if parts.scheme or parts.netloc or parts.path.startswith("/"):
+                    return href.group(0)
+                allowed = {route + "/" for route in PAGES.values() if route}
+                allowed.update(route + "/" for route in ALIASES)
+                allowed.add("./")
+                if parts.path not in allowed:
+                    return href.group(0)
+                path = "/" if parts.path == "./" else "/" + parts.path
+                root_url = urlunsplit(("", "", path, parts.query, parts.fragment))
+                return href["head"] + href["quote"] + root_url + href["quote"]
+            return ATTR.sub(rooted, block)
+        out = re.sub(r"<header\\b[^>]*>.*?</header>", root_header, out, count=1, flags=re.I | re.S)
         if "</head>" not in out:
             raise ValueError("Missing closing <head> in clean page")
         extra = '  <base href="../">\n'
