@@ -44,11 +44,15 @@ def inject(raw: str, *, slug: str, homepage: bool) -> str:
         raise ValueError("No document title")
     title = html.unescape(re.sub(r"<[^>]*>", "", match.group(1))).strip()
     description = DESCRIPTION.search(raw)
-    if not description:
-        raise ValueError("Missing meta description")
-    desc = html.unescape(description.group(1)).strip()
+    # Some public legacy documents omit a description. Fill that gap instead
+    # of aborting the entire site deployment; do not manufacture research claims.
+    desc = (html.unescape(description.group(1)).strip() if description else
+            f"Explore {title} and Pythology Intelligence's evidence-led research and applications.")
     if not title or not desc:
         raise ValueError("Title and description must not be empty")
+    if description is None:
+        raw = HEAD.sub('  <meta name="description" content="' + html.escape(desc, quote=True) + '">\n</head>',
+                       raw, count=1)
     url = DOMAIN + ("/" + slug + "/" if slug else "/")
     h = lambda value: html.escape(value, quote=True)
 
@@ -123,11 +127,19 @@ def favicon_png(size: int = 32) -> bytes:
 def build(out: Path) -> None:
     pages = approved_pages()
     out.mkdir(parents=True, exist_ok=True)
+    indexable = {}
     for name, slug in pages.items():
         page = out / name
         if not page.is_file():
             raise SystemExit("Missing expected public document: " + name)
-        page.write_text(inject(page.read_text(encoding="utf-8"), slug=slug, homepage=name == "index.html"),
+        source = page.read_text(encoding="utf-8")
+        # Redirects and explicitly private/noindex pages must not enter a
+        # public sitemap or acquire new canonicals pointing back to themselves.
+        robots = re.search(r'<meta\b[^>]*\bname=["\']robots["\'][^>]*>', source, re.I)
+        if robots and "noindex" in robots.group().lower():
+            continue
+        indexable[name] = slug
+        page.write_text(inject(source, slug=slug, homepage=name == "index.html"),
                         encoding="utf-8")
     logo = out / "Logo (2).jpeg"
     if not logo.is_file():
@@ -141,7 +153,7 @@ def build(out: Path) -> None:
     (out / "robots.txt").write_text(
         "User-agent: *\nAllow: /\nDisallow: /prometheus-private.html\nDisallow: /monitor/\nSitemap: " +
         DOMAIN + "/sitemap.xml\n", encoding="utf-8")
-    canonical = [DOMAIN + ("/" + slug + "/" if slug else "/") for slug in pages.values()]
+    canonical = [DOMAIN + ("/" + slug + "/" if slug else "/") for slug in indexable.values()]
     if len(canonical) != len(set(canonical)):
         raise ValueError("Duplicate canonical route")
     sitemap = ('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -149,7 +161,7 @@ def build(out: Path) -> None:
                "".join("  <url><loc>" + xml_escape(url) + "</loc></url>\n" for url in canonical) +
                "</urlset>\n")
     (out / "sitemap.xml").write_text(sitemap, encoding="utf-8")
-    print(f"Built discovery metadata for {len(pages)} public pages, LinkedIn previews, favicons, robots and sitemap.")
+    print(f"Built discovery metadata for {len(indexable)} indexable public pages ({len(pages)-len(indexable)} redirects/noindex excluded), LinkedIn previews, favicons, robots and sitemap.")
 
 
 if __name__ == "__main__":
