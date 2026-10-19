@@ -80,14 +80,17 @@ def build(out):
         if not route:
             continue
         target = out / route / "index.html"
-        if target.exists():
-            raise SystemExit("Existing published folder clashes with clean route: " + str(target))
+        # This site mirrors its previous publication before staging new sources.
+        # It is normal for the approved clean route to already have index.html.
+        # Replace ONLY that route's index.html; preserve other mirrored assets.
+        if target.exists() and (not target.is_file() or target.is_symlink()):
+            raise SystemExit("Clean route target is not a normal file: " + str(target))
         target.parent.mkdir(parents=True, exist_ok=True)
         target.write_text(rewrite(old[name], route, True), encoding="utf-8")
     for route, name in ALIASES.items():
         target = out / route / "index.html"
-        if target.exists():
-            raise SystemExit("Existing published folder clashes with clean alias: " + str(target))
+        if target.exists() and (not target.is_file() or target.is_symlink()):
+            raise SystemExit("Clean alias target is not a normal file: " + str(target))
         target.parent.mkdir(parents=True, exist_ok=True)
         alias = rewrite(old[name], route, True)
         # The synonym advertises the primary address to search engines.
@@ -97,6 +100,12 @@ def build(out):
     weather = (out / "weather-lab" / "index.html").read_text(encoding="utf-8")
     enviro = (out / "enviroarc.html").read_text(encoding="utf-8")
     assert '<base href="../">' in weather
+    # Base must be encountered before any asset by the HTML parser; otherwise
+    # browsers fetch /weather-lab/site.css and the page looks unstyled.
+    assert weather.index('<base href="../">') < weather.index('href="site.css"')
+    for route in list(PAGES.values())[1:] + list(ALIASES):
+        page = (out / route / "index.html").read_text(encoding="utf-8")
+        assert page.index('<base href="../">') < page.index('<link rel="stylesheet"'), route
     assert 'href="weather-lab/#moore"' in weather
     assert 'href="enviroarc/#weather-lab"' in weather
     assert 'href="subterranean/"' in enviro
