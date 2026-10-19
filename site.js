@@ -16,9 +16,11 @@
   ];
 
   const path = window.location.pathname;
+  const segment = path.split('/').filter(Boolean).pop() || '';
+  // Both /page/ and the old /page.html should activate the same navigation.
   const currentPage = path.endsWith('/')
-    ? 'index.html'
-    : (path.split('/').filter(Boolean).pop() || 'index.html');
+    ? (canonicalNav.some(([href]) => href === segment + '.html') ? segment + '.html' : 'index.html')
+    : (segment || 'index.html');
 
   nav.replaceChildren();
   canonicalNav
@@ -26,7 +28,7 @@
     .forEach(([href, label]) => {
       const link = document.createElement('a');
       link.className = 'nav-link';
-      link.href = href;
+      link.href = href === 'index.html' ? './' : href.replace(/\.html$/, '/');
       link.textContent = label;
       nav.appendChild(link);
     });

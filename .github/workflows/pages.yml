@@ -471,6 +471,19 @@ jobs:
           grep -q 'noindex,nofollow,noarchive' _site/prometheus-private.html
           echo "Private Prometheus control centre staged."
 
+      - name: Publish clean public URLs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 scripts/build-clean-urls.py _site
+          for slug in enviroarc subterranean weather-lab prometheus chathams core-technology current-research where-it-fits about; do
+            [[ -s "_site/$slug/index.html" ]] || { echo "Missing clean public route: $slug" >&2; exit 1; }
+          done
+          grep -Fq '<base href="../">' _site/subterranean/index.html
+          grep -Fq 'href="subterranean/"' _site/enviroarc.html
+          grep -Fq 'href="weather-lab/"' _site/enviroarc.html
+          echo 'Clean public addresses are staged; legacy .html documents preserved.'
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
