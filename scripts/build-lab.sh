@@ -451,7 +451,11 @@ for name in ecowatch-dashboard.png ecowatch-charts1.png ecowatch-charts2.png eco
   [[ -s "$CHATHAMS_SOURCE/$name" ]] || { echo "Missing Chathams screenshot: $name" >&2; exit 1; }
 done
 mkdir -p "$OUT/png_images/chathams"
+# Keep legacy PNG assets for old links while current pages serve optimised WebP.
 cp "$CHATHAMS_SOURCE/"*.png "$OUT/png_images/chathams/"
+python3 "$ROOT/scripts/build-chathams-webp.py" "$CHATHAMS_SOURCE" "$OUT/png_images/chathams"
+test -s "$OUT/png_images/chathams/helios-dashboard.webp"
+test -s "$OUT/png_images/chathams/ecowatch-dashboard.webp"
 
 
 # Stage the EarthNet global artwork from this repository. Keeping the binary

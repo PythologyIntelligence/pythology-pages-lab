@@ -23,7 +23,12 @@ SITE_NAME = "Pythology Intelligence"
 SOCIAL_IMAGE = DOMAIN + "/png_images/pythology_environmental_ai_banner.webp"
 HEAD = re.compile(r"</head>", re.I)
 TITLE = re.compile(r"<title\b[^>]*>(.*?)</title\s*>", re.I | re.S)
-DESCRIPTION = re.compile(r'<meta\b(?=[^>]*\bname=["\']description["\'])[^>]*\bcontent=["\']([^"\']*)["\'][^>]*>', re.I)
+# Match the closing quote of content="..." or content='...' correctly. Apostrophes
+# inside double-quoted descriptions (e.g. "Pythology's") must not truncate text.
+DESCRIPTION = re.compile(
+    r'<meta\b(?=[^>]*\bname=["\']description["\'])[^>]*\bcontent=(?P<quote>["\'])(?P<value>.*?)(?P=quote)[^>]*>',
+    re.I | re.S,
+)
 CANONICAL = re.compile(r'<link\b(?=[^>]*\brel=["\']canonical["\'])[^>]*>', re.I)
 PREVIEW = re.compile(r'<meta\b(?=[^>]*\b(?:property|name)=["\'](?:og:[^"\']+|twitter:[^"\']+)["\'])[^>]*>\s*', re.I)
 FAVICON = re.compile(r'<link\b(?=[^>]*\brel=["\'](?:shortcut )?icon["\'])[^>]*>\s*', re.I)
@@ -46,7 +51,7 @@ def inject(raw: str, *, slug: str, homepage: bool) -> str:
     description = DESCRIPTION.search(raw)
     # Some public legacy documents omit a description. Fill that gap instead
     # of aborting the entire site deployment; do not manufacture research claims.
-    desc = (html.unescape(description.group(1)).strip() if description else
+    desc = (html.unescape(description.group("value")).strip() if description else
             f"Explore {title} and Pythology Intelligence's evidence-led research and applications.")
     if not title or not desc:
         raise ValueError("Title and description must not be empty")

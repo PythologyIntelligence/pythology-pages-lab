@@ -476,6 +476,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/test-site-discovery.py
+          python3 scripts/test-website-audit.py
           python3 scripts/build-site-discovery.py _site
           test -s _site/robots.txt
           test -s _site/sitemap.xml
@@ -496,6 +497,24 @@ jobs:
           grep -Fq 'href="subterranean/"' _site/enviroarc.html
           grep -Fq 'href="weather-lab/"' _site/enviroarc.html
           echo 'Clean public addresses are staged; legacy .html documents preserved.'
+
+      - name: Check mobile tablet desktop layouts and actual menu click-throughs
+        shell: bash
+        run: |
+          set -euo pipefail
+          npm install --prefix "$RUNNER_TEMP/pythology-browser-qa" --no-save --ignore-scripts --no-audit --no-fund playwright-core@1.56.1
+          PYTHOLOGY_PLAYWRIGHT_PATH="$RUNNER_TEMP/pythology-browser-qa/node_modules/playwright-core" \
+            node scripts/test-responsive-layout.mjs _site "$RUNNER_TEMP/pythology-responsive"
+          echo 'Real Chromium phone/tablet/desktop navigation and screenshot checks passed.'
+
+      - name: Save review screenshots of phone tablet desktop layouts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pythology-cross-device-review
+          path: ${{ runner.temp }}/pythology-responsive
+          if-no-files-found: ignore
+          retention-days: 3
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

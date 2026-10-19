@@ -10,6 +10,12 @@ on:
       - 'scripts/build-site-discovery.py'
       - 'scripts/test-site-discovery.py'
       - 'scripts/test-physical-public.mjs'
+      - 'scripts/build-chathams-webp.py'
+      - 'scripts/test-website-audit.py'
+      - 'scripts/test-responsive-layout.mjs'
+      - 'scripts/build-clean-urls.py'
+      - 'scripts/build-lab.sh'
+      - 'chathams.html'
       - '.github/workflows/pages.yml'
       - '.github/workflows/site-audit-checks.yml'
   workflow_dispatch:
@@ -25,6 +31,10 @@ jobs:
         uses: actions/checkout@v4
       - name: Check public website navigation syntax
         run: node --check site.js
+      - name: Check responsive browser script syntax
+        run: node --check scripts/test-responsive-layout.mjs
+      - name: Verify navigation, OG apostrophes and WebP image links
+        run: python3 scripts/test-website-audit.py
       - name: Check public Physical Intelligence safety and pilot claims
         run: node scripts/test-physical-public.mjs
       - name: Validate discovery metadata, canonical URLs and navigation
