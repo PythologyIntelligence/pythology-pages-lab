@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-20T20:10:40.948705+00:00",
+  "generated_at_utc": "2026-10-21T02:10:41.149382+00:00",
   "historical_eruption_records_since_1960": 2248,
   "historical_volcanoes_catalogued": 1214,
   "instrumental_volcanoes_individually_verified": 0,
@@ -14,7 +14,7 @@
   "longitudinal_baseline_scans_compared": 1,
   "nearby_earthquake_feed_age_hours": 0.01,
   "nearby_earthquake_source_stale": false,
-  "nearby_m2_5_plus_earthquake_associations": 129,
+  "nearby_m2_5_plus_earthquake_associations": 134,
   "research_only": true,
   "schema": "pythology.subterranean.global-volcano-public.v0.1",
   "sources": {
@@ -32,6 +32,12 @@
   "usgs_elevated_notice_examples": [
     {
       "country": "United States",
+      "name": "Kilauea",
+      "notice_at_utc": "2026-10-20T20:11:47+00:00",
+      "reported_alert_level": "ADVISORY"
+    },
+    {
+      "country": "United States",
       "name": "Great Sitkin",
       "notice_at_utc": "2026-10-20T19:48:31+00:00",
       "reported_alert_level": "WATCH"
@@ -40,12 +46,6 @@
       "country": "United States",
       "name": "Shishaldin",
       "notice_at_utc": "2026-10-20T19:48:31+00:00",
-      "reported_alert_level": "ADVISORY"
-    },
-    {
-      "country": "United States",
-      "name": "Kilauea",
-      "notice_at_utc": "2026-10-19T19:46:23+00:00",
       "reported_alert_level": "ADVISORY"
     },
     {
