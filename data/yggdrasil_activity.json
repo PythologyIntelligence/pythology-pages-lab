@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-23T14:58:03.232785+00:00",
+  "engineObservedAt": "2026-10-23T14:58:13.241977+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-23T14:58:06.034592+00:00",
+  "generatedAt": "2026-10-23T14:58:21.130176+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -380,6 +380,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-23T14:58:13.238976+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "verified position risk exceeds symbol ceiling"
+    },
+    {
       "ts": "2026-10-23T14:58:03.227608+00:00",
       "type": "bifrost",
       "event": "entry_skipped",
@@ -539,14 +546,7 @@
       "event": "entry_skipped",
       "title": "Entry skipped for XAUUSD",
       "detail": "verified position risk exceeds symbol ceiling"
-    },
-    {
-      "ts": "2026-10-23T14:54:13.205767+00:00",
-      "type": "bifrost",
-      "event": "entry_skipped",
-      "title": "Entry skipped for XAUUSD",
-      "detail": "verified position risk exceeds symbol ceiling"
     }
   ],
-  "publishedAt": "2026-10-23T14:58:09.507812+00:00"
+  "publishedAt": "2026-10-23T14:58:32.156410+00:00"
 }
