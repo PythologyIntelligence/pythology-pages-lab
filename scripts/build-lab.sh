@@ -489,7 +489,7 @@ cp "$FOUNDER_PORTRAIT" "$OUT/png_images/about_me.png"
 
 # These public evidence projections are deliberately staged with the humanised
 # pages because wget does not discover browser-fetched JSON.
-for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_daily.json nz_triggered_research.json prometheus_research_state.json prometheus_weather_research.json; do
+for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_daily.json nz_triggered_research.json prometheus_research_state.json prometheus_weather_research.json global_volcano_research.json; do
   if [[ ! -f "$ROOT/data/$file" ]]; then
     echo "Required public evidence projection missing: data/$file" >&2
     exit 1
@@ -540,6 +540,10 @@ grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/current-research.html" || {
 }
 [[ -s "$OUT/data/prometheus_research_state.json" ]] || {
   echo 'Prometheus research-state projection validation failed.' >&2
+  exit 1
+}
+[[ -s "$OUT/data/global_volcano_research.json" ]] || {
+  echo 'Global volcano research projection validation failed.' >&2
   exit 1
 }
 grep -Fq 'Looking for the signals that come before the event.' "$OUT/prometheus.html" || {
