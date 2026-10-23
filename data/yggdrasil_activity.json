@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-23T22:03:05.137911+00:00",
+  "engineObservedAt": "2026-10-23T22:03:25.130818+00:00",
   "engineFresh": true,
   "resolvedSymbols": [],
   "unresolvedSymbols": [],
@@ -12,7 +12,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-23T22:03:14.757443+00:00",
+  "generatedAt": "2026-10-23T22:03:29.821284+00:00",
   "mode": "DEMO_ONLY",
   "status": "degraded",
   "bridge": {
@@ -351,6 +351,20 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-23T22:03:25.128348+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
+      "ts": "2026-10-23T22:03:15.149535+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
       "ts": "2026-10-23T22:03:05.133012+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -503,21 +517,7 @@
       "event": "cycle_error",
       "title": "Engine cycle error recorded",
       "detail": "Diagnostic detail remains private on the VPS."
-    },
-    {
-      "ts": "2026-10-23T21:58:02.905542+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
-    },
-    {
-      "ts": "2026-10-23T18:37:29.920423+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for LLY",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-10-23T22:03:16.996850+00:00"
+  "publishedAt": "2026-10-23T22:03:37.002823+00:00"
 }
