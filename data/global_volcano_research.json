@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-23T02:10:20.098409+00:00",
+  "generated_at_utc": "2026-10-23T08:10:20.128691+00:00",
   "historical_eruption_records_since_1960": 2248,
   "historical_volcanoes_catalogued": 1214,
   "instrumental_volcanoes_individually_verified": 0,
@@ -14,7 +14,7 @@
   "longitudinal_baseline_scans_compared": 1,
   "nearby_earthquake_feed_age_hours": 0.0,
   "nearby_earthquake_source_stale": false,
-  "nearby_m2_5_plus_earthquake_associations": 131,
+  "nearby_m2_5_plus_earthquake_associations": 120,
   "research_only": true,
   "schema": "pythology.subterranean.global-volcano-public.v0.1",
   "sources": {
@@ -57,6 +57,6 @@
   ],
   "usgs_official_recent_elevated_notices": 4,
   "volcanoes_matched_to_usgs_hans": 62,
-  "volcanoes_with_geographic_earthquake_associations": 82,
+  "volcanoes_with_geographic_earthquake_associations": 73,
   "volcanoes_with_validated_precursors": 0
 }
