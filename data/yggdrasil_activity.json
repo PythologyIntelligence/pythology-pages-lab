@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-23T22:02:25.131121+00:00",
+  "engineObservedAt": "2026-10-23T22:02:35.136028+00:00",
   "engineFresh": true,
   "resolvedSymbols": [],
   "unresolvedSymbols": [],
@@ -12,7 +12,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-23T22:02:29.505112+00:00",
+  "generatedAt": "2026-10-23T22:02:44.569380+00:00",
   "mode": "DEMO_ONLY",
   "status": "degraded",
   "bridge": {
@@ -351,6 +351,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-23T22:02:35.133510+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
       "ts": "2026-10-23T22:02:25.128604+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -510,14 +517,7 @@
       "event": "no_champion",
       "title": "No champion for WMT",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-23T18:37:29.001629+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for WMT",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-10-23T22:02:37.436388+00:00"
+  "publishedAt": "2026-10-23T22:02:57.097050+00:00"
 }
