@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-23T15:06:33.343383+00:00",
+  "engineObservedAt": "2026-10-23T15:07:03.378190+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-23T15:06:43.015104+00:00",
+  "generatedAt": "2026-10-23T15:07:13.483420+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -380,6 +380,27 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-23T15:07:03.375613+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "verified position risk exceeds symbol ceiling"
+    },
+    {
+      "ts": "2026-10-23T15:06:53.354368+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "verified position risk exceeds symbol ceiling"
+    },
+    {
+      "ts": "2026-10-23T15:06:43.335708+00:00",
+      "type": "bifrost",
+      "event": "entry_skipped",
+      "title": "Entry skipped for XAUUSD",
+      "detail": "verified position risk exceeds symbol ceiling"
+    },
+    {
       "ts": "2026-10-23T15:06:33.331171+00:00",
       "type": "bifrost",
       "event": "entry_skipped",
@@ -525,28 +546,7 @@
       "event": "entry_skipped",
       "title": "Entry skipped for XAUUSD",
       "detail": "verified position risk exceeds symbol ceiling"
-    },
-    {
-      "ts": "2026-10-23T15:03:03.281751+00:00",
-      "type": "bifrost",
-      "event": "entry_skipped",
-      "title": "Entry skipped for XAUUSD",
-      "detail": "verified position risk exceeds symbol ceiling"
-    },
-    {
-      "ts": "2026-10-23T15:02:53.289100+00:00",
-      "type": "bifrost",
-      "event": "entry_skipped",
-      "title": "Entry skipped for XAUUSD",
-      "detail": "verified position risk exceeds symbol ceiling"
-    },
-    {
-      "ts": "2026-10-23T15:02:43.309643+00:00",
-      "type": "bifrost",
-      "event": "entry_skipped",
-      "title": "Entry skipped for XAUUSD",
-      "detail": "verified position risk exceeds symbol ceiling"
     }
   ],
-  "publishedAt": "2026-10-23T15:06:55.215099+00:00"
+  "publishedAt": "2026-10-23T15:07:20.546529+00:00"
 }
