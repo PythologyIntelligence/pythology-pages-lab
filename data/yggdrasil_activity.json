@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-23T11:43:48.021998+00:00",
+  "engineObservedAt": "2026-10-23T12:14:39.778019+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-23T11:43:54.620838+00:00",
+  "generatedAt": "2026-10-23T12:14:45.692483+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -548,5 +548,5 @@
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-10-23T11:44:23.514771+00:00"
+  "publishedAt": "2026-10-23T12:14:47.846419+00:00"
 }
