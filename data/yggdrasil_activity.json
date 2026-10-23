@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-23T15:09:53.348243+00:00",
+  "engineObservedAt": "2026-10-23T15:40:13.509149+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-23T15:10:00.546057+00:00",
+  "generatedAt": "2026-10-23T15:40:17.429938+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -548,5 +548,5 @@
       "detail": "verified position risk exceeds symbol ceiling"
     }
   ],
-  "publishedAt": "2026-10-23T15:10:08.442015+00:00"
+  "publishedAt": "2026-10-23T15:40:18.004320+00:00"
 }
