@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-24T00:35:56.169570+00:00",
+  "engineObservedAt": "2026-10-24T00:37:26.165094+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-24T00:35:56.315480+00:00",
+  "generatedAt": "2026-10-24T00:37:41.771465+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -380,173 +380,173 @@
   ],
   "recentActivity": [
     {
-      "ts": "2026-10-23T22:05:05.140044+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.948659+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for NAS100",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-23T22:04:55.135506+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.947659+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:04:45.129099+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.943665+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:04:35.140555+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.937653+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:04:25.134584+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.933604+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:04:15.144640+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.929598+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:04:05.134249+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.925599+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:03:55.128194+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.921597+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:03:45.138242+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.917877+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:03:35.132707+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.912885+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:03:25.128348+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.908863+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:03:15.149535+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.904312+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:03:05.133012+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.899784+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for NAS100",
+      "detail": "test: return_or_sharpe"
     },
     {
-      "ts": "2026-10-23T22:02:55.126404+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.894788+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for NAS100",
+      "detail": "15 candidates passed the training gate; 46 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-23T22:02:45.137914+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.321544+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for SP500",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-23T22:02:35.133510+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:40.320491+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for SP500",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-23T22:02:25.128604+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:39.769197+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for USDX",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-23T22:02:15.136576+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:39.767198+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for USDX",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-23T22:02:05.125658+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:39.225219+00:00",
+      "type": "norns",
+      "event": "champion_selected",
+      "title": "XAUUSD champion reached Valhalla",
+      "detail": "rsi_revert-lower25-period21-upper75 \u00b7 test Sharpe 3.475 \u00b7 test return 0.492%"
     },
     {
-      "ts": "2026-10-23T22:01:55.120486+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:39.184214+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for XAUUSD",
+      "detail": "2 candidates passed the training gate; 59 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-23T22:01:45.114138+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:38.630730+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for USDJPY",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-23T22:01:35.124621+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:38.629693+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for USDJPY",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-23T22:01:25.119827+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:38.132709+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for GBPUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-23T22:01:15.125690+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-24T00:37:38.131433+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for GBPUSD",
+      "detail": "test: return_or_sharpe"
     }
   ],
-  "publishedAt": "2026-10-24T00:36:00.511818+00:00"
+  "publishedAt": "2026-10-24T00:37:50.075840+00:00"
 }
