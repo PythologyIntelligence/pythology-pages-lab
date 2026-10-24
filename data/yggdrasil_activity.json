@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-24T03:38:21.079914+00:00",
+  "engineObservedAt": "2026-10-24T04:00:01.436224+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-24T03:38:29.075204+00:00",
+  "generatedAt": "2026-10-24T04:00:04.467977+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -165,9 +165,9 @@
   "live": {
     "mt5Connected": true,
     "sessionKey": "2026-10-23",
-    "tradeCountVerified": true,
+    "tradeCountVerified": false,
     "positions": 0,
-    "tradesThisSession": 0,
+    "tradesThisSession": null,
     "openRiskPct": 0.0,
     "killSwitch": false,
     "flattenRequested": false,
@@ -575,5 +575,5 @@
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-10-24T03:38:42.246957+00:00"
+  "publishedAt": "2026-10-24T04:00:16.773860+00:00"
 }
