@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T00:09:58.008163+00:00",
+  "engineObservedAt": "2026-10-25T00:38:38.495962+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T00:09:58.467503+00:00",
+  "generatedAt": "2026-10-25T00:38:52.546018+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -407,6 +407,48 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-25T00:38:51.862757+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for GBPUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-10-25T00:38:51.861757+00:00",
+      "type": "norns",
+      "event": "candidate_rejected",
+      "title": "Candidate rejected for GBPUSD",
+      "detail": "test: return_or_sharpe"
+    },
+    {
+      "ts": "2026-10-25T00:38:51.852759+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for GBPUSD",
+      "detail": "1 candidates passed the training gate; 60 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-10-25T00:38:51.188220+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for EURUSD",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-10-25T00:38:51.187218+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for EURUSD",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-10-25T00:38:48.568692+00:00",
+      "type": "norns",
+      "event": "tournament_started",
+      "title": "Norns tournament started",
+      "detail": "61 candidates entered research validation."
+    },
+    {
       "ts": "2026-10-24T18:38:41.479434+00:00",
       "type": "norns",
       "event": "tournament_completed",
@@ -531,49 +573,7 @@
       "event": "training_ranked",
       "title": "Training ranked for GOOG",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-10-24T18:38:37.672919+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for GOOG",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-24T18:38:37.239411+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for AMAZON",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-10-24T18:38:37.239411+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for AMAZON",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-24T18:38:36.760365+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for NVIDIA",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-10-24T18:38:36.760365+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for NVIDIA",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-24T18:38:36.288170+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for MSFT",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-10-25T00:10:07.684741+00:00"
+  "publishedAt": "2026-10-25T00:39:02.941514+00:00"
 }
