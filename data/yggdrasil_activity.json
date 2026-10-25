@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T06:38:55.492570+00:00",
+  "engineObservedAt": "2026-10-25T06:39:33.728039+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T06:39:09.661607+00:00",
+  "generatedAt": "2026-10-25T06:39:40.347465+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -73,7 +73,7 @@
   ],
   "research": {
     "candidateCount": 61,
-    "lastResearchAt": "2026-10-25T00:39:04.350159+00:00",
+    "lastResearchAt": "2026-10-25T06:39:22.723353+00:00",
     "latestTournamentSelected": 2,
     "currentTrainingGateEligible": 2,
     "families": [
@@ -110,7 +110,7 @@
       },
       "mcP05ReturnPct": -0.26818598093942936,
       "score": 3.4574262208142974,
-      "selectedAt": "2026-10-25T00:38:53.298424+00:00"
+      "selectedAt": "2026-10-25T06:39:14.520473+00:00"
     },
     {
       "symbol": "DJ30",
@@ -137,7 +137,7 @@
       },
       "mcP05ReturnPct": -1.5374917918469142,
       "score": 0.2749201887069136,
-      "selectedAt": "2026-10-25T00:38:56.690838+00:00"
+      "selectedAt": "2026-10-25T06:39:16.999817+00:00"
     }
   ],
   "tyr": {
@@ -407,173 +407,173 @@
   ],
   "recentActivity": [
     {
-      "ts": "2026-10-25T06:39:05.530447+00:00",
+      "ts": "2026-10-25T06:39:22.723353+00:00",
       "type": "norns",
-      "event": "tournament_started",
-      "title": "Norns tournament started",
-      "detail": "61 candidates entered research validation."
+      "event": "training_ranked",
+      "title": "Training ranked for LLY",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:22:03.167998+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:22.723353+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for LLY",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:21:53.163551+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:22.723353+00:00",
+      "type": "norns",
+      "event": "tournament_completed",
+      "title": "Norns tournament completed",
+      "detail": "2 champion(s) survived all gates."
     },
     {
-      "ts": "2026-10-25T02:21:43.158446+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:22.289337+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for WMT",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:21:33.152654+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:22.289337+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for WMT",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:21:23.163719+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:21.849819+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for EXXON",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:21:13.156013+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:21.849154+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for EXXON",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:21:03.144018+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:21.415816+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for BRKB",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:20:53.139817+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:21.415816+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for BRKB",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:20:43.135822+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:21.008116+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for JPM",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:20:33.146334+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:21.006598+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for JPM",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:20:23.140849+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:20.547524+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for AVGO",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:20:13.150789+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:20.547524+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for AVGO",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:20:03.137916+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:20.063640+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for TSLA",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:19:53.147559+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:20.063640+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for TSLA",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:19:43.141972+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:19.630585+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for META",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:19:33.136662+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:19.630585+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for META",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:19:23.144675+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:19.193295+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for GOOG",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:19:13.150382+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:19.193295+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for GOOG",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:19:03.133111+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:18.756456+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for AMAZON",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:18:53.125287+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:18.756456+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for AMAZON",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:18:43.118789+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:18.324424+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for NVIDIA",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-25T02:18:33.127789+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:18.324424+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for NVIDIA",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-25T02:18:23.121873+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
+      "ts": "2026-10-25T06:39:17.909616+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for MSFT",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-10-25T06:39:20.823984+00:00"
+  "publishedAt": "2026-10-25T06:39:41.525032+00:00"
 }
