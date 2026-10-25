@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T02:14:13.117982+00:00",
+  "engineObservedAt": "2026-10-25T02:14:43.101897+00:00",
   "engineFresh": true,
   "resolvedSymbols": [],
   "unresolvedSymbols": [],
@@ -12,7 +12,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T02:14:22.754136+00:00",
+  "generatedAt": "2026-10-25T02:14:52.899026+00:00",
   "mode": "DEMO_ONLY",
   "status": "degraded",
   "bridge": {
@@ -378,6 +378,27 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-25T02:14:43.101897+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
+      "ts": "2026-10-25T02:14:33.110478+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
+      "ts": "2026-10-25T02:14:23.106043+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
       "ts": "2026-10-25T02:14:13.112978+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -523,28 +544,7 @@
       "event": "tournament_completed",
       "title": "Norns tournament completed",
       "detail": "2 champion(s) survived all gates."
-    },
-    {
-      "ts": "2026-10-25T00:39:04.350159+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for LLY",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-25T00:39:04.349166+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for LLY",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-10-25T00:39:03.785291+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for WMT",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-10-25T02:14:36.419509+00:00"
+  "publishedAt": "2026-10-25T02:14:56.144509+00:00"
 }
