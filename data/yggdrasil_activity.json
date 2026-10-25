@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T02:14:43.101897+00:00",
+  "engineObservedAt": "2026-10-25T02:15:03.119068+00:00",
   "engineFresh": true,
   "resolvedSymbols": [],
   "unresolvedSymbols": [],
@@ -12,7 +12,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T02:14:52.899026+00:00",
+  "generatedAt": "2026-10-25T02:15:07.958729+00:00",
   "mode": "DEMO_ONLY",
   "status": "degraded",
   "bridge": {
@@ -378,6 +378,20 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-25T02:15:03.112835+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
+      "ts": "2026-10-25T02:14:53.107280+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
       "ts": "2026-10-25T02:14:43.101897+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -530,21 +544,7 @@
       "event": "cycle_error",
       "title": "Engine cycle error recorded",
       "detail": "Diagnostic detail remains private on the VPS."
-    },
-    {
-      "ts": "2026-10-25T02:06:41.195778+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
-    },
-    {
-      "ts": "2026-10-25T00:39:04.351162+00:00",
-      "type": "norns",
-      "event": "tournament_completed",
-      "title": "Norns tournament completed",
-      "detail": "2 champion(s) survived all gates."
     }
   ],
-  "publishedAt": "2026-10-25T02:14:56.144509+00:00"
+  "publishedAt": "2026-10-25T02:15:15.610345+00:00"
 }
