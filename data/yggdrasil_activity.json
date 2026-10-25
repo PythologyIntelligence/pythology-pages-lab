@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T05:23:17.518031+00:00",
+  "engineObservedAt": "2026-10-25T05:53:27.893612+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T05:23:23.682533+00:00",
+  "generatedAt": "2026-10-25T05:53:33.172284+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -575,5 +575,5 @@
       "detail": "Diagnostic detail remains private on the VPS."
     }
   ],
-  "publishedAt": "2026-10-25T05:23:26.861976+00:00"
+  "publishedAt": "2026-10-25T05:53:37.784620+00:00"
 }
