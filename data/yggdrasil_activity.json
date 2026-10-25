@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T02:18:23.124870+00:00",
+  "engineObservedAt": "2026-10-25T02:18:33.132635+00:00",
   "engineFresh": true,
   "resolvedSymbols": [],
   "unresolvedSymbols": [],
@@ -12,7 +12,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T02:18:24.551452+00:00",
+  "generatedAt": "2026-10-25T02:18:39.642973+00:00",
   "mode": "DEMO_ONLY",
   "status": "degraded",
   "bridge": {
@@ -378,6 +378,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-25T02:18:33.127789+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
       "ts": "2026-10-25T02:18:23.121873+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -537,14 +544,7 @@
       "event": "cycle_error",
       "title": "Engine cycle error recorded",
       "detail": "Diagnostic detail remains private on the VPS."
-    },
-    {
-      "ts": "2026-10-25T02:14:33.110478+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
     }
   ],
-  "publishedAt": "2026-10-25T02:18:34.412992+00:00"
+  "publishedAt": "2026-10-25T02:18:54.432134+00:00"
 }
