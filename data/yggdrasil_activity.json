@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T18:11:42.021490+00:00",
+  "engineObservedAt": "2026-10-25T18:39:42.490815+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T18:11:45.843758+00:00",
+  "generatedAt": "2026-10-25T18:39:55.115117+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -407,6 +407,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-25T18:39:52.605422+00:00",
+      "type": "norns",
+      "event": "tournament_started",
+      "title": "Norns tournament started",
+      "detail": "61 candidates entered research validation."
+    },
+    {
       "ts": "2026-10-25T12:39:45.072199+00:00",
       "type": "norns",
       "event": "training_ranked",
@@ -566,14 +573,7 @@
       "event": "training_ranked",
       "title": "Training ranked for NVIDIA",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
-    },
-    {
-      "ts": "2026-10-25T12:39:40.190091+00:00",
-      "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for MSFT",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-10-25T18:11:48.852057+00:00"
+  "publishedAt": "2026-10-25T18:39:56.901610+00:00"
 }
