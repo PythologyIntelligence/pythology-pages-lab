@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T02:13:33.096374+00:00",
+  "engineObservedAt": "2026-10-25T02:13:43.099794+00:00",
   "engineFresh": true,
   "resolvedSymbols": [],
   "unresolvedSymbols": [],
@@ -12,7 +12,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T02:13:37.565317+00:00",
+  "generatedAt": "2026-10-25T02:13:52.641145+00:00",
   "mode": "DEMO_ONLY",
   "status": "degraded",
   "bridge": {
@@ -378,6 +378,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-25T02:13:43.099794+00:00",
+      "type": "guardrail",
+      "event": "cycle_error",
+      "title": "Engine cycle error recorded",
+      "detail": "Diagnostic detail remains private on the VPS."
+    },
+    {
       "ts": "2026-10-25T02:13:33.093376+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -537,14 +544,7 @@
       "event": "no_champion",
       "title": "No champion for EXXON",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-25T00:39:02.712660+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for BRKB",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-10-25T02:13:37.880313+00:00"
+  "publishedAt": "2026-10-25T02:13:57.204986+00:00"
 }
