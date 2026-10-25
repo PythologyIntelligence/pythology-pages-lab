@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-25T06:23:28.508695+00:00",
+  "engineObservedAt": "2026-10-25T06:38:55.492570+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-25T06:23:28.952028+00:00",
+  "generatedAt": "2026-10-25T06:39:09.661607+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -407,6 +407,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-25T06:39:05.530447+00:00",
+      "type": "norns",
+      "event": "tournament_started",
+      "title": "Norns tournament started",
+      "detail": "61 candidates entered research validation."
+    },
+    {
       "ts": "2026-10-25T02:22:03.167998+00:00",
       "type": "guardrail",
       "event": "cycle_error",
@@ -566,14 +573,7 @@
       "event": "cycle_error",
       "title": "Engine cycle error recorded",
       "detail": "Diagnostic detail remains private on the VPS."
-    },
-    {
-      "ts": "2026-10-25T02:18:13.131456+00:00",
-      "type": "guardrail",
-      "event": "cycle_error",
-      "title": "Engine cycle error recorded",
-      "detail": "Diagnostic detail remains private on the VPS."
     }
   ],
-  "publishedAt": "2026-10-25T06:23:43.189661+00:00"
+  "publishedAt": "2026-10-25T06:39:20.823984+00:00"
 }
