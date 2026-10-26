@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-26T06:40:16.865085+00:00",
+  "engineObservedAt": "2026-10-26T06:40:53.558860+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-26T06:40:29.856425+00:00",
+  "generatedAt": "2026-10-26T06:40:59.977405+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -73,7 +73,7 @@
   ],
   "research": {
     "candidateCount": 61,
-    "lastResearchAt": "2026-10-26T00:40:25.922237+00:00",
+    "lastResearchAt": "2026-10-26T06:40:42.533706+00:00",
     "latestTournamentSelected": 1,
     "currentTrainingGateEligible": 1,
     "families": [
@@ -96,21 +96,21 @@
       "trainingGate": "eligible",
       "train": {
         "returnPct": 0.16242374790844671,
-        "sharpe": 0.4808961496259348,
+        "sharpe": 0.4756400985033612,
         "maxDrawdownPct": 0.7222003695482426,
         "trades": 50,
         "winRatePct": 46.34146341463415
       },
       "test": {
         "returnPct": 0.49164347050536517,
-        "sharpe": 3.475468580810603,
+        "sharpe": 3.565942947792185,
         "maxDrawdownPct": 0.3234437919773181,
         "trades": 16,
         "winRatePct": 55.172413793103445
       },
-      "mcP05ReturnPct": -0.26818598093942936,
-      "score": 3.4574262208142974,
-      "selectedAt": "2026-10-26T00:40:15.759495+00:00"
+      "mcP05ReturnPct": -0.3567018794071003,
+      "score": 3.5461302698265253,
+      "selectedAt": "2026-10-26T06:40:33.261976+00:00"
     }
   ],
   "tyr": {
@@ -380,173 +380,173 @@
   ],
   "recentActivity": [
     {
-      "ts": "2026-10-26T06:40:27.034532+00:00",
-      "type": "norns",
-      "event": "tournament_started",
-      "title": "Norns tournament started",
-      "detail": "61 candidates entered research validation."
-    },
-    {
-      "ts": "2026-10-26T00:40:25.922237+00:00",
+      "ts": "2026-10-26T06:40:42.533706+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for LLY",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:25.922237+00:00",
+      "ts": "2026-10-26T06:40:42.533706+00:00",
       "type": "norns",
       "event": "no_champion",
       "title": "No champion for LLY",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-26T00:40:25.922237+00:00",
+      "ts": "2026-10-26T06:40:42.533706+00:00",
       "type": "norns",
       "event": "tournament_completed",
       "title": "Norns tournament completed",
       "detail": "1 champion(s) survived all gates."
     },
     {
-      "ts": "2026-10-26T00:40:25.480997+00:00",
+      "ts": "2026-10-26T06:40:42.062606+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for WMT",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:25.480997+00:00",
+      "ts": "2026-10-26T06:40:42.062606+00:00",
       "type": "norns",
       "event": "no_champion",
       "title": "No champion for WMT",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-26T00:40:24.973527+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for EXXON",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-26T00:40:24.971489+00:00",
+      "ts": "2026-10-26T06:40:41.595701+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for EXXON",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:23.219722+00:00",
+      "ts": "2026-10-26T06:40:41.595701+00:00",
       "type": "norns",
       "event": "no_champion",
-      "title": "No champion for BRKB",
+      "title": "No champion for EXXON",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-26T00:40:23.215716+00:00",
+      "ts": "2026-10-26T06:40:41.132926+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for BRKB",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:22.706997+00:00",
+      "ts": "2026-10-26T06:40:41.132926+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for BRKB",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-10-26T06:40:40.658838+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for JPM",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:22.706997+00:00",
+      "ts": "2026-10-26T06:40:40.658838+00:00",
       "type": "norns",
       "event": "no_champion",
       "title": "No champion for JPM",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-26T00:40:22.233404+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for AVGO",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-26T00:40:22.230376+00:00",
+      "ts": "2026-10-26T06:40:40.135036+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for AVGO",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:21.735345+00:00",
+      "ts": "2026-10-26T06:40:40.135036+00:00",
+      "type": "norns",
+      "event": "no_champion",
+      "title": "No champion for AVGO",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-10-26T06:40:39.643197+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for TSLA",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:21.735345+00:00",
+      "ts": "2026-10-26T06:40:39.643197+00:00",
       "type": "norns",
       "event": "no_champion",
       "title": "No champion for TSLA",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-26T00:40:21.221298+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for META",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-26T00:40:21.209770+00:00",
+      "ts": "2026-10-26T06:40:39.124124+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for META",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:20.713242+00:00",
+      "ts": "2026-10-26T06:40:39.124124+00:00",
       "type": "norns",
-      "event": "training_ranked",
-      "title": "Training ranked for GOOG",
-      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+      "event": "no_champion",
+      "title": "No champion for META",
+      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-26T00:40:20.713242+00:00",
+      "ts": "2026-10-26T06:40:38.704247+00:00",
       "type": "norns",
       "event": "no_champion",
       "title": "No champion for GOOG",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-26T00:40:20.234141+00:00",
+      "ts": "2026-10-26T06:40:38.700714+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for GOOG",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
+    },
+    {
+      "ts": "2026-10-26T06:40:38.257329+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for AMAZON",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:20.234141+00:00",
+      "ts": "2026-10-26T06:40:38.257329+00:00",
       "type": "norns",
       "event": "no_champion",
       "title": "No champion for AMAZON",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     },
     {
-      "ts": "2026-10-26T00:40:19.702644+00:00",
+      "ts": "2026-10-26T06:40:37.831398+00:00",
       "type": "norns",
       "event": "training_ranked",
       "title": "Training ranked for NVIDIA",
       "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     },
     {
-      "ts": "2026-10-26T00:40:19.702644+00:00",
+      "ts": "2026-10-26T06:40:37.831398+00:00",
       "type": "norns",
       "event": "no_champion",
       "title": "No champion for NVIDIA",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
+    },
+    {
+      "ts": "2026-10-26T06:40:37.358423+00:00",
+      "type": "norns",
+      "event": "training_ranked",
+      "title": "Training ranked for MSFT",
+      "detail": "0 candidates passed the training gate; 61 were rejected before out-of-sample testing."
     }
   ],
-  "publishedAt": "2026-10-26T06:40:42.412735+00:00"
+  "publishedAt": "2026-10-26T06:41:03.062579+00:00"
 }
