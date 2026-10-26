@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-26T08:10:19.553452+00:00",
+  "generated_at_utc": "2026-10-26T14:10:24.920933+00:00",
   "historical_eruption_records_since_1960": 2248,
   "historical_volcanoes_catalogued": 1214,
   "instrumental_volcanoes_individually_verified": 0,
@@ -57,6 +57,6 @@
   ],
   "usgs_official_recent_elevated_notices": 4,
   "volcanoes_matched_to_usgs_hans": 62,
-  "volcanoes_with_geographic_earthquake_associations": 65,
+  "volcanoes_with_geographic_earthquake_associations": 66,
   "volcanoes_with_validated_precursors": 0
 }
