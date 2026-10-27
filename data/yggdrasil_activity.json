@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-27T06:30:27.761152+00:00",
+  "engineObservedAt": "2026-10-27T06:41:47.839483+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-27T06:30:28.480730+00:00",
+  "generatedAt": "2026-10-27T06:42:02.160352+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -380,6 +380,13 @@
   ],
   "recentActivity": [
     {
+      "ts": "2026-10-27T06:41:57.889451+00:00",
+      "type": "norns",
+      "event": "tournament_started",
+      "title": "Norns tournament started",
+      "detail": "61 candidates entered research validation."
+    },
+    {
       "ts": "2026-10-27T00:41:51.215616+00:00",
       "type": "norns",
       "event": "training_ranked",
@@ -539,14 +546,7 @@
       "event": "no_champion",
       "title": "No champion for NVIDIA",
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
-    },
-    {
-      "ts": "2026-10-27T00:41:44.723112+00:00",
-      "type": "norns",
-      "event": "no_champion",
-      "title": "No champion for MSFT",
-      "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-10-27T06:30:39.958883+00:00"
+  "publishedAt": "2026-10-27T06:42:16.272539+00:00"
 }
