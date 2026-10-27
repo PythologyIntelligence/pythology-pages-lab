@@ -1,6 +1,6 @@
 {
   "schemaVersion": 3,
-  "engineObservedAt": "2026-10-27T03:42:35.663036+00:00",
+  "engineObservedAt": "2026-10-27T03:59:56.032619+00:00",
   "engineFresh": true,
   "resolvedSymbols": [
     "EURUSD",
@@ -41,7 +41,7 @@
   },
   "system": "Yggdrasil",
   "snapshotKind": "live-safe-vps",
-  "generatedAt": "2026-10-27T03:42:40.942507+00:00",
+  "generatedAt": "2026-10-27T04:00:00.619452+00:00",
   "mode": "DEMO_ONLY",
   "status": "operational",
   "bridge": {
@@ -138,9 +138,9 @@
   "live": {
     "mt5Connected": true,
     "sessionKey": "2026-10-26",
-    "tradeCountVerified": true,
+    "tradeCountVerified": false,
     "positions": 0,
-    "tradesThisSession": 0,
+    "tradesThisSession": null,
     "openRiskPct": 0.0,
     "killSwitch": false,
     "flattenRequested": false,
@@ -548,5 +548,5 @@
       "detail": "Nothing survived all research gates, so Yggdrasil will not trade this market."
     }
   ],
-  "publishedAt": "2026-10-27T03:42:50.775106+00:00"
+  "publishedAt": "2026-10-27T04:00:11.237376+00:00"
 }
