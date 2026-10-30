@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-10-30T14:10:20.120041+00:00",
+  "generated_at_utc": "2026-10-30T20:10:21.174353+00:00",
   "historical_eruption_records_since_1960": 2248,
   "historical_volcanoes_catalogued": 1214,
   "instrumental_volcanoes_individually_verified": 0,
@@ -32,26 +32,26 @@
   "usgs_elevated_notice_examples": [
     {
       "country": "United States",
-      "name": "Ahyi",
-      "notice_at_utc": "2026-10-29T23:23:07+00:00",
-      "reported_alert_level": "ADVISORY"
-    },
-    {
-      "country": "United States",
       "name": "Great Sitkin",
-      "notice_at_utc": "2026-10-29T19:39:34+00:00",
+      "notice_at_utc": "2026-10-30T20:06:23+00:00",
       "reported_alert_level": "WATCH"
     },
     {
       "country": "United States",
       "name": "Shishaldin",
-      "notice_at_utc": "2026-10-29T19:39:34+00:00",
+      "notice_at_utc": "2026-10-30T20:06:23+00:00",
       "reported_alert_level": "ADVISORY"
     },
     {
       "country": "United States",
       "name": "Kilauea",
-      "notice_at_utc": "2026-10-29T19:05:24+00:00",
+      "notice_at_utc": "2026-10-30T18:42:04+00:00",
+      "reported_alert_level": "ADVISORY"
+    },
+    {
+      "country": "United States",
+      "name": "Ahyi",
+      "notice_at_utc": "2026-10-29T23:23:07+00:00",
       "reported_alert_level": "ADVISORY"
     }
   ],
