@@ -1,16 +1,45 @@
 {
   "calibration": {
     "automatic_weight_updates": false,
-    "brier_score": 0.163801,
-    "calibrated_forecast_count": 108,
+    "brier_score": 0.163186,
+    "calibrated_forecast_count": 109,
     "confirmed_count": 41,
-    "hit_rate": 0.306,
-    "not_observed_count": 93,
-    "resolved_count": 134
+    "hit_rate": 0.304,
+    "not_observed_count": 94,
+    "resolved_count": 135
   },
   "claim_boundary": "Prometheus is in live validation. A forecast is a falsifiable, timestamped research assessment, not an official warning or emergency instruction. Mechanism-level scoring measures prospective predictive consistency; a hit does not prove causation and a miss does not automatically falsify the mechanism. Engines without a pre-declared testable policy contribute memory but do not generate speculative forecasts.",
-  "generated_at": "2026-10-31T04:13:23+00:00",
+  "generated_at": "2026-10-31T12:13:49+00:00",
   "history": [
+    {
+      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
+      "calibrated": true,
+      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
+      "confidence_label": "empirically_calibrated",
+      "created_at": "2026-10-29T04:13:53+00:00",
+      "domain": "atmosphere",
+      "forecast_confidence": 0.284,
+      "forecast_id": "6a31269375e4dddb2808686b",
+      "forecast_type": "heat_to_infrastructure",
+      "outcome": {
+        "brier_component": 0.080656,
+        "matched_titles": [],
+        "state": "not_observed"
+      },
+      "predicted_outcome": "infrastructure_pressure",
+      "region": "Sahel Region",
+      "resolved_at": "2026-10-31T12:13:49+00:00",
+      "source_families": [
+        "Open-Meteo"
+      ],
+      "source_independence_count": 1,
+      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
+      "status": "resolved",
+      "target_event_id": "3b4c48be388ca9f7",
+      "target_event_type": "heat_risk",
+      "target_title": "Heat risk — Sahel Region",
+      "valid_until": "2026-10-31T04:13:53+00:00"
+    },
     {
       "alternative": "The official unrest signal reduces toward baseline during the forecast window.",
       "calibrated": true,
@@ -4036,31 +4065,6 @@
       "target_event_type": "severe_convective_risk",
       "target_title": "Severe weather risk — Mumbai, India",
       "valid_until": "2026-11-01T04:13:23+00:00"
-    },
-    {
-      "alternative": "Heat persists without a material EarthNet infrastructure or medical-stress signal.",
-      "calibrated": true,
-      "claim_boundary": "Prometheus live-validation forecast; not an official warning, emergency directive, or proof that the predicted outcome will occur.",
-      "confidence_label": "empirically_calibrated",
-      "created_at": "2026-10-29T04:13:53+00:00",
-      "domain": "atmosphere",
-      "forecast_confidence": 0.284,
-      "forecast_id": "6a31269375e4dddb2808686b",
-      "forecast_type": "heat_to_infrastructure",
-      "outcome": null,
-      "predicted_outcome": "infrastructure_pressure",
-      "region": "Sahel Region",
-      "resolved_at": null,
-      "source_families": [
-        "Open-Meteo"
-      ],
-      "source_independence_count": 1,
-      "statement": "Sustained heat may be followed by material electricity-system or heat-health pressure in this area.",
-      "status": "open",
-      "target_event_id": "3b4c48be388ca9f7",
-      "target_event_type": "heat_risk",
-      "target_title": "Heat risk — Sahel Region",
-      "valid_until": "2026-10-31T04:13:53+00:00"
     }
   ],
   "schema": "earthnet.prometheus-public.v0.1"
