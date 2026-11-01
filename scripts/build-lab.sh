@@ -303,6 +303,7 @@ PUBLIC_OVERRIDES=(
   earthnet-nz-intelligence.html
   prometheus-page.js
   prometheus.html
+  prometheus-research.html
   core-technology.html
   current-research.html
   computational-biology-lab.html
@@ -542,8 +543,8 @@ grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/current-research.html" || {
   echo 'Prometheus research-state projection validation failed.' >&2
   exit 1
 }
-grep -Fq 'Looking for the signals that come before the event.' "$OUT/prometheus.html" || {
-  echo 'Prometheus autonomous research presentation validation failed.' >&2
+grep -Fq 'id="research-stages"' "$OUT/prometheus-research.html" || {
+  echo 'Prometheus Research stages presentation validation failed.' >&2
   exit 1
 }
 grep -Fq 'href="enviroarc.html#precursor-research"' "$OUT/index.html" || {
