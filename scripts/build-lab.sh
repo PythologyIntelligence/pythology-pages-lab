@@ -444,6 +444,15 @@ if [[ ! -s "$TITLE_BANNER" ]]; then
 fi
 mkdir -p "$OUT/png_images"
 cp "$TITLE_BANNER" "$OUT/png_images/pythology_environmental_ai_banner.webp"
+# Desktop and tablet use the approved Prometheus image; mobile keeps the
+# existing optimized Pythology title banner via the homepage picture fallback.
+PROMETHEUS_BANNER="$ROOT/png_images/prometheus.jpeg"
+if [[ ! -s "$PROMETHEUS_BANNER" ]]; then
+  echo "Required Prometheus desktop/tablet banner missing: $PROMETHEUS_BANNER" >&2
+  exit 1
+fi
+cp "$PROMETHEUS_BANNER" "$OUT/png_images/prometheus.jpeg"
+test -s "$OUT/png_images/prometheus.jpeg"
 # Stage user-provided Chathams screenshots as static public assets.
 # The upload folder is literally named png_imageschathams in the repository.
 # Normalise it to png_images/chathams in the published site; no binary moves needed.
