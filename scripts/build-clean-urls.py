@@ -15,7 +15,7 @@ PAGES = {
     "enviroarc.html": "enviroarc",
     "precursor-research.html": "subterranean",
     "weather-lab.html": "weather-lab",
-    "prometheus.html": "prometheus",
+    "prometheus-research.html": "prometheus-research",
     "chathams.html": "chathams",
     "core-technology.html": "core-technology",
     "current-research.html": "current-research",
@@ -32,7 +32,7 @@ PAGES = {
     "cerberus.html": "cerberus",
     "sentinel-command.html": "sentinel-command",
 }
-ALIASES = {"precursor-research": "precursor-research.html",
+ALIASES = {"prometheus": "prometheus-research.html", "precursor-research": "precursor-research.html",
            "extreme-weather": "weather-lab.html"}
 ATTR = re.compile(r'(?P<head>\bhref\s*=\s*)(?P<quote>["\'])(?P<url>.*?)(?P=quote)', re.I | re.S)
 DOMAIN = "https://pythology.co.nz"
