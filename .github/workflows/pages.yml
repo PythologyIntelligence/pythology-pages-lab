@@ -126,7 +126,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for required in             index.html             chathams.html             enviroarc.html             mdra.html             prometheus.html             causal-intelligence.html             research.html             core-technology.html             where-it-fits.html             future.html             current-research.html             computational-biology-lab.html             about.html             site.js             editorial-2026.css             prometheus-stats.js             png_images/about_me.png; do
+          for required in             index.html             chathams.html             enviroarc.html             mdra.html             prometheus.html             prometheus-research.html             causal-intelligence.html             research.html             core-technology.html             where-it-fits.html             future.html             current-research.html             computational-biology-lab.html             about.html             site.js             editorial-2026.css             prometheus-stats.js             png_images/about_me.png; do
             [[ -s "_site/$required" ]] || {
               echo "Refusing to deploy incomplete Pages artifact: $required missing" >&2
               exit 1
@@ -490,7 +490,7 @@ jobs:
         run: |
           set -euo pipefail
           python3 scripts/build-clean-urls.py _site
-          for slug in enviroarc subterranean weather-lab prometheus chathams core-technology current-research where-it-fits about; do
+          for slug in enviroarc subterranean weather-lab prometheus-research chathams core-technology current-research where-it-fits about; do
             [[ -s "_site/$slug/index.html" ]] || { echo "Missing clean public route: $slug" >&2; exit 1; }
           done
           grep -Fq '<base href="../">' _site/subterranean/index.html
