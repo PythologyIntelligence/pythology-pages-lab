@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-05T14:10:20.012276+00:00",
+  "generated_at_utc": "2026-11-05T20:10:20.212208+00:00",
   "historical_eruption_records_since_1960": 2248,
   "historical_volcanoes_catalogued": 1214,
   "instrumental_volcanoes_individually_verified": 0,
@@ -33,13 +33,13 @@
     {
       "country": "United States",
       "name": "Great Sitkin",
-      "notice_at_utc": "2026-11-04T20:38:53+00:00",
+      "notice_at_utc": "2026-11-05T19:57:48+00:00",
       "reported_alert_level": "WATCH"
     },
     {
       "country": "United States",
       "name": "Kilauea",
-      "notice_at_utc": "2026-11-04T20:03:18+00:00",
+      "notice_at_utc": "2026-11-05T19:22:47+00:00",
       "reported_alert_level": "WATCH"
     },
     {
@@ -51,6 +51,6 @@
   ],
   "usgs_official_recent_elevated_notices": 3,
   "volcanoes_matched_to_usgs_hans": 62,
-  "volcanoes_with_geographic_earthquake_associations": 59,
+  "volcanoes_with_geographic_earthquake_associations": 60,
   "volcanoes_with_validated_precursors": 0
 }
