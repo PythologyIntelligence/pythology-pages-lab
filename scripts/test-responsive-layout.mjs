@@ -95,6 +95,11 @@ try {
       }
       assert.ok(!nav.some(x => ['EnviroArc', 'EarthNet', 'Atlas', 'Chatham Islands'].includes(x.text)),
                 viewport.name + ' ' + route + ': specialist product appears in primary navigation');
+      const partnerLink = nav.find(x => x.text === "Who It's For");
+      if (route !== '/where-it-fits/') {
+        assert.equal(partnerLink?.path, '/where-it-fits/',
+                     viewport.name + ' ' + route + ': partners navigation wrong');
+      }
       const navLink = nav.find(x => x.text === 'Prometheus');
       if (route !== '/prometheus/') {
         assert.equal(navLink?.path, '/prometheus-research/',
@@ -122,6 +127,25 @@ try {
         await page.waitForURL(url => new URL(url).pathname === destination, { timeout: 10000 });
         assert.equal(new URL(page.url()).pathname, destination,
                      viewport.name + ' ' + route + ': Prometheus navigation did not work');
+      }
+      if (route === '/about/') {
+        const figure = page.locator('.about-hero .about-mobile-visual');
+        const copy = page.locator('.about-hero .pitch-hero-copy');
+        const figureBox = await figure.boundingBox();
+        const copyBox = await copy.boundingBox();
+        assert.ok(figureBox && copyBox, viewport.name + ': About portrait or text not visible');
+        assert.ok(figureBox.x >= -8 && figureBox.x + figureBox.width <= viewport.width + 8,
+                  viewport.name + ': About portrait clips outside the viewport');
+        if (viewport.width > 1020) {
+          assert.ok(figureBox.x >= copyBox.x + copyBox.width - 8,
+                    viewport.name + ': About portrait overlaps the text on desktop');
+          const contentEdge = await page.locator('.about-hero .container').boundingBox();
+          assert.ok(contentEdge && figureBox.x + figureBox.width <= contentEdge.x + contentEdge.width + 8,
+                    viewport.name + ': portrait extends beyond the content grid');
+        } else {
+          assert.ok(figureBox.y >= copyBox.y + copyBox.height - 8,
+                    viewport.name + ': mobile/tablet portrait must sit below the text');
+        }
       }
       if (route === '/chathams/') {
         for (const screenshot of ['helios-dashboard.webp', 'ecowatch-dashboard.webp']) {
