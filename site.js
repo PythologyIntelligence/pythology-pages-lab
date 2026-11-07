@@ -7,8 +7,9 @@
   const canonicalNav = [
     ['index.html', 'Home'],
     ['prometheus-research.html', 'Prometheus'],
-    ['prometheus-biology.html', 'Prometheus Biology'],
-    ['where-it-fits.html', "Who It's For"],
+    ['environmental.html', 'Environmental'],
+    ['biological.html', 'Biological'],
+    ['physical-systems.html', 'Physical Systems'],
     ['about.html', 'About']
   ];
 
