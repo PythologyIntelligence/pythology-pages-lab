@@ -304,6 +304,8 @@ PUBLIC_OVERRIDES=(
   prometheus-page.js
   prometheus.html
   prometheus-research.html
+  prometheus-biology.html
+  prometheus-first.css
   core-technology.html
   current-research.html
   computational-biology-lab.html
@@ -340,6 +342,7 @@ node "$ROOT/scripts/test-physical-public.mjs"
 # Keep the homepage quake breakdown and largest-event detail from silently
 # disappearing when the public presentation is refreshed again.
 node "$ROOT/scripts/test-home-nz-quakes.mjs"
+node "$ROOT/scripts/test-prometheus-first.mjs"
 
 # Retired public founder AI: remove any previous upstream-mirrored files.
 find "$OUT" -maxdepth 1 -type f \( -name 'ask-brent.html*' -o -name 'brent-ai.css*' -o -name 'brent-ai.js*' \) -delete
@@ -508,8 +511,8 @@ for file in earthnet_prometheus.json earthnet_volcano_pulse.json earthnet_nz_dai
 done
 
 # Fail closed if critical public surfaces did not land.
-grep -Fq 'Environmental<br>Precursor Signals.' "$OUT/index.html" || {
-  echo 'Humanised homepage overlay validation failed.' >&2
+grep -Fq 'id="prometheus-primary-heading"' "$OUT/index.html" || {
+  echo 'Prometheus-first homepage overlay validation failed.' >&2
   exit 1
 }
 [[ -s "$OUT/site.css" && -s "$OUT/site.js" && -s "$OUT/architecture-in-action.css" && -s "$OUT/Logo (2).jpeg" ]] || {
@@ -520,10 +523,14 @@ grep -Fq "mobile-open" "$OUT/site.js" || {
   echo 'Responsive navigation controller validation failed.' >&2
   exit 1
 }
-grep -Fq "['enviroarc.html', 'EnviroArc']" "$OUT/site.js" || {
-  echo 'Canonical primary navigation is missing EnviroArc.' >&2
+grep -Fq "['prometheus-research.html', 'Prometheus']" "$OUT/site.js" || {
+  echo 'Canonical primary navigation must feature Prometheus.' >&2
   exit 1
 }
+if grep -Fq "['enviroarc.html', 'EnviroArc']" "$OUT/site.js"; then
+  echo 'EnviroArc must not be in the primary navigation.' >&2
+  exit 1
+fi
 grep -Fq "href !== currentPage" "$OUT/site.js" || {
   echo 'Current-page navigation omission validation failed.' >&2
   exit 1
@@ -552,6 +559,7 @@ grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/current-research.html" || {
   echo 'Prometheus research-state projection validation failed.' >&2
   exit 1
 }
+[[ -s "$OUT/prometheus-biology.html" && -s "$OUT/prometheus-first.css" ]] || { echo 'Prometheus programme assets missing' >&2; exit 1; }
 grep -Fq 'id="research-stages"' "$OUT/prometheus-research.html" || {
   echo 'Prometheus Research stages presentation validation failed.' >&2
   exit 1
@@ -642,7 +650,7 @@ done
 [[ -s "$OUT/png_images/chathams/ecowatch-dashboard.png" && -s "$OUT/png_images/chathams/helios-dashboard.png" && -s "$OUT/data/prometheus_weather_research.json" ]] || {
   echo 'Chathams imagery or weather public snapshot missing from site' >&2; exit 1;
 }
-grep -Fq "['chathams.html', 'Chatham Islands']" "$OUT/site.js" || { echo 'Chathams primary navigation missing' >&2; exit 1; }
+grep -Fq "['prometheus-biology.html', 'Prometheus Biology']" "$OUT/site.js" || { echo 'Prometheus Biology navigation missing' >&2; exit 1; }
 # The detailed research cards now live on their dedicated lab pages.
 grep -Fq 'data-py-lab="weather"' "$OUT/weather-lab.html" || { echo 'Extreme Weather Lab research card missing' >&2; exit 1; }
 grep -Fq 'data-py-lab="geology"' "$OUT/precursor-research.html" || { echo 'Subterranean Lab research card missing' >&2; exit 1; }
