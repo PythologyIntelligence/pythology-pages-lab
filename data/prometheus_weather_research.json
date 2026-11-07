@@ -1,17 +1,17 @@
 {
-  "schema": "pythology.weather-public-screening.v1",
-  "generated_at": "2026-10-17T19:47:06.177033+00:00",
+  "claim_boundary": "Public-safe research screening; candidate patterns are not validated event predictions or official weather warnings.",
+  "generated_at": "2026-11-07T19:53:55+00:00",
   "global": {
+    "matched_rows": 84,
+    "possible_upstream_truncation": false,
+    "source_event_rows": 776,
     "status": "screening_only",
-    "source_event_rows": 1113,
-    "matched_rows": 93,
-    "unique_signals": 55,
-    "possible_upstream_truncation": false
+    "unique_signals": 45
   },
   "new_zealand": {
-    "status": "observational_context",
-    "existing_atlas_watch_count": 0,
-    "exploratory_context_count": 1
+    "existing_atlas_watch_count": 3,
+    "exploratory_context_count": 25,
+    "status": "observational_context"
   },
-  "claim_boundary": "Public-safe research-screening projection. No validated weather prediction, probabilistic forecast, or official warning is established."
+  "schema": "pythology.weather-public-screening.v1"
 }
