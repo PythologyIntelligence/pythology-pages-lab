@@ -11,6 +11,7 @@ const physical = read('physical-systems.html');
 const legacyBiology = read('prometheus-biology.html');
 const nav = read('site.js');
 const css = read('domain-pages.css');
+const researchCards = read('prometheus-research-cards.js');
 const build = read('scripts/build-lab.sh');
 const about = read('about.html');
 const aboutCss = read('about-human.css');
@@ -30,6 +31,9 @@ for (const [file, label] of [['environmental.html','Environmental'],['biological
 }
 assert.match(environmental, /Who this is for/);
 assert.match(environmental, /id="prometheus-research-cards"/);
+assert.match(environmental, /weather-lab\.html#current/);
+assert.match(researchCards, /retrieve\('\/data\/prometheus_weather_research\.json'/);
+assert.doesNotMatch(researchCards, /retrieve\('data\/prometheus_weather_research\.json'/);
 assert.match(environmental, /data-home-forecast-caveat/);
 assert.match(environmental, /data-home-research-findings/);
 assert.match(environmental, /data-home-nz-count/);
