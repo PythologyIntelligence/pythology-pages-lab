@@ -119,15 +119,6 @@ try {
       }
       await page.screenshot({ path: path.join(screenshots, viewport.name + '-' + name + '.png'),
                               animations: 'disabled' });
-      if (route === '/prometheus/' || route === '/about/') {
-        if (viewport.mobile) await page.locator('[data-menu-button]').click();
-        const target = route === '/prometheus/' ? 'Prometheus Biology' : 'Prometheus';
-        const destination = route === '/prometheus/' ? '/prometheus-biology/' : '/prometheus-research/';
-        await page.locator('header [data-nav-links] a').filter({ hasText: new RegExp('^' + target + '$') }).click();
-        await page.waitForURL(url => new URL(url).pathname === destination, { timeout: 10000 });
-        assert.equal(new URL(page.url()).pathname, destination,
-                     viewport.name + ' ' + route + ': Prometheus navigation did not work');
-      }
       if (route === '/about/') {
         const figure = page.locator('.about-hero .about-mobile-visual');
         const copy = page.locator('.about-hero .pitch-hero-copy');
@@ -146,6 +137,15 @@ try {
           assert.ok(figureBox.y >= copyBox.y + copyBox.height - 8,
                     viewport.name + ': mobile/tablet portrait must sit below the text');
         }
+      }
+      if (route === '/prometheus/' || route === '/about/') {
+        if (viewport.mobile) await page.locator('[data-menu-button]').click();
+        const target = route === '/prometheus/' ? 'Prometheus Biology' : 'Prometheus';
+        const destination = route === '/prometheus/' ? '/prometheus-biology/' : '/prometheus-research/';
+        await page.locator('header [data-nav-links] a').filter({ hasText: new RegExp('^' + target + '$') }).click();
+        await page.waitForURL(url => new URL(url).pathname === destination, { timeout: 10000 });
+        assert.equal(new URL(page.url()).pathname, destination,
+                     viewport.name + ' ' + route + ': Prometheus navigation did not work');
       }
       if (route === '/chathams/') {
         for (const screenshot of ['helios-dashboard.webp', 'ecowatch-dashboard.webp']) {
