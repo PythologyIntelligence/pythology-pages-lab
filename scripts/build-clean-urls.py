@@ -16,6 +16,7 @@ PAGES = {
     "precursor-research.html": "subterranean",
     "weather-lab.html": "weather-lab",
     "prometheus-research.html": "prometheus-research",
+    "prometheus-biology.html": "prometheus-biology",
     "chathams.html": "chathams",
     "core-technology.html": "core-technology",
     "current-research.html": "current-research",
