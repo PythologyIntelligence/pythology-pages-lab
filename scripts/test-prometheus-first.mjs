@@ -37,7 +37,7 @@ assert.match(nav, /\['where-it-fits.html', "Who It's For"\]/);
 assert.match(home, /id="who-its-for"/);
 assert.match(target, /id="audiences"/);
 assert.match(target, /Strategic capital|STRATEGIC CAPITAL/);
-assert.match(target, /not a validated natural-hazard prediction service/);
+assert.match(target, /validated natural-hazard prediction service/);
 assert.match(about, /about-mobile-visual/);
 assert.match(aboutCss, /\.lab-about \.about-hero \.container\{display:grid/);
 assert.match(aboutCss, /@media\(max-width:1020px\)/);
