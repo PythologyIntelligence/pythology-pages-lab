@@ -95,8 +95,9 @@ class SiteDiscoveryTests(unittest.TestCase):
         self.assertIn("authorised live sensor feed", applied)
         self.assertIn("read-only", applied.lower())
         self.assertIn("simulated", physical.lower())
-        self.assertIn('class="home-partner-path"', home)
-        self.assertIn('href="where-it-fits.html"', home)
+        self.assertIn('id="prometheus-primary-heading"', home)
+        self.assertIn('href="prometheus-research.html"', home)
+        self.assertIn('id="research-programmes"', home)
 
 
 if __name__ == "__main__":

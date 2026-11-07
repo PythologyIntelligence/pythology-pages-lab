@@ -6,12 +6,8 @@
 
   const canonicalNav = [
     ['index.html', 'Home'],
-    ['enviroarc.html', 'EnviroArc'],
-    ['prometheus.html', 'Prometheus'],
-    ['chathams.html', 'Chatham Islands'],
-    ['core-technology.html', 'Core Technology'],
-    ['where-it-fits.html', 'Where It Fits'],
-    ['current-research.html', 'Current Research'],
+    ['prometheus-research.html', 'Prometheus'],
+    ['prometheus-biology.html', 'Prometheus Biology'],
     ['about.html', 'About']
   ];
 
@@ -19,7 +15,8 @@
   const segment = path.split('/').filter(Boolean).pop() || '';
   // Both /page/ and the old /page.html should activate the same navigation.
   const currentPage = path.endsWith('/')
-    ? (canonicalNav.some(([href]) => href === segment + '.html') ? segment + '.html' : 'index.html')
+    ? (segment === 'prometheus' ? 'prometheus-research.html'
+       : canonicalNav.some(([href]) => href === segment + '.html') ? segment + '.html' : 'index.html')
     : (segment || 'index.html');
 
   // Rooted in the document's established site base. On clean /about/ routes

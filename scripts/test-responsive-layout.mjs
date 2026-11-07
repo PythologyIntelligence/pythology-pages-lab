@@ -52,7 +52,7 @@ const viewports = [
   { name: 'tablet', width: 820, height: 1080, mobile: true },
   { name: 'desktop', width: 1440, height: 900, mobile: false },
 ];
-const routes = ['/', '/prometheus/', '/about/', '/chathams/',
+const routes = ['/', '/prometheus/', '/prometheus-biology/', '/about/', '/chathams/',
                 '/where-it-fits/', '/physical-intelligence/'];
 let browser;
 try {
@@ -93,8 +93,13 @@ try {
                    !link.path.startsWith(route + 'about/')),
                   'Nested/broken ' + viewport.name + ' link on ' + route + ': ' + JSON.stringify(link));
       }
-      const navLink = nav.find(x => x.text === 'EnviroArc');
-      assert.equal(navLink?.path, '/enviroarc/', viewport.name + ' ' + route + ': EnviroArc link wrong');
+      assert.ok(!nav.some(x => ['EnviroArc', 'EarthNet', 'Atlas', 'Chatham Islands'].includes(x.text)),
+                viewport.name + ' ' + route + ': specialist product appears in primary navigation');
+      const navLink = nav.find(x => x.text === 'Prometheus');
+      if (route !== '/prometheus/') {
+        assert.equal(navLink?.path, '/prometheus-research/',
+                     viewport.name + ' ' + route + ': Prometheus navigation wrong');
+      }
       if (viewport.mobile) {
         const menu = page.locator('[data-menu-button]');
         await menu.click();
@@ -111,10 +116,12 @@ try {
                               animations: 'disabled' });
       if (route === '/prometheus/' || route === '/about/') {
         if (viewport.mobile) await page.locator('[data-menu-button]').click();
-        await page.locator('header [data-nav-links] a').filter({ hasText: /^EnviroArc$/ }).click();
-        await page.waitForURL(/\/enviroarc\/$/, { timeout: 10000 });
-        assert.equal(new URL(page.url()).pathname, '/enviroarc/',
-                     viewport.name + ' ' + route + ': menu click did not navigate');
+        const target = route === '/prometheus/' ? 'Prometheus Biology' : 'Prometheus';
+        const destination = route === '/prometheus/' ? '/prometheus-biology/' : '/prometheus-research/';
+        await page.locator('header [data-nav-links] a').filter({ hasText: new RegExp('^' + target + '$') }).click();
+        await page.waitForURL(url => new URL(url).pathname === destination, { timeout: 10000 });
+        assert.equal(new URL(page.url()).pathname, destination,
+                     viewport.name + ' ' + route + ': Prometheus navigation did not work');
       }
       if (route === '/chathams/') {
         for (const screenshot of ['helios-dashboard.webp', 'ecowatch-dashboard.webp']) {
