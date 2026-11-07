@@ -44,6 +44,6 @@
       fn(await r.json());
     }catch(_){fail(kind);}finally{clearTimeout(timer);}
   }
-  function refresh(){void retrieve('data/prometheus_weather_research.json','weather',renderWeather);void retrieve('https://atlas.pythology.co.nz/public-research/precursor.json','geology',renderGeology);}
+  function refresh(){void retrieve('/data/prometheus_weather_research.json','weather',renderWeather);void retrieve('https://atlas.pythology.co.nz/public-research/precursor.json','geology',renderGeology);}
   refresh();setInterval(()=>{if(!document.hidden)refresh()},5*60*1000);
 })();
