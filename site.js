@@ -15,7 +15,8 @@
   const segment = path.split('/').filter(Boolean).pop() || '';
   // Both /page/ and the old /page.html should activate the same navigation.
   const currentPage = path.endsWith('/')
-    ? (canonicalNav.some(([href]) => href === segment + '.html') ? segment + '.html' : 'index.html')
+    ? (segment === 'prometheus' ? 'prometheus-research.html'
+       : canonicalNav.some(([href]) => href === segment + '.html') ? segment + '.html' : 'index.html')
     : (segment || 'index.html');
 
   // Rooted in the document's established site base. On clean /about/ routes
