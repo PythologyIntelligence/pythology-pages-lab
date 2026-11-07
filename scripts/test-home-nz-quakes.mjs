@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 /**
- * Regression guard for the NZ 24-hour state on the Pythology landing page.
+ * Regression guard for the NZ 24-hour state on the Pythology Environmental page.
  * Uses a fixed catalogue fixture: never fetches live earthquake data in CI.
  */
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 
 const source = readFileSync(new URL('../home-proof.js', import.meta.url), 'utf8');
-const markup = readFileSync(new URL('../index.html', import.meta.url), 'utf8');
+const markup = readFileSync(new URL('../environmental.html', import.meta.url), 'utf8');
 const css = readFileSync(new URL('../pythology-human.css', import.meta.url), 'utf8');
 
 const start = source.indexOf('  function nzQuakeNumber(');
@@ -19,7 +19,7 @@ const hooks = [
   'bin-m4', 'bin-m4-label', 'bin-m5', 'quake-integrity',
   'largest-event', 'largest-meta', 'largest-source', 'largest-geonet'
 ];
-hooks.forEach((hook) => assert.ok(markup.includes('data-home-nz-' + hook), 'Homepage missing ' + hook));
+hooks.forEach((hook) => assert.ok(markup.includes('data-home-nz-' + hook), 'Environmental page missing ' + hook));
 assert.ok(css.includes('.home-nz-quake-bins'), 'Magnitude breakdown styles missing');
 
 function makeRenderer() {
@@ -114,4 +114,4 @@ absent.renderNzQuakeDetail({event_count: 0, magnitude_bins: {}, events: []}, [])
 assert.equal(absent.get('largest-event'), 'No verified largest event in this snapshot');
 assert.equal(absent.link.hidden, true);
 
-console.log('NZ homepage quake detail regression checks passed.');
+console.log('NZ environmental quake detail regression checks passed.');
