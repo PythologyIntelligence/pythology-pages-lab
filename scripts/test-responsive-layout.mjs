@@ -52,8 +52,8 @@ const viewports = [
   { name: 'tablet', width: 820, height: 1080, mobile: true },
   { name: 'desktop', width: 1440, height: 900, mobile: false },
 ];
-const routes = ['/', '/prometheus/', '/prometheus-biology/', '/about/', '/chathams/',
-                '/where-it-fits/', '/physical-intelligence/'];
+const routes = ['/', '/prometheus/', '/environmental/', '/biological/', '/physical-systems/',
+                '/about/', '/chathams/', '/where-it-fits/', '/physical-intelligence/'];
 let browser;
 try {
   browser = await chromium.launch({
@@ -95,10 +95,15 @@ try {
       }
       assert.ok(!nav.some(x => ['EnviroArc', 'EarthNet', 'Atlas', 'Chatham Islands'].includes(x.text)),
                 viewport.name + ' ' + route + ': specialist product appears in primary navigation');
-      const partnerLink = nav.find(x => x.text === "Who It's For");
-      if (route !== '/where-it-fits/') {
-        assert.equal(partnerLink?.path, '/where-it-fits/',
-                     viewport.name + ' ' + route + ': partners navigation wrong');
+      for (const [label, destination] of [
+        ['Environmental', '/environmental/'],
+        ['Biological', '/biological/'],
+        ['Physical Systems', '/physical-systems/'],
+      ]) {
+        if (route !== destination) {
+          assert.equal(nav.find(x => x.text === label)?.path, destination,
+                       viewport.name + ' ' + route + ': domain navigation wrong: ' + label);
+        }
       }
       const navLink = nav.find(x => x.text === 'Prometheus');
       if (route !== '/prometheus/') {
@@ -140,8 +145,8 @@ try {
       }
       if (route === '/prometheus/' || route === '/about/') {
         if (viewport.mobile) await page.locator('[data-menu-button]').click();
-        const target = route === '/prometheus/' ? 'Prometheus Biology' : 'Prometheus';
-        const destination = route === '/prometheus/' ? '/prometheus-biology/' : '/prometheus-research/';
+        const target = route === '/prometheus/' ? 'Biological' : 'Prometheus';
+        const destination = route === '/prometheus/' ? '/biological/' : '/prometheus-research/';
         await page.locator('header [data-nav-links] a').filter({ hasText: new RegExp('^' + target + '$') }).click();
         await page.waitForURL(url => new URL(url).pathname === destination, { timeout: 10000 });
         assert.equal(new URL(page.url()).pathname, destination,
