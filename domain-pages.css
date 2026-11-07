@@ -1,0 +1,33 @@
+/* Public domain navigation and quiet Pythology landing page. */
+.domain-site .domain-intro{padding:clamp(62px,8vw,112px) 0 clamp(40px,6vw,80px);background:radial-gradient(ellipse at 90% 0%,rgba(51,118,121,.075),transparent 55%),#060d11}
+.domain-intro-inner{max-width:1040px}
+.domain-intro h1{font:500 clamp(47px,6.5vw,88px)/1.09 'Newsreader',Georgia,serif;letter-spacing:-.035em;max-width:980px;margin:20px 0 26px;color:#e7eff0}
+.domain-lede{font-size:clamp(17px,1.45vw,20px);line-height:1.8;max-width:930px;color:#b5c8cd}
+.domain-index{margin:clamp(40px,6vw,74px) 0 24px;border-top:1px solid rgba(159,208,214,.23)}
+.domain-row{display:grid;grid-template-columns:minmax(200px,.39fr) minmax(0,.61fr);gap:clamp(15px,3vw,52px);padding:clamp(22px,3vw,34px) 6px;border-bottom:1px solid rgba(159,208,214,.23);color:inherit;text-decoration:none;align-items:start;transition:background .18s ease}
+.domain-row:hover,.domain-row:focus-visible{background:rgba(125,189,192,.055);outline-offset:3px}
+.domain-name{color:#ecf4f4;font:500 clamp(29px,3vw,39px)/1.15 'Newsreader',Georgia,serif}
+.domain-name span{font:400 17px/1 sans-serif;color:#8fc9cb;vertical-align:middle}
+.domain-description{color:#acbec4;font:400 clamp(14px,1.25vw,16px)/1.72 'Manrope',sans-serif;max-width:620px}
+.domain-footnote{margin:30px 0 0;font-size:14px;line-height:1.8;color:#9cafb5;max-width:930px}
+.domain-footnote a,.domain-inline-links a{color:#a0dbdc;text-decoration-thickness:1px;text-underline-offset:5px}
+.domain-page-hero{padding:clamp(54px,7vw,100px) 0 clamp(46px,6vw,82px);background:radial-gradient(ellipse at 80% 0%,rgba(65,143,145,.14),transparent 60%),#07151a;border-bottom:1px solid rgba(159,208,214,.15)}
+.domain-page-hero .h1{font-size:clamp(58px,8vw,100px);letter-spacing:-.035em;margin:12px 0 25px}
+.domain-page-hero .domain-lede{margin-top:22px}
+.domain-audience{max-width:940px;border-left:2px solid #7fbcbf;padding:7px 0 7px 20px;color:#aebfc3;font-size:clamp(15px,1.3vw,17px);line-height:1.85}
+.domain-audience strong{color:#ecf2f2;font-weight:700}
+.domain-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:23px;margin:35px 0}
+.domain-topic-grid article{padding:29px;border:1px solid rgba(143,217,231,.19);border-radius:12px;background:#0b1c21}
+.domain-topic-grid h3{margin:0 0 14px;color:#e6f0ef;font:500 clamp(26px,2.5vw,33px)/1.15 'Newsreader',Georgia,serif}
+.domain-topic-grid p,.domain-steps p{margin:0;color:#aabdc1;line-height:1.8;font-size:14px}
+.domain-inline-links{display:flex;flex-wrap:wrap;gap:14px;margin-top:24px}
+.domain-inline-links a{display:inline-block;padding:13px 16px;border:1px solid rgba(143,217,231,.25);border-radius:8px;background:rgba(20,55,60,.34);text-decoration:none;font-size:14px}
+.domain-inline-links a:hover,.domain-inline-links a:focus-visible{background:rgba(52,108,112,.25);text-decoration:underline}
+.domain-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:30px}
+.domain-steps>div{border-top:1px solid rgba(143,217,231,.35);padding:22px 7px 12px 0}
+.domain-steps span{font-size:12px;color:#91bdc1;letter-spacing:.1em}
+.domain-steps h3{font:500 28px/1.2 'Newsreader',Georgia,serif;margin:18px 0 12px;color:#e7f0f0}
+.domain-home .pitch-disclaimer{background:#070f13}
+@media(min-width:1001px){.domain-site .nav-links{gap:1px}.domain-site .nav-link{padding-inline:9px;font-size:12px;white-space:nowrap}}
+@media(max-width:950px){.domain-topic-grid{grid-template-columns:1fr 1fr}.domain-steps{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){.domain-row{grid-template-columns:1fr;gap:12px}.domain-topic-grid,.domain-steps{grid-template-columns:1fr}.domain-topic-grid article{padding:25px}.domain-intro{padding-top:48px}}

@@ -54,6 +54,9 @@ class SiteDiscoveryTests(unittest.TestCase):
             self.assertEqual(len(locs), len(discovery.approved_pages()))
             self.assertEqual(len(set(locs)), len(locs))
             self.assertIn("https://pythology.co.nz/physical-intelligence/", locs)
+            self.assertIn("https://pythology.co.nz/environmental/", locs)
+            self.assertIn("https://pythology.co.nz/biological/", locs)
+            self.assertIn("https://pythology.co.nz/physical-systems/", locs)
             self.assertIn("https://pythology.co.nz/where-it-fits/", locs)
 
     def test_subpages_resolve_sibling_navigation_with_site_base(self):

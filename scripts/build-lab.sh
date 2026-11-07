@@ -305,6 +305,10 @@ PUBLIC_OVERRIDES=(
   prometheus.html
   prometheus-research.html
   prometheus-biology.html
+  environmental.html
+  biological.html
+  physical-systems.html
+  domain-pages.css
   prometheus-first.css
   core-technology.html
   current-research.html
@@ -339,8 +343,8 @@ done
 # Public physical research/pilot content must ship with every Pages build.
 node "$ROOT/scripts/test-physical-public.mjs"
 
-# Keep the homepage quake breakdown and largest-event detail from silently
-# disappearing when the public presentation is refreshed again.
+# Keep the Environmental page's national earthquake breakdown and integrity
+# checks from silently disappearing when the public presentation changes.
 node "$ROOT/scripts/test-home-nz-quakes.mjs"
 node "$ROOT/scripts/test-prometheus-first.mjs"
 
@@ -392,8 +396,8 @@ text = home.read_text(encoding="utf-8")
 for asset in ("site.css", "pythology-human.css", "editorial-2026.css", "site.js", "home-proof.js"):
     text = version_asset(text, asset)
 
-# The homepage uses its existing home-proof.js data hooks. Do not inject the
-# legacy standalone research-UI panel into the renewed mission page.
+# The homepage is a concise domain overview. Live evidence has moved to
+# environmental.html; keep assets versioned but do not inject another panel.
 home.write_text(text, encoding="utf-8")
 
 
@@ -559,21 +563,21 @@ grep -Eq 'site\.js\?v=[A-Za-z0-9._-]+' "$OUT/current-research.html" || {
   echo 'Prometheus research-state projection validation failed.' >&2
   exit 1
 }
-[[ -s "$OUT/prometheus-biology.html" && -s "$OUT/prometheus-first.css" ]] || { echo 'Prometheus programme assets missing' >&2; exit 1; }
+[[ -s "$OUT/prometheus-biology.html" && -s "$OUT/prometheus-first.css" && -s "$OUT/environmental.html" && -s "$OUT/biological.html" && -s "$OUT/physical-systems.html" && -s "$OUT/domain-pages.css" ]] || { echo 'Three-domain public site assets missing' >&2; exit 1; }
 grep -Fq 'id="research-stages"' "$OUT/prometheus-research.html" || {
   echo 'Prometheus Research stages presentation validation failed.' >&2
   exit 1
 }
-grep -Fq 'href="enviroarc.html#precursor-research"' "$OUT/index.html" || {
-  echo 'Homepage EnviroArc research link validation failed.' >&2
+grep -Fq 'href="enviroarc.html#precursor-research"' "$OUT/environmental.html" || {
+  echo 'Environmental specialist research link validation failed.' >&2
   exit 1
 }
 grep -Fq 'mdra-refresh.css?v=' "$OUT/index.html" || {
   echo 'Homepage EnviroArc refresh overlay validation failed.' >&2
   exit 1
 }
-grep -Fq 'data-home-research-findings' "$OUT/index.html" || {
-  echo 'Homepage live research-card hook validation failed.' >&2
+grep -Fq 'data-home-research-findings' "$OUT/environmental.html" || {
+  echo 'Environmental research-card hook validation failed.' >&2
   exit 1
 }
 [[ -s "$OUT/about.html" && -s "$OUT/enviroarc.html" && -s "$OUT/precursor-research.html" && -s "$OUT/weather-lab.html" && -s "$OUT/mdra.html" && -s "$OUT/prometheus.html" ]] || {
@@ -650,7 +654,9 @@ done
 [[ -s "$OUT/png_images/chathams/ecowatch-dashboard.png" && -s "$OUT/png_images/chathams/helios-dashboard.png" && -s "$OUT/data/prometheus_weather_research.json" ]] || {
   echo 'Chathams imagery or weather public snapshot missing from site' >&2; exit 1;
 }
-grep -Fq "['prometheus-biology.html', 'Prometheus Biology']" "$OUT/site.js" || { echo 'Prometheus Biology navigation missing' >&2; exit 1; }
+for domain in "['environmental.html', 'Environmental']" "['biological.html', 'Biological']" "['physical-systems.html', 'Physical Systems']"; do
+  grep -Fq "$domain" "$OUT/site.js" || { echo "Primary domain navigation missing: $domain" >&2; exit 1; }
+done
 # The detailed research cards now live on their dedicated lab pages.
 grep -Fq 'data-py-lab="weather"' "$OUT/weather-lab.html" || { echo 'Extreme Weather Lab research card missing' >&2; exit 1; }
 grep -Fq 'data-py-lab="geology"' "$OUT/precursor-research.html" || { echo 'Subterranean Lab research card missing' >&2; exit 1; }
@@ -658,7 +664,10 @@ grep -Fq 'id="enviroarc-research-live"' "$OUT/precursor-research.html" || { echo
 if grep -Eq 'data-py-lab=|data-weather-live|id="enviroarc-research-live"' "$OUT/enviroarc.html"; then
   echo 'Detailed research screen unexpectedly remains on EnviroArc gateway' >&2; exit 1
 fi
-grep -Fq 'data-home-forecast-caveat' "$OUT/index.html" || { echo 'Forecast card fallback hook missing' >&2; exit 1; }
+grep -Fq 'data-home-forecast-caveat' "$OUT/environmental.html" || { echo 'Environmental forecast evidence fallback hook missing' >&2; exit 1; }
+if grep -Eq 'data-home-forecast|data-py-lab=|data-home-nz-count' "$OUT/index.html"; then
+  echo 'Homepage must not carry specialist live evidence cards' >&2; exit 1
+fi
 [[ -s "$OUT/png_images/about_me.png" ]] || {
   echo 'About founder portrait did not stage.' >&2
   exit 1
