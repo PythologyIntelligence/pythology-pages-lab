@@ -122,6 +122,22 @@ try {
         await menu.click();
         assert.equal(await menu.getAttribute('aria-expanded'), 'false');
       }
+      if (route === '/') {
+        const banner = page.locator('.home-title-banner img');
+        await banner.evaluate(img => img.decode());
+        const image = await banner.evaluate(img => ({
+          naturalWidth: img.naturalWidth,
+          currentSrc: img.currentSrc,
+        }));
+        assert.ok(image.naturalWidth > 0, viewport.name + ': homepage hero image did not load');
+        const expected = viewport.width <= 680
+          ? 'pythology_environmental_ai_banner.webp' : 'prometheus.jpeg';
+        assert.ok(image.currentSrc.endsWith(expected),
+                  viewport.name + ': unexpected hero image: ' + image.currentSrc);
+        const bounds = await banner.boundingBox();
+        assert.ok(bounds && bounds.x >= -8 && bounds.x + bounds.width <= viewport.width + 8,
+                  viewport.name + ': homepage hero clips outside viewport');
+      }
       await page.screenshot({ path: path.join(screenshots, viewport.name + '-' + name + '.png'),
                               animations: 'disabled' });
       if (route === '/about/') {
