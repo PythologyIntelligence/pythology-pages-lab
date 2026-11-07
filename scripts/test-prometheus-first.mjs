@@ -16,6 +16,10 @@ const about = read('about.html');
 const aboutCss = read('about-human.css');
 
 assert.match(home, /id="prometheus-primary-heading"/);
+assert.match(home, /<main><section class="home-title-banner"/);
+assert.match(home, /srcset="png_images\/prometheus\.jpeg"/);
+assert.match(home, /src="png_images\/pythology_environmental_ai_banner\.webp"/);
+assert.ok(home.indexOf('class="home-title-banner"') < home.indexOf('class="domain-intro"'), 'Hero banner must precede the concise introduction');
 assert.match(home, /id="research-programmes"/);
 assert.match(home, /Understanding change/i);
 assert.doesNotMatch(home, /The reason Pythology exists|id="proof"|data-home-nz-count|data-py-lab=|forecast-card/);

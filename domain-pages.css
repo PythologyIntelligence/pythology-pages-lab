@@ -31,3 +31,11 @@
 @media(min-width:1001px){.domain-site .nav-links{gap:1px}.domain-site .nav-link{padding-inline:9px;font-size:12px;white-space:nowrap}}
 @media(max-width:950px){.domain-topic-grid{grid-template-columns:1fr 1fr}.domain-steps{grid-template-columns:1fr 1fr}}
 @media(max-width:650px){.domain-row{grid-template-columns:1fr;gap:12px}.domain-topic-grid,.domain-steps{grid-template-columns:1fr}.domain-topic-grid article{padding:25px}.domain-intro{padding-top:48px}}
+
+/* The original Prometheus hero artwork, restored without the former glow or
+   competing hero copy. Preserve the quiet three-domain overview below. */
+.domain-home .home-title-banner{padding:clamp(8px,1.2vw,18px);background:#03080a;border-bottom:1px solid rgba(143,217,231,.14)}
+.domain-home .home-title-banner-frame{width:min(100%,1800px);margin:0 auto;overflow:hidden;border:1px solid rgba(143,217,231,.15);border-radius:clamp(8px,1vw,16px);background:#020607}
+.domain-home .home-title-banner picture,.domain-home .home-title-banner img{display:block;width:100%}
+.domain-home .home-title-banner img{height:auto;object-fit:contain}
+@media(max-width:680px){.domain-home .home-title-banner{padding:0}.domain-home .home-title-banner-frame{width:100%;border-inline:0;border-radius:0}}
