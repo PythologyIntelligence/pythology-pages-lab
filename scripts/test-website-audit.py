@@ -60,7 +60,7 @@ class WebsiteAuditTests(unittest.TestCase):
         build = (ROOT / "scripts" / "build-lab.sh").read_text(encoding="utf-8")
         self.assertIn("build-chathams-webp.py", build)
         self.assertIn('cp "$CHATHAMS_SOURCE/"*.png', build)
-        for page in ("index.html", "chathams.html"):
+        for page in ("environmental.html", "chathams.html"):
             html = (ROOT / page).read_text(encoding="utf-8")
             self.assertIn('png_images/chathams/helios-dashboard.webp', html)
             self.assertIn('png_images/chathams/ecowatch-dashboard.webp', html)
