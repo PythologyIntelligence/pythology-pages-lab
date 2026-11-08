@@ -1,6 +1,6 @@
 [
   {
-    "at": "2026-11-08T12:12:10+00:00",
+    "at": "2026-11-08T20:13:12+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 30.6°C (anomaly +4.6°C — EXTREME warm anomaly). Waves: 2.0 m max. Current: avg 1.41 m/s. Core ENSO monitoring region. SST anomaly here defines El Niño/La Niña state.",
@@ -19,7 +19,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 4.62
     },
-    "id": "eb4ca28f9f1fc65f",
+    "id": "fc39663c3fe07a36",
     "la": 0.0,
     "lo": -140.0,
     "media": [],
@@ -32,7 +32,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "CLOSE FLYBY (very small) — 2026 VR5 (~4.0–9.9 m). Closest approach: 283,878 km (0.74 lunar distances) at 16.1 km/s. Approach time: 2026-11-08T13:53:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -82,7 +82,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Near pass (very small) — 2026 VK2 (~2.4–5.9 m). Closest approach: 871,745 km (2.27 lunar distances) at 4.9 km/s. Approach time: 2026-11-08T01:57:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -132,88 +132,67 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:07+00:00",
-    "causal": {
-      "assessment_id": "2ede651dd2e8283796",
-      "baseline": {
-        "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
-        "method": "Published hazard thresholds and current-cycle event relationships",
-        "status": "operational_threshold_proxy"
-      },
-      "claim_boundary": "Candidate causal contribution; not proven attribution or an official warning.",
-      "confidence": {
-        "forecast": 0.32,
-        "mechanism": 0.38,
-        "observation": 0.8,
-        "relationship": 0.25
-      },
-      "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
-      "headline": "Heat is elevated; downstream impacts are not yet independently corroborated",
-      "hypotheses": [
-        {
-          "claim_type": "candidate_causal_contribution",
-          "confidence": 0.38,
-          "id": "heat-dryness-fire-infrastructure",
-          "statement": "Elevated heat may be contributing to nearby infrastructure, medical or wildfire pressure.",
-          "supporting_event_ids": []
-        }
-      ],
-      "limitations": [
-        "Spatial proximity does not by itself prove causation.",
-        "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration.",
-        "Forecast confidence describes the mechanism pack, not an emergency-management directive."
-      ],
-      "mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-      "missing_evidence": [
-        "Seasonal climatology and percentile baseline for this exact location",
-        "Observed fuel moisture and vegetation condition"
-      ],
-      "pathway": [
-        {
-          "label": "Elevated temperature or apparent temperature",
-          "stage": "observed"
-        },
-        {
-          "label": "Cooling demand and physiological heat load rise",
-          "stage": "mechanism"
-        },
-        {
-          "label": "Health and electricity-system pressure may increase",
-          "stage": "potential_consequence"
-        }
-      ],
-      "related_event_ids": [],
-      "schema": "earthnet.causal-assessment.v0.1",
-      "status": "insufficient_evidence",
-      "supporting_evidence": [],
-      "target_event_id": "6d32b5363a8f61fd",
-      "watch_next": [
-        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
-        "New official fire detections, perimeter updates or containment reports"
-      ]
-    },
-    "cf": 0.8,
-    "d": "Sahel Region: 38.7°C (feels like 37.2°C). Min humidity 11%. Elevated — outdoor activity risk, vulnerable populations at risk",
-    "e": "atmosphere",
-    "et": "heat_risk",
+    "at": "2026-11-08T20:12:05+00:00",
+    "causal": null,
+    "cf": 0.9,
+    "d": "Near pass (very small) — 2026 VS6 (~9–23 m). Closest approach: 1,139,874 km (2.97 lunar distances) at 10.0 km/s. Approach time: 2026-11-08T21:32:00+00:00. A close approach listing is not itself an impact prediction.",
+    "e": "neo",
+    "et": "close_approach",
     "f": {
-      "heat_impact": "Elevated — outdoor activity risk, vulnerable populations at risk",
-      "max_apparent_c": 37.2,
-      "max_temp_c": 38.7,
-      "min_humidity_pct": 11,
-      "source": "Open-Meteo"
+      "approach_time": "2026-11-08T21:32:00+00:00",
+      "approach_time_raw": "2026-Nov-08 21:32",
+      "designation": "2026 VS6",
+      "distance_au": 0.00761958587203809,
+      "distance_km": 1139874,
+      "estimated_diameter_max_m": 22.7,
+      "estimated_diameter_min_m": 9.1,
+      "estimated_size": "~9–23 m",
+      "h_magnitude": 27.333,
+      "impact_risk_note": "NASA/JPL close approach data records proximity. It does not by itself indicate that an Earth impact is predicted.",
+      "lunar_distances": 2.97,
+      "official_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2026%20VS6",
+      "source": "NASA/JPL CNEOS",
+      "source_urls": [
+        "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2026%20VS6",
+        "https://cneos.jpl.nasa.gov/ca/"
+      ],
+      "status": "scheduled close approach",
+      "threat_class": "Near pass (very small)",
+      "velocity_kms": 10.0225819453956
     },
-    "id": "6d32b5363a8f61fd",
-    "la": 14.0,
-    "lo": 0.0,
-    "media": [],
-    "r": "Sahel Region",
+    "id": "jpl-cad-2026 VS6-2026-Nov-08-21:32",
+    "la": null,
+    "lo": null,
+    "media": [
+      {
+        "attribution": "NASA/JPL-Caltech",
+        "captured_for_event_at": "2026-11-08T20:22:50+00:00",
+        "claim_boundary": "EarthNet will not substitute a generic asteroid image for this named object. Close-approach geometry remains sourced from NASA/JPL CNEOS.",
+        "designation": "2026 VS6",
+        "media_type": "source_note",
+        "provider": "NASA/JPL CNEOS",
+        "representation": "no_verified_object_image",
+        "schema": "earthnet.media.v0.1",
+        "source_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2026%20VS6",
+        "title": "No verified NASA image matched 2026 VS6",
+        "verified_object_match": false
+      }
+    ],
+    "r": "Near Earth",
     "schema": "earthnet.event.v3",
-    "sources": [],
-    "status": "active",
-    "sv": 85.14000000000001,
-    "t": "Heat risk — Sahel Region",
+    "sources": [
+      {
+        "name": "NASA/JPL CNEOS",
+        "url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2026%20VS6"
+      },
+      {
+        "name": "NASA/JPL CNEOS evidence",
+        "url": "https://cneos.jpl.nasa.gov/ca/"
+      }
+    ],
+    "status": "scheduled close approach",
+    "sv": 87.80866260473906,
+    "t": "2026 VS6 — Near pass (very small)",
     "until": null
   },
   {
@@ -245,7 +224,7 @@
         "latest_report_title": "Cyclones Arnab & Murasu - Andhra Pradesh, Odisha, Telangana, Tamil Nadu and Yanam (Date: 6 November 2026 Time: 18:00 IST)",
         "latest_report_url": "https://reliefweb.int/node/4237325",
         "match_score": 20.5,
-        "matched_at": "2026-11-08T12:20:28+00:00",
+        "matched_at": "2026-11-08T20:22:48+00:00",
         "provider": "ReliefWeb / UN OCHA",
         "report_count": 1,
         "reports": [
@@ -305,7 +284,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2026 VY1 (~15–37 m). Closest approach: 1,594,669 km (4.15 lunar distances) at 13.6 km/s. Approach time: 2026-11-08T13:28:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -355,7 +334,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2026 VT3 (~10–24 m). Closest approach: 1,661,749 km (4.32 lunar distances) at 9.8 km/s. Approach time: 2026-11-10T10:04:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -405,109 +384,24 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:07+00:00",
-    "causal": {
-      "assessment_id": "305c02e9b67e9fbb2c",
-      "baseline": {
-        "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
-        "method": "Published hazard thresholds and current-cycle event relationships",
-        "status": "operational_threshold_proxy"
-      },
-      "claim_boundary": "Candidate causal contribution; not proven attribution or an official warning.",
-      "confidence": {
-        "forecast": 0.32,
-        "mechanism": 0.38,
-        "observation": 0.8,
-        "relationship": 0.25
-      },
-      "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
-      "headline": "Heat is elevated; downstream impacts are not yet independently corroborated",
-      "hypotheses": [
-        {
-          "claim_type": "candidate_causal_contribution",
-          "confidence": 0.38,
-          "id": "heat-dryness-fire-infrastructure",
-          "statement": "Elevated heat may be contributing to nearby infrastructure, medical or wildfire pressure.",
-          "supporting_event_ids": []
-        }
-      ],
-      "limitations": [
-        "Spatial proximity does not by itself prove causation.",
-        "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration.",
-        "Forecast confidence describes the mechanism pack, not an emergency-management directive."
-      ],
-      "mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-      "missing_evidence": [
-        "Seasonal climatology and percentile baseline for this exact location",
-        "Observed fuel moisture and vegetation condition"
-      ],
-      "pathway": [
-        {
-          "label": "Elevated temperature or apparent temperature",
-          "stage": "observed"
-        },
-        {
-          "label": "Cooling demand and physiological heat load rise",
-          "stage": "mechanism"
-        },
-        {
-          "label": "Health and electricity-system pressure may increase",
-          "stage": "potential_consequence"
-        }
-      ],
-      "related_event_ids": [],
-      "schema": "earthnet.causal-assessment.v0.1",
-      "status": "insufficient_evidence",
-      "supporting_evidence": [],
-      "target_event_id": "139baf0559e10959",
-      "watch_next": [
-        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
-        "New official fire detections, perimeter updates or containment reports"
-      ]
-    },
-    "cf": 0.8,
-    "d": "Mumbai, India: 36.8°C (feels like 35.6°C). Min humidity 15%. Notable heat — monitor for escalation",
-    "e": "atmosphere",
-    "et": "heat_risk",
-    "f": {
-      "heat_impact": "Notable heat — monitor for escalation",
-      "max_apparent_c": 35.6,
-      "max_temp_c": 36.8,
-      "min_humidity_pct": 15,
-      "source": "Open-Meteo"
-    },
-    "id": "139baf0559e10959",
-    "la": 19.1,
-    "lo": 72.9,
-    "media": [],
-    "r": "Mumbai, India",
-    "schema": "earthnet.event.v3",
-    "sources": [],
-    "status": "active",
-    "sv": 80.96,
-    "t": "Heat risk — Mumbai, India",
-    "until": null
-  },
-  {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
-    "d": "Moderate pass (very small) — 2026 VO2 (~6–16 m). Closest approach: 1,800,885 km (4.68 lunar distances) at 7.0 km/s. Approach time: 2026-11-08T18:16:00+00:00. A close approach listing is not itself an impact prediction.",
+    "d": "Moderate pass (very small) — 2026 VO2 (~6–16 m). Closest approach: 1,801,322 km (4.69 lunar distances) at 7.0 km/s. Approach time: 2026-11-08T18:16:00+00:00. A close approach listing is not itself an impact prediction.",
     "e": "neo",
     "et": "close_approach",
     "f": {
       "approach_time": "2026-11-08T18:16:00+00:00",
       "approach_time_raw": "2026-Nov-08 18:16",
       "designation": "2026 VO2",
-      "distance_au": 0.0120381721767869,
-      "distance_km": 1800885,
-      "estimated_diameter_max_m": 15.9,
-      "estimated_diameter_min_m": 6.4,
+      "distance_au": 0.0120410916929422,
+      "distance_km": 1801322,
+      "estimated_diameter_max_m": 16.2,
+      "estimated_diameter_min_m": 6.5,
       "estimated_size": "~6–16 m",
-      "h_magnitude": 28.101,
+      "h_magnitude": 28.069,
       "impact_risk_note": "NASA/JPL close approach data records proximity. It does not by itself indicate that an Earth impact is predicted.",
-      "lunar_distances": 4.68,
+      "lunar_distances": 4.69,
       "official_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2026%20VO2",
       "source": "NASA/JPL CNEOS",
       "source_urls": [
@@ -516,7 +410,7 @@
       ],
       "status": "scheduled close approach",
       "threat_class": "Moderate pass (very small)",
-      "velocity_kms": 7.03878172667429
+      "velocity_kms": 7.04146088706257
     },
     "id": "jpl-cad-2026 VO2-2026-Nov-08-18:16",
     "la": null,
@@ -535,12 +429,12 @@
       }
     ],
     "status": "scheduled close approach",
-    "sv": 80.73892451714096,
+    "sv": 80.73425329129248,
     "t": "2026 VO2 — Moderate pass (very small)",
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:09+00:00",
+    "at": "2026-11-08T20:13:11+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 27.0°C (anomaly +3.0°C — significant warm anomaly). Waves: 2.2 m max. Current: avg 1.04 m/s. Gulf Stream separation point. Temperature and current velocity indicate AMOC transport.",
@@ -559,7 +453,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 2.99
     },
-    "id": "223b967b7e06f652",
+    "id": "174e4dab8de280f4",
     "la": 35.0,
     "lo": -74.0,
     "media": [],
@@ -572,10 +466,10 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:19+00:00",
+    "at": "2026-11-08T20:13:18+00:00",
     "causal": null,
     "cf": 0.85,
-    "d": "The Drought notification level is Orange . ReliefWeb humanitarian context: In September 2026, the Central African Republic (CAR) faced severe environmental and security crises. Torrential rains and flooding affected 11,325 people across 2,870 households, while armed insecurity and military operations impacted a further 5,205 people and displaced approximately 9,900 residents across Ouham-Fafa and Bowaye. Widespread displacement, destruction of homes, and heightened insecurity have further r",
+    "d": "The Drought notification level is Orange . ReliefWeb humanitarian context: **Key Messages** - **FEWS NET projects that 3.5-4.0 million people will require humanitarian food assistance between October 2026 and May 2027, with needs peaking during October-November.** Areas of greatest concern include Dadaab, Kakuma, and Kalobeyei refugee settlements; the pastoral counties of Garissa, Mandera, Tana River, Wajir, and Turkana; and the marginal agricultural area of Lamu. - **In Kakuma and Kalobeye",
     "e": "wildfire_flood_landslide",
     "et": "gdacs_drought",
     "f": {
@@ -585,29 +479,14 @@
         "attribution_required": true,
         "evidence_boundary": "ReliefWeb provides curated humanitarian reporting and source attribution. EarthNet uses it as contextual evidence, not as independent verification of every claim.",
         "image": null,
-        "latest_report_date": "2026-11-05T20:03:07+00:00",
-        "latest_report_title": "UNFPA Central African Republic Situation Report - September 2026",
-        "latest_report_url": "https://reliefweb.int/node/4237175",
-        "match_score": 18.25,
-        "matched_at": "2026-11-08T12:20:28+00:00",
+        "latest_report_date": "2026-11-06T00:40:51+00:00",
+        "latest_report_title": "Kenya Food Security Outlook Update, October 2026 - May 2027 - Enhanced rains to drive recovery but flood impacts to temporarily sustain Crisis in east",
+        "latest_report_url": "https://reliefweb.int/node/4237188",
+        "match_score": 17.0,
+        "matched_at": "2026-11-08T20:22:48+00:00",
         "provider": "ReliefWeb / UN OCHA",
         "report_count": 2,
         "reports": [
-          {
-            "countries": [
-              "Central African Republic"
-            ],
-            "date": "2026-11-05T20:03:07+00:00",
-            "id": "4237175",
-            "image": null,
-            "match_score": 18.25,
-            "sources": [
-              "United Nations Population Fund"
-            ],
-            "summary": "In September 2026, the Central African Republic (CAR) faced severe environmental and security crises. Torrential rains and flooding affected 11,325 people across 2,870 households, while armed insecurity and military operations impacted a further 5,205 people and displaced approximately 9,900 residents across Ouham-Fafa and Bowaye. Widespread displacement, destruction of homes, and heightened insecurity have further restricted women’s and girls’ access to essential sexual and reproductive health services and increased the risk of gender-based violence. Gender-based violence accounted for 36 per cent of all protection incidents recorded during the month. To respond to critical needs across crisis-affected areas, UNFPA and its partners delivered sexual and reproductive health services to 7,66",
-            "title": "UNFPA Central African Republic Situation Report - September 2026",
-            "url": "https://reliefweb.int/node/4237175"
-          },
           {
             "countries": [
               "Kenya"
@@ -622,18 +501,33 @@
             "summary": "**Key Messages** - **FEWS NET projects that 3.5-4.0 million people will require humanitarian food assistance between October 2026 and May 2027, with needs peaking during October-November.** Areas of greatest concern include Dadaab, Kakuma, and Kalobeyei refugee settlements; the pastoral counties of Garissa, Mandera, Tana River, Wajir, and Turkana; and the marginal agricultural area of Lamu. - **In Kakuma and Kalobeyei refugee settlements, Crisis! (IPC Phase 3!) outcomes are expected to persist through May. In Dadaab, flooding between November and January is expected to disrupt market access and humanitarian operations and increase waterborne disease incidence, likely resulting in a temporary deterioration to Emergency (IPC Phase 4).** As floodwaters recede, outcomes are expected to improve",
             "title": "Kenya Food Security Outlook Update, October 2026 - May 2027 - Enhanced rains to drive recovery but flood impacts to temporarily sustain Crisis in east",
             "url": "https://reliefweb.int/node/4237188"
+          },
+          {
+            "countries": [
+              "Central African Republic"
+            ],
+            "date": "2026-11-05T20:03:07+00:00",
+            "id": "4237175",
+            "image": null,
+            "match_score": 16.25,
+            "sources": [
+              "United Nations Population Fund"
+            ],
+            "summary": "In September 2026, the Central African Republic (CAR) faced severe environmental and security crises. Torrential rains and flooding affected 11,325 people across 2,870 households, while armed insecurity and military operations impacted a further 5,205 people and displaced approximately 9,900 residents across Ouham-Fafa and Bowaye. Widespread displacement, destruction of homes, and heightened insecurity have further restricted women’s and girls’ access to essential sexual and reproductive health services and increased the risk of gender-based violence. Gender-based violence accounted for 36 per cent of all protection incidents recorded during the month. To respond to critical needs across crisis-affected areas, UNFPA and its partners delivered sexual and reproductive health services to 7,66",
+            "title": "UNFPA Central African Republic Situation Report - September 2026",
+            "url": "https://reliefweb.int/node/4237175"
           }
         ],
         "schema": "earthnet.reliefweb.v0.1",
         "source_organisations": [
-          "United Nations Population Fund"
+          "Famine Early Warning System Network"
         ],
-        "source_text": "United Nations Population Fund",
-        "summary": "In September 2026, the Central African Republic (CAR) faced severe environmental and security crises. Torrential rains and flooding affected 11,325 people across 2,870 households, while armed insecurity and military operations impacted a further 5,205 people and displaced approximately 9,900 residents across Ouham-Fafa and Bowaye. Widespread displacement, destruction of homes, and heightened insecurity have further restricted women’s and girls’ access to essential sexual and reproductive health services and increased the risk of gender-based violence. Gender-based violence accounted for 36 per cent of all protection incidents recorded during the month. To respond to critical needs across crisis-affected areas, UNFPA and its partners delivered sexual and reproductive health services to 7,66"
+        "source_text": "Famine Early Warning System Network",
+        "summary": "**Key Messages** - **FEWS NET projects that 3.5-4.0 million people will require humanitarian food assistance between October 2026 and May 2027, with needs peaking during October-November.** Areas of greatest concern include Dadaab, Kakuma, and Kalobeyei refugee settlements; the pastoral counties of Garissa, Mandera, Tana River, Wajir, and Turkana; and the marginal agricultural area of Lamu. - **In Kakuma and Kalobeyei refugee settlements, Crisis! (IPC Phase 3!) outcomes are expected to persist through May. In Dadaab, flooding between November and January is expected to disrupt market access and humanitarian operations and increase waterborne disease incidence, likely resulting in a temporary deterioration to Emergency (IPC Phase 4).** As floodwaters recede, outcomes are expected to improve"
       },
       "source": "GDACS"
     },
-    "id": "832e43f928420e0f",
+    "id": "7007cd76d7b07858",
     "la": 8.955,
     "lo": 34.193,
     "media": [],
@@ -642,11 +536,11 @@
     "sources": [
       {
         "name": "ReliefWeb humanitarian context",
-        "url": "https://reliefweb.int/node/4237175"
+        "url": "https://reliefweb.int/node/4237188"
       },
       {
         "name": "ReliefWeb humanitarian context",
-        "url": "https://reliefweb.int/node/4237188"
+        "url": "https://reliefweb.int/node/4237175"
       }
     ],
     "status": "active",
@@ -655,7 +549,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:19+00:00",
+    "at": "2026-11-08T20:13:18+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "The Drought notification level is Orange . ReliefWeb humanitarian context: **KEY FIGURES** - 1.5M people now internally displaced across Haiti - 114K families affected by drought in Bolivia between June and October - 56K people affected by El Niño-related rains in Ecuador **HAITI: VIOLENCE & DISPLACEMENT** Violence continues to drive displacement across Haiti as clashes spread beyond the capital. Nearly 1.5 million people are now displaced, almost 80 per cent of them outside Port-au-Prince.",
@@ -672,7 +566,7 @@
         "latest_report_title": "Latin America & The Caribbean Weekly Situation Update as of 6 November 2026",
         "latest_report_url": "https://reliefweb.int/node/4237360",
         "match_score": 16.75,
-        "matched_at": "2026-11-08T12:20:28+00:00",
+        "matched_at": "2026-11-08T20:22:48+00:00",
         "provider": "ReliefWeb / UN OCHA",
         "report_count": 3,
         "reports": [
@@ -731,7 +625,7 @@
       },
       "source": "GDACS"
     },
-    "id": "e06f6503d172665f",
+    "id": "2e002d415c84db08",
     "la": 18.563,
     "lo": -95.396,
     "media": [],
@@ -757,7 +651,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:19+00:00",
+    "at": "2026-11-08T20:13:18+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "The  Drought notification level is Orange.",
@@ -768,7 +662,7 @@
       "gdacs_event_type": "DR",
       "source": "GDACS"
     },
-    "id": "647bfa84af6b54ca",
+    "id": "1e68b0ad858b844f",
     "la": 48.127,
     "lo": 12.876,
     "media": [],
@@ -815,9 +709,9 @@
     },
     "id": "usgs-us7000twun",
     "intelligence": {
-      "change": "Provider reporting changed materially.",
+      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
-        "Provider reporting changed materially."
+        "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
       "event_id": "usgs-us7000twun",
@@ -841,13 +735,13 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
       "schema": "earthnet.event-intelligence.v0.1",
       "situation": "An earthquake has been recorded in central Mid-Atlantic Ridge at magnitude 5.8 and depth 10 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
-      "trend": "updated",
+      "trend": "stable",
       "uncertainty": "Damage and service impacts are not yet supported by matched humanitarian reporting.",
       "watch_next": [
         "Aftershocks and official magnitude or intensity revisions",
@@ -876,22 +770,22 @@
     "until": "2026-11-08T23:17:05+00:00"
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
-    "d": "Moderate pass (small) — 2026 UG4 (~26–64 m). Closest approach: 2,562,980 km (6.67 lunar distances) at 7.2 km/s. Approach time: 2026-11-08T13:49:00+00:00. A close approach listing is not itself an impact prediction.",
+    "d": "Moderate pass (small) — 2026 UG4 (~26–64 m). Closest approach: 2,562,726 km (6.67 lunar distances) at 7.2 km/s. Approach time: 2026-11-08T13:49:00+00:00. A close approach listing is not itself an impact prediction.",
     "e": "neo",
     "et": "close_approach",
     "f": {
       "approach_time": "2026-11-08T13:49:00+00:00",
       "approach_time_raw": "2026-Nov-08 13:49",
       "designation": "2026 UG4",
-      "distance_au": 0.0171324605282399,
-      "distance_km": 2562980,
-      "estimated_diameter_max_m": 64.3,
-      "estimated_diameter_min_m": 25.7,
+      "distance_au": 0.0171307619839309,
+      "distance_km": 2562726,
+      "estimated_diameter_max_m": 63.9,
+      "estimated_diameter_min_m": 25.6,
       "estimated_size": "~26–64 m",
-      "h_magnitude": 25.07,
+      "h_magnitude": 25.085,
       "impact_risk_note": "NASA/JPL close approach data records proximity. It does not by itself indicate that an Earth impact is predicted.",
       "lunar_distances": 6.67,
       "official_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2026%20UG4",
@@ -902,7 +796,7 @@
       ],
       "status": "scheduled close approach",
       "threat_class": "Moderate pass (small)",
-      "velocity_kms": 7.17979198121151
+      "velocity_kms": 7.17906522452479
     },
     "id": "jpl-cad-2026 UG4-2026-Nov-08-13:49",
     "la": null,
@@ -921,12 +815,12 @@
       }
     ],
     "status": "scheduled close approach",
-    "sv": 72.58806315481615,
+    "sv": 72.59078082571057,
     "t": "2026 UG4 — Moderate pass (small)",
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2026 VX1 (~7–18 m). Closest approach: 3,050,970 km (7.94 lunar distances) at 4.3 km/s. Approach time: 2026-11-11T15:19:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -976,7 +870,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2026 VW2 (~12–31 m). Closest approach: 3,064,581 km (7.97 lunar distances) at 14.8 km/s. Approach time: 2026-11-08T15:40:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -1082,7 +976,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "The event has been felt by the public; confirmed structural damage, injuries and service disruption are not yet established in the current evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -1113,102 +1007,7 @@
     "until": "2026-11-08T23:27:09+00:00"
   },
   {
-    "at": "2026-11-07T16:04:35+00:00",
-    "causal": null,
-    "cf": 0.95,
-    "d": "M5.5 — 10 km NW of Hamakita, Japan. Depth: 38.1 km (shallow). Felt reports: 71. Maximum reported intensity: MMI 6.2",
-    "e": "seismic",
-    "et": "earthquake",
-    "f": {
-      "depth_class": "shallow",
-      "depth_km": 38.081,
-      "felt_reports": 71,
-      "gdacs_alert": "Green",
-      "gdacs_title": "Green earthquake (Magnitude 5.5M, Depth:38.081km) in Japan 07/11/2026 16:04 UTC, 630 thousand in MMI V.",
-      "gdacs_url": "http://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1576118",
-      "impact_summary": "Moderate earthquake; widely felt shaking is possible. Reported maximum intensity is MMI 6.2. USGS has received 71 felt reports.",
-      "magnitude": 5.5,
-      "max_mmi": 6.2,
-      "network": "us",
-      "observed_at": "2026-11-07T16:04:35+00:00",
-      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twt0",
-      "place": "10 km NW of Hamakita, Japan",
-      "significance": 505,
-      "source": "USGS",
-      "source_record_id": "us7000twt0",
-      "source_urls": [
-        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twt0",
-        "http://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1576118"
-      ],
-      "status": "reviewed",
-      "tsunami": false,
-      "updated_at": "2026-11-08T11:51:01+00:00",
-      "visible_until": "2026-11-08T16:04:35+00:00"
-    },
-    "id": "usgs-us7000twt0",
-    "intelligence": {
-      "change": "Provider reporting changed materially.",
-      "change_reasons": [
-        "Provider reporting changed materially."
-      ],
-      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "usgs-us7000twt0",
-      "event_key": "e07d53fe3cefe248795e90ac",
-      "evidence": {
-        "evidence_types": [
-          "provider_event_record"
-        ],
-        "freshness": "live",
-        "latest_evidence_at": "2026-11-08T11:51:01+00:00",
-        "limitations": [
-          "No matched humanitarian situation report is attached."
-        ],
-        "provider_count": 2,
-        "providers": [
-          "USGS",
-          "USGS evidence"
-        ],
-        "reliefweb_report_count": 0,
-        "satellite_observation_count": 0,
-        "strength": "corroborated",
-        "visual_record_count": 0
-      },
-      "generated_at": "2026-11-08T12:20:29+00:00",
-      "impact": "Reported shaking intensity is capable of causing damage in exposed areas, but EarthNet requires official or independently corroborated damage reports before treating impacts as confirmed.",
-      "mode": "deterministic_evidence_synthesis",
-      "model_generated": false,
-      "schema": "earthnet.event-intelligence.v0.1",
-      "situation": "An earthquake has been recorded in 10 km NW of Hamakita, Japan at magnitude 5.5 and depth 38 km. Maximum reported intensity is MMI 6.2. The provider currently records 71 felt reports.",
-      "trend": "updated",
-      "uncertainty": "Damage and service impacts are not yet supported by matched humanitarian reporting.",
-      "watch_next": [
-        "Aftershocks and official magnitude or intensity revisions",
-        "Tsunami information and civil-defence instructions",
-        "Confirmed damage, injuries and service disruption"
-      ]
-    },
-    "la": 34.8611,
-    "lo": 137.691,
-    "media": [],
-    "r": "10 km NW of Hamakita, Japan",
-    "schema": "earthnet.event.v3",
-    "sources": [
-      {
-        "name": "USGS",
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twt0"
-      },
-      {
-        "name": "USGS evidence",
-        "url": "http://www.gdacs.org/report.aspx?eventtype=EQ&eventid=1576118"
-      }
-    ],
-    "status": "reviewed",
-    "sv": 66.0,
-    "t": "M5.5 — 10 km NW of Hamakita, Japan",
-    "until": "2026-11-08T16:04:35+00:00"
-  },
-  {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2023 VF3 (~14–35 m). Closest approach: 3,239,446 km (8.43 lunar distances) at 8.8 km/s. Approach time: 2026-11-11T08:45:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -1258,7 +1057,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": null,
     "cf": 0.8,
     "d": "Active active severe storm. Last update: 2026-11-05.",
@@ -1268,14 +1067,14 @@
       "last_update": "2026-11-05T06:00:00Z",
       "source": "NASA EONET"
     },
-    "id": "325005725566079a",
+    "id": "3c8bca8c2f1d789b",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "325005725566079a",
+      "event_id": "3c8bca8c2f1d789b",
       "event_key": "4bc7cbc7b741f78910ffc6e4",
       "evidence": {
         "evidence_types": [
@@ -1283,7 +1082,7 @@
           "visual_evidence"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable."
@@ -1298,7 +1097,7 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include damaging wind, flooding, storm surge, power loss and transport disruption. Local impacts remain dependent on the final track, intensity and exposure.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -1317,14 +1116,14 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · NOAA GOES ABI GeoColor",
-        "captured_for_event_at": "2026-11-08T12:20:29+00:00",
+        "captured_for_event_at": "2026-11-08T20:22:50+00:00",
         "claim_boundary": "Satellite appearance is contextual imagery, not an official intensity, track or impact forecast.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
         "representation": "remote_sensing",
         "schema": "earthnet.media.v0.1",
         "sensor": "GOES ABI GeoColor",
-        "source_time": "2026-11-08T12:00:00Z",
+        "source_time": "2026-11-08T20:00:00Z",
         "source_url": "https://worldview.earthdata.nasa.gov/",
         "title": "Latest available storm view from space"
       }
@@ -1338,7 +1137,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2026 VN4 (~10–24 m). Closest approach: 3,311,855 km (8.62 lunar distances) at 3.6 km/s. Approach time: 2026-11-11T03:53:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -1388,109 +1187,22 @@
     "until": null
   },
   {
-    "at": "2026-11-07T15:22:50+00:00",
-    "causal": null,
-    "cf": 0.95,
-    "d": "M4.9 — 77 km NNW of Khorixas, Namibia. Depth: 8.0 km (very shallow). Felt reports: 3",
-    "e": "seismic",
-    "et": "earthquake",
-    "f": {
-      "depth_class": "very shallow",
-      "depth_km": 8.035,
-      "felt_reports": 3,
-      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby. Shallow depth can make shaking feel sharper close to the epicentre. USGS has received 3 felt reports.",
-      "magnitude": 4.9,
-      "max_mmi": 0.0,
-      "network": "us",
-      "observed_at": "2026-11-07T15:22:50+00:00",
-      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twss",
-      "place": "77 km NNW of Khorixas, Namibia",
-      "significance": 370,
-      "source": "USGS",
-      "source_record_id": "us7000twss",
-      "source_urls": [
-        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twss"
-      ],
-      "status": "reviewed",
-      "tsunami": false,
-      "updated_at": "2026-11-08T09:13:00+00:00",
-      "visible_until": "2026-11-08T15:22:50+00:00"
-    },
-    "id": "usgs-us7000twss",
-    "intelligence": {
-      "change": "Provider reporting changed materially.",
-      "change_reasons": [
-        "Provider reporting changed materially."
-      ],
-      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "usgs-us7000twss",
-      "event_key": "d848cd116584e047d3d09081",
-      "evidence": {
-        "evidence_types": [
-          "provider_event_record"
-        ],
-        "freshness": "live",
-        "latest_evidence_at": "2026-11-08T09:13:00+00:00",
-        "limitations": [
-          "No matched humanitarian situation report is attached.",
-          "Independent corroboration is limited in the current evidence packet."
-        ],
-        "provider_count": 1,
-        "providers": [
-          "USGS"
-        ],
-        "reliefweb_report_count": 0,
-        "satellite_observation_count": 0,
-        "strength": "single-source",
-        "visual_record_count": 0
-      },
-      "generated_at": "2026-11-08T12:20:29+00:00",
-      "impact": "The event has been felt by the public; confirmed structural damage, injuries and service disruption are not yet established in the current evidence packet.",
-      "mode": "deterministic_evidence_synthesis",
-      "model_generated": false,
-      "schema": "earthnet.event-intelligence.v0.1",
-      "situation": "An earthquake has been recorded in 77 km NNW of Khorixas, Namibia at magnitude 4.9 and depth 8 km. Maximum reported intensity is MMI 0. The provider currently records 3 felt reports.",
-      "trend": "updated",
-      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
-      "watch_next": [
-        "Aftershocks and official magnitude or intensity revisions",
-        "Tsunami information and civil-defence instructions",
-        "Confirmed damage, injuries and service disruption"
-      ]
-    },
-    "la": -19.7402,
-    "lo": 14.6467,
-    "media": [],
-    "r": "77 km NNW of Khorixas, Namibia",
-    "schema": "earthnet.event.v3",
-    "sources": [
-      {
-        "name": "USGS",
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twss"
-      }
-    ],
-    "status": "reviewed",
-    "sv": 63.800000000000004,
-    "t": "M4.9 — 77 km NNW of Khorixas, Namibia",
-    "until": "2026-11-08T15:22:50+00:00"
-  },
-  {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
-    "d": "Moderate pass (small) — 2026 VB1 (~17–43 m). Closest approach: 3,397,281 km (8.84 lunar distances) at 14.2 km/s. Approach time: 2026-11-08T12:42:00+00:00. A close approach listing is not itself an impact prediction.",
+    "d": "Moderate pass (small) — 2026 VB1 (~17–43 m). Closest approach: 3,396,794 km (8.84 lunar distances) at 14.2 km/s. Approach time: 2026-11-08T12:43:00+00:00. A close approach listing is not itself an impact prediction.",
     "e": "neo",
     "et": "close_approach",
     "f": {
-      "approach_time": "2026-11-08T12:42:00+00:00",
-      "approach_time_raw": "2026-Nov-08 12:42",
+      "approach_time": "2026-11-08T12:43:00+00:00",
+      "approach_time_raw": "2026-Nov-08 12:43",
       "designation": "2026 VB1",
-      "distance_au": 0.0227094180326885,
-      "distance_km": 3397281,
-      "estimated_diameter_max_m": 43.2,
-      "estimated_diameter_min_m": 17.3,
+      "distance_au": 0.0227061687701004,
+      "distance_km": 3396794,
+      "estimated_diameter_max_m": 43.0,
+      "estimated_diameter_min_m": 17.2,
       "estimated_size": "~17–43 m",
-      "h_magnitude": 25.934,
+      "h_magnitude": 25.943,
       "impact_risk_note": "NASA/JPL close approach data records proximity. It does not by itself indicate that an Earth impact is predicted.",
       "lunar_distances": 8.84,
       "official_url": "https://ssd.jpl.nasa.gov/tools/sbdb_lookup.html#/?sstr=2026%20VB1",
@@ -1501,9 +1213,9 @@
       ],
       "status": "scheduled close approach",
       "threat_class": "Moderate pass (small)",
-      "velocity_kms": 14.1646020286251
+      "velocity_kms": 14.16238871781
     },
-    "id": "jpl-cad-2026 VB1-2026-Nov-08-12:42",
+    "id": "jpl-cad-2026 VB1-2026-Nov-08-12:43",
     "la": null,
     "lo": null,
     "media": [],
@@ -1520,12 +1232,99 @@
       }
     ],
     "status": "scheduled close approach",
-    "sv": 63.6649311476984,
+    "sv": 63.67012996783936,
     "t": "2026 VB1 — Moderate pass (small)",
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:11+00:00",
+    "at": "2026-11-08T16:33:24+00:00",
+    "causal": null,
+    "cf": 0.95,
+    "d": "M4.8 — central Mid-Atlantic Ridge. Depth: 10.0 km (very shallow)",
+    "e": "seismic",
+    "et": "earthquake",
+    "f": {
+      "depth_class": "very shallow",
+      "depth_km": 10,
+      "felt_reports": 0,
+      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby. Shallow depth can make shaking feel sharper close to the epicentre.",
+      "magnitude": 4.8,
+      "max_mmi": 0.0,
+      "network": "us",
+      "observed_at": "2026-11-08T16:33:24+00:00",
+      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twyc",
+      "place": "central Mid-Atlantic Ridge",
+      "significance": 354,
+      "source": "USGS",
+      "source_record_id": "us7000twyc",
+      "source_urls": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twyc"
+      ],
+      "status": "reviewed",
+      "tsunami": false,
+      "updated_at": "2026-11-08T17:20:59+00:00",
+      "visible_until": "2026-11-09T16:33:24+00:00"
+    },
+    "id": "usgs-us7000twyc",
+    "intelligence": {
+      "change": "This is the first cycle in which the event appears in the Event Intelligence baseline; direction is not established yet.",
+      "change_reasons": [
+        "This event has entered the current EarthNet intelligence baseline."
+      ],
+      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
+      "event_id": "usgs-us7000twyc",
+      "event_key": "a360cb0a2e33d629dbe0e573",
+      "evidence": {
+        "evidence_types": [
+          "provider_event_record"
+        ],
+        "freshness": "live",
+        "latest_evidence_at": "2026-11-08T17:20:59+00:00",
+        "limitations": [
+          "No matched humanitarian situation report is attached.",
+          "Independent corroboration is limited in the current evidence packet."
+        ],
+        "provider_count": 1,
+        "providers": [
+          "USGS"
+        ],
+        "reliefweb_report_count": 0,
+        "satellite_observation_count": 0,
+        "strength": "single-source",
+        "visual_record_count": 0
+      },
+      "generated_at": "2026-11-08T20:22:50+00:00",
+      "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
+      "mode": "deterministic_evidence_synthesis",
+      "model_generated": false,
+      "schema": "earthnet.event-intelligence.v0.1",
+      "situation": "An earthquake has been recorded in central Mid-Atlantic Ridge at magnitude 4.8 and depth 10 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
+      "trend": "new",
+      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
+      "watch_next": [
+        "Aftershocks and official magnitude or intensity revisions",
+        "Tsunami information and civil-defence instructions",
+        "Confirmed damage, injuries and service disruption"
+      ]
+    },
+    "la": 7.703,
+    "lo": -36.9451,
+    "media": [],
+    "r": "central Mid-Atlantic Ridge",
+    "schema": "earthnet.event.v3",
+    "sources": [
+      {
+        "name": "USGS",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twyc"
+      }
+    ],
+    "status": "reviewed",
+    "sv": 62.599999999999994,
+    "t": "M4.8 — central Mid-Atlantic Ridge",
+    "until": "2026-11-09T16:33:24+00:00"
+  },
+  {
+    "at": "2026-11-08T20:13:13+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 28.6°C (anomaly +2.1°C — significant warm anomaly). Waves: 1.3 m max. Current: avg 0.62 m/s. Main Development Region for Atlantic hurricanes. SST >26.5°C fuels cyclone formation.",
@@ -1544,7 +1343,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 2.08
     },
-    "id": "24978c6c24a2711a",
+    "id": "9a6be7889e6a25b6",
     "la": 12.0,
     "lo": -45.0,
     "media": [],
@@ -1555,6 +1354,93 @@
     "sv": 61.6,
     "t": "Tropical Atlantic (MDR)",
     "until": null
+  },
+  {
+    "at": "2026-11-08T12:29:17+00:00",
+    "causal": null,
+    "cf": 0.95,
+    "d": "M4.7 — Southwest Indian Ridge. Depth: 10.0 km (very shallow)",
+    "e": "seismic",
+    "et": "earthquake",
+    "f": {
+      "depth_class": "very shallow",
+      "depth_km": 10,
+      "felt_reports": 0,
+      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby. Shallow depth can make shaking feel sharper close to the epicentre.",
+      "magnitude": 4.7,
+      "max_mmi": 0.0,
+      "network": "us",
+      "observed_at": "2026-11-08T12:29:17+00:00",
+      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twxn",
+      "place": "Southwest Indian Ridge",
+      "significance": 340,
+      "source": "USGS",
+      "source_record_id": "us7000twxn",
+      "source_urls": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twxn"
+      ],
+      "status": "reviewed",
+      "tsunami": false,
+      "updated_at": "2026-11-08T12:51:23+00:00",
+      "visible_until": "2026-11-09T12:29:17+00:00"
+    },
+    "id": "usgs-us7000twxn",
+    "intelligence": {
+      "change": "This is the first cycle in which the event appears in the Event Intelligence baseline; direction is not established yet.",
+      "change_reasons": [
+        "This event has entered the current EarthNet intelligence baseline."
+      ],
+      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
+      "event_id": "usgs-us7000twxn",
+      "event_key": "61fcb8d5826f9afc2c5a0b5a",
+      "evidence": {
+        "evidence_types": [
+          "provider_event_record"
+        ],
+        "freshness": "current",
+        "latest_evidence_at": "2026-11-08T12:51:23+00:00",
+        "limitations": [
+          "No matched humanitarian situation report is attached.",
+          "Independent corroboration is limited in the current evidence packet."
+        ],
+        "provider_count": 1,
+        "providers": [
+          "USGS"
+        ],
+        "reliefweb_report_count": 0,
+        "satellite_observation_count": 0,
+        "strength": "single-source",
+        "visual_record_count": 0
+      },
+      "generated_at": "2026-11-08T20:22:50+00:00",
+      "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
+      "mode": "deterministic_evidence_synthesis",
+      "model_generated": false,
+      "schema": "earthnet.event-intelligence.v0.1",
+      "situation": "An earthquake has been recorded in Southwest Indian Ridge at magnitude 4.7 and depth 10 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
+      "trend": "new",
+      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
+      "watch_next": [
+        "Aftershocks and official magnitude or intensity revisions",
+        "Tsunami information and civil-defence instructions",
+        "Confirmed damage, injuries and service disruption"
+      ]
+    },
+    "la": -27.6901,
+    "lo": 64.443,
+    "media": [],
+    "r": "Southwest Indian Ridge",
+    "schema": "earthnet.event.v3",
+    "sources": [
+      {
+        "name": "USGS",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twxn"
+      }
+    ],
+    "status": "reviewed",
+    "sv": 61.400000000000006,
+    "t": "M4.7 — Southwest Indian Ridge",
+    "until": "2026-11-09T12:29:17+00:00"
   },
   {
     "at": "2026-11-08T09:23:35+00:00",
@@ -1587,9 +1473,9 @@
     },
     "id": "usgs-us7000twx1",
     "intelligence": {
-      "change": "This is the first cycle in which the event appears in the Event Intelligence baseline; direction is not established yet.",
+      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
-        "This event has entered the current EarthNet intelligence baseline."
+        "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
       "event_id": "usgs-us7000twx1",
@@ -1598,7 +1484,7 @@
         "evidence_types": [
           "provider_event_record"
         ],
-        "freshness": "live",
+        "freshness": "current",
         "latest_evidence_at": "2026-11-08T09:52:58+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
@@ -1613,13 +1499,13 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
       "schema": "earthnet.event-intelligence.v0.1",
       "situation": "An earthquake has been recorded in 137 km E of Miyako, Japan at magnitude 4.7 and depth 10 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
-      "trend": "new",
+      "trend": "stable",
       "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
       "watch_next": [
         "Aftershocks and official magnitude or intensity revisions",
@@ -1644,94 +1530,7 @@
     "until": "2026-11-09T09:23:35+00:00"
   },
   {
-    "at": "2026-11-07T17:17:38+00:00",
-    "causal": null,
-    "cf": 0.95,
-    "d": "M4.7 — 45 km NNW of Salinas, Ecuador. Depth: 10.0 km (very shallow)",
-    "e": "seismic",
-    "et": "earthquake",
-    "f": {
-      "depth_class": "very shallow",
-      "depth_km": 10,
-      "felt_reports": 0,
-      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby. Shallow depth can make shaking feel sharper close to the epicentre.",
-      "magnitude": 4.7,
-      "max_mmi": 0.0,
-      "network": "us",
-      "observed_at": "2026-11-07T17:17:38+00:00",
-      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twt8",
-      "place": "45 km NNW of Salinas, Ecuador",
-      "significance": 340,
-      "source": "USGS",
-      "source_record_id": "us7000twt8",
-      "source_urls": [
-        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twt8"
-      ],
-      "status": "reviewed",
-      "tsunami": false,
-      "updated_at": "2026-11-07T17:37:15+00:00",
-      "visible_until": "2026-11-08T17:17:38+00:00"
-    },
-    "id": "usgs-us7000twt8",
-    "intelligence": {
-      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
-      "change_reasons": [
-        "No material change is confirmed since the previous successful EarthNet cycle."
-      ],
-      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "usgs-us7000twt8",
-      "event_key": "f6429ff76c6abffb9bca94f7",
-      "evidence": {
-        "evidence_types": [
-          "provider_event_record"
-        ],
-        "freshness": "current",
-        "latest_evidence_at": "2026-11-07T17:37:15+00:00",
-        "limitations": [
-          "No matched humanitarian situation report is attached.",
-          "Independent corroboration is limited in the current evidence packet."
-        ],
-        "provider_count": 1,
-        "providers": [
-          "USGS"
-        ],
-        "reliefweb_report_count": 0,
-        "satellite_observation_count": 0,
-        "strength": "single-source",
-        "visual_record_count": 0
-      },
-      "generated_at": "2026-11-08T12:20:29+00:00",
-      "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
-      "mode": "deterministic_evidence_synthesis",
-      "model_generated": false,
-      "schema": "earthnet.event-intelligence.v0.1",
-      "situation": "An earthquake has been recorded in 45 km NNW of Salinas, Ecuador at magnitude 4.7 and depth 10 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
-      "trend": "stable",
-      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
-      "watch_next": [
-        "Aftershocks and official magnitude or intensity revisions",
-        "Tsunami information and civil-defence instructions",
-        "Confirmed damage, injuries and service disruption"
-      ]
-    },
-    "la": -1.8505,
-    "lo": -81.1439,
-    "media": [],
-    "r": "45 km NNW of Salinas, Ecuador",
-    "schema": "earthnet.event.v3",
-    "sources": [
-      {
-        "name": "USGS",
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twt8"
-      }
-    ],
-    "status": "reviewed",
-    "sv": 61.400000000000006,
-    "t": "M4.7 — 45 km NNW of Salinas, Ecuador",
-    "until": "2026-11-08T17:17:38+00:00"
-  },
-  {
-    "at": "2026-11-08T12:12:08+00:00",
+    "at": "2026-11-08T20:13:10+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 18.1°C (anomaly +2.1°C — significant warm anomaly). Waves: 3.4 m max. Current: avg 1.05 m/s. Primary AMOC monitoring point. Weakening current velocity signals potential AMOC slowdown.",
@@ -1750,7 +1549,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 2.06
     },
-    "id": "d3b655ff89a58ff3",
+    "id": "4d62d13534b21c76",
     "la": 45.0,
     "lo": -35.0,
     "media": [],
@@ -1763,7 +1562,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2026 VK1 (~11–28 m). Closest approach: 3,683,252 km (9.58 lunar distances) at 9.1 km/s. Approach time: 2026-11-10T10:42:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -1813,7 +1612,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2015 VH65 (~8–19 m). Closest approach: 3,726,300 km (9.69 lunar distances) at 8.0 km/s. Approach time: 2026-11-10T00:24:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -1863,7 +1662,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (small) — 2026 VO1 (~29–73 m). Closest approach: 3,771,509 km (9.81 lunar distances) at 14.3 km/s. Approach time: 2026-11-13T06:01:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -1913,7 +1712,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Moderate pass (very small) — 2026 VQ4 (~10–25 m). Closest approach: 3,817,262 km (9.93 lunar distances) at 10.2 km/s. Approach time: 2026-11-09T21:14:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -2019,7 +1818,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2048,136 +1847,6 @@
     "sv": 59.0,
     "t": "M4.5 — 11 km W of Honmachi, Japan",
     "until": "2026-11-09T01:53:16+00:00"
-  },
-  {
-    "at": "2026-11-07T16:01:52+00:00",
-    "causal": null,
-    "cf": 0.95,
-    "d": "M4.5 — 11 km ESE of Pedasí, Panama. Depth: 10.0 km (very shallow) . ReliefWeb humanitarian context: **KEY POINTS** - Almost four weeks after the magnitude 7.5 earthquake of 9 October, around 3,300 people remain in shelters, a quarter fewer than a week earlier, as more families return to their communities. - Of the nearly 20,000 homes assessed, more than 4,600 have total damage, and the Government plans to build 2,700 homes for families who lost theirs. - Damage to 619 schools and 120 health facilities continues to ",
-    "e": "seismic",
-    "et": "earthquake",
-    "f": {
-      "depth_class": "very shallow",
-      "depth_km": 10,
-      "felt_reports": 0,
-      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby. Shallow depth can make shaking feel sharper close to the epicentre.",
-      "magnitude": 4.5,
-      "max_mmi": 0.0,
-      "network": "us",
-      "observed_at": "2026-11-07T16:01:52+00:00",
-      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twsy",
-      "place": "11 km ESE of Pedasí, Panama",
-      "reliefweb": {
-        "attribution_required": true,
-        "evidence_boundary": "ReliefWeb provides curated humanitarian reporting and source attribution. EarthNet uses it as contextual evidence, not as independent verification of every claim.",
-        "image": null,
-        "latest_report_date": "2026-11-04T21:17:29+00:00",
-        "latest_report_title": "Panama: Earthquake in Azuero & Veraguas - Situation Report No. 08 (as of 4 November 2026, 12:30)",
-        "latest_report_url": "https://reliefweb.int/node/4237014",
-        "match_score": 14.75,
-        "matched_at": "2026-11-08T12:20:28+00:00",
-        "provider": "ReliefWeb / UN OCHA",
-        "report_count": 1,
-        "reports": [
-          {
-            "countries": [
-              "Panama"
-            ],
-            "date": "2026-11-04T21:17:29+00:00",
-            "id": "4237014",
-            "image": null,
-            "match_score": 14.75,
-            "sources": [
-              "UN Country Team in Panama",
-              "UN Office for the Coordination of Humanitarian Affairs"
-            ],
-            "summary": "**KEY POINTS** - Almost four weeks after the magnitude 7.5 earthquake of 9 October, around 3,300 people remain in shelters, a quarter fewer than a week earlier, as more families return to their communities. - Of the nearly 20,000 homes assessed, more than 4,600 have total damage, and the Government plans to build 2,700 homes for families who lost theirs. - Damage to 619 schools and 120 health facilities continues to limit services, as more temporary learning spaces open. - A magnitude 5.9 earthquake on 31 October forced authorities to evacuate four hospitals and five health centres as a precaution, but caused no injuries. **SITUATION OVERVIEW** Almost four weeks after the magnitude 7.5 earthquake of 9 October, with its epicentre 39 km north-west of Tonosí, the National Civil Protection Sys",
-            "title": "Panama: Earthquake in Azuero & Veraguas - Situation Report No. 08 (as of 4 November 2026, 12:30)",
-            "url": "https://reliefweb.int/node/4237014"
-          }
-        ],
-        "schema": "earthnet.reliefweb.v0.1",
-        "source_organisations": [
-          "UN Country Team in Panama",
-          "UN Office for the Coordination of Humanitarian Affairs"
-        ],
-        "source_text": "UN Country Team in Panama, UN Office for the Coordination of Humanitarian Affairs",
-        "summary": "**KEY POINTS** - Almost four weeks after the magnitude 7.5 earthquake of 9 October, around 3,300 people remain in shelters, a quarter fewer than a week earlier, as more families return to their communities. - Of the nearly 20,000 homes assessed, more than 4,600 have total damage, and the Government plans to build 2,700 homes for families who lost theirs. - Damage to 619 schools and 120 health facilities continues to limit services, as more temporary learning spaces open. - A magnitude 5.9 earthquake on 31 October forced authorities to evacuate four hospitals and five health centres as a precaution, but caused no injuries. **SITUATION OVERVIEW** Almost four weeks after the magnitude 7.5 earthquake of 9 October, with its epicentre 39 km north-west of Tonosí, the National Civil Protection Sys"
-      },
-      "significance": 312,
-      "source": "USGS",
-      "source_record_id": "us7000twsy",
-      "source_urls": [
-        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twsy"
-      ],
-      "status": "reviewed",
-      "tsunami": false,
-      "updated_at": "2026-11-07T19:53:11+00:00",
-      "visible_until": "2026-11-08T16:01:52+00:00"
-    },
-    "id": "usgs-us7000twsy",
-    "intelligence": {
-      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
-      "change_reasons": [
-        "No material change is confirmed since the previous successful EarthNet cycle."
-      ],
-      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "usgs-us7000twsy",
-      "event_key": "cc28d81c8fbe63cff7ee8b6a",
-      "evidence": {
-        "evidence_types": [
-          "provider_event_record",
-          "attributed_humanitarian_reporting"
-        ],
-        "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:20:28+00:00",
-        "limitations": [],
-        "provider_count": 5,
-        "providers": [
-          "USGS",
-          "ReliefWeb humanitarian context",
-          "ReliefWeb / UN OCHA",
-          "UN Country Team in Panama",
-          "UN Office for the Coordination of Humanitarian Affairs"
-        ],
-        "reliefweb_report_count": 1,
-        "satellite_observation_count": 0,
-        "strength": "multi-source",
-        "visual_record_count": 0
-      },
-      "generated_at": "2026-11-08T12:20:29+00:00",
-      "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
-      "mode": "deterministic_evidence_synthesis",
-      "model_generated": false,
-      "schema": "earthnet.event-intelligence.v0.1",
-      "situation": "An earthquake has been recorded in 11 km ESE of Pedasí, Panama at magnitude 4.5 and depth 10 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
-      "trend": "stable",
-      "uncertainty": "Source latency, revisions and incomplete local reporting may still change this assessment.",
-      "watch_next": [
-        "Aftershocks and official magnitude or intensity revisions",
-        "Tsunami information and civil-defence instructions",
-        "Confirmed damage, injuries and service disruption"
-      ]
-    },
-    "la": 7.5067,
-    "lo": -79.921,
-    "media": [],
-    "r": "11 km ESE of Pedasí, Panama",
-    "schema": "earthnet.event.v3",
-    "sources": [
-      {
-        "name": "USGS",
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twsy"
-      },
-      {
-        "name": "ReliefWeb humanitarian context",
-        "url": "https://reliefweb.int/node/4237014"
-      }
-    ],
-    "status": "reviewed",
-    "sv": 59.0,
-    "t": "M4.5 — 11 km ESE of Pedasí, Panama",
-    "until": "2026-11-08T16:01:52+00:00"
   },
   {
     "at": "2026-11-07T23:25:35+00:00",
@@ -2236,7 +1905,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2265,6 +1934,93 @@
     "sv": 58.800000000000004,
     "t": "M4.9 — 41 km WSW of Gadung, Philippines",
     "until": "2026-11-08T23:25:35+00:00"
+  },
+  {
+    "at": "2026-11-08T11:58:32+00:00",
+    "causal": null,
+    "cf": 0.95,
+    "d": "M4.7 — 46 km NW of Huara, Chile. Depth: 68.8 km (shallow). Felt reports: 20",
+    "e": "seismic",
+    "et": "earthquake",
+    "f": {
+      "depth_class": "shallow",
+      "depth_km": 68.785,
+      "felt_reports": 20,
+      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby. USGS has received 20 felt reports.",
+      "magnitude": 4.7,
+      "max_mmi": 0.0,
+      "network": "us",
+      "observed_at": "2026-11-08T11:58:32+00:00",
+      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twxf",
+      "place": "46 km NW of Huara, Chile",
+      "significance": 348,
+      "source": "USGS",
+      "source_record_id": "us7000twxf",
+      "source_urls": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twxf"
+      ],
+      "status": "reviewed",
+      "tsunami": false,
+      "updated_at": "2026-11-08T16:09:13+00:00",
+      "visible_until": "2026-11-09T11:58:32+00:00"
+    },
+    "id": "usgs-us7000twxf",
+    "intelligence": {
+      "change": "This is the first cycle in which the event appears in the Event Intelligence baseline; direction is not established yet.",
+      "change_reasons": [
+        "This event has entered the current EarthNet intelligence baseline."
+      ],
+      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
+      "event_id": "usgs-us7000twxf",
+      "event_key": "e6bf48323c870fab0f4d1da8",
+      "evidence": {
+        "evidence_types": [
+          "provider_event_record"
+        ],
+        "freshness": "live",
+        "latest_evidence_at": "2026-11-08T16:09:13+00:00",
+        "limitations": [
+          "No matched humanitarian situation report is attached.",
+          "Independent corroboration is limited in the current evidence packet."
+        ],
+        "provider_count": 1,
+        "providers": [
+          "USGS"
+        ],
+        "reliefweb_report_count": 0,
+        "satellite_observation_count": 0,
+        "strength": "single-source",
+        "visual_record_count": 0
+      },
+      "generated_at": "2026-11-08T20:22:50+00:00",
+      "impact": "The event has been felt by the public; confirmed structural damage, injuries and service disruption are not yet established in the current evidence packet.",
+      "mode": "deterministic_evidence_synthesis",
+      "model_generated": false,
+      "schema": "earthnet.event-intelligence.v0.1",
+      "situation": "An earthquake has been recorded in 46 km NW of Huara, Chile at magnitude 4.7 and depth 69 km. Maximum reported intensity is MMI 0. The provider currently records 20 felt reports.",
+      "trend": "new",
+      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
+      "watch_next": [
+        "Aftershocks and official magnitude or intensity revisions",
+        "Tsunami information and civil-defence instructions",
+        "Confirmed damage, injuries and service disruption"
+      ]
+    },
+    "la": -19.6811,
+    "lo": -70.0603,
+    "media": [],
+    "r": "46 km NW of Huara, Chile",
+    "schema": "earthnet.event.v3",
+    "sources": [
+      {
+        "name": "USGS",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twxf"
+      }
+    ],
+    "status": "reviewed",
+    "sv": 56.400000000000006,
+    "t": "M4.7 — 46 km NW of Huara, Chile",
+    "until": "2026-11-09T11:58:32+00:00"
   },
   {
     "at": "2026-11-07T20:55:38+00:00",
@@ -2323,7 +2079,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2354,7 +2110,7 @@
     "until": "2026-11-08T20:55:38+00:00"
   },
   {
-    "at": "2026-11-08T12:12:13+00:00",
+    "at": "2026-11-08T20:13:14+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 29.8°C (anomaly +1.8°C — significant warm anomaly). Waves: 1.0 m max. Current: avg 0.33 m/s. Western node of the Indian Ocean Dipole. Positive IOD: warm west, cool east.",
@@ -2373,7 +2129,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 1.79
     },
-    "id": "0a9726e3c36c194c",
+    "id": "777472051fc3c70a",
     "la": -5.0,
     "lo": 55.0,
     "media": [],
@@ -2386,9 +2142,96 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T16:45:12+00:00",
+    "causal": null,
+    "cf": 0.95,
+    "d": "M4.6 — 117 km NE of Tobelo, Indonesia. Depth: 224.6 km (intermediate)",
+    "e": "seismic",
+    "et": "earthquake",
+    "f": {
+      "depth_class": "intermediate",
+      "depth_km": 224.59,
+      "felt_reports": 0,
+      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby.",
+      "magnitude": 4.6,
+      "max_mmi": 0.0,
+      "network": "us",
+      "observed_at": "2026-11-08T16:45:12+00:00",
+      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twyd",
+      "place": "117 km NE of Tobelo, Indonesia",
+      "significance": 326,
+      "source": "USGS",
+      "source_record_id": "us7000twyd",
+      "source_urls": [
+        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twyd"
+      ],
+      "status": "reviewed",
+      "tsunami": false,
+      "updated_at": "2026-11-08T17:04:06+00:00",
+      "visible_until": "2026-11-09T16:45:12+00:00"
+    },
+    "id": "usgs-us7000twyd",
+    "intelligence": {
+      "change": "This is the first cycle in which the event appears in the Event Intelligence baseline; direction is not established yet.",
+      "change_reasons": [
+        "This event has entered the current EarthNet intelligence baseline."
+      ],
+      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
+      "event_id": "usgs-us7000twyd",
+      "event_key": "b3b8db52d168f055117d36ce",
+      "evidence": {
+        "evidence_types": [
+          "provider_event_record"
+        ],
+        "freshness": "live",
+        "latest_evidence_at": "2026-11-08T17:04:06+00:00",
+        "limitations": [
+          "No matched humanitarian situation report is attached.",
+          "Independent corroboration is limited in the current evidence packet."
+        ],
+        "provider_count": 1,
+        "providers": [
+          "USGS"
+        ],
+        "reliefweb_report_count": 0,
+        "satellite_observation_count": 0,
+        "strength": "single-source",
+        "visual_record_count": 0
+      },
+      "generated_at": "2026-11-08T20:22:50+00:00",
+      "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
+      "mode": "deterministic_evidence_synthesis",
+      "model_generated": false,
+      "schema": "earthnet.event-intelligence.v0.1",
+      "situation": "An earthquake has been recorded in 117 km NE of Tobelo, Indonesia at magnitude 4.6 and depth 225 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
+      "trend": "new",
+      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
+      "watch_next": [
+        "Aftershocks and official magnitude or intensity revisions",
+        "Tsunami information and civil-defence instructions",
+        "Confirmed damage, injuries and service disruption"
+      ]
+    },
+    "la": 2.5497,
+    "lo": 128.6755,
+    "media": [],
+    "r": "117 km NE of Tobelo, Indonesia",
+    "schema": "earthnet.event.v3",
+    "sources": [
+      {
+        "name": "USGS",
+        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twyd"
+      }
+    ],
+    "status": "reviewed",
+    "sv": 55.199999999999996,
+    "t": "M4.6 — 117 km NE of Tobelo, Indonesia",
+    "until": "2026-11-09T16:45:12+00:00"
+  },
+  {
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "ca9c1baf95111e3496",
+      "assessment_id": "f033c8d57f7ffa5a13",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -2402,7 +2245,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -2447,7 +2290,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "ba55930093fab60c",
+      "target_event_id": "fbb5e59393caac55",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -2461,14 +2304,14 @@
       "last_update": "2026-11-02T07:58:00Z",
       "source": "NASA EONET"
     },
-    "id": "ba55930093fab60c",
+    "id": "fbb5e59393caac55",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "ba55930093fab60c",
+      "event_id": "fbb5e59393caac55",
       "event_key": "8f0742be01819f58b36e90f0",
       "evidence": {
         "evidence_types": [
@@ -2477,7 +2320,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable.",
@@ -2494,7 +2337,7 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2513,7 +2356,7 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · VIIRS NOAA-20",
-        "captured_for_event_at": "2026-11-08T12:20:29+00:00",
+        "captured_for_event_at": "2026-11-08T20:22:50+00:00",
         "claim_boundary": "Satellite context and thermal detections do not establish ignition cause, containment or damage by themselves.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
@@ -2591,7 +2434,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2622,181 +2465,7 @@
     "until": "2026-11-08T23:22:35+00:00"
   },
   {
-    "at": "2026-11-07T19:55:10+00:00",
-    "causal": null,
-    "cf": 0.95,
-    "d": "M4.5 — 65 km WSW of Masachapa, Nicaragua. Depth: 37.1 km (shallow)",
-    "e": "seismic",
-    "et": "earthquake",
-    "f": {
-      "depth_class": "shallow",
-      "depth_km": 37.054,
-      "felt_reports": 0,
-      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby.",
-      "magnitude": 4.5,
-      "max_mmi": 0.0,
-      "network": "us",
-      "observed_at": "2026-11-07T19:55:10+00:00",
-      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twtv",
-      "place": "65 km WSW of Masachapa, Nicaragua",
-      "significance": 312,
-      "source": "USGS",
-      "source_record_id": "us7000twtv",
-      "source_urls": [
-        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twtv"
-      ],
-      "status": "reviewed",
-      "tsunami": false,
-      "updated_at": "2026-11-07T20:13:03+00:00",
-      "visible_until": "2026-11-08T19:55:10+00:00"
-    },
-    "id": "usgs-us7000twtv",
-    "intelligence": {
-      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
-      "change_reasons": [
-        "No material change is confirmed since the previous successful EarthNet cycle."
-      ],
-      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "usgs-us7000twtv",
-      "event_key": "5cb36dd73c2a6833666a47ac",
-      "evidence": {
-        "evidence_types": [
-          "provider_event_record"
-        ],
-        "freshness": "current",
-        "latest_evidence_at": "2026-11-07T20:13:03+00:00",
-        "limitations": [
-          "No matched humanitarian situation report is attached.",
-          "Independent corroboration is limited in the current evidence packet."
-        ],
-        "provider_count": 1,
-        "providers": [
-          "USGS"
-        ],
-        "reliefweb_report_count": 0,
-        "satellite_observation_count": 0,
-        "strength": "single-source",
-        "visual_record_count": 0
-      },
-      "generated_at": "2026-11-08T12:20:29+00:00",
-      "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
-      "mode": "deterministic_evidence_synthesis",
-      "model_generated": false,
-      "schema": "earthnet.event-intelligence.v0.1",
-      "situation": "An earthquake has been recorded in 65 km WSW of Masachapa, Nicaragua at magnitude 4.5 and depth 37 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
-      "trend": "stable",
-      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
-      "watch_next": [
-        "Aftershocks and official magnitude or intensity revisions",
-        "Tsunami information and civil-defence instructions",
-        "Confirmed damage, injuries and service disruption"
-      ]
-    },
-    "la": 11.526,
-    "lo": -87.0544,
-    "media": [],
-    "r": "65 km WSW of Masachapa, Nicaragua",
-    "schema": "earthnet.event.v3",
-    "sources": [
-      {
-        "name": "USGS",
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twtv"
-      }
-    ],
-    "status": "reviewed",
-    "sv": 54.0,
-    "t": "M4.5 — 65 km WSW of Masachapa, Nicaragua",
-    "until": "2026-11-08T19:55:10+00:00"
-  },
-  {
-    "at": "2026-11-07T15:05:45+00:00",
-    "causal": null,
-    "cf": 0.95,
-    "d": "M4.5 — Fiji region. Depth: 571.9 km (deep)",
-    "e": "seismic",
-    "et": "earthquake",
-    "f": {
-      "depth_class": "deep",
-      "depth_km": 571.898,
-      "felt_reports": 0,
-      "impact_summary": "Light-to-moderate earthquake; may wake people and be clearly felt nearby.",
-      "magnitude": 4.5,
-      "max_mmi": 0.0,
-      "network": "us",
-      "observed_at": "2026-11-07T15:05:45+00:00",
-      "official_url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twsp",
-      "place": "Fiji region",
-      "significance": 312,
-      "source": "USGS",
-      "source_record_id": "us7000twsp",
-      "source_urls": [
-        "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twsp"
-      ],
-      "status": "reviewed",
-      "tsunami": false,
-      "updated_at": "2026-11-07T16:13:31+00:00",
-      "visible_until": "2026-11-08T15:05:45+00:00"
-    },
-    "id": "usgs-us7000twsp",
-    "intelligence": {
-      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
-      "change_reasons": [
-        "No material change is confirmed since the previous successful EarthNet cycle."
-      ],
-      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "usgs-us7000twsp",
-      "event_key": "21042c62eb57ef2ef8c91e5a",
-      "evidence": {
-        "evidence_types": [
-          "provider_event_record"
-        ],
-        "freshness": "current",
-        "latest_evidence_at": "2026-11-07T16:13:31+00:00",
-        "limitations": [
-          "No matched humanitarian situation report is attached.",
-          "Independent corroboration is limited in the current evidence packet."
-        ],
-        "provider_count": 1,
-        "providers": [
-          "USGS"
-        ],
-        "reliefweb_report_count": 0,
-        "satellite_observation_count": 0,
-        "strength": "single-source",
-        "visual_record_count": 0
-      },
-      "generated_at": "2026-11-08T12:20:29+00:00",
-      "impact": "The event is recorded instrumentally; human impact and damage are not yet confirmed.",
-      "mode": "deterministic_evidence_synthesis",
-      "model_generated": false,
-      "schema": "earthnet.event-intelligence.v0.1",
-      "situation": "An earthquake has been recorded in Fiji region at magnitude 4.5 and depth 572 km. Maximum reported intensity is MMI 0. The provider currently records 0 felt reports.",
-      "trend": "stable",
-      "uncertainty": "The current assessment relies on limited independent corroboration. Damage and service impacts are not yet supported by matched humanitarian reporting.",
-      "watch_next": [
-        "Aftershocks and official magnitude or intensity revisions",
-        "Tsunami information and civil-defence instructions",
-        "Confirmed damage, injuries and service disruption"
-      ]
-    },
-    "la": -20.8363,
-    "lo": -178.7119,
-    "media": [],
-    "r": "Fiji region",
-    "schema": "earthnet.event.v3",
-    "sources": [
-      {
-        "name": "USGS",
-        "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000twsp"
-      }
-    ],
-    "status": "reviewed",
-    "sv": 54.0,
-    "t": "M4.5 — Fiji region",
-    "until": "2026-11-08T15:05:45+00:00"
-  },
-  {
-    "at": "2026-11-08T12:12:09+00:00",
+    "at": "2026-11-08T20:13:11+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 8.3°C (anomaly -1.7°C — significant cold anomaly). Waves: 2.4 m max. Current: avg 0.88 m/s. AMOC cold blob region. Anomalous cooling here is a fingerprint of AMOC weakening.",
@@ -2815,7 +2484,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": -1.7
     },
-    "id": "dc2c8c25ddcbbd6c",
+    "id": "9b0bf52c9182b97f",
     "la": 55.0,
     "lo": -35.0,
     "media": [],
@@ -2828,7 +2497,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:11+00:00",
+    "at": "2026-11-08T20:13:13+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 15.6°C (anomaly +1.6°C — significant warm anomaly). Waves: 2.8 m max. Current: avg 0.66 m/s. Regional marine conditions near NZ. Marine heatwaves affect fisheries and weather.",
@@ -2847,7 +2516,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 1.63
     },
-    "id": "78a54ec5dc547a25",
+    "id": "825c1c3c8b52595f",
     "la": -40.0,
     "lo": 165.0,
     "media": [],
@@ -2860,9 +2529,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "a62a9a9615bf35b81c",
+      "assessment_id": "87dceb2eb954334590",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -2876,7 +2545,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -2921,7 +2590,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "7e49f8a09a1bb0c9",
+      "target_event_id": "212ef3a66c2fb6e4",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -2935,14 +2604,14 @@
       "last_update": "2026-10-30T10:13:00Z",
       "source": "NASA EONET"
     },
-    "id": "7e49f8a09a1bb0c9",
+    "id": "212ef3a66c2fb6e4",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "7e49f8a09a1bb0c9",
+      "event_id": "212ef3a66c2fb6e4",
       "event_key": "ec9ac09592bad616c8a5363d",
       "evidence": {
         "evidence_types": [
@@ -2951,7 +2620,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable.",
@@ -2968,7 +2637,7 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -2987,7 +2656,7 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · VIIRS NOAA-20",
-        "captured_for_event_at": "2026-11-08T12:20:29+00:00",
+        "captured_for_event_at": "2026-11-08T20:22:50+00:00",
         "claim_boundary": "Satellite context and thermal detections do not establish ignition cause, containment or damage by themselves.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
@@ -3009,9 +2678,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "fcb1b240429968c75f",
+      "assessment_id": "139ee53d7485b3b0e5",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3025,7 +2694,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3070,7 +2739,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "5814f62f1ac265b5",
+      "target_event_id": "6878027566207ecf",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3084,14 +2753,14 @@
       "last_update": "2026-10-29T12:16:00Z",
       "source": "NASA EONET"
     },
-    "id": "5814f62f1ac265b5",
+    "id": "6878027566207ecf",
     "intelligence": {
-      "change": "The visual evidence packet changed.",
+      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
-        "The visual evidence packet changed."
+        "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "5814f62f1ac265b5",
+      "event_id": "6878027566207ecf",
       "event_key": "4137b80ab91e38d1eab1a5f5",
       "evidence": {
         "evidence_types": [
@@ -3100,7 +2769,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Visual evidence is contextual and may be obscured, delayed or unavailable.",
@@ -3117,13 +2786,13 @@
         "strength": "corroborated",
         "visual_record_count": 1
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
       "schema": "earthnet.event-intelligence.v0.1",
       "situation": "The wildfire affecting Prescribed Fire McCarty Piles RX, Coconino, Arizona remains active. Confirmed containment is not available in the current feeds.",
-      "trend": "updated",
+      "trend": "stable",
       "uncertainty": "Containment and emergency-service control are not confirmed. The proposed causal pathway is not sufficiently supported. Imagery provides context but does not prove cause, responsibility or downstream impact by itself.",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
@@ -3136,7 +2805,7 @@
     "media": [
       {
         "attribution": "NASA EOSDIS Worldview/GIBS · VIIRS NOAA-20",
-        "captured_for_event_at": "2026-11-08T12:20:29+00:00",
+        "captured_for_event_at": "2026-11-08T20:22:50+00:00",
         "claim_boundary": "Satellite context and thermal detections do not establish ignition cause, containment or damage by themselves.",
         "media_type": "satellite_image",
         "provider": "NASA EOSDIS Worldview / GIBS",
@@ -3158,9 +2827,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "04f4f4b73c65eb399e",
+      "assessment_id": "039f25303945a618b8",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3174,7 +2843,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3219,7 +2888,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "0ec30612520518d2",
+      "target_event_id": "a9dae701a6683f93",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3233,171 +2902,22 @@
       "last_update": "2026-10-29T11:37:00Z",
       "source": "NASA EONET"
     },
-    "id": "0ec30612520518d2",
+    "id": "a9dae701a6683f93",
     "intelligence": {
       "change": "The visual evidence packet changed.",
       "change_reasons": [
         "The visual evidence packet changed."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "0ec30612520518d2",
+      "event_id": "a9dae701a6683f93",
       "event_key": "8ecdb8e27d2c22a69db82093",
       "evidence": {
         "evidence_types": [
           "provider_event_record",
-          "visual_evidence",
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
-        "limitations": [
-          "No matched humanitarian situation report is attached.",
-          "Visual evidence is contextual and may be obscured, delayed or unavailable.",
-          "Spatial proximity does not by itself prove causation.",
-          "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration."
-        ],
-        "provider_count": 2,
-        "providers": [
-          "NASA EONET",
-          "NASA EOSDIS Worldview / GIBS"
-        ],
-        "reliefweb_report_count": 0,
-        "satellite_observation_count": 0,
-        "strength": "corroborated",
-        "visual_record_count": 1
-      },
-      "generated_at": "2026-11-08T12:20:29+00:00",
-      "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
-      "mode": "deterministic_evidence_synthesis",
-      "model_generated": false,
-      "schema": "earthnet.event-intelligence.v0.1",
-      "situation": "The wildfire affecting Prescribed Fire Freidland-Chimney Piles RX, Coconino, Arizona remains active. Confirmed containment is not available in the current feeds.",
-      "trend": "updated",
-      "uncertainty": "Containment and emergency-service control are not confirmed. The proposed causal pathway is not sufficiently supported. Imagery provides context but does not prove cause, responsibility or downstream impact by itself.",
-      "watch_next": [
-        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
-        "New official fire detections, perimeter updates or containment reports",
-        "Official containment and perimeter updates"
-      ]
-    },
-    "la": 35.283333,
-    "lo": -111.666667,
-    "media": [
-      {
-        "attribution": "NASA EOSDIS Worldview/GIBS · VIIRS NOAA-20",
-        "captured_for_event_at": "2026-11-08T12:20:29+00:00",
-        "claim_boundary": "Satellite context and thermal detections do not establish ignition cause, containment or damage by themselves.",
-        "media_type": "satellite_image",
-        "provider": "NASA EOSDIS Worldview / GIBS",
-        "representation": "remote_sensing",
-        "schema": "earthnet.media.v0.1",
-        "sensor": "VIIRS NOAA-20",
-        "source_time": "2026-11-08",
-        "source_url": "https://worldview.earthdata.nasa.gov/",
-        "title": "VIIRS true-colour view with thermal anomaly overlay"
-      }
-    ],
-    "r": "Prescribed Fire Freidland-Chimney Piles RX, Coconino, Arizona",
-    "satellite": [],
-    "schema": "earthnet.event.v3",
-    "sources": [],
-    "status": "active",
-    "sv": 50.0,
-    "t": "Prescribed Fire Freidland-Chimney Piles RX, Coconino, Arizona",
-    "until": null
-  },
-  {
-    "at": "2026-11-08T12:12:17+00:00",
-    "causal": {
-      "assessment_id": "228a2dbbed84699501",
-      "baseline": {
-        "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
-        "method": "Published hazard thresholds and current-cycle event relationships",
-        "status": "operational_threshold_proxy"
-      },
-      "claim_boundary": "Candidate causal contribution; not proven attribution or an official warning.",
-      "confidence": {
-        "forecast": 0.32,
-        "mechanism": 0.34,
-        "observation": 0.8,
-        "relationship": 0.25
-      },
-      "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
-      "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
-      "hypotheses": [
-        {
-          "claim_type": "candidate_causal_contribution",
-          "confidence": 0.34,
-          "id": "heat-dryness-fire-infrastructure",
-          "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
-          "supporting_event_ids": []
-        }
-      ],
-      "limitations": [
-        "Spatial proximity does not by itself prove causation.",
-        "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration.",
-        "Forecast confidence describes the mechanism pack, not an emergency-management directive."
-      ],
-      "mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-      "missing_evidence": [
-        "Seasonal climatology and percentile baseline for this exact location",
-        "Observed fuel moisture and vegetation condition",
-        "Current fire perimeter and rate of spread",
-        "Containment, suppression and ignition-cause observations"
-      ],
-      "pathway": [
-        {
-          "label": "Active wildfire detected or officially reported",
-          "stage": "observed"
-        },
-        {
-          "label": "Heat, low humidity, limited rain and wind may increase spread potential",
-          "stage": "candidate_driver"
-        },
-        {
-          "label": "Dryer fuels and wind-aligned propagation may accelerate perimeter growth",
-          "stage": "inferred"
-        },
-        {
-          "label": "Smoke, road, power and community exposure may increase",
-          "stage": "potential_consequence"
-        }
-      ],
-      "related_event_ids": [],
-      "schema": "earthnet.causal-assessment.v0.1",
-      "status": "insufficient_evidence",
-      "supporting_evidence": [],
-      "target_event_id": "01f2377a682e7923",
-      "watch_next": [
-        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
-        "New official fire detections, perimeter updates or containment reports"
-      ]
-    },
-    "cf": 0.8,
-    "d": "Active active wildfire. Last update: 2026-10-29.",
-    "e": "wildfire_flood_landslide",
-    "et": "active_wildfire",
-    "f": {
-      "last_update": "2026-10-29T11:08:00Z",
-      "source": "NASA EONET"
-    },
-    "id": "01f2377a682e7923",
-    "intelligence": {
-      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
-      "change_reasons": [
-        "No material change is confirmed since the previous successful EarthNet cycle."
-      ],
-      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "01f2377a682e7923",
-      "event_key": "98cd5185b9a73aaa3e6ff8ca",
-      "evidence": {
-        "evidence_types": [
-          "provider_event_record",
-          "deterministic_causal_assessment"
-        ],
-        "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -3413,7 +2933,140 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
+      "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
+      "mode": "deterministic_evidence_synthesis",
+      "model_generated": false,
+      "schema": "earthnet.event-intelligence.v0.1",
+      "situation": "The wildfire affecting Prescribed Fire Freidland-Chimney Piles RX, Coconino, Arizona remains active. Confirmed containment is not available in the current feeds.",
+      "trend": "updated",
+      "uncertainty": "The current assessment relies on limited independent corroboration. Containment and emergency-service control are not confirmed. The proposed causal pathway is not sufficiently supported.",
+      "watch_next": [
+        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
+        "New official fire detections, perimeter updates or containment reports",
+        "Official containment and perimeter updates"
+      ]
+    },
+    "la": 35.283333,
+    "lo": -111.666667,
+    "media": [],
+    "r": "Prescribed Fire Freidland-Chimney Piles RX, Coconino, Arizona",
+    "satellite": [],
+    "schema": "earthnet.event.v3",
+    "sources": [],
+    "status": "active",
+    "sv": 50.0,
+    "t": "Prescribed Fire Freidland-Chimney Piles RX, Coconino, Arizona",
+    "until": null
+  },
+  {
+    "at": "2026-11-08T20:13:16+00:00",
+    "causal": {
+      "assessment_id": "10b049a5ca2343123a",
+      "baseline": {
+        "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
+        "method": "Published hazard thresholds and current-cycle event relationships",
+        "status": "operational_threshold_proxy"
+      },
+      "claim_boundary": "Candidate causal contribution; not proven attribution or an official warning.",
+      "confidence": {
+        "forecast": 0.32,
+        "mechanism": 0.34,
+        "observation": 0.8,
+        "relationship": 0.25
+      },
+      "contradicting_evidence": [],
+      "generated_at": "2026-11-08T20:22:43+00:00",
+      "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
+      "hypotheses": [
+        {
+          "claim_type": "candidate_causal_contribution",
+          "confidence": 0.34,
+          "id": "heat-dryness-fire-infrastructure",
+          "statement": "Hot, dry or windy conditions may be contributing to increased wildfire spread potential.",
+          "supporting_event_ids": []
+        }
+      ],
+      "limitations": [
+        "Spatial proximity does not by itself prove causation.",
+        "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration.",
+        "Forecast confidence describes the mechanism pack, not an emergency-management directive."
+      ],
+      "mechanism_pack": "heat-wildfire-infrastructure.v0.1",
+      "missing_evidence": [
+        "Seasonal climatology and percentile baseline for this exact location",
+        "Observed fuel moisture and vegetation condition",
+        "Current fire perimeter and rate of spread",
+        "Containment, suppression and ignition-cause observations"
+      ],
+      "pathway": [
+        {
+          "label": "Active wildfire detected or officially reported",
+          "stage": "observed"
+        },
+        {
+          "label": "Heat, low humidity, limited rain and wind may increase spread potential",
+          "stage": "candidate_driver"
+        },
+        {
+          "label": "Dryer fuels and wind-aligned propagation may accelerate perimeter growth",
+          "stage": "inferred"
+        },
+        {
+          "label": "Smoke, road, power and community exposure may increase",
+          "stage": "potential_consequence"
+        }
+      ],
+      "related_event_ids": [],
+      "schema": "earthnet.causal-assessment.v0.1",
+      "status": "insufficient_evidence",
+      "supporting_evidence": [],
+      "target_event_id": "ea1d14c2be99c517",
+      "watch_next": [
+        "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
+        "New official fire detections, perimeter updates or containment reports"
+      ]
+    },
+    "cf": 0.8,
+    "d": "Active active wildfire. Last update: 2026-10-29.",
+    "e": "wildfire_flood_landslide",
+    "et": "active_wildfire",
+    "f": {
+      "last_update": "2026-10-29T11:08:00Z",
+      "source": "NASA EONET"
+    },
+    "id": "ea1d14c2be99c517",
+    "intelligence": {
+      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
+      "change_reasons": [
+        "No material change is confirmed since the previous successful EarthNet cycle."
+      ],
+      "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
+      "event_id": "ea1d14c2be99c517",
+      "event_key": "98cd5185b9a73aaa3e6ff8ca",
+      "evidence": {
+        "evidence_types": [
+          "provider_event_record",
+          "deterministic_causal_assessment"
+        ],
+        "freshness": "live",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
+        "limitations": [
+          "No matched humanitarian situation report is attached.",
+          "Spatial proximity does not by itself prove causation.",
+          "Some atmospheric and infrastructure signals share Open-Meteo inputs and are therefore not independent corroboration.",
+          "Independent corroboration is limited in the current evidence packet."
+        ],
+        "provider_count": 1,
+        "providers": [
+          "NASA EONET"
+        ],
+        "reliefweb_report_count": 0,
+        "satellite_observation_count": 0,
+        "strength": "single-source",
+        "visual_record_count": 0
+      },
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3440,9 +3093,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "bb2e40cfccdb9a6ff3",
+      "assessment_id": "66bace7584dbba6fe4",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3456,7 +3109,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3501,7 +3154,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "0d75241f4a8c84a3",
+      "target_event_id": "adba1c87a34cf3c5",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3515,14 +3168,14 @@
       "last_update": "2026-10-28T18:02:00Z",
       "source": "NASA EONET"
     },
-    "id": "0d75241f4a8c84a3",
+    "id": "adba1c87a34cf3c5",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "0d75241f4a8c84a3",
+      "event_id": "adba1c87a34cf3c5",
       "event_key": "638d829023512025f282d39b",
       "evidence": {
         "evidence_types": [
@@ -3530,7 +3183,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -3546,7 +3199,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3573,9 +3226,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "2b5cc774519bd1fba6",
+      "assessment_id": "6cd5595d29e9e014b7",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3589,7 +3242,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3634,7 +3287,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "8e6176bacf0736e6",
+      "target_event_id": "952ce8cee8bf076b",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3648,14 +3301,14 @@
       "last_update": "2026-10-28T11:22:00Z",
       "source": "NASA EONET"
     },
-    "id": "8e6176bacf0736e6",
+    "id": "952ce8cee8bf076b",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "8e6176bacf0736e6",
+      "event_id": "952ce8cee8bf076b",
       "event_key": "fee334cde83e6dc9d046f17c",
       "evidence": {
         "evidence_types": [
@@ -3663,7 +3316,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -3679,7 +3332,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3705,9 +3358,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "be23f87526d6127f94",
+      "assessment_id": "f0cd55299fe5e13589",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3721,7 +3374,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3766,7 +3419,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "1cf3ceba49a0aef9",
+      "target_event_id": "b721d9ab23436c30",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3780,14 +3433,14 @@
       "last_update": "2026-10-28T11:21:00Z",
       "source": "NASA EONET"
     },
-    "id": "1cf3ceba49a0aef9",
+    "id": "b721d9ab23436c30",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "1cf3ceba49a0aef9",
+      "event_id": "b721d9ab23436c30",
       "event_key": "2f02c8205aec041ec369171a",
       "evidence": {
         "evidence_types": [
@@ -3795,7 +3448,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -3811,7 +3464,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3837,9 +3490,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "18b3766354f5093297",
+      "assessment_id": "d4e2508299779d939b",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3853,7 +3506,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -3898,7 +3551,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "db553dc7cebc4c1d",
+      "target_event_id": "d0465867302e2461",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -3912,14 +3565,14 @@
       "last_update": "2026-10-28T10:09:00Z",
       "source": "NASA EONET"
     },
-    "id": "db553dc7cebc4c1d",
+    "id": "d0465867302e2461",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "db553dc7cebc4c1d",
+      "event_id": "d0465867302e2461",
       "event_key": "225270b9d11951493d37ef0a",
       "evidence": {
         "evidence_types": [
@@ -3927,7 +3580,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -3943,7 +3596,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -3969,9 +3622,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "7af736e8d50395b5ca",
+      "assessment_id": "0450826bfc60bec060",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -3985,7 +3638,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4030,7 +3683,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "1d79bf13ba7bb6c5",
+      "target_event_id": "4f67fce03a1d4821",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4044,14 +3697,14 @@
       "last_update": "2026-10-24T17:10:00Z",
       "source": "NASA EONET"
     },
-    "id": "1d79bf13ba7bb6c5",
+    "id": "4f67fce03a1d4821",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "1d79bf13ba7bb6c5",
+      "event_id": "4f67fce03a1d4821",
       "event_key": "5b10a4e6a5d61aa4346b0287",
       "evidence": {
         "evidence_types": [
@@ -4059,7 +3712,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4075,7 +3728,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4101,9 +3754,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "4d3a0a81d4fc42c0a1",
+      "assessment_id": "64b0194c93cd30895c",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4117,7 +3770,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4162,7 +3815,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "d89e5cd839854297",
+      "target_event_id": "339464a0533d7738",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4176,14 +3829,14 @@
       "last_update": "2026-10-22T21:45:00Z",
       "source": "NASA EONET"
     },
-    "id": "d89e5cd839854297",
+    "id": "339464a0533d7738",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "d89e5cd839854297",
+      "event_id": "339464a0533d7738",
       "event_key": "772b93903a3d3f745daedc30",
       "evidence": {
         "evidence_types": [
@@ -4191,7 +3844,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4207,7 +3860,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4233,9 +3886,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "662d87ac70e7edf81b",
+      "assessment_id": "a93e061f4e1c0bec53",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4249,7 +3902,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4294,7 +3947,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "861885b527bf8c7e",
+      "target_event_id": "b044299c3009e168",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4308,14 +3961,14 @@
       "last_update": "2026-10-21T15:57:00Z",
       "source": "NASA EONET"
     },
-    "id": "861885b527bf8c7e",
+    "id": "b044299c3009e168",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "861885b527bf8c7e",
+      "event_id": "b044299c3009e168",
       "event_key": "6b47eabf81b2d79b0c2f34bc",
       "evidence": {
         "evidence_types": [
@@ -4323,7 +3976,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4339,7 +3992,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4365,9 +4018,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "3e51c7bd83b31aca7c",
+      "assessment_id": "810dec789d310cd4e8",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4381,7 +4034,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4426,7 +4079,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "3fb150838a514696",
+      "target_event_id": "a4f8e11a014142a9",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4440,14 +4093,14 @@
       "last_update": "2026-10-18T08:25:00Z",
       "source": "NASA EONET"
     },
-    "id": "3fb150838a514696",
+    "id": "a4f8e11a014142a9",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "3fb150838a514696",
+      "event_id": "a4f8e11a014142a9",
       "event_key": "903d247f6fd2121cd2cf02f2",
       "evidence": {
         "evidence_types": [
@@ -4455,7 +4108,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4471,7 +4124,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4497,9 +4150,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "1a2c675f3320ff876d",
+      "assessment_id": "e637535193736bd4a8",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4513,7 +4166,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4558,7 +4211,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "f1803dbbe852ebca",
+      "target_event_id": "b142aab67d5457cf",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4572,14 +4225,14 @@
       "last_update": "2026-10-17T23:28:00Z",
       "source": "NASA EONET"
     },
-    "id": "f1803dbbe852ebca",
+    "id": "b142aab67d5457cf",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "f1803dbbe852ebca",
+      "event_id": "b142aab67d5457cf",
       "event_key": "9f67dac0f4c5def3afcd0ed0",
       "evidence": {
         "evidence_types": [
@@ -4587,7 +4240,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4603,7 +4256,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4629,9 +4282,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "9be7c14ab49a612b4d",
+      "assessment_id": "0d2f217ad55c0187c8",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4645,7 +4298,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4690,7 +4343,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "087616be8e5607db",
+      "target_event_id": "0ceaed6fa29be298",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4704,14 +4357,14 @@
       "last_update": "2026-10-16T20:14:00Z",
       "source": "NASA EONET"
     },
-    "id": "087616be8e5607db",
+    "id": "0ceaed6fa29be298",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "087616be8e5607db",
+      "event_id": "0ceaed6fa29be298",
       "event_key": "2a23d9de06d89a5527b71ceb",
       "evidence": {
         "evidence_types": [
@@ -4719,7 +4372,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4735,7 +4388,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4761,9 +4414,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "69b6f2b5b9a48efe1d",
+      "assessment_id": "880ae808cc684c3cc1",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4777,7 +4430,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4822,7 +4475,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "19d10bd1f637794f",
+      "target_event_id": "a8b7ee82c63a9ea1",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4836,14 +4489,14 @@
       "last_update": "2026-10-16T14:52:00Z",
       "source": "NASA EONET"
     },
-    "id": "19d10bd1f637794f",
+    "id": "a8b7ee82c63a9ea1",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "19d10bd1f637794f",
+      "event_id": "a8b7ee82c63a9ea1",
       "event_key": "85d1043de30ccb5f4bc1db70",
       "evidence": {
         "evidence_types": [
@@ -4851,7 +4504,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4867,7 +4520,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -4893,9 +4546,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "d05900b1faa4667b5e",
+      "assessment_id": "34dd4659f37ee85455",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -4909,7 +4562,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -4954,7 +4607,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "d9277633eb564e1e",
+      "target_event_id": "9067939e050a27a4",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -4968,14 +4621,14 @@
       "last_update": "2026-10-16T08:31:00Z",
       "source": "NASA EONET"
     },
-    "id": "d9277633eb564e1e",
+    "id": "9067939e050a27a4",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "d9277633eb564e1e",
+      "event_id": "9067939e050a27a4",
       "event_key": "043bdfb3770164e82d151beb",
       "evidence": {
         "evidence_types": [
@@ -4983,7 +4636,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -4999,7 +4652,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5025,9 +4678,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "68dd0013827b0d288c",
+      "assessment_id": "5ae7160d2ab2ac010d",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5041,7 +4694,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5086,7 +4739,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "f23c25c70440d81d",
+      "target_event_id": "323998f020d9535a",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5100,14 +4753,14 @@
       "last_update": "2026-10-15T17:11:00Z",
       "source": "NASA EONET"
     },
-    "id": "f23c25c70440d81d",
+    "id": "323998f020d9535a",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "f23c25c70440d81d",
+      "event_id": "323998f020d9535a",
       "event_key": "1fa9381976b80fee768b1839",
       "evidence": {
         "evidence_types": [
@@ -5115,7 +4768,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5131,7 +4784,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5157,9 +4810,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "c6d390cf8b6ce7c0ea",
+      "assessment_id": "00bd2840b76caecf21",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5173,7 +4826,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5218,7 +4871,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "f595b85931f18aec",
+      "target_event_id": "e347bc91b63c496c",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5232,14 +4885,14 @@
       "last_update": "2026-10-15T11:29:00Z",
       "source": "NASA EONET"
     },
-    "id": "f595b85931f18aec",
+    "id": "e347bc91b63c496c",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "f595b85931f18aec",
+      "event_id": "e347bc91b63c496c",
       "event_key": "a56f5b57d42ae2e6df91b08d",
       "evidence": {
         "evidence_types": [
@@ -5247,7 +4900,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5263,7 +4916,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5289,9 +4942,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "1bd0568c25eb8d64ef",
+      "assessment_id": "2698dffc88429e1be3",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5305,7 +4958,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5350,7 +5003,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "ea8cb042e6901294",
+      "target_event_id": "407013065e5610fe",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5364,14 +5017,14 @@
       "last_update": "2026-10-14T10:42:00Z",
       "source": "NASA EONET"
     },
-    "id": "ea8cb042e6901294",
+    "id": "407013065e5610fe",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "ea8cb042e6901294",
+      "event_id": "407013065e5610fe",
       "event_key": "d51268a47bf959b012e70f40",
       "evidence": {
         "evidence_types": [
@@ -5379,7 +5032,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5395,7 +5048,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5421,9 +5074,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "f99bc21271d2f4e9ca",
+      "assessment_id": "0d1891b2d8e024794a",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5437,7 +5090,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5482,7 +5135,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "fbe60f58030f84ed",
+      "target_event_id": "584b1a97750b3c11",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5496,14 +5149,14 @@
       "last_update": "2026-10-13T10:24:00Z",
       "source": "NASA EONET"
     },
-    "id": "fbe60f58030f84ed",
+    "id": "584b1a97750b3c11",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "fbe60f58030f84ed",
+      "event_id": "584b1a97750b3c11",
       "event_key": "e23a70b547175bdece0e6377",
       "evidence": {
         "evidence_types": [
@@ -5511,7 +5164,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5527,7 +5180,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5553,9 +5206,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "ec9c5001e03721d0ef",
+      "assessment_id": "a013bbe0a456be9aac",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5569,7 +5222,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5614,7 +5267,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "e930781b252f219c",
+      "target_event_id": "1f267bbaf12fbb4f",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5628,14 +5281,14 @@
       "last_update": "2026-10-12T16:27:00Z",
       "source": "NASA EONET"
     },
-    "id": "e930781b252f219c",
+    "id": "1f267bbaf12fbb4f",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "e930781b252f219c",
+      "event_id": "1f267bbaf12fbb4f",
       "event_key": "b2cdfac1a16ea4a746e30d55",
       "evidence": {
         "evidence_types": [
@@ -5643,7 +5296,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5659,7 +5312,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5685,9 +5338,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "41c08354c97d7c6149",
+      "assessment_id": "e6186d2d579a8cf761",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5701,7 +5354,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5746,7 +5399,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "fe32008f4020a9bc",
+      "target_event_id": "ea453a0fa46b4794",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5760,14 +5413,14 @@
       "last_update": "2026-10-10T14:58:00Z",
       "source": "NASA EONET"
     },
-    "id": "fe32008f4020a9bc",
+    "id": "ea453a0fa46b4794",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "fe32008f4020a9bc",
+      "event_id": "ea453a0fa46b4794",
       "event_key": "e845cdc5fd494abd8de26e30",
       "evidence": {
         "evidence_types": [
@@ -5775,7 +5428,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5791,7 +5444,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5817,9 +5470,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "b2921be2d5792b8c7b",
+      "assessment_id": "a502efa9ee9f59ca38",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5833,7 +5486,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -5878,7 +5531,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "416f9eeda53c8713",
+      "target_event_id": "479a86c5f7e2bc07",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -5892,14 +5545,14 @@
       "last_update": "2026-10-09T19:26:00Z",
       "source": "NASA EONET"
     },
-    "id": "416f9eeda53c8713",
+    "id": "479a86c5f7e2bc07",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "416f9eeda53c8713",
+      "event_id": "479a86c5f7e2bc07",
       "event_key": "458210cddb3bcde74af19d5a",
       "evidence": {
         "evidence_types": [
@@ -5907,7 +5560,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -5923,7 +5576,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -5949,9 +5602,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "5c9a1666d4341032fa",
+      "assessment_id": "d62d7febffea9063ef",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -5965,7 +5618,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -6010,7 +5663,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "1c243560b5d9a53a",
+      "target_event_id": "1d82b79722c47893",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -6024,14 +5677,14 @@
       "last_update": "2026-10-09T17:15:00Z",
       "source": "NASA EONET"
     },
-    "id": "1c243560b5d9a53a",
+    "id": "1d82b79722c47893",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "1c243560b5d9a53a",
+      "event_id": "1d82b79722c47893",
       "event_key": "b0947ac9f807cc20f6c4b65a",
       "evidence": {
         "evidence_types": [
@@ -6039,7 +5692,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -6055,7 +5708,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6081,9 +5734,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "c65c67fb55cacd45b2",
+      "assessment_id": "a29e708ad52d826a3f",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -6097,7 +5750,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -6142,7 +5795,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "476946e9e4eddd43",
+      "target_event_id": "1df1f26e0961fc11",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -6156,14 +5809,14 @@
       "last_update": "2026-10-09T11:49:00Z",
       "source": "NASA EONET"
     },
-    "id": "476946e9e4eddd43",
+    "id": "1df1f26e0961fc11",
     "intelligence": {
       "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
         "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "476946e9e4eddd43",
+      "event_id": "1df1f26e0961fc11",
       "event_key": "0c2e3bb4ef2cd69282d0bb6b",
       "evidence": {
         "evidence_types": [
@@ -6171,7 +5824,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -6187,7 +5840,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6213,9 +5866,9 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:17+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": {
-      "assessment_id": "d12c0ee77f8aa1b347",
+      "assessment_id": "a8032ec79d9cb58748",
       "baseline": {
         "limitation": "A location-specific seasonal climatology has not yet been applied in v0.1.",
         "method": "Published hazard thresholds and current-cycle event relationships",
@@ -6229,7 +5882,7 @@
         "relationship": 0.25
       },
       "contradicting_evidence": [],
-      "generated_at": "2026-11-08T12:20:24+00:00",
+      "generated_at": "2026-11-08T20:22:43+00:00",
       "headline": "Active wildfire is confirmed, but local causal drivers remain under-observed",
       "hypotheses": [
         {
@@ -6274,7 +5927,7 @@
       "schema": "earthnet.causal-assessment.v0.1",
       "status": "insufficient_evidence",
       "supporting_evidence": [],
-      "target_event_id": "13e167c060f1006e",
+      "target_event_id": "36e5b01558299b8a",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
         "New official fire detections, perimeter updates or containment reports"
@@ -6288,14 +5941,14 @@
       "last_update": "2026-10-08T18:05:00Z",
       "source": "NASA EONET"
     },
-    "id": "13e167c060f1006e",
+    "id": "36e5b01558299b8a",
     "intelligence": {
-      "change": "This is the first cycle in which the event appears in the Event Intelligence baseline; direction is not established yet.",
+      "change": "No material change is confirmed since the previous successful EarthNet cycle.",
       "change_reasons": [
-        "This event has entered the current EarthNet intelligence baseline."
+        "No material change is confirmed since the previous successful EarthNet cycle."
       ],
       "claim_boundary": "EarthNet separates provider observations, attributed reports, deterministic inference and watch conditions. This assessment is not an official warning, attribution finding or tactical directive.",
-      "event_id": "13e167c060f1006e",
+      "event_id": "36e5b01558299b8a",
       "event_key": "78e003c346747d09949e0f96",
       "evidence": {
         "evidence_types": [
@@ -6303,7 +5956,7 @@
           "deterministic_causal_assessment"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:17+00:00",
+        "latest_evidence_at": "2026-11-08T20:13:16+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Spatial proximity does not by itself prove causation.",
@@ -6319,13 +5972,13 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include danger to exposed communities, smoke, road access and essential infrastructure. Evacuations, injuries and damage are not confirmed by the current EarthNet evidence packet.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
       "schema": "earthnet.event-intelligence.v0.1",
       "situation": "The wildfire affecting Wildfire Craig Lake 1, Baraga, Michigan remains active. Confirmed containment is not available in the current feeds.",
-      "trend": "new",
+      "trend": "stable",
       "uncertainty": "The current assessment relies on limited independent corroboration. Containment and emergency-service control are not confirmed. The proposed causal pathway is not sufficiently supported.",
       "watch_next": [
         "Temperature, humidity, wind and rainfall trend over the next 6–24 hours",
@@ -6345,7 +5998,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (small) — 2026 VK5 (~17–42 m). Closest approach: 4,728,065 km (12.30 lunar distances) at 9.8 km/s. Approach time: 2026-11-10T15:37:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -6395,7 +6048,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:12+00:00",
+    "at": "2026-11-08T20:13:14+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 5.3°C (anomaly +1.3°C — warm anomaly). Waves: 5.9 m max. Current: avg 3.46 m/s. Antarctic Circumpolar Current gateway. Temperature and current signals.",
@@ -6414,7 +6067,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 1.29
     },
-    "id": "f83dfd092f28d448",
+    "id": "4cee8a5d494328d0",
     "la": -58.0,
     "lo": -65.0,
     "media": [],
@@ -6483,7 +6136,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6570,7 +6223,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6657,7 +6310,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6744,7 +6397,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6832,7 +6485,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -6924,7 +6577,7 @@
         "strength": "corroborated",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7015,7 +6668,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7102,7 +6755,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7189,7 +6842,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7276,7 +6929,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Potential consequences include ash exposure, aviation disruption, lava, pyroclastic activity or lahars; the active hazard mix is not fully specified in the current feed.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7307,7 +6960,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:04+00:00",
+    "at": "2026-11-08T20:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Volcanic Alert Level 2. Aviation colour code: Yellow. Current state: moderate to heightened unrest. Moderate to heightened volcanic unrest.. Hazards: Volcanic unrest hazards, potential for eruption hazards.",
@@ -7353,7 +7006,7 @@
           "provider_event_record"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:04+00:00",
+        "latest_evidence_at": "2026-11-08T20:12:04+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Independent corroboration is limited in the current evidence packet."
@@ -7367,7 +7020,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Reported hazards include Volcanic unrest hazards, potential for eruption hazards.. Aviation, communities and access routes may be affected depending on the observed activity and wind direction.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -7398,7 +7051,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:14+00:00",
+    "at": "2026-11-08T20:13:16+00:00",
     "causal": null,
     "cf": 0.85,
     "d": "Space Weather Message Code: ALTK06",
@@ -7409,7 +7062,7 @@
       "source": "NOAA SWPC",
       "storm_class": "G2"
     },
-    "id": "bc260db4d19310e1",
+    "id": "a93f747eafa113d2",
     "la": null,
     "lo": null,
     "media": [],
@@ -7422,7 +7075,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:13+00:00",
+    "at": "2026-11-08T20:13:15+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 6.0°C (anomaly +1.0°C — warm anomaly). Waves: 5.0 m max. Current: avg 0.58 m/s. Atlantic water inflow to the Arctic. Warming here accelerates sea ice loss.",
@@ -7441,7 +7094,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 0.99
     },
-    "id": "e9f9bd84f93c89ff",
+    "id": "f0299aa7a6bcaae6",
     "la": 74.0,
     "lo": 35.0,
     "media": [],
@@ -7454,7 +7107,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (small) — 2026 VV5 (~39–98 m). Closest approach: 5,822,516 km (15.15 lunar distances) at 13.0 km/s. Approach time: 2026-11-13T09:11:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -7507,7 +7160,7 @@
     "at": "2026-11-07T06:00:00",
     "causal": null,
     "cf": 0.92,
-    "d": "GDACS Green humanitarian impact context. Tropical Depression (maximum wind speed of 63 km/h)",
+    "d": "GDACS Green humanitarian impact context. Low (maximum wind speed of 63 km/h)",
     "e": "atmosphere",
     "et": "tropical_cyclone_context",
     "f": {
@@ -7517,12 +7170,12 @@
       "confidence_semantics": "evidence_or_data_confidence_not_event_probability",
       "countries": [],
       "detail_url": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=TC&eventid=1001349",
-      "episode_id": "5",
+      "episode_id": "6",
       "gdacs_event_id": "1001349",
       "operational": false,
       "promotion_policy": "earthnet.environmental-context-public.v0.1",
       "public_context": true,
-      "report_url": "https://www.gdacs.org/report.aspx?eventid=1001349&episodeid=5&eventtype=TC",
+      "report_url": "https://www.gdacs.org/report.aspx?eventid=1001349&episodeid=6&eventtype=TC",
       "research_only": false,
       "severity_semantics": "research_attention_score_not_hazard_declaration",
       "source": "Global Disaster Alert and Coordination System, GDACS",
@@ -7530,8 +7183,8 @@
       "source_url": "https://www.gdacs.org/"
     },
     "id": "gdacs-tc-1001349",
-    "la": -12.77,
-    "lo": 51.26,
+    "la": -11.8,
+    "lo": 50.54,
     "media": [],
     "r": "Tropical Cyclone 02-20262027-27",
     "schema": "earthnet.event.v3",
@@ -7564,12 +7217,12 @@
       "confidence_semantics": "evidence_or_data_confidence_not_event_probability",
       "countries": [],
       "detail_url": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=TC&eventid=1001348",
-      "episode_id": "7",
+      "episode_id": "8",
       "gdacs_event_id": "1001348",
       "operational": false,
       "promotion_policy": "earthnet.environmental-context-public.v0.1",
       "public_context": true,
-      "report_url": "https://www.gdacs.org/report.aspx?eventid=1001348&episodeid=7&eventtype=TC",
+      "report_url": "https://www.gdacs.org/report.aspx?eventid=1001348&episodeid=8&eventtype=TC",
       "research_only": false,
       "severity_semantics": "research_attention_score_not_hazard_declaration",
       "source": "Global Disaster Alert and Coordination System, GDACS",
@@ -7577,8 +7230,8 @@
       "source_url": "https://www.gdacs.org/"
     },
     "id": "gdacs-tc-1001348",
-    "la": 11.5,
-    "lo": -155.0,
+    "la": 11.6,
+    "lo": -156.1,
     "media": [],
     "r": "Tropical Cyclone PENA-26",
     "schema": "earthnet.event.v3",
@@ -7601,7 +7254,7 @@
     "at": "2026-11-06T06:00:00",
     "causal": null,
     "cf": 0.92,
-    "d": "GDACS Green humanitarian impact context. Hurricane/Typhoon > 74 mph (maximum wind speed of 176 km/h)",
+    "d": "GDACS Green humanitarian impact context. Hurricane/Typhoon > 74 mph (maximum wind speed of 148 km/h)",
     "e": "atmosphere",
     "et": "tropical_cyclone_context",
     "f": {
@@ -7613,12 +7266,12 @@
         "Japan"
       ],
       "detail_url": "https://www.gdacs.org/gdacsapi/api/events/geteventdata?eventtype=TC&eventid=1001347",
-      "episode_id": "9",
+      "episode_id": "11",
       "gdacs_event_id": "1001347",
       "operational": false,
       "promotion_policy": "earthnet.environmental-context-public.v0.1",
       "public_context": true,
-      "report_url": "https://www.gdacs.org/report.aspx?eventid=1001347&episodeid=9&eventtype=TC",
+      "report_url": "https://www.gdacs.org/report.aspx?eventid=1001347&episodeid=11&eventtype=TC",
       "research_only": false,
       "severity_semantics": "research_attention_score_not_hazard_declaration",
       "source": "Global Disaster Alert and Coordination System, GDACS",
@@ -7626,8 +7279,8 @@
       "source_url": "https://www.gdacs.org/"
     },
     "id": "gdacs-tc-1001347",
-    "la": 22.0,
-    "lo": 137.4,
+    "la": 22.9,
+    "lo": 135.7,
     "media": [],
     "r": "Japan",
     "schema": "earthnet.event.v3",
@@ -7697,7 +7350,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:10+00:00",
+    "at": "2026-11-08T20:13:12+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "SST: 29.4°C (anomaly +0.4°C — near baseline). Waves: 1.7 m max. Current: avg 1.18 m/s. Typhoon genesis region. SST above 27°C supports tropical cyclone development.",
@@ -7716,7 +7369,7 @@
       "source": "Open-Meteo Marine",
       "sst_anomaly_c": 0.43
     },
-    "id": "d8328a7bd36c1500",
+    "id": "5e1671bd4bbcbb45",
     "la": 10.0,
     "lo": 140.0,
     "media": [],
@@ -7729,7 +7382,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:14+00:00",
+    "at": "2026-11-08T20:13:15+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Greenland Sea (ice edge): avg SST 2.1°C (anomaly +1.6°C). Elevated temperatures. East Greenland Current — ice export corridor. Waves: 2.8 m.",
@@ -7745,7 +7398,7 @@
       "source": "Open-Meteo Marine",
       "status": "Elevated temperatures"
     },
-    "id": "3d5b8340b5903d26",
+    "id": "530563309340ff81",
     "la": 74.0,
     "lo": -5.0,
     "media": [],
@@ -7758,7 +7411,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (very small) — 2025 VG5 (~12–30 m). Closest approach: 6,967,657 km (18.13 lunar distances) at 4.9 km/s. Approach time: 2026-11-13T03:15:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -7808,7 +7461,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (very small) — 2026 VY (~14–36 m). Closest approach: 7,039,125 km (18.31 lunar distances) at 6.5 km/s. Approach time: 2026-11-11T10:54:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -7858,7 +7511,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (small) — 2012 YD7 (~37–92 m). Closest approach: 7,120,799 km (18.52 lunar distances) at 7.5 km/s. Approach time: 2026-11-10T20:05:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -7908,7 +7561,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:05+00:00",
+    "at": "2026-11-08T20:12:05+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Routine pass (very small) — 2025 UF5 (~8–19 m). Closest approach: 7,229,844 km (18.81 lunar distances) at 1.9 km/s. Approach time: 2026-11-09T21:06:00+00:00. A close approach listing is not itself an impact prediction.",
@@ -7958,7 +7611,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:04+00:00",
+    "at": "2026-11-08T20:12:04+00:00",
     "causal": null,
     "cf": 0.9,
     "d": "Volcanic Alert Level 1. Aviation colour code: Green. Current state: minor volcanic unrest. Minor volcanic unrest.. Hazards: Volcanic unrest hazards.",
@@ -8004,7 +7657,7 @@
           "provider_event_record"
         ],
         "freshness": "live",
-        "latest_evidence_at": "2026-11-08T12:12:04+00:00",
+        "latest_evidence_at": "2026-11-08T20:12:04+00:00",
         "limitations": [
           "No matched humanitarian situation report is attached.",
           "Independent corroboration is limited in the current evidence packet."
@@ -8018,7 +7671,7 @@
         "strength": "single-source",
         "visual_record_count": 0
       },
-      "generated_at": "2026-11-08T12:20:29+00:00",
+      "generated_at": "2026-11-08T20:22:50+00:00",
       "impact": "Reported hazards include Volcanic unrest hazards.. Aviation, communities and access routes may be affected depending on the observed activity and wind direction.",
       "mode": "deterministic_evidence_synthesis",
       "model_generated": false,
@@ -8049,7 +7702,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:14+00:00",
+    "at": "2026-11-08T20:13:15+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Barents Sea (Arctic inflow): avg SST 0.3°C (anomaly -0.7°C). Within expected range. Atlantic water gateway into the Arctic. Warming here accelerates ice loss. Waves: 3.2 m.",
@@ -8065,7 +7718,7 @@
       "source": "Open-Meteo Marine",
       "status": "Within expected range"
     },
-    "id": "e3fea8c6666841b7",
+    "id": "b292c852b06720cf",
     "la": 78.0,
     "lo": 35.0,
     "media": [],
@@ -8078,7 +7731,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:14+00:00",
+    "at": "2026-11-08T20:13:15+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Beaufort Sea (Arctic): avg SST -1.5°C (anomaly -1.5°C). Within expected range. Pacific-side Arctic. Historically perennial ice, now seasonal.",
@@ -8094,7 +7747,7 @@
       "source": "Open-Meteo Marine",
       "status": "Within expected range"
     },
-    "id": "362d8c623cc5b0ba",
+    "id": "9dfe1dd4cab1cb2d",
     "la": 72.0,
     "lo": -145.0,
     "media": [],
@@ -8107,7 +7760,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:14+00:00",
+    "at": "2026-11-08T20:13:15+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Antarctic Peninsula (Weddell): avg SST -0.8°C (anomaly -0.8°C). Within expected range. Most rapidly warming polar region. Key ice shelf stability zone. Waves: 2.2 m.",
@@ -8123,7 +7776,7 @@
       "source": "Open-Meteo Marine",
       "status": "Within expected range"
     },
-    "id": "2debffac31e918e0",
+    "id": "c9ab3e0da4f005ca",
     "la": -64.0,
     "lo": -60.0,
     "media": [],
@@ -8136,7 +7789,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:14+00:00",
+    "at": "2026-11-08T20:13:15+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Ross Sea (Antarctica): avg SST -1.7°C (anomaly -0.7°C). Within expected range. Southern Ocean — Antarctic bottom water formation region.",
@@ -8152,7 +7805,7 @@
       "source": "Open-Meteo Marine",
       "status": "Within expected range"
     },
-    "id": "b75cc6e67c895766",
+    "id": "10d43fc13a18b17b",
     "la": -75.0,
     "lo": 175.0,
     "media": [],
@@ -8165,7 +7818,7 @@
     "until": null
   },
   {
-    "at": "2026-11-08T12:12:14+00:00",
+    "at": "2026-11-08T20:13:15+00:00",
     "causal": null,
     "cf": 0.75,
     "d": "Baffin Bay (Canadian Arctic): avg SST 0.4°C (anomaly -0.6°C). Within expected range. Northwest Passage approach. Ice-free season lengthening. Waves: 2.9 m.",
@@ -8181,7 +7834,7 @@
       "source": "Open-Meteo Marine",
       "status": "Within expected range"
     },
-    "id": "663146b1821266f8",
+    "id": "b9acd28e9ad9b199",
     "la": 70.0,
     "lo": -60.0,
     "media": [],
