@@ -544,6 +544,34 @@ jobs:
         with:
           path: _site
 
+      - name: Wait for Pages artifact to appear in GitHub Actions API
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 18); do
+            count=$(curl --fail --silent --show-error --location \
+              -H "Authorization: Bearer $GH_TOKEN" \
+              -H "Accept: application/vnd.github+json" \
+              "https://api.github.com/repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}/artifacts?per_page=100" \
+              | python3 -c "import json,sys; print(sum(x.get('name') == 'github-pages' for x in json.load(sys.stdin).get('artifacts', [])))")
+            echo "Pages artifact index attempt $i: $count matching artifacts"
+            if [[ "$count" == "1" ]]; then
+              sleep 10
+              break
+            fi
+            if [[ "$count" -gt 1 ]]; then
+              echo "More than one Pages artifact was indexed; refusing ambiguous deploy" >&2
+              exit 1
+            fi
+            if [[ "$i" == "18" ]]; then
+              echo "Pages artifact did not appear in time; keeping previous website" >&2
+              exit 1
+            fi
+            sleep 5
+          done
+
       - name: Deploy
         id: deployment
         uses: actions/deploy-pages@v4
