@@ -36,7 +36,7 @@ const routes=['/','/prometheus/','/prometheus-research/','/environmental/','/bio
   '/physical-systems/','/about/','/chathams/','/current-research/',
   '/computational-biology-lab/','/physical-intelligence/','/weather-lab/',
   '/subterranean/','/forecast-ledger/'];
-const viewports=[['phone',390,844],['tablet',820,1080],['desktop',1440,900]];
+const viewports=[['phone',390,844],['tablet',820,1080],['desktop',1440,900],['wide-desktop',1792,900]];
 await mkdir(screenshotDir,{recursive:true});
 let browser;
 try {
@@ -81,12 +81,37 @@ try {
         assert.ok(await hero.count(),device+' homepage hero artwork absent');
         await hero.evaluate(el=>el.decode());
         assert.ok(await hero.evaluate(el=>el.naturalWidth>300),device+' hero failed to load');
+        if(width>=1120) {
+          const geometry=await page.evaluate(()=>{
+            const heading=document.querySelector('.px-home-hero-layout h1');
+            const span=heading?.querySelector('span');
+            const figure=document.querySelector('.px-home-hero-layout .px-cinema-home');
+            if(!heading || !span || !figure)return null;
+            const range=document.createRange();
+            range.selectNodeContents(span);
+            const text=range.getBoundingClientRect();
+            const art=figure.getBoundingClientRect();
+            return {titleRight:text.right,imageLeft:art.left,
+              imageWidth:art.width,imageHeight:art.height};
+          });
+          assert.ok(geometry,device+' hero layout missing');
+          assert.ok(geometry.titleRight<geometry.imageLeft-8,
+            device+' hero headline overlaps illustration: '+JSON.stringify(geometry));
+          assert.ok(geometry.imageWidth>490,
+            device+' hero art too narrow: '+JSON.stringify(geometry));
+          assert.ok(Math.abs(geometry.imageWidth/geometry.imageHeight-16/9)<.05,
+            device+' hero art must preserve its 16:9 aspect ratio: '+JSON.stringify(geometry));
+        }
       }
       if(route==='/prometheus-research/' || route==='/environmental/' ||
          route==='/weather-lab/' || route==='/subterranean/' ||
          route==='/forecast-ledger/') {
         assert.ok(await page.locator('[data-live-evidence]').count()>0,
           device+' '+route+' must expose a dated evidence panel');
+      }
+      if(route==='/subterranean/' || route==='/subterranean-lab/') {
+        assert.equal(await page.locator('a[href*="/public-research/precursor.json"]').count(),0,
+          device+' raw precursor JSON link must not be in public page');
       }
       assert.deepEqual(failures,[],device+' '+route+' local 404 assets');
       const name=route==='/'?'home':route.split('/')[1];
