@@ -20,7 +20,7 @@ jobs:
       - name: Checkout pinned redesign without production branch changes
         uses: actions/checkout@v4
         with:
-          ref: REDESIGN_COMMIT_PIN
+          ref: 06ade483ef11e2cd6c795b04a09e80dc1680e8c4
           path: .site-redesign
           persist-credentials: false
       - name: Build offline static artifact and preserve former evidence pages
