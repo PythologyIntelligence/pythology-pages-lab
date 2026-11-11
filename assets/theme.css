@@ -282,3 +282,31 @@ body.px-page a:focus-visible,button:focus-visible{outline:3px solid var(--px-gol
 /* preserved source chart */
 .px-detail-research-chart{max-width:940px;margin:25px 0 15px;border-radius:20px;background:linear-gradient(145deg,#06243a,#083c44);padding:20px;border:1px solid #376171}
 .px-detail-research-chart svg{display:block;width:100%;height:auto}
+
+/* Desktop-only homepage balance: keep the headline clear of the cinematic art.
+   Tablet and mobile retain the reviewed layout unchanged. */
+@media (min-width:1120px) {
+  .px-home-hero-layout {
+    max-width: 1430px !important;
+    gap: clamp(36px,3vw,52px) !important;
+  }
+  .px-home-hero-layout > div:first-child {
+    flex: 1.06 1 0 !important;
+    min-width: 0;
+  }
+  .px-home-hero-layout > div:nth-child(2) {
+    flex: 1 1 0 !important;
+    min-width: 0;
+  }
+  .px-home-hero-layout h1 {
+    font-size: clamp(52px,3.8vw,68px) !important;
+    line-height: 1.08 !important;
+  }
+  .px-home-hero-layout .px-cinema-home {
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .px-home-hero-layout .px-cinema-home > img {
+    object-fit: contain;
+  }
+}
