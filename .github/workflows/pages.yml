@@ -476,7 +476,7 @@ jobs:
       - name: Checkout reviewed site design for artifact-only overlay
         uses: actions/checkout@v4
         with:
-          ref: 06ade483ef11e2cd6c795b04a09e80dc1680e8c4
+          ref: 714872f8f3ca528c188d52fc3c19cba9d38b197b
           path: .site-redesign
           persist-credentials: false
 
