@@ -471,6 +471,26 @@ jobs:
           grep -q 'noindex,nofollow,noarchive' _site/prometheus-private.html
           echo "Private Prometheus control centre staged."
 
+      # Run the existing original-site build and scientific safety checks first.
+      # Only the Pages artifact receives the pinned redesign; main HTML stays intact.
+      - name: Checkout reviewed site design for artifact-only overlay
+        uses: actions/checkout@v4
+        with:
+          ref: 06ade483ef11e2cd6c795b04a09e80dc1680e8c4
+          path: .site-redesign
+          persist-credentials: false
+
+      - name: Overlay public redesign; preserve the detailed legacy research views
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 .site-redesign/scripts/apply-redesign.py _site .site-redesign
+          node --check .site-redesign/assets/site.js
+          node --check .site-redesign/assets/live-evidence.js
+          test -s _site/archive-research/precursor-research.html
+          test -s _site/assets/illustrations/home_page.jpeg
+          test -s _site/forecast-ledger.html
+
       - name: Validate and stage search and LinkedIn discovery metadata
         shell: bash
         run: |
@@ -498,14 +518,14 @@ jobs:
           grep -Fq 'href="weather-lab/"' _site/enviroarc.html
           echo 'Clean public addresses are staged; legacy .html documents preserved.'
 
-      - name: Check mobile tablet desktop layouts and actual menu click-throughs
+      - name: Check new phone tablet desktop layouts and actual menu click-throughs
         shell: bash
         run: |
           set -euo pipefail
           npm install --prefix "$RUNNER_TEMP/pythology-browser-qa" --no-save --ignore-scripts --no-audit --no-fund playwright-core@1.56.1
           PYTHOLOGY_PLAYWRIGHT_PATH="$RUNNER_TEMP/pythology-browser-qa/node_modules/playwright-core" \
-            node scripts/test-responsive-layout.mjs _site "$RUNNER_TEMP/pythology-responsive"
-          echo 'Real Chromium phone/tablet/desktop navigation and screenshot checks passed.'
+            node .site-redesign/scripts/test-redesign-responsive.mjs _site "$RUNNER_TEMP/pythology-responsive"
+          echo 'Chromium phone/tablet/desktop navigation, artwork and dated evidence checks passed.'
 
       - name: Save review screenshots of phone tablet desktop layouts
         if: always()

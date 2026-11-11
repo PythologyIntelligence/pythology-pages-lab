@@ -1,0 +1,61 @@
+name: Pythology redesign release preflight
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - '.github/workflows/pages.yml'
+      - '.github/workflows/redesign-release-preflight.yml'
+      - 'scripts/build-clean-urls.py'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  release-preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout deploy controller proposal
+        uses: actions/checkout@v4
+      - name: Checkout pinned redesign without production branch changes
+        uses: actions/checkout@v4
+        with:
+          ref: 06ade483ef11e2cd6c795b04a09e80dc1680e8c4
+          path: .site-redesign
+          persist-credentials: false
+      - name: Build offline static artifact and preserve former evidence pages
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          cp -a ./*.html ./*.css ./*.js _site/
+          cp -a 'Logo (2).jpeg' _site/
+          mkdir -p _site/data
+          cp -a data/*.json _site/data/
+          cp -a png_images _site/
+          python3 .site-redesign/scripts/apply-redesign.py _site .site-redesign
+          node --check .site-redesign/assets/live-evidence.js
+          node --check .site-redesign/assets/site.js
+          node --check .site-redesign/scripts/test-redesign-responsive.mjs
+          python3 -m py_compile .site-redesign/scripts/apply-redesign.py
+          python3 scripts/build-site-discovery.py _site
+          python3 scripts/build-clean-urls.py _site
+          test -s _site/archive-research/environmental.html
+          test -s _site/forecast-ledger/index.html
+          test -s _site/subterranean-lab/index.html
+      - name: Install browser test tools
+        run: |
+          npm install --prefix "$RUNNER_TEMP/pythology-redesign-qa" --no-save --ignore-scripts --no-audit --no-fund playwright-core@1.56.1
+      - name: Check phone tablet desktop navigation, artwork, and evidence links
+        env:
+          PYTHOLOGY_PLAYWRIGHT_PATH: ${{ runner.temp }}/pythology-redesign-qa/node_modules/playwright-core
+        run: |
+          set -euo pipefail
+          node .site-redesign/scripts/test-redesign-responsive.mjs _site "$RUNNER_TEMP/pythology-redesign-screenshots"
+      - name: Attach review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: redesign-review-phone-tablet-desktop
+          path: ${{ runner.temp }}/pythology-redesign-screenshots
+          if-no-files-found: ignore
+          retention-days: 7
