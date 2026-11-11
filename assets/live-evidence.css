@@ -1,0 +1,14 @@
+/* Read-only evidence panels for the cinematic redesign. */
+.px-live-section{background:#071c2d;color:#f4f8fa}
+.px-live-section h2{font:700 clamp(27px,3.5vw,43px)/1.2 'Montserrat',system-ui,sans-serif;color:#fff;margin:14px 0}
+.px-live-section .px-tag{color:#e8be53}
+.px-live-intro{max-width:900px;color:#c4d8e5;line-height:1.7;margin-bottom:30px}
+.px-live-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px;margin:24px 0}
+.px-live-card{background:#0e3047;border:1px solid #3f6071;border-radius:18px;padding:25px;min-width:0}
+.px-live-card h3{font:700 19px/1.35 'Montserrat',system-ui,sans-serif;color:#fff;margin:0 0 16px}
+.px-live-card p{font-size:15px;line-height:1.6;color:#dbe9f1;overflow-wrap:anywhere}
+.px-live-card .px-live-state{font-size:13px;font-weight:800;letter-spacing:.035em;color:#f2cc77}
+.px-live-card[data-state="verified"] .px-live-state{color:#a3e6d7}
+.px-live-date{font-size:13px!important;color:#b2c6d1!important}
+.px-live-section a{color:#c5ebff;text-underline-offset:4px}
+@media(max-width:720px){.px-live-grid{grid-template-columns:1fr}.px-live-card{padding:22px}}
