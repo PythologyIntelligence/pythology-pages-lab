@@ -1,0 +1,1184 @@
+{
+  "generated_at": "2026-11-17T17:35:02+00:00",
+  "generated_at_nz": "2026-11-18T06:35:02+13:00",
+  "hydrology": {
+    "note": "River and rainfall gauge ingestion will be added region by region; forecast-only rainfall must not be presented as observed flooding.",
+    "status": "planned_region_integrations"
+  },
+  "local_date": "2026-11-18",
+  "map": {
+    "basis": "Leaflet/OpenStreetMap shell cloned from the Pythology Marine NZ map; machine reasoning uses the same coordinates and locality labels stored in this snapshot.",
+    "url": "https://www.pythology.co.nz/earthnet-nz-intelligence.html"
+  },
+  "ocean": {
+    "baseline_guard": "SST anomaly values use EarthNet's current heuristic reference baselines and are context signals, not a formal climatological anomaly product.",
+    "errors": [],
+    "regions": [
+      {
+        "anomaly_class": "EXTREME warm anomaly",
+        "avg_current_ms": 1.43,
+        "avg_sst_c": 30.28,
+        "context": "Core ENSO monitoring region. SST anomaly here defines El Niño/La Niña state.",
+        "latitude": 0.0,
+        "longitude": -140.0,
+        "max_wave_m": 2.48,
+        "name": "Equatorial Pacific (Niño 3.4)",
+        "source": "Open-Meteo Marine",
+        "sst_anomaly_c": 4.28
+      },
+      {
+        "anomaly_class": "warm anomaly",
+        "avg_current_ms": 0.9,
+        "avg_sst_c": 29.55,
+        "context": "Typhoon genesis region. SST above 27°C supports tropical cyclone development.",
+        "latitude": 10.0,
+        "longitude": 140.0,
+        "max_wave_m": 1.92,
+        "name": "Western Pacific Warm Pool",
+        "source": "Open-Meteo Marine",
+        "sst_anomaly_c": 0.55
+      },
+      {
+        "anomaly_class": "significant warm anomaly",
+        "avg_current_ms": 0.45,
+        "avg_sst_c": 16.03,
+        "context": "Regional marine conditions near NZ. Marine heatwaves affect fisheries and weather.",
+        "latitude": -40.0,
+        "longitude": 165.0,
+        "max_wave_m": 3.56,
+        "name": "Tasman Sea / NZ",
+        "source": "Open-Meteo Marine",
+        "sst_anomaly_c": 2.03
+      },
+      {
+        "anomaly_class": "warm anomaly",
+        "avg_current_ms": 3.03,
+        "avg_sst_c": 4.94,
+        "context": "Antarctic Circumpolar Current gateway. Temperature and current signals.",
+        "latitude": -58.0,
+        "longitude": -65.0,
+        "max_wave_m": 4.16,
+        "name": "Southern Ocean (Drake Passage)",
+        "source": "Open-Meteo Marine",
+        "sst_anomaly_c": 0.94
+      }
+    ]
+  },
+  "planetary_storms": {
+    "note": "Dedicated cyclone/hurricane/typhoon track, intensity and SST-support ingestion is the next global Prometheus acquisition layer.",
+    "status": "next_layer"
+  },
+  "prometheus_interpretation": [
+    "GeoNet recorded 47 usable NZ earthquake catalogue events in the last 24 hours; the largest was M5.7.",
+    "The largest spatial concentration contains 7 events around Hokitika; this is logged as a concentration, not a precursor claim.",
+    "No daily GeoNet volcanic status change was detected from the previous stored state.",
+    "No NZ forecast point crossed Prometheus's current 40 mm / 48 h rainfall-watch threshold."
+  ],
+  "research_only": true,
+  "schema": "prometheus.aotearoa.daily-state.v0.1",
+  "seismic": {
+    "activity_concentrations": [
+      {
+        "centroid": {
+          "latitude": -43.0511,
+          "longitude": 171.631
+        },
+        "count": 7,
+        "interpretation": "Activity concentration only; no predictive meaning assigned.",
+        "largest_magnitude": 5.66,
+        "magnitude_bins": {
+          "0_0_to_0_9": 0,
+          "1_0_to_1_9": 1,
+          "2_0_to_2_9": 3,
+          "3_0_to_3_9": 2,
+          "4_0_plus": 1,
+          "lt_0": 0
+        },
+        "mean_depth_km": 5.0,
+        "mean_magnitude": 3.12,
+        "nearest_locality": "Hokitika"
+      },
+      {
+        "centroid": {
+          "latitude": -39.7797,
+          "longitude": 176.7146
+        },
+        "count": 5,
+        "interpretation": "Activity concentration only; no predictive meaning assigned.",
+        "largest_magnitude": 2.34,
+        "magnitude_bins": {
+          "0_0_to_0_9": 0,
+          "1_0_to_1_9": 3,
+          "2_0_to_2_9": 2,
+          "3_0_to_3_9": 0,
+          "4_0_plus": 0,
+          "lt_0": 0
+        },
+        "mean_depth_km": 34.5,
+        "mean_magnitude": 1.83,
+        "nearest_locality": "Hastings"
+      }
+    ],
+    "automatic_or_unreviewed_count": 0,
+    "depth_bins": {
+      "10_to_29_km": 13,
+      "30_to_69_km": 13,
+      "70_km_plus": 6,
+      "lt_10_km": 15
+    },
+    "event_count": 47,
+    "events": [
+      {
+        "depth_km": 41.915767669677734,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.130973816,
+        "locality": "Wairoa",
+        "locality_distance_km": 28.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 177.723297119,
+        "magnitude": 2.7274348332011877,
+        "public_id": "2026p866830",
+        "quality": null,
+        "status": "preliminary",
+        "time": "2026-11-17T17:27:20.679Z"
+      },
+      {
+        "depth_km": 37.88296890258789,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.277133942,
+        "locality": "Ōpōtiki",
+        "locality_distance_km": 29.9,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 177.315582275,
+        "magnitude": 2.8502170045048776,
+        "public_id": "2026p866761",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T16:50:44.457Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.583362579,
+        "locality": "Franz Josef",
+        "locality_distance_km": 34.0,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 170.507904053,
+        "magnitude": 2.074583289606325,
+        "public_id": "2026p866683",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T16:08:53.422Z"
+      },
+      {
+        "depth_km": 28.538740158081055,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.868904114,
+        "locality": "Gisborne",
+        "locality_distance_km": 24.7,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 177.915924072,
+        "magnitude": 1.9305836325921597,
+        "public_id": "2026p866679",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T16:06:57.341Z"
+      },
+      {
+        "depth_km": 33.210205078125,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.69134903,
+        "locality": "Hastings",
+        "locality_distance_km": 27.1,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.530822754,
+        "magnitude": 1.3535780925401955,
+        "public_id": "2026p866671",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T16:02:37.178Z"
+      },
+      {
+        "depth_km": 32.41926193237305,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.852237701,
+        "locality": "Waipukurau",
+        "locality_distance_km": 24.0,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.767547607,
+        "magnitude": 2.222867974807211,
+        "public_id": "2026p866608",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T15:28:51.101Z"
+      },
+      {
+        "depth_km": 37.164222717285156,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.968467712,
+        "locality": "Waipukurau",
+        "locality_distance_km": 9.9,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.666900635,
+        "magnitude": 1.3692238667789602,
+        "public_id": "2026p866585",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T15:16:52.820Z"
+      },
+      {
+        "depth_km": 5.305108547210693,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.400829315,
+        "locality": "Rotorua",
+        "locality_distance_km": 29.6,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.213195801,
+        "magnitude": 1.3697449932886883,
+        "public_id": "2026p866522",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T14:43:24.381Z"
+      },
+      {
+        "depth_km": 294.60430908203125,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -32.53578949,
+        "locality": "Ruatoria",
+        "locality_distance_km": 629.6,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": -179.425628662,
+        "magnitude": 5.167103014932669,
+        "public_id": "2026p866480",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T14:20:31.524Z"
+      },
+      {
+        "depth_km": 19.235706329345703,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.800582886,
+        "locality": "Gisborne",
+        "locality_distance_km": 17.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 178.111221313,
+        "magnitude": 1.7927597601339513,
+        "public_id": "2026p866406",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T13:41:35.780Z"
+      },
+      {
+        "depth_km": 36.617919921875,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -41.178661346,
+        "locality": "Picton",
+        "locality_distance_km": 20.2,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 173.809539795,
+        "magnitude": 1.8722688837387054,
+        "public_id": "2026p866398",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T13:36:58.424Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.012447357,
+        "locality": "Hokitika",
+        "locality_distance_km": 74.1,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 171.781478882,
+        "magnitude": 2.817662693643866,
+        "public_id": "2026p866397",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T13:36:50.571Z"
+      },
+      {
+        "depth_km": 88.85423278808594,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.689659119,
+        "locality": "Whanganui",
+        "locality_distance_km": 32.7,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 174.827484131,
+        "magnitude": 1.8198950785222712,
+        "public_id": "2026p866310",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T12:50:14.596Z"
+      },
+      {
+        "depth_km": 28.13304901123047,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.931621552,
+        "locality": "Whanganui",
+        "locality_distance_km": 13.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 175.203994751,
+        "magnitude": 2.4128510355403803,
+        "public_id": "2026p866240",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T12:13:01.546Z"
+      },
+      {
+        "depth_km": 6.471877574920654,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -42.802593231,
+        "locality": "Hanmer Springs",
+        "locality_distance_km": 31.8,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 172.754928589,
+        "magnitude": 2.7566628760306973,
+        "public_id": "2026p866235",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T12:10:05.670Z"
+      },
+      {
+        "depth_km": 128.01731872558594,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.854442596,
+        "locality": "Hāwera",
+        "locality_distance_km": 41.1,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 173.945281982,
+        "magnitude": 2.3691814602171597,
+        "public_id": "2026p866222",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T12:03:17.954Z"
+      },
+      {
+        "depth_km": 13.202641487121582,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -46.243011475,
+        "locality": "Invercargill",
+        "locality_distance_km": 45.5,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 167.814071655,
+        "magnitude": 2.7181403225885106,
+        "public_id": "2026p866217",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T12:00:47.018Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.014755249,
+        "locality": "Hokitika",
+        "locality_distance_km": 73.2,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 171.76751709,
+        "magnitude": 2.8604690887862154,
+        "public_id": "2026p866171",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T11:36:11.043Z"
+      },
+      {
+        "depth_km": 33.9232177734375,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.728485107,
+        "locality": "Hastings",
+        "locality_distance_km": 11.3,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.776748657,
+        "magnitude": 1.8743708710951392,
+        "public_id": "2026p866086",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T10:51:04.163Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.0376091,
+        "locality": "Hokitika",
+        "locality_distance_km": 75.2,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 171.778381348,
+        "magnitude": 3.1614338543858316,
+        "public_id": "2026p866073",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T10:44:03.984Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.013828278,
+        "locality": "Hokitika",
+        "locality_distance_km": 73.8,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 171.775863647,
+        "magnitude": 5.662732414006777,
+        "public_id": "2026p866048",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T10:30:48.708Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.093822479,
+        "locality": "Hokitika",
+        "locality_distance_km": 57.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 171.447540283,
+        "magnitude": 1.7521416753615286,
+        "public_id": "2026p865990",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T09:59:29.548Z"
+      },
+      {
+        "depth_km": 23.096845626831055,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -41.071876526,
+        "locality": "Wellington",
+        "locality_distance_km": 35.7,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 174.458221436,
+        "magnitude": 1.8207621659958244,
+        "public_id": "2026p865924",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T09:24:39.544Z"
+      },
+      {
+        "depth_km": 13.041940689086914,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -40.602497101,
+        "locality": "Palmerston North",
+        "locality_distance_km": 50.3,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.110183716,
+        "magnitude": 1.375935467180265,
+        "public_id": "2026p865869",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T08:55:25.364Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.60597229,
+        "locality": "Taupō",
+        "locality_distance_km": 9.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.032928467,
+        "magnitude": 2.11668083747838,
+        "public_id": "2026p865815",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T08:26:41.679Z"
+      },
+      {
+        "depth_km": 18.628597259521484,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.272388458,
+        "locality": "National Park",
+        "locality_distance_km": 20.2,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 175.196258545,
+        "magnitude": 2.0752432405996095,
+        "public_id": "2026p865703",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T07:26:55.123Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -44.414505005,
+        "locality": "Wānaka",
+        "locality_distance_km": 73.3,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 168.300720215,
+        "magnitude": 1.5358820805356939,
+        "public_id": "2026p865642",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T06:54:12.116Z"
+      },
+      {
+        "depth_km": 97.73209381103516,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -41.213249207,
+        "locality": "Motueka",
+        "locality_distance_km": 12.2,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 173.050964355,
+        "magnitude": 1.62756564255515,
+        "public_id": "2026p865598",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T06:31:08.548Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.284168243,
+        "locality": "Franz Josef",
+        "locality_distance_km": 29.1,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 170.51234436,
+        "magnitude": 2.3010136003450334,
+        "public_id": "2026p865591",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T06:26:53.504Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.092002869,
+        "locality": "Hokitika",
+        "locality_distance_km": 56.6,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 171.43661499,
+        "magnitude": 2.3202755044486487,
+        "public_id": "2026p865583",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T06:22:57.831Z"
+      },
+      {
+        "depth_km": 19.61357879638672,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.533485413,
+        "locality": "Gisborne",
+        "locality_distance_km": 15.8,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 177.941635132,
+        "magnitude": 1.6339172748579875,
+        "public_id": "2026p865532",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T05:55:37.634Z"
+      },
+      {
+        "depth_km": 21.44121742248535,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.50951004,
+        "locality": "Gisborne",
+        "locality_distance_km": 19.0,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 177.920333862,
+        "magnitude": 1.9967608586794958,
+        "public_id": "2026p865499",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T05:38:12.949Z"
+      },
+      {
+        "depth_km": 67.69776153564453,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -41.903728485,
+        "locality": "Westport",
+        "locality_distance_km": 44.6,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 172.10118103,
+        "magnitude": 2.2489333861850453,
+        "public_id": "2026p865410",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T04:50:27.727Z"
+      },
+      {
+        "depth_km": 59.58673095703125,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -40.480060577,
+        "locality": "Picton",
+        "locality_distance_km": 91.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 174.184585571,
+        "magnitude": 2.2602831659088087,
+        "public_id": "2026p865156",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T02:35:19.691Z"
+      },
+      {
+        "depth_km": 27.99976921081543,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -40.484249115,
+        "locality": "Palmerston North",
+        "locality_distance_km": 17.5,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 175.730224609,
+        "magnitude": 0.9401297170675422,
+        "public_id": "2026p865074",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T01:52:02.504Z"
+      },
+      {
+        "depth_km": 41.81256103515625,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -40.291049957,
+        "locality": "Palmerston North",
+        "locality_distance_km": 44.9,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.133834839,
+        "magnitude": 2.173268490899081,
+        "public_id": "2026p865047",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T01:37:20.381Z"
+      },
+      {
+        "depth_km": 143.5838623046875,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -37.314151764,
+        "locality": "Whakatāne",
+        "locality_distance_km": 72.3,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.868240356,
+        "magnitude": 2.8815806924957363,
+        "public_id": "2026p864907",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-17T00:22:46.478Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -43.093509674,
+        "locality": "Hokitika",
+        "locality_distance_km": 56.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 171.429550171,
+        "magnitude": 3.250240720788913,
+        "public_id": "2026p864828",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T23:40:40.664Z"
+      },
+      {
+        "depth_km": 7.260491371154785,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -41.630809784,
+        "locality": "Blenheim",
+        "locality_distance_km": 26.5,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 174.237884521,
+        "magnitude": 1.5223264235068934,
+        "public_id": "2026p864812",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T23:31:37.904Z"
+      },
+      {
+        "depth_km": 41.103389739990234,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.534454346,
+        "locality": "Waiouru",
+        "locality_distance_km": 6.8,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 175.639450073,
+        "magnitude": 1.750407349380566,
+        "public_id": "2026p864778",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T23:14:08.453Z"
+      },
+      {
+        "depth_km": 16.277719497680664,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -40.83032608,
+        "locality": "Masterton",
+        "locality_distance_km": 13.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 175.660446167,
+        "magnitude": 1.7290944061161866,
+        "public_id": "2026p864757",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T23:02:38.107Z"
+      },
+      {
+        "depth_km": 35.53984832763672,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -39.657978058,
+        "locality": "Hastings",
+        "locality_distance_km": 2.3,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 176.830749512,
+        "magnitude": 2.3399049307790647,
+        "public_id": "2026p864669",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T22:15:59.784Z"
+      },
+      {
+        "depth_km": 30.707889556884766,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -38.390594482,
+        "locality": "Ōpōtiki",
+        "locality_distance_km": 43.9,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 177.158843994,
+        "magnitude": 1.8192854103818008,
+        "public_id": "2026p864488",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T20:39:30.824Z"
+      },
+      {
+        "depth_km": 76.51447296142578,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -40.555709839,
+        "locality": "Picton",
+        "locality_distance_km": 82.0,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 174.096893311,
+        "magnitude": 1.8627602981135367,
+        "public_id": "2026p864475",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T20:32:45.913Z"
+      },
+      {
+        "depth_km": 15.965086936950684,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -41.561653137,
+        "locality": "Blenheim",
+        "locality_distance_km": 35.2,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 174.377853394,
+        "magnitude": 1.6124202037068878,
+        "public_id": "2026p864431",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T20:09:09.590Z"
+      },
+      {
+        "depth_km": 5.0,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -47.35149765,
+        "locality": "Bluff",
+        "locality_distance_km": 198.4,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 165.961685181,
+        "magnitude": 3.4681114144635607,
+        "public_id": "2026p864232",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T18:22:47.050Z"
+      },
+      {
+        "depth_km": 23.33749008178711,
+        "evaluation_mode": "manual",
+        "event_type": "earthquake",
+        "latitude": -41.17685318,
+        "locality": "Wellington",
+        "locality_distance_km": 18.7,
+        "locality_source": "Pythology NZ settlement fallback",
+        "longitude": 174.606430054,
+        "magnitude": 1.4617995649416011,
+        "public_id": "2026p864142",
+        "quality": null,
+        "status": "confirmed",
+        "time": "2026-11-16T17:35:10.689Z"
+      }
+    ],
+    "largest_magnitude": 5.66,
+    "magnitude_bins": {
+      "0_0_to_0_9": 1,
+      "1_0_to_1_9": 22,
+      "2_0_to_2_9": 19,
+      "3_0_to_3_9": 3,
+      "4_0_plus": 2,
+      "lt_0": 0
+    },
+    "research_guard": "All usable catalogue magnitudes are retained, including sub-M1 and negative magnitudes. Automatic detections are stored but not treated as equivalent to reviewed events. Activity concentrations are descriptive and carry no earthquake-prediction claim.",
+    "reviewed_count": 47,
+    "small_event_watch_areas": [
+      {
+        "centroid": {
+          "latitude": -38.3339,
+          "longitude": 177.2372
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 37.9,
+          "minimum": 30.7
+        },
+        "first_event_utc": "2026-11-16T20:39:30.824Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-11-17T16:50:44.457Z",
+        "magnitude_range": {
+          "maximum": 2.85,
+          "minimum": 1.82
+        },
+        "nearest_locality": "Ōpōtiki",
+        "public_ids": [
+          "2026p866761",
+          "2026p864488"
+        ]
+      },
+      {
+        "centroid": {
+          "latitude": -40.5179,
+          "longitude": 174.1407
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 76.5,
+          "minimum": 59.6
+        },
+        "first_event_utc": "2026-11-16T20:32:45.913Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-11-17T02:35:19.691Z",
+        "magnitude_range": {
+          "maximum": 2.26,
+          "minimum": 1.86
+        },
+        "nearest_locality": "Picton",
+        "public_ids": [
+          "2026p865156",
+          "2026p864475"
+        ]
+      },
+      {
+        "centroid": {
+          "latitude": -38.5034,
+          "longitude": 176.1231
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 5.3,
+          "minimum": 5.0
+        },
+        "first_event_utc": "2026-11-17T08:26:41.679Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-11-17T14:43:24.381Z",
+        "magnitude_range": {
+          "maximum": 2.12,
+          "minimum": 1.37
+        },
+        "nearest_locality": "Rotorua",
+        "public_ids": [
+          "2026p866522",
+          "2026p865815"
+        ]
+      },
+      {
+        "centroid": {
+          "latitude": -38.5215,
+          "longitude": 177.931
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 21.4,
+          "minimum": 19.6
+        },
+        "first_event_utc": "2026-11-17T05:38:12.949Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-11-17T05:55:37.634Z",
+        "magnitude_range": {
+          "maximum": 2.0,
+          "minimum": 1.63
+        },
+        "nearest_locality": "Gisborne",
+        "public_ids": [
+          "2026p865532",
+          "2026p865499"
+        ]
+      },
+      {
+        "centroid": {
+          "latitude": -38.8347,
+          "longitude": 178.0136
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 28.5,
+          "minimum": 19.2
+        },
+        "first_event_utc": "2026-11-17T13:41:35.780Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-11-17T16:06:57.341Z",
+        "magnitude_range": {
+          "maximum": 1.93,
+          "minimum": 1.79
+        },
+        "nearest_locality": "Gisborne",
+        "public_ids": [
+          "2026p866679",
+          "2026p866406"
+        ]
+      },
+      {
+        "centroid": {
+          "latitude": -41.1244,
+          "longitude": 174.5323
+        },
+        "count": 2,
+        "depth_range_km": {
+          "maximum": 23.3,
+          "minimum": 23.1
+        },
+        "first_event_utc": "2026-11-16T17:35:10.689Z",
+        "interpretation": "Descriptive small-event spatial repetition only; not an anomaly, precursor, or earthquake-prediction claim.",
+        "last_event_utc": "2026-11-17T09:24:39.544Z",
+        "magnitude_range": {
+          "maximum": 1.82,
+          "minimum": 1.46
+        },
+        "nearest_locality": "Wellington",
+        "public_ids": [
+          "2026p865924",
+          "2026p864142"
+        ]
+      }
+    ],
+    "small_event_watch_rule": {
+      "maximum_count": 3,
+      "maximum_magnitude": 3.0,
+      "meaning": "Shows 2–3 sub-M3 earthquakes linked within 30 km. Four-or-more event groups remain formal activity concentrations.",
+      "minimum_count": 2,
+      "radius_km": 30.0
+    },
+    "source": "GeoNet WFS quake catalogue",
+    "window": {
+      "end_utc": "2026-11-17T17:35:02+00:00",
+      "hours": 24,
+      "start_utc": "2026-11-16T17:35:02+00:00"
+    }
+  },
+  "volcanic": {
+    "changes": [],
+    "error": null,
+    "source": "GeoNet volcanic alert level feed",
+    "volcanoes": [
+      {
+        "activity": "Moderate to heightened volcanic unrest.",
+        "alert_level": 2,
+        "aviation_colour_code": "Yellow",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic unrest hazards, potential for eruption hazards.",
+        "latitude": -37.521,
+        "longitude": 177.183,
+        "name": "White Island",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "Minor volcanic unrest.",
+        "alert_level": 1,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic unrest hazards.",
+        "latitude": -39.281,
+        "longitude": 175.563,
+        "name": "Ruapehu",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -39.133318,
+        "longitude": 175.641727,
+        "name": "Tongariro",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -38.784,
+        "longitude": 175.896,
+        "name": "Taupo",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -39.298,
+        "longitude": 174.061,
+        "name": "Taranaki Maunga",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -38.093,
+        "longitude": 176.281,
+        "name": "Rotorua",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -29.254,
+        "longitude": -177.914,
+        "name": "Rangitāhua/Kermadec Islands",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -38.119,
+        "longitude": 176.501,
+        "name": "Okataina",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -35.395,
+        "longitude": 173.63,
+        "name": "Northland",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -39.156,
+        "longitude": 175.632,
+        "name": "Ngauruhoe",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -37.286,
+        "longitude": 176.251,
+        "name": "Mayor Island",
+        "source": "GeoNet"
+      },
+      {
+        "activity": "No volcanic unrest.",
+        "alert_level": 0,
+        "aviation_colour_code": "Green",
+        "changed_fields": [],
+        "changed_since_previous_daily_state": false,
+        "hazards": "Volcanic environment hazards.",
+        "latitude": -36.985,
+        "longitude": 174.77,
+        "name": "Auckland Volcanic Field",
+        "source": "GeoNet"
+      }
+    ]
+  },
+  "weather": {
+    "atmospheric_river": {
+      "reason": "A dedicated integrated-vapour-transport layer is the next atmospheric upgrade; rainfall is not labelled an atmospheric river by itself.",
+      "status": "not_yet_classified"
+    },
+    "errors": [
+      "Tauranga: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-37.687&longitude=176.165&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Auckland: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-36.85&longitude=174.764&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Taupō: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-38.685&longitude=176.07&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Whangārei: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-35.725&longitude=174.323&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Hamilton: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-37.787&longitude=175.279&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Rotorua: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-38.136&longitude=176.249&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Gisborne: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-38.662&longitude=178.018&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "New Plymouth: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-39.058&longitude=174.08&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Palmerston North: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-40.356&longitude=175.611&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Napier: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-39.493&longitude=176.912&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Wellington: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-41.286&longitude=174.776&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Whanganui: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-39.931&longitude=175.047&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Nelson: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-41.271&longitude=173.284&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Westport: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-41.752&longitude=171.603&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Christchurch: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-43.532&longitude=172.636&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Queenstown: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-45.031&longitude=168.662&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Dunedin: Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-45.878&longitude=170.502&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3",
+      "Invercargill: HTTPSConnectionPool(host='api.open-meteo.com', port=443): Max retries exceeded with url: /v1/forecast?latitude=-46.413&longitude=168.353&timezone=Pacific%2FAuckland&hourly=precipitation,precipitation_probability,wind_gusts_10m,relative_humidity_2m,pressure_msl&daily=precipitation_sum,precipitation_probability_max,wind_gusts_10m_max,temperature_2m_min,temperature_2m_max&forecast_days=3 (Caused by ConnectTimeoutError(<HTTPSConnection(host='api.open-meteo.com', port=443) at 0x2226866a390>, 'Connection to api.open-meteo.com timed out. (connect timeout=12)'))"
+    ],
+    "flooding_guard": "Rainfall watch is forecast-only context, not a flood warning. River/catchment sensor data is not yet included; check MetService, NEMA and council warnings before acting.",
+    "points": [],
+    "rainfall_watch_areas": [],
+    "strongest_wind_next_48h": [],
+    "wettest_next_48h": []
+  }
+}
