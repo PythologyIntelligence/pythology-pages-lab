@@ -1,0 +1,71 @@
+{
+  "candidate_signal_count": 4,
+  "depth_km": 5.0,
+  "event_id": "2026p866048",
+  "event_time": "2026-11-17T10:30:48.708000+00:00",
+  "findings": [
+    {
+      "control_count": 6,
+      "control_median": 0.19770438699223292,
+      "metric": "depth_trend_km_per_day",
+      "percentile": 0.0,
+      "plain_language": "Depth trend was lower than all 6 matched non-event windows.",
+      "target_value": -0.3596177598057308,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 34.5,
+      "metric": "event_count",
+      "percentile": 100.0,
+      "plain_language": "Earthquake count was higher than all 6 matched non-event windows.",
+      "target_value": 41.0,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 2.4642857142857144,
+      "metric": "events_per_day",
+      "percentile": 100.0,
+      "plain_language": "Earthquake rate was higher than all 6 matched non-event windows.",
+      "target_value": 2.9285714285714284,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 9.609352027828798,
+      "metric": "mean_depth_km",
+      "percentile": 100.0,
+      "plain_language": "Average depth was higher than all 6 matched non-event windows.",
+      "target_value": 12.253789808692002,
+      "unusual": true
+    }
+  ],
+  "historical_pattern_matches": [],
+  "historical_pattern_registry": {
+    "available": false,
+    "eligible_pattern_count": 0,
+    "version": null
+  },
+  "kind": "earthquake",
+  "locality": "Hokitika",
+  "magnitude": 5.662732414006777,
+  "methodology": {
+    "description": "Prometheus examined the 14 days preceding this qualifying event within 150 km and compared the measurements with matched non-event windows.",
+    "matched_non_event_windows": 6,
+    "radius_km": 150,
+    "window_days": 14
+  },
+  "observations": {
+    "b_value": null,
+    "b_value_guard": "catalogue completeness magnitude was not supplied",
+    "catalogue_event_count": 41,
+    "events_per_day": 2.9285714285714284,
+    "maximum_precursor_magnitude": 4.127394649586413
+  },
+  "official_url": "https://www.geonet.org.nz/earthquake/2026p866048",
+  "research_only": true,
+  "safety": "Retrospective research only. This is not an earthquake prediction or public warning. GeoNet and NEMA remain authoritative for public safety advice.",
+  "schema": "pythology.nz-triggered-research-case.v0.1",
+  "title": "M5.7 retrospective — Hokitika"
+}

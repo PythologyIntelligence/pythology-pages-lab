@@ -2,6 +2,77 @@
   "cases": [
     {
       "candidate_signal_count": 4,
+      "depth_km": 5.0,
+      "event_id": "2026p866048",
+      "event_time": "2026-11-17T10:30:48.708000+00:00",
+      "findings": [
+        {
+          "control_count": 6,
+          "control_median": 0.19770438699223292,
+          "metric": "depth_trend_km_per_day",
+          "percentile": 0.0,
+          "plain_language": "Depth trend was lower than all 6 matched non-event windows.",
+          "target_value": -0.3596177598057308,
+          "unusual": true
+        },
+        {
+          "control_count": 6,
+          "control_median": 34.5,
+          "metric": "event_count",
+          "percentile": 100.0,
+          "plain_language": "Earthquake count was higher than all 6 matched non-event windows.",
+          "target_value": 41.0,
+          "unusual": true
+        },
+        {
+          "control_count": 6,
+          "control_median": 2.4642857142857144,
+          "metric": "events_per_day",
+          "percentile": 100.0,
+          "plain_language": "Earthquake rate was higher than all 6 matched non-event windows.",
+          "target_value": 2.9285714285714284,
+          "unusual": true
+        },
+        {
+          "control_count": 6,
+          "control_median": 9.609352027828798,
+          "metric": "mean_depth_km",
+          "percentile": 100.0,
+          "plain_language": "Average depth was higher than all 6 matched non-event windows.",
+          "target_value": 12.253789808692002,
+          "unusual": true
+        }
+      ],
+      "historical_pattern_matches": [],
+      "historical_pattern_registry": {
+        "available": false,
+        "eligible_pattern_count": 0,
+        "version": null
+      },
+      "kind": "earthquake",
+      "locality": "Hokitika",
+      "magnitude": 5.662732414006777,
+      "methodology": {
+        "description": "Prometheus examined the 14 days preceding this qualifying event within 150 km and compared the measurements with matched non-event windows.",
+        "matched_non_event_windows": 6,
+        "radius_km": 150,
+        "window_days": 14
+      },
+      "observations": {
+        "b_value": null,
+        "b_value_guard": "catalogue completeness magnitude was not supplied",
+        "catalogue_event_count": 41,
+        "events_per_day": 2.9285714285714284,
+        "maximum_precursor_magnitude": 4.127394649586413
+      },
+      "official_url": "https://www.geonet.org.nz/earthquake/2026p866048",
+      "research_only": true,
+      "safety": "Retrospective research only. This is not an earthquake prediction or public warning. GeoNet and NEMA remain authoritative for public safety advice.",
+      "schema": "pythology.nz-triggered-research-case.v0.1",
+      "title": "M5.7 retrospective — Hokitika"
+    },
+    {
+      "candidate_signal_count": 4,
       "depth_km": 268.6524658203125,
       "event_id": "2026p776286",
       "event_time": "2026-10-15T05:25:34.163000+00:00",
@@ -143,47 +214,47 @@
       "title": "M5.3 retrospective — New Plymouth"
     }
   ],
-  "generated_at": "2026-10-15T11:17:17+00:00",
+  "generated_at": "2026-11-17T11:17:08+00:00",
   "latest": {
     "candidate_signal_count": 4,
-    "depth_km": 268.6524658203125,
-    "event_id": "2026p776286",
-    "event_time": "2026-10-15T05:25:34.163000+00:00",
+    "depth_km": 5.0,
+    "event_id": "2026p866048",
+    "event_time": "2026-11-17T10:30:48.708000+00:00",
     "findings": [
       {
         "control_count": 6,
-        "control_median": 186.0,
+        "control_median": 0.19770438699223292,
+        "metric": "depth_trend_km_per_day",
+        "percentile": 0.0,
+        "plain_language": "Depth trend was lower than all 6 matched non-event windows.",
+        "target_value": -0.3596177598057308,
+        "unusual": true
+      },
+      {
+        "control_count": 6,
+        "control_median": 34.5,
         "metric": "event_count",
         "percentile": 100.0,
         "plain_language": "Earthquake count was higher than all 6 matched non-event windows.",
-        "target_value": 257.0,
+        "target_value": 41.0,
         "unusual": true
       },
       {
         "control_count": 6,
-        "control_median": 13.285714285714286,
+        "control_median": 2.4642857142857144,
         "metric": "events_per_day",
         "percentile": 100.0,
         "plain_language": "Earthquake rate was higher than all 6 matched non-event windows.",
-        "target_value": 18.357142857142858,
+        "target_value": 2.9285714285714284,
         "unusual": true
       },
       {
         "control_count": 6,
-        "control_median": 11.316574587540629,
-        "metric": "log10_energy_proxy",
+        "control_median": 9.609352027828798,
+        "metric": "mean_depth_km",
         "percentile": 100.0,
-        "plain_language": "Combined seismic-energy proxy was higher than all 6 matched non-event windows.",
-        "target_value": 12.666208794908481,
-        "unusual": true
-      },
-      {
-        "control_count": 6,
-        "control_median": 4.019614708584168,
-        "metric": "maximum_magnitude",
-        "percentile": 100.0,
-        "plain_language": "Largest precursor-window magnitude was higher than all 6 matched non-event windows.",
-        "target_value": 5.227122786583538,
+        "plain_language": "Average depth was higher than all 6 matched non-event windows.",
+        "target_value": 12.253789808692002,
         "unusual": true
       }
     ],
@@ -194,8 +265,8 @@
       "version": null
     },
     "kind": "earthquake",
-    "locality": "Taumarunui",
-    "magnitude": 5.658060024388448,
+    "locality": "Hokitika",
+    "magnitude": 5.662732414006777,
     "methodology": {
       "description": "Prometheus examined the 14 days preceding this qualifying event within 150 km and compared the measurements with matched non-event windows.",
       "matched_non_event_windows": 6,
@@ -203,17 +274,17 @@
       "window_days": 14
     },
     "observations": {
-      "b_value": 0.9039251038345859,
-      "b_value_guard": null,
-      "catalogue_event_count": 257,
-      "events_per_day": 18.357142857142858,
-      "maximum_precursor_magnitude": 5.227122786583538
+      "b_value": null,
+      "b_value_guard": "catalogue completeness magnitude was not supplied",
+      "catalogue_event_count": 41,
+      "events_per_day": 2.9285714285714284,
+      "maximum_precursor_magnitude": 4.127394649586413
     },
-    "official_url": "https://www.geonet.org.nz/earthquake/2026p776286",
+    "official_url": "https://www.geonet.org.nz/earthquake/2026p866048",
     "research_only": true,
     "safety": "Retrospective research only. This is not an earthquake prediction or public warning. GeoNet and NEMA remain authoritative for public safety advice.",
     "schema": "pythology.nz-triggered-research-case.v0.1",
-    "title": "M5.7 retrospective — Taumarunui"
+    "title": "M5.7 retrospective — Hokitika"
   },
   "methodology": {
     "comparison": "matched non-event windows",
