@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-18T14:10:19.367826+00:00",
+  "generated_at_utc": "2026-11-18T20:10:19.337530+00:00",
   "historical_eruption_records_since_1960": 2248,
   "historical_volcanoes_catalogued": 1214,
   "instrumental_volcanoes_individually_verified": 0,
@@ -33,7 +33,7 @@
     {
       "country": "United States",
       "name": "Kilauea",
-      "notice_at_utc": "2026-11-17T18:31:38+00:00",
+      "notice_at_utc": "2026-11-18T18:45:06+00:00",
       "reported_alert_level": "ADVISORY"
     },
     {
