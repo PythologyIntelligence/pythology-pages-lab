@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-20T14:10:20.142261+00:00",
+  "generated_at_utc": "2026-11-20T20:10:19.716383+00:00",
   "historical_eruption_records_since_1960": 2248,
   "historical_volcanoes_catalogued": 1214,
   "instrumental_volcanoes_individually_verified": 0,
@@ -32,14 +32,14 @@
   "usgs_elevated_notice_examples": [
     {
       "country": "United States",
-      "name": "Ahyi",
-      "notice_at_utc": "2026-11-19T22:47:09+00:00",
+      "name": "Kilauea",
+      "notice_at_utc": "2026-11-20T19:00:03+00:00",
       "reported_alert_level": "ADVISORY"
     },
     {
       "country": "United States",
-      "name": "Kilauea",
-      "notice_at_utc": "2026-11-19T18:37:16+00:00",
+      "name": "Ahyi",
+      "notice_at_utc": "2026-11-19T22:47:09+00:00",
       "reported_alert_level": "ADVISORY"
     },
     {
@@ -51,6 +51,6 @@
   ],
   "usgs_official_recent_elevated_notices": 3,
   "volcanoes_matched_to_usgs_hans": 62,
-  "volcanoes_with_geographic_earthquake_associations": 62,
+  "volcanoes_with_geographic_earthquake_associations": 63,
   "volcanoes_with_validated_precursors": 0
 }
