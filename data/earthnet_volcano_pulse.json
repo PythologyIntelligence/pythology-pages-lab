@@ -22,7 +22,7 @@
         }
       ],
       "name": "Tongariro",
-      "observed_at": "2026-11-20T11:37:02+00:00",
+      "observed_at": "2026-11-20T23:37:22+00:00",
       "official_status": {
         "aviation_colour_code": "Green",
         "level": 0
@@ -36,7 +36,7 @@
       "volcano_id": "tongariro"
     }
   ],
-  "generated": "2026-11-20T11:38:04+00:00",
+  "generated": "2026-11-20T23:39:15+00:00",
   "research_only": true,
   "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
   "schema": "earthnet.volcano-pulse-web.v0.1"
