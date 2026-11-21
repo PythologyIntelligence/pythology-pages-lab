@@ -18,25 +18,25 @@
           "direction": "higher",
           "family": "volcanic seismicity",
           "score_sigma": null,
-          "summary": "1 reviewed events in 2 days · 2.4× guarded baseline rate"
+          "summary": "0 reviewed events in 2 days · 0.0× guarded baseline rate"
         }
       ],
       "name": "Tongariro",
-      "observed_at": "2026-11-21T11:37:02+00:00",
+      "observed_at": "2026-11-21T23:37:02+00:00",
       "official_status": {
         "aviation_colour_code": "Green",
         "level": 0
       },
       "research_only": true,
       "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
-      "summary": "volcanic seismicity: 1 reviewed events in 2 days · 2.4× guarded baseline rate",
+      "summary": "volcanic seismicity: 0 reviewed events in 2 days · 0.0× guarded baseline rate",
       "suppressed_families": [],
       "suppression_candidate": false,
       "title": "Volcanic activity change — Tongariro",
       "volcano_id": "tongariro"
     }
   ],
-  "generated": "2026-11-21T11:38:00+00:00",
+  "generated": "2026-11-21T23:37:55+00:00",
   "research_only": true,
   "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
   "schema": "earthnet.volcano-pulse-web.v0.1"
