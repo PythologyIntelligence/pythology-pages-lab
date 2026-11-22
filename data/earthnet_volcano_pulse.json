@@ -1,6 +1,6 @@
 {
   "active": true,
-  "alert_count": 1,
+  "alert_count": 2,
   "alerts": [
     {
       "candidate": false,
@@ -22,7 +22,7 @@
         }
       ],
       "name": "Tongariro",
-      "observed_at": "2026-11-21T23:37:02+00:00",
+      "observed_at": "2026-11-22T11:37:02+00:00",
       "official_status": {
         "aviation_colour_code": "Green",
         "level": 0
@@ -34,9 +34,42 @@
       "suppression_candidate": false,
       "title": "Volcanic activity change — Tongariro",
       "volcano_id": "tongariro"
+    },
+    {
+      "candidate": false,
+      "families": [
+        "volcanic seismicity"
+      ],
+      "id": "cc0f91b118f6f70a",
+      "kinds": [
+        "volcanic"
+      ],
+      "latitude": -39.28,
+      "longitude": 175.57,
+      "measurements": [
+        {
+          "direction": "higher",
+          "family": "volcanic seismicity",
+          "score_sigma": null,
+          "summary": "6 reviewed events in 2 days · 3.0× guarded baseline rate"
+        }
+      ],
+      "name": "Ruapehu",
+      "observed_at": "2026-11-22T11:37:02+00:00",
+      "official_status": {
+        "aviation_colour_code": "Green",
+        "level": 1
+      },
+      "research_only": true,
+      "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
+      "summary": "volcanic seismicity: 6 reviewed events in 2 days · 3.0× guarded baseline rate",
+      "suppressed_families": [],
+      "suppression_candidate": false,
+      "title": "Volcanic activity change — Ruapehu",
+      "volcano_id": "ruapehu"
     }
   ],
-  "generated": "2026-11-21T23:37:55+00:00",
+  "generated": "2026-11-22T11:37:53+00:00",
   "research_only": true,
   "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
   "schema": "earthnet.volcano-pulse-web.v0.1"
