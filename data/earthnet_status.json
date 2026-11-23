@@ -1,19 +1,19 @@
 {
-  "causal_assessment_count": 27,
+  "causal_assessment_count": 31,
   "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-  "cycle_completed_at": "2026-11-23T04:16:51+00:00",
+  "cycle_completed_at": "2026-11-23T12:13:01+00:00",
   "cycle_scoped_source": true,
-  "cycle_started_at": "2026-11-23T04:12:02+00:00",
-  "degraded": true,
-  "engine_count": 9,
+  "cycle_started_at": "2026-11-23T12:12:02+00:00",
+  "degraded": false,
+  "engine_count": 10,
   "engine_counts": {
-    "atmosphere": 0,
+    "atmosphere": 2,
     "cryosphere": 6,
-    "geopolitical_conflict": 2,
-    "infrastructure_risk": 0,
+    "geopolitical_conflict": 8,
+    "infrastructure_risk": 2,
     "neo": 8,
     "ocean": 10,
-    "seismic": 16,
+    "seismic": 20,
     "space_weather": 1,
     "volcanic": 12,
     "wildfire_flood_landslide": 33
@@ -23,6 +23,7 @@
     "atmosphere",
     "cryosphere",
     "geopolitical_conflict",
+    "infrastructure",
     "neo",
     "ocean",
     "seismic",
@@ -30,9 +31,9 @@
     "volcanic",
     "wildfire_flood_landslide"
   ],
-  "event_count": 99,
+  "event_count": 107,
   "event_intelligence": {
-    "assessment_count": 59,
+    "assessment_count": 69,
     "autonomous": true,
     "degraded": false,
     "deterministic": true,
@@ -41,11 +42,13 @@
       "active_eruption": 10,
       "active_severe_storm": 2,
       "active_wildfire": 27,
-      "earthquake": 16,
-      "humanitarian_crisis": 2,
+      "armed_conflict": 2,
+      "ceasefire_update": 2,
+      "earthquake": 20,
+      "humanitarian_crisis": 4,
       "volcanic_alert": 2
     },
-    "generated": "2026-11-23T04:17:03+00:00",
+    "generated": "2026-11-23T12:13:19+00:00",
     "model_generated": false,
     "schema": "earthnet.event-intelligence-status.v0.1",
     "supported_event_types": [
@@ -67,23 +70,21 @@
       "volcanic_alert"
     ],
     "trend_counts": {
-      "new": 12,
-      "stable": 44,
+      "new": 16,
+      "stable": 50,
       "updated": 3
     }
   },
   "expired_quakes_hidden": 0,
-  "failed_engines": {
-    "atmosphere": "HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=8)"
-  },
-  "generated": "2026-11-23T04:16:57+00:00",
+  "failed_engines": {},
+  "generated": "2026-11-23T12:13:11+00:00",
   "live_data_plane": {
     "branch": "main",
-    "prepared_at": "2026-11-23T04:17:03+00:00",
+    "prepared_at": "2026-11-23T12:13:19+00:00",
     "provider": "github-repository",
     "publication_mode": "canonical_static_snapshot",
     "published": true,
-    "published_at": "2026-11-23T04:17:08+00:00",
+    "published_at": "2026-11-23T12:13:23+00:00",
     "repository": "PythologyIntelligence/pythology-pages-lab",
     "runner_local_media_assets_stripped": 5,
     "runner_local_satellite_assets_stripped": 0,
@@ -92,7 +93,7 @@
   "media": {
     "autonomous": true,
     "collected_record_count": 5,
-    "generated": "2026-11-23T04:17:03+00:00",
+    "generated": "2026-11-23T12:13:19+00:00",
     "local_image_count": 5,
     "neo_lookup_count": 0,
     "provider_errors": [],
@@ -107,9 +108,7 @@
       "base_url": "https://atlas.pythology.co.nz",
       "degraded": true,
       "enabled": true,
-      "event_type_counts": {
-        "atlas_river_state": 1
-      },
+      "event_type_counts": {},
       "feeds": {
         "atmospheric_rivers": {
           "error": null,
@@ -133,7 +132,7 @@
         },
         "rivers": {
           "error": null,
-          "observations": 1,
+          "observations": 0,
           "ok": true
         },
         "weather_gauges": {
@@ -142,7 +141,7 @@
           "ok": true
         }
       },
-      "observation_count": 1
+      "observation_count": 0
     },
     "calibration": {
       "automatic_weight_updates": false,
@@ -271,14 +270,14 @@
       "error": null,
       "state": "not_github_actions"
     },
-    "generated": "2026-11-23T04:16:59+00:00",
+    "generated": "2026-11-23T12:13:14+00:00",
     "ledger_records_appended": 0,
     "mode": "live_validation",
     "model_version": "prometheus-core.v0.2",
     "new_forecast_count": 0,
     "observation_sources": {
-      "atlas": 1,
-      "earthnet": 99,
+      "atlas": 0,
+      "earthnet": 107,
       "ecowatch": 27
     },
     "open_forecast_count": 0,
@@ -293,15 +292,15 @@
     "cache_hit": false,
     "degraded": false,
     "error": null,
-    "generated": "2026-11-23T04:17:02+00:00",
+    "generated": "2026-11-23T12:13:18+00:00",
     "geography_mismatch_removed": 0,
     "image_event_count": 0,
     "lookback_hours": 96,
-    "matched_event_count": 11,
-    "matched_report_count": 18,
-    "primary_geopolitical_context_count": 2,
+    "matched_event_count": 17,
+    "matched_report_count": 26,
+    "primary_geopolitical_context_count": 8,
     "provider": "ReliefWeb / UN OCHA",
-    "reports_considered": 79,
+    "reports_considered": 59,
     "schema": "earthnet.reliefweb-status.v0.1"
   },
   "satellite": {
@@ -316,6 +315,6 @@
   },
   "schema": "earthnet.snapshot.v3",
   "source_file": "current_cycle_events.jsonl",
-  "source_record_count": 99,
-  "success": false
+  "source_record_count": 107,
+  "success": true
 }
