@@ -1,6 +1,6 @@
 {
   "active": true,
-  "alert_count": 2,
+  "alert_count": 1,
   "alerts": [
     {
       "candidate": false,
@@ -18,58 +18,25 @@
           "direction": "higher",
           "family": "volcanic seismicity",
           "score_sigma": null,
-          "summary": "0 reviewed events in 2 days · 0.0× guarded baseline rate"
+          "summary": "1 reviewed events in 2 days · 2.2× guarded baseline rate"
         }
       ],
       "name": "Tongariro",
-      "observed_at": "2026-11-22T23:37:03+00:00",
+      "observed_at": "2026-11-23T11:37:02+00:00",
       "official_status": {
         "aviation_colour_code": "Green",
         "level": 0
       },
       "research_only": true,
       "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
-      "summary": "volcanic seismicity: 0 reviewed events in 2 days · 0.0× guarded baseline rate",
+      "summary": "volcanic seismicity: 1 reviewed events in 2 days · 2.2× guarded baseline rate",
       "suppressed_families": [],
       "suppression_candidate": false,
       "title": "Volcanic activity change — Tongariro",
       "volcano_id": "tongariro"
-    },
-    {
-      "candidate": false,
-      "families": [
-        "volcanic seismicity"
-      ],
-      "id": "cc0f91b118f6f70a",
-      "kinds": [
-        "volcanic"
-      ],
-      "latitude": -39.28,
-      "longitude": 175.57,
-      "measurements": [
-        {
-          "direction": "higher",
-          "family": "volcanic seismicity",
-          "score_sigma": null,
-          "summary": "7 reviewed events in 2 days · 3.5× guarded baseline rate"
-        }
-      ],
-      "name": "Ruapehu",
-      "observed_at": "2026-11-22T23:37:03+00:00",
-      "official_status": {
-        "aviation_colour_code": "Green",
-        "level": 1
-      },
-      "research_only": true,
-      "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
-      "summary": "volcanic seismicity: 7 reviewed events in 2 days · 3.5× guarded baseline rate",
-      "suppressed_families": [],
-      "suppression_candidate": false,
-      "title": "Volcanic activity change — Ruapehu",
-      "volcano_id": "ruapehu"
     }
   ],
-  "generated": "2026-11-22T23:38:02+00:00",
+  "generated": "2026-11-23T11:37:59+00:00",
   "research_only": true,
   "safety": "EarthNet research signal only — not an eruption prediction or public warning. GeoNet and NEMA remain the authoritative sources for volcanic status and safety in New Zealand.",
   "schema": "earthnet.volcano-pulse-web.v0.1"
