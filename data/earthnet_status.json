@@ -1,19 +1,19 @@
 {
   "causal_assessment_count": 27,
   "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-  "cycle_completed_at": "2026-11-22T20:21:50+00:00",
+  "cycle_completed_at": "2026-11-23T04:16:51+00:00",
   "cycle_scoped_source": true,
-  "cycle_started_at": "2026-11-22T20:12:01+00:00",
+  "cycle_started_at": "2026-11-23T04:12:02+00:00",
   "degraded": true,
   "engine_count": 9,
   "engine_counts": {
     "atmosphere": 0,
     "cryosphere": 6,
-    "geopolitical_conflict": 1,
+    "geopolitical_conflict": 2,
     "infrastructure_risk": 0,
-    "neo": 10,
+    "neo": 8,
     "ocean": 10,
-    "seismic": 8,
+    "seismic": 16,
     "space_weather": 1,
     "volcanic": 12,
     "wildfire_flood_landslide": 33
@@ -30,9 +30,9 @@
     "volcanic",
     "wildfire_flood_landslide"
   ],
-  "event_count": 90,
+  "event_count": 99,
   "event_intelligence": {
-    "assessment_count": 50,
+    "assessment_count": 59,
     "autonomous": true,
     "degraded": false,
     "deterministic": true,
@@ -41,11 +41,11 @@
       "active_eruption": 10,
       "active_severe_storm": 2,
       "active_wildfire": 27,
-      "earthquake": 8,
-      "humanitarian_crisis": 1,
+      "earthquake": 16,
+      "humanitarian_crisis": 2,
       "volcanic_alert": 2
     },
-    "generated": "2026-11-22T20:23:47+00:00",
+    "generated": "2026-11-23T04:17:03+00:00",
     "model_generated": false,
     "schema": "earthnet.event-intelligence-status.v0.1",
     "supported_event_types": [
@@ -67,36 +67,34 @@
       "volcanic_alert"
     ],
     "trend_counts": {
-      "improving": 1,
-      "new": 3,
+      "new": 12,
       "stable": 44,
-      "updated": 2
+      "updated": 3
     }
   },
   "expired_quakes_hidden": 0,
   "failed_engines": {
-    "atmosphere": "Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=-27.0&longitude=152.0&hourly=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,wind_gusts_10m,cape,relative_humidity_2m,surface_pressure&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=36.8&longitude=-119.4&hourly=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,wind_gusts_10m,cape,relative_humidity_2m,surface_pressu",
-    "infrastructure_risk": "Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=40.4&longitude=-3.7&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/forecast?latitude=41.9&longitude=12.5&hourly=temperature_2m,apparent_temperature,relative_humidity_2m,wind_speed_10m&forecast_days=1&timezone=UTC | Transient provider response 429 for https://api.open-meteo.com/v1/foreca"
+    "atmosphere": "HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=8)"
   },
-  "generated": "2026-11-22T20:22:58+00:00",
+  "generated": "2026-11-23T04:16:57+00:00",
   "live_data_plane": {
     "branch": "main",
-    "prepared_at": "2026-11-22T20:23:47+00:00",
+    "prepared_at": "2026-11-23T04:17:03+00:00",
     "provider": "github-repository",
     "publication_mode": "canonical_static_snapshot",
     "published": true,
-    "published_at": "2026-11-22T20:23:50+00:00",
+    "published_at": "2026-11-23T04:17:08+00:00",
     "repository": "PythologyIntelligence/pythology-pages-lab",
-    "runner_local_media_assets_stripped": 4,
+    "runner_local_media_assets_stripped": 5,
     "runner_local_satellite_assets_stripped": 0,
     "visual_asset_note": "Ephemeral runner-local image files are not published. Source/external evidence URLs already present in records are retained. A future Cloudflare-native object store can be added without changing the core evidence snapshot."
   },
   "media": {
     "autonomous": true,
-    "collected_record_count": 6,
-    "generated": "2026-11-22T20:23:47+00:00",
-    "local_image_count": 4,
-    "neo_lookup_count": 2,
+    "collected_record_count": 5,
+    "generated": "2026-11-23T04:17:03+00:00",
+    "local_image_count": 5,
+    "neo_lookup_count": 0,
     "provider_errors": [],
     "published_image_count": 0,
     "schema": "earthnet.media-status.v0.1",
@@ -109,20 +107,22 @@
       "base_url": "https://atlas.pythology.co.nz",
       "degraded": true,
       "enabled": true,
-      "event_type_counts": {},
+      "event_type_counts": {
+        "atlas_river_state": 1
+      },
       "feeds": {
         "atmospheric_rivers": {
-          "error": "TimeoutError: The read operation timed out",
+          "error": null,
           "observations": 0,
-          "ok": false
+          "ok": true
         },
         "blooms": {
-          "error": "TimeoutError: The read operation timed out",
+          "error": null,
           "observations": 0,
-          "ok": false
+          "ok": true
         },
         "poseidon": {
-          "error": "TimeoutError: The read operation timed out",
+          "error": "HTTPError: HTTP Error 404: Not Found",
           "observations": 0,
           "ok": false
         },
@@ -132,17 +132,17 @@
           "ok": null
         },
         "rivers": {
-          "error": "TimeoutError: The read operation timed out",
-          "observations": 0,
-          "ok": false
+          "error": null,
+          "observations": 1,
+          "ok": true
         },
         "weather_gauges": {
-          "error": "TimeoutError: The read operation timed out",
+          "error": null,
           "observations": 0,
-          "ok": false
+          "ok": true
         }
       },
-      "observation_count": 0
+      "observation_count": 1
     },
     "calibration": {
       "automatic_weight_updates": false,
@@ -271,14 +271,14 @@
       "error": null,
       "state": "not_github_actions"
     },
-    "generated": "2026-11-22T20:23:43+00:00",
+    "generated": "2026-11-23T04:16:59+00:00",
     "ledger_records_appended": 0,
     "mode": "live_validation",
     "model_version": "prometheus-core.v0.2",
     "new_forecast_count": 0,
     "observation_sources": {
-      "atlas": 0,
-      "earthnet": 90,
+      "atlas": 1,
+      "earthnet": 99,
       "ecowatch": 27
     },
     "open_forecast_count": 0,
@@ -293,15 +293,15 @@
     "cache_hit": false,
     "degraded": false,
     "error": null,
-    "generated": "2026-11-22T20:23:46+00:00",
+    "generated": "2026-11-23T04:17:02+00:00",
     "geography_mismatch_removed": 0,
     "image_event_count": 0,
     "lookback_hours": 96,
-    "matched_event_count": 5,
-    "matched_report_count": 6,
-    "primary_geopolitical_context_count": 1,
+    "matched_event_count": 11,
+    "matched_report_count": 18,
+    "primary_geopolitical_context_count": 2,
     "provider": "ReliefWeb / UN OCHA",
-    "reports_considered": 72,
+    "reports_considered": 79,
     "schema": "earthnet.reliefweb-status.v0.1"
   },
   "satellite": {
@@ -316,6 +316,6 @@
   },
   "schema": "earthnet.snapshot.v3",
   "source_file": "current_cycle_events.jsonl",
-  "source_record_count": 90,
+  "source_record_count": 99,
   "success": false
 }
