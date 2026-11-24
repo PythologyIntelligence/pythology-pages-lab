@@ -1,19 +1,19 @@
 {
-  "causal_assessment_count": 30,
+  "causal_assessment_count": 28,
   "causal_mechanism_pack": "heat-wildfire-infrastructure.v0.1",
-  "cycle_completed_at": "2026-11-23T20:13:05+00:00",
+  "cycle_completed_at": "2026-11-24T04:16:11+00:00",
   "cycle_scoped_source": true,
-  "cycle_started_at": "2026-11-23T20:12:02+00:00",
-  "degraded": false,
+  "cycle_started_at": "2026-11-24T04:12:02+00:00",
+  "degraded": true,
   "engine_count": 10,
   "engine_counts": {
-    "atmosphere": 2,
+    "atmosphere": 0,
     "cryosphere": 6,
-    "geopolitical_conflict": 15,
+    "geopolitical_conflict": 18,
     "infrastructure_risk": 1,
-    "neo": 8,
+    "neo": 6,
     "ocean": 10,
-    "seismic": 21,
+    "seismic": 14,
     "space_weather": 1,
     "volcanic": 12,
     "wildfire_flood_landslide": 33
@@ -31,9 +31,9 @@
     "volcanic",
     "wildfire_flood_landslide"
   ],
-  "event_count": 120,
+  "event_count": 111,
   "event_intelligence": {
-    "assessment_count": 77,
+    "assessment_count": 73,
     "autonomous": true,
     "degraded": false,
     "deterministic": true,
@@ -42,13 +42,13 @@
       "active_eruption": 10,
       "active_severe_storm": 2,
       "active_wildfire": 27,
-      "armed_conflict": 3,
-      "ceasefire_update": 4,
-      "earthquake": 21,
-      "humanitarian_crisis": 8,
+      "armed_conflict": 4,
+      "ceasefire_update": 2,
+      "earthquake": 14,
+      "humanitarian_crisis": 12,
       "volcanic_alert": 2
     },
-    "generated": "2026-11-23T20:13:20+00:00",
+    "generated": "2026-11-24T04:16:22+00:00",
     "model_generated": false,
     "schema": "earthnet.event-intelligence-status.v0.1",
     "supported_event_types": [
@@ -70,22 +70,24 @@
       "volcanic_alert"
     ],
     "trend_counts": {
-      "improving": 1,
-      "new": 10,
-      "stable": 58,
-      "updated": 8
+      "escalating": 1,
+      "new": 13,
+      "stable": 48,
+      "updated": 11
     }
   },
   "expired_quakes_hidden": 0,
-  "failed_engines": {},
-  "generated": "2026-11-23T20:13:11+00:00",
+  "failed_engines": {
+    "atmosphere": "HTTPSConnectionPool(host='api.open-meteo.com', port=443): Read timed out. (read timeout=8)"
+  },
+  "generated": "2026-11-24T04:16:16+00:00",
   "live_data_plane": {
     "branch": "main",
-    "prepared_at": "2026-11-23T20:13:20+00:00",
+    "prepared_at": "2026-11-24T04:16:22+00:00",
     "provider": "github-repository",
     "publication_mode": "canonical_static_snapshot",
     "published": true,
-    "published_at": "2026-11-23T20:13:25+00:00",
+    "published_at": "2026-11-24T04:16:36+00:00",
     "repository": "PythologyIntelligence/pythology-pages-lab",
     "runner_local_media_assets_stripped": 5,
     "runner_local_satellite_assets_stripped": 0,
@@ -94,10 +96,121 @@
   "media": {
     "autonomous": true,
     "collected_record_count": 6,
-    "generated": "2026-11-23T20:13:20+00:00",
+    "generated": "2026-11-24T04:16:22+00:00",
     "local_image_count": 5,
     "neo_lookup_count": 1,
-    "provider_errors": [],
+    "provider_errors": [
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "e402cb72b90f7ca7",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "3f00ab652171feef",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "e3a9792e66f6fa89",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "f4c4aea20410b2fe",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "677c8196e5b54f67",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "02efa9ededd7413a",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "7ab2ebf73850d0d8",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "e1c2a539d47c4e66",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "5281d6fa2e03beef",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "cd3984dc94262369",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "ea8c79ed23196f91",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "6102102fd54ef6ab",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "3ed854ebbb84e69b",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "a51ba25ff0184207",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "0d3423b866e01405",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "e2b3f82103180186",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "85d3482d30b15c6a",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "0694445a01d51e82",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "bd651e4bd327e3a7",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "9c5a902b514b71dc",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "4509f1d49d9dead2",
+        "event_type": "active_wildfire"
+      },
+      {
+        "error": "NASA GIBS wildfire image unavailable: NASA GIBS did not return a usable image: <HTML>\n<HEAD><TITLE>MapServer Message</TITLE></HEAD>\n<BODY BGCOLOR=\"#FFFFFF\">\ngetInteger(): Symbol definition error. Parsing error near (,):(line 19674)\n</BODY></HTML>",
+        "event_id": "50ad7db2ad262664",
+        "event_type": "active_wildfire"
+      }
+    ],
     "published_image_count": 0,
     "schema": "earthnet.media-status.v0.1",
     "verified_neo_image_count": 0
@@ -110,6 +223,7 @@
       "degraded": true,
       "enabled": true,
       "event_type_counts": {
+        "atlas_council_weather_signal": 1,
         "atlas_river_state": 1
       },
       "feeds": {
@@ -140,11 +254,11 @@
         },
         "weather_gauges": {
           "error": null,
-          "observations": 0,
+          "observations": 1,
           "ok": true
         }
       },
-      "observation_count": 1
+      "observation_count": 2
     },
     "calibration": {
       "automatic_weight_updates": false,
@@ -264,8 +378,8 @@
       "period": "2026-10"
     },
     "evidence": {
-      "forecast_receipts_created": 0,
-      "ledger_records": 315,
+      "forecast_receipts_created": 1,
+      "ledger_records": 316,
       "outcome_receipts_created": 0
     },
     "evidence_git": {
@@ -273,17 +387,17 @@
       "error": null,
       "state": "not_github_actions"
     },
-    "generated": "2026-11-23T20:13:15+00:00",
-    "ledger_records_appended": 0,
+    "generated": "2026-11-24T04:16:18+00:00",
+    "ledger_records_appended": 1,
     "mode": "live_validation",
     "model_version": "prometheus-core.v0.2",
-    "new_forecast_count": 0,
+    "new_forecast_count": 1,
     "observation_sources": {
-      "atlas": 1,
-      "earthnet": 120,
+      "atlas": 2,
+      "earthnet": 111,
       "ecowatch": 27
     },
-    "open_forecast_count": 0,
+    "open_forecast_count": 1,
     "resolved_forecast_count": 0,
     "slack": "disabled",
     "slack_error": null,
@@ -295,15 +409,15 @@
     "cache_hit": false,
     "degraded": false,
     "error": null,
-    "generated": "2026-11-23T20:13:18+00:00",
-    "geography_mismatch_removed": 2,
+    "generated": "2026-11-24T04:16:21+00:00",
+    "geography_mismatch_removed": 5,
     "image_event_count": 0,
     "lookback_hours": 96,
-    "matched_event_count": 24,
-    "matched_report_count": 40,
-    "primary_geopolitical_context_count": 15,
+    "matched_event_count": 23,
+    "matched_report_count": 41,
+    "primary_geopolitical_context_count": 18,
     "provider": "ReliefWeb / UN OCHA",
-    "reports_considered": 68,
+    "reports_considered": 77,
     "schema": "earthnet.reliefweb-status.v0.1"
   },
   "satellite": {
@@ -318,6 +432,6 @@
   },
   "schema": "earthnet.snapshot.v3",
   "source_file": "current_cycle_events.jsonl",
-  "source_record_count": 120,
-  "success": true
+  "source_record_count": 111,
+  "success": false
 }
