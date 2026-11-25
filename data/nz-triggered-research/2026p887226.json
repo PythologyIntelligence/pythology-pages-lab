@@ -1,0 +1,71 @@
+{
+  "candidate_signal_count": 2,
+  "depth_km": 5.0,
+  "event_id": "2026p887226",
+  "event_time": "2026-11-25T06:34:04.819000+00:00",
+  "findings": [
+    {
+      "control_count": 6,
+      "control_median": 48.250505943195925,
+      "metric": "centroid_distance_km",
+      "percentile": 0.0,
+      "plain_language": "Distance of activity centre from target epicentre was lower than all 6 matched non-event windows.",
+      "target_value": 25.005607119779484,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 4.043194136325862,
+      "metric": "depth_trend_km_per_day",
+      "percentile": 0.0,
+      "plain_language": "Depth trend was lower than all 6 matched non-event windows.",
+      "target_value": -6.369250306331954,
+      "unusual": true
+    },
+    {
+      "control_count": 6,
+      "control_median": 11.364479144657615,
+      "metric": "log10_energy_proxy",
+      "percentile": 83.33333333333333,
+      "plain_language": "Combined seismic-energy proxy sat within the ordinary range of the 6 matched controls (above the control median).",
+      "target_value": 11.585897936398723,
+      "unusual": false
+    },
+    {
+      "control_count": 6,
+      "control_median": -0.001583029028846267,
+      "metric": "magnitude_trend_per_day",
+      "percentile": 83.33333333333333,
+      "plain_language": "Magnitude trend sat within the ordinary range of the 6 matched controls (above the control median).",
+      "target_value": 0.03264125118201908,
+      "unusual": false
+    }
+  ],
+  "historical_pattern_matches": [],
+  "historical_pattern_registry": {
+    "available": false,
+    "eligible_pattern_count": 0,
+    "version": null
+  },
+  "kind": "earthquake",
+  "locality": "Ruatoria",
+  "magnitude": 5.019877172424216,
+  "methodology": {
+    "description": "Prometheus examined the 14 days preceding this qualifying event within 150 km and compared the measurements with matched non-event windows.",
+    "matched_non_event_windows": 6,
+    "radius_km": 150,
+    "window_days": 14
+  },
+  "observations": {
+    "b_value": null,
+    "b_value_guard": "catalogue completeness magnitude was not supplied",
+    "catalogue_event_count": 23,
+    "events_per_day": 1.6428571428571428,
+    "maximum_precursor_magnitude": 4.44643117677654
+  },
+  "official_url": "https://www.geonet.org.nz/earthquake/2026p887226",
+  "research_only": true,
+  "safety": "Retrospective research only. This is not an earthquake prediction or public warning. GeoNet and NEMA remain authoritative for public safety advice.",
+  "schema": "pythology.nz-triggered-research-case.v0.1",
+  "title": "M5.0 retrospective — Ruatoria"
+}
