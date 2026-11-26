@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-26T14:10:20.127799+00:00",
+  "generated_at_utc": "2026-11-26T20:10:19.419599+00:00",
   "historical_eruption_records_since_1960": 2248,
   "historical_volcanoes_catalogued": 1214,
   "instrumental_volcanoes_individually_verified": 0,
@@ -12,9 +12,9 @@
     "No gas, deformation, thermal, tremor or eruption-prediction data connected yet."
   ],
   "longitudinal_baseline_scans_compared": 1,
-  "nearby_earthquake_feed_age_hours": 0.0,
+  "nearby_earthquake_feed_age_hours": 0.02,
   "nearby_earthquake_source_stale": false,
-  "nearby_m2_5_plus_earthquake_associations": 104,
+  "nearby_m2_5_plus_earthquake_associations": 113,
   "research_only": true,
   "schema": "pythology.subterranean.global-volcano-public.v0.1",
   "sources": {
@@ -32,8 +32,14 @@
   "usgs_elevated_notice_examples": [
     {
       "country": "United States",
+      "name": "Ahyi",
+      "notice_at_utc": "2026-11-26T17:49:45+00:00",
+      "reported_alert_level": "ADVISORY"
+    },
+    {
+      "country": "United States",
       "name": "Kilauea",
-      "notice_at_utc": "2026-11-25T19:21:02+00:00",
+      "notice_at_utc": "2026-11-26T17:37:10+00:00",
       "reported_alert_level": "ADVISORY"
     },
     {
@@ -41,16 +47,10 @@
       "name": "Great Sitkin",
       "notice_at_utc": "2026-11-20T20:33:25+00:00",
       "reported_alert_level": "WATCH"
-    },
-    {
-      "country": "United States",
-      "name": "Ahyi",
-      "notice_at_utc": "2026-11-19T22:47:09+00:00",
-      "reported_alert_level": "ADVISORY"
     }
   ],
   "usgs_official_recent_elevated_notices": 3,
   "volcanoes_matched_to_usgs_hans": 62,
-  "volcanoes_with_geographic_earthquake_associations": 46,
+  "volcanoes_with_geographic_earthquake_associations": 49,
   "volcanoes_with_validated_precursors": 0
 }
